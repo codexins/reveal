@@ -34,7 +34,7 @@
 			<?php 
 				if(is_single()):
 					the_content();
-                
+                    // Calling the page nav with wp_link_pages().
                     $args = array(
                         'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
                         'after'       => '</div>',
