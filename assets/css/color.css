@@ -1,0 +1,78 @@
+body {
+    color: #333;
+    background: #fff;
+}
+
+hr {
+    border-color: #ddd;
+}
+
+.browserupgrade {
+    background: #dedede;
+}
+
+.divider {
+    background: #ddd;
+}
+
+.header::before {
+    background: #333 none repeat scroll 0 0;
+}
+
+header .navbar.affix {
+    background-color: #295970;
+    box-shadow: 0 0 1px rgba(32, 32, 32, 0.35);
+}
+
+a.navbar-brand {
+    color: #fff;
+}
+
+.main-menu li a {
+    color: #fff;
+}
+
+.nav > li > a:focus,
+.nav > li > a:hover {
+    background: transparent;
+}
+
+.main-menu li a:hover {
+    background: transparent;
+    color: #fce38a;
+    border-bottom: 4px solid #fce38a;
+}
+
+.main-menu li.active {
+    background: transparent;
+}
+
+.main-menu li.active a {
+    color: #fce38a;
+    background: transparent;
+}
+
+.slider-text {
+    color: #fff;
+}
+
+.slider-text h4 {
+    color: inherit;
+}
+
+.slider-text h2 {
+    color: inherit;
+}
+
+.small-divider {
+    background: #fff;
+}
+
+.slider-btn {
+    color: #fff;
+    border: 3px solid #fff;
+}
+
+
+/*  Mamun */
+

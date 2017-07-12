@@ -1,0 +1,115 @@
+/*
+****** This stylessheet is only for the feedback page that will be visible after submitting the contact form
+
+*********
+*****
+
+*/
+
+
+body {
+    background: #f1f1f1;
+}
+
+.feedback-page { 
+    margin-top: 100px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.feedback-page .feedback-btn {
+    padding: 7px 15px;
+    background: #295970;
+    color: #fff;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 35px;
+    text-decoration: none;
+    transition: all .3s;
+    }
+
+.feedback-page .feedback-btn:hover {
+    background: #2f6b88;
+}
+
+span {
+    font-style: italic;
+}
+
+.feedback-page p i {
+    background: #fff;
+    color: #295970;
+    width:30px;
+    height:30px;
+    display: inline-block;
+    margin:3px;
+    line-height: 30px;
+    transition: all .3s;
+}
+
+.feedback-page p i:hover {
+    color: #fff;
+    background: #295970;
+}
+
+/***********************************
+  Site Loader
+***********************************/
+
+#loader {
+    background: #fff;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+.cssload-container {
+    width: 100%;
+    height: 49px;
+    text-align: center;
+    position: absolute;
+    top:45%;
+    margin-top:-25px;
+}
+
+.cssload-speeding-wheel {
+    width: 49px;
+    height: 49px;
+    margin: 0 auto;
+    border: 3px solid rgb(243,129,129);
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: cssload-spin 575ms infinite linear;
+    -o-animation: cssload-spin 575ms infinite linear;
+    -ms-animation: cssload-spin 575ms infinite linear;
+    -webkit-animation: cssload-spin 575ms infinite linear;
+    -moz-animation: cssload-spin 575ms infinite linear;
+}
+
+
+
+
+@keyframes cssload-spin {
+    100%{ transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-o-keyframes cssload-spin {
+    100%{ -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-webkit-keyframes cssload-spin {
+    100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@-moz-keyframes cssload-spin {
+    100%{ -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}

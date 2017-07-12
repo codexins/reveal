@@ -1,0 +1,17 @@
+#loader {
+	display: none !important;
+}
+
+.parallax-mirror {
+	display: none !important;
+}
+
+#concept {
+	background: url('../images/concept-bg.jpg') no-repeat scroll;
+	background-size: cover;
+	background-position: center;
+}
+
+#header.header {
+	background-attachment: scroll;
+}
