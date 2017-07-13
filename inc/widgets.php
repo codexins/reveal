@@ -501,7 +501,7 @@ class Reveal_Instagram_Widget extends WP_Widget {
                 'type'        => 'text',
                 'value'       => $user_id,
                 'placeholder' => 'Insert User ID',
-                'desc'        => sprintf( __( 'Lookup your User ID from <a href="%1$s" target="_blank">here</a>', 'reveal' ), esc_url( 'www.ershad7.com/InstagramUserID/' ) )
+                'desc'        => sprintf( esc_html__( 'Lookup your User ID from <a href="%1$s" target="_blank">here</a>', 'reveal' ), esc_url( '//ershad7.com/InstagramUserID/' ) )
             )
         );
         $this->form_input(
@@ -512,7 +512,7 @@ class Reveal_Instagram_Widget extends WP_Widget {
                 'type'        => 'text',
                 'value'       => $accss_token,
                 'placeholder' => 'Insert Access Token',
-                'desc'        => sprintf( esc_html__( 'Generate Your Access Token from <a href="%1$s" target="_blank">here</a>', 'reveal' ), esc_url( 'http://instagram.pixelunion.net/' ) )
+                'desc'        => sprintf( esc_html__( 'Generate Your Access Token from <a href="%1$s" target="_blank">here</a>', 'reveal' ), esc_url( '//instagram.pixelunion.net/' ) )
             )
         );
         $this->form_input(
@@ -523,7 +523,7 @@ class Reveal_Instagram_Widget extends WP_Widget {
                 'type'        => 'text',
                 'value'       => $client_id,
                 'placeholder' => 'Insert Client ID',
-                'desc'        => sprintf( esc_html__( 'Register a new client from <a href="%1$s" target="_blank">here</a>', 'reveal' ), esc_url( 'http://instagram.com/developer/clients/manage/' )
+                'desc'        => sprintf( esc_html__( 'Register a new client from <a href="%1$s" target="_blank">here</a>', 'reveal' ), esc_url( '//instagram.com/developer/clients/manage/' )
             ) )
         );
         $this->form_input(
