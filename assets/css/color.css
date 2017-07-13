@@ -74,5 +74,426 @@ a.navbar-brand {
 }
 
 
-/*  Mamun */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+
+.slider-btn:hover {
+    background: #fff;
+    color: #555;
+}
+.slider-btn:active,
+.slider-btn:focus {
+    color: #fff;
+}
+.nav-top {
+    background: #fff;
+}
+.nav-top-inner {
+    background: #295970;
+}
+
+a.explore {
+    color: #fff;
+}
+
+/***********************************
+    002 - About Section
+***********************************/
+.secondary-title::after {
+    background: #295970;
+}
+.img-thumb a {
+    color: #fff;
+}
+.img-thumb a::before {
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+.img-thumb a::after {
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+}
+.img-thumb a:hover .single-content-wrapper {
+    background: #166f9a;
+    background: rgba(41, 89, 112, 0.75);
+}
+.single-content {
+    color: #fff;
+}
+
+/***********************************
+    003 - Project Summary Section
+***********************************/
+
+#achievement-counters {
+    background: #295970 none repeat scroll 0 0;
+}
+.achievement-counters {
+    color: #fff;
+}
+
+/***********************************
+    005 - Design Section
+***********************************/
+
+.concept {
+    min-height: 400px;
+    background: transparent;
+    padding-top: 70px;
+    padding-bottom: 0;
+}
+/***********************************
+    006 - Events  Section
+***********************************/
+
+.content-mask {
+    background: #eee;
+    background-color: #f8f8f8;
+}
+.content-mask h2 {
+    color: #555;
+}
+.content-mask h2 {
+    background: transparent
+}
+.content-mask h2::after {
+    background: #555;
+
+}
+.content-mask a {
+    background: #295970 none repeat scroll 0 0;
+    border: 2px solid #295970;
+    color: #fff;
+
+}
+.content-mask a:hover {
+    background: #fff;
+    color: #295970;
+}
+.events-description .panel-heading {
+    background: transparent;
+}
+.events-description .panel-heading:hover,
+.events-description .panel-heading.active {
+    background: #f8f8f8;
+}
+.events-description .panel-title i {
+    color: #295970;
+}
+.events-description .panel-title a::after {
+    color: #295970;
+}
+.events-description .panel-title a.collapsed::after {
+    color: #295970;
+}
+/***********************************
+    007 - Quote Section
+***********************************/
+
+#quote {
+    background: #f8f8f8;
+}
+
+.quote-carousel-control {
+    color: #555;
+}
+
+.quote-carousel-control:hover,
+.quote-carousel-control:focus,
+.quote-carousel-control:active {
+    color: #bbb;
+}
+.quote-author-thumb i {
+    border: 3px solid #295970;
+    color: #295970;
+}
+.quote-text p {
+    color: #444;
+}
+.quote-text p.quote-author-name {
+    color: #333;
+}
+.quote-text p.quote-author-name::before {
+    background: #295970;
+}
+/***********************************
+    008 - Team Section
+***********************************/
+.single-team-wrapper {
+    background: rgb(41, 89, 112);
+    background: rgba(41, 89, 112, 0.75);
+    box-shadow: 5px 5px 5px 0 #295970;
+}
+.team-social {
+    color: #fff;
+}
+
+.team-social i {
+    color: #295970;
+    background: #fff;
+}
+
+.team-social i:hover {
+    color: #fff;
+    background: #295970;
+}
+
+/***********************************
+    009 - Client Carousel Section
+***********************************/
+
+#clients {
+    background: #f8f8f8
+}
+/***********************************
+    010 - Portfolio Section
+***********************************/
+.portfolio-filter ul li {
+    border: 1px solid #333;
+}
+.portfolio-filter ul li.active {
+    color: #fff;
+    background: #295970;
+    border-color: #295970;
+}
+.portfolio a {
+    color: #fff;
+}
+
+.portfolio .image-mask {
+    background: rgb(41, 89, 112);
+    background: rgba(41, 89, 112, 0.75);
+}
+
+.image-content {
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/***********************************
+    011 - Testominial Section
+***********************************/
+.testimonials .designation::after {
+    background: #295970; 
+}
+
+
+
+/***********************************
+    012 - Blog Section
+***********************************/
+.img-wrapper::before {
+    
+    background: rgba(41, 89, 112, 0.35);
+    
+}
+
+.img-wrapper::after {
+    
+    background: rgba(41, 89, 112, 0.35);
+    
+}
+
+.meta {
+    background: #333;
+    color: #fff;
+}
+
+.blog-content {
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-content a {
+    border: 1px solid #aaa;
+    color: #333;
+}
+
+.blog-content a:hover {
+    border-color: #295970;
+    color: #fff;
+    background: #295970;
+}
+
+.blog-info .fa {
+    color: #333;
+}
+
+.blog-info i:last-child {
+    color: #555;
+}
+
+
+/***********************************
+    013 - Location
+***********************************/
+.contact-form-wrapper {
+    background: #fff;
+}
+
+.socials i {
+    border: 1px solid #555;
+    color: #555;
+}
+
+.socials a:hover i {
+    background: #295970;
+    border: 1px solid #295970;
+    color: #fff;
+}
+
+#location input,
+#location textarea {
+    border: 1px solid #ddd;
+}
+
+#location input:focus,
+#location textarea:focus {
+    border-color: #95E1D3;
+}
+
+#location input[type="submit"] {
+    background: #295970;
+    color: #fff;
+}
+
+#location input[type="submit"]:hover {
+    background: #333;
+}
+
+/***********************************
+    014 - Footer Section
+***********************************/
+#footer {
+    background: #f8f8f8;
+}
+
+.footer h1 {
+    color: #777;
+}
+
+p.followers span {
+    color: #002037;
+}
+
+.footer-left i {
+    color: #333;
+}
+
+.contact-info a {
+    color: #333;
+}
+
+.contact-info a:hover {
+    color: #295970;
+}
+
+.contact-info a i {
+    color: #333;
+}
+
+.footer-left a:hover i {
+    color: #295970;
+}
+
+.footer-left input[type="email"] {
+    border: 1px solid #ddd;
+}
+
+.footer-left input[type="submit"] {
+    background: #295970;
+    color: #fff;
+}
+
+.footer-left input[type="submit"]:hover {
+    background: #002037;
+}
+
+.footer-left .form-control:focus {
+    border-color: #95E1D3;
+}
+
+.reveal-widget .media p {
+    color: #777;
+}
+
+a.more,
+a.more:hover {
+    color: #333;
+}
+
+.copyright a {
+    color: #295970;
+}
+
+.hoverable {
+    background: rgba(41, 89, 112, 0.35);
+}
+
+
+/***********************************
+    015 - Back to top button
+***********************************/
+#toTop:hover {
+    background-color: #002037;
+}
+
+#toTop {
+    background-color: #295970;
+    color: #fff;
+}
+
+#loader {
+    background: #fff;
+}
+
+.cssload-speeding-wheel {
+    border: 3px solid rgb(41, 89, 112);
+    border-left-color: transparent;
+    border-right-color: transparent;
+}
+
+.service i {
+    color: #295970;
+}
+
+/* Colors */
+a.liked {
+    color: #da1b1b;
+}
+
+a.liked:hover{
+    color: #666666;
+}
+
+a.liked span.cx-count,
+.cx-count {
+    color: #666666;
+}
+
+/* Loader */
+.loader,
+.loader:before,
+.loader:after {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+
 

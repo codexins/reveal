@@ -1,0 +1,312 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bold;    
+}
+
+a.navbar-brand {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.main-menu li a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.slider-text h4 {
+    font-family: 'Lobster', cursive;
+    font-size: 48px;
+    line-height: 1.1em;
+}
+
+.slider-text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+
+.slider-btn {
+    font-family: montserrat;
+}
+
+
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Mamun vai------------------------------------------------------------------------------------------------------------------- */
+
+
+a.explore {
+    font-size: 36px;
+}
+/***********************************
+    002 - About Section
+***********************************/
+
+.primary-title {
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
+
+.single-content {
+    font-size: 24px;
+}
+
+.single-content p {
+    font-family: montserrat;
+    font-size: 18px;
+}
+
+/***********************************
+    003 - Project Summary Section
+***********************************/
+
+.project .counter {
+    font-size: 72px;
+    font-weight: bold;
+    font-family: Montserrat;
+}
+
+.project p {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/***********************************
+    004 - Services Section
+***********************************/
+.single-service .media-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+/***********************************
+    006 - Events  Section
+***********************************/
+
+.events-description .panel-title {
+    font-family: montserrat;
+    font-size: 14px;
+}
+.events-description .panel-title i {
+    font-size: 16px;
+}
+.events-description .panel-title a::after {
+    font-family: FontAwesome;
+}
+.events-description .panel-title a.collapsed::after {
+    font-family: FontAwesome;
+}
+
+
+/***********************************
+    007 - Quote Section
+***********************************/
+
+.quote-author-thumb i {
+    font-size: 60px;
+}
+.quote-text p {
+    font-size: 18px;
+    font-style: italic;
+    color: #444;
+}
+.quote-text p.quote-author-name {
+    font-family: 'Lobster', cursive;
+}
+/***********************************
+    008 - Team Section
+***********************************/
+
+.team-social i {
+    font-size: 20px;
+}
+.team-description p:first-child {
+    font-weight: bold;
+}
+.team-description p:last-child {
+    font-style: italic;
+}
+/***********************************
+    010 - Portfolio Section
+***********************************/
+
+.portfolio-filter ul li {
+    font-size: 12px;
+    font-weight: bold;
+}
+.image-content h3 {
+    font-size: 20px;
+}
+
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Mamun vai------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------Start Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/***********************************
+    011 - Testominial Section
+***********************************/
+.testimonials .media-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+
+/***********************************
+    012 - Blog Section
+***********************************/
+.meta {
+    text-align: center;
+}
+
+.meta p:first-child {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.meta p:last-child {
+    font-style: italic;
+}
+
+.blog-title {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.blog-content a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold; 
+}
+
+.blog-info i:last-child {
+    font-size: 12px;
+}
+
+
+/***********************************
+    013 - Location
+***********************************/
+.contact-intro h3 {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.socials i {
+    line-height: 30px;
+    text-align: center;
+}
+
+
+/***********************************
+    014 - Footer Section
+***********************************/
+.footer h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 46px;
+}
+
+p.followers {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p.followers span {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.footer-left i {
+    text-align: center;
+    line-height: 20px;
+}
+
+.widget-title {
+    font-weight: bold;
+}
+
+.reveal-widget .media .media-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reveal-widget .media p {
+    font-style: italic;
+    font-size: 80%;
+}
+
+a.more,
+a.more:hover {
+    font-size: 80%;
+}
+
+
+/***********************************
+    015 - Back to top button
+***********************************/
+#toTop {
+    text-align: center;
+    line-height: 40px;
+}
+
+.cssload-container {
+    text-align: center;
+}
+
+.service i {
+    font-size: 50px;
+    text-align: center;
+}
+
+/* Wrapper */
+.cx-button {
+    font-size: 1em;
+    line-height: 1;
+    font-weight: normal;
+}
+
+/* Count */
+.cx-count {
+    font-size: 0.625em;
+    /*font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;*/
+}
+
+.loader {
+  font-size: 1em;
+}
+
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+
+
+
