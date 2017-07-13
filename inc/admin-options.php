@@ -125,16 +125,16 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
         {
 
             $this->sections[] = array(
-                'title'  => __( 'Typography', 'reveal' ),
+                'title'  => esc_html__( 'Typography', 'reveal' ),
                 'id'     => 'reveal-typography',
-                'desc'   => __( 'Theme Typography Section ', 'reveal' ),
+                'desc'   => esc_html__( 'Theme Typography Section ', 'reveal' ),
                 'icon'   => 'el el-font',
                 'fields' => array(
                     array(
                         'id'       => 'reveal-typography-body',
                         'type'     => 'typography',
-                        'title'    => __( 'Body Font', 'reveal' ),
-                        'subtitle' => __( 'Specify the body font properties.', 'reveal' ),
+                        'title'    => esc_html__( 'Body Font', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify the body font properties.', 'reveal' ),
                         'google'   => true,
                         'font-backup' => true,
                         'output'   => array('body'),
@@ -149,7 +149,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'          => 'reveal-typography-h2',
                         'type'        => 'typography',
-                        'title'       => __( 'Typography h2', 'reveal' ),
+                        'title'       => esc_html__( 'Typography h2', 'reveal' ),
                         //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
                         //'google'      => false,
                         // Disable google fonts. Won't work if you haven't defined your google api key
@@ -172,7 +172,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         // An array of CSS selectors to apply this font style to dynamically
                         'units'       => 'px',
                         // Defaults to px
-                        'subtitle'    => __( 'Typography option with each property can be called individually.', 'reveal' ),
+                        'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
                         'default'     => array(
                             'color'       => '#333',
                             'font-style'  => '700',
@@ -185,8 +185,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-typography-h3',
                         'type'     => 'typography',
-                        'title'    => __( 'Typography h3', 'reveal' ),
-                        'subtitle' => __( 'Specify h3 font properties.', 'reveal' ),
+                        'title'    => esc_html__( 'Typography h3', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify h3 font properties.', 'reveal' ),
                         'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h3'),
@@ -202,15 +202,15 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-typography-h4',
                         'type'     => 'typography',
-                        'title'    => __( 'Typography h4', 'reveal' ),
-                        'subtitle' => __( 'Specify h4 font properties.', 'reveal' ),
+                        'title'    => esc_html__( 'Typography h4', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify h4 font properties.', 'reveal' ),
                         'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h4'),
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
-                            'line-height' => '26px',
+                            'line-height' => '26px',esc_html
                             'font-family' => 'Arial,Helvetica,sans-serif',
                             'font-weight' => 'Normal',
                         ),
@@ -219,8 +219,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-typography-h5',
                         'type'     => 'typography',
-                        'title'    => __( 'Typography h5', 'reveal' ),
-                        'subtitle' => __( 'Specify h5 font properties.', 'reveal' ),
+                        'title'    => esc_html__( 'Typography h5', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify h5 font properties.', 'reveal' ),
                         'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h5'),
@@ -228,7 +228,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',
+                            'font-family' => 'Arial,Helvetica,sans-serif',esc_html
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -236,8 +236,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-typography-h6',
                         'type'     => 'typography',
-                        'title'    => __( 'Typography h6', 'reveal' ),
-                        'subtitle' => __( 'Specify h6 font properties.', 'reveal' ),
+                        'title'    => esc_html__( 'Typography h6', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify h6 font properties.', 'reveal' ),
                         'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h6'),
@@ -253,14 +253,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
 
             $this->sections[] = array(
-                'title'            => __( 'Header', 'reveal' ),
+                'title'            => esc_html__( 'Header', 'reveal' ),
                 'icon'             => 'dashicons dashicons-admin-settings',
                 'id'               => 'reveal-header-option',
                 'customizer_width' => '500px',
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Header Versions', 'reveal' ),
+                'title'            => esc_html__( 'Header Versions', 'reveal' ),
                 'id'               => 'reveal-header',
                 'customizer_width' => '500px',
                 'subsection'       => true,
@@ -269,8 +269,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-header-version',
                         'type'     => 'image_select',
-                        'title'    => __( 'Select Navigation Type', 'reveal' ),
-                        'desc'     => __( 'Choose Header Type', 'reveal' ),
+                        'title'    => esc_html__( 'Select Navigation Type', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose Header Type', 'reveal' ),
                         //Must provide key => value pairs for select options
                         'options'  => array(
                             '1' => array(
@@ -289,21 +289,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                                 'alt' => 'Header-4',
                                 'img' => get_template_directory_uri() . '/assets/images/admin/header-4.png'
                             ),
-                        //     '5' => array(
-                        //         'alt' => 'Header-5',
-                        //         'img' => get_template_directory_uri() . '/assets/images/admin/header-5.png'
-                        //     ),
-                        //     '6' => array(
-                        //         'alt' => 'Header-6',
-                        //         'img' => get_template_directory_uri() . '/assets/images/admin/header-6.png'
-                        //     ),
                         ),
                         'default'  => '1'
                     ),              )
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Header Top Options', 'reveal' ),
+                'title'            => esc_html__( 'Header Top Options', 'reveal' ),
                 'id'               => 'reveal-email-phone',
                 'customizer_width' => '500px',
                 'subsection'       => true,
@@ -312,8 +304,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-header-top',
                         'type'     => 'switch',
-                        'title'    => __( 'Enable Header Top?', 'reveal' ),
-                        'subtitle' => __( 'Select to enable/disable header top', 'reveal' ),
+                        'title'    => esc_html__( 'Enable Header Top?', 'reveal' ),esc_html
+                        'subtitle' => esc_html__( 'Select to enable/disable header top', 'reveal' ),
                         'default'  => 1,
                         'on'       => 'Enabled',
                         'off'      => 'Disabled',
@@ -323,8 +315,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'reveal-phone',
                         'type'     => 'text',
                         'required' => array( 'reveal-header-top', '=', '1' ),
-                        'title'    => __( 'Phone Number', 'reveal' ),
-                        'desc'     => __( 'Please insert  Your Phone: example: (707) 123-4567 ', 'reveal' ),
+                        'title'    => esc_html__( 'Phone Number', 'reveal' ),
+                        'desc'     => esc_html__( 'Please insert  Your Phone: example: (707) 123-4567 ', 'reveal' ),
                         'default'  => '(707) 123-4567',
                     ),
 
@@ -333,8 +325,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'reveal-phone-url',
                         'type'     => 'text',
                         'required' => array( 'reveal-header-top', '=', '1' ),
-                        'title'    => __( 'Phone Number URL', 'reveal' ),
-                        'desc'     => __( 'Please enter phone number URL: example: +17071234567  ', 'reveal' ),
+                        'title'    => esc_html__( 'Phone Number URL', 'reveal' ),
+                        'desc'     => esc_html__( 'Please enter phone number URL: example: +17071234567  ', 'reveal' ),
                         'default'  => '+7071234567',
                     ),
 
@@ -342,14 +334,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'reveal-email',
                         'type'     => 'text',
                         'required' => array( 'reveal-header-top', '=', '1' ),
-                        'title'    => __( 'Email', 'reveal' ),
-                        'desc'     => __( 'Please insert  Your Email  ', 'reveal' ),
+                        'title'    => esc_html__( 'Email', 'reveal' ),
+                        'desc'     => esc_html__( 'Please insert  Your Email  ', 'reveal' ),
                         'default'  => 'email@email.com',
                     ),              )
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Logo', 'reveal' ),
+                'title'            => esc_html__( 'Logo', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-logo-section',
                 'subsection'       => true,
@@ -357,15 +349,15 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-logo',
                         'type'     => 'media',
-                        'title'    => __( 'Logo  ', 'reveal' ),
-                        'desc'     => __( 'Please Upload  Logo ', 'reveal' ),
+                        'title'    => esc_html__( 'Logo  ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Upload  Logo ', 'reveal' ),
                         'default'  => array( 'url' => 'http://placehold.it/250X50' ),
                     ),
                                     )
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Breadcrumbs', 'reveal' ),
+                'title'            => esc_html__( 'Breadcrumbs', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-bc',
                 'subsection'       => true,
@@ -373,8 +365,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-bcrumbs',
                         'type'     => 'switch',
-                        'title'    => __( 'Enable Breadcrumbs?', 'reveal' ),
-                        'subtitle' => __( 'Select to enable/disable Breadcrumbs', 'reveal' ),
+                        'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable Breadcrumbs', 'reveal' ),
                         'default'  => 1,
                         'on'       => 'Enabled',
                         'off'      => 'Disabled',
@@ -383,7 +375,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Social Media ', 'reveal' ),
+                'title'            => esc_html__( 'Social Media ', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-social-media',
                 'icon'             => 'dashicons dashicons-share',
@@ -391,71 +383,71 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-twitter',
                         'type'     => 'text',
-                        'title'    => __( 'Twitter ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Twitter Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Twitter ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Twitter Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
                     array(
                         'id'       => 'reveal-facebook',
                         'type'     => 'text',
-                        'title'    => __( 'Facebook ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Facebook Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Facebook ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Facebook Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
 
                     array(
                         'id'       => 'reveal-instagram',
                         'type'     => 'text',
-                        'title'    => __( 'Instagram ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Instagram Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Instagram ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Instagram Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
 
                     array(
                         'id'       => 'reveal-pinterest',
                         'type'     => 'text',
-                        'title'    => __( 'Pinterest ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Pinterest Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Pinterest ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Pinterest Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ), 
 
                      array(
                         'id'       => 'reveal-behance',
                         'type'     => 'text',
-                        'title'    => __( 'Behance ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Behance Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Behance ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Behance Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
 
                      array(
                         'id'       => 'reveal-google-plus',
                         'type'     => 'text',
-                        'title'    => __( 'Google-Plus ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Google Plus Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Google-Plus ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Google Plus Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),                       
 
                      array(
                         'id'       => 'reveal-linkedin',
                         'type'     => 'text',
-                        'title'    => __( 'Linkedin ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Linkedin Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Linkedin ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Linkedin Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
 
                      array(
                         'id'       => 'reveal-youtube',
                         'type'     => 'text',
-                        'title'    => __( 'Youtube ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Youtube Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Youtube ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Youtube Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
 
                      array(
                         'id'       => 'reveal-skype',
                         'type'     => 'text',
-                        'title'    => __( 'Skype ', 'reveal' ),
-                        'desc'     => __( 'Please Insert Skype Profile URL  ', 'reveal' ),
+                        'title'    => esc_html__( 'Skype ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Insert Skype Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
                                 )
@@ -465,14 +457,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             // footer section 
 
             $this->sections[] = array(
-                'title'            => __( 'Footer', 'reveal' ),
+                'title'            => esc_html__( 'Footer', 'reveal' ),
                 'icon'             => 'dashicons dashicons-admin-generic',
                 'id'               => 'reveal-footer-option',
                 'customizer_width' => '500px',
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Footer Layout', 'reveal' ),
+                'title'            => esc_html__( 'Footer Layout', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-footer',
                 'subsection'       => true,
@@ -481,8 +473,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-footer-version',
                         'type'     => 'image_select',
-                        'title'    => __( 'Select Footer Layout Type', 'reveal' ),
-                        'desc'     => __( 'Choose Footer Layout Type', 'reveal' ),
+                        'title'    => esc_html__( 'Select Footer Layout Type', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose Footer Layout Type', 'reveal' ),
                         //Must provide key => value pairs for select options
                         'options'  => array(
                             '1' => array(
@@ -516,7 +508,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             );
 
             $this->sections[] = array(
-                'title'            => __( 'Footer Copyright', 'reveal' ),
+                'title'            => esc_html__( 'Footer Copyright', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-footer-cpr',
                 'subsection'       => true,
@@ -525,8 +517,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-footer_copyright',
                         'type'     => 'switch',
-                        'title'    => __( 'Enable Footer Copyright?', 'reveal' ),
-                        'subtitle' => __( 'Select to enable/disable Footer Copyright', 'reveal' ),
+                        'title'    => esc_html__( 'Enable Footer Copyright?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable Footer Copyright', 'reveal' ),
                         'default'  => 1,
                         'on'       => 'Enabled',
                         'off'      => 'Disabled',
@@ -537,8 +529,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'reveal-copyright',
                         'type'     => 'textarea',
                         'required' => array( 'reveal-footer_copyright', '=', '1' ),
-                        'title'    => __( 'Footer copyright text  ', 'reveal' ),
-                        'desc'     => __( 'Please add your copyright text  ', 'reveal' ),
+                        'title'    => esc_html__( 'Footer copyright text  ', 'reveal' ),
+                        'desc'     => esc_html__( 'Please add your copyright text  ', 'reveal' ),
                         'validate' => 'html',
                         'default'  => 'HTML is allowed in here.'
                     ),
@@ -549,48 +541,39 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
 
             $this->sections[] = array(
-                    'title'            => __( 'Map Settings', 'reveal' ),
+                    'title'            => esc_html__( 'Map Settings', 'reveal' ),
                     'customizer_width' => '500px',
                     'icon'             => 'dashicons dashicons-admin-post',
                     'id'               => 'reveal-map-parent',
-                    'desc'             => 'You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="'. esc_url(__('//latlong.net/', 'reveal')) .'" target="_blank">Here</a>',
+                    'desc'             => esc_html('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="'. esc_url(__('//latlong.net/', 'reveal')) .'" target="_blank">Here</a>', 'reveal'),
                     'fields'           => array(
 
 
                         array(
-                            'title' => __('Insert Google Map API Key', 'reveal'),
+                            'title' => esc_html__('Insert Google Map API Key', 'reveal'),
                             'desc' => 'Enter Your Google Map API Key',
                             'id'    => 'reveal-google-map-api-key',                  
                             'type'  => 'text',
-                            'desc'  => 'If you don\'t have the API key yet, then <a href="'. esc_url(__('https://developers.google.com/maps/documentation/javascript/get-api-key', 'reveal')) .'" target="_blank">Click Here</a> to get a API key', 
+                            'desc'  => esc_html('If you don\'t have the API key yet, then <a href="'. esc_url(__('//developers.google.com/maps/documentation/javascript/get-api-key', 'reveal')) .'" target="_blank">Click Here</a> to get a API key', 'reveal'), 
                             'default' => ''
                         ),
 
                         array(
-                            'title' => __('Insert Map Latitude', 'reveal'),
-                            //'desc' => 'Upload image here',
+                            'title' => esc_html__('Insert Map Latitude', 'reveal'),
                             'id'    => 'reveal-google-map-latitude',
-                            
-                            //'subtitle' => __( 'Recommended image size 1920X1080 ', 'reveal' ),
-
                             'type'  => 'text',
                             'default' => '39.414269'
                         ),
 
                         array(
-                            'title' => __('Insert Map Longitude', 'reveal'),
-                            //'desc' => 'Upload image here',
+                            'title' => esc_html__('Insert Map Longitude', 'reveal'),
                             'id'    => 'reveal-google-map-longitude',
-                            
-                            //'subtitle' => __( 'Recommended image size 1920X1080 ', 'reveal' ),
-
                             'type'  => 'text',
                             'default' => '-77.410541'
                         ),
 
                         array(
-                            'title' => __('Map Zoom Level', 'reveal'),
-                            //'desc' => 'Upload image here',
+                            'title' => esc_html__('Map Zoom Level', 'reveal'),
                             'id'    => 'reveal-google-map-zoom',
                             'type'  => 'text',
                             'default' => '15'
@@ -600,16 +583,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'id'       => 'reveal-google-map-marker',
                             'type'     => 'media',
                             'url'      => true,
-                            'title'    => __( 'Upload Map Marker', 'reveal' ),
+                            'title'    => esc_html__( 'Upload Map Marker', 'reveal' ),
                             'compiler' => 'true',
-                            //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
-                            // 'desc'     => __( 'Basic media uploader with disabled URL input field.', 'reveal' ),
-                            // 'subtitle' => __( 'Upload any media using the WordPress native uploader', 'reveal' ),
                             'default'  => array( 'url' => get_template_directory_uri() . '/assets/images/admin/map-marker-1.png' ),
-                            //'hint'      => array(
-                            //    'title'     => 'Hint Title',
-                            //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                            //)
                         ),
 
                     )

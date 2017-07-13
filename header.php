@@ -71,11 +71,11 @@
 					<div class="page-title-wrapper">
 						<h1><?php if(is_home()):
 
-									echo "Blog";
+									echo esc_html__('Blog', 'reveal');
 
 								  elseif(is_404()):
 
-								  	echo "Nothing Found!";
+								  	echo esc_html__('Nothing Found!', 'reveal');
 
 								  elseif(is_archive()):
 
@@ -101,8 +101,8 @@
 							if (function_exists('reveal_custom_breadcrumbs')) {
 								// passing options as array
 								$args = array(
-								'beginningText' => 'Currently Watching: ',
-								'delimiter' 	=> ' > ',
+								'beginningText' => esc_html__('Currently Watching: ', 'reveal'),
+								'delimiter' 	=> esc_html__(' > ', 'reveal'),
 									);
 							    reveal_custom_breadcrumbs($args);
 							}

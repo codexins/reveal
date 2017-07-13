@@ -1,23 +1,23 @@
 <?php
-//wordpress custom breadcrumbs without plugin
+
 // start reveal_custom_breadcrumb
 function reveal_custom_breadcrumbs(array $options = array() ) {
 	
 	// default values assigned to options
 	$options = array_merge(array(
-    'crumbId' 		=> 'nav_crumb', // id for the breadcrumb Div
+    	'crumbId' 		=> 'nav_crumb', // id for the breadcrumb Div
 		'crumbClass' 	=> 'nav_crumb', // class for the breadcrumb Div
-		'beginningText' => 'You are here :', // text showing before breadcrumb starts
+		'beginningText' => esc_html('You are here :', 'reveal'), // text showing before breadcrumb starts
 		'showOnHome' 	=> 1,// 1 - show breadcrumbs on the homepage, 0 - don't show
 		'delimiter' 	=> ' &gt; ', // delimiter between crumbs
-		'homePageText' 	=> 'Home', // text for the 'Home' link
+		'homePageText' 	=> esc_html('Home', 'reveal'), // text for the 'Home' link
 		'showCurrent' 	=> 1, // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		'beforeTag' 	=> '<span class="current">', // tag before the current breadcrumb
 		'afterTag' 		=> '</span>', // tag after the current crumb
 		'showTitle'		=> 1 // showing post/page title or slug if title to show then 1
-   ), $options);
+   	), $options);
    
-  $crumbId = $options['crumbId'];
+  	$crumbId = $options['crumbId'];
 	$crumbClass = $options['crumbClass'];
 	$beginningText = $options['beginningText'] ;
 	$showOnHome = $options['showOnHome'];
@@ -49,7 +49,7 @@ function reveal_custom_breadcrumbs(array $options = array() ) {
 		if ( is_category() ) {
 			$thisCat = get_category(get_query_var('cat'), false);
 			if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-			echo $beforeTag . 'Archive by Category "' . single_cat_title('', false) . '"' . $afterTag;
+			echo $beforeTag . esc_html__('Archive by Category "', 'reveal') . single_cat_title('', false) . '"' . $afterTag;
 	
 	  } elseif ( is_tax() ) {
 		$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
@@ -72,7 +72,7 @@ function reveal_custom_breadcrumbs(array $options = array() ) {
 		  $queried_object = $wp_query->get_queried_object();
 		  echo $beforeTag . $queried_object->name . $afterTag;	  
 		  } elseif ( is_search() ) {
-		echo $beforeTag . 'Search results for "' . get_search_query() . '"' . $afterTag;
+		echo $beforeTag . esc_html__('Search results for "', 'reveal') . get_search_query() . '"' . $afterTag;
 	
 	  } elseif ( is_day() ) {
 		echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
@@ -181,17 +181,17 @@ function reveal_custom_breadcrumbs(array $options = array() ) {
 
 	  } elseif ( is_tag() ) {
 
-		echo $beforeTag . 'Posts Tagged "' . single_tag_title('', false) . '"' . $afterTag;
+		echo $beforeTag . esc_html__('Posts Tagged "', 'reveal') . single_tag_title('', false) . '"' . $afterTag;
 
 	  } elseif ( is_author() ) {
 		 global $author;
 		$userdata = get_userdata($author);
 
-		echo $beforeTag . 'Articles Posted by ' . $userdata->display_name . $afterTag;
+		echo $beforeTag . esc_html__('Articles Posted by ', 'reveal') . $userdata->display_name . $afterTag;
 
 	  } elseif ( is_404() ) {
 		  
-		echo $beforeTag . 'Error 404' . $afterTag;
+		echo $beforeTag . esc_html('Error 404', 'reveal') . $afterTag;
 
 	  }
 

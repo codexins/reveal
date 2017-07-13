@@ -1,7 +1,7 @@
 <?php
 
 register_nav_menus( array(
-	'main_menu' 			=> 'Primary Menu',
+	'main_menu' 	=> esc_html__('Primary Menu'),
 ) );
 
 # Use this function to dynamically display different menus if needed. 
