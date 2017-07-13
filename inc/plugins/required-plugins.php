@@ -8,42 +8,48 @@ add_action( 'tgmpa_register', 'reveal_register_js_composer_plugins' );
 
 function reveal_register_js_composer_plugins() {
 
-/**
- * Array of plugin arrays. Required keys are name and slug.
- * If the source is NOT from the .org repo, then source is also required.
- */
-$plugins = array(
+    /**
+     * Array of plugin arrays. Required keys are name and slug.
+     * If the source is NOT from the .org repo, then source is also required.
+     */
+    $plugins = array(
 
-        array(
-            'name'          => 'King Composer', // The plugin name
-            'slug'          => 'kingcomposer', // The plugin slug (typically the folder name)
-            'required'          => true, // If false, the plugin is only 'recommended' instead of required
-        ),
+            array(
+                'name'              => 'Codexin Core', // The plugin name
+                'slug'              => 'codexin-core', // The plugin slug (typically the folder name)
+                'source'            => 'http://themeitems.com/wp/plugins/codexin-core.zip',
+                'required'          => true, // If false, the plugin is only 'recommended' instead of required
+                'version'           => '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+                'force_activation'  => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+                'force_deactivation'=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+                'external_url'      => '', // If set, overrides default API URL and points to an external URL
+            ),
 
-        array(
-            'name'          => 'Meta Box', // The plugin name
-            'slug'          => 'meta-box', // The plugin slug (typically the folder name)
-            'required'          => true, // If false, the plugin is only 'recommended' instead of required
-        ),
+            array(
+                'name' => 'Redux - Options framework',
+                'slug' => 'redux-framework',
+                'required' => true,
+            ),
 
-        array(
-            'name'          => 'Codexin Core', // The plugin name
-            'slug'          => 'codexin-core', // The plugin slug (typically the folder name)
-            'source'        => 'http://themeitems.com/wp/plugins/codexin-core.zip',
-            'required'          => true, // If false, the plugin is only 'recommended' instead of required
-            'version'           => '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
-            'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
-            'force_deactivation'    => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
-            'external_url'      => '', // If set, overrides default API URL and points to an external URL
-        ),
+            array(
+                'name'              => 'King Composer', // The plugin name
+                'slug'              => 'kingcomposer', // The plugin slug (typically the folder name)
+                'required'          => true, // If false, the plugin is only 'recommended' instead of required
+            ),
 
-        array(
-            'name'          => 'Contact Form 7', // The plugin name
-            'slug'          => 'contact-form-7', // The plugin slug (typically the folder name)
-            'required'          => true, // If false, the plugin is only 'recommended' instead of required
-        )
+            array(
+                'name'              => 'Meta Box', // The plugin name
+                'slug'              => 'meta-box', // The plugin slug (typically the folder name)
+                'required'          => true, // If false, the plugin is only 'recommended' instead of required
+            ),
 
-);
+            array(
+                'name'              => 'Contact Form 7', // The plugin name
+                'slug'              => 'contact-form-7', // The plugin slug (typically the folder name)
+                'required'          => true, // If false, the plugin is only 'recommended' instead of required
+            )
+
+    );
     $config = array(
         'id'           => 'tgmpa',                 // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '',                      // Default absolute path to bundled plugins.
