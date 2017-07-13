@@ -36,9 +36,9 @@ function reveal_register_js_composer_plugins() {
         ),
 
         array(
-            'name'          => 'Reveal KC Shortcodes', // The plugin name
-            'slug'          => 'reveal-kc-shortcodes', // The plugin slug (typically the folder name)
-            'source'        => 'http://themeitems.com/wp/plugins/codexin-kc-shortcodes.zip',
+            'name'          => 'Codexin Core', // The plugin name
+            'slug'          => 'codexin-core', // The plugin slug (typically the folder name)
+            'source'        => 'http://themeitems.com/wp/plugins/codexin-core.zip',
             'required'          => true, // If false, the plugin is only 'recommended' instead of required
             'version'           => '1.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
             'force_activation'      => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
