@@ -553,7 +553,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     'customizer_width' => '500px',
                     'icon'             => 'dashicons dashicons-admin-post',
                     'id'               => 'reveal-map-parent',
-                    'desc'             => 'You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address here <a href="http://www.latlong.net/" target="_blank">http://www.latlong.net/</a>',
+                    'desc'             => 'You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="'. esc_url(__('//latlong.net/', 'reveal')) .'" target="_blank">Here</a>',
                     'fields'           => array(
 
 
@@ -562,7 +562,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'desc' => 'Enter Your Google Map API Key',
                             'id'    => 'reveal-google-map-api-key',                  
                             'type'  => 'text',
-                            'desc'  => 'If you don\'t have the API key yet, then <a href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="_blank">Click Here</a> to get a API key', 
+                            'desc'  => 'If you don\'t have the API key yet, then <a href="'. esc_url(__('https://developers.google.com/maps/documentation/javascript/get-api-key', 'reveal')) .'" target="_blank">Click Here</a> to get a API key', 
                             'default' => ''
                         ),
 
