@@ -545,7 +545,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     'customizer_width' => '500px',
                     'icon'             => 'dashicons dashicons-admin-post',
                     'id'               => 'reveal-map-parent',
-                    'desc'             => esc_html__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="'. esc_url(__('//latlong.net/', 'reveal')) .'" target="_blank">Here</a>', 'reveal'),
+                    'desc'             => sprintf(esc_html__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="'. esc_url('%s') .'" target="_blank">Here</a>', 'reveal'), '//latlong.net/'),
                     'fields'           => array(
 
 
@@ -554,7 +554,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'desc' => 'Enter Your Google Map API Key',
                             'id'    => 'reveal-google-map-api-key',                  
                             'type'  => 'text',
-                            'desc'  => esc_html__('If you don\'t have the API key yet, then <a href="'. esc_url(__('//developers.google.com/maps/documentation/javascript/get-api-key', 'reveal')) .'" target="_blank">Click Here</a> to get a API key', 'reveal'), 
+                            'desc'  => sprintf(esc_html__('If you don\'t have the API key yet, then <a href="'. esc_url('%s') .'" target="_blank">Click Here</a> to get a API key', 'reveal'), '//developers.google.com/maps/documentation/javascript/get-api-key'), 
                             'default' => ''
                         ),
 
