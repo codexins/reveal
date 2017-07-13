@@ -50,9 +50,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 // Version that appears at the top of your panel
                 'menu_type' => 'menu',
                 //Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
-                'allow_sub_menu' => false,
+                'allow_sub_menu' => true,
                 // Show the sections below the admin menu item or not
-                'menu_title' => esc_html__('Theme Options', 'reveal'),
+                'menu_title' => esc_html__('Reveal Options', 'reveal'),
 
                 'page_title' => $this->theme->get('Name') . ' ' . esc_html__('Theme Options', 'reveal'),
                 // You will need to generate a Google API key to use this feature.
@@ -78,25 +78,25 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 // Show the time the page took to load, etc
                 'update_notice' => false,
                 // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
-                'customizer' => false,
+                'customizer' => true,
                 // Enable basic customizer support
                 //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
                 //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
 
                 // OPTIONAL -> Give you extra features
-                'page_priority' => 61,
+                'page_priority' => 99,
                 // Order where the menu appears in the admin area. If there is any conflict, something will not show. Warning.
                 'page_parent' => 'themes.php',
                 // For a full list of options, visit: http://codex.wordpress.org/Function_Reference/add_submenu_page#Parameters
                 'page_permissions' => 'manage_options',
                 // Permissions needed to access the options panel.
-                'menu_icon' => 'dashicons-art',
+                'menu_icon' => 'dashicons-welcome-widgets-menus',
                 // Specify a custom URL to an icon
                 'last_tab' => '',
                 // Force your panel to always open to a specific tab (by id)
                 'page_icon' => 'icon-themes',
                 // Icon displayed in the admin panel next to your menu_title
-                'page_slug' => 'theme_options',
+                'page_slug' => 'reveal',
                 // Page slug used to denote the panel
                 'save_defaults' => true,
                 // On load save the defaults to DB before user clicks save or not
@@ -112,9 +112,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'output' => true,
                 // Global shut-off for dynamic CSS output by the framework. Will also disable google fonts output
                 'output_tag' => true,
-                // Allows dynamic CSS to be generated for customizer and google fonts, but stops the dynamic CSS from going to the head
-                'footer_credit'     => esc_html__('If you like CruxStore please leave us a &#9734;&#9734;&#9734;&#9734;&#9734; rating. A huge thank you from KiteThemes in advance!', 'reveal'),
-
                 // FUTURE -> Not in use yet, but reserved or partially implemented. Use at your own risk.
                 'database' => '',
                 // possible: options, theme_mods, theme_mods_expanded, transient. Not fully functional, warning!

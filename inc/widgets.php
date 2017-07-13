@@ -670,7 +670,7 @@ class Reveal_Social_Widget extends WP_Widget {
 	// back-end display of widget
 	public function form( $instance ) {
 
-		echo '<p>'. esc_html__('In Order To Use This Widget Please Fill Up The Social Profile Information In The Social Media Section of ', 'reveal') .'<strong><a href="'. esc_url(admin_url().'admin.php?page=Reveal') .'" target="_blank">'. esc_html('Reveal: Theme Options.', 'reveal') .'</a></strong></p>';
+		echo '<p>'. esc_html__('In Order To Use This Widget Please Fill Up The Social Profile Information In The Social Media Section of ', 'reveal') .'<strong><a href="'. esc_url(admin_url().'admin.php?page=Reveal') .'" target="_blank">'. esc_html('Reveal Options.', 'reveal') .'</a></strong></p>';
 
 		echo '<p>'. esc_html('Choose The Social Profiles to be Shown:', 'reveal') .'</p>'
 

@@ -185,6 +185,12 @@ class Reveal {
 		    remove_submenu_page('tools.php','redux-about');
 		}
 
+		add_action('admin_init', 'override_redux_message', 30);
+
+		function override_redux_message() {
+		    update_option( 'ReduxFrameworkPlugin_ACTIVATED_NOTICES', []);
+		}
+
 		// Removing srcset from featured image
 		add_filter( 'max_srcset_image_width', create_function( '', 'return 1;' ) );
 
