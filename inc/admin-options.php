@@ -210,7 +210,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
-                            'line-height' => '26px',esc_html
+                            'line-height' => '26px',
                             'font-family' => 'Arial,Helvetica,sans-serif',
                             'font-weight' => 'Normal',
                         ),
@@ -228,7 +228,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',esc_html
+                            'font-family' => 'Arial,Helvetica,sans-serif',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -304,7 +304,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-header-top',
                         'type'     => 'switch',
-                        'title'    => esc_html__( 'Enable Header Top?', 'reveal' ),esc_html
+                        'title'    => esc_html__( 'Enable Header Top?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable header top', 'reveal' ),
                         'default'  => 1,
                         'on'       => 'Enabled',
