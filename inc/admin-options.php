@@ -78,7 +78,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 // Show the time the page took to load, etc
                 'update_notice' => false,
                 // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo
-                'customizer' => true,
+                'customizer' => false,
                 // Enable basic customizer support
                 //'open_expanded'     => true,                    // Allow you to start the panel in an expanded way initially.
                 //'disable_save_warn' => true,                    // Disable the save warning when a user changes a field
