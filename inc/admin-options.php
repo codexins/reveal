@@ -74,7 +74,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 // Choose an priority for the admin bar menu
                 'global_variable' => '',
                 // Set a different name for your global variable other than the opt_name
-                'dev_mode' => false,
+                'dev_mode' => true,
                 // Show the time the page took to load, etc
                 'update_notice' => false,
                 // If dev_mode is enabled, will notify developer of updated versions available in the GitHub Repo

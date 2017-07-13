@@ -179,14 +179,6 @@ class Reveal {
 		// Providing Shortcode Support on text widget
 		add_filter( 'widget_text', 'do_shortcode' );
 
-		// // include Redux framework theme options
-		// if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
-		//     require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
-		// }
-		// if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/admin-config.php' ) ) {
-		//     require_once( dirname( __FILE__ ) . '/ReduxFramework/admin-config.php' );
-		// }
-
 		// Removing 'Redux Framework' sub menu under Tools 
 		add_action( 'admin_menu', 'remove_redux_menu',12 );
 		function remove_redux_menu() {
