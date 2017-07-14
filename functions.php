@@ -222,6 +222,29 @@ class Reveal {
 		    return $html;
 		}
 
+	/**
+	 * Apply theme's stylesheet to the visual editor.
+	 *
+	 * @uses add_editor_style() Links a stylesheet to visual editor
+	 * @uses get_stylesheet_uri() Returns URI of theme stylesheet
+	 */
+		add_action( 'admin_init', 'reveal_add_editor_styles' );
+		function reveal_add_editor_styles() {
+		 add_editor_style( get_stylesheet_uri() );
+		}
+
+
+		// Adding wp_title support
+		if ( ! function_exists( '_wp_render_title_tag' ) ) {
+			add_action( 'wp_head', array( $this, 'reveal_theme_render_title' ) );
+		}
+
+		function reveal_theme_render_title() {
+			?>
+			<title><?php wp_title( '|', true, 'right' ); ?></title>
+			<?php
+		}
+
 	}
 
 }
@@ -234,12 +257,3 @@ endif;
 
 
 
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-	add_action( 'wp_head', array( $this, 'pe_theme_render_title' ) );
-}
-
-function pe_theme_render_title() {
-	?>
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-	<?php
-}
