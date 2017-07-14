@@ -173,6 +173,9 @@ class Reveal {
 
 	public function reveal_add_actions() {
 
+		// Providing Shortcode Support on text widget
+		add_filter( 'widget_text', 'do_shortcode' );
+
 		// Removing 'Redux Framework' sub menu under Tools 
 		add_action( 'admin_menu', 'remove_redux_menu',12 );
 		function remove_redux_menu() {
