@@ -436,7 +436,8 @@ class Reveal_Instagram_Widget extends WP_Widget {
             <?php
                 printf( '%s', $args['before_widget'] );
                 printf( '%s' . esc_html( $title ) . '%s', $args['before_title'], $args['after_title'] );
-                $ig_image_res = apply_filters( 'reveal_ig_image_res', 'thumbnail' );
+                $ig_image_lo_res = apply_filters( 'reveal_lo_image_res', 'thumbnail' );
+                $ig_image_hi_res = apply_filters( 'reveal_hi_image_res', 'standard_resolution' );
             ?>
 
             <div class="instagram-images">
@@ -444,9 +445,14 @@ class Reveal_Instagram_Widget extends WP_Widget {
             <?php 
 	            // Looping through the parameters
                 foreach( $cx_instagram['data'] as $key => $ig_image ) {
-                    echo apply_filters( 'reveal_ig_image_html', sprintf( '<a href="%1$s" target="_blank"><img src="%2$s" alt="%3$s" title="%3$s" /><div class="hoverable"></div></a>',
-                        $ig_image['link'],
-                        $ig_image['images'][ $ig_image_res ]['url'],
+                    echo apply_filters( 'reveal_ig_image_html', sprintf( 
+                    	'<a href="%1$s" class="cx-image-link">
+                    		<img src="%2$s" alt="%3$s" title="%3$s" />
+                    		<div class="hoverable"></div>
+                		</a>',
+                        // $ig_image['link'],
+						$ig_image['images'][ $ig_image_hi_res ]['url'],
+                        $ig_image['images'][ $ig_image_lo_res ]['url'],
                         $ig_image['caption']['text']
                     ), $ig_image );
                 }

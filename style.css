@@ -1509,3 +1509,29 @@ a.more:hover {
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+
+
+
+/* Instagram widget magnific popup styles */
+.instagram-zoom .mfp-container,
+.instagram-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+.instagram-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.instagram-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.instagram-zoom.mfp-removing .mfp-container,
+.instagram-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
