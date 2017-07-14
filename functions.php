@@ -230,7 +230,7 @@ class Reveal {
 	 */
 		add_action( 'admin_init', 'reveal_add_editor_styles' );
 		function reveal_add_editor_styles() {
-		 add_editor_style( get_stylesheet_uri() );
+		 add_editor_style();
 		}
 
 

@@ -6,12 +6,12 @@ function reveal_comment_function($comment, $args, $depth) {
    <div id="comment-<?php comment_ID(); ?>">
 
     <div class="comment-author vcard">
-     <?php echo get_avatar($comment,$size='48',$default=esc_url(get_template_directory_uri().'/assets/images/user-avatar.png' )); ?>
+     <?php echo get_avatar($comment,$size='48'); ?>
     </div>
 
     <div class="comment-info">
 
-      <?php printf(esc_html__('<span class="fn">%s</span>', 'reveal'), get_comment_author_link()) ?>
+      <?php printf('<span class="fn">%s</span>', get_comment_author_link()) ?>
 
       <div class="comment-meta"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(esc_html__('%1$s at %2$s', 'reveal'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(esc_html__('(Edit)', 'reveal'),'  ','') ?> -- </div>
 
