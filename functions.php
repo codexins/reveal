@@ -161,6 +161,36 @@ class Reveal {
 		add_image_size('about-mini-image', 360, 240, true);
 		add_image_size('portfolio-mini-image', 380, 309, true);
 
+
+		/*
+		 * Adding custom header support
+		 * to the theme
+		 */		
+		$reveal_args = array(
+		    'flex-width'    => true,
+		    'width'         => 980,
+		    'flex-height'   => true,
+		    'height'        => 200,
+		    'default-image' => get_template_directory_uri() . '/assets/images/default-header.jpg',
+		);
+		add_theme_support( 'custom-header', $reveal_args );
+
+		/*
+		 * Adding custom background support
+		 * to the theme
+		 */		
+		$defaults = array(
+			'default-color'          => '',
+			'default-image'          => '',
+			'default-repeat'         => '',
+			'default-position-x'     => '',
+			'default-attachment'     => '',
+			'wp-head-callback'       => '_custom_background_cb',
+			'admin-head-callback'    => '',
+			'admin-preview-callback' => ''
+		);
+		add_theme_support( 'custom-background', $defaults );
+
 	}
 
 	/**

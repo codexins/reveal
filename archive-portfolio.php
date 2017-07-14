@@ -45,7 +45,7 @@ get_header(); ?>
 		                'post_type' => 'portfolio',
 		                'posts_per_page' => -1,
 		                'orderby' => 'date',
-                    	'order' => 'DESC'
+                    'order' => 'DESC'
 		                );
 
 		            $loop = new WP_Query($args);
