@@ -125,6 +125,23 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
         {
 
             $this->sections[] = array(
+                'title'            => esc_html__( 'General Settings', 'reveal' ),
+                'id'               => 'reveal-general-settings',
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'fields'           => array(
+                    array(
+                        'id'       => 'reveal-smooth-scroll',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable Smooth Scroll', 'reveal' ),
+                        'subtitle' => esc_html__( 'This option will enable smooth scroll through the pages of your site', 'reveal' ),
+                        'default'  => true,
+                    ),
+
+                  )
+            );
+
+            $this->sections[] = array(
                 'title'  => esc_html__( 'Typography', 'reveal' ),
                 'id'     => 'reveal-typography',
                 'desc'   => esc_html__( 'Theme Typography Section ', 'reveal' ),
