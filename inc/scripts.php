@@ -1,6 +1,4 @@
 <?php
-
-
 add_action( 'wp_enqueue_scripts', 'reveal_google_fonts' );
 function reveal_google_fonts () {
 	
@@ -59,6 +57,11 @@ function reveal_scripts () {
 	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_script( 'parallax-js', get_template_directory_uri() . '/assets/js/parallax.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_script( 'magnific-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array ( 'jquery' ), 1.1, true);
+	
+	$smoothscroll = reveal_option('reveal-smooth-scroll');
+	if($smoothscroll == true):
+		wp_enqueue_script( 'smoothscroll-js', get_template_directory_uri() . '/assets/js/smoothScroll.js', array ( 'jquery' ), 1.1, true);
+	endif;
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
