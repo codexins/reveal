@@ -545,6 +545,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     'customizer_width' => '500px',
                     'icon'             => 'dashicons dashicons-admin-post',
                     'id'               => 'reveal-map-parent',
+
                     'desc'             => sprintf(__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="%s" target="_blank">Here</a>', 'reveal'), esc_url('//latlong.net/')),
                     'fields'           => array(
 
