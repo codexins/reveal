@@ -54,7 +54,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 // Show the sections below the admin menu item or not
                 'menu_title' => esc_html__('Reveal Options', 'reveal'),
 
-                'page_title' => $this->theme->get('Name') . ' ' . esc_html__('Theme Options', 'reveal'),
+                'page_title' => $this->theme->get('Name') . ' ' . esc_html__('Reveal Options', 'reveal'),
                 // You will need to generate a Google API key to use this feature.
                 // Please visit: https://developers.google.com/fonts/docs/developer_api#Auth
                 // You will need to generate a Google API key to use this feature.
@@ -159,7 +159,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',
+                            'font-family' => '\'Roboto\', sans-serif',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -182,7 +182,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         //'preview'       => false, // Disable the previewer
                         //'all_styles'  => true,
                         // Enable all Google Font style/weight variations to be added to the page
-                        'output'      => array( 'h2' ),
+                        'output'      => array( 'h2', '.secondary-title' ),
                         'google'      => true,
                         // An array of CSS selectors to apply this font style to dynamically
                         //'compiler'    => array( 'h2' ),
@@ -192,10 +192,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
                         'default'     => array(
                             'color'       => '#333',
-                            'font-style'  => '700',
-                            'font-family' => 'Abel',
-                            'font-size'   => '33px',
-                            'line-height' => '40px'
+                            'font-weight'  => 'bold',
+                            'font-family' => '\'Montserrat\', sans-serif',
+                            'font-size'   => '30px',
+                            'line-height' => ''
                         ),
                     ),
 
@@ -211,7 +211,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',
+                            'font-family' => '\'Montserrat\', sans-serif',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -228,7 +228,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',
+                            'font-family' => '\'Montserrat\', sans-serif',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -245,7 +245,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',
+                            'font-family' => '\'Montserrat\', sans-serif',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -262,7 +262,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => 'Arial,Helvetica,sans-serif',
+                            'font-family' => '\'Montserrat\', sans-serif',
                             'font-weight' => 'Normal',
                         ),
                     ),
