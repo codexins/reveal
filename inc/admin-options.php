@@ -600,6 +600,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
     $reduxConfig = new Codexin_Admin();
 
 } else {
-    echo __("The class named Redux_Framework_sample_config has already been called. <strong>Developers, you need to prefix this class with your company name or you'll run into problems!</strong>");
+    echo __('The class named Redux_Framework_sample_config has already been called. <strong>Developers, you need to prefix this class with your company name or you\'ll run into problems!</strong>', 'reveal');
 }
 
