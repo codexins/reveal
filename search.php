@@ -33,20 +33,7 @@ get_header(); ?>
 
 							endwhile; ?>
 
-							<?php 
-								$prev_link = get_previous_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
-								$next_link = get_next_posts_link(esc_html__('Older Posts &raquo;', 'reveal'));
-
-							 ?>
-							<div class="posts-nav" class="section">
-								<?php if($prev_link): ?>
-									<div class="nav-next alignleft"><?php echo $prev_link; ?></div>
-								<?php endif; ?>
-								<?php if($next_link): ?>
-									<div class="nav-previous alignright"><?php echo $next_link; ?></div>
-								<?php endif; ?>
-								
-							</div>
+							<?php reveal_posts_link(); ?>
 
 						<?php else :
 

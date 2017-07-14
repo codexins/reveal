@@ -21,7 +21,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <?php wp_head(); ?>
-
 </head>
 
 
@@ -96,16 +95,13 @@
 						<div class="breadcrumbs-wrapper">
 							<p>
 							<?php $reveal_bc = reveal_option('reveal-bcrumbs'); ?>
-							<?php if( $reveal_bc == 1 ): ?>
 							<?php 
+
+							if( $reveal_bc == 1 ): 
 							if (function_exists('reveal_custom_breadcrumbs')) {
-								// passing options as array
-								$args = array(
-								'beginningText' => esc_html__('Currently Watching: ', 'reveal'),
-								'delimiter' 	=> esc_html__(' > ', 'reveal'),
-									);
-							    reveal_custom_breadcrumbs($args);
+								echo reveal_custom_breadcrumbs();
 							}
+
 							?>
 						<?php endif; ?>
 							</p>

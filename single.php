@@ -26,22 +26,7 @@ get_header(); ?>
 								reveal_set_post_views(get_the_ID());
 								get_template_part( 'template-parts/content', get_post_format()  ); ?>
 
-							<?php 
-								$prev_link = get_previous_post_link('%link', esc_html__('Previous Post &raquo;', 'reveal'));
-								$next_link = get_next_post_link('%link', esc_html__('&laquo; Next Post', 'reveal'));
-							 ?>
-
-								<div class="posts-nav" class="section">
-
-									<?php if($next_link): ?>
-									<div class="nav-next alignleft"><?php echo $next_link; ?></div>
-									<?php endif; ?>
-
-									<?php if($prev_link): ?>
-									<div class="nav-previous alignright"><?php echo $prev_link; ?></div>
-									<?php endif; ?>
-
-								</div>
+							<?php reveal_post_link(); ?>
 
 							<?php	// If comments are open or we have at least one comment, load up the comment template.
 								if ( comments_open() || get_comments_number() ) :

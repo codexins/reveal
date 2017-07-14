@@ -207,7 +207,7 @@ class Reveal_Recent_Posts extends WP_Widget {
 			$output .= '<input type="number" class="tiny-text" id="' . esc_attr( $this->get_field_id( 'num_posts' ) ) . '" name="' . esc_attr( $this->get_field_name( 'num_posts' ) ) . '" value="' . esc_attr( $num_posts ) . '"';
 		$output .= '</p>';
 		
-		echo $output;
+		printf( '%s', $output);
 		
 	}
 
@@ -235,11 +235,11 @@ class Reveal_Recent_Posts extends WP_Widget {
 		
 		$posts_query = new WP_Query( $posts_args );
 		
-		echo $args[ 'before_widget' ];
+		printf( '%s', $args[ 'before_widget' ] );
 		
 		if( !empty( $instance[ 'title' ] ) ):
 			
-			echo $args[ 'before_title' ] . apply_filters( 'widget_title', $instance[ 'title' ] ) . $args[ 'after_title' ];
+			printf( '%s' . apply_filters( 'widget_title', $instance[ 'title' ] ) . '%s', $args[ 'before_title' ], $args[ 'after_title' ]);
 			
 		endif;
 		
@@ -267,7 +267,7 @@ class Reveal_Recent_Posts extends WP_Widget {
 
 		wp_reset_postdata();
 		
-		echo $args[ 'after_widget' ];
+		printf( '%s', $args[ 'after_widget' ] );
 
 	}
 	
@@ -315,7 +315,7 @@ class Reveal_Popular_Posts extends WP_Widget {
 			$output .= '<input type="number" class="widefat" id="' . esc_attr( $this->get_field_id( 'num_posts' ) ) . '" name="' . esc_attr( $this->get_field_name( 'num_posts' ) ) . '" value="' . esc_attr( $num_posts ) . '"';
 		$output .= '</p>';
 		
-		echo $output;
+		printf( '%s', $output);
 		
 	}
 	
@@ -345,11 +345,11 @@ class Reveal_Popular_Posts extends WP_Widget {
 		
 		$posts_query = new WP_Query( $posts_args );
 		
-		echo $args[ 'before_widget' ];
+		printf( '%s', $args[ 'before_widget' ] );
 		
 		if( !empty( $instance[ 'title' ] ) ):
 			
-			echo $args[ 'before_title' ] . apply_filters( 'widget_title', $instance[ 'title' ] ) . $args[ 'after_title' ];
+			printf( '%s' . apply_filters( 'widget_title', $instance[ 'title' ] ) . '%s', $args[ 'before_title' ], $args[ 'after_title' ]);
 			
 		endif;
 		
@@ -381,7 +381,7 @@ class Reveal_Popular_Posts extends WP_Widget {
 
 		wp_reset_postdata();
 		
-		echo $args[ 'after_widget' ];
+		printf( '%s', $args[ 'after_widget' ] );
 		
 	}
 	
@@ -434,8 +434,8 @@ class Reveal_Instagram_Widget extends WP_Widget {
         if ( false !== $cx_instagram ) : ?>
 
             <?php
-                echo $args['before_widget'];
-                echo $args['before_title'] . esc_html( $title ) . $args['after_title'];
+                printf( '%s', $args['before_widget'] );
+                printf( '%s' . esc_html( $title ) . '%s', $args['before_title'], $args['after_title'] );
                 $ig_image_res = apply_filters( 'reveal_ig_image_res', 'thumbnail' );
             ?>
 
@@ -454,7 +454,7 @@ class Reveal_Instagram_Widget extends WP_Widget {
             </div>
             <a href="https://instagram.com/<?php echo esc_html( $username ); ?>" class='more' target='_blank'><i><?php printf( esc_html__( 'Follow %1$s on Instagram', 'reveal' ), esc_html( $username ) ); ?></i></a>
 
-            <?php echo $args['after_widget']; ?>
+            <?php printf( '%s', $args['after_widget'] ); ?>
 
         <?php elseif( ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) && ( defined( 'WP_DEBUG_DISPLAY' ) && false !== WP_DEBUG_DISPLAY ) ): ?>
             <div id="message" class="error"><p><?php esc_html_e( 'Error: We were unable to fetch your instagram feed.', 'reveal' ); ?></p></div>
@@ -753,7 +753,7 @@ class Reveal_Social_Widget extends WP_Widget {
 		$cx_skype 		= reveal_option('reveal-skype');	
 		$cx_linkedin 	= reveal_option('reveal-linkedin');	
 		
-		echo $args['before_widget']; ?>
+		printf( '%s', $args['before_widget'] ); ?>
 
 		<div class="footer-left">
 			<p><span class="italic">Follow Us:</span>
@@ -798,7 +798,7 @@ class Reveal_Social_Widget extends WP_Widget {
 		</div>
 
 		<?php
-		echo $args['after_widget'];
+		printf( '%s', $args['after_widget'] );
 
 	}
 	

@@ -1,206 +1,218 @@
 <?php
 
-// start reveal_custom_breadcrumb
-function reveal_custom_breadcrumbs(array $options = array() ) {
-	
-	// default values assigned to options
-	$options = array_merge(array(
-    	'crumbId' 		=> 'nav_crumb', // id for the breadcrumb Div
-		'crumbClass' 	=> 'nav_crumb', // class for the breadcrumb Div
-		'beginningText' => esc_html('You are here :', 'reveal'), // text showing before breadcrumb starts
-		'showOnHome' 	=> 1,// 1 - show breadcrumbs on the homepage, 0 - don't show
-		'delimiter' 	=> ' &gt; ', // delimiter between crumbs
-		'homePageText' 	=> esc_html('Home', 'reveal'), // text for the 'Home' link
-		'showCurrent' 	=> 1, // 1 - show current post/page title in breadcrumbs, 0 - don't show
-		'beforeTag' 	=> '<span class="current">', // tag before the current breadcrumb
-		'afterTag' 		=> '</span>', // tag after the current crumb
-		'showTitle'		=> 1 // showing post/page title or slug if title to show then 1
-   	), $options);
-   
-  	$crumbId = $options['crumbId'];
-	$crumbClass = $options['crumbClass'];
-	$beginningText = $options['beginningText'] ;
-	$showOnHome = $options['showOnHome'];
-	$delimiter = $options['delimiter']; 
-	$homePageText = $options['homePageText']; 
-	$showCurrent = $options['showCurrent']; 
-	$beforeTag = $options['beforeTag']; 
-	$afterTag = $options['afterTag']; 
-	$showTitle =  $options['showTitle']; 
-	
-	global $post;
+/*
+ * BREADCRUMBS
+ *************************************************************/
+function reveal_custom_breadcrumbs()
+{
+    // Set variables for later use
+    $home_link        = home_url('/');
+    $home_text        = esc_html__( 'Home' , 'reveal');
+    $link_before      = '<span typeof="v:Breadcrumb">';
+    $link_after       = '</span>';
+    $link_attr        = ' rel="v:url" property="v:title"';
+    $link             = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
+    $delimiter        = ' <i class="fa fa-angle-right"></i> ';              // Delimiter between crumbs
+    $before           = '<span class="current">'; // Tag before the current crumb
+    $after            = '</span>';                // Tag after the current crumb
+    $page_addon       = '';                       // Adds the page number if the query is paged
+    $breadcrumb_trail = '';
+    $category_links   = '';
 
-	$wp_query = $GLOBALS['wp_query'];
+    /** 
+     * Set our own $wp_the_query variable. Do not use the global variable version due to 
+     * reliability
+     */
+    $wp_the_query   = $GLOBALS['wp_the_query'];
+    $queried_object = $wp_the_query->get_queried_object();
 
-	$homeLink = esc_url(home_url());
-	
-	echo '<div id="'.$crumbId.'" class="'.$crumbClass.'" >'.$beginningText;
-	
-	if (is_home() || is_front_page()) {
-	
-		if ($showOnHome == 1)
+    // Handle single post requests which includes single pages, posts and attatchments
+    if ( is_singular() ) 
+    {
+        /** 
+         * Set our own $post variable. Do not use the global variable version due to 
+         * reliability. We will set $post_object variable to $GLOBALS['wp_the_query']
+         */
+        $post_object = sanitize_post( $queried_object );
 
-			echo $beforeTag . $homePageText . $afterTag;
+        // Set variables 
+        $title          = apply_filters( 'the_title', $post_object->post_title );
+        $parent         = $post_object->post_parent;
+        $post_type      = $post_object->post_type;
+        $post_id        = $post_object->ID;
+        $post_link      = $before . $title . $after;
+        $parent_string  = '';
+        $post_type_link = '';
 
-	} else { 
-	
-		echo '<a href="' . $homeLink . '">' . $homePageText . '</a> ' . $delimiter . ' ';
-	
-		if ( is_category() ) {
-			$thisCat = get_category(get_query_var('cat'), false);
-			if ($thisCat->parent != 0) echo get_category_parents($thisCat->parent, TRUE, ' ' . $delimiter . ' ');
-			echo $beforeTag . esc_html__('Archive by Category "', 'reveal') . single_cat_title('', false) . '"' . $afterTag;
-	
-	  } elseif ( is_tax() ) {
-		$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-		$parents = array();
-		$parent = $term->parent;
-		while ( $parent ) {
-		  $parents[] = $parent;
-		  $new_parent = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ) );
-		  $parent = $new_parent->parent;
+        if ( 'post' === $post_type ) 
+        {
+            // Get the post categories
+            $categories = get_the_category( $post_id );
+            if ( $categories ) {
+                // Lets grab the first category
+                $category  = $categories[0];
 
-		}		  
-		  if ( ! empty( $parents ) ) {
-			  $parents = array_reverse( $parents );
-			  foreach ( $parents as $parent ) {
-				  $item = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ));
-				  echo   '<a href="' . get_term_link( $item->slug, get_query_var( 'taxonomy' ) ) . '">' . $item->name . '</a>'  . $delimiter;
-			  }
-		  }
+                $category_links = get_category_parents( $category, true, $delimiter );
+                $category_links = str_replace( '<a',   $link_before . '<a' . $link_attr, $category_links );
+                $category_links = str_replace( '</a>', '</a>' . $link_after,             $category_links );
+            }
+        }
 
-		  $queried_object = $wp_query->get_queried_object();
-		  echo $beforeTag . $queried_object->name . $afterTag;	  
-		  } elseif ( is_search() ) {
-		echo $beforeTag . esc_html__('Search results for "', 'reveal') . get_search_query() . '"' . $afterTag;
-	
-	  } elseif ( is_day() ) {
-		echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-		echo '<a href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
-		echo $beforeTag . get_the_time('d') . $afterTag;
-	
-	  } elseif ( is_month() ) {
-		echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
-		echo $beforeTag . get_the_time('F') . $afterTag;
-	
-	  } elseif ( is_year() ) {
-		echo $beforeTag . get_the_time('Y') . $afterTag;
-	
-	  } elseif ( is_single() && !is_attachment() ) {
-		  
-		     if($showTitle)
-			   $title = get_the_title();
-			  else
-			  $title =  $post->post_name;
-		  
-					 if ( get_post_type() == 'product' ) { // it is for custom post type with custome taxonomies like
-					 //Breadcrumb would be : Home Furnishings > Bed Covers > Cotton Quilt King Kantha Bedspread 
-					 // product = Cotton Quilt King Kantha Bedspread, custom taxonomy product_cat (Home Furnishings -> Bed Covers)
-					// show  product with category on single page
-					  if ( $terms = wp_get_object_terms( $post->ID, 'product_cat' ) ) {
-		
-						  $term = current( $terms );
-		
-						  $parents = array();
-		
-						  $parent = $term->parent;
-						  while ( $parent ) {
-		
-							  $parents[] = $parent;
-		
-							  $new_parent = get_term_by( 'id', $parent, 'product_cat' );
-		
-							  $parent = $new_parent->parent;
-		
-						  }
-						  if ( ! empty( $parents ) ) {
-		
-							  $parents = array_reverse($parents);
-		
-							  foreach ( $parents as $parent ) {
-		
-								  $item = get_term_by( 'id', $parent, 'product_cat');
-		
-								  echo  '<a href="' . get_term_link( $item->slug, 'product_cat' ) . '">' . $item->name . '</a>'  . $delimiter;
-		
-							  }
-		
-						  }
-						  echo  '<a href="' . get_term_link( $term->slug, 'product_cat' ) . '">' . $term->name . '</a>'  . $delimiter;
-					  }
-					  echo $beforeTag . $title . $afterTag;
-				  }  elseif ( get_post_type() != 'post' ) {
-				  $post_type = get_post_type_object(get_post_type());
-				  $slug = $post_type->rewrite;
-				  echo '<a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a>';
-				  if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $beforeTag . $title . $afterTag;
-				} else {
-				  $cat = get_the_category(); $cat = $cat[0];
-				  $cats = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-				  if ($showCurrent == 0) $cats = preg_replace("#^(.+)\s$delimiter\s$#", "$1", $cats);
-				  echo $cats;
-				  if ($showCurrent == 1) echo $beforeTag . $title . $afterTag;
-		
-				}
+        if ( !in_array( $post_type, ['post', 'page', 'attachment'] ) )
+        {
+            $post_type_object = get_post_type_object( $post_type );
+            $archive_link     = esc_url( get_post_type_archive_link( $post_type ) );
 
-	  } elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
-		  
-		$post_type = get_post_type_object(get_post_type());
-		
-		echo $beforeTag . $post_type->labels->singular_name . $afterTag;
-			 
-	 } elseif ( is_attachment() ) {
-			 
-		$parent = get_post($post->post_parent);
-		$cat = get_the_category($parent->ID); $cat = $cat[0];
-		echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-		echo '<a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a>';
-		if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $beforeTag . get_the_title() . $afterTag;	
-		  
-		} elseif ( is_page() && !$post->post_parent ) {
-			$title =($showTitle)? get_the_title():$post->post_name;
-			  
-		if ($showCurrent == 1) echo $beforeTag .  $title . $afterTag;
+            $post_type_link   = sprintf( $link, $archive_link, $post_type_object->labels->singular_name );
+        }
 
-	  } elseif ( is_page() && $post->post_parent ) {
-		$parent_id  = $post->post_parent;
-		$breadcrumbs = array();
-		while ($parent_id) {
-		  $page = get_page($parent_id);
-		  $breadcrumbs[] = '<a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
-		  $parent_id  = $page->post_parent;
-		}
-		$breadcrumbs = array_reverse($breadcrumbs);
-		for ($i = 0; $i < count($breadcrumbs); $i++) {
-		  echo $breadcrumbs[$i];
-		  if ($i != count($breadcrumbs)-1) echo ' ' . $delimiter . ' ';
-		}
-			$title =($showTitle)? get_the_title():$post->post_name;
-		   
-	if ($showCurrent == 1) echo ' ' . $delimiter . ' ' . $beforeTag . $title . $afterTag;
+        // Get post parents if $parent !== 0
+        if ( 0 !== $parent ) 
+        {
+            $parent_links = [];
+            while ( $parent ) {
+                $post_parent = get_post( $parent );
 
-	  } elseif ( is_tag() ) {
+                $parent_links[] = sprintf( $link, esc_url( get_permalink( $post_parent->ID ) ), get_the_title( $post_parent->ID ) );
 
-		echo $beforeTag . esc_html__('Posts Tagged "', 'reveal') . single_tag_title('', false) . '"' . $afterTag;
+                $parent = $post_parent->post_parent;
+            }
 
-	  } elseif ( is_author() ) {
-		 global $author;
-		$userdata = get_userdata($author);
+            $parent_links = array_reverse( $parent_links );
 
-		echo $beforeTag . esc_html__('Articles Posted by ', 'reveal') . $userdata->display_name . $afterTag;
+            $parent_string = implode( $delimiter, $parent_links );
+        }
 
-	  } elseif ( is_404() ) {
-		  
-		echo $beforeTag . esc_html('Error 404', 'reveal') . $afterTag;
+        // Lets build the breadcrumb trail
+        if ( $parent_string ) {
+            $breadcrumb_trail = $parent_string . $delimiter . $post_link;
+        } else {
+            $breadcrumb_trail = $post_link;
+        }
 
-	  }
+        if ( $post_type_link )
+            $breadcrumb_trail = $post_type_link . $delimiter . $breadcrumb_trail;
 
-	  if ( get_query_var('paged') ) {
-		if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() || is_tax() ) echo ' (';
-		echo esc_html__('Page', 'reveal') . ' ' . get_query_var('paged');
-		if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() || is_tax() ) echo ')';
-	  }
-	}
-	echo '</div>';
-  }
-// end reveal_custom_breadcrumb
+        if ( $category_links )
+            $breadcrumb_trail = $category_links . $breadcrumb_trail;
+    }
+
+    // Handle archives which includes category-, tag-, taxonomy-, date-, custom post type archives and author archives
+    if( is_archive() )
+    {
+        if (    is_category()
+             || is_tag()
+             || is_tax()
+        ) {
+            // Set the variables for this section
+            $term_object        = get_term( $queried_object );
+            $taxonomy           = $term_object->taxonomy;
+            $term_id            = $term_object->term_id;
+            $term_name          = $term_object->name;
+            $term_parent        = $term_object->parent;
+            $taxonomy_object    = get_taxonomy( $taxonomy );
+            $current_term_link  = $before . $taxonomy_object->labels->singular_name . ': ' . $term_name . $after;
+            $parent_term_string = '';
+
+            if ( 0 !== $term_parent )
+            {
+                // Get all the current term ancestors
+                $parent_term_links = [];
+                while ( $term_parent ) {
+                    $term = get_term( $term_parent, $taxonomy );
+
+                    $parent_term_links[] = sprintf( $link, esc_url( get_term_link( $term ) ), $term->name );
+
+                    $term_parent = $term->parent;
+                }
+
+                $parent_term_links  = array_reverse( $parent_term_links );
+                $parent_term_string = implode( $delimiter, $parent_term_links );
+            }
+
+            if ( $parent_term_string ) {
+                $breadcrumb_trail = $parent_term_string . $delimiter . $current_term_link;
+            } else {
+                $breadcrumb_trail = $current_term_link;
+            }
+
+        } elseif ( is_author() ) {
+
+            $breadcrumb_trail = esc_html__( 'Articles Posted by ', 'reveal') .  $before . $queried_object->data->display_name . $after;
+
+        } elseif ( is_date() ) {
+            // Set default variables
+            $year     = $wp_the_query->query_vars['year'];
+            $monthnum = $wp_the_query->query_vars['monthnum'];
+            $day      = $wp_the_query->query_vars['day'];
+
+            // Get the month name if $monthnum has a value
+            if ( $monthnum ) {
+                $date_time  = DateTime::createFromFormat( '!m', $monthnum );
+                $month_name = $date_time->format( 'F' );
+            }
+
+            if ( is_year() ) {
+
+                $breadcrumb_trail = $before . $year . $after;
+
+            } elseif( is_month() ) {
+
+                $year_link        = sprintf( $link, esc_url( get_year_link( $year ) ), $year );
+
+                $breadcrumb_trail = $year_link . $delimiter . $before . $month_name . $after;
+
+            } elseif( is_day() ) {
+
+                $year_link        = sprintf( $link, esc_url( get_year_link( $year ) ),             $year       );
+                $month_link       = sprintf( $link, esc_url( get_month_link( $year, $monthnum ) ), $month_name );
+
+                $breadcrumb_trail = $year_link . $delimiter . $month_link . $delimiter . $before . $day . $after;
+            }
+
+        } elseif ( is_post_type_archive() ) {
+
+            $post_type        = $wp_the_query->query_vars['post_type'];
+            $post_type_object = get_post_type_object( $post_type );
+
+            $breadcrumb_trail = $before . $post_type_object->labels->singular_name . $after;
+
+        }
+    }   
+
+    // Handle the search page
+    if ( is_search() ) {
+        $breadcrumb_trail = esc_html__( 'Search query for: ', 'reveal' ) . $before . get_search_query() . $after;
+    }
+
+    // Handle 404's
+    if ( is_404() ) {
+        $breadcrumb_trail = $before . esc_html__( 'Error 404', 'reveal' ) . $after;
+    }
+
+    // Handle paged pages
+    if ( is_paged() ) {
+        $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
+        $page_addon   = $before . sprintf( esc_html__( ' ( Page %s )', 'reveal' ), number_format_i18n( $current_page ) ) . $after;
+    }
+
+    $breadcrumb_output_link  = '';
+    $breadcrumb_output_link .= '<div class="breadcrumb">';
+    if (    is_home()
+         || is_front_page()
+    ) {
+        // Do not show breadcrumbs on page one of home and frontpage
+        if ( is_paged() ) {
+            $breadcrumb_output_link .= '<a href="' . $home_link . '">' . $home_text . '</a>';
+            $breadcrumb_output_link .= $page_addon;
+        }
+    } else {
+        $breadcrumb_output_link .= '<a href="' . $home_link . '" rel="v:url" property="v:title">' . $home_text . '</a>';
+        $breadcrumb_output_link .= $delimiter;
+        $breadcrumb_output_link .= $breadcrumb_trail;
+        $breadcrumb_output_link .= $page_addon;
+    }
+    $breadcrumb_output_link .= '</div><!-- .breadcrumbs -->';
+
+    return $breadcrumb_output_link;
+}
