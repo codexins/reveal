@@ -153,47 +153,76 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Body Font', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify the body font properties.', 'reveal' ),
                         'google'   => true,
-                        'font-backup' => true,
                         'output'   => array('body'),
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => '\'Roboto\', sans-serif',
+                            'font-family' => 'Roboto',
                             'font-weight' => 'Normal',
                         ),
                     ),
+
+                    array(
+                        'id'       => 'reveal-primary-title-typography',
+                        'type'     => 'typography',
+                        'title'    => esc_html__( 'Primary Title Typography', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify primary title font properties.', 'reveal' ),
+                        'google'   => true,
+                        'output'   => array('.primary-title'),
+                        'default'  => array(
+                            'color'       => '#333',
+                            'font-size'   => '24px',
+                            'line-height' => '26px',
+                            'font-family' => 'Lobster',
+                            'font-weight' => '400',
+                        ),
+                    ),
+
+                    array(
+                        'id'       => 'reveal-secondary-title-typography',
+                        'type'     => 'typography',
+                        'title'    => esc_html__( 'Secondary Title Typography', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify secondary title font properties.', 'reveal' ),
+                        'google'   => true,
+                        'output'   => array('.secondary-title'),
+                        'default'  => array(
+                            'color'       => '#333',
+                            'font-size'   => '30px',
+                            'line-height' => '33px',
+                            'font-family' => 'Montserrat',
+                            'font-weight' => 'bold'
+                        ),
+                    ),
+
+                    array(
+                        'id'       => 'reveal-typography-h1',
+                        'type'     => 'typography',
+                        'title'    => esc_html__( 'Typography h1', 'reveal' ),
+                        'subtitle' => esc_html__( 'Specify h1 font properties.', 'reveal' ),
+                        'google'   => true,
+                        'output'   => array('h1'),
+                        'default'  => array(
+                            'color'       => '#333',
+                            'font-size'   => '30px',
+                            'line-height' => '48px',
+                            'font-family' => 'Montserrat',
+                            'font-weight' => 'Normal',
+                        ),
+                    ),
+
+
                     array(
                         'id'          => 'reveal-typography-h2',
                         'type'        => 'typography',
                         'title'       => esc_html__( 'Typography h2', 'reveal' ),
-                        //'compiler'      => true,  // Use if you want to hook in your own CSS compiler
-                        //'google'      => false,
-                        // Disable google fonts. Won't work if you haven't defined your google api key
-                        'font-backup' => true,
-                        // Select a backup non-google font in addition to a google font
-                        //'font-style'    => false, // Includes font-style and weight. Can use font-style or font-weight to declare
-                        //'subsets'       => false, // Only appears if google is true and subsets not set to false
-                        //'font-size'     => false,
-                        //'line-height'   => false,
-                        //'word-spacing'  => true,  // Defaults to false
-                        //'letter-spacing'=> true,  // Defaults to false
-                        //'color'         => false,
-                        //'preview'       => false, // Disable the previewer
-                        //'all_styles'  => true,
-                        // Enable all Google Font style/weight variations to be added to the page
                         'output'      => array( 'h2', '.secondary-title' ),
                         'google'      => true,
-                        // An array of CSS selectors to apply this font style to dynamically
-                        //'compiler'    => array( 'h2' ),
-                        // An array of CSS selectors to apply this font style to dynamically
-                        'units'       => 'px',
-                        // Defaults to px
                         'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
                         'default'     => array(
                             'color'       => '#333',
                             'font-weight'  => 'bold',
-                            'font-family' => '\'Montserrat\', sans-serif',
+                            'font-family' => 'Montserrat',
                             'font-size'   => '30px',
                             'line-height' => ''
                         ),
@@ -204,14 +233,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'typography',
                         'title'    => esc_html__( 'Typography h3', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h3 font properties.', 'reveal' ),
-                        'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h3'),
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => '\'Montserrat\', sans-serif',
+                            'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -221,14 +249,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'typography',
                         'title'    => esc_html__( 'Typography h4', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h4 font properties.', 'reveal' ),
-                        'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h4'),
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => '\'Montserrat\', sans-serif',
+                            'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -238,14 +265,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'typography',
                         'title'    => esc_html__( 'Typography h5', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h5 font properties.', 'reveal' ),
-                        'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h5'),
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => '\'Montserrat\', sans-serif',
+                            'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
                     ),
@@ -255,14 +281,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'typography',
                         'title'    => esc_html__( 'Typography h6', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h6 font properties.', 'reveal' ),
-                        'font-backup' => true,
                         'google'   => true,
                         'output'   => array('h6'),
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
-                            'font-family' => '\'Montserrat\', sans-serif',
+                            'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
                     ),
