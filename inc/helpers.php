@@ -382,15 +382,6 @@ function get_simple_likes_button( $post_id, $is_comment = NULL ) {
 } // get_simple_likes_button()
 
 /**
- * Processes shortcode to manually add the button to posts
- * @since    0.5
- */
-// add_shortcode( 'jmliker', 'sl_shortcode' );
-// function sl_shortcode() {
-//     return get_simple_likes_button( get_the_ID(), 0 );
-// } // shortcode()
-
-/**
  * Utility retrieves post meta user likes (user id array), 
  * then adds new user id to retrieved array
  * @since    0.5
