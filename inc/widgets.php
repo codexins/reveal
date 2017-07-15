@@ -194,20 +194,57 @@ class Reveal_Recent_Posts extends WP_Widget {
 	//back-end display of widget
 	public function form( $instance ) {
 
-		$title = ( !empty( $instance[ 'title' ] ) ? $instance[ 'title' ] : esc_html__('Recent Posts', 'reveal') );
-		$num_posts = ( !empty( $instance[ 'num_posts' ] ) ? absint( $instance[ 'num_posts' ] ) : esc_html__('3', 'reveal') );
+		$title 			= ( !empty( $instance[ 'title' ] ) ? $instance[ 'title' ] : esc_html__('Recent Posts', 'reveal') );
+		$num_posts 		= ( !empty( $instance[ 'num_posts' ] ) ? absint( $instance[ 'num_posts' ] ) : esc_html__('3', 'reveal') );
+		$show_thumb 	= ( !empty( $instance[ 'show_thumb' ] ) ? $instance[ 'show_thumb' ] : '' );
+		$display_meta 	= ( !empty( $instance[ 'display_meta' ] ) ? $instance[ 'display_meta' ] : '' );
+		$show_like	 	= ( !empty( $instance[ 'show_like' ] ) ? $instance[ 'show_like' ] : '' );
+
+		?>
+
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php echo esc_html__('Title:', 'reveal') ?></label>
+			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>">
+		</p>
+
+		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'num_posts' ) ); ?>"><?php echo esc_html__('Number of Posts to Show:', 'reveal') ?></label>
+			<input type="number" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'num_posts' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'num_posts' ) ); ?>" value="<?php echo esc_attr( $num_posts ); ?>">
+		</p>
+
+		<p>
+		    <input class="checkbox" type="checkbox" <?php esc_attr( checked( $instance[ 'show_thumb' ], 'on' ) ); ?> id="<?php echo esc_attr ($this->get_field_id( 'show_thumb' ) ); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_thumb' ) ); ?>" /> 
+		    <label for="<?php echo esc_attr($this->get_field_id( 'show_thumb' ) ); ?>"><?php echo esc_html__('Display Post Featured Image?', 'reveal'); ?></label>
+		</p>
+
+		<p>
+		    <input class="checkbox" type="checkbox" <?php esc_attr( checked( $instance[ 'show_like' ], 'on' ) ); ?> id="<?php echo esc_attr ($this->get_field_id( 'show_like' ) ); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_like' ) ); ?>" /> 
+		    <label for="<?php echo esc_attr($this->get_field_id( 'show_like' ) ); ?>"><?php echo esc_html__('Display Like Button?', 'reveal'); ?></label>
+		</p>
+
+		<p>
+			<label for="<?php echo $this->get_field_id('display_meta'); ?>"><?php echo esc_html__('Select Post Meta to Display:', 'wp_widget_plugin'); ?></label>
+			<select name="<?php echo $this->get_field_name('display_meta'); ?>" id="<?php echo $this->get_field_id('display_meta'); ?>" class="widefat">
+				<?php
+				$options = array(
+						esc_html('Display Post Date', 'reveal'), 
+						esc_html('Display Post View Count', 'reveal'), 
+						esc_html('Display Comments Count', 'reveal'), 
+						esc_html('Display Both Post View and Comments Count', 'reveal')
+						);
+				foreach ($options as $option) {
+					$opt = strtolower( str_replace(" ","-", $option ) );
+					echo '<option value="' . $opt . '" id="' . $opt . '"', $display_meta == $opt ? ' selected="selected"' : '', '>', $option, '</option>';
+				}
+				?>
+			</select>
+		</p>
 		
-		$output = '<p>';
-			$output .= '<label for="' . esc_attr( $this->get_field_id( 'title' ) ) . '">'. esc_html__('Title:', 'reveal') .'</label>';
-			$output .= '<input type="text" class="widefat" id="' . esc_attr( $this->get_field_id( 'title' ) ) . '" name="' . esc_attr( $this->get_field_name( 'title' ) ) . '" value="' . esc_attr( $title ) . '"';
-		$output .= '</p>';
 		
-		$output .= '<p>';
-			$output .= '<label for="' . esc_attr( $this->get_field_id( 'num_posts' ) ) . '">'. esc_html__('Number of posts to show:', 'reveal') .'</label>';
-			$output .= '<input type="number" class="tiny-text" id="' . esc_attr( $this->get_field_id( 'num_posts' ) ) . '" name="' . esc_attr( $this->get_field_name( 'num_posts' ) ) . '" value="' . esc_attr( $num_posts ) . '"';
-		$output .= '</p>';
-		
-		printf( '%s', $output);
+
+
+
+<?php
 		
 	}
 
@@ -215,8 +252,11 @@ class Reveal_Recent_Posts extends WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 		
 		$instance = array();
-		$instance[ 'title' ] = ( !empty( $new_instance[ 'title' ] ) ? strip_tags( $new_instance[ 'title' ] ) : '' );
-		$instance[ 'num_posts' ] = ( !empty( $new_instance[ 'num_posts' ] ) ? absint( strip_tags( $new_instance[ 'num_posts' ] ) ) : 0 );
+		$instance[ 'title' ] 		= ( !empty( $new_instance[ 'title' ] ) ? strip_tags( $new_instance[ 'title' ] ) : '' );
+		$instance[ 'num_posts' ] 	= ( !empty( $new_instance[ 'num_posts' ] ) ? absint( strip_tags( $new_instance[ 'num_posts' ] ) ) : 0 );
+		$instance[ 'show_thumb' ] 	= strip_tags( $new_instance[ 'show_thumb' ] );
+		$instance[ 'show_like' ] 	= strip_tags( $new_instance[ 'show_like' ] );
+		$instance[ 'display_meta' ] = strip_tags( $new_instance[ 'display_meta' ] );
 		
 		return $instance;
 		
@@ -225,7 +265,15 @@ class Reveal_Recent_Posts extends WP_Widget {
 	//front-end display of widget
 	public function widget( $args, $instance ) {
 		
-		$num_posts = absint( $instance[ 'num_posts' ] );
+		$num_posts 		= absint( $instance[ 'num_posts' ] );
+		$show_thumb 	= $instance[ 'show_thumb' ];
+		$show_like 		= $instance[ 'show_like' ];
+		$display_meta 	= $instance[ 'display_meta' ];
+		$display_meta_a = 'display-post-date';
+		$display_meta_b = 'display-post-view-count';
+		$display_meta_c = 'display-comments-count';
+		$display_meta_d = 'display-both-post-view-and-comments-count';
+
 		
 		$posts_args = array(
 			'post_type'			=> 'post',
@@ -248,16 +296,38 @@ class Reveal_Recent_Posts extends WP_Widget {
 			while( $posts_query->have_posts() ): $posts_query->the_post();
 				
 				echo '<div class="media">';
-					echo '<a href="' . get_the_permalink() . '" class="media-left"><img class="media-object" src="';
-					if ( has_post_thumbnail() ) { 
-						esc_url( the_post_thumbnail_url('blog-thumbnail-image') ); 
-					} else { 
-						echo esc_url('//placehold.it/120x80'); 
+					if( 'on' == $instance[ 'show_thumb' ] ) {
+						echo '<a href="' . get_the_permalink() . '" class="media-left"><img class="media-object" src="';
+						if ( has_post_thumbnail() ) { 
+							esc_url( the_post_thumbnail_url('blog-thumbnail-image') ); 
+						} else { 
+							echo esc_url('//placehold.it/120x80'); 
+						}
+						echo '" alt="' . get_the_title() . '"/></a>';
 					}
-					echo '" alt="' . get_the_title() . '"/></a>';
 					echo '<div class="media-body">';
 						echo '<h4 class="media-heading">' . wp_trim_words( get_the_title(), 7, null ) . '</h4>';
+						if ( $display_meta == $display_meta_a ) {
 						echo '<p>'. get_the_time( 'F j, Y' ) .'</p>';
+						}
+						if( $display_meta == $display_meta_a AND 'on' == $instance[ 'show_like' ] ) {
+						echo '<span>'. get_simple_likes_button( get_the_ID(), 0 ) .'</span>';
+						}
+						if( $display_meta == $display_meta_d OR $display_meta == $display_meta_b OR $display_meta == $display_meta_c) {
+						echo '<div class="blog-info">';
+							if( $display_meta == $display_meta_d OR $display_meta == $display_meta_b ) {
+							echo '<span><i class="fa fa-eye"></i><i>' . reveal_get_post_views(get_the_ID()) . '</i></span>';
+							}
+							if( $display_meta == $display_meta_d OR $display_meta == $display_meta_c ) {
+							echo '<span><i class="fa fa-comments"></i><i>' . ' ' . get_comments_number() . '</i></span>';
+							}
+							if( 'on' == $instance[ 'show_like' ] ) {
+							echo '<span>'. get_simple_likes_button( get_the_ID(), 0 ) .'</span>';
+							}
+
+						echo '</div>';
+						}
+
 					echo '</div>';
 				echo '</div>';
 				
