@@ -16,9 +16,11 @@ get_header(); ?>
 				<div class="col-xs-12">
 
 					<div id="primary" class="site-main">
-						<h4><?php esc_html_e('The page you are trying to access does not exist.', 'reveal') ?></h4>
-						<h5><?php esc_html_e('Please use the menu above to locate what you are searching for.', 'reveal') ?></h5>
-						<?php get_search_form() ?>
+						<article>
+							<h4><?php esc_html_e('The page you are trying to access does not exist.', 'reveal') ?></h4>
+							<h5><?php esc_html_e('Please use the menu above to locate what you are searching for.', 'reveal') ?></h5>
+							<?php get_search_form() ?>
+						</article>
 
 					</div><!-- #primary -->
 				</div> <!-- end of col -->
