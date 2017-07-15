@@ -41,78 +41,31 @@
 
 	<?php if( is_front_page() ): ?>
 	
-	<header id="header" class="header fill-screen">
-		<?php 
+	<header id="header" class="header front-header fill-screen">
+	<?php else: ?>
+	<header id="header" class="header inner-header">
+	<?php endif; ?>	
 		
-		$header_version = reveal_option('reveal-header-version');
+	<?php 
+	
+	$header_version = reveal_option('reveal-header-version');
 
-		if($header_version == 1): 
-		get_template_part('template-parts/header/header', 'one');
+	if($header_version == 1): 
+	get_template_part('template-parts/header/header', 'one');
 
-		// elseif($header_version == 2): 
-		// get_template_part('template-parts/header/header', 'two');
+	// elseif($header_version == 2): 
+	// get_template_part('template-parts/header/header', 'two');
 
-		// elseif($header_version == 3): 
-		// get_template_part('template-parts/header/header', 'three');
+	// elseif($header_version == 3): 
+	// get_template_part('template-parts/header/header', 'three');
 
-		// elseif($header_version == 4): 
-		// get_template_part('template-parts/header/header', 'four');
+	// elseif($header_version == 4): 
+	// get_template_part('template-parts/header/header', 'four');
 
 
-		endif; ?>
+	endif; ?>
+	<?php get_template_part('template-parts/header/page', 'title'); ?>
 	</header>
 
-	<?php else: ?>
-	<section id="page_title" class="page-title" style="background-image: url('<?php echo get_template_directory_uri() .'/images/showcase.jpg'; ?>')">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="page-title-wrapper">
-						<h1><?php if(is_home()):
-
-									echo esc_html__('Blog', 'reveal');
-
-								  elseif(is_404()):
-
-								  	echo esc_html__('Nothing Found!', 'reveal');
-
-								  elseif(is_archive()):
-
-								  	the_archive_title();
-
-								  elseif(is_search()):
-
-								  	printf( esc_html__( 'Search Results for: %s', 'reveal' ), '<span>' . get_search_query() . '</span>' );
-
-								  else:
-
-								  	single_post_title();
-
-								  endif;
-
-						 ?></h1>
-
-						<div class="breadcrumbs-wrapper">
-							<p>
-							<?php $reveal_bc = reveal_option('reveal-bcrumbs'); ?>
-							<?php 
-
-							if( $reveal_bc == 1 ): 
-							if (function_exists('reveal_custom_breadcrumbs')) {
-								echo reveal_custom_breadcrumbs();
-							}
-
-							?>
-						<?php endif; ?>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<?php endif; ?>
 
 	<div class="clearfix"></div>

@@ -32,6 +32,7 @@
 			</div><!-- end of container -->
 		</nav> <!-- end of nav -->
 
+		<?php if(is_front_page()): ?>
 		<div class="slider-text text-center">
 			<h4>Creative Coders</h4>
 			<h2>WELCOME<br />TO REVEAL</h2>
@@ -40,6 +41,7 @@
 		</div>
 
 		<a href="#about" class="explore"><i class="fa fa-chevron-down"></i></a>
+	<?php endif; ?>
 
 
 
