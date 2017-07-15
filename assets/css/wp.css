@@ -165,6 +165,10 @@ select {
     margin-bottom:35px;
 }
 
+.comment-list .media {
+    margin-bottom: 30px;
+}
+
 .comment-info .fn {
     font-weight: bold;
 }
