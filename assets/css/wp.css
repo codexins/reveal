@@ -117,6 +117,10 @@ figure {
     max-width: 100%;
 }
 
+select {
+    max-width:100%;
+}
+
 .gallery-caption {
 
 }
@@ -136,16 +140,12 @@ article {
     margin-bottom: 20px;
 }
 
-#content {
-    /*margin-top: 80px;*/
-}
 
-#primary {
-    margin-bottom: 80px;
-}
 
+#primary,
 #secondary {
     margin-bottom: 80px;
+    word-wrap: break-word;
 }
 
 #page_title,
