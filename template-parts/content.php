@@ -66,3 +66,4 @@
         
     </div><!--blog post-->
 </article><!-- #post-## -->
+<div class="clearfix"></div>

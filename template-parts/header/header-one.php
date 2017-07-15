@@ -41,7 +41,7 @@
 			</div><!-- end of container -->
 		</nav> <!-- end of nav -->
 
-		<?php if(is_front_page()): ?>
+		<?php if(is_front_page() && !is_home()): ?>
 		<div class="slider-text text-center">
 			<h4>Creative Coders</h4>
 			<h2>WELCOME<br />TO REVEAL</h2>

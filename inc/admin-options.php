@@ -191,7 +191,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             'font-size'   => '30px',
                             'line-height' => '33px',
                             'font-family' => 'Montserrat',
-                            'font-weight' => 'bold'
+                            'font-weight' => '700'
                         ),
                     ),
 
@@ -216,7 +216,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'          => 'reveal-typography-h2',
                         'type'        => 'typography',
                         'title'       => esc_html__( 'Typography h2', 'reveal' ),
-                        'output'      => array( 'h2', '.secondary-title' ),
+                        'output'      => array( 'h2' ),
                         'google'      => true,
                         'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
                         'default'     => array(

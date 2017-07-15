@@ -39,7 +39,7 @@
 	</div>
 	<!--  Site Loader finished -->
 
-	<?php if( is_front_page() ): ?>
+	<?php if( is_front_page() && !(is_home()) ): ?>
 	
 	<header id="header" class="header front-header fill-screen">
 	<?php else: ?>

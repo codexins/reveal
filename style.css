@@ -92,6 +92,32 @@ h2 {
 }
 
 
+article {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+#content {
+    /*margin-top: 80px;*/
+}
+
+#primary {
+    margin-bottom: 80px;
+}
+
+#secondary {
+    margin-bottom: 80px;
+}
+
+#page_title,
+.front-header {
+    margin-bottom: 40px;
+}
+
+
+article > section.kc_row:first-of-type {
+    margin-top: 0;
+}
 
 /***********************************
     001 - Header Section
