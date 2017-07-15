@@ -194,15 +194,14 @@
         gallery: {
             enabled: true
         },
-
         image: {
             titleSrc: 'title',
         },
         mainClass: 'instagram-zoom', 
-
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
         zoom: {
-            enabled: true, 
-
             duration: 300, 
             easing: 'ease-in-out', 
             opener: function(openerElement) {

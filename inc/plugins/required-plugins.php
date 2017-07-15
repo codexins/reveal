@@ -44,7 +44,7 @@ function reveal_register_js_composer_plugins() {
             array(
                 'name'              => 'Contact Form 7', // The plugin name
                 'slug'              => 'contact-form-7', // The plugin slug (typically the folder name)
-                'required'          => true, // If false, the plugin is only 'recommended' instead of required
+                'required'          => false, // If false, the plugin is only 'recommended' instead of required
             )
 
     );

@@ -3582,7 +3582,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
                                 // Automatic activation strings.
                                 $this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'reveal' );
                                 /* translators: 1: plugin name. */
-                                $this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', 'reveal' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'reveal' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'reveal' ) . '</span>.</a>';
+                                $this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', 'reveal' );
                                 $this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations and activations have been completed.', 'reveal' );
                                 /* translators: 1: plugin name, 2: action number 3: total number of actions. */
                                 $this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'reveal' );
@@ -3590,7 +3590,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
                                 // Default installation strings.
                                 $this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'reveal' );
                                 /* translators: 1: plugin name. */
-                                $this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'reveal' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'reveal' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'reveal' ) . '</span>.</a>';
+                                $this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'reveal' );
                                 $this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations have been completed.', 'reveal' );
                                 /* translators: 1: plugin name, 2: action number 3: total number of actions. */
                                 $this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing Plugin %1$s (%2$d/%3$d)', 'reveal' );
