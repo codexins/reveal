@@ -227,10 +227,10 @@ class Reveal_Recent_Posts extends WP_Widget {
 			<select name="<?php echo $this->get_field_name('display_meta'); ?>" id="<?php echo $this->get_field_id('display_meta'); ?>" class="widefat">
 				<?php
 				$options = array(
-						esc_html('Display Post Date', 'reveal'), 
-						esc_html('Display Post View Count', 'reveal'), 
-						esc_html('Display Comments Count', 'reveal'), 
-						esc_html('Display Both Post View and Comments Count', 'reveal')
+						esc_html__('Display Post Date', 'reveal'), 
+						esc_html__('Display Post View Count', 'reveal'), 
+						esc_html__('Display Comments Count', 'reveal'), 
+						esc_html__('Display Both Post View and Comments Count', 'reveal')
 						);
 				foreach ($options as $option) {
 					$opt = strtolower( str_replace(" ","-", $option ) );
