@@ -309,6 +309,68 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'fields'           => array(
 
                     array(
+                        'id'       => 'reveal-logo-type',
+                        'type'     => 'radio',
+                        'title'    => esc_html__( 'Select Logo type', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please select whether you want a text logo or image logo', 'reveal' ),
+                        'desc'     => esc_html__( 'Select text logo or image logo', 'reveal' ),
+                        //Must provide key => value pairs for radio options
+                        'options'  => array(
+                            '1' => 'Text Logo',
+                            '2' => 'Image Logo',
+                        ),
+                        'default'  => '1'
+                    ),
+
+                    array(
+                        'id'       => 'reveal-text-logo',
+                        'required' => array('reveal-logo-type', 'equals', '1'),
+                        'type'     => 'text',
+                        'title'    => esc_html__( 'Write your text logo', 'reveal' ),
+                        'desc'     => esc_html__( 'Please write text logo here', 'reveal' ),
+                        'default'  => 'ReVeal',
+                    ),
+
+                    array(
+                        'id'          => 'reveal-text-logo-typography',
+                        'required' => array('reveal-logo-type', 'equals', '1'),
+                        'type'        => 'typography',
+                        'title'       => esc_html__( 'Typography For Text Logo', 'reveal' ),
+                        'preview'       => true, // Disable the previewer
+                        'all_styles'  => true,
+                        'letter-spacing'=> true,
+                        // Enable all Google Font style/weight variations to be added to the page
+                        'output'      => array( '.logo a' ),
+                        'units'       => 'px',
+                        'subtitle'    => esc_html__( 'Typography option for text logo', 'reveal' ),
+                        'default'     => array(
+                            'color'       => '#fff',
+                            'font-style'  => '400',
+                            'font-family' => 'Montserrat',
+                            'google'      => true,
+                            'font-size'   => '30px',
+                        ),
+                    ),
+
+                    array(
+                        'id'       => 'reveal-image-logo',
+                        'required' => array('reveal-logo-type', 'equals', '2'),
+                        'type'     => 'media',
+                        'url'      => true,
+                        'title'    => esc_html__( 'Upload Company Logo', 'reveal' ),
+                        'compiler' => 'true',
+                        //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+                        'desc'     => esc_html__( 'Please Upload Company Logo', 'reveal' ),
+                        'subtitle' => esc_html__( 'Recommended Logo Size 260X100', 'reveal' ),
+                        'default'  => array( 'url' => '//placehold.it/260X100' ),
+                        //'hint'      => array(
+                        //    'title'     => 'Hint Title',
+                        //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+                        //)
+                    ),
+
+
+                    array(
                         'id'       => 'reveal-header-version',
                         'type'     => 'image_select',
                         'title'    => esc_html__( 'Select Navigation Type', 'reveal' ),
@@ -382,21 +444,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),              )
             );
 
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Logo', 'reveal' ),
-                'customizer_width' => '500px',
-                'id'               => 'reveal-logo-section',
-                'subsection'       => true,
-                'fields'           => array(
-                    array(
-                        'id'       => 'reveal-logo',
-                        'type'     => 'media',
-                        'title'    => esc_html__( 'Logo  ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Upload  Logo ', 'reveal' ),
-                        'default'  => array( 'url' => 'http://placehold.it/250X50' ),
-                    ),
-                                    )
-            );
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Breadcrumbs', 'reveal' ),

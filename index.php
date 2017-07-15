@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="main-content-wrapper">
+	<div id="content" class="main-content-wrapper section">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-md-8">

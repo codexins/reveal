@@ -17,11 +17,20 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<?php if (!empty(reveal_option('reveal-logo')['url'])):?>
-							<img src="<?php echo reveal_option('reveal-logo')['url']?>" alt="Logo">
-						<?php else: echo "Reveal"; ?>
-						<?php endif; ?>
+					<?php 
+					$logo_type = reveal_option('reveal-logo-type');	
+					$text_logo = reveal_option('reveal-text-logo'); 
+					$image_logo = reveal_option('reveal-image-logo')['url']; ?>		
+					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>">
+						<?php if($logo_type == 2): ?>
+	             <?php if( !empty( $image_logo ) ): ?>
+	              <img src="<?php echo esc_url($image_logo); ?>" alt="Logo">
+	             <?php endif; ?>
+
+						<?php elseif($logo_type == 1): 
+								if(!empty($text_logo)): echo esc_html($text_logo); endif; ?>
+					  <?php endif; ?>
+
 					</a>
 				</div>
 
