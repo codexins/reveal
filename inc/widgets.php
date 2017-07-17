@@ -230,7 +230,7 @@ class Reveal_Recent_Posts extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('display_order'); ?>"><?php echo esc_html__('Choose The Order to Display Posts:', 'wp_widget_plugin'); ?></label>
+			<label for="<?php echo $this->get_field_id('display_order'); ?>"><?php echo esc_html__('Choose The Order to Display Posts:', 'reveal'); ?></label>
 			<select name="<?php echo $this->get_field_name('display_order'); ?>" id="<?php echo $this->get_field_id('display_order'); ?>" class="widefat">
 				<?php
 				$disp_opt = array(
@@ -245,7 +245,7 @@ class Reveal_Recent_Posts extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('display_meta'); ?>"><?php echo esc_html__('Select Post Meta to Display:', 'wp_widget_plugin'); ?></label>
+			<label for="<?php echo $this->get_field_id('display_meta'); ?>"><?php echo esc_html__('Select Post Meta to Display:', 'reveal'); ?></label>
 			<select name="<?php echo $this->get_field_name('display_meta'); ?>" id="<?php echo $this->get_field_id('display_meta'); ?>" class="widefat">
 				<?php
 				$options = array(
@@ -445,7 +445,7 @@ class Reveal_Popular_Posts extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('display_meta'); ?>"><?php echo esc_html__('Select Post Meta to Display:', 'wp_widget_plugin'); ?></label>
+			<label for="<?php echo $this->get_field_id('display_meta'); ?>"><?php echo esc_html__('Select Post Meta to Display:', 'reveal'); ?></label>
 			<select name="<?php echo $this->get_field_name('display_meta'); ?>" id="<?php echo $this->get_field_id('display_meta'); ?>" class="widefat">
 				<?php
 				$options = array(
