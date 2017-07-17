@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
-		<h3><?php comments_number(__('This post has no comments', 'delicious'), __('This post has 1 Comment', 'delicious'), __('This post has % Comments', 'delicious')); ?></h3>
+		<h3><?php comments_number(__('This post has no comments', 'reveal'), __('This post has 1 Comment', 'reveal'), __('This post has % Comments', 'reveal')); ?></h3>
 
 
 		<ol class="comment-list">
