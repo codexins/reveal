@@ -155,8 +155,8 @@ function reveal_get_post_views($postID){
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
         delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '1');
-        return " 1";
+        add_post_meta($postID, $count_key, '0');
+        return " 0";
     }
     return ' '.$count;
 }
@@ -170,9 +170,9 @@ function reveal_set_post_views($postID) {
     $count_key = 'cx_post_views';
     $count = get_post_meta($postID, $count_key, true);
     if($count==''){
-        $count = 1;
+        $count = 0;
         delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '1');
+        add_post_meta($postID, $count_key, '0');
     }else{
         $count++;
         update_post_meta($postID, $count_key, $count);

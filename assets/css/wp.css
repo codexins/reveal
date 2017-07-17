@@ -8,10 +8,10 @@ div.aligncenter {
     margin: 5px auto;
 }
 
-img {
+/*img {
     max-width: 100%;
     height: auto;
-}
+}*/
 
 .alignright {
     float: right;
