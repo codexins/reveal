@@ -335,6 +335,20 @@ a.explore {
 .blog-info i:last-child {
     color: #555;
 }
+/********************************************** new ******************************************************************/
+.post-detail {
+    border-top: 1px solid #ebeaea;
+    border-bottom: 1px solid #ebeaea;
+}
+.blog-post h2 a {
+    color: #295970;
+}
+.cx_btn {
+    background: #295970;
+}
+.cx_btn span {
+    color: #fff;
+}
 
 
 /***********************************
