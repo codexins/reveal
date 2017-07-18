@@ -8,10 +8,10 @@ div.aligncenter {
     margin: 5px auto;
 }
 
-/*img {
+img {
     max-width: 100%;
     height: auto;
-}*/
+}
 
 .alignright {
     float: right;
@@ -147,6 +147,7 @@ select {
     border-radius: 50%;
     min-width:70px;
     max-width:70px;
+    height: auto;
 }
 
 

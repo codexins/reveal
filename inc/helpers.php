@@ -163,6 +163,18 @@ function reveal_get_post_views($postID){
 
 /**
 *
+* Helper Function for Google Analytics
+*
+**/
+add_action('wp_head', 'reveal_googleanalytics');
+function reveal_googleanalytics() { 
+
+    echo reveal_option( 'reveal-gaq' );
+
+} 
+
+/**
+*
 * Helper Function to set the post views
 *
 **/

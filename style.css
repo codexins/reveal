@@ -1414,6 +1414,10 @@ p.followers {
     width: 100%;
 }
 
+.media-object {
+    max-width: none;
+}
+
 a.more,
 a.more:hover {
     text-decoration: none;
