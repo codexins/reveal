@@ -47,6 +47,16 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
+
+
+	.blog-post .list-inline li a {
+	    padding: 0;
+	}
+	.post-detail li {
+	    font-size: 13px;
+	    padding-right: 4px;
+	}
+
 	a.navbar-brand {
 		font-size: 26px;
 	}

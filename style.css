@@ -1156,16 +1156,16 @@ article.type-post .blog-post:last-child {
 }
 .post-detail li {
     font-size: 14px;
+        padding-right: 15px;
 }
+
 .blog-post .list-inline li a {
     color: inherit;
 }
 .blog-post .list-inline li i {
     margin-right: 6px;
 }
-.post-detail li + li {
-    padding-left: 15px;
-}
+
 .blog-post h2 {
     font-size: 25px;
     margin-bottom: 10px;
