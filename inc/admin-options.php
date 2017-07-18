@@ -459,8 +459,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => 1,
                         'on'       => 'Enabled',
                         'off'      => 'Disabled',
-                    ),
-                                    )
+                    ),              )
             );
 
             $this->sections[] = array(
@@ -680,6 +679,32 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
                     )
                 );
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Advanced Settings', 'reveal' ),
+                'customizer_width' => '500px',
+                'id'               => 'reveal-advanced',
+                'fields'           => array(
+            ) );
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Google Analytics', 'reveal' ),
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'id'               => 'reveal-advanced-gaq',
+                'fields'           => array(
+
+                    array(
+                        'id'            => 'reveal-gaq',
+                        'type'          => 'textarea',
+                        'title'         => esc_html__( 'Google Analytics', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Paste Your Google Analytics Code Here', 'reveal' ),
+                    ),
+
+                )
+            );
+
+
 
 
         }
