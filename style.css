@@ -1573,11 +1573,12 @@ a.more:hover {
 
 .cx-button {
     padding: 0.375em 0.625em;
+    padding-left: 0;
 }
 
 /* Icon */
 .cx-icon {
-    vertical-align: middle;
+    vertical-align: inherit;
 }
 .cx-icon svg {
     fill: currentColor;
@@ -1596,9 +1597,11 @@ a.more:hover {
 /* Count */
 .cx-count {
     text-transform: uppercase;
-    vertical-align: middle;
-    font-size: 13px;
     text-transform: capitalize;
+}
+
+#cx_wrapper.cx-wrapper a.liked span.cx-count {
+    vertical-align: initial;
 }
 
 /* Loader */
@@ -1689,4 +1692,14 @@ a.more:hover {
 .instagram-zoom.mfp-removing .mfp-container,
 .instagram-zoom.mfp-removing.mfp-bg {
   opacity: 0;
+}
+
+
+.section-heading{
+    background: #282828;
+    color: #fff;
+    margin-bottom: -20px;
+    margin-top: -20px;
+    padding: 10px;
+    text-transform: uppercase;
 }

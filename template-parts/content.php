@@ -49,11 +49,20 @@
 					the_excerpt();
 				endif; ?>
 
-            <?php if(!is_single()): ?>
-                <p class="blog-btn"><a class="cx_btn cx_centerSwipe cx_skewSwipe" href="<?php the_permalink(); ?>">
+                <?php 
+
+                $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
+
+                if( $reveal_read_more == 1 ) { ?>
+
+                <p class="blog-btn"><a class="cx_btn" href="<?php the_permalink(); ?>">
                   <span>Read More</span>
                 </a></p>
-            <?php endif; ?>  
+
+                <?php
+                } 
+                ?>
+
 
 		</div><!-- .entry-content -->
 

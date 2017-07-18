@@ -456,10 +456,12 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable Breadcrumbs', 'reveal' ),
+                        'desc'     => esc_html__('Breadcrumbs is a navigational aid that allows visitors to understand their current location in the context of a website.', 'reveal'),
                         'default'  => 1,
                         'on'       => 'Enabled',
                         'off'      => 'Disabled',
-                    ),              )
+                    ),              
+                )
             );
 
             $this->sections[] = array(
@@ -538,15 +540,226 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'     => esc_html__( 'Please Insert Skype Profile URL  ', 'reveal' ),
                         'default'  => '',
                     ),
-                                )
-                            );    
+                )
+            );    
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Blog Settings', 'reveal' ),
+                'icon'             => 'dashicons dashicons-schedule',
+                'id'               => 'reveal-blog-settings',
+                'customizer_width' => '500px',
+            );
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Blog & Archive Page', 'reveal' ),
+                'id'               => 'reveal-blog-archive',
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'fields'           => array(
+
+                    array(
+                        'id'       => 'reveal-blog-layout',
+                        'type'     => 'image_select',
+                        'title'    => esc_html__( 'Select Blog & Archive Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Blog & Archive Page Layout', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        //Must provide key => value(array:title|img) pairs for radio options
+                        'options'  => array(
+                            '1' => array(
+                                'alt' => '1 Column',
+                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            ),
+                            '2' => array(
+                                'alt' => '2 Column Left',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            ),
+                            '3' => array(
+                                'alt' => '2 Column Right',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            )
+                        ),
+                        'default'  => '3'
+                    ),
+
+                    array(
+                        'id' => 'reveal_post_style',
+                        'type' => 'select',
+                        'title' => esc_html__('Blog & Archive Posts Style', 'reveal'),
+                        'desc' => '',
+                        'options' => array(
+                            'list' => esc_html__( 'List', 'reveal' ),
+                            'grid' => esc_html__( 'Grid', 'reveal' ),
+                        ),
+                        'default' => 'list'
+                    ),
+
+                    array(
+                        'id' => 'reveal_grid_columns',
+                        'type' => 'select',
+                        'title' => esc_html__('Columns on desktop', 'reveal'),
+                        'desc' => '',
+                        'options' => array(
+                            '2' => esc_html__( '2 columns', 'reveal' ) ,
+                            '3' => esc_html__( '3 columns', 'reveal' ) ,
+                            '4' => esc_html__( '4 columns', 'reveal' ) ,
+                        ),
+                        'default' => '2',
+                        'required' => array('reveal_post_style','equals', array( 'grid' ) ),
+                    ),
+
+                    array(
+                        'id' => 'reveal_archive_posts_per_page',
+                        'type' => 'text',
+                        'title' => esc_html__('Posts Per Page in Archive', 'reveal'),
+                        'desc' => esc_html__("Insert the Total Number of Pages.", 'reveal'),
+                        'default' => 10,
+                    ),
+
+                    array(
+                        'id' => 'reveal_archive_excerpt_length',
+                        'type' => 'text',
+                        'title' => esc_html__('Excerpt Length for Posts in Archive', 'reveal'),
+                        'desc' => esc_html__("Insert the Number of Words to Show in the Post Excerpts.", 'reveal'),
+                        'default' => 35,
+                    ),
+
+                    array(
+                        'id'       => 'reveal-blog-read-more',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable Read More Button?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Enable Read More Button in Posts?', 'reveal' ),
+                        'desc'      => esc_html__( 'Choose to Enable / Disable Read More Button in the Posts Loop', 'reveal' ),
+                        'default'  => 1,
+                        'on'       => 'Enabled',
+                        'off'      => 'Disabled',
+                    ),   
+
+                    array(
+                        'id' => 'reveal_pagination',
+                        'type' => 'select',
+                        'title' => esc_html__('Pagination Type', 'reveal'),
+                        'desc' => esc_html__('Select the Pagination Type.', 'reveal'),
+                        'options' => array(
+                            'normal' => esc_html__( 'Numbered pagination', 'reveal' ),
+                            'button' => esc_html__( 'Next - Previous Button', 'reveal' ),
+                        ),
+                        'default' => 'button'
+                    ),
+                )
+            );    
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Blog Single Page', 'reveal' ),
+                'id'               => 'reveal-blog-single',
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'fields'           => array(
+
+                    array(
+                        'id'       => 'reveal-single-layout',
+                        'type'     => 'image_select',
+                        'title'    => esc_html__( 'Select Single Post Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Single post Page Layout', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        'options'  => array(
+                            '1' => array(
+                                'alt' => '1 Column',
+                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            ),
+                            '2' => array(
+                                'alt' => '2 Column Left',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            ),
+                            '3' => array(
+                                'alt' => '2 Column Right',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            )
+                        ),
+                        'default'  => '3'
+                    ),
+                )
+            );  
+
+            //Custom Post Type Portfolio Settings
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Portfolio Settings', 'reveal' ),
+                'icon'             => 'dashicons dashicons-admin-users',
+                'id'               => 'reveal-portfolio-settings',
+                'customizer_width' => '500px',
+            );
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Portfolio Archive Page', 'reveal' ),
+                'id'               => 'reveal-portfolio-layout',
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'fields'           => array(
+
+                    array(
+                        'id'       => 'reveal-portfolio-archive-layout',
+                        'type'     => 'image_select',
+                        'title'    => esc_html__( 'Select Portfolio Archive Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Portfolio Archive Page Layout', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        //Must provide key => value(array:title|img) pairs for radio options
+                        'options'  => array(
+                            '1' => array(
+                                'alt' => '1 Column',
+                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            ),
+                            '2' => array(
+                                'alt' => '2 Column Left',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            ),
+                            '3' => array(
+                                'alt' => '2 Column Right',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            )
+                        ),
+                        'default'  => '1'
+                    ),
+                )    
+            );
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Portfolio Single Page', 'reveal' ),
+                'id'               => 'reveal-portfolio-single-layout',
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'fields'           => array(
+
+                    array(
+                        'id'       => 'reveal-single-portfolio-layout',
+                        'type'     => 'image_select',
+                        'title'    => esc_html__( 'Select Single Portfolio Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Single Portfolio Page Layout', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        //Must provide key => value(array:title|img) pairs for radio options
+                        'options'  => array(
+                            '1' => array(
+                                'alt' => '1 Column',
+                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            ),
+                            '2' => array(
+                                'alt' => '2 Column Left',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            ),
+                            '3' => array(
+                                'alt' => '2 Column Right',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            )
+                        ),
+                        'default'  => '1'
+                    ),
+                )    
+            );
 
 
             // footer section 
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Footer', 'reveal' ),
-                'icon'             => 'dashicons dashicons-admin-generic',
+                'icon'             => 'dashicons dashicons-editor-insertmore',
                 'id'               => 'reveal-footer-option',
                 'customizer_width' => '500px',
             );
@@ -684,6 +897,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'title'            => esc_html__( 'Advanced Settings', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-advanced',
+                'icon'             => 'dashicons dashicons-media-code',
                 'fields'           => array(
             ) );
 
