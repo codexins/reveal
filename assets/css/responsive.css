@@ -335,11 +335,10 @@
 
 
 @media only screen and (max-width: 479px) {
-	.post-detail li + li {
-	    padding-right: 15px;
-	    padding-left: 0px;
+	.post-detail li {
+	    font-size: 13px;
+	    padding-right: 0;
 	}
-
 	h2 {
 		font-size: 26px;
 	}
