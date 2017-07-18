@@ -485,15 +485,15 @@ a.more:hover {
 }
 
 /* Colors */
-a.liked {
+#cx_wrapper.cx-wrapper a.liked {
     color: #da1b1b;
 }
 
-a.liked:hover{
+#cx_wrapper.cx-wrapper a.liked:hover{
     color: #666666;
 }
 
-a.liked span.cx-count,
+#cx_wrapper.cx-wrapper a.liked span.cx-count,
 .cx-count {
     color: #666666;
 }

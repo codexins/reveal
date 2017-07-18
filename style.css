@@ -1208,10 +1208,6 @@ article.type-post .blog-post:last-child {
     left: 0;
     transition: all .3s;
 }
-.cx-count i {
-    font-style: normal;
-    font-size: 14px;
-}
 
 /***********************************************************************************************************/
 
@@ -1577,8 +1573,6 @@ a.more:hover {
 
 /* Icon */
 .cx-icon {
-    margin-right: 0.3125em;
-    /*font-family: 'Arial Unicode MS', Arial, sans-serif;*/
     vertical-align: middle;
 }
 .cx-icon svg {
@@ -1599,6 +1593,8 @@ a.more:hover {
 .cx-count {
     text-transform: uppercase;
     vertical-align: middle;
+    font-size: 13px;
+    text-transform: capitalize;
 }
 
 /* Loader */
