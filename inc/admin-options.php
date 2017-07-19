@@ -633,24 +633,24 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id'       => 'reveal-blog-read-more',
-                        'type'     => 'switch',
-                        'title'    => esc_html__( 'Enable Read More Button?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Enable Read More Button in Posts?', 'reveal' ),
-                        'desc'     => esc_html__( 'Choose to Enable / Disable Read More Button in the Posts Loop', 'reveal' ),
-                        'default'  => true,
+                        'id'        => 'reveal-blog-read-more',
+                        'type'      => 'switch',
+                        'title'     => esc_html__( 'Enable Read More Button?', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Enable Read More Button in Posts?', 'reveal' ),
+                        'desc'      => esc_html__( 'Choose to Enable / Disable Read More Button in the Posts Loop', 'reveal' ),
+                        'default'   => true,
                     ),   
 
                     array(
-                        'id' => 'reveal_pagination',
-                        'type' => 'select',
-                        'title' => esc_html__('Pagination Type', 'reveal'),
-                        'desc' => esc_html__('Select the Pagination Type.', 'reveal'),
-                        'options' => array(
+                        'id'        => 'reveal_pagination',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Pagination Type', 'reveal'),
+                        'desc'      => esc_html__('Select the Pagination Type.', 'reveal'),
+                        'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
                         ),
-                        'default' => 'button'
+                        'default'   => 'button'
                     ),
                 )
             );    
@@ -701,6 +701,19 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle'  => esc_html__('Select if You Need Post Navigation', 'reveal'),
                         'desc'      => esc_html__('Choose to Enable / Disable Previous or Next Post Links', 'reveal'),
                         "default"   => true,
+                    ),
+
+                    array(
+                        'id'        => 'reveal_single_pagination',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Pagination Type', 'reveal'),
+                        'desc'      => esc_html__('Select the Pagination Type for Single Posts.', 'reveal'),
+                        'required' => array( 'reveal_single_button', '=', '1' ),
+                        'options'   => array(
+                            'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
+                            'title'     => esc_html__( 'Button with Title Text', 'reveal' ),
+                        ),
+                        'default' => 'button'
                     ),
                 )
             );  
@@ -767,7 +780,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Primary Title', 'reveal' ),
                         'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
                         'validate' => 'html',
-                        'default'  => ''
+                        'default'  => 'Primary Title'
                     ),
 
                     array(
@@ -777,7 +790,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Secondary Title', 'reveal' ),
                         'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
                         'validate' => 'html',
-                        'default'  => ''
+                        'default'  => 'Secondary Title'
                     ),
 
                     array(
@@ -803,6 +816,15 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             )
                         ),
                         'default'  => '1'
+                    ),
+
+                    array(
+                        'id'        => 'reveal_portfolio_comments',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Portfolio Comments?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Portfolio Single Page Comments Section', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Portfolio Single Page Comments', 'reveal'),
+                        "default"   => false,
                     ),
                 )    
             );

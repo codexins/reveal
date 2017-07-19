@@ -64,7 +64,7 @@
                 if( $reveal_read_more == true ) { ?>
 
                 <p class="blog-btn"><a class="cx_btn" href="<?php the_permalink(); ?>">
-                  <span>Read More</span>
+                  <span><?php esc_html_e('Read More', 'reveal') ?></span>
                 </a></p>
 
                 <?php

@@ -86,8 +86,13 @@ if ( ! function_exists( 'reveal_post_link' ) ) {
 
     function reveal_post_link() {
 
+        if( reveal_option( 'reveal_single_pagination' ) == 'button' ):
         $prev_link = get_previous_post_link('%link', esc_html__('Previous Post &raquo;', 'reveal'));
         $next_link = get_next_post_link('%link', esc_html__('&laquo; Next Post', 'reveal'));
+        elseif( reveal_option( 'reveal_single_pagination' ) == 'title' ):
+        $prev_link = get_previous_post_link('%link', esc_html__('%title &raquo;', 'reveal'));
+        $next_link = get_next_post_link('%link', esc_html__('&laquo; %title', 'reveal'));
+        endif;
 
         echo '<div class="posts-nav" class="section">';
             if($next_link): 
@@ -258,9 +263,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                 $grid_columns = 12/reveal_option('reveal_grid_columns');
 
                 printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
-
-                get_template_part( 'template-parts/page-styles/grid/content', get_post_format() );
-
+                    get_template_part( 'template-parts/page-styles/grid/content', get_post_format() );
                 echo '</div><!--blog post wrap-->';
 
                 if( $i % reveal_option('reveal_grid_columns') == 0 ):
@@ -302,41 +305,33 @@ if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
 
     function reveal_portfolio_loop() {
 
-
-
         if ( have_posts() ) :
 
             /* Start the Loop */
             while ( have_posts() ) : the_post();
 
                 $post_style = reveal_option( 'reveal_portfolio_style' );
+                
                 if( $post_style == 'filter' ):
-
                 get_template_part( 'template-parts/page-styles/filter/content', 'portfolio' );
-
                 else:
-
-                get_template_part( 'template-parts/page-styles/list/content', 'portfolio' );
-              
+                get_template_part( 'template-parts/page-styles/list/content', 'portfolio' );              
                 endif;
 
             endwhile; 
 
-            // $reveal_pagination = reveal_option( 'reveal_pagination' );
+            // if( $post_style == 'list' ) {
+            //     $reveal_pagination = reveal_option( 'reveal_pagination' );
 
-            // if( $reveal_pagination == 'numbered' ) {
-            
-            // reveal_posts_link_numbered();
-
-            // } else {
-
-            // reveal_posts_link();
-
+            //     if( $reveal_pagination == 'numbered' ) {            
+            //     reveal_posts_link_numbered();
+            //     } else {
+            //     reveal_posts_link();
+            //     }
             // }
 
-            else :
-
-            get_template_part( 'template-parts/content', 'none' );
+        else:
+        get_template_part( 'template-parts/content', 'none' );
 
         endif;
 
