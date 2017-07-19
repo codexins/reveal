@@ -751,7 +751,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'reveal_portfolio_style',
                         'type'      => 'select',
                         'title'     => esc_html__('Portfolio Archive Posts Style', 'reveal'),
-                        'desc'      => '',
+                        'desc'      => esc_html__('Choose Portfolio Archive Posts Style', 'reveal'),
+                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
                         'options'   => array(
                             'filter'=> esc_html__( 'Filter', 'reveal' ),
                             'list'  => esc_html__( 'List', 'reveal' ),

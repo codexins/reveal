@@ -120,7 +120,7 @@ if ( ! function_exists( 'reveal_title' ) ) {
             $title = implode(" ",$title);
         } 
         $title = preg_replace('`[[^]]*]`','',$title);
-        echo $title;
+        echo esc_html( $title );
     }
 
 }
@@ -143,7 +143,7 @@ if ( ! function_exists( 'reveal_excerpt' ) ) {
             $excerpt = implode(" ",$excerpt);
         } 
         $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
-        echo $excerpt;
+        echo esc_html( $excerpt );
     }
 
 }
@@ -201,7 +201,7 @@ if ( ! function_exists( 'reveal_posts_link_numbered' ) ) {
             printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
 
             if ( ! in_array( 2, $links ) ) {
-                echo '<li>…</li>';
+                echo '<li>&middot;&middot;&middot;</li>';
             }
         }
 
@@ -215,7 +215,7 @@ if ( ! function_exists( 'reveal_posts_link_numbered' ) ) {
         /** Link to last page, plus ellipses if necessary */
         if ( ! in_array( $max, $links ) ) {
             if ( ! in_array( $max - 1, $links ) ) {
-                echo '<li>…</li>' . "\n";
+                echo '<li>&middot;&middot;&middot;</li>' . "\n";
             }
 
             $class = $paged == $max ? ' class="active"' : '';
