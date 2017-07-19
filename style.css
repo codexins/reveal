@@ -1694,12 +1694,3 @@ a.more:hover {
   opacity: 0;
 }
 
-
-.section-heading{
-    background: #282828;
-    color: #fff;
-    margin-bottom: -20px;
-    margin-top: -20px;
-    padding: 10px;
-    text-transform: uppercase;
-}

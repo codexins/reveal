@@ -60,8 +60,8 @@ if ( ! function_exists( 'reveal_posts_link' ) ) {
 
     function reveal_posts_link() {
 
-        $prev_link = get_previous_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
-        $next_link = get_next_posts_link(esc_html__('Older Posts &raquo;', 'reveal'));
+        $prev_link = get_previous_posts_link(esc_html__('Older Posts &raquo; ', 'reveal'));
+        $next_link = get_next_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
 
         echo '<div class="posts-nav" class="section">';
             if($next_link): 
@@ -102,6 +102,267 @@ if ( ! function_exists( 'reveal_post_link' ) ) {
     }
 
 }
+
+/**
+*
+* Helper Function for limiting the title length
+*
+**/
+if ( ! function_exists( 'reveal_title' ) ) {
+
+    function reveal_title($limit) {
+        $limit = $limit + 1;
+        $title = explode(' ', get_the_title(), $limit);
+        if (count($title)>=$limit) {
+            array_pop($title);
+            $title = implode(" ",$title).'...';
+        } else {
+            $title = implode(" ",$title);
+        } 
+        $title = preg_replace('`[[^]]*]`','',$title);
+        echo $title;
+    }
+
+}
+
+
+/**
+*
+* Helper Function for limiting the excerpt length
+*
+**/
+if ( ! function_exists( 'reveal_excerpt' ) ) {
+
+    function reveal_excerpt($limit) {
+        $limit = $limit + 1;
+        $excerpt = explode(' ', get_the_excerpt(), $limit);
+        if (count($excerpt)>=$limit) {
+            array_pop($excerpt);
+            $excerpt = implode(" ",$excerpt).'...';
+        } else {
+            $excerpt = implode(" ",$excerpt);
+        } 
+        $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
+        echo $excerpt;
+    }
+
+}
+
+/**
+*
+* Helper Function for numbered pagination
+*
+**/
+if ( ! function_exists( 'reveal_posts_link_numbered' ) ) {
+
+    function reveal_posts_link_numbered () {
+
+        if( is_singular() ) {
+            return;
+        }
+
+        global $wp_query;
+
+        /** Stop execution if there's only 1 page */
+        if( $wp_query->max_num_pages <= 1 ) {
+            return;
+        }
+
+        $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+        $max   = intval( $wp_query->max_num_pages );
+
+        /** Add current page to the array */
+        if ( $paged >= 1 ) {
+            $links[] = $paged;
+        }
+
+        /** Add the pages around the current page to the array */
+        if ( $paged >= 3 ) {
+            $links[] = $paged - 1;
+            $links[] = $paged - 2;
+        }
+
+        if ( ( $paged + 2 ) <= $max ) {
+            $links[] = $paged + 2;
+            $links[] = $paged + 1;
+        }
+
+        echo '<div class="navigation"><ul>' . "\n";
+
+        /** Previous Post Link */
+        if ( get_previous_posts_link() ) {
+            printf( '<li>%s</li>' . "\n", get_previous_posts_link( '&laquo;' ) );
+        }
+
+        /** Link to first page, plus ellipses if necessary */
+        if ( ! in_array( 1, $links ) ) {
+            $class = 1 == $paged ? ' class="active"' : '';
+
+            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+            if ( ! in_array( 2, $links ) ) {
+                echo '<li>…</li>';
+            }
+        }
+
+        /** Link to current page, plus 2 pages in either direction if necessary */
+        sort( $links );
+        foreach ( (array) $links as $link ) {
+            $class = $paged == $link ? ' class="active"' : '';
+            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+        }
+
+        /** Link to last page, plus ellipses if necessary */
+        if ( ! in_array( $max, $links ) ) {
+            if ( ! in_array( $max - 1, $links ) ) {
+                echo '<li>…</li>' . "\n";
+            }
+
+            $class = $paged == $max ? ' class="active"' : '';
+            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+        }
+
+        /** Next Post Link */
+        if ( get_next_posts_link() ) {
+            printf( '<li>%s</li>' . "\n", get_next_posts_link( '&raquo;' ) );
+        }
+
+        echo '</ul></div>' . "\n";
+
+    }
+
+}
+
+/**
+*
+* Helper Function for loop posts
+*
+**/
+if ( ! function_exists( 'reveal_loop' ) ) {
+
+    function reveal_loop() {
+
+        if ( have_posts() ) :
+            $i = 0;
+
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+
+                $i++;
+                $post_style = reveal_option( 'reveal_post_style' );
+                if( $post_style == 'list' ):
+
+                get_template_part( 'template-parts/page-styles/list/content', get_post_format() );
+
+                else:
+                $grid_columns = 12/reveal_option('reveal_grid_columns');
+
+                printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
+
+                get_template_part( 'template-parts/page-styles/grid/content', get_post_format() );
+
+                echo '</div><!--blog post wrap-->';
+
+                if( $i % reveal_option('reveal_grid_columns') == 0 ):
+                    echo '<div class="clearfix"></div>';
+                endif;
+              
+                endif;
+
+            endwhile; 
+
+            $reveal_pagination = reveal_option( 'reveal_pagination' );
+
+            if( $reveal_pagination == 'numbered' ) {
+            
+            reveal_posts_link_numbered();
+
+            } else {
+
+            reveal_posts_link();
+
+            }
+
+            else :
+
+            get_template_part( 'template-parts/content', 'none' );
+
+        endif;
+
+    }
+
+}
+
+/**
+*
+* Helper Function for Custom Loop for Portfolio
+*
+**/
+if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
+
+    function reveal_portfolio_loop() {
+
+
+
+        if ( have_posts() ) :
+
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+
+                $post_style = reveal_option( 'reveal_portfolio_style' );
+                if( $post_style == 'filter' ):
+
+                get_template_part( 'template-parts/page-styles/filter/content', 'portfolio' );
+
+                else:
+
+                get_template_part( 'template-parts/page-styles/list/content', 'portfolio' );
+              
+                endif;
+
+            endwhile; 
+
+            // $reveal_pagination = reveal_option( 'reveal_pagination' );
+
+            // if( $reveal_pagination == 'numbered' ) {
+            
+            // reveal_posts_link_numbered();
+
+            // } else {
+
+            // reveal_posts_link();
+
+            // }
+
+            else :
+
+            get_template_part( 'template-parts/content', 'none' );
+
+        endif;
+
+    }
+
+}
+
+
+
+/**
+*
+* Helper Function for deregistering Posrtfolio Custom Posts Type
+*
+**/
+$disable_port = reveal_option( 'reveal_enable_portfolio' );
+
+if( $disable_port == false ) {
+
+    function delete_post_type(){
+        unregister_post_type( 'portfolio' );
+    }
+    add_action('init','delete_post_type');
+
+}
+
+
 
 
 /**
@@ -551,6 +812,8 @@ function show_user_likes( $user ) { ?>
         </tr>
     </table>
 <?php } // show_user_likes()
+
+
 
 
 

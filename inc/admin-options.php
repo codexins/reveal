@@ -128,13 +128,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'title'            => esc_html__( 'General Settings', 'reveal' ),
                 'id'               => 'reveal-general-settings',
                 'customizer_width' => '500px',
-                'subsection'       => true,
                 'fields'           => array(
                     array(
                         'id'       => 'reveal-smooth-scroll',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Smooth Scroll', 'reveal' ),
                         'subtitle' => esc_html__( 'This option will enable smooth scroll through the pages of your site', 'reveal' ),
+                        'default'  => true,
+                    ),
+
+                    array(
+                        'id'       => 'reveal-page-loader',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable Page Loader?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose to Enable / Disable Page Loader Throughout the Site', 'reveal' ),
                         'default'  => true,
                     ),
 
@@ -582,23 +589,23 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id' => 'reveal_post_style',
-                        'type' => 'select',
-                        'title' => esc_html__('Blog & Archive Posts Style', 'reveal'),
-                        'desc' => '',
-                        'options' => array(
-                            'list' => esc_html__( 'List', 'reveal' ),
-                            'grid' => esc_html__( 'Grid', 'reveal' ),
+                        'id'        => 'reveal_post_style',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Blog & Archive Posts Style', 'reveal'),
+                        'desc'      => '',
+                        'options'   => array(
+                            'list'  => esc_html__( 'List', 'reveal' ),
+                            'grid'  => esc_html__( 'Grid', 'reveal' ),
                         ),
-                        'default' => 'list'
+                        'default'   => 'list'
                     ),
 
                     array(
-                        'id' => 'reveal_grid_columns',
-                        'type' => 'select',
-                        'title' => esc_html__('Columns on desktop', 'reveal'),
-                        'desc' => '',
-                        'options' => array(
+                        'id'        => 'reveal_grid_columns',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Columns Number', 'reveal'),
+                        'desc'      => '',
+                        'options'   => array(
                             '2' => esc_html__( '2 columns', 'reveal' ) ,
                             '3' => esc_html__( '3 columns', 'reveal' ) ,
                             '4' => esc_html__( '4 columns', 'reveal' ) ,
@@ -608,19 +615,21 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id' => 'reveal_archive_posts_per_page',
-                        'type' => 'text',
-                        'title' => esc_html__('Posts Per Page in Archive', 'reveal'),
-                        'desc' => esc_html__("Insert the Total Number of Pages.", 'reveal'),
-                        'default' => 10,
+                        'id'        => 'reveal_title_length',
+                        'type'      => 'text',
+                        'title'     => esc_html__('Title Length for Posts', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Title Length for Posts', 'reveal'),
+                        'desc'      => esc_html__("Insert the Number of Words to Show in the Post Title in Blog & Archive Page.", 'reveal'),
+                        'default'   => 7,
                     ),
 
                     array(
-                        'id' => 'reveal_archive_excerpt_length',
-                        'type' => 'text',
-                        'title' => esc_html__('Excerpt Length for Posts in Archive', 'reveal'),
-                        'desc' => esc_html__("Insert the Number of Words to Show in the Post Excerpts.", 'reveal'),
-                        'default' => 35,
+                        'id'        => 'reveal_excerpt_length',
+                        'type'      => 'text',
+                        'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Excerpt Length for Posts', 'reveal'),
+                        'desc'      => esc_html__("Insert the Number of Words to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
+                        'default'   => 20,
                     ),
 
                     array(
@@ -628,10 +637,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Read More Button?', 'reveal' ),
                         'subtitle' => esc_html__( 'Enable Read More Button in Posts?', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Read More Button in the Posts Loop', 'reveal' ),
-                        'default'  => 1,
-                        'on'       => 'Enabled',
-                        'off'      => 'Disabled',
+                        'desc'     => esc_html__( 'Choose to Enable / Disable Read More Button in the Posts Loop', 'reveal' ),
+                        'default'  => true,
                     ),   
 
                     array(
@@ -640,8 +647,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title' => esc_html__('Pagination Type', 'reveal'),
                         'desc' => esc_html__('Select the Pagination Type.', 'reveal'),
                         'options' => array(
-                            'normal' => esc_html__( 'Numbered pagination', 'reveal' ),
-                            'button' => esc_html__( 'Next - Previous Button', 'reveal' ),
+                            'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
+                            'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
                         ),
                         'default' => 'button'
                     ),
@@ -677,6 +684,24 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         ),
                         'default'  => '3'
                     ),
+
+                    array(
+                        'id'        => 'reveal_single_share',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Share Links?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Share Links', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Share Links in Single Post', 'reveal'),
+                        "default"   => true,
+                    ),
+
+                    array(
+                        'id'        => 'reveal_single_button',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Post Navigation?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Post Navigation', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Previous or Next Post Links', 'reveal'),
+                        "default"   => true,
+                    ),
                 )
             );  
 
@@ -686,19 +711,22 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'icon'             => 'dashicons dashicons-admin-users',
                 'id'               => 'reveal-portfolio-settings',
                 'customizer_width' => '500px',
-            );
-
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Portfolio Archive Page', 'reveal' ),
-                'id'               => 'reveal-portfolio-layout',
-                'customizer_width' => '500px',
-                'subsection'       => true,
                 'fields'           => array(
+
+                    array(
+                        'id'        => 'reveal_enable_portfolio',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Portfolio?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Portfolio', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Portfolio Custom Post', 'reveal'),
+                        "default"   => true,
+                    ),
 
                     array(
                         'id'       => 'reveal-portfolio-archive-layout',
                         'type'     => 'image_select',
-                        'title'    => esc_html__( 'Select Portfolio Archive Page Layout', 'reveal' ),
+                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
+                        'title'    => esc_html__( 'Portfolio Archive Page Layout', 'reveal' ),
                         'subtitle' => esc_html__( 'Select Portfolio Archive Page Layout', 'reveal' ),
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
@@ -718,20 +746,44 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         ),
                         'default'  => '1'
                     ),
-                )    
-            );
 
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Portfolio Single Page', 'reveal' ),
-                'id'               => 'reveal-portfolio-single-layout',
-                'customizer_width' => '500px',
-                'subsection'       => true,
-                'fields'           => array(
+                    array(
+                        'id'        => 'reveal_portfolio_style',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Portfolio Archive Posts Style', 'reveal'),
+                        'desc'      => '',
+                        'options'   => array(
+                            'filter'=> esc_html__( 'Filter', 'reveal' ),
+                            'list'  => esc_html__( 'List', 'reveal' ),
+                        ),
+                        'default'   => 'filter'
+                    ),
+
+                    array(
+                        'id'       => 'reveal_portfolio_filter_title',
+                        'type'     => 'textarea',
+                        'title'    => esc_html__( 'Portfolio Filter Section Title', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Primary Title', 'reveal' ),
+                        'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
+                        'validate' => 'html',
+                        'default'  => ''
+                    ),
+
+                    array(
+                        'id'       => 'reveal_portfolio_filter_subtitle',
+                        'type'     => 'textarea',
+                        'title'    => esc_html__( 'Portfolio Filter Section Subtitle', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Secondary Title', 'reveal' ),
+                        'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
+                        'validate' => 'html',
+                        'default'  => ''
+                    ),
 
                     array(
                         'id'       => 'reveal-single-portfolio-layout',
                         'type'     => 'image_select',
-                        'title'    => esc_html__( 'Select Single Portfolio Page Layout', 'reveal' ),
+                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
+                        'title'    => esc_html__( 'Portfolio Single Page Layout', 'reveal' ),
                         'subtitle' => esc_html__( 'Select Single Portfolio Page Layout', 'reveal' ),
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
@@ -753,7 +805,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
                 )    
             );
-
 
             // footer section 
 
@@ -816,20 +867,18 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'fields'           => array(
 
                     array(
-                        'id'       => 'reveal-footer_copyright',
+                        'id'       => 'reveal_footer_copyright',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Footer Copyright?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable Footer Copyright', 'reveal' ),
-                        'default'  => 1,
-                        'on'       => 'Enabled',
-                        'off'      => 'Disabled',
+                        'default'  => true,
                     ),
 
 
                     array(
                         'id'       => 'reveal-copyright',
                         'type'     => 'textarea',
-                        'required' => array( 'reveal-footer_copyright', '=', '1' ),
+                        'required' => array( 'reveal_footer_copyright', '=', '1' ),
                         'title'    => esc_html__( 'Footer copyright text  ', 'reveal' ),
                         'desc'     => esc_html__( 'Please add your copyright text  ', 'reveal' ),
                         'validate' => 'html',

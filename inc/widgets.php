@@ -47,9 +47,9 @@ class Reveal_Sidebar_Widget {
 		) );
 
 		register_sidebar( array(
-			'name' 				=> esc_html__('Sidebar (Contact Page)', 'reveal'),
-			'id'				=> 'reveal-sidebar-contact-template',
-			'description'		=> esc_html__('This sidebar will show only on Contact Page.', 'reveal'), 
+			'name' 				=> esc_html__('Sidebar (Portfolio)', 'reveal'),
+			'id'				=> 'reveal-sidebar-portfolio-template',
+			'description'		=> esc_html__('This sidebar will show only on Portfolio Page.', 'reveal'), 
 			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget clearfix">',
 			'after_widget'  	=> '</div>',		
 		) );
