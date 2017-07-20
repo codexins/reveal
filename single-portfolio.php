@@ -20,7 +20,7 @@ get_header(); ?>
 
                 <?php 
 
-                $reveal_portfolio_layout = $reveal_option['reveal-portfolio-archive-layout'];
+                $reveal_portfolio_layout = $reveal_option['reveal-single-portfolio-layout'];
 
                 if($reveal_portfolio_layout == 1):
                     get_template_part('template-parts/page-layout/single-portfolio/no', 'sidebar');
@@ -32,7 +32,7 @@ get_header(); ?>
                     get_template_part('template-parts/page-layout/single-portfolio/right', 'sidebar');
 
                 else:
-                    get_template_part('template-parts/page-layout/single-portfolio/right', 'sidebar');
+                    get_template_part('template-parts/page-layout/single-portfolio/no', 'sidebar');
 
                 endif;
                 

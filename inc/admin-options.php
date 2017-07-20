@@ -616,7 +616,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
                     array(
                         'id'        => 'reveal_title_length',
-                        'type'      => 'text',
+                        'type'      => 'slider',
+                        'min'       => '1',
+                        'max'       => '10',
+                        'step'      => '1',
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Posts', 'reveal'),
                         'desc'      => esc_html__("Insert the Number of Words to Show in the Post Title in Blog & Archive Page.", 'reveal'),
@@ -625,7 +628,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
                     array(
                         'id'        => 'reveal_excerpt_length',
-                        'type'      => 'text',
+                        'type'      => 'slider',
+                        'min'       => '4',
+                        'max'       => '40',
+                        'step'      => '4',
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts', 'reveal'),
                         'desc'      => esc_html__("Insert the Number of Words to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
@@ -711,9 +717,18 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'required' => array( 'reveal_single_button', '=', '1' ),
                         'options'   => array(
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
-                            'title'     => esc_html__( 'Button with Title Text', 'reveal' ),
+                            'title'     => esc_html__( 'Button with Post Title Text', 'reveal' ),
                         ),
                         'default' => 'button'
+                    ),
+
+                    array(
+                        'id'        => 'reveal_post_comments',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Show Comments?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need to Show Single Blog Post Comments Section', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable to Show Blog Single Post Comments', 'reveal'),
+                        "default"   => true,
                     ),
                 )
             );  
@@ -821,6 +836,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'reveal_portfolio_comments',
                         'type'      => 'switch',
+                        'required'  => array( 'reveal_enable_portfolio', '=', '1' ),
                         'title'     => esc_html__('Enable Portfolio Comments?', 'reveal'),
                         'subtitle'  => esc_html__('Select if You Need Portfolio Single Page Comments Section', 'reveal'),
                         'desc'      => esc_html__('Choose to Enable / Disable Portfolio Single Page Comments', 'reveal'),

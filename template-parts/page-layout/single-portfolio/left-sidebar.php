@@ -11,16 +11,18 @@
 							while ( have_posts() ) : the_post();
 
 								reveal_set_post_views(get_the_ID());
-								get_template_part( 'template-parts/content', get_post_format()  );
+								get_template_part( 'template-parts/content', 'portfolio'  );
 
-								if( reveal_option( 'reveal_single_button' ) == true ):
+								// if( reveal_option( 'reveal_single_button' ) == true ):
 									reveal_post_link();
-								endif;
+								// endif;
 
-								// If comments are open or we have at least one comment, load up the comment template.
-								if ( comments_open() || get_comments_number() ) :
+								if( reveal_option( 'reveal_portfolio_comments' ) ):
+									echo 'true';
 									comments_template();
 								endif;
+
+
 							endwhile; ?>
 
 					</div><!-- #primary -->
