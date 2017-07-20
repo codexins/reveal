@@ -1743,11 +1743,13 @@ h2.widgettitle {
 .sidebar-widget ul {
     list-style: none;
     padding: 0;
+    /*overflow: hidden;*/
 }
 
 .sidebar-widget li {
     line-height: 30px;
     text-align: right;
+    overflow: hidden;
 }
 
 .sidebar-widget ul li a:hover {
@@ -1758,7 +1760,7 @@ h2.widgettitle {
     position: relative;
     padding-right: 20px;
     margin-right: 10px;
-    line-height: normal;
+    line-height: 30px;
     float: left;
 }
 
@@ -1813,4 +1815,7 @@ h2.widgettitle {
     margin-bottom: 5px;
     font-size: 13px !important;
     transition: all .3s;
+}
+.widget-area {
+    margin-top: 40px;
 }
