@@ -789,7 +789,7 @@ a.explore:hover {
 }
 
 
-.portfolio {
+.home .portfolio {
     width: 25%;
     position: relative;
     overflow: hidden;
@@ -1573,11 +1573,12 @@ a.more:hover {
 
 .cx-button {
     padding: 0.375em 0.625em;
+    padding-left: 0;
 }
 
 /* Icon */
 .cx-icon {
-    vertical-align: middle;
+    vertical-align: inherit;
 }
 .cx-icon svg {
     fill: currentColor;
@@ -1596,9 +1597,11 @@ a.more:hover {
 /* Count */
 .cx-count {
     text-transform: uppercase;
-    vertical-align: middle;
-    font-size: 13px;
     text-transform: capitalize;
+}
+
+#cx_wrapper.cx-wrapper a.liked span.cx-count {
+    vertical-align: initial;
 }
 
 /* Loader */
@@ -1691,6 +1694,7 @@ a.more:hover {
   opacity: 0;
 }
 
+<<<<<<< HEAD
 /*=========================================================
 Sidebar widget 
 =====================================================*/
@@ -1766,4 +1770,38 @@ h2.widgettitle {
 }
 .sidebar-widget table {
     width: 100%;
+=======
+#thumbnail_nav {
+    clear: both; 
+    height: 100px; 
+    margin: 0 0 70px;
+}
+
+#thumbnail_nav .nav-box {
+    background: #e9e9e9; 
+    padding: 10px;
+}
+
+#thumbnail_nav img {
+    float: left; 
+    margin: 0 10px 0 0;
+    width: 100px;
+}
+
+#thumbnail_nav p {
+    margin: 0 10px; 
+    font-size: 12px; 
+    vertical-align: middle;
+}
+
+#thumbnail_nav .previous {
+    float: left; 
+    vertical-align: middle; 
+    width: 250px; 
+}
+
+#thumbnail_nav .next {
+    float: right; 
+    width: 250px;
+>>>>>>> 37d939cb1471aa10496234ee688b54943cd72293
 }

@@ -13,23 +13,28 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
     <div class="blog-post">
         <?php if(has_post_thumbnail()): ?>
+            <a href="<?php the_permalink(); ?>">
                 <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('blog-single-image') ?>" class="img-responsive" alt="Blog Post">
-                    <a href="<?php the_post_thumbnail_url('full') ?>" class="img-pop-up">
+                    <img src="<?php the_post_thumbnail_url('blog-mini-image') ?>" class="img-responsive" alt="Blog Post">
                     <div class="item-img-overlay">
                         <span></span>
                     </div>
-                    </a>
                 </div>                       
+            </a><!--work link-->
          <?php endif; ?>      
         <ul class="list-inline post-detail">
             <li>by <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
-            <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
-            <li><i class="fa fa-tag"></i> <a href="<?php the_permalink(); ?>"><?php the_category( ', ' )?></a></li>
-            <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
+            <li><i class="fa fa-calendar"></i> <?php the_time('d-M-y') ?></li>
             <li><?php echo get_simple_likes_button( get_the_ID(), 0 ); ?></li>
         </ul>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2><a href="<?php the_permalink(); ?>">
+            <?php 
+
+            $reveal_title_len = reveal_option( 'reveal_title_length' );
+            reveal_title( $reveal_title_len );
+
+            ?>
+            </a></h2>
 		<div class="entry-content">
 			<?php 
 				if(is_single()):
@@ -50,25 +55,29 @@
 					reveal_excerpt( $reveal_excerpt_len );
 				endif; ?>
 
+                <?php 
+
+                $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
+
+                if( $reveal_read_more == true ) { ?>
+
+                <p class="blog-btn"><a class="cx_btn" href="<?php the_permalink(); ?>">
+                  <span>Read More</span>
+                </a></p>
+
+                <?php
+                } 
+                ?>
+
+
 		</div><!-- .entry-content -->
 
-        <footer id="entry_footer">
         <?php if(has_tag()): ?>
-			<?php the_tags('Tags: &nbsp',', ',''); ?>
-        <?php endif; ?>
 
-        <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
-            <div class="share">            
-                <div class="caption"><?php esc_html_e('Share this post', 'reveal'); ?></div>    
-                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><i class="fa fa-facebook"></i></a>
-                <a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a>
-                <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>
-                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><i class="fa fa-linkedin"></i></a>        
-            </div>
-        <?php endif ?>
-
-        </footer>
+    		<footer id="entry_footer">
+    			<?php the_tags('Tags: &nbsp','',''); ?>
+    		</footer>
+         <?php endif; ?>
         
     </div><!--blog post-->
 </article><!-- #post-## -->
-<div class="clearfix"></div>

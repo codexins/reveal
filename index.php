@@ -17,36 +17,25 @@ get_header(); ?>
 	<div id="content" class="main-content-wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-md-8">
+			<?php 
 
-					<div id="primary" class="site-main">
-						<?php
-						if ( have_posts() ) :
+            $reveal_blog_layout = $reveal_option['reveal-blog-layout'];
 
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
+            if($reveal_blog_layout == 1):
+                get_template_part('template-parts/page-layout/blog/no', 'sidebar');
 
-								get_template_part( 'template-parts/content', get_post_format() );
+            elseif($reveal_blog_layout == 2):
+                get_template_part('template-parts/page-layout/blog/left', 'sidebar');
 
+            elseif($reveal_blog_layout == 3):
+                get_template_part('template-parts/page-layout/blog/right', 'sidebar');
 
-							endwhile; ?>
+            else:
+                get_template_part('template-parts/page-layout/blog/right', 'sidebar');
 
-							<?php reveal_posts_link(); ?>
-
-						<?php else :
-
-							get_template_part( 'template-parts/content', 'none' );
-
-						endif; ?>
-
-					</div><!-- #primary -->
-				</div> <!-- end of col -->
-
-				<div class="col-sm-4 col-md-4">
-					<div id="secondary" class="widget-area" role="complementary">
-						<?php get_sidebar() ?>
-					</div><!-- #secondary -->
-				</div> <!-- end of col -->
+            endif;
+            
+			 ?>
 
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->

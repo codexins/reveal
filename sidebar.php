@@ -11,13 +11,9 @@
 <?php
 
 
-if( is_page() && is_page(26) && is_active_sidebar('reveal-sidebar-contact-page') ) :
+if( is_post_type_archive( 'portfolio' ) && is_active_sidebar('reveal-sidebar-portfolio-template') ) :
 
-	dynamic_sidebar('reveal-sidebar-contact-page');
-
-elseif ( is_page() && is_page_template('page-templates/page-contact.php') && is_active_sidebar('reveal-sidebar-contact-template') ) :
-
-	dynamic_sidebar('reveal-sidebar-contact-template');
+	dynamic_sidebar('reveal-sidebar-portfolio-template');
 
 elseif ( is_page() && is_active_sidebar('reveal-sidebar-page') ) :
 

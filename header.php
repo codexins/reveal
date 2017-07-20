@@ -30,13 +30,20 @@
 	<!--[if lt IE 9]>
 	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="<?php echo esc_url(__('https://browsehappy.com/?locale=en', 'reveal')) ?>">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
+	
+	<?php 
 
+	$page_loader = reveal_option('reveal-page-loader');
+
+	?>
 	<!--  Site Loader -->
+	<?php if( $page_loader == true ): ?>
 	<div id="loader">
 		<div class="cssload-container">
 			<div class="cssload-speeding-wheel"></div>
 		</div>
 	</div>
+	<?php endif; ?>
 	<!--  Site Loader finished -->
 
 	<?php if( is_front_page() && !(is_home()) ): ?>

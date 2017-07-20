@@ -17,39 +17,26 @@ get_header(); ?>
 	<div id="content" class="main-content-wrapper">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-md-9">
 
-					<div id="primary" class="site-main">
-						<?php
-						if ( have_posts() ) :
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
+					<?php 
 
-								/*
-								 * Include the Post-Format-specific template for the content.
-								 * If you want to override this in a child theme, then include a file
-								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-								 */
-								get_template_part( 'template-parts/content', get_post_format() );
+		            $reveal_blog_layout = $reveal_option['reveal-blog-layout'];
 
-							endwhile; ?>
+		            if($reveal_blog_layout == 1):
+		                get_template_part('template-parts/page-layout/blog/no', 'sidebar');
 
-							<?php reveal_posts_link(); ?>
+		            elseif($reveal_blog_layout == 2):
+		                get_template_part('template-parts/page-layout/blog/left', 'sidebar');
 
-						<?php else :
+		            elseif($reveal_blog_layout == 3):
+		                get_template_part('template-parts/page-layout/blog/right', 'sidebar');
 
-							get_template_part( 'template-parts/content', 'none' );
+		            else:
+		                get_template_part('template-parts/page-layout/blog/right', 'sidebar');
 
-						endif; ?>
-
-					</div><!-- #primary -->
-				</div> <!-- end of col -->
-
-				<div class="col-sm-4 col-md-3">
-					<div id="secondary" class="widget-area" role="complementary">
-						<?php get_sidebar() ?>
-					</div><!-- #secondary -->
-				</div> <!-- end of col -->
+		            endif;
+		            
+					 ?>
 
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->
