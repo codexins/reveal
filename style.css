@@ -1694,7 +1694,6 @@ a.more:hover {
   opacity: 0;
 }
 
-<<<<<<< HEAD
 /*=========================================================
 Sidebar widget 
 =====================================================*/
@@ -1770,7 +1769,7 @@ h2.widgettitle {
 }
 .sidebar-widget table {
     width: 100%;
-=======
+}
 #thumbnail_nav {
     clear: both; 
     height: 100px; 
@@ -1803,5 +1802,4 @@ h2.widgettitle {
 #thumbnail_nav .next {
     float: right; 
     width: 250px;
->>>>>>> 37d939cb1471aa10496234ee688b54943cd72293
 }
