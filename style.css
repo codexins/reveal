@@ -1819,3 +1819,6 @@ h2.widgettitle {
 .widget-area {
     margin-top: 40px;
 }
+#secondary .sidebar-widget:first-of-type{
+    padding-top: 0;
+}
