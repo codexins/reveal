@@ -1971,19 +1971,20 @@ a:hover, a:active, a:focus, a:visited {
 }
 
 .site-nav ul.sub-menu li {
-  margin: 0;
-  padding: 0;
-  display: block;
-  width: 100%;
-  clear: both;
-  position: relative;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+    clear: both;
+    position: relative;
+    line-height: 0px;
 }
 .site-nav ul.sub-menu a {
   line-height: normal;
   width: 100%;
   display: block;
   padding-left: 20px;
-  padding-right: 20px;
+  padding-right: 28px;
 }
 /*.site-nav ul.sub-menu a i.fa {
   margin-left: 6px;
@@ -2010,10 +2011,12 @@ a:hover, a:active, a:focus, a:visited {
     position: relative;
     content: "\f105";
     font-family: FontAwesome;
-    top: -32px;
-    left: 97px;
+    top: -18px;
+    right: 0px;
     color: #fff;
     font-size: 12px;
+    display: block;
+    float: right;
 }
 
 /*Sub menu level 2 sub-menu css area start*/
