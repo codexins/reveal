@@ -146,6 +146,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => true,
                     ),
 
+                    array(
+                        'id'       => 'reveal_to_top',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable To-Top Button?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose to Enable / Disable Scroll functionality to Top', 'reveal' ),
+                        'default'  => true,
+                    ),
+
                   )
             );
 
@@ -466,9 +474,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable Breadcrumbs', 'reveal' ),
                         'desc'     => esc_html__('Breadcrumbs is a navigational aid that allows visitors to understand their current location in the context of a website.', 'reveal'),
-                        'default'  => 1,
-                        'on'       => 'Enabled',
-                        'off'      => 'Disabled',
+                        'default'  => true
                     ),              
                 )
             );
@@ -565,6 +571,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'customizer_width' => '500px',
                 'subsection'       => true,
                 'fields'           => array(
+
+                    array(
+                        'id'        => 'reveal-blog-title',
+                        'type'      => 'text',
+                        'title'     => esc_html__('Blog Page Title', 'reveal'),
+                        'subtitle'  => 'Enter Blog Page Title',
+                        'default'   => 'Blog'
+                    ),
 
                     array(
                         'id'       => 'reveal-blog-layout',

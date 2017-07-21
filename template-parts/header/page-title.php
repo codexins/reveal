@@ -1,12 +1,27 @@
-	<?php if(!is_front_page() || is_home()): ?>
+	<?php 
 
-	<div id="page_title" class="page-title site-content" style="background-image: url('<?php echo get_template_directory_uri() .'/images/showcase.jpg'; ?>')">
+	if(!is_front_page() || is_home()): 
+
+	$header_bg = rwmb_meta('reveal_page_background', 'type=image_advanced'); 
+
+		  foreach ($header_bg as $single_bg) {
+		  		# code...
+		  	$single_bg = $single_bg['full_url'];
+
+		  	}	
+		 
+
+		  //echo  $header_bg->full_url;
+
+	 ?>
+
+	<div id="page_title" class="page-title site-content" style="background-image: url('<?php if (!empty($single_bg)): echo $single_bg; else: echo get_template_directory_uri() .'/assets/images/showcase.jpg'; endif; ?>')">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
 					<div class="page-title-wrapper">
 						<h1><?php if(is_home()):
-										echo esc_html__('Blog', 'reveal');
+									echo esc_html__( !empty(reveal_option( 'reveal-blog-title' )) ? reveal_option( 'reveal-blog-title' ) : 'Blog', 'reveal');
 								  elseif(is_404()):
 								  	echo esc_html__('Nothing Found!', 'reveal');
 								  elseif(is_archive()):
@@ -19,18 +34,16 @@
 						 ?></h1>
 
 						<div class="breadcrumbs-wrapper">
-							<p>
 							<?php $reveal_bc = reveal_option('reveal-bcrumbs'); ?>
 							<?php 
 
-							if( $reveal_bc == 1 ): 
+							if( reveal_option('reveal-bcrumbs' ) ): 
 							if (function_exists('reveal_custom_breadcrumbs')) {
 								echo reveal_custom_breadcrumbs();
 							}
 
 							?>
 						<?php endif; ?>
-							</p>
 						</div>
 					</div>
 				</div>

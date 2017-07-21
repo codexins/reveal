@@ -46,9 +46,11 @@
 	</section> <!-- end of footer -->
 
 	<!-- Go to Top Button at right bottom of the window screen -->
+	<?php if( reveal_option( 'reveal_to_top' ) ): ?>
 	<div id="toTop" style="">
 		<i class="fa fa-chevron-up"></i>
 	</div>
+	<?php endif; ?>
 	<!-- Go to Top Button finished-->
 
 
