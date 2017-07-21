@@ -30,6 +30,6 @@ function init_main_menu () {
 	);
 
 	return $args;
-} // reveal_main_menu ()
+} // reveal_main_menu () mamun
 
 ?>
