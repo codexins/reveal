@@ -1898,6 +1898,7 @@ h2.widgettitle {
 
 #commentform .error{
     color: red;
+    line-height: 100%;
 }
 #commentform input[type="email"] {
     width: 100%;
