@@ -64,9 +64,6 @@ class Reveal {
 		//Adding breadcrumbs
 		require get_template_directory() . '/inc/breadcrumbs.php';
 
-		//Adding Custom Comments
-		require get_template_directory() . '/inc/customcomment.php';
-
 		//Adding Helper File
 		require get_template_directory() . '/inc/helpers.php';
 
