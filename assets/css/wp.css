@@ -133,20 +133,48 @@ select {
     
 }
 
+
+/* theme Base CSS */
+
+article {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+
+#primary,
+#secondary {
+    margin-bottom: 80px;
+}
+
+#page_title,
+.front-header {
+    margin-bottom: 40px;
+}
+
+
+article > section.kc_row:first-of-type {
+    margin-top: 0;
+}
+
+.sidebar-widget {
+    padding-top: 40px;
+}
+
+/************************************************************
+    wordpress comments
+*************************************************************/
+
 #comments {
     margin-top: 70px;
 }
 
-/*#comments .comment-author.vcard {
-    float: left;
-    margin-right: 30px;
-    margin-bottom: 30px;
-}*/
 
 #comments .comment-author.vcard img {
     border-radius: 50%;
-    min-width:70px;
-    max-width:70px;
+    min-width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
@@ -187,31 +215,18 @@ select {
     color: #333;
 }
 
-/* theme Base CSS */
 
-article {
-    margin-top: 40px;
-    margin-bottom: 20px;
+
+.comment-single-left {
+    display: block;
+    min-width: 10%;
+    max-width: 10%;
+    float: left;
+    margin-right: 2%;
 }
 
-
-
-#primary,
-#secondary {
-    margin-bottom: 80px;
+.comment-single-right {
+    width:88%;
+    float:right;
+    display: block;
 }
-
-#page_title,
-.front-header {
-    margin-bottom: 40px;
-}
-
-
-article > section.kc_row:first-of-type {
-    margin-top: 0;
-}
-
-.sidebar-widget {
-    padding-top: 40px;
-}
-

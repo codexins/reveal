@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 		<h3><?php comments_number(__('This post has no comments', 'reveal'), __('This post has 1 Comment', 'reveal'), __('This post has % Comments', 'reveal')); ?></h3>
 
 
-		<ol class="comment-list">
+		<ol class="comment-list clearfix">
 			<?php
 				wp_list_comments('type=comment&callback=reveal_comment_function');
 			?>
