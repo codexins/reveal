@@ -1,6 +1,6 @@
 	<?php if(!is_front_page() || is_home()): ?>
 
-	<div id="page_title" class="page-title" style="background-image: url('<?php echo get_template_directory_uri() .'/images/showcase.jpg'; ?>')">
+	<div id="page_title" class="page-title site-content" style="background-image: url('<?php echo get_template_directory_uri() .'/images/showcase.jpg'; ?>')">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
