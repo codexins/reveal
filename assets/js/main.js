@@ -243,7 +243,7 @@
 
         errorElement: "div",
         errorPlacement: function(error, element) {
-            element.before(error);
+            element.after(error);
         }
 
     });

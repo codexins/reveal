@@ -1835,3 +1835,22 @@ h2.widgettitle {
 #commentform .error{
     color: red;
 }
+#commentform input[type="email"] {
+    width: 100%;
+    padding: 10px;
+}
+.comment-form-email fieldset,
+.comment-form-comment fieldset,
+.comment-form-author fieldset {
+    /*position: relative;*/
+}
+
+.comment-form-email .error,
+.comment-form-comment .error,
+.comment-form-author .error {
+    /*position: relative;*/
+}
+/*#commentform fieldset .error{
+    position: absolute;
+    top: -25px;
+}*/
