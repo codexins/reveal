@@ -39,6 +39,7 @@ INDEX:
 	014 - Footer Section
 	015 - Back to top button
 	016 - Site Loader
+    070 - Sidebar
 
 ******************************/
 
@@ -93,6 +94,18 @@ h2 {
 
 .site-content {
     word-wrap: break-word;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus, {
+    text-decoration: none;
+}
+
+a {
+    outline: none;
 }
 
 /***********************************
@@ -244,6 +257,43 @@ a.explore {
 a.explore:hover {
     opacity: 1;
 }
+
+
+/*Page header CSS*/
+
+#page_title.page-title {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-top: 140px;
+    position: relative;
+}
+
+#page_title.page-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: -webkit-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(assets/images/transparent-bg.png) center top repeat;
+    background: -moz-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(assets/images/transparent-bg.png) center top repeat;
+    background: -ms-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(assets/images/transparent-bg.png) center top repeat;
+    background: -o-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(assets/images/transparent-bg.png) center top repeat;
+    background: linear-gradient(transparent 30%,rgba(0,0,0,.85));
+    width: 100%;
+    height: 100%;
+}
+
+.page-title-wrapper h1 {
+    line-height: 30px;
+}
+
+.breadcrumbs-wrapper .breadcrumb {
+    padding-left: 0;
+    font-size: 14px;
+    letter-spacing: .5px;
+}
+
 
 
 
@@ -1754,8 +1804,23 @@ h2.widgettitle {
 
 .sidebar-widget li {
     line-height: 30px;
-    /*text-align: right;*/
-    /*overflow: hidden;*/
+    position: relative;
+    padding-left: 15px;
+}
+
+.sidebar-widget li::before {
+    content:"\f0da";
+    font-family: FontAwesome;
+    position: absolute;
+    left:0;
+    top:0;
+    font-size:80%;
+
+}
+
+.sidebar-widget li ul li::before {
+    content:"\f105";
+    font-family: FontAwesome;
 }
 
 .sidebar-widget ul li a:hover {
@@ -1767,7 +1832,6 @@ h2.widgettitle {
     padding-right: 20px;
     margin-right: 10px;
     line-height: 30px;
-    /*float: left;*/
 }
 
 .sidebar-widget select {

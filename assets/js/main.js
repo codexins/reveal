@@ -231,14 +231,14 @@
 
             comment: {
                 required: true,
-                minlength: 10
+                minlength: 5
             }
         },
 
         messages: {
             author: "Please provide a valid name",
             email: "Please provide a valid email",
-            comment: "Comments needs to be at least 20 characters"
+            comment: "Comments needs to be at least 5 characters"
         },
 
         errorElement: "div",
