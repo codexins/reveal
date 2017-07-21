@@ -191,7 +191,6 @@ article > section.kc_row:first-of-type {
 
 .comment-list li {
     list-style-type: none;
-    margin-bottom:35px;
 }
 
 .comment-list .media {
@@ -229,4 +228,5 @@ article > section.kc_row:first-of-type {
     width:88%;
     float:right;
     display: block;
+    margin-bottom: 35px;
 }
