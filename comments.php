@@ -57,7 +57,35 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
+	//comment_form();
+
+
+
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
+
+	comment_form(array(
+		'fields' => apply_filters( 'comment_form_default_fields', array(
+			
+			'comment_notes_after' => '',	
+			'author' => '<div class="row"><div class="col-sm-4"><div class="comment-form-author"><fieldset><input id="author" name="author" type="text" placeholder="'.__( 'Name', 'delicious' ). ( $req ? ' *' : '' ).'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . ' /></fieldset></div></div>',
+			'email' => '<div class="col-sm-4"><div class="comment-form-email"><fieldset><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" placeholder="'. __( 'Email', 'delicious' ) . ( $req ? ' *' : '' ) .'" ' . $aria_req . ' /></fieldset></div></div>',
+			'url' => '<div class="col-sm-4"><div class="comment-form-url"><fieldset><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="'.__( 'Website', 'delicious' ).'" size="30" /></fieldset></div></div></div>'
+
+		)),
+		'comment_notes_before' => '',
+		'comment_notes_after' => '',
+		'title_reply' => __( 'Leave a Comment', 'delicious' ),
+		'title_reply_to' => __( 'Leave a  Comment', 'delicious' ),
+		'cancel_reply_link' => __( 'Cancel Comment', 'delicious' ),	
+		'comment_field' => '<div class="comment-form-comment"><fieldset>' . '<textarea id="comment" placeholder="' . __( 'Your Comment', 'delicious' ) . ( $req ? ' *' : '' ) . '" name="comment" cols="45" rows="8" aria-required="true"></textarea></fieldset></div>',
+		'label_submit' => __( 'Submit Comment', 'delicious' ),
+		'id_submit' => 'submit_my_comment'
+		
+	));
+
+
 	?>
 
 </div><!-- #comments -->

@@ -4,7 +4,7 @@
 					</div><!-- #secondary -->
 				</div> <!-- end of col -->
 
-				<div class="col-sm-8 col-md-8">
+				<div class="col-sm-8 col-md-7 col-md-offset-1">
 					<div id="primary" class="site-main">
 						<?php
 							/* Start the Loop */

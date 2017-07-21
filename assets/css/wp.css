@@ -230,3 +230,27 @@ article > section.kc_row:first-of-type {
     display: block;
     margin-bottom: 35px;
 }
+
+#commentform {
+    position: relative;
+}
+
+#commentform fieldset {
+    clear: both;
+}
+
+#commentform textarea {
+    height: 150px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 20px !important;
+}
+
+#commentform input[type="text"] {
+    width:100%;
+    padding:10px;
+}
+
+p.form-submit {
+    margin-top: 30px;
+}

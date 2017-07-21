@@ -818,7 +818,7 @@ function show_user_likes( $user ) { ?>
 function reveal_comment_function($comment, $args, $depth) {
  $GLOBALS['comment'] = $comment; ?>
  <li <?php comment_class('clearfix'); ?> id="li-comment-<?php comment_ID() ?>">
-   <div id="comment-<?php comment_ID(); ?>">
+   <div id="comment-<?php comment_ID(); ?>" class="clearfix">
     <div class="comment-single">
       <div class="comment-single-left comment-author vcard">
        <?php echo get_avatar($comment,$size='48'); ?>
