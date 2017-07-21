@@ -24,6 +24,7 @@ function reveal_comment_function($comment, $args, $depth) {
     </div>
 
 
+
    <?php if ($comment->comment_approved == '0') : ?>
      <em><?php echo esc_html__('Your comment is awaiting moderation.', 'reveal') ?></em>
      <br />
