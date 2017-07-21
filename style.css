@@ -2050,14 +2050,22 @@ a:hover, a:active, a:focus, a:visited {
 .comment-form-author fieldset {
     /*position: relative;*/
 }
-
-.comment-form-email .error,
-.comment-form-comment .error,
-.comment-form-author .error {
-    /*position: relative;*/
+#commentform fieldset {
+    position: relative;
+    padding-bottom: 20px;
+}
+#comment-error,
+#author-error,
+#email-error,
+#url-error{
+    position: absolute;
+    bottom: -10px;
 }
 /*#commentform fieldset .error{
     position: absolute;
     top: -25px;
 }*/
+<<<<<<< HEAD
 >>>>>>> 9d81dcb730258ad4aca720c9a88a8766a87e6469
+=======
+>>>>>>> 613d69f6f387776a7acbbc26b78535f272479143
