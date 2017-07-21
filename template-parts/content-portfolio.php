@@ -28,10 +28,10 @@
                 <?php $csurl = rwmb_meta('reveal_portfolio_surl', 'type=text'); ?>
 
                 <ul class="single-portfolio-meta">
-                    <li><i class="fa fa-user"></i><span>Client:</span><?php echo $cname; ?></li>
-                    <li><i class="fa fa-calendar"></i><span>Date:</span><?php echo $cdate; ?></li>
-                    <li><i class="fa fa-coffee"></i><span>Skills:</span><?php echo $cskills; ?></li>
-                    <li><i class="fa fa-link"></i><span>Website: </span><a href="<?php echo $csurl; ?>" target="_blank"><?php echo $csname; ?></a></li>
+                    <li><i class="fa fa-user"></i><span>Client:</span><?php echo esc_html( $cname ); ?></li>
+                    <li><i class="fa fa-calendar"></i><span>Date:</span><?php echo esc_html( $cdate ); ?></li>
+                    <li><i class="fa fa-coffee"></i><span>Skills:</span><?php echo esc_html( $cskills ); ?></li>
+                    <li><i class="fa fa-link"></i><span>Website: </span><a href="<?php echo esc_url( $csurl ); ?>" target="_blank"><?php echo esc_html( $csname ); ?></a></li>
                 </ul>                               
             </div>                                 
         </div>

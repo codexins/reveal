@@ -127,6 +127,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             $this->sections[] = array(
                 'title'            => esc_html__( 'General Settings', 'reveal' ),
                 'id'               => 'reveal-general-settings',
+                'icon'			   => 'el el-adjust-alt',
                 'customizer_width' => '500px',
                 'fields'           => array(
                     array(
@@ -152,7 +153,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'title'  => esc_html__( 'Typography', 'reveal' ),
                 'id'     => 'reveal-typography',
                 'desc'   => esc_html__( 'Theme Typography Section ', 'reveal' ),
-                'icon'   => 'el el-font',
+                'icon'   => 'el el-fontsize',
                 'fields' => array(
                     array(
                         'id'       => 'reveal-typography-body',
@@ -305,6 +306,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'title'            => esc_html__( 'Header', 'reveal' ),
                 'icon'             => 'dashicons dashicons-admin-settings',
                 'id'               => 'reveal-header-option',
+                'icon'			   => 'el el-website',
                 'customizer_width' => '500px',
             );
 
@@ -932,7 +934,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             $this->sections[] = array(
                     'title'            => esc_html__( 'Map Settings', 'reveal' ),
                     'customizer_width' => '500px',
-                    'icon'             => 'dashicons dashicons-admin-post',
+                    'icon'             => 'el el-map-marker',
                     'id'               => 'reveal-map-parent',
 
                     'desc'             => sprintf(__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="%s" target="_blank">Here</a>', 'reveal'), esc_url('//latlong.net/')),
@@ -985,7 +987,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'title'            => esc_html__( 'Advanced Settings', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-advanced',
-                'icon'             => 'dashicons dashicons-media-code',
+                'icon'             => 'el el-view-mode ',
                 'fields'           => array(
             ) );
 
