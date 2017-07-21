@@ -39,6 +39,12 @@
 		padding:0;
 	}
 
+	#author-error, 
+	#email-error, 
+	#url-error{
+		bottom: -20px;
+	}
+
 } /*end of (min-width: 992px) and (max-width: 1199px)*/
 
 
@@ -111,6 +117,11 @@
 
 	.item img {
 		width:90px;
+	}
+	#author-error, 
+	#email-error, 
+	#url-error{
+		bottom: -20px;
 	}
 
 
@@ -308,11 +319,23 @@
 		height: 350px;
 		width:100%;
 	}
+	#commentform fieldset {
+	    /*padding-bottom: 25px;*/
+	}
+
+
+
+
+
+
 
 }  /* end of (max-width: 767px) */
 
 
 @media only screen and (max-width: 667px) {
+	#comment-error{
+		font-size: 14px;
+	}
 
 	.slider-text h4 {
 		font-size: 22px;

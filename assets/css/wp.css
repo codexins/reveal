@@ -243,6 +243,7 @@ article > section.kc_row:first-of-type {
     height: 150px;
     padding: 10px;
     width: 100%;
+    display: block;
 }
 .comment-form-comment{
     margin-bottom: 20px;
