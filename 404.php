@@ -10,7 +10,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="main-content-wrapper">
+	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
