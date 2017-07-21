@@ -1899,3 +1899,138 @@ h2.widgettitle {
 #commentform .error{
     color: red;
 }
+
+
+/*---------------------------------------
+    Main Menu Section - sazzad
+-----------------------------------------*/
+a {
+  display: inline-block;
+  max-width: 100%;
+  text-decoration: none;
+  color: #02bdd3;
+}
+a:hover, a:active, a:focus, a:visited {
+    color: #02bdd3;
+    text-decoration: none;
+}
+/*menu nav css area start*/
+.site-nav {
+  margin: 0;
+  padding: 0;
+  display: block;
+  float: right;
+}
+.site-nav ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.site-nav li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  float: left;
+  list-style: none;
+}
+
+.site-nav a {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 29px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 10px 18px;
+  transition: 400ms ease;
+  transition-property: color;
+}
+.site-nav li.active > a, .site-nav li:hover > a {
+  color: #02bdd3;
+}
+.site-nav a > i.fa {
+  margin-left: 5px;
+  display: inline-block;
+}
+
+/*Sub menu level 1 css area start*/
+.site-nav ul.sub-menu {
+  margin: 0;
+  padding: 10px 0 10px;
+  display: block;
+  position: absolute;
+  top: auto;
+  left: auto;
+  background: #262626;
+  min-width: 150px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 400ms ease;
+  transition-property: opacity, visibility;
+  z-index: 99;
+}
+
+.site-nav ul.sub-menu li {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  clear: both;
+  position: relative;
+}
+.site-nav ul.sub-menu a {
+  line-height: normal;
+  width: 100%;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+/*.site-nav ul.sub-menu a i.fa {
+  margin-left: 6px;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+}*/
+
+.menu-item-has-children:after {
+    position: relative;
+    content: "\f107";
+    font-family: FontAwesome;
+    top: 02px;
+    left: -14px;
+    color: #fff;
+    font-size: 12px;
+}
+
+.menu-item-has-children:hover:after {
+    color: #02bdd3;
+}
+
+.sub-menu .menu-item-has-children:after {
+    position: relative;
+    content: "\f105";
+    font-family: FontAwesome;
+    top: -32px;
+    left: 97px;
+    color: #fff;
+    font-size: 12px;
+}
+
+/*Sub menu level 2 sub-menu css area start*/
+.site-nav ul.sub-menu .sub-menu {
+  left: 100%;
+  top: -10px;
+  padding-top: 10px;
+}
+
+/*Sub menu level 2 sub-menu css area end*/
+
+/*Sub menu level 1 css area end*/
+
+/*menu hover css area start*/
+.site-nav li:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+/*menu hover css area end*/
+
+/*menu nav css area end*/
