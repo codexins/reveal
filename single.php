@@ -14,34 +14,29 @@
 
 get_header(); ?>
 
-	<div id="content" class="main-content-wrapper">
+	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-md-8">
-					<div id="primary" class="site-main">
-						<?php
-							/* Start the Loop */
-							while ( have_posts() ) : the_post();
 
-								reveal_set_post_views(get_the_ID());
-								get_template_part( 'template-parts/content', get_post_format()  ); ?>
+			<?php 
 
-							<?php reveal_post_link(); ?>
+            $reveal_blog_layout = $reveal_option['reveal-single-layout'];
 
-							<?php	// If comments are open or we have at least one comment, load up the comment template.
-								if ( comments_open() || get_comments_number() ) :
-									comments_template();
-								endif;
-							endwhile; ?>
+            if($reveal_blog_layout == 1):
+                get_template_part('template-parts/page-layout/single-post/no', 'sidebar');
 
-					</div><!-- #primary -->
-				</div> <!-- end of col -->
+            elseif($reveal_blog_layout == 2):
+                get_template_part('template-parts/page-layout/single-post/left', 'sidebar');
 
-				<div class="col-sm-4 col-md-4">
-					<div id="secondary" class="widget-area" role="complementary">
-						<?php get_sidebar() ?>
-					</div><!-- #secondary -->
-				</div> <!-- end of col -->
+            elseif($reveal_blog_layout == 3):
+                get_template_part('template-parts/page-layout/single-post/right', 'sidebar');
+
+            else:
+                get_template_part('template-parts/page-layout/single-post/right', 'sidebar');
+
+            endif;
+            
+			 ?>
 
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->

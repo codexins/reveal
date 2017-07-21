@@ -350,7 +350,16 @@ a.explore {
     color: #fff;
 }
 
+#entry_footer a {
+    border: 1px solid #eee;
+    color: #444;
+}
 
+#entry_footer a:hover {
+    background: #295970;
+    color: #fff;
+    border-color: #295970;
+}
 /***********************************
     013 - Location
 ***********************************/
@@ -495,7 +504,7 @@ a.more:hover {
 
 #cx_wrapper.cx-wrapper a.liked span.cx-count,
 .cx-count {
-    color: #666666;
+    color: #333;
 }
 
 /* Loader */
@@ -509,5 +518,35 @@ a.more:hover {
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
+/*=========================================================
+Sidebar widget 
+=====================================================*/
+
+.widget_search  input[type="submit"] {
+    border: 1px solid #ebebea !important;
+}
+.widget_search  input[type="submit"] {
+    background-color: #015989;
+    border: 1px solid #ccc;
+}
+h2.widgettitle {
+    border-bottom: 1px solid #ebeaea;
+    color: rgb(51, 51, 51);
+}
+.widgettitle a{
+    color: rgb(51, 51, 51);
+}
+.sidebar-widget ul li a:hover {
+    color: #000;
+}
+.sidebar-widget ul li a {
+    color: #333;
+}
+
+#thumbnail_nav .nav-box {
+    background: #e9e9e9; 
+}
+
+
 
 

@@ -16,7 +16,7 @@
 	
 		<?php 
 			$reveal_footer = reveal_option('reveal-footer-version');
-			$reveal_cpr = reveal_option('reveal-footer_copyright');
+			$reveal_cpr = reveal_option('reveal_footer_copyright');
 		 ?>
  	
 
@@ -33,7 +33,7 @@
 			endif; 
 			?>
 
-			<?php if($reveal_cpr == 1): ?>
+			<?php if($reveal_cpr == true): ?>
 			<hr class="divider">
 			<p class="text-center copyright">
 				<?php  if (!empty(reveal_option('reveal-copyright'))): ?>
