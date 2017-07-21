@@ -15,7 +15,7 @@
 
 	 ?>
 
-	<div id="page_title" class="page-title site-content" style="background-image: url('<?php if (!empty($single_bg)): echo $single_bg; else: echo get_template_directory_uri() .'/assets/images/showcase.jpg'; endif; ?>')">
+	<div id="page_title" class="page-title site-content" style="background-image: url('<?php if (!empty($single_bg)): echo esc_url($single_bg); else: echo get_template_directory_uri() .'/assets/images/showcase.jpg'; endif; ?>')">
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
