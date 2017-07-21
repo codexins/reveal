@@ -212,6 +212,54 @@
     });
 
 
+    /*--------------------------------------------------------------
+    commentform validate
+    ---------------------------------------------------------------- */
+
+    $('#commentform').validate({
+
+        rules: {
+            author: {
+                required: true,
+                minlength: 2
+            },
+
+            email: {
+                required: true,
+                email: true
+            },
+
+            comment: {
+                required: true,
+                minlength: 10
+            }
+        },
+
+        messages: {
+            author: "Please provide a valid name",
+            email: "Please provide a valid email",
+            comment: "Comments needs to be at least 20 characters"
+        },
+
+        errorElement: "div",
+        errorPlacement: function(error, element) {
+            element.before(error);
+        }
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
 })(jQuery);
 
 
