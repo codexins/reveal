@@ -2162,3 +2162,23 @@ a {
 
 /* main menu */
 
+header .navbar {
+    transition: 0.6s;
+}
+header .navbar.affix{
+    -webkit-animation-name: menueffect; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: menueffect;
+    animation-duration: 1s;
+} 
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes menueffect {
+    from {top: -100px;}
+    to {top: 0;}
+}
+
+/* Standard syntax */
+@keyframes menueffect {
+    from {top: -100px;}
+    to {top: 0;}
+}
