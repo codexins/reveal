@@ -5,7 +5,6 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
-<<<<<<< HEAD
     $('.sub-menu').hover(function() {
         var menu = $(this);
         // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
@@ -18,7 +17,7 @@
         
     });
     
-=======
+
     $('.sub-menu').hover(
         function(e) {        
             var menu = $(this);
@@ -35,7 +34,6 @@
             $('.sub-menu .menu-item-has-children').removeClass('icon-direction');
         }
     );
->>>>>>> cfaa9012959e46fc4faad6f9d7834df80a92c271
 
     /*--------------------------------------------------------------
 	Header full screen background image
@@ -283,15 +281,6 @@
         }
 
     });
-
-
-
-
-
-
-
-
-
 
 
 
