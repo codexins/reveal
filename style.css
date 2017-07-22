@@ -2160,19 +2160,3 @@ a {
 
 /* main menu */
 
-
-nav.navbar {
-    position: fixed;
-    width: 100%;
-    z-index: 9999999;
-    background: #000;
-    top: -200%;
-    transition: 0.5s;
-    opacity: 0;
-    visibility: hidden;
-}
-nav.navbar.affix{
-    opacity: 1;
-    visibility: visible;
-    top: 0 ;
-}
