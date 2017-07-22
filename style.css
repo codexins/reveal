@@ -2007,10 +2007,18 @@ a {
 }
 
 /*Sub menu level 2 sub-menu css area start*/
+
 .site-nav ul.sub-menu .sub-menu {
+    left: 0%;
+    top: 44px;
+    padding-top: 10px;
+}
+
+.site-nav ul.sub-menu li:hover .sub-menu {
   left: 100%;
   top: -10px;
   padding-top: 10px;
+  color: red;
 }
 
 /*Sub menu level 2 sub-menu css area end*/
