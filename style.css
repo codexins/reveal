@@ -2057,9 +2057,12 @@ a {
     position: absolute;
     top: -25px;
 }*/
-
-/* calender */
-
+.blog-post .list-inline li i.fa-pencil {
+    margin-left: 6px;
+}
+/*---------------------------------------
+    calender widget 
+-----------------------------------------*/
 #wp-calendar thead {
     border-bottom: 1px solid #295970;
 }
@@ -2120,11 +2123,9 @@ a {
         color: #fff ;
 }
 #wp-calendar tbody td:hover:not(.pad){
-    /*background: #295970;*/
     color: #fff ;
     position: relative;
     z-index: 1 ;
-
 }
 .widget_calendar  #wp-calendar tbody tr td[colspan="1"] ,
 .widget_calendar  #wp-calendar tbody tr td[colspan="2"] ,
