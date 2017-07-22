@@ -1240,27 +1240,10 @@ article.type-post .blog-post:last-child {
     overflow: hidden;
     margin-top: 25px;
 }
-.cx_btn {
-    width: 140px;
-    float: left;
-    margin-right: 15px;
-    height: 40px;
-    display: block;
-    text-align: center;
-    line-height: 40px;
-    font-size: 16px;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-}
-.cx_btn span {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    transition: all .3s;
+
+.posts-nav.blog-content {
+    padding-bottom: 0;
+    border: 0;
 }
 
 /***********************************************************************************************************/

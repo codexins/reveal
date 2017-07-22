@@ -63,7 +63,7 @@ if ( ! function_exists( 'reveal_posts_link' ) ) {
         $prev_link = get_previous_posts_link(esc_html__('Older Posts &raquo; ', 'reveal'));
         $next_link = get_next_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
 
-        echo '<div class="posts-nav" class="section">';
+        echo '<div class="posts-nav blog-content" class="section">';
             if($next_link): 
             echo '<div class="nav-next alignleft">'. $next_link .'</div>';
             endif; 
@@ -94,7 +94,7 @@ if ( ! function_exists( 'reveal_post_link' ) ) {
         $next_link = get_next_post_link('%link', esc_html__('&laquo; %title', 'reveal'));
         endif;
 
-        echo '<div class="posts-nav" class="section">';
+        echo '<div class="posts-nav blog-content" class="section">';
             if($next_link): 
             echo '<div class="nav-next alignleft">'. $next_link .'</div>';
             endif; 
