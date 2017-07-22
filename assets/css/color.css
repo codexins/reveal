@@ -563,3 +563,13 @@ h2.widgettitle {
 }
 
 
+.tagcloud a {
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+.tagcloud a:hover {
+    background: #015989;
+    color: #fff;
+    border-color: #015989;
+}

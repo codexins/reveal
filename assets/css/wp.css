@@ -45,15 +45,16 @@ a img.aligncenter {
 
 .wp-caption {
     background: #fff;
-    border: 1px solid #f0f0f0;
-    max-width: 96%;
+    border: 1px solid #dedede;
+    max-width: 100%;
     /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0 0 30px;
 }
 
 .wp-caption.alignleft {
@@ -68,7 +69,7 @@ a img.aligncenter {
     border: 0 none;
     height: auto;
     margin: 0;
-    max-width: 98.5%;
+    max-width: 100%;
     padding: 0;
     width: auto;
 }
@@ -265,4 +266,13 @@ p.form-submit {
 
 .moderation-notice {
     text-align: right;
+}
+
+
+/************************************************************
+    Sidebar
+*************************************************************/
+
+.sidebar-widget .recentcomments a {
+    font-style: italic;
 }
