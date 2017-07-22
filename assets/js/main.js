@@ -5,6 +5,7 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
+<<<<<<< HEAD
     $('.sub-menu').hover(function() {
         var menu = $(this);
         // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
@@ -17,6 +18,24 @@
         
     });
     
+=======
+    $('.sub-menu').hover(
+        function(e) {        
+            var menu = $(this);
+            // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
+            var child_menu = $(this).find('ul');
+            if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
+                
+                $(child_menu).css({"left": "inherit", "right": "100%", "width": "100%"});
+                $('.sub-menu .menu-item-has-children').addClass('icon-direction');    
+                e.preventDefault();
+            }
+        },
+        function(e) {
+            $('.sub-menu .menu-item-has-children').removeClass('icon-direction');
+        }
+    );
+>>>>>>> cfaa9012959e46fc4faad6f9d7834df80a92c271
 
     /*--------------------------------------------------------------
 	Header full screen background image

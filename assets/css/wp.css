@@ -47,7 +47,6 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #dedede;
     max-width: 100%;
-    /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
     margin-bottom: 30px;
@@ -276,6 +275,10 @@ p.form-submit {
 
 .sidebar-widget .recentcomments a {
     font-style: italic;
+}
+
+.sidebar-widget .recentcomments .comment-author-link a {
+    font-style: normal;
 }
 
 .widget_rss li > a {
