@@ -17,9 +17,12 @@
         
     });
 
-    // $('nav.navbar').hasClass('affix') {
-    //     $('.spacer.height-72').hide();
+    // if ($('#header nav').hasClass('affix')) {
+    //     //$('.spacer.height-72').hide();
+    //    console.log(done);
     // }
+    // $('.navbar.affix').css('display', 'none');
+    
     
 
     $('.sub-menu').hover(
