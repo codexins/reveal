@@ -85,8 +85,9 @@
 
 
 	endif; ?>
-	<?php get_template_part('template-parts/header/page', 'title'); ?>
-	</header>
 
+	</header>
+	<div class="spacer height-72"></div>
+	<?php get_template_part('template-parts/header/page', 'title'); ?>
 
 	<div class="clearfix"></div>

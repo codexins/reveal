@@ -16,6 +16,10 @@
           }
         
     });
+
+    // $('nav.navbar').hasClass('affix') {
+    //     $('.spacer.height-72').hide();
+    // }
     
 
     $('.sub-menu').hover(
