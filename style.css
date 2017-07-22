@@ -2182,3 +2182,13 @@ header .navbar.affix{
     from {top: -100px;}
     to {top: 0;}
 }
+
+nav.navbar.affix + #page_title {
+    margin-top: 72px;
+}
+header .navbar.affix {
+    padding-top: 0;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+}
