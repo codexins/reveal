@@ -278,6 +278,10 @@ p.form-submit {
     font-style: italic;
 }
 
+.sidebar-widget .recentcomments .comment-author-link a {
+    font-style: normal;
+}
+
 .widget_rss li > a {
     font-weight: bold;
 }
