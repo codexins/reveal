@@ -1909,12 +1909,9 @@ a {
   display: inline-block;
   max-width: 100%;
   text-decoration: none;
-  color: #02bdd3;
+  /*color: #02bdd3;*/
 }
-a:hover, a:active, a:focus, a:visited {
-    color: #02bdd3;
-    text-decoration: none;
-}
+
 /*menu nav css area start*/
 .site-nav {
   margin: 0;
