@@ -2179,11 +2179,12 @@ header .navbar {
 }
 
 nav.navbar.affix + #page_title {
-    padding-top: 92px;
+    margin-top: 92px;
 }
 header .navbar.affix {
     padding-top: 0;
     width: 100%;
     z-index: 1;
+    top: 0;
 }
 
