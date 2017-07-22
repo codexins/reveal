@@ -3,6 +3,11 @@ body {
     background: #fff;
 }
 
+a:hover, a:active, a:focus, a:visited {
+    color: #295970;
+    text-decoration: none;
+}
+
 hr {
     border-color: #ddd;
 }
@@ -558,7 +563,5 @@ h2.widgettitle {
 #thumbnail_nav .nav-box {
     background: #e9e9e9; 
 }
-
-
 
 
