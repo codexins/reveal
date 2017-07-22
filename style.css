@@ -2059,6 +2059,18 @@ a {
     position: absolute;
     top: -25px;
 }*/
+
+
+
+/*---- For Navigation--*/
+.c-menu--slide-left,
+
+    .primary-nav button {
+
+        display: none;
+
+ }
+
 .blog-post .list-inline li i.fa-pencil {
     margin-left: 6px;
 }
@@ -2175,3 +2187,4 @@ header .navbar.affix {
     z-index: 1;
     top: 0;
 }
+

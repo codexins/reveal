@@ -5,6 +5,19 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
+    $('.sub-menu').hover(function() {
+        var menu = $(this);
+        // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
+        var child_menu = $(this).find('ul');
+        if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
+            $(child_menu).css({"left": "inherit", "right": "100%"});
+          } else {
+            $(child_menu).css('left', '100%');
+          }
+        
+    });
+    
+
     $('.sub-menu').hover(
         function(e) {        
             var menu = $(this);
@@ -272,15 +285,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
 })(jQuery);
 
 
@@ -365,3 +369,24 @@
 
 // 	map.setStyle("map_style");
 // }());
+
+
+
+/*--------------------------------------------------------------
+        For Responsive Navigation
+--------------------------------------------------------------*/
+    var slideLeft = new Menu({
+        wrapper: '#o-wrapper',
+        type: 'slide-left',
+        menuOpenerClass: '.c-button',
+        maskId: '#c-mask'
+    });
+
+    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+    slideLeftBtn.addEventListener('click', function(e) {
+        e.preventDefault;
+        slideLeft.open();
+    });
+
+
