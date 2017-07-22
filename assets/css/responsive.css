@@ -53,6 +53,9 @@
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
+/*---------------------------
+	Mobile Menu (add Sazad)
+----------------------------*/
 
 
 	.blog-post .list-inline li a {
@@ -133,6 +136,230 @@
 
 
 @media only screen and (max-width: 767px) {
+
+/*-------------------------
+Mobile Menu(Add Sazzad)
+--------------------------*/
+.navbar {
+	margin-bottom: 0;
+}
+
+.c-menu--slide-left,
+    .primary-nav button {
+    display: inline-block;
+ }
+
+ .primary-nav button {
+ 	padding-right: 15px;
+ 	color: #fff;
+ }
+
+.mobile-nav {
+	text-align: right;
+}
+
+.primary-nav-details {
+    background: transparent;
+    border: 0;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #000;
+	margin: 17px 0;
+}
+
+.primary-nav-details i {
+	font-size: 18px;
+}
+
+.c-menu {
+  	position: fixed;
+	z-index: 200;
+	background-color: #015989;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+
+.c-menu__items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.c-menu--slide-left {
+	width: 240px;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-transform: translateX(240px);
+	-ms-transform: translateX(240px);
+	transform: translateX(240px);
+}
+
+.c-menu--slide-left .c-menu__items li {
+	display: block;
+}
+
+.c-menu--slide-left .c-menu__items > li {
+
+	/*border-bottom: 1px solid #444;*/
+
+}
+
+
+.c-menu--slide-left a {
+
+	display: block;
+	padding: 12px 20px;
+	color: #fff;
+	font-size: 15px;
+	line-height: 1.3em;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+
+}
+
+.c-menu--slide-left a span {
+    margin-left: 10px;
+}
+
+.c-menu--slide-left ul.sub-menu {
+	margin-bottom: 15px;
+}
+
+.c-menu--slide-left ul.sub-menu a {
+	padding-top:6px;
+	padding-bottom: 6px;
+
+}
+
+.c-menu--slide-left ul.sub-menu a::before {
+    content: "\f178";
+    font-family: FontAwesome;
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: auto;
+    margin: auto;
+    height: 18px;
+    font-size: 10px;
+}
+
+.c-menu__items a:hover {
+    text-decoration: none;
+    background: #006aa2;
+}
+
+.c-menu--slide-left .c-menu__close {
+	display: block;
+	padding: 12px 24px;
+	width: 100%;
+}
+
+.c-menu--slide-left {
+	top: 0;
+	left: 0;
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.c-menu--slide-left.is-active {
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+body.has-active-menu {
+	overflow: hidden;
+}
+
+
+.c-menu__close {
+	color: #fff;
+	background-color: #009dc8;
+	font-size: 14px;
+	border: none;
+	box-shadow: none;
+	border-radius: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+.c-menu__close:focus {
+	outline: none;
+}
+
+.c-mask {
+	position: fixed;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	background-color: #000;
+	opacity: 0;
+	-webkit-transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+	transition: opacity 0.3s, width 0s 0.3s, height 0s 0.3s;
+}
+
+.c-mask.is-active {
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.3s;
+}
+
+.c-buttons {
+	margin-bottom: 48px;
+	text-align: center;
+}
+
+
+
+.c-button {
+	display: inline-block;
+	margin: 4px;
+	padding: 12px 24px;
+	color: #67b5d1;
+	background: none;
+	font-size: 14px;
+	border: solid 2px #67b5d1;
+	box-shadow: none;
+	border-radius: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	cursor: pointer;
+
+}
+
+.c-button:focus {
+	outline: none;
+}
+
+.c-button:disabled {
+	opacity: 0.3;
+	cursor: not-allowed;
+}
+
+.c-menu__items .menu-item-has-children:after {
+
+    content: "";
+}
+
+
+/*--------------------------------End Mobile Menu------------------------------------------*/
 
 	.front-header {
 		min-height: 300px;

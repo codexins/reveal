@@ -2049,3 +2049,13 @@ a {
     position: absolute;
     top: -25px;
 }*/
+
+
+/*---- For Navigation--*/
+.c-menu--slide-left,
+
+    .primary-nav button {
+
+        display: none;
+
+ }
