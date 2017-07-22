@@ -1898,7 +1898,6 @@ h2.widgettitle {
 
 #commentform .error{
     color: red;
-<<<<<<< HEAD
 }
 
 
@@ -2038,9 +2037,7 @@ a:hover, a:active, a:focus, a:visited {
 /*menu hover css area end*/
 
 /*menu nav css area end*/
-=======
-    line-height: 100%;
-}
+
 #commentform input[type="email"] {
     width: 100%;
     padding: 10px;
@@ -2065,7 +2062,3 @@ a:hover, a:active, a:focus, a:visited {
     position: absolute;
     top: -25px;
 }*/
-<<<<<<< HEAD
->>>>>>> 9d81dcb730258ad4aca720c9a88a8766a87e6469
-=======
->>>>>>> 613d69f6f387776a7acbbc26b78535f272479143

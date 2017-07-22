@@ -2,6 +2,22 @@
     "use strict";
 
     /*--------------------------------------------------------------
+    Navigation adjust for window width 
+    ---------------------------------------------------------------- */
+
+    $('.sub-menu').hover(function() {
+        var menu = $(this);
+        // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
+        var child_menu = $(this).find('ul');
+        if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
+            $(child_menu).css({"left": "inherit", "right": "100%"});
+          } else {
+            $(child_menu).css('left', '100%');
+          }
+        
+    });
+
+    /*--------------------------------------------------------------
 	Header full screen background image
     ---------------------------------------------------------------- */
 
