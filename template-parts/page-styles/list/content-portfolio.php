@@ -40,7 +40,7 @@
                     the_excerpt();
 				endif; ?>
 
-            <p class="blog-content"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More' ) ?></a></p>
+            <p class="blog-content"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
 
 		</div><!-- .entry-content -->
         
