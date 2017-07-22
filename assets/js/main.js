@@ -10,7 +10,7 @@
         // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
         var child_menu = $(this).find('ul');
         if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
-            $(child_menu).css({"left": "inherit", "right": "100%"});
+            $(child_menu).css({"left": "inherit", "right": "100%", "width": "100%"});
           } else {
             $(child_menu).css('left', '100%');
           }
