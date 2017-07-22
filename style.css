@@ -1787,7 +1787,7 @@ h2.widgettitle {
 }
 
 .sidebar-widget li {
-    line-height: 30px;
+    line-height: 1.65em;
     position: relative;
     padding-left: 15px;
 }
@@ -1813,9 +1813,8 @@ h2.widgettitle {
 .sidebar-widget ul li a {
     display: inline-block;
     position: relative;
-    padding-right: 20px;
-    margin-right: 10px;
-    line-height: 30px;
+    padding-right: 5px;
+    line-height: 1.65em;
 }
 
 .sidebar-widget select {
