@@ -2077,7 +2077,7 @@ a {
 /*---------------------------------------
     calender widget 
 -----------------------------------------*/
-#wp-calendar thead {
+/*#wp-calendar thead {
     border-bottom: 1px solid #295970;
 }
 #wp-calendar caption{
@@ -2170,10 +2170,33 @@ a {
 .widget_calendar  #wp-calendar tbody tr td[colspan="6"] {
     width: calc(99.99% * 6/7);
 }
-
-
+*/
+#wp-calendar caption{
+    text-align: center;
+    color: #fff;
+    background: #295970 ;
+}
+#wp-calendar tbody td,
+#wp-calendar thead th{
+    text-align: center;
+    height: 32px;
+    line-height: 32px;
+    color: #333 ;
+}
+table#wp-calendar {
+    border: 1px solid #295970;
+}
+table#wp-calendar thead {
+    border-bottom: 1px solid #295970;
+}
+#wp-calendar tbody tr  {
+    border-bottom: 1px solid #295970;
+}
+#wp-calendar tbody td + td ,
+#wp-calendar thead th + th {
+    border-left: 1px solid #295970;
+}
 /* main menu */
-
 
 
 nav.navbar.affix + #page_title {
@@ -2185,4 +2208,31 @@ header .navbar.affix {
     z-index: 1;
     top: 0;
 }
+/* all input type default style */
+textarea,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+input[type="radio"],
+input[type="password"],
+input[type="image"],
+input[type="file"],
+input[type="checkbox"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="number"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="week"]{
+
+
+}
+
 
