@@ -120,6 +120,7 @@ figure {
 
 select {
     max-width:100%;
+    outline: none;
 }
 
 .gallery-caption {
@@ -275,4 +276,12 @@ p.form-submit {
 
 .sidebar-widget .recentcomments a {
     font-style: italic;
+}
+
+.widget_rss li > a {
+    font-weight: bold;
+}
+
+.widget_rss .rss-date {
+    font-size: 85%;
 }
