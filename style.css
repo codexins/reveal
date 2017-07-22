@@ -2004,6 +2004,9 @@ a {
     display: block;
     float: right;
 }
+.sub-menu .menu-item-has-children.icon-direction:after {
+    content: "\f104";
+}
 
 /*Sub menu level 2 sub-menu css area start*/
 
@@ -2011,13 +2014,12 @@ a {
     left: 0%;
     top: 44px;
     padding-top: 10px;
+    transition: all 0.8s;
 }
 
 .site-nav ul.sub-menu li:hover .sub-menu {
   left: 100%;
   top: -10px;
-  padding-top: 10px;
-  color: red;
 }
 
 /*Sub menu level 2 sub-menu css area end*/
