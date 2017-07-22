@@ -339,6 +339,10 @@ a.explore {
     color: #333;
 }
 
+.blog-content a.cx-btn {
+    margin-top: 30px;
+}
+
 .blog-content a:hover {
     border-color: #295970;
     color: #fff;
@@ -359,12 +363,6 @@ a.explore {
 }
 .blog-post h2 a {
     color: #295970;
-}
-.cx_btn {
-    background: #295970;
-}
-.cx_btn span {
-    color: #fff;
 }
 
 #entry_footer a {
