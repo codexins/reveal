@@ -17,11 +17,22 @@
         
     });
 
-    // if ($('#header nav').hasClass('affix')) {
-    //     //$('.spacer.height-72').hide();
-    //    console.log(done);
+    // if ($('nav').hasClass('affix-top')) {
+    //     $('.spacer.height-72').css('display', 'block');
+       
     // }
-    // $('.navbar.affix').css('display', 'none');
+
+    // if($(window).scrollTop()) > 150 {
+    //     $('.spacer.height-72').css('display', 'block');
+    // }
+
+
+// $(window).scroll(function(){console.log($(window).scrollTop());
+//     if($(window).scrollTop() > 150 )
+//     {
+//         $('.spacer.height-72').css('display', 'block');
+//     }
+// });
     
     
 
