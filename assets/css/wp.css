@@ -273,6 +273,10 @@ p.form-submit {
     Sidebar
 *************************************************************/
 
+.sidebar-widget  h2 {
+    margin-bottom: 15px;
+}
+
 .sidebar-widget .recentcomments a {
     font-style: italic;
 }
@@ -287,4 +291,17 @@ p.form-submit {
 
 .widget_rss .rss-date {
     font-size: 85%;
+}
+
+.widget_recent_comments.sidebar-widget li::before {
+    content: "\f0e6";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 80%;
+}
+
+.widget_recent_comments.sidebar-widget li {
+    padding-left: 20px;
 }
