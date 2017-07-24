@@ -217,6 +217,10 @@ header .navbar.affix {
     padding-bottom: 0;
 }
 
+.inner-header .nav-container {
+    min-height: 72px;
+}
+
 .main-menu li {
     padding-left: 35px;
 }
