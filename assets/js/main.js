@@ -5,6 +5,20 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
+    $(window).on('scroll', function() {
+        var heightmenu = $("#header").height();
+        if ($(window).scrollTop() >= 150 ) {
+            $(".spacer").css('display', 'block');
+        }  
+        aleart(heightmenu);
+        if($(window).scrollTop() <= 100 ){
+            $(".spacer").fadeOut();
+
+        }
+
+    });
+
+
     $('.sub-menu').hover(function() {
         var menu = $(this);
         // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
@@ -66,10 +80,10 @@
 	animating the numbers for counting up for the achievement section
     ---------------------------------------------------------------- */
 
-    $('.counter').counterUp({
-        delay: 100,
-        time: 3000
-    });
+    // $('.counter').counterUp({
+    //     delay: 100,
+    //     time: 3000
+    // });
 
     /*--------------------------------------------------------------
 	Closes the Responsive Menu on Menu Item Click
@@ -234,8 +248,14 @@
 
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
+<<<<<<< HEAD
 
         jQuery(".loaders").delay(600).fadeOut("fast");
+=======
+ 
+        jQuery(".loaders").delay(800).fadeOut("slow");
+>>>>>>> 3bde722a767a0274b08e9bebcfa46cfe84f8bf3b
+
 
     });
 
@@ -327,6 +347,8 @@
         }
 
     });
+
+
 
 
 
