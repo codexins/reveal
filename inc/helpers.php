@@ -645,7 +645,7 @@ function get_simple_likes_button( $post_id, $is_comment = NULL ) {
         $title = __( 'Like', 'reveal' );
         $icon = $icon_empty;
     }
-    $output = '<span id="cx_wrapper" class="cx-wrapper"><a href="' . admin_url( 'admin-ajax.php?action=process_simple_like' . '&post_id=' . $post_id . '&nonce=' . $nonce . '&is_comment=' . $is_comment . '&disabled=true' ) . '" class="cx-button' . $post_id_class . $class . $comment_class . '" data-nonce="' . $nonce . '" data-post-id="' . $post_id . '" data-iscomment="' . $is_comment . '" title="' . $title . '">' . $icon . $count . '</a>' . $loader . '</span>';
+    $output = '<span id="cx_wrapper" class="cx-wrapper"><a rel="nofollow" href="' . admin_url( 'admin-ajax.php?action=process_simple_like' . '&post_id=' . $post_id . '&nonce=' . $nonce . '&is_comment=' . $is_comment . '&disabled=true' ) . '" class="cx-button' . $post_id_class . $class . $comment_class . '" data-nonce="' . $nonce . '" data-post-id="' . $post_id . '" data-iscomment="' . $is_comment . '" title="' . $title . '">' . $icon . $count . '</a>' . $loader . '</span>';
     return $output;
 } // get_simple_likes_button()
 

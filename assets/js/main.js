@@ -236,40 +236,26 @@
     /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
-    
-    jQuery(window).load(function() {
 
-        // jQuery(".spinner").delay(400).fadeOut("slow");
-        // jQuery(".title-load").delay(400).fadeOut("slow");
+    // fadein effect of the loader
+    $(document).on("click", "a[rel!='nofollow'], input[type='submit']", function () {
+        var newUrl = $(this).attr("href");
+        if (!newUrl || newUrl[0] === "#") {
+            // set that hash
+            location.hash = newUrl;
+            return;
+        }
+        $(".loaders").fadeIn(function () {
+            location = newUrl;
+        });
+        return false;
+    });
+    
+    // fadeout effect of the loader
+    jQuery(window).load(function() {
         jQuery(".loaders").delay(800).fadeOut("slow");
     });
 
-    /*--------------------------------------------------------------
-    Activating loader effect option
-    ---------------------------------------------------------------- */
-    jQuery(window).load(function(){
-       $('a').addClass('animsition-link');
-    });
-    
-    $(".animsition").animsition({
-        inClass: 'fade-in',
-        outClass: 'fade-out',
-        inDuration: 600,
-        outDuration: 600,
-        linkElement: '.animsition-link',
-        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
-        loading: true,
-        loadingParentElement: 'html', //animsition wrapper element
-        loadingClass: 'loaders',
-        loadingInner: '', // e.g '<img src="loading.svg" />'
-        timeout: false,
-        timeoutCountdown: 5000,
-        onLoadEvent: true,
-        browser: [ 'animation-duration', '-webkit-animation-duration'],
-        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-        transition: function(url){ window.location.href = url; }
-    });
 
     /*--------------------------------------------------------------
     Activating Instagram Image Popup
