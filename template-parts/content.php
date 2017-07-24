@@ -59,7 +59,7 @@
 
         <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
             <div class="share">            
-                <div class="caption"><?php esc_html_e('Share this post', 'reveal'); ?></div>    
+                <div class="caption"><?php esc_html_e('Share this post:', 'reveal'); ?></div>    
                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><i class="fa fa-facebook"></i></a>
                 <a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a>
                 <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>

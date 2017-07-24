@@ -369,7 +369,10 @@ a.explore {
 
 #entry_footer a {
     border: 1px solid #eee;
-    color: #444;
+    /*color: #444;*/
+    background: #c6cbd2 ;
+    color: #fff ;
+
 }
 
 #entry_footer a:hover {

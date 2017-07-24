@@ -1134,7 +1134,12 @@ a.explore:hover {
 .blog-info span:last-child {
     margin-right: 0;
 }
-
+#entry_footer .caption {
+    float: left;
+    margin-right: 15px;
+    line-height: 35px;
+    font-size: 18px;
+}
 /***********************************************************************************************************/
 article.type-post {
     margin-bottom: 0;
@@ -1882,13 +1887,18 @@ h2.widgettitle {
     font-size: 14px;
 }
 #entry_footer a {
-    padding: 2px 10px;
     display: inline-block;
     text-transform: uppercase;
     margin-right: 5px;
     margin-bottom: 5px;
     font-size: 13px !important;
     transition: all .3s;
+    background: #c6cbd2;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
 }
 .widget-area {
     margin-top: 40px;
