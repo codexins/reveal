@@ -1817,7 +1817,18 @@ h2.widgettitle {
     position: relative;
     padding-left: 15px;
 }
-
+.widget_nav_menu   li{
+       padding-left: 0px; 
+}
+.widget_nav_menu   li a{
+    padding-left: 15px;
+}
+.widget_nav_menu  .menu-item-has-children:after{
+    content: none;
+}
+.widget_nav_menu.sidebar-widget li::before{
+    content: "\f105";
+}
 .sidebar-widget li::before {
     content:"\f0da";
     font-family: FontAwesome;
