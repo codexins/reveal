@@ -47,7 +47,6 @@ a img.aligncenter {
     background: #fff;
     border: 1px solid #dedede;
     max-width: 100%;
-    /* Image does not overflow the content area */
     padding: 5px 3px 10px;
     text-align: center;
     margin-bottom: 30px;
@@ -274,6 +273,10 @@ p.form-submit {
     Sidebar
 *************************************************************/
 
+.sidebar-widget  h2 {
+    margin-bottom: 15px;
+}
+
 .sidebar-widget .recentcomments a {
     font-style: italic;
 }
@@ -288,4 +291,17 @@ p.form-submit {
 
 .widget_rss .rss-date {
     font-size: 85%;
+}
+
+.widget_recent_comments.sidebar-widget li::before {
+    content: "\f0e6";
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 80%;
+}
+
+.widget_recent_comments.sidebar-widget li {
+    padding-left: 20px;
 }

@@ -30,6 +30,20 @@
 	<!--[if lt IE 9]>
 	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="<?php echo esc_url(__('https://browsehappy.com/?locale=en', 'reveal')) ?>">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
+
+
+	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+
+		<button class="c-menu__close">&larr; Back</button>
+
+		<?php get_mobile_menu() ?>
+
+	</div>
+
+	
+
+	<div id="c-mask" class="c-mask"></div>
+
 	
 	<?php 
 
@@ -71,8 +85,9 @@
 
 
 	endif; ?>
-	<?php get_template_part('template-parts/header/page', 'title'); ?>
-	</header>
 
+	</header>
+	<div class="spacer height-72"></div>
+	<?php get_template_part('template-parts/header/page', 'title'); ?>
 
 	<div class="clearfix"></div>
