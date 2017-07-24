@@ -333,7 +333,7 @@ a.explore {
 }
 
 .blog-content {
-    border-bottom: 1px solid #ddd;
+    /*border-bottom: 1px solid #ddd;*/
 }
 
 .blog-content a {
@@ -367,18 +367,24 @@ a.explore {
     color: #295970;
 }
 
-#entry_footer a {
+#entry_footer > a {
     border: 1px solid #eee;
-    /*color: #444;*/
-    background: #c6cbd2 ;
-    color: #fff ;
-
+    background: transparent;
+    color: #333;
+    padding: 3px 10px;
+    margin-right: 5px;
 }
-
+#entry_footer .share a {
+    color: #fff ;
+    background: #c6cbd2;
+}
 #entry_footer a:hover {
     background: #295970;
     color: #fff;
     border-color: #295970;
+}
+#entry_footer .share a:hover {
+    background: #295970;
 }
 /***********************************
     013 - Location
@@ -630,3 +636,40 @@ table#wp-calendar thead {
     line-height: 32px;
     padding: 0 10px ;
 }
+
+/* blog */
+.blog-post .list-inline li a {
+    color: inherit;
+}
+/*sub menu */
+.site-nav a {
+
+  color: #FFFFFF;
+
+}
+
+.site-nav li.active > a, .site-nav li:hover > a {
+  color: #02bdd3;
+}
+.site-nav ul.sub-menu {
+  background: #262626;
+}
+
+.sub-menu .menu-item-has-children:after {
+    color: #fff;
+}
+.menu-item-has-children:hover:after {
+    color: #02bdd3;
+}
+
+.menu-item-has-children:after {
+    color: #fff;
+}
+
+/* comment error  */
+
+
+#commentform .error{
+    color: red;
+}
+
