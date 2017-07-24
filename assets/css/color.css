@@ -578,3 +578,26 @@ h2.widgettitle {
     color: #fff;
     border-color: #015989;
 }
+
+/* calendar */
+#wp-calendar caption{
+    color: #fff;
+    background: #295970 ;
+}
+#wp-calendar tbody td,
+#wp-calendar thead th{
+    color: #ccc;
+}
+table#wp-calendar {
+    border: 1px solid #ebeaea;
+}
+table#wp-calendar thead {
+    border-bottom: 1px solid #ebeaea;
+}
+#wp-calendar tbody tr  {
+    border-bottom: 1px solid #ebeaea;
+}
+#wp-calendar tbody td + td ,
+#wp-calendar thead th + th {
+    border-left: 1px solid #ebeaea;
+}
