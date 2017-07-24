@@ -248,15 +248,7 @@
 
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
-<<<<<<< HEAD
-
-        jQuery(".loaders").delay(600).fadeOut("fast");
-=======
- 
         jQuery(".loaders").delay(800).fadeOut("slow");
->>>>>>> 3bde722a767a0274b08e9bebcfa46cfe84f8bf3b
-
-
     });
 
     /*--------------------------------------------------------------
