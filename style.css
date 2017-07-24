@@ -1825,6 +1825,10 @@ h2.widgettitle {
     padding-top: 0;
 }
 
+.nice-select, .nice-select .list {
+    border-radius: 0px;
+    border: solid 1px  #ccc;
+}
 .nice-select, .nice-select.open .list {
     display: block;
     width: 100%;
