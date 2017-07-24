@@ -18,14 +18,14 @@
 
     // });
 
-    $(window).scroll(function() {
-    if ($(this).scrollTop() > 144){  
-        $('.space-adjustment').addClass("show");
-      }
-      else{
-        $('.space-adjustment').removeClass("show");
-      }
-    });
+    // $(window).scroll(function() {
+    // if ($(this).scrollTop() > 144){  
+    //     $('.space-adjustment').addClass("show");
+    //   }
+    //   else{
+    //     $('.space-adjustment').removeClass("show");
+    //   }
+    // });
 
 
     $('.sub-menu').hover(function() {
