@@ -5,6 +5,20 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
+    $(window).on('scroll', function() {
+        var heightmenu = $("#header").height();
+        if ($(window).scrollTop() >= 150 ) {
+            $(".spacer").css('display', 'block');
+        }  
+        aleart(heightmenu);
+        if($(window).scrollTop() <= 100 ){
+            $(".spacer").fadeOut();
+
+        }
+
+    });
+
+
     $('.sub-menu').hover(function() {
         var menu = $(this);
         // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
@@ -235,11 +249,7 @@
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
         
-        jQuery('body').fadeOut(1000, function(){
-            jQuery('body').css({"opacity": "1"});
-            jQuery('#loader').css({"opacity": "1"});
-        }).fadeIn("slow", function(){
-            
+       
     //     // jQuery(".spinner").delay(400).fadeOut("slow");
     //     // jQuery(".title-load").delay(400).fadeOut("slow");
 
@@ -334,6 +344,8 @@
         }
 
     });
+
+
 
 
 
