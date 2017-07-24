@@ -1830,6 +1830,23 @@ h2.widgettitle {
     width: 100%;
 }
 
+.nice-select .list {
+    z-index: 1;
+}
+
+.nice-select li::before {
+    content:"";
+    font-family: FontAwesome;
+    position: absolute;
+    left:6px;
+    top:-1px;
+    font-size:90%;
+
+}
+.nice-select .list li:first-child {
+    display: none;
+}
+
 
 /*---------------------------------------
     Main Menu Section - sazzad
