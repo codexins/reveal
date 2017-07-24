@@ -1925,6 +1925,8 @@ h2.widgettitle {
 
 .nice-select .list {
     z-index: 1;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
 .nice-select li::before {
@@ -1936,9 +1938,27 @@ h2.widgettitle {
     font-size:90%;
 
 }
+
 .nice-select .list li:first-child {
     display: none;
 }
+
+.nice-select .option {
+    cursor: pointer;
+    font-weight: 400;
+    line-height: 1.65em;
+    list-style: none;
+    /* min-height: 40px; */
+    outline: none;
+    /* padding-left: 18px; */
+    /* padding-right: 29px; */
+    text-align: left;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    padding: 9px 15px;
+}
+
+
 
 
 
