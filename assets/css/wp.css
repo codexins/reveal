@@ -268,6 +268,25 @@ p.form-submit {
     text-align: right;
 }
 
+#commentform input[type="email"] {
+    width: 100%;
+    padding: 10px;
+}
+
+#commentform fieldset {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+
+#comment-error,
+#author-error,
+#email-error,
+#url-error{
+    position: absolute;
+    bottom: -10px;
+}
+
 
 /************************************************************
     Sidebar
