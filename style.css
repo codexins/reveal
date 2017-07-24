@@ -1739,7 +1739,6 @@ h2.widgettitle {
     text-decoration: none;
 }
 .sidebar-widget ul li a {
-    display: inline-block;
     position: relative;
     padding-right: 5px;
     line-height: 1.65em;
