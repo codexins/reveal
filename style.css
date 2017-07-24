@@ -1150,7 +1150,8 @@ article.type-post {
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 30px;
 }
-#primary article.type-post:last-child .blog-post {
+
+#primary article.type-post:last-of-type .blog-post {
     border-bottom: 0px dashed #e5e5e5;
     padding-bottom: 0;
 }
@@ -1270,6 +1271,13 @@ article.type-post {
     border: 0;
 }
 
+.blog-post ul li:first-of-type{
+    margin-left: 0;
+    padding-left: 0 ;
+}
+.blog-post  li:first-of-type i.fa-pencil{
+    margin-left: 0 !important;
+}
 /***********************************************************************************************************/
 
 
