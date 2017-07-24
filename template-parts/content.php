@@ -54,7 +54,7 @@
 
         <footer id="entry_footer">
         <?php if(has_tag()): ?>
-			<?php the_tags('Tags: &nbsp',', ',''); ?>
+			<?php the_tags('Tags: &nbsp',' ',''); ?>
         <?php endif; ?>
 
         <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
