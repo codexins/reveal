@@ -15,7 +15,7 @@ function init_main_menu () {
 				'theme_location'  => 'main_menu',
 				'menu'            => 'main_menu',
 				'container'       => 'nav',
-				'container_class' => 'site-nav',
+				'container_class' => 'site-nav animsition',
 				'container_id'    => '',
 				'menu_class'      => '',
 				'menu_id'         => '',
