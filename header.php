@@ -25,7 +25,7 @@
 
 
 
-<body <?php body_class(); ?>>
+<body <?php body_class( 'animsition' ); ?>>
 
 	<!--[if lt IE 9]>
 	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="<?php echo esc_url(__('https://browsehappy.com/?locale=en', 'reveal')) ?>">upgrade your browser</a> to improve your experience.</p>
@@ -52,7 +52,7 @@
 	?>
 	<!--  Site Loader -->
 	<?php if( $page_loader == true ): ?>
-	<div id="loader">
+	<div class="loaders">
 		<div class="cssload-container">
 			<div class="cssload-speeding-wheel"></div>
 		</div>

@@ -23,7 +23,7 @@
             </a><!--work link-->
          <?php endif; ?>      
         <ul class="list-inline post-detail">
-            <li>by <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
+            <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
             <li><i class="fa fa-calendar"></i> <?php the_time('d-M-y') ?></li>
             <li><?php echo get_simple_likes_button( get_the_ID(), 0 ); ?></li>
         </ul>

@@ -229,36 +229,41 @@
     /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
-    jQuery('body').css({"opacity": "0"});
+    
     jQuery(window).load(function() {
+
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
-        
-        jQuery('body').fadeOut(1000, function(){
-            jQuery('body').css({"opacity": "1"});
-            jQuery('#loader').css({"opacity": "1"});
-        }).fadeIn("slow", function(){
-            
-            jQuery("#loader").delay(1500).fadeOut("slow");
-            
-        }).delay(1200).fadeOut(600, function(){
-            jQuery('#loader').css({"opacity": "0"});
-        }).fadeIn(600);
 
-        // jQuery('body').fadeOut(1500, function(){
-        //     jQuery('body').fadeIn(200);
-        //     jQuery("#loader").delay(3000).fadeOut("slow");
-            
-        // });
+        jQuery(".loaders").delay(800).fadeOut("slow");
 
-        // jQuery('body').fadeOut(600).fadeIn(600).delay(600).jQuery("#loader").delay(800).fadeOut("slow");
-        
-        // jQuery('body').fadeOut(600).fadeIn(600);    
-        
-        // jQuery('body').fadeOut("fast");
-        // jQuery("#loader").delay(800).fadeOut("slow");
+    });
 
-
+    /*--------------------------------------------------------------
+    Activating loader effect option
+    ---------------------------------------------------------------- */
+    jQuery(window).load(function(){
+       $('a').addClass('animsition-link');
+    });
+    
+    $(".animsition").animsition({
+        inClass: 'fade-in',
+        outClass: 'fade-out',
+        inDuration: 1200,
+        outDuration: 1200,
+        linkElement: '.animsition-link',
+        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+        loading: true,
+        loadingParentElement: 'html', //animsition wrapper element
+        loadingClass: 'loaders',
+        loadingInner: '', // e.g '<img src="loading.svg" />'
+        timeout: false,
+        timeoutCountdown: 5000,
+        onLoadEvent: true,
+        browser: [ 'animation-duration', '-webkit-animation-duration'],
+        // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+        // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+        transition: function(url){ window.location.href = url; }
     });
 
     /*--------------------------------------------------------------

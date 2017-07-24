@@ -1033,10 +1033,11 @@ article.type-post {
 
 
 .blog-post {
-    border-bottom: 1px dashed #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
     padding-bottom: 30px;
 }
-article.type-post .blog-post:last-child {
+
+#primary article.type-post:last-of-type .blog-post {
     border-bottom: 0px dashed #e5e5e5;
     padding-bottom: 0;
 }
@@ -1125,9 +1126,7 @@ article.type-post .blog-post:last-child {
         padding-right: 15px;
 }
 
-.blog-post .list-inline li a {
-    color: inherit;
-}
+
 .blog-post .list-inline li i {
     margin-right: 6px;
 }
@@ -1158,6 +1157,13 @@ article.type-post .blog-post:last-child {
     border: 0;
 }
 
+.blog-post ul li:first-of-type{
+    margin-left: 0;
+    padding-left: 0 ;
+}
+.blog-post  li:first-of-type i.fa-pencil{
+    margin-left: 0 !important;
+}
 /***********************************************************************************************************/
 
 
@@ -1381,10 +1387,6 @@ a.more:hover {
     font-size: 12px;
 }
 
-.copyright a {
-    color: #295970;
-}
-
 .instagram-images a {
     position: relative;
     display: block;
@@ -1439,7 +1441,7 @@ a.more:hover {
     016 - Site Loader
 ***********************************/
 
-#loader {
+.loaders {
     bottom: 0;
     height: 100%;
     left: 0;
@@ -1447,8 +1449,9 @@ a.more:hover {
     right: 0;
     top: 0;
     width: 100%;
+    background-color: #fff;
     z-index: 9999;
-    opacity: 0;
+    opacity: 1;
 }
 
 .cssload-container {
@@ -1555,7 +1558,7 @@ a.more:hover {
 }
 
 /* Loader */
-.loader,
+/*.loader,
 .loader:before,
 .loader:after {
   -webkit-animation: load1 1s infinite ease-in-out;
@@ -1611,7 +1614,7 @@ a.more:hover {
     box-shadow: 0 -.3em rgba(0, 0, 0, 0.2);
     height: 1em;
   }
-}
+}*/
 
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
@@ -1781,22 +1784,25 @@ h2.widgettitle {
     width: 250px;
 }
 #entry_footer {
-    margin-top: 40px;
+    /*margin-top: 40px;*/
     font-size: 14px;
 }
-#entry_footer a {
+#entry_footer .share a {
     display: inline-block;
     text-transform: uppercase;
     margin-right: 5px;
     margin-bottom: 5px;
     font-size: 13px !important;
     transition: all .3s;
-    background: #c6cbd2;
     border-radius: 50%;
     width: 35px;
     height: 35px;
     line-height: 35px;
     text-align: center;
+}
+
+#entry_footer  .share {
+    margin-top: 20px;
 }
 .widget-area {
     margin-top: 40px;
@@ -1812,11 +1818,6 @@ h2.widgettitle {
 /* test */
 #secondary .sidebar-widget:first-of-type{
     padding-top: 0;
-}
-
-
-#commentform .error{
-    color: red;
 }
 
 
@@ -1855,14 +1856,11 @@ a {
   font-weight: 500;
   line-height: 29px;
   text-transform: uppercase;
-  color: #FFFFFF;
   padding: 10px 18px;
   transition: 400ms ease;
   transition-property: color;
 }
-.site-nav li.active > a, .site-nav li:hover > a {
-  color: #02bdd3;
-}
+
 .site-nav a > i.fa {
   margin-left: 5px;
   display: inline-block;
@@ -1876,7 +1874,6 @@ a {
   position: absolute;
   top: auto;
   left: auto;
-  background: #262626;
   min-width: 150px;
   visibility: hidden;
   opacity: 0;
@@ -1914,13 +1911,9 @@ a {
     font-family: FontAwesome;
     top: 0px;
     left: -14px;
-    color: #fff;
     font-size: 12px;
 }
 
-.menu-item-has-children:hover:after {
-    color: #02bdd3;
-}
 
 .sub-menu .menu-item-has-children:after {
     position: relative;
@@ -1928,7 +1921,6 @@ a {
     font-family: FontAwesome;
     top: -18px;
     right: 0px;
-    color: #fff;
     font-size: 12px;
     display: block;
     float: right;
