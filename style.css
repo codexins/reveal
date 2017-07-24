@@ -2114,32 +2114,13 @@ a {
 *************************************************************/
 #wp-calendar caption{
     text-align: center;
-    color: #fff;
-    background: #295970 ;
 }
 #wp-calendar tbody td,
 #wp-calendar thead th{
     text-align: center;
     height: 32px;
     line-height: 32px;
-    color: #333 ;
 }
-table#wp-calendar {
-    border: 1px solid #295970;
-}
-table#wp-calendar thead {
-    border-bottom: 1px solid #295970;
-}
-#wp-calendar tbody tr  {
-    border-bottom: 1px solid #295970;
-}
-#wp-calendar tbody td + td ,
-#wp-calendar thead th + th {
-    border-left: 1px solid #295970;
-}
-
-
-
 /* all input type default style */
 textarea,
 input[type="text"],
