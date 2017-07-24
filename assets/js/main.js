@@ -233,7 +233,29 @@
     jQuery(window).load(function() {
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
-        jQuery("#loader").delay(800).fadeOut("slow");
+
+        jQuery('body').fadeOut(1000, function(){
+            jQuery('#loader').css({"opacity": "1"});
+        }).fadeIn("slow", function(){
+            
+            jQuery("#loader").delay(1500).fadeOut("slow");
+            
+        }).delay(1200).fadeOut(600, function(){
+            jQuery('#loader').css({"opacity": "0"});
+        }).fadeIn(600);
+
+        // jQuery('body').fadeOut(1500, function(){
+        //     jQuery('body').fadeIn(200);
+        //     jQuery("#loader").delay(3000).fadeOut("slow");
+            
+        // });
+
+        // jQuery('body').fadeOut(600).fadeIn(600).delay(600).jQuery("#loader").delay(800).fadeOut("slow");
+        
+        // jQuery('body').fadeOut(600).fadeIn(600);    
+        
+        // jQuery('body').fadeOut("fast");
+        // jQuery("#loader").delay(800).fadeOut("slow");
 
 
     });
