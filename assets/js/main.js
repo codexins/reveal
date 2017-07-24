@@ -5,6 +5,29 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
+    // $(window).on('scroll', function() {
+    //     var heightmenu = $("#header").height();
+    //     if ($(window).scrollTop() >= 150 ) {
+    //         $(".spacer").css('display', 'block');
+    //     }  
+    //     aleart(heightmenu);
+    //     if($(window).scrollTop() <= 100 ){
+    //         $(".spacer").fadeOut();
+
+    //     }
+
+    // });
+
+    // $(window).scroll(function() {
+    // if ($(this).scrollTop() > 144){  
+    //     $('.space-adjustment').addClass("show");
+    //   }
+    //   else{
+    //     $('.space-adjustment').removeClass("show");
+    //   }
+    // });
+
+
     $('.sub-menu').hover(function() {
         var menu = $(this);
         // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
@@ -227,6 +250,11 @@
 
 
     /*--------------------------------------------------------------
+    Dropdown select box styling with nice-select
+    ---------------------------------------------------------------- */
+    $('select').niceSelect();
+
+    /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
     
@@ -234,9 +262,7 @@
 
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
-
         jQuery(".loaders").delay(800).fadeOut("slow");
-
     });
 
     /*--------------------------------------------------------------
@@ -249,8 +275,8 @@
     $(".animsition").animsition({
         inClass: 'fade-in',
         outClass: 'fade-out',
-        inDuration: 1200,
-        outDuration: 1200,
+        inDuration: 600,
+        outDuration: 600,
         linkElement: '.animsition-link',
         // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
         loading: true,
@@ -327,6 +353,8 @@
         }
 
     });
+
+
 
 
 

@@ -385,6 +385,7 @@ a.explore {
 }
 #entry_footer .share a:hover {
     background: #295970;
+    color: #fff ;
 }
 /***********************************
     013 - Location
@@ -638,6 +639,11 @@ table#wp-calendar thead {
 }
 
 /* blog */
+#entry_footer .share a {
+    border: 1px solid #555;
+    color: #555;
+    background: transparent;
+}
 .blog-post .list-inline li a {
     color: inherit;
 }
