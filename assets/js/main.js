@@ -66,10 +66,10 @@
 	animating the numbers for counting up for the achievement section
     ---------------------------------------------------------------- */
 
-    $('.counter').counterUp({
-        delay: 100,
-        time: 3000
-    });
+    // $('.counter').counterUp({
+    //     delay: 100,
+    //     time: 3000
+    // });
 
     /*--------------------------------------------------------------
 	Closes the Responsive Menu on Menu Item Click
