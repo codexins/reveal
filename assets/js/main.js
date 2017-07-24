@@ -234,20 +234,9 @@
 
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
-        
-        jQuery('body').fadeOut(1000, function(){
-            jQuery('body').css({"opacity": "1"});
-            jQuery('#loader').css({"opacity": "1"});
-        }).fadeIn("slow", function(){
-            
-    //     // jQuery(".spinner").delay(400).fadeOut("slow");
-    //     // jQuery(".title-load").delay(400).fadeOut("slow");
-<<<<<<< HEAD
-            jQuery(".loaders").delay(800).fadeOut("slow");
-=======
 
-            jQuery("#loader").delay(1500).fadeOut("slow");
->>>>>>> d68ff552ff31210e5a469d7418ce11468b52d1cf
+        jQuery(".loaders").delay(800).fadeOut("slow");
+
     });
 
     /*--------------------------------------------------------------
