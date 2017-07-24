@@ -5,18 +5,22 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
-    $(window).on('scroll', function() {
-        var heightmenu = $("#header").height();
-        if ($(window).scrollTop() >= 150 ) {
-            $(".spacer").css('display', 'block');
-        }  
-        aleart(heightmenu);
-        if($(window).scrollTop() <= 100 ){
-            $(".spacer").fadeOut();
+    // $(window).on('scroll', function() {
+    //     // var heightmenu = $("#header").outerheight();
+    //     if ($(window).scrollTop() >= 150 ) {
+    //         $(".spacer").css('display', 'block');
+    //     }  
+    //     // aleart($("#header").outerheight());
+    //     if($(window).scrollTop() <= $("#header").outerheight() ){
+    //         $(".spacer").css('display', 'none');;
 
-        }
+    //     }
 
-    });
+    // });
+
+    // $("#header").headroom();
+
+
 
 
     $('.sub-menu').hover(function() {

@@ -62,7 +62,7 @@
 
 	<?php if( is_front_page() && !(is_home()) ): ?>
 	
-	<header id="header" class="header front-header fill-screen">
+	<header id="header" class="header front-header fill-screen" >
 	<?php else: ?>
 	<header id="header" class="header inner-header">
 	<?php endif; ?>	

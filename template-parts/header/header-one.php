@@ -6,7 +6,7 @@
 
 	<?php //if($header_top == 1): ?>
 
-		<nav class="navbar" data-spy="affix" data-offset-top="150">
+		<nav class="navbar" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
