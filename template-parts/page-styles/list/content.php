@@ -75,7 +75,9 @@
         <?php if(has_tag()): ?>
 
     		<footer id="entry_footer">
-    			<?php the_tags('Tags: &nbsp','',''); ?>
+                <div class="tagcloud">
+    			 <?php the_tags('Tags: &nbsp','',''); ?>
+                </div>
     		</footer>
          <?php endif; ?>
         

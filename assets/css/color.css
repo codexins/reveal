@@ -553,7 +553,7 @@ Sidebar widget
     border: 1px solid #ebebea !important;
 }
 .widget_search  input[type="submit"] {
-    background-color: #015989;
+    background-color: #295970;
     border: 1px solid #ccc;
 }
 h2.widgettitle {
@@ -564,7 +564,7 @@ h2.widgettitle {
     color: rgb(51, 51, 51);
 }
 .sidebar-widget ul li a:hover {
-    color: #015989;
+    color: #295970;
 }
 .sidebar-widget ul li a {
     color: #333;
@@ -581,9 +581,9 @@ h2.widgettitle {
 }
 
 .tagcloud a:hover {
-    background: #015989;
+    background: #295970;
     color: #fff;
-    border-color: #015989;
+    border-color: #295970;
 }
 
 /* calendar */
