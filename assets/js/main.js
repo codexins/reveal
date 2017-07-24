@@ -229,11 +229,11 @@
     /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
-
+    jQuery('body').css({"opacity": "0"});
     jQuery(window).load(function() {
         // jQuery(".spinner").delay(400).fadeOut("slow");
         // jQuery(".title-load").delay(400).fadeOut("slow");
-        jQuery('body').css({"opacity": "0"});
+        
         jQuery('body').fadeOut(1000, function(){
             jQuery('body').css({"opacity": "1"});
             jQuery('#loader').css({"opacity": "1"});
