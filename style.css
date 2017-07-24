@@ -1547,7 +1547,7 @@ a.more:hover {
     016 - Site Loader
 ***********************************/
 
-#loader {
+.loaders {
     bottom: 0;
     height: 100%;
     left: 0;
@@ -1555,8 +1555,9 @@ a.more:hover {
     right: 0;
     top: 0;
     width: 100%;
+    background-color: #fff;
     z-index: 9999;
-    opacity: 0;
+    opacity: 1;
 }
 
 .cssload-container {
@@ -1663,7 +1664,7 @@ a.more:hover {
 }
 
 /* Loader */
-.loader,
+/*.loader,
 .loader:before,
 .loader:after {
   -webkit-animation: load1 1s infinite ease-in-out;
@@ -1719,7 +1720,7 @@ a.more:hover {
     box-shadow: 0 -.3em rgba(0, 0, 0, 0.2);
     height: 1em;
   }
-}
+}*/
 
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------------------------------End Sazzad vai------------------------------------------------------------------------------------------------------------------- */

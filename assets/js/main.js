@@ -229,27 +229,30 @@
     /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
-    // jQuery('body').css({"opacity": "0"});
+    
     jQuery(window).load(function() {
     //     // jQuery(".spinner").delay(400).fadeOut("slow");
     //     // jQuery(".title-load").delay(400).fadeOut("slow");
-            jQuery("#loader").delay(1500).fadeOut("slow");
+            jQuery(".loaders").delay(800).fadeOut("slow");
     });
 
     /*--------------------------------------------------------------
     Activating loader effect option
     ---------------------------------------------------------------- */
-    $('ul.sub-menu li a').addClass('animsition-link');
+    jQuery(window).load(function(){
+       $('a').addClass('animsition-link');
+    });
+    
     $(".animsition").animsition({
         inClass: 'fade-in',
         outClass: 'fade-out',
-        inDuration: 1500,
-        outDuration: 800,
+        inDuration: 1200,
+        outDuration: 1200,
         linkElement: '.animsition-link',
         // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
         loading: true,
-        loadingParentElement: 'body', //animsition wrapper element
-        loadingClass: 'animsition-loading',
+        loadingParentElement: 'html', //animsition wrapper element
+        loadingClass: 'loaders',
         loadingInner: '', // e.g '<img src="loading.svg" />'
         timeout: false,
         timeoutCountdown: 5000,
@@ -257,9 +260,6 @@
         browser: [ 'animation-duration', '-webkit-animation-duration'],
         // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
         // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-        overlay : false,
-        overlayClass : 'animsition-overlay-slide',
-        overlayParentElement : 'body',
         transition: function(url){ window.location.href = url; }
     });
 
