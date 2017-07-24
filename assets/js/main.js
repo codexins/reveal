@@ -5,17 +5,26 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
-    $(window).on('scroll', function() {
-        var heightmenu = $("#header").height();
-        if ($(window).scrollTop() >= 150 ) {
-            $(".spacer").css('display', 'block');
-        }  
-        aleart(heightmenu);
-        if($(window).scrollTop() <= 100 ){
-            $(".spacer").fadeOut();
+    // $(window).on('scroll', function() {
+    //     var heightmenu = $("#header").height();
+    //     if ($(window).scrollTop() >= 150 ) {
+    //         $(".spacer").css('display', 'block');
+    //     }  
+    //     aleart(heightmenu);
+    //     if($(window).scrollTop() <= 100 ){
+    //         $(".spacer").fadeOut();
 
-        }
+    //     }
 
+    // });
+
+    $(window).scroll(function() {
+    if ($(this).scrollTop() > 144){  
+        $('.space-adjustment').addClass("show");
+      }
+      else{
+        $('.space-adjustment').removeClass("show");
+      }
     });
 
 

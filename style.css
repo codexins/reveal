@@ -125,6 +125,10 @@ header {
     z-index: 2;
 }
 
+.show.space-adjustment {
+    height: 72px;
+}
+
 .header::before {
     content: "";
     height: 100%;
