@@ -1814,6 +1814,14 @@ h2.widgettitle {
     padding-top: 0;
 }
 
+.nice-select {
+    white-space: pre-wrap;
+    min-height:42px;
+    height: auto;
+    line-height: 1.65em;
+    padding: 9px 15px;
+}
+
 .nice-select, .nice-select .list {
     border-radius: 0px;
     border: solid 1px  #ccc;
@@ -1839,9 +1847,9 @@ h2.widgettitle {
 
 }
 
-.nice-select .list li:first-child {
+/*.nice-select .list li:first-child {
     display: none;
-}
+}*/
 
 .nice-select .option {
     cursor: pointer;
