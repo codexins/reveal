@@ -2045,12 +2045,14 @@ a {
     left: 0%;
     top: 44px;
     padding-top: 10px;
+    visibility: hidden;
     transition: all 0.8s;
 }
 
 .site-nav ul.sub-menu li:hover .sub-menu {
-  left: 100%;
-  top: -10px;
+    left: 100%;
+    top: -10px;
+    visibility: visible;
 }
 
 /*Sub menu level 2 sub-menu css area end*/
