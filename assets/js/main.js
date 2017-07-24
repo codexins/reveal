@@ -5,45 +5,6 @@
     Navigation adjust for window width 
     ---------------------------------------------------------------- */
 
-    // $(window).on('scroll', function() {
-<<<<<<< HEAD
-    //     // var heightmenu = $("#header").outerheight();
-    //     if ($(window).scrollTop() >= 150 ) {
-    //         $(".spacer").css('display', 'block');
-    //     }  
-    //     // aleart($("#header").outerheight());
-    //     if($(window).scrollTop() <= $("#header").outerheight() ){
-    //         $(".spacer").css('display', 'none');;
-
-    //     }
-
-    // });
-
-    // $("#header").headroom();
-
-
-=======
-    //     var heightmenu = $("#header").height();
-    //     if ($(window).scrollTop() >= 150 ) {
-    //         $(".spacer").css('display', 'block');
-    //     }  
-    //     aleart(heightmenu);
-    //     if($(window).scrollTop() <= 100 ){
-    //         $(".spacer").fadeOut();
-
-    //     }
-
-    // });
-
-    // $(window).scroll(function() {
-    // if ($(this).scrollTop() > 144){  
-    //     $('.space-adjustment').addClass("show");
-    //   }
-    //   else{
-    //     $('.space-adjustment').removeClass("show");
-    //   }
-    // });
->>>>>>> 6373682be60933efa320434a01440625491f1ac5
 
 
     $('.sub-menu').hover(function() {
