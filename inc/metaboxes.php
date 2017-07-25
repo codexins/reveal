@@ -186,6 +186,113 @@ function reveal_register_meta_boxes( $meta_boxes ) {
         )
     );
 
+
+    $meta_boxes[] = array(
+        'id'         => 'reveal-event-meta',
+        'title'      => esc_html__( 'Event Information', 'reveal' ),
+        'post_types' => array( 'events' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+
+            array(
+                'name'  => esc_html__( 'Event Name', 'reveal' ),
+                'desc'  => esc_html('Enter event name', 'reveal' ),
+                'id'    => $prefix . 'event_name',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Event Start Date', 'reveal' ),
+                'desc'  => esc_html('Enter event start date', 'reveal' ),
+                'id'    => $prefix . 'event_start_date',
+                'type'  => 'date',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+
+            array(
+                'name'  => esc_html__( 'Event Start Time', 'reveal' ),
+                'desc'  => esc_html('Enter event start time', 'reveal' ),
+                'id'    => $prefix . 'event_start_time',
+                'type'  => 'time',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Event End Date', 'reveal' ),
+                'desc'  => esc_html('Enter events end date', 'reveal' ),
+                'id'    => $prefix . 'event_end_date',
+                'type'  => 'date',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Event End Time', 'reveal' ),
+                'desc'  => esc_html('Enter event end time', 'reveal' ),
+                'id'    => $prefix . 'event_end_time',
+                'type'  => 'time',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Contact Phone', 'reveal' ),
+                'desc'  => esc_html('Enter phone number', 'reveal' ),
+                'id'    => $prefix . 'event_phone',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Contact Email', 'reveal' ),
+                'desc'  => esc_html('Enter email address', 'reveal' ),
+                'id'    => $prefix . 'event_email',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Events Address', 'reveal' ),
+                'desc'  => esc_html('Enter event location address', 'reveal' ),
+                'id'    => $prefix . 'event_address',
+                'type'  => 'textarea',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Events Location Latitude', 'reveal' ),
+                'desc'  => esc_html('Enter event location latitude, you can find latitude/longitude by entering your address here', 'reveal' ),
+                'id'    => $prefix . 'event_address_latitude',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Events Location Longitude', 'reveal' ),
+                'desc'  => esc_html('Enter event location longitude, you can find latitude/longitude by entering your address here', 'reveal' ),
+                'id'    => $prefix . 'event_address_longitude',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+
+
+
+        )
+    );
+
     return $meta_boxes;
 }
 
