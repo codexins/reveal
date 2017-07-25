@@ -531,8 +531,8 @@ a.more:hover {
 Sidebar widget 
 =====================================================*/
 
-.widget_search  input[type="submit"] {
-    border: 1px solid #ebebea !important;
+.widget_search input[type="submit"] {
+    border: 1px solid #295970 !important;
 }
 .widget_search  input[type="submit"] {
     background-color: #295970;
@@ -659,4 +659,3 @@ table#wp-calendar thead {
 #commentform .error{
     color: red;
 }
-
