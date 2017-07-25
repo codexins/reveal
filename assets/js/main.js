@@ -267,6 +267,11 @@
 
     });
 
+    $('.event-image-popup').magnificPopup({
+        type: 'image'
+        // other options
+    });
+
 
     /*--------------------------------------------------------------
     commentform validate

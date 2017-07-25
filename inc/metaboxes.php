@@ -14,7 +14,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
             array(
                 'name'  => esc_html__( 'Designation', 'reveal' ),
-                'desc'  => esc_html('Enter Designation', 'reveal' ),
+                'desc'  => esc_html__('Enter Designation', 'reveal' ),
                 'id'    => $prefix . 'team_designation',
                 'type'  => 'text',
                 'clone' => false,
@@ -23,7 +23,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Facebook URL', 'reveal' ),
-                'desc'  => esc_html('Enter facebook url', 'reveal' ),
+                'desc'  => esc_html__('Enter facebook url', 'reveal' ),
                 'id'    => $prefix . 'team_facebook',
                 'type'  => 'text',
                 'clone' => false,
@@ -32,7 +32,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Twitter URL', 'reveal' ),
-                'desc'  => esc_html('Enter Twitter URL', 'reveal' ),
+                'desc'  => esc_html__('Enter Twitter URL', 'reveal' ),
                 'id'    => $prefix . 'team_twitter',
                 'type'  => 'text',
                 'clone' => false,
@@ -41,7 +41,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Instagram URL', 'reveal' ),
-                'desc'  => esc_html('Enter Instagram URL', 'reveal' ),
+                'desc'  => esc_html__('Enter Instagram URL', 'reveal' ),
                 'id'    => $prefix . 'team_ig',
                 'type'  => 'text',
                 'clone' => false,
@@ -50,7 +50,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
         array(
                 'name'  => esc_html__( 'Google Plus URL', 'reveal' ),
-                'desc'  => esc_html('Enter Google Plus URL', 'reveal' ),
+                'desc'  => esc_html__('Enter Google Plus URL', 'reveal' ),
                 'id'    => $prefix . 'team_gp',
                 'type'  => 'text',
                 'clone' => false,
@@ -71,7 +71,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Name', 'reveal' ),
-                'desc'  => esc_html('Enter Name', 'reveal' ),
+                'desc'  => esc_html__('Enter Name', 'reveal' ),
                 'id'    => $prefix . 'author_name',
                 'type'  => 'text',
                 'clone' => false,
@@ -93,7 +93,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Client Name', 'reveal' ),
-                'desc'  => esc_html('Enter client name', 'reveal' ),
+                'desc'  => esc_html__('Enter client name', 'reveal' ),
                 'id'    => $prefix . 'portfolio_client',
                 'type'  => 'text',
                 'clone' => false,
@@ -102,7 +102,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Project Date', 'reveal' ),
-                'desc'  => esc_html('Enter project date. Example: 14-Apr-17', 'reveal' ),
+                'desc'  => esc_html__('Enter project date. Example: 14-Apr-17', 'reveal' ),
                 'id'    => $prefix . 'portfolio_date',
                 'type'  => 'text',
                 'clone' => false,
@@ -111,7 +111,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Project Skills', 'reveal' ),
-                'desc'  => esc_html('Enter project skills', 'reveal' ),
+                'desc'  => esc_html__('Enter project skills', 'reveal' ),
                 'id'    => $prefix . 'portfolio_skills',
                 'type'  => 'text',
                 'clone' => false,
@@ -121,7 +121,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Project Site Name', 'reveal' ),
-                'desc'  => esc_html('Enter project site name', 'reveal' ),
+                'desc'  => esc_html__('Enter project site name', 'reveal' ),
                 'id'    => $prefix . 'portfolio_sname',
                 'type'  => 'text',
                 'clone' => false,
@@ -130,7 +130,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Project Site URL', 'reveal' ),
-                'desc'  => esc_html('Enter project site URL', 'reveal' ),
+                'desc'  => esc_html__('Enter project site URL', 'reveal' ),
                 'id'    => $prefix . 'portfolio_surl',
                 'type'  => 'text',
                 'clone' => false,
@@ -174,12 +174,110 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'  => esc_html__( 'Client Site URL', 'reveal' ),
-                'desc'  => esc_html('Enter client site URL', 'reveal' ),
+                'desc'  => esc_html__('Enter client site URL', 'reveal' ),
                 'id'    => $prefix . 'clients_surl',
                 'type'  => 'text',
                 'clone' => false,
                 'size'  => 95
             ),
+
+
+
+        )
+    );
+
+
+    $meta_boxes[] = array(
+        'id'         => 'reveal-event-meta',
+        'title'      => esc_html__( 'Event Information', 'reveal' ),
+        'post_types' => array( 'events' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+            array(
+                'name'  => esc_html__( 'Event Start Date', 'reveal' ),
+                'desc'  => esc_html__('Enter event start date', 'reveal' ),
+                'id'    => $prefix . 'event_start_date',
+                'type'  => 'date',
+                'clone' => false,
+                'size'  => 100,
+                'js_options' => 'MM d, YY'
+            ),
+
+
+            array(
+                'name'  => esc_html__( 'Event Start Time', 'reveal' ),
+                'desc'  => esc_html__('Enter event start time', 'reveal' ),
+                'id'    => $prefix . 'event_start_time',
+                'type'  => 'time',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Event End Date', 'reveal' ),
+                'desc'  => esc_html__('Enter events end date', 'reveal' ),
+                'id'    => $prefix . 'event_end_date',
+                'type'  => 'date',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Event End Time', 'reveal' ),
+                'desc'  => esc_html__('Enter event end time', 'reveal' ),
+                'id'    => $prefix . 'event_end_time',
+                'type'  => 'time',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Contact Phone', 'reveal' ),
+                'desc'  => esc_html__('Enter phone number', 'reveal' ),
+                'id'    => $prefix . 'event_phone',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Contact Email', 'reveal' ),
+                'desc'  => esc_html__('Enter email address', 'reveal' ),
+                'id'    => $prefix . 'event_email',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Events Address', 'reveal' ),
+                'desc'  => esc_html__('Enter event location address', 'reveal' ),
+                'id'    => $prefix . 'event_address',
+                'type'  => 'textarea',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Events Location Latitude', 'reveal' ),
+                'desc'  => esc_html__('Enter event location latitude, you can find latitude/longitude by entering your address here', 'reveal' ),
+                'id'    => $prefix . 'event_address_latitude',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
+            array(
+                'name'  => esc_html__( 'Events Location Longitude', 'reveal' ),
+                'desc'  => esc_html__('Enter event location longitude, you can find latitude/longitude by entering your address here', 'reveal' ),
+                'id'    => $prefix . 'event_address_longitude',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 100
+            ),
+
 
 
 

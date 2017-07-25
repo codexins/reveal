@@ -40,6 +40,7 @@ INDEX:
 	015 - Back to top button
 	016 - Site Loader
     017 - Events Archive Page
+    018 - Single Events Page
     070 - Sidebar
 
 
@@ -829,10 +830,10 @@ a.explore:hover {
 #entry_footer .caption {
     float: left;
     margin-right: 15px;
-    line-height: 35px;
+    line-height: 30px;
     font-size: 18px;
+    margin-top: 15px;
 }
-
 
 article.type-post {
     margin-bottom: 0;
@@ -1708,6 +1709,9 @@ h2.widgettitle {
 /************************************************************
     017 - Events Archive Page
 *************************************************************/
+.magin-left-adjust {
+    margin-left: -15px;
+}
 .archive-events-wrapper {
     display: block;
     margin-bottom: 30px;
@@ -1715,9 +1719,8 @@ h2.widgettitle {
 .archive-events-date {
     width: 100%;
     float: left;
-    background-color: #2c3e50;
-    color: #fff;
 }
+
 .archive-events-date .date-style {
     text-align: center;
     font-size: 18px;
@@ -1730,36 +1733,129 @@ h2.widgettitle {
     width: 100%;
     float: left;
     padding: 30px;
+    padding-left: 15px;
 }
 .archive-events-title {
-    margin: 20px 0 5px;
+    margin: 16px 0 5px;
 }
 .archive-events-title a {
     font-size: 24px;
     line-height: normal;
-    color: #333;
 }
 .archive-events-location {
     margin-bottom: 8px;
 }
 .archive-events-location a {
     font-size: 18px;
-    color: #ababab;
+
     text-transform: capitalize;
     font-weight: normal;
 }
 .archive-events-time {
     font-size: 14px;
-    color: #ababab;
     margin: 0;
     padding: 0;
     line-height: 100%;
 }
 
+/************************************************************
+    018 - Single Events Page
+*************************************************************/
+.event-single {
+    display: block;
+}
+.single-event-details {
+    border-right: 1px solid #e1e1e1;
+    color: #363e40;
+}
+.single-event-details .event-schedule {
+    text-align: left;
+    font-size: 16px;
+    color: #363e40;
+    border-bottom: 1px solid #e1e1e1;
+}
+.single-event-details .event-schedule .event-date {
+    padding: 21px 0 26px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.single-event-details .event-organizer, .single-event-details .event-schedule-info {
+    padding: 26px 0 25px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.single-event-details .event-organizer .title, .single-event-details .event-schedule-info .title {
+    font-size: 16px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.single-event-details .event-organizer .info-title, .single-event-details .event-schedule-info .info-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    display: block;
+}
+.single-event-details .event-organizer .info-title-content{
+    font-size: 16px;
+    color: #ababab;
+    margin-bottom: 15px;
+    display: block;
+}
+.single-event-details .event-organizer .info-title-content a {
+    color: #ababab;
+}
 
+.single-event-details .event-schedule-info .info-title-content{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+    display: block;
+}
+.single-event-details .event-schedule-info .info-title-content a {
+    color: #333;
+}
+
+
+.single-event-description .event-title h2 {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #295970;
+}
+.single-event-description .single-event-image, .single-event-description .single-event-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.single-event-description .single-event-image a {
+    display: block;
+}
+.single-event-description .event-description {
+    font-size: 16px;
+    line-height: 30px;
+    margin: 30px 0;
+    text-align: justify;
+}
+
+.single-event-description .event-venue h4 {
+    font-weight: bold;
+}
+
+.single-event-description .event-venue .event-venue-info i {
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+.single-event-description .event-venue .map {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    background-color: #ccc;
+}
 /************************************************************
     000 - Page - Blog
 *************************************************************/
+
 
 .blog-post .list-inline li i.fa-pencil {
     margin-left: 6px;
@@ -1819,4 +1915,117 @@ h2.widgettitle {
     text-transform: unset;
     font-weight: bold;
     color: #444;
+}
+
+.portfolio{
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+/*port folio grid style */
+
+.portfolio .portfolio-item-content {
+    border-radius: 4px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}
+.portfolio .portfolio-item-content:hover {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio  .portfolio-description {
+    background: #fff none repeat scroll 0 0;
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+}
+.portfolio-description h4 {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.portfolio-description h4 a {
+    display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 3px;
+    position: relative;
+    color: #295970;
+
+}
+.portfolio-cat > li {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+    list-style-type: none;
+    color: #333;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    list-style: none;
+}
+
+.item-thumbnail ,
+.portfolio-item-content {
+    position: relative;
+}
+
+.portfolio-item:hover .item-thumbnail::before {
+    border: 1px solid rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+.portfolio-cat{
+    padding: 0 ;
+}
+.portfolio-action-btn {
+    opacity: 0;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 50px;
+    text-align: center;
+    transition: .3s;
+}
+.item-thumbnail::before{
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: .3s;
+    opacity: 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+
+}
+.portfolio:hover .item-thumbnail::before {
+    border: 1px solid rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+.portfolio:hover .portfolio-action-btn {
+    opacity: 1;
+}
+.portfolio-action-btn > li {
+    display: inline-block;
+    margin: 0 2px;
+}
+.portfolio .portfolio-action-btn > li a {
+    background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
+    color: #000;
+}
+.portfolio-action-btn > li a {
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 47px;
+    text-align: center;
+    width: 45px;
 }

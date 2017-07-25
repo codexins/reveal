@@ -13,15 +13,20 @@
 						                $taxonomy = 'portfolio-category';
 						                $taxonomies = get_terms($taxonomy); 
 						                    foreach ( $taxonomies as $tax ) {
-						                        echo '<li data-filter=".' .strtolower($tax->name) .'"><span>' . $tax->name . '</span></li>';
+						                        echo '<li data-filter=".' .strtolower($tax->slug) .'"><span>' . $tax->name . '</span></li>';
 
 						                    }?>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-wrapper">
-							<?php reveal_portfolio_loop(); ?>
+
+						<div class="row ">
+							<div class=" portfolio-wrapper-filter">
+								
+								<?php reveal_portfolio_loop(); ?>
+								
+							</div>
 						</div> <!-- end of portfolio wrapper -->
 						<?php else: ?>
 						<div class="portfolio-list-wrapper">
