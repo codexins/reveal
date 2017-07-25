@@ -1794,9 +1794,8 @@ h2.widgettitle {
 .archive-events-date {
     width: 100%;
     float: left;
-    background-color: #2c3e50;
-    color: #fff;
 }
+
 .archive-events-date .date-style {
     text-align: center;
     font-size: 18px;
@@ -1817,20 +1816,18 @@ h2.widgettitle {
 .archive-events-title a {
     font-size: 24px;
     line-height: normal;
-    color: #333;
 }
 .archive-events-location {
     margin-bottom: 8px;
 }
 .archive-events-location a {
     font-size: 18px;
-    color: #ababab;
+
     text-transform: capitalize;
     font-weight: normal;
 }
 .archive-events-time {
     font-size: 14px;
-    color: #ababab;
     margin: 0;
     padding: 0;
     line-height: 100%;
