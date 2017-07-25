@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-lg-12 col-md-12">
             <div class="single-port-img">
-                <img src="<?php the_post_thumbnail_url('blog-single-image') ?>" alt="">
+                <img src="<?php the_post_thumbnail_url('featured-single-image') ?>" alt="">
             </div>                              
         </div>
         <div class="col-lg-3 col-md-4 col-sm-4">

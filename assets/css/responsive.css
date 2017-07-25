@@ -136,6 +136,14 @@
 
 
 @media only screen and (max-width: 767px) {
+	.single-event-details .event-schedule{
+		text-align: center ;
+	}
+	.single-event-details{
+		text-align: center;
+	    border-left: 1px solid #e1e1e1;
+	    border-top: 1px solid #e1e1e1;
+	}
 	h2.single-project-title {
 	    padding-top: 30px;
 	    padding-bottom: 30px;
