@@ -34,6 +34,9 @@ get_header(); ?>
 			 	 $e_address = rwmb_meta('reveal_event_address', 'type=textarea');
 			 	 $e_address_latitude = rwmb_meta('reveal_event_address_latitude', 'type=text');
 			 	 $e_address_longitude = rwmb_meta('reveal_event_address_longitude', 'type=text');
+
+			 	 $e_st_date=date_create($e_start_date);
+			 	 $e_en_date=date_create($e_end_date);
 			?>
 			    <div class="col-md-10 col-md-offset-1">
 			
@@ -42,7 +45,7 @@ get_header(); ?>
                         <div class="row">
                             <div class="col-md-3">
 	                            <div class="archive-events-date">
-		                            <p class="date-style"><?php if(!empty($e_start_date)): echo esc_html($e_start_date); endif; ?></p>
+		                            <p class="date-style"><?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date,"M d, Y")); endif; ?></p>
 		                        </div>
 		                    </div>
                             <!-- End Archive Event Date -->
@@ -58,8 +61,8 @@ get_header(); ?>
 		                                <?php if(!empty($e_address)): echo esc_html($e_address); endif; ?>
 	                                </h4>	                    
 	 		                            <p class="archive-events-time">
-			                            	<?php if(!empty($e_start_date)): echo esc_html($e_start_date); endif;  ?> - to - 
-			                            	<?php if(!empty($e_end_date)): echo esc_html($e_end_date); endif;  ?>
+			                            	<?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date,"M d, Y")); endif;  ?> - to - 
+			                            	<?php if(!empty($e_end_date)): echo esc_html(date_format($e_en_date,"M d, Y")); endif;  ?>
 		                            	</p>
 		                        </div>
 		                    </div>
