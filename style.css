@@ -905,10 +905,10 @@ a.explore:hover {
 #entry_footer .caption {
     float: left;
     margin-right: 15px;
-    line-height: 35px;
+    line-height: 30px;
     font-size: 18px;
+    margin-top: 15px;
 }
-
 
 article.type-post {
     margin-bottom: 0;
