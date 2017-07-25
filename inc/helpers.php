@@ -309,16 +309,19 @@ if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
         if ( have_posts() ) :
 
             /* Start the Loop */
+            $i = 1 ;
             while ( have_posts() ) : the_post();
 
                 $post_style = reveal_option( 'reveal_portfolio_style' );
                 
                 if( $post_style == 'filter' ):
                 get_template_part( 'template-parts/page-styles/filter/content', 'portfolio' );
+                    if ($i == 3 ): echo '<div class="clearfix"></div>'; endif ;
                 else:
                 get_template_part( 'template-parts/page-styles/list/content', 'portfolio' );              
                 endif;
 
+                $i++ ;
             endwhile; 
 
             // if( $post_style == 'list' ) {
