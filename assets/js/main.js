@@ -221,21 +221,25 @@
     ---------------------------------------------------------------- */
 
     // fadein effect of the loader
-    $(document).on("click", "a[rel!='nofollow']", function () {
-        var newUrl = $(this).attr("href");
-        if (!newUrl || newUrl[0] === "#") {
-            return;
-        }
-        $("#preloader_1").fadeIn(function () {
-            location = newUrl;
-        });
-        return false;
-    });
+    // $(document).on("click", "a[rel!='nofollow']", function () {
+    //     var newUrl = $(this).attr("href");
+    //     if (!newUrl || newUrl[0] === "#") {
+    //         return;
+    //     }
+    //     $("#preloader_1").fadeIn(function () {
+    //         location = newUrl;
+    //     });
+    //     return false;
+    // });
     
     // fadeout effect of the loader
     // jQuery(window).load(function() {
     //     jQuery(".loaders").delay(800).fadeOut("slow");
     // });
+
+   $(window).on('beforeunload', function() { 
+      $('body').fadeOut('normal');
+   });
 
    $(window).on('load', function() { 
       $('#preloader_1').delay(500).fadeOut('slow');
