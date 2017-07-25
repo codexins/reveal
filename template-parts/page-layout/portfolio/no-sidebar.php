@@ -13,7 +13,7 @@
 						                $taxonomy = 'portfolio-category';
 						                $taxonomies = get_terms($taxonomy); 
 						                    foreach ( $taxonomies as $tax ) {
-						                        echo '<li data-filter=".' .strtolower($tax->name) .'"><span>' . $tax->name . '</span></li>';
+						                        echo '<li data-filter=".' .strtolower($tax->slug) .'"><span>' . $tax->name . '</span></li>';
 
 						                    }?>
 									</ul>
@@ -22,7 +22,7 @@
 						</div>
 
 						<div class="row ">
-							<div class=" portfolio-wrapper">
+							<div class=" portfolio-wrappera">
 								
 								<?php reveal_portfolio_loop(); ?>
 								

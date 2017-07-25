@@ -1953,7 +1953,7 @@ h2.widgettitle {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     transition: .3s;
 }
-.portfolio-style-four .portfolio-item-content:hover {
+.portfolio .portfolio-item-content:hover {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -2012,6 +2012,7 @@ h2.widgettitle {
     margin: auto;
     height: 50px;
     text-align: center;
+    transition: .3s;
 }
 .item-thumbnail::before{
     background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;

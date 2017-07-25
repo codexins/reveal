@@ -1,23 +1,8 @@
 <?php 
-
- 
-	global  $reveal_option;
-    $reveal_portfolio_layout = $reveal_option['reveal-portfolio-archive-layout'];
-
-    if($reveal_portfolio_layout == 1):
-        $bootstrap_grid = '<div class="col-sm-4" >';
-    else:
-        $bootstrap_grid = '<div class="col-sm-6" >';
-
-    endif;
-
-?>
-
-<?php 
 	$term_list = wp_get_post_terms( get_the_ID(), 'portfolio-category'); 
  ?>
-<?php echo $bootstrap_grid ;?>
-	<div class="portfolio <?php foreach ($term_list as $sterm) { echo strtolower($sterm->name)." "; } ?>">
+<div class="col-sm-4">
+	<div class="portfolio <?php foreach ($term_list as $sterm) { echo strtolower($sterm->slug)." "; } ?>">
 
 		<div class="portfolio-item-content">
 		    <div class="item-thumbnail">
@@ -39,9 +24,9 @@
 		                    foreach ( $taxonomies as $tax ) {
 		                        // echo  $tax->name.', ' ;
 		                        if($tax == $last_key):
-		                            echo "<li>".ucwords($tax->name)." </li> ";
+		                            echo "<li>".ucwords($tax->name)."</li>";
 		                        else: 
-		                        	echo "<li>".ucwords($tax->name)." , </li> ";
+		                        	echo "<li>".ucwords($tax->name)." ,</li>";
 		                         
 		                        endif; 
 		                }?>
@@ -51,4 +36,4 @@
 
 
 	</div>
-<?php echo '</div>'?>
+</div>
