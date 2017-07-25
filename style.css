@@ -39,7 +39,9 @@ INDEX:
 	014 - Footer Section
 	015 - Back to top button
 	016 - Site Loader
+    017 - Events Archive Page
     070 - Sidebar
+
 
 ******************************/
 
@@ -1328,7 +1330,7 @@ a.more:hover {
     016 - Site Loader
 *************************************************************/
 
-.loaders {
+/*.loaders {
     bottom: 0;
     height: 100%;
     left: 0;
@@ -1387,7 +1389,7 @@ a.more:hover {
         -moz-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
+}*/
 
 
 /*
@@ -1395,6 +1397,21 @@ a.more:hover {
     100%{ -ms-transform: rotate(360deg); transform: rotate(360deg); }
 }*/
 
+
+#preloader_1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #fff url("assets/images/loader-1.svg") no-repeat center center;
+}
+
+/************************************************************
+    000 - Page - Mis
+*************************************************************/
 .service i {
     border-radius: 100px;
     padding: 5px;
@@ -1763,6 +1780,57 @@ h2.widgettitle {
     line-height: 32px;
 }
 
+/************************************************************
+    017 - Events Archive Page
+*************************************************************/
+.archive-events-wrapper {
+    display: block;
+    margin-bottom: 30px;
+}
+.archive-events-date {
+    width: 100%;
+    float: left;
+    background-color: #2c3e50;
+    color: #fff;
+}
+.archive-events-date .date-style {
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+    line-height: 170px;
+}
+
+.archive-events-desc {
+    width: 100%;
+    float: left;
+    padding: 30px;
+}
+.archive-events-title {
+    margin: 20px 0 5px;
+}
+.archive-events-title a {
+    font-size: 24px;
+    line-height: normal;
+    color: #333;
+}
+.archive-events-location {
+    margin-bottom: 8px;
+}
+.archive-events-location a {
+    font-size: 18px;
+    color: #ababab;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+.archive-events-time {
+    font-size: 14px;
+    color: #ababab;
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+}
+
 
 /************************************************************
     000 - Page - Blog
@@ -1774,6 +1842,56 @@ h2.widgettitle {
 
 
 
+.widget_search input.form-control {
+    border-radius: 0;
+    border-right: 0;
+}
 
 
+/* portfollio */
 
+.single-port-img {
+    margin-bottom: 30px;
+}
+.project-meta-wrapper h4 {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.single-portfolio-meta {
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+}
+.single-portfolio-meta > li {
+    border-bottom: 1px solid #e5e5e5;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+.single-portfolio-meta > li i {
+    margin-right: 20px;
+    font-size: 16px;
+    color: #444;
+    line-height: normal;
+}
+.single-portfolio-meta li span {
+    font-weight: bold;
+    margin-right: 5px;
+    color: #444;
+}
+.single-project-description {
+    margin-bottom: 60px;
+}
+.single-project-title {
+    border-bottom: 1px solid #e5e5e5;
+    margin: 0 0 30px;
+    padding-bottom: 13px;
+    text-transform: unset;
+    font-weight: bold;
+    color: #444;
+}
