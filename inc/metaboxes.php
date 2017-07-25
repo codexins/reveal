@@ -97,7 +97,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'portfolio_client',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -106,7 +106,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'portfolio_date',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -115,7 +115,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'portfolio_skills',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
 
@@ -125,7 +125,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'portfolio_sname',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -134,7 +134,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'portfolio_surl',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
 
@@ -178,7 +178,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'clients_surl',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
 
