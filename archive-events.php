@@ -48,21 +48,19 @@ get_header(); ?>
                             <!-- End Archive Event Date -->
             
                             <!-- Start Archive Event Description -->
+
                             <div class="col-md-9">
 	                            <div class="archive-events-desc">
-                                    
 	                                <h3 class="archive-events-title">
 		                                <a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?> </a>
                                     </h3>
-
 	                                <h4 class="archive-events-location">
 		                                <?php if(!empty($e_address)): echo esc_html($e_address); endif; ?>
 	                                </h4>	                    
-		                            
-		                            <p class="archive-events-time" datetime="June 17, 2017 - to - June 17, 2017">
-		                            	<?php if(!empty($e_start_date)): echo esc_html($e_start_date); endif;  ?> - to - 
-
-		                            	<?php if(!empty($e_end_date)): echo esc_html($e_end_date); endif;  ?></p>
+	 		                            <p class="archive-events-time">
+			                            	<?php if(!empty($e_start_date)): echo esc_html($e_start_date); endif;  ?> - to - 
+			                            	<?php if(!empty($e_end_date)): echo esc_html($e_end_date); endif;  ?>
+		                            	</p>
 		                        </div>
 		                    </div>
                             <!-- Start Archive Event Description -->
