@@ -58,7 +58,7 @@
         <?php endif; ?>
 
         <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
-            <div class="share">            
+            <div class="share socials">            
                 <div class="caption"><i class="fa fa-share-alt" aria-hidden="true"></i> <?php esc_html_e('Share :', 'reveal'); ?></div>    
                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><i class="fa fa-facebook"></i></a>
                 <a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a>

@@ -367,26 +367,8 @@ a.explore {
     color: #295970;
 }
 
-#entry_footer > a {
-    border: 1px solid #eee;
-    background: transparent;
-    color: #333;
-    padding: 3px 10px;
-    margin-right: 5px;
-}
-#entry_footer .share a {
-    color: #fff ;
-    background: #c6cbd2;
-}
-#entry_footer a:hover {
-    background: #295970;
-    color: #fff;
-    border-color: #295970;
-}
-#entry_footer .share a:hover {
-    background: #295970;
-    color: #fff ;
-}
+
+
 /***********************************
     013 - Location
 ***********************************/
@@ -640,7 +622,6 @@ table#wp-calendar thead {
 
 /* blog */
 #entry_footer .share a {
-    border: 1px solid #555;
     color: #555;
     background: transparent;
 }

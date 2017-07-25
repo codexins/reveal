@@ -1226,9 +1226,9 @@ article.type-post {
 #entry_footer .caption i.fa {
     color: #333;
     font-size: 15px;
+    border: none;
+    margin: 0;
 }
-
-
 
 /************************************************************
     013 - Location
@@ -1845,15 +1845,7 @@ h2.widgettitle {
     width: 250px;
 }
 #entry_footer {
-    /*margin-top: 40px;*/
     font-size: 14px;
-}
-#entry_footer .share a {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    margin-right: 10px;
 }
 
 #entry_footer  .share {
@@ -1911,19 +1903,13 @@ h2.widgettitle {
 
 }
 
-/*.nice-select .list li:first-child {
-    display: none;
-}*/
 
 .nice-select .option {
     cursor: pointer;
     font-weight: 400;
     line-height: 1.65em;
     list-style: none;
-    /* min-height: 40px; */
     outline: none;
-    /* padding-left: 18px; */
-    /* padding-right: 29px; */
     text-align: left;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
