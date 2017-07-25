@@ -241,8 +241,6 @@
     $(document).on("click", "a[rel!='nofollow'], input[type='submit']", function () {
         var newUrl = $(this).attr("href");
         if (!newUrl || newUrl[0] === "#") {
-            // set that hash
-            location.hash = newUrl;
             return;
         }
         $(".loaders").fadeIn(function () {
