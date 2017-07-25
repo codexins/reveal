@@ -1504,7 +1504,7 @@ a.more:hover {
     016 - Site Loader
 *************************************************************/
 
-.loaders {
+/*.loaders {
     bottom: 0;
     height: 100%;
     left: 0;
@@ -1563,7 +1563,7 @@ a.more:hover {
         -moz-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
+}*/
 
 
 /*
@@ -1571,6 +1571,21 @@ a.more:hover {
     100%{ -ms-transform: rotate(360deg); transform: rotate(360deg); }
 }*/
 
+
+#preloader_1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  background: #fff url("assets/images/loader-1.svg") no-repeat center center;
+}
+
+/************************************************************
+    000 - Page - Mis
+*************************************************************/
 .service i {
     border-radius: 100px;
     padding: 5px;
