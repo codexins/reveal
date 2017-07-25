@@ -18,7 +18,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'team_designation',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -27,7 +27,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'team_facebook',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -36,16 +36,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'team_twitter',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
-            ),
-
-            array(
-                'name'  => esc_html__( 'LinkedIn URL', 'reveal' ),
-                'desc'  => esc_html('Enter LinkedIn URL', 'reveal' ),
-                'id'    => $prefix . 'team_linkedin',
-                'type'  => 'text',
-                'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -54,7 +45,16 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'team_ig',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
+            ),
+
+        array(
+                'name'  => esc_html__( 'Google Plus URL', 'reveal' ),
+                'desc'  => esc_html('Enter Google Plus URL', 'reveal' ),
+                'id'    => $prefix . 'team_gp',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 95
             ),
 
 
