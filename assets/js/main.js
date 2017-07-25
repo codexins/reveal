@@ -159,6 +159,11 @@
 
     });
 
+    $('.event-image-popup').magnificPopup({
+        type: 'image'
+        // other options
+    });
+
 
     /*--------------------------------------------------------------
     scrollUp button (Go to top) at the right bottom corner of window

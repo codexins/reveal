@@ -1889,28 +1889,30 @@ h2.widgettitle {
 
 .single-event-description .event-title h2 {
     text-align: center;
-    margin: 30px 0;
+    margin-top: 15px;
+    margin-bottom: 30px;
     font-weight: bold;
+    color: #295970;
 }
-.single-event-description .event-description img {
+.single-event-description .single-event-image, .single-event-description .single-event-image img {
     display: block;
     width: 100%;
     height: auto;
 }
+.single-event-description .single-event-image a {
+    display: block;
+}
 .single-event-description .event-description {
     font-size: 16px;
     line-height: 30px;
-    margin: 30px 8px;
+    margin: 30px 0;
     text-align: justify;
 }
 
 .single-event-description .event-venue h4 {
     font-weight: bold;
-    margin-left: 8px;
 }
-.single-event-description .event-venue .event-venue-info {
-    margin-left: 8px;
-}
+
 .single-event-description .event-venue .event-venue-info i {
     font-size: 20px;
     padding-right: 15px;
