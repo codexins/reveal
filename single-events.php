@@ -18,11 +18,33 @@ get_header(); ?>
         <div class="container">
             <div class="row">
 
+                <?php 
+				    //start new query..
+			 	    if( have_posts() ) :
+					    //Start loop here...
+			 		    while( have_posts() ) : the_post();
+
+			 	    $e_start_date = rwmb_meta('reveal_event_start_date', 'type=date');
+			 	    $e_end_date = rwmb_meta('reveal_event_end_date', 'type=date');
+			 	    $e_start_time = rwmb_meta('reveal_event_start_time', 'type=time');
+			 	    $e_end_time = rwmb_meta('reveal_event_end_time', 'type=time');
+			 	    $e_phone = rwmb_meta('reveal_event_phone', 'type=text');
+			 	    $e_mail = rwmb_meta('reveal_event_email', 'type=text');
+			 	    $e_address = rwmb_meta('reveal_event_address', 'type=textarea');
+			 	    $e_address_latitude = rwmb_meta('reveal_event_address_latitude', 'type=text');
+			 	    $e_address_longitude = rwmb_meta('reveal_event_address_longitude', 'type=text');
+
+			 	    $e_st_date=date_create($e_start_date);
+			 	    $e_en_date=date_create($e_end_date);
+			 	    $e_st_time=date_create($e_start_time);
+			 	    $e_en_time=date_create($e_end_time);
+			    ?>
+                <!-- Start Event Single Page -->
                 <div class="col-md-5 col-sm-6">
-                    <!-- Start Event Single Page -->
+                    
                 	<div class="single-event-details"> 
                 		<div class="event-schedule">
-                			<div class="event-date">June 17, 2017</div>
+                			<div class="event-date"> <?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date, "M d, Y")); endif; ?> </div>
                 		</div>
 
                 		<div class="event-organizer">
@@ -31,17 +53,17 @@ get_header(); ?>
 
                 			<!-- Start Event Organizer's Name -->
                 			<p class="info-title">Name</p>
-                			<p class="info-title-content">Klassy Chick Boutique</p>
+                			<p class="info-title-content">Reveal Theme</p>
                 			<!-- End Event Organizer's Name -->
 
                 			<!-- Start Event Organizer contact -->
                 			<p class="info-title">Phone</p>
-                			<p class="info-title-content">704.293.5423</p>
+                			<p class="info-title-content"><?php if(!empty($e_phone)): echo esc_html($e_phone); endif; ?></p>
                 			<!-- End Event Organizer contact -->
 
                 			<!-- Start Event Organizer's Email -->
                 			<p class="info-title">Email</p>
-                			<p class="info-title-content"><a href="mailto:klassychickboutique@gmail.com "> klassychickboutique@gmail.com </a></p>
+                			<p class="info-title-content"><a href="mailto:<?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?>"> <?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?> </a></p>
                 			<!-- End Event Organizer's Email -->
 
                 		</div>
@@ -51,18 +73,53 @@ get_header(); ?>
                 			<h3 class="title"> Schedule </h3>
                 			
                 				<p class="info-title"> Date: </p>
-                				<p class="info-title-content"> June 17, 2017 - to - June 17, 2017 (4 hours)</p>
+                				<p class="info-title-content"> 
+                				<?php if(!empty($e_start_time)): echo esc_html(date_format($e_st_date,"M d, Y")); endif;  ?> - to - <?php if(!empty($e_end_time)): echo esc_html(date_format($e_en_date,"M d, Y")); endif;  ?>
+			                            		
+			                    </p>
                 			
                 			
                 				<p class="info-title">Time:</p>
-                				<p class="info-title-content">14:00 - to - 18:00 (UTC0)</p>
+                				<p class="info-title-content">
+                                <?php if(!empty($e_start_time)): echo esc_html(date_format($e_st_time,"H:i")); endif;  ?> - to - <?php if(!empty($e_end_time)): echo esc_html(date_format($e_en_time,"H:i")); endif;  ?>
+                				</p>
                 			
                 		</div>
                 		<!-- End Event Schedule -->
-
-
                 	</div>
                 </div>
+
+                <div class="col-md-7 col-sm-6">
+                	<div class="single-event-description"> 
+                		<!-- Event Title -->
+                		<div class="event-title">
+                			<h2> <?php the_title(); ?> </h2>
+                		</div>
+
+                		<div class="single-event-image">
+                				<img src="<?php echo the_post_thumbnail_url('full'); ?>" class="img-responsive" alt="">
+                		</div>
+
+                		
+                		<div class="event-description"> <?php the_content(); ?> </div>
+
+                		<div class="event-venue">
+                			<h4> Venue: </h4>
+                			<div class="event-venue-info">
+                				<i class="fa fa-map-marker" aria-hidden="true"></i>
+                				<span><?php if(!empty($e_address)): echo esc_html($e_address); endif; ?></span>
+                			</div>
+                			<div class="map"></div>
+                		</div>
+                    </div>
+
+                </div>
+                <!-- Start Event Single Page -->
+                <?php 
+				        endwhile;
+				    endif; //End check-posts if()....
+			    ?>
+
 
             </div> <!-- end of row -->
         </div> <!-- end of container -->
