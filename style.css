@@ -1836,6 +1836,9 @@ h2.widgettitle {
 /************************************************************
     018 - Single Events Page
 *************************************************************/
+.event-single {
+    display: block;
+}
 .single-event-details {
     border-right: 1px solid #e1e1e1;
     color: #363e40;
