@@ -38,16 +38,16 @@ get_header(); ?>
                             <!-- End Archive Event Date -->
             
                             <!-- Start Archive Event Description -->
-                            <div class="col-md-8">
+                            <div class="col-md-8 magin-left-adjust">
 	                            <div class="archive-events-desc">
                                     
 	                                <h3 class="archive-events-title">
 		                                <a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?> </a>
                                     </h3>
 
-	                                <h4 class="archive-events-location">
-		                                <a target="blank" href="#"> <?php the_content(); ?> </a>
-	                                </h4>	                    
+	                                <div class="archive-events-location">
+		                                <?php the_content(); ?>
+	                                </div>	                    
 		                            
 		                            <p class="archive-events-time" datetime="June 17, 2017 - to - June 17, 2017">June 17, 2017 - to - June 17, 2017</p>
 		                        </div>

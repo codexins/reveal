@@ -40,6 +40,7 @@ INDEX:
 	015 - Back to top button
 	016 - Site Loader
     017 - Events Archive Page
+    018 - Single Events Page
     070 - Sidebar
 
 
@@ -1944,6 +1945,9 @@ h2.widgettitle {
 /************************************************************
     017 - Events Archive Page
 *************************************************************/
+.magin-left-adjust {
+    margin-left: -15px;
+}
 .archive-events-wrapper {
     display: block;
     margin-bottom: 30px;
@@ -1966,9 +1970,10 @@ h2.widgettitle {
     width: 100%;
     float: left;
     padding: 30px;
+    padding-left: 15px;
 }
 .archive-events-title {
-    margin: 20px 0 5px;
+    margin: 16px 0 5px;
 }
 .archive-events-title a {
     font-size: 24px;
@@ -1992,10 +1997,53 @@ h2.widgettitle {
     line-height: 100%;
 }
 
+/************************************************************
+    018 - Single Events Page
+*************************************************************/
+.single-event-details {
+    border-right: 1px solid #e1e1e1;
+    color: #363e40;
+}
+.single-event-details .event-schedule {
+    text-align: left;
+    font-size: 16px;
+    color: #363e40;
+    border-bottom: 1px solid #e1e1e1;
+}
+.single-event-details .event-schedule .event-date {
+    padding: 21px 0 26px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.single-event-details .event-organizer {
+    padding: 26px 0 25px;
+    border-bottom: 1px solid #e1e1e1;
+}
+.single-event-details .event-organizer .title {
+    font-size: 16px;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+.single-event-details .event-organizer .info-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    display: block;
+}
+.single-event-details .event-organizer .info-title-content{
+    font-size: 16px;
+    color: #ababab;
+    margin-bottom: 15px;
+    display: block;
+}
+.single-event-details .event-organizer .info-title-content a {
+    color: #2c3e50;
+}
 
 /************************************************************
     000 - Page - Blog
 *************************************************************/
+
 
 .blog-post .list-inline li i.fa-pencil {
     margin-left: 6px;
