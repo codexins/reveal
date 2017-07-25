@@ -6,12 +6,9 @@
 		    $reveal_portfolio_layout = $reveal_option['reveal-portfolio-archive-layout'];
 
 		    if($reveal_portfolio_layout == 1):
-		        // get_template_part('template-parts/page-layout/portfolio/no', 'sidebar');
-		        	$bootstrap_grid = '<div class="col-sm-4" >';
-
+		        $bootstrap_grid = '<div class="col-sm-4" >';
 		    else:
-		        // get_template_part('template-parts/page-layout/portfolio/right', 'sidebar');
-		        	 $bootstrap_grid = '<div class="col-sm-6" >';
+		        $bootstrap_grid = '<div class="col-sm-6" >';
 
 		    endif;
 
@@ -51,7 +48,7 @@
 				        </ul>                                            
 				    </div>
 				    <div class="portfolio-description">
-				        <h4><a href="<?php the_permalink(); ?>">Informational Site: IA Academy</a></h4>
+				        <h4><a href="<?php the_permalink(); ?>"><?php  the_title(); ?></a></h4>
 				        <ul class="portfolio-cat">
 
 								<?php
