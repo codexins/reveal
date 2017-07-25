@@ -24,32 +24,46 @@ get_header(); ?>
 			 	if( $data->have_posts() ) :
 					//Start loop here...
 			 		while( $data->have_posts() ) : $data->the_post();
+
+			 	 $e_start_date = rwmb_meta('reveal_event_start_date', 'type=date');
+			 	 $e_end_date = rwmb_meta('reveal_event_end_date', 'type=date');
+			 	 $e_start_time = rwmb_meta('reveal_event_start_time', 'type=time');
+			 	 $e_end_time = rwmb_meta('reveal_event_end_time', 'type=time');
+			 	 $e_phone = rwmb_meta('reveal_event_phone', 'type=text');
+			 	 $e_mail = rwmb_meta('reveal_event_email', 'type=text');
+			 	 $e_address = rwmb_meta('reveal_event_address', 'type=textarea');
+			 	 $e_address_latitude = rwmb_meta('reveal_event_address_latitude', 'type=text');
+			 	 $e_address_longitude = rwmb_meta('reveal_event_address_longitude', 'type=text');
+
+			 	 $e_st_date=date_create($e_start_date);
+			 	 $e_en_date=date_create($e_end_date);
 			?>
-			    <div class="col-md-8 col-md-offset-2">
+			    <div class="col-md-10 col-md-offset-1">
 			
 			        <div class="archive-events-wrapper">
                         <!-- Start Archive Event Date -->
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
 	                            <div class="archive-events-date">
-		                            <p class="date-style">June 17, 2017</p>
+		                            <p class="date-style"><?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date,"M d, Y")); endif; ?></p>
 		                        </div>
 		                    </div>
                             <!-- End Archive Event Date -->
             
                             <!-- Start Archive Event Description -->
-                            <div class="col-md-8 magin-left-adjust">
+
+                            <div class="col-md-9">
 	                            <div class="archive-events-desc">
-                                    
 	                                <h3 class="archive-events-title">
 		                                <a href="<?php echo get_the_permalink(); ?>"> <?php the_title(); ?> </a>
                                     </h3>
-
-	                                <div class="archive-events-location">
-		                                <?php the_content(); ?>
-	                                </div>	                    
-		                            
-		                            <p class="archive-events-time" datetime="June 17, 2017 - to - June 17, 2017">June 17, 2017 - to - June 17, 2017</p>
+	                                <h4 class="archive-events-location">
+		                                <?php if(!empty($e_address)): echo esc_html($e_address); endif; ?>
+	                                </h4>	                    
+	 		                            <p class="archive-events-time">
+			                            	<?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date,"M d, Y")); endif;  ?> - to - 
+			                            	<?php if(!empty($e_end_date)): echo esc_html(date_format($e_en_date,"M d, Y")); endif;  ?>
+		                            	</p>
 		                        </div>
 		                    </div>
                             <!-- Start Archive Event Description -->
