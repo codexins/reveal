@@ -78,6 +78,15 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'size'  => 95
             ),
 
+            array(
+                'name'  => esc_html__( 'Designation', 'reveal' ),
+                'desc'  => esc_html__('Enter Designation', 'reveal' ),
+                'id'    => $prefix . 'author_desig',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 95
+            ),
+
         )
 
     );
