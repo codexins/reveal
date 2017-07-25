@@ -63,7 +63,7 @@ get_header(); ?>
 
                 			<!-- Start Event Organizer's Email -->
                 			<p class="info-title">Email</p>
-                			<p class="info-title-content"><a href="mailto:reveal@gmail.com "> <?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?> </a></p>
+                			<p class="info-title-content"><a href="mailto:<?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?>"> <?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?> </a></p>
                 			<!-- End Event Organizer's Email -->
 
                 		</div>
@@ -97,7 +97,7 @@ get_header(); ?>
                 		</div>
 
                 		<div class="single-event-image">
-                				<img src="http://localhost/reveal-theme/wp-content/uploads/2011/07/dsc02085.jpg" class="img-responsive" alt="">
+                				<img src="<?php echo the_post_thumbnail_url('full'); ?>" class="img-responsive" alt="">
                 		</div>
 
                 		
@@ -118,7 +118,6 @@ get_header(); ?>
                 <?php 
 				        endwhile;
 				    endif; //End check-posts if()....
-				    wp_reset_postdata();
 			    ?>
 
 
