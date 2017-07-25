@@ -1953,6 +1953,10 @@ h2.widgettitle {
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     transition: .3s;
 }
+.portfolio-style-four .portfolio-item-content:hover {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
 .portfolio  .portfolio-description {
     background: #fff none repeat scroll 0 0;
     padding: 30px;
@@ -1960,9 +1964,6 @@ h2.widgettitle {
     width: 100%;
 }
 .portfolio-description h4 {
-    padding-left: 20px;
-    margin-bottom: 15px;
-    margin-top: 20px;
     font-size: 18px;
     font-weight: 600;
     text-transform: capitalize;
@@ -1988,3 +1989,65 @@ h2.widgettitle {
     list-style: none;
 }
 
+.item-thumbnail ,
+.portfolio-item-content {
+    position: relative;
+}
+
+.portfolio-item:hover .item-thumbnail::before {
+    border: 1px solid rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+.portfolio-cat{
+    padding: 0 ;
+}
+.portfolio-action-btn {
+    opacity: 0;
+    position: absolute;
+    padding: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 50px;
+    text-align: center;
+}
+.item-thumbnail::before{
+    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    transition: .3s;
+    opacity: 0;
+    border: 1px solid rgba(0, 0, 0, 0);
+
+}
+.portfolio:hover .item-thumbnail::before {
+    border: 1px solid rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+.portfolio:hover .portfolio-action-btn {
+    opacity: 1;
+}
+.portfolio-action-btn > li {
+    display: inline-block;
+    margin: 0 2px;
+}
+.portfolio .portfolio-action-btn > li a {
+    background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
+    color: #000;
+}
+.portfolio-action-btn > li a {
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    height: 45px;
+    line-height: 47px;
+    text-align: center;
+    width: 45px;
+}
