@@ -2071,3 +2071,16 @@ h2.widgettitle {
     font-weight: bold;
     color: #444;
 }
+
+.portfolio{
+    position: relative;
+}
+
+
+/*port folio grid style */
+
+.portfolio .portfolio-item-content {
+    border-radius: 4px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    transition: .3s;
+}

@@ -20,8 +20,13 @@
 								</div>
 							</div>
 						</div>
-						<div class="portfolio-wrapper">
-							<?php reveal_portfolio_loop(); ?>
+
+						<div class="row ">
+							<div class=" portfolio-wrapper">
+								
+								<?php reveal_portfolio_loop(); ?>
+								
+							</div>
 						</div> <!-- end of portfolio wrapper -->
 						<?php else: ?>
 						<div class="portfolio-list-wrapper">
