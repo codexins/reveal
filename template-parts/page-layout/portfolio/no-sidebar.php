@@ -22,7 +22,7 @@
 						</div>
 
 						<div class="row ">
-							<div class=" portfolio-wrappera">
+							<div class=" portfolio-wrapper-filter">
 								
 								<?php reveal_portfolio_loop(); ?>
 								

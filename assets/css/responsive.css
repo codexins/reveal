@@ -136,7 +136,13 @@
 
 
 @media only screen and (max-width: 767px) {
-
+	h2.single-project-title {
+	    padding-top: 30px;
+	    padding-bottom: 30px;
+	}
+	.alignright {
+	    margin: 5px 0 20px 15px;
+	}
 /*-------------------------
 Mobile Menu(Add Sazzad)
 --------------------------*/
