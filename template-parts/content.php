@@ -60,10 +60,10 @@
         <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
             <div class="share socials">            
                 <div class="caption"><i class="fa fa-share-alt" aria-hidden="true"></i> <?php esc_html_e('Share :', 'reveal'); ?></div>    
-                <a onclick="window.open(this.href,'_blank');return false;"   href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><i class="fa fa-facebook"></i></a>
-                <a onclick="window.open(this.href,'_blank');return false;"  href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a>
-                <a onclick="window.open(this.href,'_blank');return false;"  href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>
-                <a onclick="window.open(this.href,'_blank');return false;"  href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><i class="fa fa-linkedin"></i></a>        
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink();?>"><i class="fa fa-facebook"></i></a>
+                <a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>"><i class="fa fa-twitter"></i></a>
+                <a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>"><i class="fa fa-google-plus"></i></a>
+                <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><i class="fa fa-linkedin"></i></a>        
             </div>
         <?php endif ?>
 
