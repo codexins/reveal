@@ -195,16 +195,6 @@ function reveal_register_meta_boxes( $meta_boxes ) {
         'priority'   => 'high',
         'fields' => array(
 
-
-            array(
-                'name'  => esc_html__( 'Event Name', 'reveal' ),
-                'desc'  => esc_html('Enter event name', 'reveal' ),
-                'id'    => $prefix . 'event_name',
-                'type'  => 'text',
-                'clone' => false,
-                'size'  => 100
-            ),
-
             array(
                 'name'  => esc_html__( 'Event Start Date', 'reveal' ),
                 'desc'  => esc_html('Enter event start date', 'reveal' ),
