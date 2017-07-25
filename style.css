@@ -1991,9 +1991,10 @@ h2.widgettitle {
 
 .portfolio{
     position: relative;
+}
+.portfolio-wrapper-filter .portfolio{
     margin-bottom: 30px;
 }
-
 
 /*port folio grid style */
 
