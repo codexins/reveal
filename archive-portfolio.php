@@ -12,10 +12,9 @@ get_header(); ?>
 	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
-
 				<?php 
 
-	            $reveal_portfolio_layout = $reveal_option['reveal-portfolio-archive-layout'];
+	            $reveal_portfolio_layout = reveal_option('reveal-portfolio-archive-layout');
 
 	            if($reveal_portfolio_layout == 1):
 	                get_template_part('template-parts/page-layout/portfolio/no', 'sidebar');
@@ -32,7 +31,6 @@ get_header(); ?>
 	            endif;
 	            
 				 ?>
-
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->
 	</div> <!-- end of #content -->
