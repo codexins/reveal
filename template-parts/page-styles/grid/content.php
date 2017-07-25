@@ -73,7 +73,7 @@
         <?php if(has_tag()): ?>
 
     		<footer id="entry_footer">
-    			<?php the_tags('Tags: &nbsp','',''); ?>
+    			<?php the_tags('Tags: &nbsp',' ',''); ?>
     		</footer>
          <?php endif; ?>
         

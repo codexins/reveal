@@ -269,11 +269,12 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                 if( $i % reveal_option('reveal_grid_columns') == 0 ):
                     echo '<div class="clearfix"></div>';
                 endif;
-              
+                
                 endif;
 
             endwhile; 
 
+            echo '<div class="clearfix"></div>';
             $reveal_pagination = reveal_option( 'reveal_pagination' );
 
             if( $reveal_pagination == 'numbered' ) {
