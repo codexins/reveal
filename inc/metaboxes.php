@@ -75,20 +75,11 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'author_name',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
-
-            array(
-                'name'  => esc_html__( 'Designation', 'reveal' ),
-                'desc'  => esc_html('Enter Designation', 'reveal' ),
-                'id'    => $prefix . 'author_designation',
-                'type'  => 'text',
-                'clone' => false,
-                'size'  => 100
-            ),
-
 
         )
+
     );
 
 
