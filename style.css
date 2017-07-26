@@ -878,16 +878,14 @@ article.type-post {
     margin-bottom: 0;
 }
 
-
+.single-post #primary article.type-post:last-of-type .blog-post ,
 .blog-post {
-    border-bottom: 1px solid #e5e5e5;
     padding-bottom: 30px;
 }
-
-#primary article.type-post:last-of-type .blog-post {
-    border-bottom: 0px dashed #e5e5e5;
-    padding-bottom: 0;
+.single-post #primary article.type-post:last-of-type .blog-post {
+    margin-bottom: 18px;
 }
+
 .item-img-wrap {
     position: relative;
     text-align: center;
