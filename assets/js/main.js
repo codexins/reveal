@@ -239,6 +239,7 @@
 
     $(window).on('load', function() { 
         $('#preloader_1').delay(300).fadeOut('fast');
+        $('body').addClass('overflow-fix');
     });
 
 
