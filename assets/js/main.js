@@ -238,7 +238,7 @@
     // });
 
     $(window).on('beforeunload', function() { 
-        $('#preloader_1').fadeIn('slow');
+        $('body').fadeOut('normal');
     });
 
     $(window).on('load', function() { 
