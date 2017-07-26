@@ -158,7 +158,7 @@ class Reveal {
 		add_image_size('about-mini-image', 360, 240, true);
 		add_image_size('portfolio-mini-image', 380, 309, true);
 		add_image_size('info-image', 555, 370, true);
-		add_image_size('testimonial_mini-image', 110, 110, true);
+		add_image_size('testimonial-mini-image', 110, 110, true);
 
 
 		/*

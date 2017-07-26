@@ -752,42 +752,6 @@ a.explore:hover {
     011 - Testominial Section
 *************************************************************/
 
-#testimonials {
-    background: url('images/happyclients/happy-quotes.jpg') no-repeat scroll;
-    background-position: center;
-    background-size: cover;
-    margin-top: 0;
-    padding-top: 90px;
-    padding-bottom: 50px;
-}
-
-.testimonials .media-left {
-    padding-right: 25px;
-}
-
-.testimonials .media-heading {
-    text-transform: uppercase; 
-}
-
-.testimonials .designation {
-    font-style: italic;
-    position: relative;
-}
-
-.testimonials .designation::after {
-    content: "";
-    width: 70px;
-    height: 3px;
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 15px;
-}
-
-.quote-wrapper {
-    margin-top: 35px;
-    margin-bottom: 35px;
-}
-
 
 /************************************************************
     012 - Blog Section
