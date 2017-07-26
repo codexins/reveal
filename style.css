@@ -757,7 +757,7 @@ a.explore:hover {
     012 - Blog Section
 *************************************************************/
 
-.home .blog {
+/*.home .blog {
     margin-top: 80px;
 }
 
@@ -948,7 +948,7 @@ article.type-post {
 }
 .item-img-wrap:hover .item-img-overlay span {
     opacity: 1;
-}
+}*/
 .post-detail {
     padding: 5px 0;
 }
@@ -1025,101 +1025,7 @@ article.type-post {
     013 - Location
 *************************************************************/
 
-#location {
-    background: url('images/map.jpg') no-repeat scroll;
-    background-position: center;
-    background-size: cover;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
 
-.contact-form-wrapper {
-    background-image: url('images/subtle-white-feathers.png');
-    padding: 35px 20px 45px 35px;
-}
-
-#location .contact-form {
-    padding-right: 0;
-}
-
-#location .location-map {
-    padding: 0;
-}
-
-#map {
-    position: relative;
-}
-
-#gmap,
-.contact-form-wrapper {
-    height: 480px;
-}
-
-.contact-intro {
-    margin-bottom: 25px;
-}
-
-.contact-intro img {
-    width: 66px;
-}
-
-.contact-intro h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.contact-intro p {
-    margin-bottom: 0;
-}
-
-.socials {
-    padding-left: 15px;
-}
-
-.socials i {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-    margin-top: 15px;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-}
-
-#location a,
-#location a:hover {
-    text-decoration: none;
-}
-
-#location input,
-#location textarea {
-    border-radius: 0;
-    box-shadow: none;
-}
-
-#location input:focus,
-#location textarea:focus {
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    -ms-box-shadow: none;
-    -o-box-shadow: none;
-    box-shadow: none;
-}
-
-#location input {
-    height: 35px;
-}
-
-#location input[type="submit"] {
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-}
 
 
 /************************************************************

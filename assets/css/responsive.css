@@ -414,10 +414,6 @@ body.has-active-menu {
 		min-height: 225px;
 	}
 
-	.project .counter {
-		font-size: 32px;
-	}
-
 
 	#achievement-counters .project:first-child {
 		border-left: 0;
