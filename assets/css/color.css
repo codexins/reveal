@@ -682,3 +682,7 @@ table#wp-calendar thead {
 
     color: #333;
 }
+.single-post #primary article.type-post:last-of-type .blog-post ,
+.blog-post {
+    border-bottom: 1px solid #e5e5e5;
+}
