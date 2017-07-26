@@ -37,7 +37,7 @@
 
 	?>
 	<!--  Site Loader -->
-	<?php if( $page_loader == true ): ?>
+	<?php if( $page_loader ): ?>
 		<div id="preloader_1"></div>			
 	<?php endif; ?>
 	<!--  Site Loader finished -->

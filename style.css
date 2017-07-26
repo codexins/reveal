@@ -1697,6 +1697,7 @@ h2.widgettitle {
     z-index: 1;
     word-wrap: break-word;
     white-space: normal;
+    width: 100%;
 }
 
 .nice-select li::before {
