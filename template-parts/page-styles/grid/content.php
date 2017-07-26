@@ -15,7 +15,7 @@
         <?php if(has_post_thumbnail()): ?>
             <a href="<?php the_permalink(); ?>">
                 <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('blog-mini-image') ?>" class="img-responsive" alt="Blog Post">
+                    <img src="<?php the_post_thumbnail_url('featured-single-image') ?>" class="img-responsive" alt="Blog Post">
                     <div class="item-img-overlay">
                         <span></span>
                     </div>
