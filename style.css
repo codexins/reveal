@@ -2103,3 +2103,9 @@ h2.widgettitle {
     text-align: center;
     width: 45px;
 }
+.socials .flaticon-technology:before {
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    margin-right: 5px;
+}
