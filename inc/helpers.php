@@ -307,32 +307,38 @@ if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
     function reveal_portfolio_loop() {
 
         if ( have_posts() ) :
-
+            $i = 0;
             /* Start the Loop */
-            $i = 1 ;
             while ( have_posts() ) : the_post();
-
+                $i++;
                 $post_style = reveal_option( 'reveal_portfolio_style' );
                 
-                if( $post_style == 'filter' ):
-                get_template_part( 'template-parts/page-styles/filter/content', 'portfolio' );
-                    if ($i == 3 ): echo '<div class="clearfix"></div>'; endif ;
+                if( $post_style == 'grid' ):
+
+                $grid_port_columns = 12/reveal_option('reveal_portfolio_grid_columns');
+
+                printf('<div class="portfolio-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
+                    get_template_part( 'template-parts/page-styles/grid/content', 'portfolio' );
+                echo '</div><!--portfolio wrap-->';
+
+                if( $i % reveal_option('reveal_portfolio_grid_columns') == 0 ):
+                    echo '<div class="clearfix"></div>';
+                endif;
+                
                 else:
                 get_template_part( 'template-parts/page-styles/list/content', 'portfolio' );              
                 endif;
 
-                $i++ ;
             endwhile; 
+            echo '<div class="clearfix"></div>';
 
-            // if( $post_style == 'list' ) {
-            //     $reveal_pagination = reveal_option( 'reveal_pagination' );
+            // $reveal_pagination = reveal_option( 'reveal_pagination' );
 
-            //     if( $reveal_pagination == 'numbered' ) {            
-            //     reveal_posts_link_numbered();
-            //     } else {
-            //     reveal_posts_link();
-            //     }
-            // }
+            // if( $reveal_pagination == 'numbered' ):           
+            // reveal_posts_link_numbered();
+            // else:
+            reveal_posts_link();
+            // endif;
 
         else:
         get_template_part( 'template-parts/content', 'none' );

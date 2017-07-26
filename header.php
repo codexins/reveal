@@ -25,7 +25,7 @@
 
 
 
-<body <?php body_class( 'animsition' ); ?>>
+<body <?php body_class(); ?>>
 
 	<!--[if lt IE 9]>
 	    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="<?php echo esc_url(__('https://browsehappy.com/?locale=en', 'reveal')) ?>">upgrade your browser</a> to improve your experience.</p>

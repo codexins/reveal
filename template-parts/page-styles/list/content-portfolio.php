@@ -1,4 +1,3 @@
-			
 <?php
 /**
  * Template part for displaying posts
@@ -10,7 +9,11 @@
 
 ?>
 
+<?php 
 
+$client_name = rwmb_meta('reveal_portfolio_client', 'type=text');
+
+ ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
     <div class="blog-post">
         <?php if(has_post_thumbnail()): ?>
@@ -24,22 +27,23 @@
             </a><!--work link-->
          <?php endif; ?>      
         <ul class="list-inline post-detail">
-            <li><i class="fa fa-users" aria-hidden="true"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
+            <li><i class="fa fa-users" aria-hidden="true"></i> <?php echo esc_html( $client_name ); ?></li>
             <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
-            <li><i class="fa fa-tag"></i> <a href="<?php the_permalink(); ?>">
+            <li><i class="fa fa-tag"></i> 
                 <?php
                     $taxonomy = 'portfolio-category';
-                    $taxonomies = get_terms($taxonomy); 
+                    $taxonomies = get_the_terms($post->ID, $taxonomy); 
                     $last_key = end($taxonomies);
                     foreach ( $taxonomies as $tax ) {
                         // echo  $tax->name.', ' ;
                         if($tax == $last_key):
-                            echo ucwords($tax->name);
-                        else: echo ucwords($tax->name).", ";
+                            echo "<span>".ucwords($tax->name)."</span>";
+                        else: 
+                            echo "<span>".ucwords($tax->name).", </span>";
                          
                         endif; 
                 }?>
-            </a></li>
+            </li>
 
         </ul>
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>

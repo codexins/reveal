@@ -678,3 +678,7 @@ table#wp-calendar thead {
 .archive-events-time {
     color: #ababab;
 }
+.socials .flaticon-technology:before {
+
+    color: #333;
+}

@@ -798,31 +798,45 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'      => esc_html__('Choose Portfolio Archive Posts Style', 'reveal'),
                         'required' => array( 'reveal_enable_portfolio', '=', '1' ),
                         'options'   => array(
-                            'filter'=> esc_html__( 'Filter', 'reveal' ),
+                            'grid'=> esc_html__( 'Grid', 'reveal' ),
                             'list'  => esc_html__( 'List', 'reveal' ),
                         ),
-                        'default'   => 'filter'
+                        'default'   => 'list'
                     ),
 
                     array(
-                        'id'       => 'reveal_portfolio_filter_title',
-                        'type'     => 'textarea',
-                        'title'    => esc_html__( 'Portfolio Filter Section Title', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Primary Title', 'reveal' ),
-                        'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
-                        'validate' => 'html',
-                        'default'  => 'Primary Title'
+                        'id'        => 'reveal_portfolio_grid_columns',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Columns Number', 'reveal'),
+                        'desc'      => '',
+                        'options'   => array(
+                            '2' => esc_html__( '2 columns', 'reveal' ) ,
+                            '3' => esc_html__( '3 columns', 'reveal' ) ,
+                            '4' => esc_html__( '4 columns', 'reveal' ) ,
+                        ),
+                        'default' => '3',
+                        'required' => array('reveal_portfolio_style','equals', array( 'grid' ) ),
                     ),
 
-                    array(
-                        'id'       => 'reveal_portfolio_filter_subtitle',
-                        'type'     => 'textarea',
-                        'title'    => esc_html__( 'Portfolio Filter Section Subtitle', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Secondary Title', 'reveal' ),
-                        'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
-                        'validate' => 'html',
-                        'default'  => 'Secondary Title'
-                    ),
+                    // array(
+                    //     'id'       => 'reveal_portfolio_filter_title',
+                    //     'type'     => 'textarea',
+                    //     'title'    => esc_html__( 'Portfolio Filter Section Title', 'reveal' ),
+                    //     'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Primary Title', 'reveal' ),
+                    //     'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
+                    //     'validate' => 'html',
+                    //     'default'  => 'Primary Title'
+                    // ),
+
+                    // array(
+                    //     'id'       => 'reveal_portfolio_filter_subtitle',
+                    //     'type'     => 'textarea',
+                    //     'title'    => esc_html__( 'Portfolio Filter Section Subtitle', 'reveal' ),
+                    //     'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Secondary Title', 'reveal' ),
+                    //     'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
+                    //     'validate' => 'html',
+                    //     'default'  => 'Secondary Title'
+                    // ),
 
                     array(
                         'id'       => 'reveal-single-portfolio-layout',
