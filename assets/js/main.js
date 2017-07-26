@@ -272,8 +272,15 @@
     });
 
     $('.event-image-popup').magnificPopup({
-        type: 'image'
-        // other options
+        type: 'image',
+        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+
+        zoom: {
+            enabled: true, // By default it's false, so don't forget to enable it
+
+            duration: 300, 
+            easing: 'ease-in-out',
+        }
     });
 
 

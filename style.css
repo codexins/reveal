@@ -1902,6 +1902,12 @@ h2.widgettitle {
 .single-event-description .single-event-image a {
     display: block;
 }
+a.event-image-popup:focus {
+    outline: none;
+}
+button.mfp-close:hover {
+    background: transparent;
+}
 .single-event-description .event-description {
     font-size: 16px;
     line-height: 30px;
