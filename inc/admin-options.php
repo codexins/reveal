@@ -415,7 +415,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),              )
             );
 
-
+            //Page Title And BreadCrumbs..
             $this->sections[] = array(
                 'title'            => esc_html__( 'Page Title', 'reveal' ),
                 'customizer_width' => '500px',
@@ -426,13 +426,43 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'reveal-bcrumbs',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable Breadcrumbs', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable Page-Title & Breadcrumbs', 'reveal' ),
                         'desc'     => esc_html__('Breadcrumbs is a navigational aid that allows visitors to understand their current location in the context of a website.', 'reveal'),
                         'default'  => true
-                    ),              
-                )
+                    ), 
+
+                    array(
+                        'id'       => 'page-title-position',
+                        'type'     => 'radio',
+                        'required' => array( 'reveal-bcrumbs', '=', '1' ),
+                        'title'    => esc_html__( 'Title Position :', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Select Page Title Position ', 'reveal' ),
+                        'options'  => array(
+                                        '1' => esc_html__( 'Left', 'reveal' ),
+                                        '2' => esc_html__( 'Center', 'reveal' ),
+                                        '3' => esc_html__( 'Right', 'reveal' ),
+                                ),
+                        'default'  => '1',
+                    ),
+
+                    array(
+                        'id'       => 'page-bc-position',
+                        'type'     => 'radio',
+                        'required' => array( 'reveal-bcrumbs', '=', '1' ),
+                        'title'    => esc_html__( 'Breadcrumbs Position :', 'reveal' ),
+                        'desc'     => esc_html__( 'Please Select BreadCrumbs Position ', 'reveal' ),
+                        'options'  => array(
+                                        '1' => esc_html__( 'Left', 'reveal' ),
+                                        '2' => esc_html__( 'Center', 'reveal' ),
+                                        '3' => esc_html__( 'Right', 'reveal' ),
+                                ),
+                        'default'  => '1',
+                    ),
+
+                ) //End Fields array...
             );
 
+            //Social Media
             $this->sections[] = array(
                 'title'            => esc_html__( 'Social Media ', 'reveal' ),
                 'customizer_width' => '500px',
@@ -586,7 +616,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id'       => 'reveal-blog-excerpt-lenght',
+                        'id'       => 'reveal_blog_excerpt_lenght',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Blog Title and Excerpt Length?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable blog-title & excerpt length', 'reveal' ),
@@ -601,11 +631,11 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'min'       => '1',
                         'max'       => '10',
                         'step'      => '1',
-                        'required'  => array( 'reveal-blog-excerpt-lenght', '=', '1' ),
+                        'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Posts', 'reveal'),
                         'desc'      => esc_html__("Insert the Number of Words to Show in the Post Title in Blog & Archive Page.", 'reveal'),
-                        'default'   => 7,
+                        // 'default'   => 7,
                     ),
 
                     array(
@@ -614,11 +644,11 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'min'       => '4',
                         'max'       => '40',
                         'step'      => '4',
-                        'required'  => array( 'reveal-blog-excerpt-lenght', '=', '1' ),
+                        'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts', 'reveal'),
                         'desc'      => esc_html__("Insert the Number of Words to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
-                        'default'   => 20,
+                        // 'default'   => 20,
                     ),
 
                     array(

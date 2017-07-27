@@ -32,23 +32,18 @@
         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<div class="entry-content">
 			<?php 
-				if(is_single()):
-					the_content();
+               the_content();
 
-                    $args = array(
-                        'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
-                        'after'       => '</div>',
-                        'link_before' => '<span>',
-                        'link_after'  => '</span>',
-                        'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
-                        'separator'   => '<span class="screen-reader-text">, </span>',
-                    );                 
-                    wp_link_pages( $args );
-
-				else:
-                    $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
-					reveal_excerpt( $reveal_excerpt_len );
-				endif; ?>
+               $args = array(
+                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
+                'after'       => '</div>',
+                'link_before' => '<span>',
+                'link_after'  => '</span>',
+                'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
+                'separator'   => '<span class="screen-reader-text">, </span>',
+                );                 
+               wp_link_pages( $args );
+           ?>
 
 		</div><!-- .entry-content -->
 
