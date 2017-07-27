@@ -170,15 +170,18 @@ input[type="button"]:hover{
 *************************************************************/
 
 header {
-    background: url('images/showcase.jpg') no-repeat scroll;
-    background-position: center;
-    background-size: cover;
     padding-top: 0;
     padding-bottom: 0;
     position: relative;
-    background-attachment: fixed;
     margin-top: 0;
     z-index: 2;
+}
+
+header.front-header {
+    background: url('assets/images/showcase.jpg') no-repeat scroll;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .header::before {
