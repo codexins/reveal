@@ -31,14 +31,13 @@
         </ul>
         <h2><a href="<?php the_permalink(); ?>">
             <?php 
-
-            $reveal_title_len = reveal_option( 'reveal_title_length' );
-            if( ! empty( $reveal_title_len ) ) :
-                reveal_title( $reveal_title_len );
-            else:
-                the_title();
-            endif;
-
+                $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                if( $length_switch ) :
+                    $reveal_title_len = reveal_option( 'reveal_title_length' );
+                    reveal_title( $reveal_title_len );
+                else:
+                    the_title();
+                endif;
             ?>
             </a></h2>
 		<div class="entry-content">
@@ -57,8 +56,9 @@
                     wp_link_pages( $args );
 
 				else:
-                    $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
-                    if( ! empty( $reveal_excerpt_len ) ) :
+                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                    if( $length_switch ) :
+                        $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
 					   reveal_excerpt( $reveal_excerpt_len );
                     else:
                          the_excerpt();
