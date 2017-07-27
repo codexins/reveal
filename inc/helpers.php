@@ -192,7 +192,7 @@ if ( ! function_exists( 'reveal_posts_link_numbered' ) ) {
             $links[] = $paged + 1;
         }
 
-        echo '<nav aria-label="Page navigation example"><ul class="pagination">' . "\n";
+        echo '<nav class="number-pagination" aria-label="Page navigation example"><ul class="pagination">' . "\n";
 
         /** Previous Post Link */
         if ( get_previous_posts_link() ) {

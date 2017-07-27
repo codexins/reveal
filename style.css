@@ -1020,6 +1020,32 @@ article.type-post {
     margin: 0;
 }
 
+nav.number-pagination {
+    width: 100%;
+    text-align: center;
+}
+.pagination>li {
+    display: inline-block;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span, .pagination>li>a, .pagination>li>span {
+    border: 1px solid #555;
+    color: #555;
+    border-radius: 0;
+}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
+    background: #295970;
+    border: 1px solid #295970;
+    color: #fff;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    background: #295970;
+    border: 1px solid #295970;
+    color: #fff;
+    cursor: default;
+}
+
 /************************************************************
     013 - Location
 *************************************************************/
