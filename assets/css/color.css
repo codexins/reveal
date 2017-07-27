@@ -331,20 +331,20 @@ a.explore {
     color: #fff;
 }
 
-/*.blog-content {
+/*.blog-more {
     border-bottom: 1px solid #ddd;
 }*/
 
-.blog-content a {
+.blog-more a {
     border: 1px solid #aaa;
     color: #333;
 }
 
-.blog-content a.cx-btn {
+.blog-more a.cx-btn {
     margin-top: 30px;
 }
 
-.blog-content a:hover {
+.blog-more a:hover {
     border-color: #295970;
     color: #fff;
     background: #295970;
