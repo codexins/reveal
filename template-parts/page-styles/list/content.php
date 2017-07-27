@@ -33,7 +33,11 @@
             <?php 
 
             $reveal_title_len = reveal_option( 'reveal_title_length' );
-            reveal_title( $reveal_title_len );
+            if( ! empty( $reveal_title_len ) ) :
+                reveal_title( $reveal_title_len );
+            else:
+                the_title();
+            endif;
 
             ?>
             </a></h2>
@@ -54,7 +58,11 @@
 
 				else:
                     $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
-					reveal_excerpt( $reveal_excerpt_len );
+                    if( ! empty( $reveal_excerpt_len ) ) :
+					   reveal_excerpt( $reveal_excerpt_len );
+                    else:
+                         the_excerpt();
+                     endif; //End if() reveal_excerpt_length..
 				endif; ?>
 
                 <?php 

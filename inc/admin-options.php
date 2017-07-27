@@ -415,55 +415,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),              )
             );
 
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Header Top Options', 'reveal' ),
-                'id'               => 'reveal-email-phone',
-                'customizer_width' => '500px',
-                'subsection'       => true,
-                'fields'           => array(
-
-                    array(
-                        'id'       => 'reveal-header-top',
-                        'type'     => 'switch',
-                        'title'    => esc_html__( 'Enable Header Top?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable header top', 'reveal' ),
-                        'default'  => 1,
-                        'on'       => 'Enabled',
-                        'off'      => 'Disabled',
-                    ),
-
-                    array(
-                        'id'       => 'reveal-phone',
-                        'type'     => 'text',
-                        'required' => array( 'reveal-header-top', '=', '1' ),
-                        'title'    => esc_html__( 'Phone Number', 'reveal' ),
-                        'desc'     => esc_html__( 'Please insert  Your Phone: example: (707) 123-4567 ', 'reveal' ),
-                        'default'  => '(707) 123-4567',
-                    ),
-
-
-                    array(
-                        'id'       => 'reveal-phone-url',
-                        'type'     => 'text',
-                        'required' => array( 'reveal-header-top', '=', '1' ),
-                        'title'    => esc_html__( 'Phone Number URL', 'reveal' ),
-                        'desc'     => esc_html__( 'Please enter phone number URL: example: +17071234567  ', 'reveal' ),
-                        'default'  => '+7071234567',
-                    ),
-
-                    array(
-                        'id'       => 'reveal-email',
-                        'type'     => 'text',
-                        'required' => array( 'reveal-header-top', '=', '1' ),
-                        'title'    => esc_html__( 'Email', 'reveal' ),
-                        'desc'     => esc_html__( 'Please insert  Your Email  ', 'reveal' ),
-                        'default'  => 'email@email.com',
-                    ),              )
-            );
-
 
             $this->sections[] = array(
-                'title'            => esc_html__( 'Breadcrumbs', 'reveal' ),
+                'title'            => esc_html__( 'Page Title', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-bc',
                 'subsection'       => true,
@@ -565,6 +519,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'customizer_width' => '500px',
             );
 
+            //Blog & Archive Page
             $this->sections[] = array(
                 'title'            => esc_html__( 'Blog & Archive Page', 'reveal' ),
                 'id'               => 'reveal-blog-archive',
@@ -631,11 +586,22 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
+                        'id'       => 'reveal-blog-excerpt-lenght',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable Blog Title and Excerpt Length?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable blog-title & excerpt length', 'reveal' ),
+                        'default'  => 0,
+                        'on'       => 'Enabled',
+                        'off'      => 'Disabled',
+                    ),
+
+                    array(
                         'id'        => 'reveal_title_length',
                         'type'      => 'slider',
                         'min'       => '1',
                         'max'       => '10',
                         'step'      => '1',
+                        'required'  => array( 'reveal-blog-excerpt-lenght', '=', '1' ),
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Posts', 'reveal'),
                         'desc'      => esc_html__("Insert the Number of Words to Show in the Post Title in Blog & Archive Page.", 'reveal'),
@@ -648,6 +614,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'min'       => '4',
                         'max'       => '40',
                         'step'      => '4',
+                        'required'  => array( 'reveal-blog-excerpt-lenght', '=', '1' ),
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts', 'reveal'),
                         'desc'      => esc_html__("Insert the Number of Words to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
@@ -675,7 +642,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'   => 'button'
                     ),
                 )
-            );    
+
+            ); //End Blog & Archive Page...
+
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Blog Single Page', 'reveal' ),
@@ -875,20 +844,12 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 )    
             );
 
-            // footer section 
 
+            // footer section 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Footer', 'reveal' ),
-                'icon'             => 'dashicons dashicons-editor-insertmore',
-                'id'               => 'reveal-footer-option',
-                'customizer_width' => '500px',
-            );
-
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Footer Layout', 'reveal' ),
                 'customizer_width' => '500px',
                 'id'               => 'reveal-footer',
-                'subsection'       => true,
                 'fields'           => array(
 
                     array(
@@ -925,15 +886,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         ),
                         'default'  => '1'
                     ),
-                )
-            );
-
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Footer Copyright', 'reveal' ),
-                'customizer_width' => '500px',
-                'id'               => 'reveal-footer-cpr',
-                'subsection'       => true,
-                'fields'           => array(
 
                     array(
                         'id'       => 'reveal_footer_copyright',
@@ -954,11 +906,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => 'HTML is allowed in here.'
                     ),
                 )
-            );
-                    
 
+            ); //End Footer... 
 
-
+            //Map Section
             $this->sections[] = array(
                     'title'            => esc_html__( 'Map Settings', 'reveal' ),
                     'customizer_width' => '500px',
