@@ -157,18 +157,15 @@
     //     jQuery(".loaders").delay(800).fadeOut("slow");
     // });
 
-<<<<<<< HEAD
+
     $(window).on('beforeunload', function() { 
         $('#preloader_1').fadeIn('fast');
     });
 
-    $(window).on('load', function() { 
-        $('#preloader_1').delay(300).fadeOut('fast');
-=======
+
     $(window).on('load', function() { 
         $('#preloader_1').delay(300).fadeOut('fast');
         $('body').addClass('overflow-fix');
->>>>>>> eb20cc98bbbaa5b85536e8809c860da3faf7cabb
     });
 
 
