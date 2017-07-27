@@ -238,11 +238,11 @@
     // });
 
     $(window).on('beforeunload', function() { 
-        $('body').fadeOut('normal');
+        $('#preloader_1').fadeIn('fast');
     });
 
     $(window).on('load', function() { 
-        $('#preloader_1').delay(500).fadeOut('slow');
+        $('#preloader_1').delay(300).fadeOut('fast');
     });
 
 
