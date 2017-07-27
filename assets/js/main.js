@@ -77,87 +77,7 @@
     });
 
 
-    /*--------------------------------------------------------------
-    client carouel
-    ---------------------------------------------------------------- */
-
-    $("#client-carousel").owlCarousel({
-
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
-        navigation: false,
-        pagination: false,
-        items: 6,
-        itemsDesktop: [1199, 6],
-        itemsDesktopSmall: [991, 5],
-        itemsTablet: [767, 5],
-        itemsTabletSmall: [599, 4],
-        itemsMobile: [420, 3]
-
-    });
-
-
-
-
-    /*--------------------------------------------------------------
-	Isotope Js for Portfolio Section
-    ---------------------------------------------------------------- */
-
-    // cache container
-    var $isocontainer = $('.portfolio-wrapper');
-
-    // initialize isotope
-
-    $isocontainer.imagesLoaded(function() {
-        $isocontainer.isotope({
-            filter: "*",
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-        });
-    });
-
-    $(".portfolio-filter ul li").click(function() {
-        $(".portfolio-filter ul li").removeClass("active");
-        $(this).addClass("active");
-
-        var selector = $(this).attr('data-filter');
-        $isocontainer.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false,
-            },
-            isResizeBound: true
-        });
-        return false;
-    }); //isotope finished
-
-    /*--------------------------------------------------------------
-	Activating Magnific Pop Up
-    ---------------------------------------------------------------- */
-
-    $('.img-pop-up').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        },
-
-        fixedContentPos: false,
-        fixedBgPos: true,
-
-        overflowY: 'auto',
-
-        closeBtnInside: true,
-        preloader: false,
-
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'mfp-fade'
-
-    });
+    
 
 
     /*--------------------------------------------------------------
@@ -246,42 +166,42 @@
     });
 
 
-    /*--------------------------------------------------------------
-    Activating Instagram Image Popup
-    ---------------------------------------------------------------- */
-    $('.cx-image-link').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        },
-        image: {
-            titleSrc: 'title',
-        },
-        mainClass: 'instagram-zoom', 
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        zoom: {
-            duration: 300, 
-            easing: 'ease-in-out', 
-            opener: function(openerElement) {
-            return openerElement.is('img') ? openerElement : openerElement.find('img');
-            }
-        }
+     /*--------------------------------------------------------------
+         Activating Instagram Image Popup
+        ---------------------------------------------------------------- */
+    // $('.cx-image-link').magnificPopup({
+    //     type: 'image',
+    //     gallery: {
+    //         enabled: true
+    //     },
+    //     image: {
+    //         titleSrc: 'title',
+    //     },
+    //     mainClass: 'instagram-zoom', 
+    //     fixedContentPos: false,
+    //     fixedBgPos: true,
+    //     overflowY: 'auto',
+    //     zoom: {
+    //         duration: 300, 
+    //         easing: 'ease-in-out', 
+    //         opener: function(openerElement) {
+    //         return openerElement.is('img') ? openerElement : openerElement.find('img');
+    //         }
+    //     }
 
-    });
+    // });
 
-    $('.event-image-popup').magnificPopup({
-        type: 'image',
-        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+    // $('.event-image-popup').magnificPopup({
+    //     type: 'image',
+    //     mainClass: 'mfp-with-zoom', // this class is for CSS animation below
 
-        zoom: {
-            enabled: true, // By default it's false, so don't forget to enable it
+    //     zoom: {
+    //         enabled: true, // By default it's false, so don't forget to enable it
 
-            duration: 300, 
-            easing: 'ease-in-out',
-        }
-    });
+    //         duration: 300, 
+    //         easing: 'ease-in-out',
+    //     }
+    // });
 
 
     /*--------------------------------------------------------------
