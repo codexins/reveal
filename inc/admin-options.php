@@ -141,8 +141,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-page-loader',
                         'type'     => 'switch',
-                        'title'    => esc_html__( 'Enable Page Loader?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Choose to Enable / Disable Page Loader Throughout the Site', 'reveal' ),
+                        'title'    => esc_html__( 'Enable Page Loader and Transition Animation?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose to Enable / Disable Page Loader and Page Transition Animation Throughout the Site', 'reveal' ),
                         'default'  => true,
                     ),
 
