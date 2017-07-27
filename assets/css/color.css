@@ -20,10 +20,11 @@ hr {
     background: #ddd;
 }
 
-/*.header::before {
-    background: #295970; none repeat scroll 0 0;
-}*/
-header#header {
+.front-header::before {
+    background: #333; none repeat scroll 0 0;
+}
+
+header.inner-header {
     background: #295970;
 }
 header .navbar.affix {
@@ -330,20 +331,20 @@ a.explore {
     color: #fff;
 }
 
-.blog-content {
+/*.blog-more {
     border-bottom: 1px solid #ddd;
-}
+}*/
 
-.blog-content a {
+.blog-more a {
     border: 1px solid #aaa;
     color: #333;
 }
 
-.blog-content a.cx-btn {
+.blog-more a.cx-btn {
     margin-top: 30px;
 }
 
-.blog-content a:hover {
+.blog-more a:hover {
     border-color: #295970;
     color: #fff;
     background: #295970;
@@ -684,5 +685,5 @@ table#wp-calendar thead {
 }
 .single-post #primary article.type-post:last-of-type .blog-post ,
 .blog-post {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px dashed #ddd;
 }

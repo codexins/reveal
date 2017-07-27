@@ -168,7 +168,11 @@ article > section.kc_row:first-of-type {
 *************************************************************/
 
 #comments {
-    margin-top: 70px;
+    margin-top: 60px;
+}
+
+.posts-nav+#comments {
+    margin-top: 40px;
 }
 
 
