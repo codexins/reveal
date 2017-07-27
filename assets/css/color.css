@@ -124,17 +124,21 @@ a.explore {
 .secondary-title::after {
     background: #295970;
 }
+.img-thumb .content-wrapper,
 .img-thumb a {
     color: #fff;
 }
+.img-thumb .content-wrapper::before,
 .img-thumb a::before {
     border-top: 2px solid #fff;
     border-bottom: 2px solid #fff;
 }
+.img-thumb .content-wrapper::after,
 .img-thumb a::after {
     border-right: 2px solid #fff;
     border-left: 2px solid #fff;
 }
+.img-thumb .content-wrapper,:hover .single-content-wrapper,
 .img-thumb a:hover .single-content-wrapper {
     background: #166f9a;
     background: rgba(41, 89, 112, 0.75);
