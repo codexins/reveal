@@ -2034,3 +2034,37 @@ button.mfp-close:hover {
     margin: 0;
     margin-right: 5px;
 }
+
+/*comment navigation */
+.comment-navigation .nav-previous a,
+.comment-navigation .nav-next  a{
+    padding: 7px 15px 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    border: 1px solid  #aaa;
+    color: #333 ;
+}
+.comment-navigation .nav-previous a:hover,
+.comment-navigation .nav-next  a:hover{
+    background:#295970;
+    border-color: #295970;
+    color: #fff ;
+}
+.comment-navigation .nav-previous {
+       float: left;
+}
+.comment-navigation .nav-next  {
+    float: right;
+}
+.comment-navigation {
+    display: block;
+    overflow: hidden;
+}
