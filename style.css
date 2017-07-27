@@ -2301,3 +2301,6 @@ a.portfolio-tag:hover {
     background: #295970 ;
     color: #fff ;
 }
+.information p a{
+    color: #333 ;
+}
