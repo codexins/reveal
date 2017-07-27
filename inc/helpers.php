@@ -353,7 +353,7 @@ if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
 
 /**
 *
-* Helper Function for deregistering Posrtfolio Custom Posts Type
+* Helper Function for deregistering Portfolio Custom Posts Type
 *
 **/
 $disable_port = reveal_option( 'reveal_enable_portfolio' );
@@ -409,6 +409,35 @@ function reveal_add_dynamic_js_variables() {
 }
 
 add_action('wp_head', 'reveal_add_dynamic_js_variables');
+
+
+/**
+*
+* Helper Function for loading page transition animation
+*
+**/
+function reveal_page_transition_animation() {
+
+    $transition_anim = reveal_option( 'reveal-page-loader' );
+    if( $transition_anim ):
+    $codeopt = '';
+    $codeopt .= '
+    <script type="text/javascript">
+        (function($) {
+            $(window).on("beforeunload", function() { 
+                $("#preloader_1").fadeIn("fast");
+            });
+        })(jQuery);
+    </script>
+
+    ';
+
+    echo $codeopt;
+    endif;
+
+}
+
+add_action('wp_footer', 'reveal_page_transition_animation');
 
 
 /**
