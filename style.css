@@ -184,7 +184,7 @@ header.front-header {
     background-attachment: fixed;
 }
 
-.header::before {
+.front-header::before {
     content: "";
     height: 100%;
     left: 0;
@@ -1468,12 +1468,20 @@ body.overflow-fix {
     background-position: center;
     border-left: 0;
 }
+
+.comment-reply-title,
 h2.widgettitle {
     text-transform: uppercase;
     font-size: 20px;
     padding-bottom: 10px;
     font-weight: 400;
 }
+
+.comment-reply-title {
+    text-transform: initial;
+}
+
+
 .widgettitle a{
     font-weight: 400;
 }
@@ -1565,10 +1573,11 @@ h2.widgettitle {
 }
 #entry_footer {
     font-size: 14px;
+    margin-top: 50px;
 }
 
 #entry_footer  .share {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .widget-area {
     margin-top: 40px;

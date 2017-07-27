@@ -20,7 +20,7 @@ hr {
     background: #ddd;
 }
 
-.header::before {
+.front-header::before {
     background: #333; none repeat scroll 0 0;
 }
 
@@ -331,9 +331,9 @@ a.explore {
     color: #fff;
 }
 
-.blog-content {
+/*.blog-content {
     border-bottom: 1px solid #ddd;
-}
+}*/
 
 .blog-content a {
     border: 1px solid #aaa;
@@ -685,5 +685,5 @@ table#wp-calendar thead {
 }
 .single-post #primary article.type-post:last-of-type .blog-post ,
 .blog-post {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px dashed #ddd;
 }
