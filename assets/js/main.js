@@ -193,16 +193,37 @@
     //     }
 
     // });
+    
+    /*--------------------------------------------------------------
+        Activating Events Page Image Popup
+    ---------------------------------------------------------------- */
+    $(window).load(function() {
+        $('.event-image-popup').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-with-zoom', 
+            fixedContentPos: false,
+            zoom: {
+                enabled: true,
+                duration: 300, 
+                easing: 'ease-in-out',
+            }
+        });
+    });
 
-    $('.event-image-popup').magnificPopup({
+    /*--------------------------------------------------------------
+    Activating single blog Magnific Pop Up
+    ---------------------------------------------------------------- */    
+    $('.img-pop-up').magnificPopup({
         type: 'image',
-        mainClass: 'mfp-with-zoom', // this class is for CSS animation below
-
+        mainClass: 'mfp-with-zoom', 
+        fixedContentPos: false,        
         zoom: {
-            enabled: true, // By default it's false, so don't forget to enable it
-
+            enabled: true,
             duration: 300, 
             easing: 'ease-in-out',
+                opener: function(openerElement) {
+                return openerElement.is('a') ? openerElement : openerElement.find('a');
+            }
         }
     });
 
@@ -244,30 +265,7 @@
     });
 
  
-    /*--------------------------------------------------------------
-    Activating Magnific Pop Up
-    ---------------------------------------------------------------- */
-
-    $('.img-pop-up').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        },
-
-        fixedContentPos: false,
-        fixedBgPos: true,
-
-        overflowY: 'auto',
-
-        closeBtnInside: true,
-        preloader: false,
-
-        midClick: true,
-        removalDelay: 300,
-        mainClass: 'mfp-fade'
-
-    });
-   
+       
 
 
 })(jQuery);
