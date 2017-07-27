@@ -157,6 +157,12 @@
     //     jQuery(".loaders").delay(800).fadeOut("slow");
     // });
 
+
+    $(window).on('beforeunload', function() { 
+        $('#preloader_1').fadeIn('fast');
+    });
+
+
     $(window).on('load', function() { 
         $('#preloader_1').delay(300).fadeOut('fast');
         $('body').addClass('overflow-fix');

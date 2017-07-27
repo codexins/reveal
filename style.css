@@ -170,18 +170,21 @@ input[type="button"]:hover{
 *************************************************************/
 
 header {
-    background: url('images/showcase.jpg') no-repeat scroll;
-    background-position: center;
-    background-size: cover;
     padding-top: 0;
     padding-bottom: 0;
     position: relative;
-    background-attachment: fixed;
     margin-top: 0;
     z-index: 2;
 }
 
-.header::before {
+header.front-header {
+    background: url('assets/images/showcase.jpg') no-repeat scroll;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.front-header::before {
     content: "";
     height: 100%;
     left: 0;
@@ -832,11 +835,11 @@ a.explore:hover {
     margin: 15px 0 10px;
 }
 
-.blog-content {
+.blog-more {
     padding-bottom: 10px;
 }
 
-.blog-content a {
+.blog-more a {
     padding: 7px 15px 5px;
     text-transform: uppercase;
     text-decoration: none;
@@ -850,7 +853,7 @@ a.explore:hover {
     transition: all .3s;
 }
 
-.blog-content a:hover {
+.blog-more a:hover {
     text-decoration: none;
 }
 
@@ -998,7 +1001,7 @@ article.type-post {
     margin-top: 25px;
 }
 
-.posts-nav.blog-content {
+.posts-nav.blog-more {
     padding-bottom: 0;
     border: 0;
 }
@@ -1301,8 +1304,9 @@ a.more:hover {
   z-index: 999999;
   width: 100%;
   height: 100%;
-  overflow-y: visible;
+  overflow: visible;
   background: #fff url("assets/images/loader-1.svg") no-repeat center center;
+  
 }
 
 body.overflow-fix {
@@ -1490,12 +1494,20 @@ body.overflow-fix {
     background-position: center;
     border-left: 0;
 }
+
+.comment-reply-title,
 h2.widgettitle {
     text-transform: uppercase;
     font-size: 20px;
     padding-bottom: 10px;
     font-weight: 400;
 }
+
+.comment-reply-title {
+    text-transform: initial;
+}
+
+
 .widgettitle a{
     font-weight: 400;
 }
@@ -1585,12 +1597,19 @@ h2.widgettitle {
     float: right; 
     width: 250px;
 }
+
+.blog #entry_footer,
+.archive #entry_footer {
+    margin-top: 20px;
+}
+
 #entry_footer {
     font-size: 14px;
+    margin-top: 50px;
 }
 
 #entry_footer  .share {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .widget-area {
     margin-top: 40px;
