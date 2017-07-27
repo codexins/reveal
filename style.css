@@ -2077,3 +2077,6 @@ button.mfp-close:hover {
     display: block;
     overflow: hidden;
 }
+.nav-previous, .nav-next {
+    margin: 0;
+}
