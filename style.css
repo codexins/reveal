@@ -1023,6 +1023,15 @@ article.type-post {
     margin: 0;
 }
 
+.img-pop-up {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
 nav.number-pagination {
     width: 100%;
     text-align: center;
@@ -1042,7 +1051,7 @@ nav.number-pagination {
     border: 1px solid #295970;
     color: #fff;
 }
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+.pagination>li.active:first-child>a, .pagination>li.active:first-child>span, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
     background: #295970;
     border: 1px solid #295970;
     color: #fff;
