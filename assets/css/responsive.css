@@ -57,7 +57,9 @@
 	Mobile Menu (add Sazad)
 ----------------------------*/
 
-
+	#comments .comment-info:before {
+	    top: 15px;
+	}
 	.blog-post .list-inline li a {
 	    padding: 0;
 	}
@@ -136,6 +138,10 @@
 
 
 @media only screen and (max-width: 767px) {
+	#comments .comment-info:before {
+	    left: -7px;
+	    top: 10px;
+	}
 	.single-event-details .event-schedule{
 		text-align: center ;
 	}
