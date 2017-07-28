@@ -357,14 +357,16 @@ if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
 *
 **/
 $disable_port = reveal_option( 'reveal_enable_portfolio' );
-
+$version = '4.5';
 if( $disable_port == false ) {
-
-    function delete_post_type(){
-        unregister_post_type( 'portfolio' );
+    if (version_compare($version, get_bloginfo('version'), '<=' )) {
+        function delete_post_type(){
+            unregister_post_type( 'portfolio' );
+        }
+        add_action('init','delete_post_type');
+    } else {
+        return false;        
     }
-    add_action('init','delete_post_type');
-
 }
 
 
