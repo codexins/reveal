@@ -861,6 +861,20 @@ article.type-post {
     text-align: center;
     overflow: hidden;
 }
+.img-pop-up {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+.item-img-wrap:hover > a {
+    visibility: visible;
+    opacity: 1;
+}
 
 .item-img-wrap img {
     -moz-transition: all 200ms linear;

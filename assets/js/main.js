@@ -15,8 +15,7 @@
             $(child_menu).css({"left": "inherit", "right": "100%"});
           } else {
             $(child_menu).css('left', '100%');
-          }
-        
+          }        
     });
 
     
@@ -218,25 +217,25 @@
         type: 'image',
         mainClass: 'mfp-with-zoom', 
         fixedContentPos: true,
-        fixedBgPos: true,      
+        fixedBgPos: true,   
         zoom: {
             enabled: true,
             duration: 300, 
             easing: 'ease-in-out',
-                opener: function(openerElement) {
+            opener: function(openerElement) {
                 return openerElement.is('a') ? openerElement : openerElement.find('a');
             }
         },
         callbacks: {
-                         open: function() {
-                            jQuery('body').addClass('noscroll');
-                         },
-                         close: function() {
-                             jQuery('body').removeClass('noscroll');
-                         }
-                    }
+            open: function() {
+                jQuery('body').addClass('noscroll');
+                
+            },
+            close: function() {
+                jQuery('body').removeClass('noscroll');                
+            }
+        }
     });
-
 
     /*--------------------------------------------------------------
     commentform validate
