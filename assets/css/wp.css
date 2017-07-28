@@ -221,16 +221,19 @@ article > section.kc_row:first-of-type {
 
 
 
+
 .comment-single-left {
     display: block;
-    min-width: 10%;
-    max-width: 10%;
+    width: 90px;
     float: left;
-    margin-right: 2%;
+    margin-right: 25px;
+    height: 90px;
 }
 
+
 .comment-single-right {
-    width:88%;
+    width: 80%;
+    width:calc(100% - 115px);
     float:right;
     display: block;
     margin-bottom: 35px;
