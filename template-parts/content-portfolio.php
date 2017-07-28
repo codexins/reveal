@@ -31,18 +31,27 @@
                     <p class="font-medium">  </p>
 
                     <h2>Catagory</h2>
-                    <!-- <p><?php  // the_category(', '); ?></p> -->
+                     <p><?php  // the_category(', '); ?></p> 
                     <?php
 
-                        // $taxonomy = 'portfolio-category';
-                        // $taxonomies = wp_get_object_terms($post->ID, $taxonomy, array('fields' => 'all')); 
-                        // echo "<pre>" ;
-                        // print_r($taxonomies) ;
-                        // echo "<pre>" ;
-                            // foreach ( $taxonomies as $tax ) {
-                            //     echo '<p><a href=".' .$tax->slug .'" class="cx_filter_btn" >' . $tax->name . '</a></p>';
-
-                            // }
+                        $terms = get_terms( 'portfolio-category' );
+ 
+                    
+                        foreach ( $terms as $term ) {
+                         
+                            // The $term is an object, so we don't need to specify the $taxonomy.
+                            $term_link = get_term_link( $term->term_id );
+                            
+                            // If there was an error, continue to the next term.
+                            if ( is_wp_error( $term_link ) ) {
+                                continue;
+                            }
+                         
+                            // We successfully got a link. Print it out.
+                            echo '<p><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></p>';
+                        }
+                         
+                        echo '</ul>';
 
                             ?>
                     <h2>Client</h2>
@@ -53,12 +62,20 @@
                     <!-- <a class="portfolio-tag" href="">Python</a> -->
                         <?php
                         
-                        // $taxonomy = 'portfolio_tags';
-                        // $taxonomies = get_terms($taxonomy); 
-                        //     foreach ( $taxonomies as $tax ) {
-                        //         echo '<a class="portfolio-tag" href="' .$tax->slug.'" class="cx_filter_btn" >' . $tax->name . '</a>';
+                        $taxonomy = 'portfolio_tags';
+                        $taxonomies = get_terms($taxonomy); 
+                            foreach ( $taxonomies as $tax ) {
 
-                        //     }
+                            $tax_link = get_term_link( $tax);
+                            
+                            // If there was an error, continue to the next term.
+                            if ( is_wp_error( $tax_link ) ) {
+                                continue;
+                            }
+     
+                                echo '<a class="portfolio-tag" href="'. esc_url( $tax_link ) .'" class="cx_filter_btn" >' . $tax->name . '</a>';
+
+                            }
 
 
                             ?>
