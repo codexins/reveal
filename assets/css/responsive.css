@@ -7,7 +7,10 @@
 
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-
+	#comments .comment-info:before {
+	    left: -11px;
+	    top: 18px;
+	}
 	.slider-text h4 {
 		font-size: 36px;
 	}
@@ -58,8 +61,8 @@
 ----------------------------*/
 
 	#comments .comment-info:before {
-	    top: 15px;
-	    
+	    top: 10px;
+	    left: -10px;
 	}
 	.blog-post .list-inline li a {
 	    padding: 0;
@@ -140,8 +143,8 @@
 
 @media only screen and (max-width: 767px) {
 	#comments .comment-info:before {
-	    left: -7px;
-	    top: 10px;
+	    left: -10px;
+	    top: 17px;
 	}
 	.single-event-details .event-schedule{
 		text-align: center ;
@@ -577,6 +580,9 @@ body.has-active-menu {
 
 
 @media only screen and (max-width: 667px) {
+	#comments .comment-info:before {
+	    top: 7px;
+	}
 	#comment-error{
 		font-size: 14px;
 	}
@@ -602,6 +608,10 @@ body.has-active-menu {
 
 
 @media only screen and (max-width: 479px) {
+	#comments .comment-info:before {
+	    left: -9px;
+	    top: 6px;
+	}
 	.post-detail li {
 	    font-size: 13px;
 	    padding-right: 0;
@@ -685,3 +695,10 @@ body.has-active-menu {
 	}
 
 } /*end of (max-width: 479px)*/
+
+@media only screen and (max-width: 340px) {
+	#comments .comment-info:before {
+	    left: -7px;
+	    top: 0px;
+	}
+}/*end of (max-width: 479px)*/
