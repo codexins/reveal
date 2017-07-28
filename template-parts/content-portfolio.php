@@ -15,7 +15,7 @@
         <div class="portfolio-image">
             <div class="col-md-8 col-sm-8">
                 <div class="image">
-                    <img src=" <?php the_post_thumbnail_url('featured-single-image') ?> " alt="">
+                    <img src=" <?php the_post_thumbnail_url() ?> " alt="">
                 </div>
             </div>
             
@@ -35,25 +35,17 @@
                     <?php
 
                         $terms = get_terms( 'portfolio-category' );
- 
-                    
                         foreach ( $terms as $term ) {
-                         
                             // The $term is an object, so we don't need to specify the $taxonomy.
-                            $term_link = get_term_link( $term->term_id );
-                            
+                            $term_link = get_term_link( $term); 
                             // If there was an error, continue to the next term.
                             if ( is_wp_error( $term_link ) ) {
                                 continue;
                             }
-                         
                             // We successfully got a link. Print it out.
                             echo '<p><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></p>';
                         }
-                         
-                        echo '</ul>';
-
-                            ?>
+                    ?>
                     <h2>Client</h2>
                     <p><?php echo esc_html( $cname ); ?></p>
                     <h2>Portfolio Tag</h2>
