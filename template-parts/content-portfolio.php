@@ -51,7 +51,6 @@
                     <h2>Portfolio Tag</h2>
                     <p>
 
-                    <!-- <a class="portfolio-tag" href="">Python</a> -->
                         <?php
                         
                         $taxonomy = 'portfolio_tags';
@@ -64,13 +63,10 @@
                             if ( is_wp_error( $tax_link ) ) {
                                 continue;
                             }
-     
                                 echo '<a class="portfolio-tag" href="'. esc_url( $tax_link ) .'" class="cx_filter_btn" >' . $tax->name . '</a>';
 
                             }
-
-
-                            ?>
+                        ?>
                     </p>
                 </div>
             </div>
@@ -84,17 +80,11 @@
             </div>
             <div class="portfolio-pagination">
                 <div class=" blog-content ">
-                
                     <div class="nav-previous alignleft">
-                        <!-- <a href="#" rel="prev">Previous Post »</a> -->
                         <?php previous_post_link('%link', '« Previous Post ', FALSE); ?>
-            
-
-
 
                     </div>
                     <div class="nav-next alignright ">
-                        <!-- <a href="#" rel="next">« Next Post</a> -->
                           <?php next_post_link('%link', ' Next Post  »', FALSE); ?>
                     </div>
                 </div>

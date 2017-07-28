@@ -2040,6 +2040,7 @@ button.mfp-close:hover {
 }
 .nav-previous, .nav-next {
     margin: 0;
+    font-size: 85%;
 }
 
 
