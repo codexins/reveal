@@ -59,6 +59,9 @@
 
 	#comments .comment-info:before {
 	    top: 15px;
+	    left: -6px;
+	    width: 10px;
+	    height: 10px;
 	}
 	.blog-post .list-inline li a {
 	    padding: 0;
@@ -139,9 +142,12 @@
 
 @media only screen and (max-width: 767px) {
 	#comments .comment-info:before {
-	    left: -7px;
 	    top: 10px;
+	    left: -6px;
+	    width: 9px;
+	    height: 9px;
 	}
+
 	.single-event-details .event-schedule{
 		text-align: center ;
 	}
