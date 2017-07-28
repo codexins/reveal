@@ -32,7 +32,7 @@ $client_name = rwmb_meta('reveal_portfolio_client', 'type=text');
             <li><i class="fa fa-tag"></i> 
                 <?php
                     $taxonomy = 'portfolio-category';
-                    $taxonomies = get_the_terms($post->ID, $taxonomy); 
+                    $taxonomies = get_terms($taxonomy); 
                     $last_key = end($taxonomies);
                     foreach ( $taxonomies as $tax ) {
                         // echo  $tax->name.', ' ;

@@ -24,10 +24,11 @@
 	        <ul class="portfolio-cat">
 				<?php
                     $taxonomy = 'portfolio-category';
-                    $taxonomies = get_the_terms($post->ID, $taxonomy); 
+                    $taxonomies = get_terms( $taxonomy); 
                     $last_key = end($taxonomies);
                     foreach ( $taxonomies as $tax ) {
                         // echo  $tax->name.', ' ;
+                        
                         if($tax == $last_key):
                             echo "<li>".ucwords($tax->name)."</li>";
                         else: 

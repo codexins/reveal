@@ -119,6 +119,7 @@ input[type="submit"],
 input[type="button"]{
     background: #295970;
     color: #fff;
+    font-size: 85%;
 }
 
 input::-webkit-input-placeholder,
