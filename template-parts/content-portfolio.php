@@ -31,7 +31,6 @@
                     <p class="font-medium">  </p>
 
                     <h2>Catagory</h2>
-                     <p><?php  // the_category(', '); ?></p> 
                     <?php
 
                         $terms = get_terms( 'portfolio-category' );
@@ -63,7 +62,7 @@
                             if ( is_wp_error( $tax_link ) ) {
                                 continue;
                             }
-                                echo '<a class="portfolio-tag" href="'. esc_url( $tax_link ) .'" class="cx_filter_btn" >' . $tax->name . '</a>';
+                            echo '<a class="portfolio-tag" href="'. esc_url( $tax_link ) .'" class="cx_filter_btn" >' . $tax->name . '</a>';
 
                             }
                         ?>

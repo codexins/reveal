@@ -2086,9 +2086,7 @@ img{
     color: #333333 ;
     margin-top: 20px;
     margin-bottom: 15px;
-    display: inline-block;
     line-height: 24px;
-
 }
 .information{}
 .information h2.border-btm{
@@ -2127,7 +2125,6 @@ h2.border-btm {
 
 .information h2:after{
     width: 35px;
-    right: -45px ;
     left: inherit;
 }
 a.portfolio-tag {
