@@ -802,7 +802,8 @@ a.explore:hover {
 }
 
 .blog-more {
-    padding-bottom: 10px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .blog-more a {
@@ -811,7 +812,7 @@ a.explore:hover {
     text-decoration: none;
     margin-top: 10px;
     display: inline-block;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
@@ -850,7 +851,7 @@ article.type-post {
 
 .single-post #primary article.type-post:last-of-type .blog-post ,
 .blog-post {
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 .single-post #primary article.type-post:last-of-type .blog-post {
     margin-bottom: 18px;
