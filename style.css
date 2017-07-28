@@ -64,6 +64,10 @@ body {
     position: relative;
     overflow-y: scroll;
 }
+body.noscroll
+{
+    overflow-y:hidden!important;
+}
 
 section {
     margin-top: 40px;
