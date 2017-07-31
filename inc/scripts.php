@@ -94,7 +94,4 @@ function reveal_scripts () {
 } 
 
 add_action( 'wp_enqueue_scripts', 'reveal_scripts');
-
-
-
 ?>

@@ -2088,11 +2088,15 @@ font-family: 'Roboto', sans-serif;
 img{
     max-width: 100% ;
 }
-/*.portfolio-single .details,*/
-.mb-70,
+
+/************************************************************
+    000 - Page - Single Portfolio
+*************************************************************/
+
 .portfolio-image{
     margin-bottom: 75px;
 }
+
 .portfolio-image{
     background: #f6f6f6 ;
     overflow: hidden;
@@ -2102,74 +2106,32 @@ img{
 .portfolio-image .col-sm-8{
     padding-left: 0 ;
 }
-.portfolio-single{}
-
-.portfolio-single h2{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 700 ;
-    color: #333333 ;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    line-height: 24px;
-}
-.information{}
-.information h2.border-btm{
-    margin-top: 30px;
-    margin-bottom: 15px;
-
-}
-.information p.font-medium{
-    font-weight: 500;
-}
-.information p{
-    padding: 0 ;
-    margin:0 ;
-    font-size: 16px;
-    line-height: 25px;
-}
-.information h2,
-h2.border-btm {
-    position: relative;
-
-}
-h2.border-btm {
-    padding-bottom: 15px;
-}
-.portfolio-single .details h2:after,
-.information h2:after,
-.information h2.border-btm:after {
-    content: "";
-    width: 80px;
-    height: 2px;
-    left: 0;
-    bottom: 0;
-    position: absolute;
-    background: #295970;
+.portfolio-single article {
+    margin-top: 0;
 }
 
-.information h2:after{
-    width: 35px;
-    left: inherit;
+.portfolio-information {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
-a.portfolio-tag {
-    width: 80px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    color: #333;
-    display: inline-block;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    color: #333;
-    background: #fff;
-    font-size: 85%;
+
+.portfolio-information h2 {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-a.portfolio-tag:hover {
-    background: #295970;
-    color: #fff;
-    border-color: #295970;
+
+
+.category-portfolio,
+.client-portfolio {
+    margin-bottom: 20px;
 }
+
+
+
+
+
 .portfolio-single .details h2{
     position: relative;
     margin-bottom: 40px;

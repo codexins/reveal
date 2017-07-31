@@ -220,8 +220,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'   => array('h1'),
                         'default'  => array(
                             'color'       => '#333',
-                            'font-size'   => '30px',
-                            'line-height' => '48px',
+                            'font-size'   => '32px',
                             'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
@@ -237,10 +236,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
                         'default'     => array(
                             'color'       => '#333',
-                            'font-weight'  => 'bold',
+                            'font-weight'  => 'normal',
                             'font-family' => 'Montserrat',
                             'font-size'   => '30px',
-                            'line-height' => ''
                         ),
                     ),
 
@@ -253,8 +251,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'   => array('h3'),
                         'default'  => array(
                             'color'       => '#333',
-                            'font-size'   => '16px',
-                            'line-height' => '26px',
+                            'font-size'   => '24px',
                             'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
@@ -269,8 +266,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'   => array('h4'),
                         'default'  => array(
                             'color'       => '#333',
-                            'font-size'   => '16px',
-                            'line-height' => '26px',
+                            'font-size'   => '19px',
                             'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
@@ -286,7 +282,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => array(
                             'color'       => '#333',
                             'font-size'   => '16px',
-                            'line-height' => '26px',
                             'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
@@ -301,8 +296,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'   => array('h6'),
                         'default'  => array(
                             'color'       => '#333',
-                            'font-size'   => '16px',
-                            'line-height' => '26px',
+                            'font-size'   => '13px',
                             'font-family' => 'Montserrat',
                             'font-weight' => 'Normal',
                         ),
