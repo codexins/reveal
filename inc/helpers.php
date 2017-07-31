@@ -807,6 +807,8 @@ function get_like_count( $like_count ) {
     return $count;
 } // get_like_count()
 
+
+/*
 // User Profile List
 add_action( 'show_user_profile', 'show_user_likes' );
 add_action( 'edit_user_profile', 'show_user_likes' );
@@ -848,6 +850,8 @@ function show_user_likes( $user ) { ?>
         </tr>
     </table>
 <?php } // show_user_likes()
+
+*/
 
 
 /**

@@ -1601,6 +1601,11 @@ h2.widgettitle {
 #entry_footer  .share {
     margin-top: 10px;
 }
+
+.share.socials {
+    padding-left: 0;
+}
+
 .widget-area {
     margin-top: 40px;
 }
