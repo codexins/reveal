@@ -185,6 +185,7 @@ a.explore {
 .blog-title {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
 
 .blog-more a {
@@ -327,4 +328,14 @@ margin-left: 20px;
 .socials .flaticon-technology:before {
     font-size: 15px;
     font-weight: bold;
+}
+
+/************************************************************
+    000 - Page - Blog Page Grid
+*************************************************************/
+
+.blog-content a.read-more {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }

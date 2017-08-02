@@ -798,7 +798,7 @@ a.explore:hover {
 
 .blog-title {
     text-transform: uppercase;
-    margin: 15px 0 10px;
+    margin: 20px 0 10px;
 }
 
 .blog-more {
@@ -836,6 +836,9 @@ a.explore:hover {
     margin-right: 0;
 }
 
+.wrapper-content {
+    margin-bottom: 15px;
+}
 
 #entry_footer .caption {
     float: left;
@@ -946,17 +949,18 @@ article.type-post {
     vertical-align: middle;
     text-transform: capitalize;
 }
-.list-inline>li {
+.list-inline > li {
     display: inline-block;
     padding-right: 5px;
     padding-left: 5px;
 }
+
 .post-detail li {
     font-size: 14px;
         padding-right: 15px;
 }
 
-
+.post-meta .list-inline li i,
 .blog-post .list-inline li i {
     margin-right: 6px;
 }
@@ -987,11 +991,14 @@ article.type-post {
     border: 0;
 }
 
-.blog-post ul li:first-of-type{
+.post-meta ul li:first-of-type,
+.blog-post ul li:first-of-type {
     margin-left: 0;
     padding-left: 0 ;
 }
-.blog-post  li:first-of-type i.fa-pencil{
+
+.post-meta li:first-of-type i.fa-pencil,
+.blog-post li:first-of-type i.fa-pencil {
     margin-left: 0 !important;
 }
 
@@ -2153,7 +2160,7 @@ img{
     overflow: hidden;
     margin-top: 50px;
 }
-.blog-content a {
+.blog-content a.read-more {
     padding: 7px 15px 5px;
     text-transform: uppercase;
     text-decoration: none;
@@ -2164,7 +2171,7 @@ img{
     -o-transition: all .3s;
     transition: all .3s;
 }
-.blog-content a {
+.blog-content a.read-more {
     border: 1px solid #aaa;
     color: #333;
 }
@@ -2221,7 +2228,7 @@ img{
 .one-content i {
     font-size: 30px;
 }
-.blog-content a:hover{
+.blog-content a.read-more:hover{
     background: #295970 ;
     color: #fff ;
 }

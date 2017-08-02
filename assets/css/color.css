@@ -614,6 +614,8 @@ table#wp-calendar thead {
     color: #555;
     background: transparent;
 }
+
+.post-meta .list-inline li a,
 .blog-post .list-inline li a {
     color: inherit;
 }

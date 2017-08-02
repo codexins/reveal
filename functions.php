@@ -152,7 +152,7 @@ class Reveal {
 
 		//Adding custom image sizes
 		add_image_size('featured-single-image', 800, 354, true);
-		add_image_size('blog-mini-image', 360, 227, true);
+		add_image_size('blog-mini-image', 540, 341, true);
 		add_image_size('blog-thumbnail-image', 120, 80, true);
 		add_image_size('team-mini-image', 262, 325, true);
 		add_image_size('about-mini-image', 360, 240, true);
