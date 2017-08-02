@@ -116,16 +116,22 @@ if ( ! function_exists( 'reveal_post_link' ) ) {
 if ( ! function_exists( 'reveal_title' ) ) {
 
     function reveal_title($limit) {
-        $limit = $limit + 1;
-        $title = explode(' ', get_the_title(), $limit);
-        if (count($title)>=$limit) {
-            array_pop($title);
-            $title = implode(" ",$title).'...';
+        $title = get_the_title();
+        $limit++;
+
+        if ( mb_strlen( $title ) > $limit ) {
+            $subex = mb_substr( $title, 0, $limit);
+            $exwords = explode( ' ', $subex );
+            $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+            if ( $excut < 0 ) {
+                echo mb_substr( $subex, 0, $excut );
+            } else {
+                printf('%s', $subex);
+            }
+            echo '...';
         } else {
-            $title = implode(" ",$title);
-        } 
-        $title = preg_replace('`[[^]]*]`','',$title);
-        echo esc_html( $title );
+            printf('%s', $title);
+        }
     }
 
 }
@@ -137,21 +143,27 @@ if ( ! function_exists( 'reveal_title' ) ) {
 *
 **/
 if ( ! function_exists( 'reveal_excerpt' ) ) {
-
     function reveal_excerpt($limit) {
-        $limit = $limit + 1;
-        $excerpt = explode(' ', get_the_excerpt(), $limit);
-        if (count($excerpt)>=$limit) {
-            array_pop($excerpt);
-            $excerpt = implode(" ",$excerpt).'...';
-        } else {
-            $excerpt = implode(" ",$excerpt);
-        } 
-        $excerpt = preg_replace('`[[^]]*]`','',$excerpt);
-        echo esc_html( $excerpt );
-    }
+        $excerpt = get_the_excerpt();
+        $limit++;
 
+        if ( mb_strlen( $excerpt ) > $limit ) {
+            $subex = mb_substr( $excerpt, 0, $limit);
+            $exwords = explode( ' ', $subex );
+            $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+            if ( $excut < 0 ) {
+                echo mb_substr( $subex, 0, $excut );
+            } else {
+                printf('%s', $subex);
+            }
+            echo '...';
+        } else {
+            printf('%s', $excerpt);
+        }
+    }
 }
+
+
 
 /**
 *

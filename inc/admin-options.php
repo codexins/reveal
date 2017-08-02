@@ -622,8 +622,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'reveal_title_length',
                         'type'      => 'slider',
-                        'min'       => '1',
-                        'max'       => '10',
+                        'min'       => '10',
+                        'max'       => '150',
                         'step'      => '1',
                         'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
@@ -635,9 +635,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'reveal_excerpt_length',
                         'type'      => 'slider',
-                        'min'       => '4',
-                        'max'       => '40',
-                        'step'      => '4',
+                        'min'       => '20',
+                        'max'       => '500',
+                        'step'      => '1',
                         'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts', 'reveal'),
