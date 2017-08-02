@@ -321,7 +321,7 @@ class Reveal_Recent_Posts extends WP_Widget {
 					if( 'on' == $instance[ 'show_thumb' ] ) {
 						echo '<a href="' . get_the_permalink() . '" class="media-left"><img class="media-object" src="';
 						if ( has_post_thumbnail() ) { 
-							esc_url( the_post_thumbnail_url('blog-thumbnail-image') ); 
+							esc_url( the_post_thumbnail_url('blog-widget-image') ); 
 						} else { 
 							echo esc_url('//placehold.it/120x80'); 
 						}
@@ -522,7 +522,7 @@ class Reveal_Popular_Posts extends WP_Widget {
 					if( 'on' == $instance[ 'show_thumb' ] ) {
 						echo '<a href="' . get_the_permalink() . '" class="media-left"><img class="media-object" src="';
 						if ( has_post_thumbnail() ) { 
-							esc_url( the_post_thumbnail_url('blog-thumbnail-image') ); 
+							esc_url( the_post_thumbnail_url('blog-widget-image') ); 
 						} else { 
 							echo esc_url('//placehold.it/120x80'); 
 						}

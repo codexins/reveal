@@ -615,10 +615,16 @@ table#wp-calendar thead {
     background: transparent;
 }
 
-.post-meta .list-inline li a,
+
 .blog-post .list-inline li a {
     color: inherit;
 }
+
+.post-meta li,
+.post-meta li a {
+    color: #777;
+}
+
 /*sub menu */
 .site-nav a {
 
