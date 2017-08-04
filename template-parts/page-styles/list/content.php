@@ -27,7 +27,7 @@
             <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
             <li><i class="fa fa-tag"></i> <a href="<?php the_permalink(); ?>"><?php the_category( ', ' )?></a></li>
             <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
-            <li><?php echo get_simple_likes_button( get_the_ID(), 0 ); ?></li>
+            <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
         </ul>
         <h2><a href="<?php the_permalink(); ?>">
             <?php 

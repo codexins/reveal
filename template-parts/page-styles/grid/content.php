@@ -39,7 +39,7 @@
 <!--                 <li><i class="fa fa-pencil"></i> <a href="<?php //echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php //echo esc_html( get_the_author() ); ?></a></li> -->
                 <li><b>Category:</b> <a href="<?php the_permalink(); ?>"><?php the_category( ', ' )?></a></li>
 <!--                 <li><i class="fa fa-comment"></i><?php // comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
-                <li><?php //echo get_simple_likes_button( get_the_ID(), 0 ); ?></li> -->
+                <li><?php //if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 );endif; ?></li> -->
             </ul>
 
             <div class="wrapper-content">

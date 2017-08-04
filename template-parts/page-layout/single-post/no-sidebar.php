@@ -4,7 +4,10 @@
 							/* Start the Loop */
 							while ( have_posts() ) : the_post();
 
-								reveal_set_post_views(get_the_ID());
+								if( function_exists( codexin_set_post_views( get_the_ID() ) ) ):
+									codexin_set_post_views(get_the_ID());
+								endif;
+								
 								get_template_part( 'template-parts/content', get_post_format()  );
 
 								if( reveal_option( 'reveal_single_button' ) == true ):

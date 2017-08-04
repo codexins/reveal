@@ -83,12 +83,12 @@ function reveal_scripts () {
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/main.js', array ( 'jquery' ), 1.1, true);
 
 
-	wp_enqueue_script( 'simple-likes-public-js', get_template_directory_uri() . '/assets/js/simple-likes-public.js', array( 'jquery' ), '0.5', false );
-	wp_localize_script( 'simple-likes-public-js', 'simpleLikes', array(
-		'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		'like' => __( 'Like', 'reveal' ),
-		'unlike' => __( 'Unlike', 'reveal' )
-	) ); 
+	// wp_enqueue_script( 'simple-likes-public-js', get_template_directory_uri() . '/assets/js/simple-likes-public.js', array( 'jquery' ), '0.5', false );
+	// wp_localize_script( 'simple-likes-public-js', 'simpleLikes', array(
+	// 	'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	// 	'like' => __( 'Like', 'reveal' ),
+	// 	'unlike' => __( 'Unlike', 'reveal' )
+	// ) ); 
 
 
 } 

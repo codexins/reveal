@@ -2172,6 +2172,8 @@ img{
     overflow: hidden;
     margin-top: 50px;
 }
+
+#primary .posts-nav a,
 .blog-content a.read-more {
     padding: 7px 15px 5px;
     text-transform: uppercase;
@@ -2183,6 +2185,8 @@ img{
     -o-transition: all .3s;
     transition: all .3s;
 }
+
+#primary .posts-nav a,
 .blog-content a.read-more {
     border: 1px solid #aaa;
     color: #333;
@@ -2240,6 +2244,8 @@ img{
 .one-content i {
     font-size: 30px;
 }
+
+#primary .posts-nav a:hover,
 .blog-content a.read-more:hover{
     background: #295970 ;
     color: #fff ;
