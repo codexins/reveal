@@ -446,7 +446,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-page-title-background',
                         'type'     => 'background',
-                        'title'    => esc_html__( 'Background', 'cruxstore' ),
+                        'title'    => esc_html__( 'Background', 'reveal' ),
                         'subtitle' => esc_html__( 'Page header with image, color, etc.', 'reveal' ),
                         'output'      => array( '#page_title.page-title' )
                     ),

@@ -8,9 +8,9 @@
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();
 
-								if( function_exists( 'codexin_set_post_views' ) ):
-									codexin_set_post_views(get_the_ID());
-								endif;
+							if( function_exists( 'codexin_set_post_views' ) ):
+								codexin_set_post_views(get_the_ID());
+							endif;
 								
 							get_template_part( 'template-parts/content', 'portfolio'  );
 
@@ -63,18 +63,6 @@
 						?>
 
 
-
-
-
-
-
-                    <div class="col-sm-12">
-                        <div class="previous-portfolio">
-                            <div class="nav-previous alignright">
-                                <a href="#" rel="prev">Previous Post »</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>

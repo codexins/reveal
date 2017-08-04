@@ -85,17 +85,7 @@
                     <?php the_content()?>
                 </p> 
             </div>
-            <div class="portfolio-pagination">
-                <div class=" blog-content ">
-                    <div class="nav-previous alignleft">
-                        <?php previous_post_link('%link', '« Previous Post ', FALSE); ?>
-
-                    </div>
-                    <div class="nav-next alignright ">
-                          <?php next_post_link('%link', ' Next Post  »', FALSE); ?>
-                    </div>
-                </div>
-            </div>
+            <?php reveal_post_link(); ?>
         </div>  
     </div>
 
