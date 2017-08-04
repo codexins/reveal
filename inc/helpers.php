@@ -154,11 +154,11 @@ if ( ! function_exists( 'reveal_excerpt' ) ) {
             if ( $excut < 0 ) {
                 echo mb_substr( $subex, 0, $excut );
             } else {
-                printf('%s', $subex);
+                 printf('%s', $subex);
             }
             echo '...';
         } else {
-            printf('%s', $excerpt);
+             printf('%s', $excerpt);
         }
     }
 }

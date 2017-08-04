@@ -14,7 +14,7 @@
     <div class="blog-post">
         <?php if(has_post_thumbnail()): ?>
                 <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('featured-single-image') ?>" class="img-responsive" alt="Blog Post">
+                    <img src="<?php the_post_thumbnail_url('single-post-image') ?>" class="img-responsive" alt="Blog Post">
                     <a href="<?php the_post_thumbnail_url('full') ?>" class="img-pop-up">
                     <div class="item-img-overlay">
                         <span></span>

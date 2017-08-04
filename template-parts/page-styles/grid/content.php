@@ -14,7 +14,7 @@
     <div class="blog-wrapper">
 
         <div class="img-thumb">
-            <div class="img-wrapper"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('blog-mini-image'); else: echo '//placehold.it/360X227'; endif; ?>" alt="" class="img-responsive"></div>
+            <div class="img-wrapper"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('blog-grid-image'); else: echo '//placehold.it/360X227'; endif; ?>" alt="" class="img-responsive"></div>
             <div class="meta">
                 <p><?php the_time('d'); ?></p>
                 <p><?php the_time('M'); ?></p>
@@ -23,7 +23,7 @@
 
 
         <div class="blog-content">
-            <h3 class="blog-title">
+            <h3 class="blog-title grid">
                 <?php 
                     $length_switch = reveal_option('reveal_blog_excerpt_lenght');
                     if( $length_switch ) :
@@ -36,11 +36,10 @@
             </h3>
 
             <ul class="list-inline post-detail post-meta">
-                <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
-                <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
-                <li><i class="fa fa-tag"></i> <a href="<?php the_permalink(); ?>"><?php the_category( ', ' )?></a></li>
-                <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
-                <li><?php echo get_simple_likes_button( get_the_ID(), 0 ); ?></li>
+<!--                 <li><i class="fa fa-pencil"></i> <a href="<?php //echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php //echo esc_html( get_the_author() ); ?></a></li> -->
+                <li><b>Category:</b> <a href="<?php the_permalink(); ?>"><?php the_category( ', ' )?></a></li>
+<!--                 <li><i class="fa fa-comment"></i><?php // comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
+                <li><?php //echo get_simple_likes_button( get_the_ID(), 0 ); ?></li> -->
             </ul>
 
             <div class="wrapper-content">

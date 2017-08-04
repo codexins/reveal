@@ -801,6 +801,10 @@ a.explore:hover {
     margin: 20px 0 10px;
 }
 
+.blog-title.grid {
+    margin-bottom:0;
+}
+
 .blog-more {
     padding-bottom: 0;
     margin-bottom: 0;
@@ -960,7 +964,7 @@ article.type-post {
         padding-right: 15px;
 }
 
-.post-meta .list-inline li i,
+.post-meta li i,
 .blog-post .list-inline li i {
     margin-right: 6px;
 }
@@ -991,7 +995,7 @@ article.type-post {
     border: 0;
 }
 
-.post-meta ul li:first-of-type,
+.post-meta li:first-of-type,
 .blog-post ul li:first-of-type {
     margin-left: 0;
     padding-left: 0 ;
@@ -1000,6 +1004,14 @@ article.type-post {
 .post-meta li:first-of-type i.fa-pencil,
 .blog-post li:first-of-type i.fa-pencil {
     margin-left: 0 !important;
+}
+
+ul.post-meta {
+    margin-top: 0;
+    border: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    line-height: 1.35em;
 }
 
 

@@ -15,7 +15,7 @@
         <?php if(has_post_thumbnail()): ?>
             <a href="<?php the_permalink(); ?>">
                 <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('featured-single-image') ?>" class="img-responsive" alt="Blog Post">
+                    <img src="<?php the_post_thumbnail_url('single-post-image') ?>" class="img-responsive" alt="Blog Post">
                     <div class="item-img-overlay">
                         <span></span>
                     </div>
@@ -52,7 +52,7 @@
                         'link_after'  => '</span>',
                         'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
                         'separator'   => '<span class="screen-reader-text">, </span>',
-                    );                 
+                    );          
                     wp_link_pages( $args );
 
 				else:
