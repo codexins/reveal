@@ -8,7 +8,7 @@
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();
 
-								if( function_exists( codexin_set_post_views( get_the_ID() ) ) ):
+								if( function_exists( 'codexin_set_post_views' ) ):
 									codexin_set_post_views(get_the_ID());
 								endif;
 								
