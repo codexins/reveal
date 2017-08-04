@@ -443,6 +443,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => array( )
                     ),
 
+                    array(
+                        'id'       => 'reveal-page-title-background',
+                        'type'     => 'background',
+                        'title'    => esc_html__( 'Background', 'cruxstore' ),
+                        'subtitle' => esc_html__( 'Page header with image, color, etc.', 'reveal' ),
+                        'output'      => array( '#page_title.page-title' )
+                    ),
+
 
                     array(
                         'id'       => 'reveal-bcrumbs',

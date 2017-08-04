@@ -164,7 +164,10 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'name'      => esc_html__( 'Background Image', 'reveal' ),
                 'desc'      => esc_html__('Upload Page Header Background Image', 'reveal'),
                 'id'        => $prefix . 'page_background',
+                //'type'      => 'image_advanced',
                 'type'      => 'image_advanced',
+                'max_file_uploads' => 1,
+                'max_status'       => true,
                 'clone'     => false,
             ),
         )
