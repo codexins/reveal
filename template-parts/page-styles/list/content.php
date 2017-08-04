@@ -52,7 +52,7 @@
                         'link_after'  => '</span>',
                         'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
                         'separator'   => '<span class="screen-reader-text">, </span>',
-                    );                 
+                    );          
                     wp_link_pages( $args );
 
 				else:
