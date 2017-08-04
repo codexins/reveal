@@ -416,19 +416,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'id'               => 'reveal-bc',
                 'subsection'       => true,
                 'fields'           => array(
-                    array(
-                        'id'       => 'reveal-bcrumbs',
-                        'type'     => 'switch',
-                        'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable Page-Title & Breadcrumbs', 'reveal' ),
-                        'desc'     => esc_html__('Breadcrumbs is a navigational aid that allows visitors to understand their current location in the context of a website.', 'reveal'),
-                        'default'  => true
-                    ), 
 
                     array(
                         'id'       => 'page-title-position',
                         'type'     => 'radio',
-                        'required' => array( 'reveal-bcrumbs', '=', '1' ),
                         'title'    => esc_html__( 'Title Position :', 'reveal' ),
                         'desc'     => esc_html__( 'Please Select Page Title Position ', 'reveal' ),
                         'options'  => array(
@@ -438,6 +429,31 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                                 ),
                         'default'  => '1',
                     ),
+
+                    array(
+                        'id'       => 'reveal-title-padding',
+                        'type'     => 'spacing',
+                        'mode'     => 'padding',
+                        'left'     => false,
+                        'right'    => false,
+                        'output'   => array( '#page_title.page-title' ),
+                        'units'          => array( 'px' ),
+                        'units_extended' => 'true',
+                        'title'    => esc_html__( 'Page Title padding', 'reveal' ),
+                        'default'  => array( )
+                    ),
+
+
+                    array(
+                        'id'       => 'reveal-bcrumbs',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable Page-Title & Breadcrumbs', 'reveal' ),
+                        'desc'     => esc_html__('Breadcrumbs is a navigational aid that allows visitors to understand their current location in the context of a website.', 'reveal'),
+                        'default'  => true
+                    ), 
+
+
 
                     array(
                         'id'       => 'page-bc-position',
@@ -464,75 +480,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'icon'             => 'dashicons dashicons-share',
                 'fields'           => array(
                     array(
-                        'id'       => 'reveal-twitter',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Twitter ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Twitter Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),
-                    array(
-                        'id'       => 'reveal-facebook',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Facebook ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Facebook Profile URL  ', 'reveal' ),
-                        'default'  => '',
+                        'id'    => 'opt-info-success',
+                        'type'  => 'info',
+                        'style' => 'success',
+                        'icon'  => 'el el-info-circle',
+                        'title'    => esc_html__( 'Social Media Information ', 'reveal' ),
+                        'desc'  => sprintf( '%1$s<b>%2$s</b>', esc_html__('In order to set the Social Media, please go to ', 'reveal'), esc_html__('Dashboard->Codexin Core->Social Media', 'reveal') ),
                     ),
 
-                    array(
-                        'id'       => 'reveal-instagram',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Instagram ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Instagram Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),
-
-                    array(
-                        'id'       => 'reveal-pinterest',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Pinterest ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Pinterest Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ), 
-
-                     array(
-                        'id'       => 'reveal-behance',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Behance ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Behance Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),
-
-                     array(
-                        'id'       => 'reveal-google-plus',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Google-Plus ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Google Plus Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),                       
-
-                     array(
-                        'id'       => 'reveal-linkedin',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Linkedin ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Linkedin Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),
-
-                     array(
-                        'id'       => 'reveal-youtube',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Youtube ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Youtube Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),
-
-                     array(
-                        'id'       => 'reveal-skype',
-                        'type'     => 'text',
-                        'title'    => esc_html__( 'Skype ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Insert Skype Profile URL  ', 'reveal' ),
-                        'default'  => '',
-                    ),
                 )
             );    
 
