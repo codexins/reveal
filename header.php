@@ -42,22 +42,19 @@
 	<?php endif; ?>
 	<!--  Site Loader finished -->
 
-
+	<!-- Initializing Mobile Menu -->
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left">
-
-		<button class="c-menu__close">&larr; Back</button>
-
+		<button class="c-menu__close">&larr; <?php esc_html_e( 'Back', 'reveal' ); ?></button>
 		<?php get_mobile_menu() ?>
+	</div><!-- end of Moblie Menu -->
 
-	</div>
-
-	
-
+	<!-- Mobile Menu Masking -->
 	<div id="c-mask" class="c-mask"></div>
 
+	<!-- Start of whole -->
+	<div id="whole" class="whole-site-wrapper">
 
-	<?php if( is_front_page() && !(is_home()) ): ?>
-	
+	<?php if( is_front_page() && !(is_home()) ): ?>	
 	<header id="header" class="header front-header fill-screen">
 	<?php else: ?>
 	<header id="header" class="header inner-header">
@@ -86,8 +83,7 @@
     <?php if( !is_front_page() ): ?>
         </div> <!-- end nav wrapper -->
     <?php endif; ?>
-
-	</header>
+	</header><!-- end of header -->
 
 	<?php get_template_part('template-parts/header/page', 'title'); ?>
 

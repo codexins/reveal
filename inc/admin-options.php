@@ -625,6 +625,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
+                            'loadmore'  => esc_html__( 'Load More Ajax', 'reveal' ),
                         ),
                         'default'   => 'button'
                     ),

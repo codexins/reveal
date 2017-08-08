@@ -21,7 +21,7 @@
  	
 
 
-	<section id="footer" class="footer">
+	<footer id="footer" class="footer">
 		<div class="container">
 			<?php 
 			if($reveal_footer == 1): get_template_part('template-parts/footer/footer', 'one');
@@ -43,7 +43,7 @@
 			<?php endif; ?>
 
 		</div> <!-- end of container -->
-	</section> <!-- end of footer -->
+	</footer> <!-- end of footer -->
 
 	<!-- Go to Top Button at right bottom of the window screen -->
 	<?php if( reveal_option( 'reveal_to_top' ) ): ?>

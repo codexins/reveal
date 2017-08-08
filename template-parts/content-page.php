@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
+<div id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix', 'page-entry-content')); ?>>
 		<?php 
 			the_content();  
             $args = array(
@@ -23,4 +23,4 @@
             wp_link_pages( $args );
 
 		 ?>
-</article><!-- #post-## -->
+</div><!-- #post-## -->
