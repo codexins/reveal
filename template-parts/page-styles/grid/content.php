@@ -16,8 +16,8 @@
         <div class="img-thumb">
             <div class="img-wrapper"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('blog-grid-image'); else: echo '//placehold.it/360X227'; endif; ?>" alt="" class="img-responsive"></div>
             <div class="meta">
-                <p><?php the_time('d'); ?></p>
-                <p><?php the_time('M'); ?></p>
+                <p><?php echo get_the_time( 'd' ); ?></p>
+                <p><?php echo get_the_time( 'M' ); ?></p>
             </div>
         </div>
 

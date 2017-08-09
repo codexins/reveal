@@ -15,7 +15,7 @@ if( !function_exists( 'reveal_custom_breadcrumbs' ) ) {
         $link_attr        = ' rel="v:url" property="v:title"';
         $link             = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
         $delimiter        = ' <i class="fa fa-angle-right"></i> ';              // Delimiter between crumbs
-        $before           = '<span class="current">'; // Tag before the current crumb
+        $before           = '<span class="current" property="v:title">'; // Tag before the current crumb
         $after            = '</span>';                // Tag after the current crumb
         $page_addon       = '';                       // Adds the page number if the query is paged
         $breadcrumb_trail = '';
@@ -211,12 +211,12 @@ if( !function_exists( 'reveal_custom_breadcrumbs' ) ) {
             // Do not show breadcrumbs on page one of home and frontpage
             $breadcrumb_output_link .= '';
         } else {
-            $breadcrumb_output_link .= '<a href="' . $home_link . '" rel="v:url" property="v:title">' . $home_text . '</a>';
+            $breadcrumb_output_link .= '<a href="' . $home_link . '" property="v:url">' . $home_text . '</a>';
             $breadcrumb_output_link .= $delimiter;
             $breadcrumb_output_link .= $breadcrumb_trail;
             $breadcrumb_output_link .= $page_addon;
         }
-        $breadcrumb_output_link .= '</div><!-- .breadcrumbs -->';
+        $breadcrumb_output_link .= '</div><!-- enf of breadcrumb -->';
 
         return $breadcrumb_output_link;
     }
