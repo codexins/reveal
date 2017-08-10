@@ -588,7 +588,7 @@ a.explore:hover {
     010 - Portfolio Section
 *************************************************************/
 
-#portfolio {
+.portfolios {
     overflow: hidden;
     margin-bottom: 0;
     margin-top: 80px;
