@@ -725,6 +725,12 @@ a.explore:hover {
     margin-top: 80px;
 }
 
+.blog .posts-nav {
+    padding-top: 40px;
+    border-top: 1px dashed #ddd;
+    margin-top: 40px;
+}
+
 .img-thumb {
     position: relative;
 }
@@ -2184,6 +2190,9 @@ img{
 .blog-content a.read-more {
     border: 1px solid #aaa;
     color: #333;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .new-1 {
