@@ -11,16 +11,37 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6 {
 }
 
 h1 { font-size: 32px; }
-h2 { font-size: 30px }
+h2 { font-size: 28px }
 h3 { font-size: 24px }
-h4 { font-size: 19px; }
-h5 { font-size: 16px; }
-h6 { font-size: 13px; }
+h4 { font-size: 21px; }
+h5 { font-size: 18px; }
+h6 { font-size: 15px; }
 
-h1, h2, h3, h4, h5, h6, p, ul, ol {
+h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl {
     margin-bottom: 25px;
 }
 
+dd {
+    margin-bottom: 15px;
+}
+
+blockquote {
+    font-size: 1em;
+    font-style: italic;
+}
+
+address {
+    font-style: italic;
+}
+
+td, th {
+    padding: 10px;
+}
+
+#wp-calendar td,
+#wp-calendar th {
+    padding:0;
+}
 
 a.navbar-brand {
     font-family: 'Montserrat', sans-serif;

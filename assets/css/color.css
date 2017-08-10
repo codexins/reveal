@@ -3,9 +3,36 @@ body {
     background: #fff;
 }
 
-a:hover, a:active, a:focus, a:visited {
+a {
     color: #295970;
+}
+
+a:hover, a:active, a:focus, a:visited {
+    color: #333;
     text-decoration: none;
+}
+
+blockquote {
+    border-left: 3px solid #e0e0e0;
+}
+
+tr {
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+
+th,
+tr.even {
+    background: #fafafa;
+}
+
+td, th {
+    border: 1px solid #ddd;
+}
+
+#wp-calendar td,
+#wp-calendar th {
+    border:0;
 }
 
 hr {
@@ -355,7 +382,7 @@ a.explore {
     border-top: 1px solid #ebeaea;
     border-bottom: 1px solid #ebeaea;
 }
-.blog-post h2 a {
+h2.post-title a {
     color: #295970;
 }
 
