@@ -332,3 +332,88 @@ p.form-submit {
 .widget_recent_comments.sidebar-widget li {
     padding-left: 20px;
 }
+
+/************************************************************
+    000 - Galary Column support
+*************************************************************/
+
+    .gallery-item {
+        display: inline-block;
+        text-align: left;
+        vertical-align: top;
+        margin: 0 0 1.5em;
+        padding: 0 1em 0 0;
+        width: 100%;
+    }
+
+    .gallery-columns-2 .gallery-item {
+        max-width: 50%;
+    }
+
+    .gallery-columns-3 .gallery-item {
+        max-width: 33.33%;
+    }
+
+    .gallery-columns-4 .gallery-item {
+        max-width: 25%;
+    }
+
+    .gallery-columns-5 .gallery-item {
+        max-width: 20%;
+    }
+
+    .gallery-columns-6 .gallery-item {
+        max-width: 16.66%;
+    }
+
+    .gallery-columns-7 .gallery-item {
+        max-width: 14.28%;
+    }
+
+    .gallery-columns-8 .gallery-item {
+        max-width: 12.5%;
+    }
+
+    .gallery-columns-9 .gallery-item {
+        max-width: 11.11%;
+    }
+
+    .gallery-columns-10 .gallery-item {
+        max-width: 10%;
+    }
+
+    .gallery-columns-11 .gallery-item {
+        max-width: 9.09%;
+    }
+
+    .gallery-columns-12 .gallery-item {
+        max-width: 8.33%;
+    }
+
+
+    .gallery-item a, 
+    .gallery-item a:hover, 
+    .gallery-item a:focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background: none;
+        display: inline-block;
+        width: 100%;
+    }
+
+
+    .gallery-item a img {
+        display: block;
+        width:100%;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -ms-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .gallery-item a:hover img, .gallery-item a:focus img {
+        opacity: .6;
+    }
