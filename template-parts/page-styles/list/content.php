@@ -84,7 +84,7 @@
 
     		<footer id="entry_footer">
                 <div class="tagcloud">
-    			 <?php the_tags('Tags: &nbsp',' ',''); ?>
+    			 <?php the_tags('Tags: &nbsp;',' ',''); ?>
                 </div>
     		</footer>
          <?php endif; ?>

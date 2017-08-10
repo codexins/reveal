@@ -1372,7 +1372,7 @@ body.overflow-fix {
     text-transform: capitalize;
 }
 
-#cx_wrapper.cx-wrapper a.liked span.cx-count {
+.cx-like-wrapper a.liked span.cx-count {
     vertical-align: initial;
 }
 
