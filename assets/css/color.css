@@ -35,6 +35,31 @@ td, th {
     border:0;
 }
 
+
+.page-links span {
+    border: 1px solid #295970;
+    background: #295970;
+    color: #fff;
+}
+
+.page-links a span {
+    background: transparent;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.page-links a:focus span,
+.page-links a:hover span {
+    background: #295970;
+    color: #fff;
+    border: 1px solid #295970;
+}
+
+span.page-links-title {
+    background: transparent;
+    color: #333;
+}
+
 hr {
     border-color: #ddd;
 }
