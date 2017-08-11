@@ -199,6 +199,22 @@ select {
     box-shadow: none;
 }
 
+.post-password-form label {
+    float: left;
+    margin-right: 15px;
+}
+
+.post-password-form input[type="password"] {
+    margin-left: 20px;
+}
+
+iframe, embed, object {
+    max-width:100%;
+}
+
+
+
+
 /* theme Base CSS */
 
 .page-entry-content,
@@ -259,7 +275,7 @@ article > section.kc_row:first-of-type {
     padding:0;
 }
 
-.comment-list li {
+.comment-list li.comment {
     list-style-type: none;
 }
 
