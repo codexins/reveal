@@ -47,36 +47,12 @@
 
 
     /*--------------------------------------------------------------
-	animating the numbers for counting up for the achievement section
-    ---------------------------------------------------------------- */
-
-    // $('.counter').counterUp({
-    //     delay: 100,
-    //     time: 3000
-    // });
-
-    /*--------------------------------------------------------------
 	Closes the Responsive Menu on Menu Item Click
     ---------------------------------------------------------------- */
 
     $('.navbar-collapse ul li a').click(function() {
         $('.navbar-toggle:visible').click();
     });
-
-    /*--------------------------------------------------------------
-	accordian on events section
-    ---------------------------------------------------------------- */
-
-    $('.accordion-toggle').on('click', function() {
-        $(this).closest('.panel-group').children().each(function() {
-            $(this).find('>.panel-heading').removeClass('active');
-        });
-
-        $(this).closest('.panel-heading').toggleClass('active');
-    });
-
-
-    
 
 
     /*--------------------------------------------------------------
@@ -135,39 +111,15 @@
     ---------------------------------------------------------------- */
     $('select').niceSelect();
 
+
     /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
-
-    // fadein effect of the loader
-    // $(document).on("click", "a[rel!='nofollow']", function () {
-    //     var newUrl = $(this).attr("href");
-    //     if (!newUrl || newUrl[0] === "#") {
-    //         return;
-    //     }
-    //     $("#preloader_1").fadeIn(function () {
-    //         location = newUrl;
-    //     });
-    //     return false;
-    // });
-    
-    // fadeout effect of the loader
-    // jQuery(window).load(function() {
-    //     jQuery(".loaders").delay(800).fadeOut("slow");
-    // });
-
-
-    $(window).on('beforeunload', function() { 
-        $('#preloader_1').fadeIn('fast');
-    });
-
 
     $(window).on('load', function() { 
         $('#preloader_1').delay(300).fadeOut('fast');
         $('body').addClass('overflow-fix');
     });
-
-
 
     
     /*--------------------------------------------------------------
