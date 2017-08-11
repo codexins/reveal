@@ -29,7 +29,7 @@
             <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
             <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
         </ul>
-        <h2><a href="<?php the_permalink(); ?>">
+        <h2 class="post-title"><a href="<?php the_permalink(); ?>">
             <?php 
                 $length_switch = reveal_option('reveal_blog_excerpt_lenght');
                 if( $length_switch ) :

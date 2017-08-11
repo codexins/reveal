@@ -1662,6 +1662,8 @@ h2.widgettitle {
 .nice-select, .nice-select.open .list {
     display: block;
     width: 100%;
+    max-height: 600px;
+    overflow-y: visible;
 }
 
 .nice-select .list {
@@ -1669,6 +1671,7 @@ h2.widgettitle {
     word-wrap: break-word;
     white-space: normal;
     width: 100%;
+    max-height: 600px;
 }
 
 .nice-select li::before {
