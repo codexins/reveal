@@ -123,15 +123,15 @@ class Reveal {
 		// Add support for post formats.
 		add_theme_support( 'post-formats',
 			array(
-				'aside',
+				// 'aside',
 				'image',
+				'gallery',
+				'audio',
 				'video',
 				'quote',
 				'link',
-				'gallery',
-				'status',
-				'audio',
-				'chat',
+				// 'status',
+				// 'chat',
 			)
 		);
 

@@ -173,6 +173,96 @@ function reveal_register_meta_boxes( $meta_boxes ) {
         )
     );
 
+    $meta_boxes[] = array(
+        'id'         => 'reveal-gallery-meta',
+        'title'      => esc_html__( 'Gallery', 'reveal' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+            array(
+                'name'      => esc_html__( 'Create Gallery', 'reveal' ),
+                'desc'      => esc_html__('Add images to create a slideshow', 'reveal'),
+                'id'        => $prefix . 'gallery',
+                'type'      => 'image_advanced',
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
+        'id'         => 'reveal-video-meta',
+        'title'      => esc_html__( 'Video', 'reveal' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+            array(
+                'name'      => esc_html__( 'Embed Video', 'reveal' ),
+                'desc'      => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Input Video Links from Youtube, Vimeo and ', 'reveal'), esc_url('//codex.wordpress.org/Embeds'), esc_html__('all supported sites by WordPress.', 'reveal')),
+                'id'        => $prefix . 'video',
+                'type'      => 'oembed',
+                'size'      => 95
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
+        'id'         => 'reveal-audio-meta',
+        'title'      => esc_html__( 'Audio Placeholder metabox', 'reveal' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+            array(
+                'name'      => esc_html__( 'Placeholder', 'reveal' ),
+                'desc'      => esc_html__('Audio Test metabox', 'reveal'),
+                'id'        => $prefix . 'audio',
+                //'type'      => 'image_advanced',
+                'type'      => 'text',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 95,
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
+        'id'         => 'reveal-quote-meta',
+        'title'      => esc_html__( 'Quote', 'reveal' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+            array(
+                'name'      => esc_html__( 'Quote Text', 'reveal' ),
+                'desc'      => esc_html__('Insert The Quote Text', 'reveal'),
+                'id'        => $prefix . 'quote_text',
+                'type'      => 'textarea',
+                'rows'      => '5'
+            ),
+
+            array(
+                'name'      => esc_html__( 'Name', 'reveal' ),
+                'desc'      => esc_html__('Author Name', 'reveal'),
+                'id'        => $prefix . 'quote_name',
+                'type'      => 'text',
+                'size'      => 80,
+            ),
+
+            array(
+                'name'      => esc_html__( 'Source', 'reveal' ),
+                'desc'      => esc_html__('Source URL', 'reveal'),
+                'id'        => $prefix . 'quote_source',
+                'type'      => 'url',
+                'size'      => 80,
+            ),
+        )
+    );
+
 
 
     $meta_boxes[] = array(
@@ -298,4 +388,5 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
     return $meta_boxes;
 }
+
 

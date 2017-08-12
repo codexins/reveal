@@ -505,12 +505,13 @@ function retina_support_create_images( $file, $width, $height, $crop = false ) {
     return false;
 }
 
-add_filter( 'delete_attachment', 'delete_retina_support_images' );
+
 /**
  * Delete retina-ready images
  *
  * This function is attached to the 'delete_attachment' filter hook.
  */
+add_filter( 'delete_attachment', 'delete_retina_support_images' );
 function delete_retina_support_images( $attachment_id ) {
     $meta = wp_get_attachment_metadata( $attachment_id );
     $upload_dir = wp_upload_dir();
@@ -526,5 +527,24 @@ function delete_retina_support_images( $attachment_id ) {
         }
     }
 }
+
+
+
+/**
+ * jQuery show/hide for meta boxes
+ * 
+ * Hides/Shows boxes on demand - depending on your selection inside the post formats meta box
+ */
+function codexin_post_formats( $hook ) {
+ 
+    global $post;
+ 
+    if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
+        if ( 'post' === $post->post_type ) {
+            wp_enqueue_script(  'codexin-post-format', get_template_directory_uri() . '/assets/js/admin/post-format.js' );
+        }
+    }
+}
+add_action( 'admin_enqueue_scripts', 'codexin_post_formats', 10, 1 );
 
 

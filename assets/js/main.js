@@ -144,26 +144,26 @@
     
     $('.img-pop-up').magnificPopup({
         type: 'image',
-        mainClass: 'mfp-with-zoom', 
-        fixedContentPos: true,
-        fixedBgPos: true,   
-        zoom: {
-            enabled: true,
-            duration: 300, 
-            easing: 'ease-in-out',
-            opener: function(openerElement) {
-                return openerElement.is('a') ? openerElement : openerElement.find('a');
-            }
+        mainClass: 'mfp-fade', 
+        fixedContentPos: false,
+        fixedBgPos: true,
+        overflowY: 'auto',
+        closeBtnInside: true,
+        preloader: false,
+        midClick: true,
+        gallery: {
+            enabled: true
         },
-        callbacks: {
-            open: function() {
-                jQuery('body').addClass('noscroll');
+        removalDelay: 300,
+        // callbacks: {
+        //     open: function() {
+        //         jQuery('body').addClass('noscroll');
                 
-            },
-            close: function() {
-                jQuery('body').removeClass('noscroll');                
-            }
-        }
+        //     },
+        //     close: function() {
+        //         jQuery('body').removeClass('noscroll');                
+        //     }
+        // }
     });
 
     /*--------------------------------------------------------------
@@ -202,7 +202,20 @@
 
     });
 
- 
+     $(".gallery-carousel").owlCarousel({
+
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        navigation: true,
+        pagination: true,
+        items: 1,
+        itemsDesktop: [1199, 1],
+        itemsDesktopSmall: [991, 1],
+        itemsTablet: [767, 1],
+        itemsTabletSmall: [599, 1],
+        itemsMobile: [420, 1]
+
+    });
+
        
 
 
