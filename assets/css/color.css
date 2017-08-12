@@ -173,28 +173,13 @@ a.explore {
 /***********************************
     002 - About Section
 ***********************************/
-.secondary-title::after {
-    background: #295970;
-}
+
 .img-thumb .content-wrapper,
 .img-thumb a {
     color: #fff;
 }
-.img-thumb .content-wrapper::before,
-.img-thumb a::before {
-    border-top: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-}
-.img-thumb .content-wrapper::after,
-.img-thumb a::after {
-    border-right: 2px solid #fff;
-    border-left: 2px solid #fff;
-}
-.img-thumb .content-wrapper,:hover .single-content-wrapper,
-.img-thumb a:hover .single-content-wrapper {
-    background: #166f9a;
-    background: rgba(41, 89, 112, 0.75);
-}
+
+
 .single-content {
     color: #fff;
 }
@@ -238,16 +223,7 @@ a.explore {
     background: #555;
 
 }
-.content-mask a {
-    background: #295970 none repeat scroll 0 0;
-    border: 2px solid #295970;
-    color: #fff;
 
-}
-.content-mask a:hover {
-    background: #fff;
-    color: #295970;
-}
 .events-description .panel-heading {
     background: transparent;
 }
@@ -292,27 +268,6 @@ a.explore {
     color: #333;
 }
 .quote-text p.quote-author-name::before {
-    background: #295970;
-}
-/***********************************
-    008 - Team Section
-***********************************/
-.single-team-wrapper {
-    background: rgb(41, 89, 112);
-    background: rgba(41, 89, 112, 0.75);
-    box-shadow: 5px 5px 5px 0 #295970;
-}
-.team-social {
-    color: #fff;
-}
-
-.team-social i {
-    color: #295970;
-    background: #fff;
-}
-
-.team-social i:hover {
-    color: #fff;
     background: #295970;
 }
 

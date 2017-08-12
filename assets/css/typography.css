@@ -154,19 +154,8 @@ a.explore {
 .quote-text p.quote-author-name {
     font-family: 'Lobster', cursive;
 }
-/***********************************
-    008 - Team Section
-***********************************/
 
-.team-social i {
-    font-size: 20px;
-}
-.team-description p:first-child {
-    font-weight: bold;
-}
-.team-description p:last-child {
-    font-style: italic;
-}
+
 /***********************************
     010 - Portfolio Section
 ***********************************/
