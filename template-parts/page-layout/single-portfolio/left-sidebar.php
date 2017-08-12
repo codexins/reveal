@@ -22,7 +22,7 @@
 
 								if( reveal_option( 'reveal_portfolio_comments' ) ):
 									echo 'true';
-									comments_template();
+									comments_template('', true);
 								endif;
 
 

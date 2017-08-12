@@ -437,7 +437,7 @@ function reveal_comment_function($comment, $args, $depth) {
         <div id="comment-<?php comment_ID(); ?>" class="clearfix">
             <div class="comment-single">
                 <div class="comment-single-left comment-author vcard">
-                <?php echo get_avatar($comment,$size='48'); ?>
+                <?php echo get_avatar($comment,$size='90'); ?>
                 </div>
 
                 <div class="comment-single-right comment-info">

@@ -15,7 +15,7 @@
 								// endif;
 
 								if( reveal_option( 'reveal_portfolio_comments' ) ):
-									comments_template();
+									comments_template('', true);
 								endif;
 
 

@@ -15,7 +15,7 @@
 								endif;
 
 								if( reveal_option( 'reveal_post_comments' ) ):
-									comments_template();
+									comments_template('', true);
 								endif;
 								
 							endwhile; ?>
