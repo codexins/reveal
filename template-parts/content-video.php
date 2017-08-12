@@ -16,7 +16,7 @@
         if ( ! post_password_required() ):
             $cx_embed = rwmb_meta( 'reveal_video', 'type=oembed' );
             echo '<div class="embed">';
-                echo $cx_embed;
+                echo sprintf( '%s', $cx_embed );
             echo '</div>';
         endif; ?>       
         <ul class="list-inline post-detail">

@@ -200,7 +200,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'      => esc_html__( 'Embed Video', 'reveal' ),
-                'desc'      => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Input Video Links from Youtube, Vimeo and ', 'reveal'), esc_url('//codex.wordpress.org/Embeds'), esc_html__('all supported sites by WordPress.', 'reveal')),
+                'desc'      => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Insert Video Links from Youtube, Vimeo and ', 'reveal'), esc_url('//codex.wordpress.org/Embeds'), esc_html__('all supported sites by WordPress.', 'reveal')),
                 'id'        => $prefix . 'video',
                 'type'      => 'oembed',
                 'size'      => 95
