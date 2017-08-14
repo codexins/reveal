@@ -202,18 +202,14 @@
 
     });
 
-     $(".gallery-carousel").owlCarousel({
-
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
-        navigation: true,
-        pagination: true,
-        items: 1,
-        itemsDesktop: [1199, 1],
-        itemsDesktopSmall: [991, 1],
-        itemsTablet: [767, 1],
-        itemsTabletSmall: [599, 1],
-        itemsMobile: [420, 1]
-
+     $(".gallery-carousel").slick({
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+          'arrows': true,
+          'prevArrow': '<span class="alignleft"><i class="fa fa-angle-left"></i></span>',
+          'nextArrow': '<span class="alignright"><i class="fa fa-angle-right"></i></span>',
     });
 
        

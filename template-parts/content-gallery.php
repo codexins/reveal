@@ -15,7 +15,7 @@
     <?php 
     if ( ! post_password_required() ):
 
-        $cx_gallery = rwmb_meta( 'reveal_gallery', 'type=image_advanced&size=single-post-image' );
+        $cx_gallery = rwmb_meta( 'reveal_gallery', 'type=image_advanced&size=gallery-format-image' );
         echo '<div class="gallery-carousel">';
         foreach ($cx_gallery as $cx_image) {
             echo '<div class="item item-img-wrap">';

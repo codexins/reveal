@@ -26,8 +26,7 @@ function reveal_scripts () {
 	//Load the stylesheets
 	wp_enqueue_style( 'bootstrap-stylesheet', get_template_directory_uri() . '/assets/css/bootstrap.min.css',false,'3.3.7','all');
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css',false,'all');
-	wp_enqueue_style( 'owl-carousel-stylesheet', get_template_directory_uri() . '/assets/css/owl.carousel.css',false,'1.1','all');
-	wp_enqueue_style( 'owl-theme-stylesheet', get_template_directory_uri() . '/assets/css/owl.theme.css',false,'1.1','all');
+	wp_enqueue_style( 'slick-stylesheet', get_template_directory_uri() . '/assets/css/slick.css',false,'1.1','all');
 	wp_enqueue_style( 'magnific-stylesheet', get_template_directory_uri() . '/assets/css/magnific-popup.css',false,'1.1','all');
 	wp_enqueue_style( 'typography-stylesheet', get_template_directory_uri() . '/assets/css/typography.css',false,'1.1','all');
 	wp_enqueue_style( 'color-stylesheet', get_template_directory_uri() . '/assets/css/color.css',false,'1.1','all');
@@ -54,7 +53,7 @@ function reveal_scripts () {
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_script( 'easing-js', get_template_directory_uri() . '/assets/js/jquery.easing.1.3.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_script( 'magnific-js', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array ( 'jquery' ), 1.1, true);
-		
+	
 	//For Mobile Menu
 	wp_enqueue_script( 'mobile-menu-script', get_template_directory_uri() . '/assets/js/menu.js', array ( 'jquery' ), 1.1, true);
 	wp_enqueue_script( 'parallax-js', get_template_directory_uri() . '/assets/js/parallax.js', array ( 'jquery' ), 1.1, true);
@@ -72,8 +71,8 @@ function reveal_scripts () {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	if( ! wp_script_is( 'owl-carousel-js', 'enqueued' ) ) {
-	    wp_enqueue_script( 'owl-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array ( 'jquery' ), 1.1, true);
+	if( ! wp_script_is( 'slick-js', 'enqueued' ) ) {
+	    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array ( 'jquery' ), 1.1, true);
 	}
 
 	// $gmap_api_key = reveal_option('reveal-google-map-api-key');
