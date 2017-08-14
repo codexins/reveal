@@ -22,7 +22,7 @@
             $cx_rel = ( !empty( $link_rel ) ) ? 'rel="'. $link_rel .'"' : '';
             ?>
             <div class="post-link">
-                <a href="<?php echo esc_url( $link_url ); ?>" <?php echo $cx_rel; ?>>
+                <a href="<?php echo esc_url( $link_url ); ?>" <?php echo $cx_rel; ?> target="_blank">
                     <div class="post-format-link">
                         <span class="icon"></span>
                         <p><?php echo ( !empty( $link_txt ) ) ? $link_txt : get_the_title(); ?></p>

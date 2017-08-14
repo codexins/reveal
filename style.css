@@ -1037,11 +1037,13 @@ ul.post-meta {
     height: 100%;
 }
 
-.post-link a,
 .post-quote {
     padding: 25px 25px 10px 25px;
 }
 
+.post-link .post-format-link{
+    padding: 15px 25px 1px 25px;
+}
 
 .post-quote span {
     font-style: normal;
@@ -1058,7 +1060,6 @@ ul.post-meta {
     display: block;
     margin: 10px 0 0 0;
     font-size: 14px;
-    color: #d0d0d0;
 }
 
 .post-quote .icon::before {
@@ -1075,7 +1076,7 @@ ul.post-meta {
 
 .post-link .icon::before {
     font-family: FontAwesome;
-    font-size: 30px;
+    font-size: 26px;
     content: "\f0c1";
     position: relative;
     height: 15px;
@@ -1093,17 +1094,15 @@ ul.post-meta {
 .post-link p {
     font-size: 24px;
     padding-left: 20px;
-    border-left: 2px solid #ccc;
-    margin-left: 10px;
-    color: #999;
+    margin-left: 55px;
+    text-transform: capitalize;
 }
 
-
-.post-link a:hover {
-    color: #333;
+.post-format-link,
+.post-link p,
+.post-link span {
+    transition: all 0.3s;
 }
-
-
 
 #entry_footer .caption i.fa {
     color: #333;
