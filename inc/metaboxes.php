@@ -200,7 +200,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'      => esc_html__( 'Embed Video', 'reveal' ),
-                'desc'      => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Insert Video Links from Youtube, Vimeo and ', 'reveal'), esc_url('//codex.wordpress.org/Embeds'), esc_html__('all supported sites by WordPress.', 'reveal')),
+                'desc'      => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Insert Video Links from Youtube, Vimeo and ', 'reveal'), esc_url('//codex.wordpress.org/Embeds'), esc_html__('all Video supported sites by WordPress.', 'reveal')),
                 'id'        => $prefix . 'video',
                 'type'      => 'oembed',
                 'size'      => 95
@@ -217,14 +217,11 @@ function reveal_register_meta_boxes( $meta_boxes ) {
         'fields' => array(
 
             array(
-                'name'      => esc_html__( 'Placeholder', 'reveal' ),
-                'desc'      => esc_html__('Audio Test metabox', 'reveal'),
+                'name'      => esc_html__( 'Embed Audio', 'reveal' ),
+                'desc'      => sprintf('%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__('Insert Audio Links from Soundcloud, Spotify and ', 'reveal'), esc_url('//codex.wordpress.org/Embeds'), esc_html__('all Music supported sites by WordPress.', 'reveal')),
                 'id'        => $prefix . 'audio',
-                //'type'      => 'image_advanced',
-                'type'      => 'text',
-                'type'  => 'text',
-                'clone' => false,
-                'size'  => 95,
+                'type'      => 'oembed',
+                'size'      => 95
             ),
         )
     );
@@ -259,6 +256,40 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'        => $prefix . 'quote_source',
                 'type'      => 'url',
                 'size'      => 80,
+            ),
+        )
+    );
+
+    $meta_boxes[] = array(
+        'id'         => 'reveal-link-meta',
+        'title'      => esc_html__( 'Link', 'reveal' ),
+        'post_types' => array( 'post' ),
+        'context'    => 'normal',
+        'priority'   => 'high',
+        'fields' => array(
+
+            array(
+                'name'      => esc_html__( 'Link URL', 'reveal' ),
+                'desc'      => esc_html__('Insert Link URL', 'reveal'),
+                'id'        => $prefix . 'link_url',
+                'type'      => 'text',
+                'size'  => 95,
+            ),
+
+            array(
+                'name'      => esc_html__( 'Link Text', 'reveal' ),
+                'desc'      => esc_html__('Insert Link Text', 'reveal'),
+                'id'        => $prefix . 'link_text',
+                'type'      => 'text',
+                'size'  => 95,
+            ),
+
+            array(
+                'name'      => esc_html__( 'Link Relation (Optional)', 'reveal' ),
+                'desc'      => esc_html__('Set the link "rel" attribute(ex: nofollow, dofollow, etc.', 'reveal'),
+                'id'        => $prefix . 'link_rel',
+                'type'      => 'text',
+                'size'  => 95,
             ),
         )
     );

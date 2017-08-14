@@ -1019,7 +1019,8 @@ ul.post-meta {
     line-height: 1.35em;
 }
 
-.single-format-video .embed {
+.format-audio .embed,
+.format-video .embed {
     margin-bottom: 25px;
     position: relative;
     padding: 0px;
@@ -1036,21 +1037,69 @@ ul.post-meta {
     height: 100%;
 }
 
+.post-link a,
 .post-quote {
-    background: #fafafa;
     padding: 25px 25px 10px 25px;
 }
+
 
 .post-quote span {
     font-style: normal;
     display: block;
     margin: 10px 0 0 0;
     font-size: 15px;
-    color: #999;
     transition: all 0.3s
 }
 
-.post-quote a:hover span {
+
+.post-link span.icon,
+.post-quote span.icon {
+    text-decoration: none;
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #d0d0d0;
+}
+
+.post-quote .icon::before {
+    font-family: FontAwesome;
+    font-size: 40px;
+    content: "\f10d";
+    position: relative;
+    height: 15px;
+    width: 25px;
+    display: block;
+    float: left;
+    margin: 21px 0px 0px 10px;
+}
+
+.post-link .icon::before {
+    font-family: FontAwesome;
+    font-size: 30px;
+    content: "\f0c1";
+    position: relative;
+    height: 15px;
+    width: 25px;
+    display: block;
+    float: left;
+    margin: 3px 10px 0px 10px;
+}
+
+.post-quote blockquote {
+    margin-left: 55px;
+    border: 0;
+}
+
+.post-link p {
+    font-size: 24px;
+    padding-left: 20px;
+    border-left: 2px solid #ccc;
+    margin-left: 10px;
+    color: #999;
+}
+
+
+.post-link a:hover {
     color: #333;
 }
 

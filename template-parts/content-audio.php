@@ -14,30 +14,11 @@
     <div class="blog-post">
         <?php 
         if ( ! post_password_required() ):
-            $cx_quote = rwmb_meta( 'reveal_quote_text', 'type=textarea' );
-            $cx_name = rwmb_meta( 'reveal_quote_name', 'type=text' );
-            $cx_source = rwmb_meta( 'reveal_quote_source', 'type=url' );
-
-            if( !empty( $cx_quote ) ): ?>
-                <div class="post-quote">
-                <span class="icon"></span>
-                    <blockquote>
-                        <?php printf( '%s', $cx_quote ); ?>
-
-                    <?php if( !empty( $cx_source ) ): ?>
-                    <a href="<?php echo esc_url( $cx_source ); ?>">
-                    <?php endif; ?>
-                        <?php if( !empty( $cx_name ) ): ?>
-                        <span><?php echo ' - ' . esc_html( $cx_name ); ?></span>
-                        <?php endif; ?>
-                    <?php if( !empty( $cx_source ) ): ?>
-                    </a>
-                    <?php endif; ?>
-                    </blockquote>
-                </div>
-            <?php endif; ?>
-
-        <?php endif; ?>     
+            $cx_embed = rwmb_meta( 'reveal_audio', 'type=oembed' );
+            echo '<div class="embed">';
+                echo sprintf( '%s', $cx_embed );
+            echo '</div>';
+        endif; ?>       
         <ul class="list-inline post-detail">
             <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
             <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
