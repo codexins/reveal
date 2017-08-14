@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
         "#reveal-video-meta",
         "#reveal-audio-meta",
         "#reveal-quote-meta",
+        "#reveal-link-meta",
     ];
 
     var ids = metaboxes.join(", ");
@@ -28,20 +29,5 @@ jQuery(document).ready(function($) {
 
     // Show Default checked.
     $("#reveal-" + cx_input_selected + "-meta").show().insertAfter($("#titlediv")).css({ "marginTop": "20px", "marginBottom": "0px" });
-
-    // Behaviour for post format image
-    // if( $( "input#post-format-image" ).is(':checked') ){
-    //     $("#postimagediv").insertAfter($("#titlediv")).css({ "marginTop": "20px", "marginBottom": "0px" });
-    // }
-    // $( "input#post-format-image" ).change( function() {
-    //     if( $(this).is(':checked') ){
-    //         $("#postimagediv").insertAfter($("#titlediv")).css({ "marginTop": "20px", "marginBottom": "0px" });
-    //     }
-    // } );
-    // $( ":input:not(#post-format-image)" ).change( function() {
-    //     $("#postimagediv").insertAfter($("#tagsdiv-post_tag"));
-    // } );
-
-
 
 });

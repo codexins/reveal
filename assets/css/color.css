@@ -366,6 +366,53 @@ h2.post-title a {
     color: #295970;
 }
 
+.post-link .post-format-link {
+    background: #999;
+}
+
+.post-quote {
+    background: #f5f5f5;
+}
+
+.post-link .post-format-link:hover {
+    -webkit-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+    -ms-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+    -o-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+    box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+}
+
+.post-link span {
+    color: #fff;
+}
+
+.post-quote span {
+    color: #999;
+}
+
+.post-quote a:hover span {
+    color: #333;
+}
+
+.post-link a:hover span,
+.post-link a:hover p {
+    color: #fafafa;
+}
+
+.post-link a:hover p {
+    border-left: 2px solid #fafafa;
+}
+
+.post-link p,
+.post-link span.icon,
+.post-quote span.icon {
+    color: #d0d0d0;
+}
+
+.post-link p {
+    border-left: 2px solid #d0d0d0;
+}
+
 
 
 /***********************************

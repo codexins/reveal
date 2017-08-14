@@ -66,8 +66,9 @@
 		width: 79%;
 	    width: calc(100% - 95px);
 	}
+
 /*---------------------------
-	Mobile Menu (add Sazad)
+	Mobile Menu
 ----------------------------*/
 
 	
@@ -144,9 +145,18 @@
 } /*end of (min-width: 768px) and (max-width: 991px)*/
 
 
+@media only screen and (max-width: 991px) {
 
+	.post-quote .icon::before {
+		font-size: 30px;
+		margin-top: 18px;
+	}
 
+	.post-quote blockquote {
+		margin-left: 40px;
+	}
 
+} /*end of (max-width: 991px)*/
 
 @media only screen and (max-width: 767px) {
 	.comment-single-left {
@@ -175,7 +185,7 @@
 	    margin: 5px 0 20px 15px;
 	}
 /*-------------------------
-Mobile Menu(Add Sazzad)
+Mobile Menu
 --------------------------*/
 .navbar {
 	margin-bottom: 0;
@@ -583,6 +593,13 @@ body.has-active-menu {
 	    /*padding-bottom: 25px;*/
 	}
 
+	.post-link p {
+		margin-bottom: 15px;
+	}
+
+	.post-link span.icon {
+		margin: 0;
+	}
 
 
 
@@ -700,6 +717,41 @@ body.has-active-menu {
 
 	a.explore {
 		bottom: 10px;
+	}
+
+	.post-quote {
+	    padding-top: 15px;
+	    padding-bottom: 1px;
+	}
+
+	.post-quote .icon::before {
+	    font-size: 24px;
+	    margin-top: 14px;
+	    margin-left: 0;
+	}
+
+	.post-quote blockquote {
+	    margin-left: 25px;
+	    padding-right: 0;
+	    font-size: 15px;
+	}
+
+	.post-quote a span {
+		font-size: 14px;
+	}
+
+	.post-link .post-format-link {
+		padding-left: 15px;
+	}
+
+	.post-link .icon::before {
+		margin-left: 2px;
+		font-size: 20px;
+	}
+
+	.post-link p {
+	    margin-left: 40px;
+	    font-size: 20px;
 	}
 
 } /*end of (max-width: 479px)*/
