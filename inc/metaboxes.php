@@ -285,6 +285,20 @@ function reveal_register_meta_boxes( $meta_boxes ) {
             ),
 
             array(
+                'name'      => esc_html__( 'Open link in a new window?', 'reveal' ),
+                'desc'      => esc_html__('Select "yes" to open link in a new window', 'reveal'),
+                'id'        => $prefix . 'link_target',
+                'type'      => 'select',
+                'options'   => array(
+                        '_blank' => __('Yes', 'reveal'),
+                        '_self' => __('No', 'reveal'),
+                    ),
+
+                'std'       => '_blank',
+                'size'  => 95,
+            ),
+
+            array(
                 'name'      => esc_html__( 'Link Relation (Optional)', 'reveal' ),
                 'desc'      => esc_html__('Set the link "rel" attribute(ex: nofollow, dofollow, etc.', 'reveal'),
                 'id'        => $prefix . 'link_rel',

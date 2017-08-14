@@ -367,7 +367,8 @@ h2.post-title a {
 }
 
 .post-link .post-format-link {
-    background: #999;
+    background: #f1f1f1;
+    border: 1px solid #eee;
 }
 
 .post-quote {
@@ -375,11 +376,17 @@ h2.post-title a {
 }
 
 .post-link .post-format-link:hover {
-    -webkit-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+/*    -webkit-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
     -ms-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
     -o-box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
-    box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);
+    box-shadow: 0px 15px 60px -22px rgba(0,0,0,0.5);*/
+
+-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+-ms-box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+-o-box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
+box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
 }
 
 .post-link span {
@@ -394,23 +401,23 @@ h2.post-title a {
     color: #333;
 }
 
-.post-link a:hover span,
+/*.post-link a:hover span,
 .post-link a:hover p {
     color: #fafafa;
 }
-
-.post-link a:hover p {
+*/
+/*.post-link a:hover p {
     border-left: 2px solid #fafafa;
-}
+}*/
 
 .post-link p,
 .post-link span.icon,
 .post-quote span.icon {
-    color: #d0d0d0;
+    color: #333;
 }
 
 .post-link p {
-    border-left: 2px solid #d0d0d0;
+    border-left: 2px solid #333;
 }
 
 
