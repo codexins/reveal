@@ -16,18 +16,28 @@
     if ( ! post_password_required() ):
 
         $cx_gallery = rwmb_meta( 'reveal_gallery', 'type=image_advanced&size=gallery-format-image' );
-        echo '<div class="gallery-carousel">';
-        foreach ($cx_gallery as $cx_image) {
-            echo '<div class="item item-img-wrap">';
-                    echo '<img src="'. $cx_image['url'] .'" alt="'. get_the_title() .'" class="img-responsive"/>';
-                    echo '<a href="'. $cx_image['full_url'] .'" class="img-pop-up">';
-                        echo '<div class="item-img-overlay">';
-                            echo '<span></span>';
-                        echo '</div>';
-                    echo '</a>';
-            echo '</div>';
-        }
-        echo '</div>';
+        echo '<div class="gallery-carousel image-pop-up">';
+        foreach ($cx_gallery as $cx_image) { 
+
+            $image_data =  wp_get_attachment_metadata( $cx_image['ID'] );
+            $data_size  = $image_data['width'] . 'x' . $image_data['height'];
+            $caption    = $cx_image['caption'];
+            $img_alt    = ( !empty( $cx_image['alt'] ) ) ? 'alt="' .  esc_attr( $cx_image['alt'] ) . '"' : ''; 
+
+            ?>
+
+            <figure class="item-img-wrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="<?php echo esc_url( $cx_image['full_url'] ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
+                    <img src="<?php echo esc_url( $cx_image['url'] ); ?>" itemprop="thumbnail" <?php echo $img_alt; ?> class="img-responsive" />
+                    <div class="item-img-overlay">
+                        <span></span>
+                    </div>
+                </a>
+                <figcaption itemprop="caption description"><?php echo esc_html( $caption ); ?></figcaption>
+            </figure>
+
+    <?php    }
+        echo '</div><!-- end of gallery-carousel -->';
 
     endif;
 
@@ -44,15 +54,15 @@
 			<?php 
                the_content();
 
-               $args = array(
-                'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
-                'after'       => '</div>',
-                'link_before' => '<span>',
-                'link_after'  => '</span>',
-                'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
-                'separator'   => '<span class="screen-reader-text">, </span>',
+                $args = array(
+                    'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
+                    'after'       => '</div>',
+                    'link_before' => '<span>',
+                    'link_after'  => '</span>',
+                    'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
+                    'separator'   => '<span class="screen-reader-text">, </span>',
                 );                 
-               wp_link_pages( $args );
+                wp_link_pages( $args );
            ?>
 
 		</div><!-- .entry-content -->

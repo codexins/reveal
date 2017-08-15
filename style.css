@@ -211,6 +211,10 @@ input[type="button"]:hover{
     font-weight: bold;
 }
 
+.image-pop-up figcaption {
+    display: none;
+}
+
 /************************************************************
     001 - Header Section
 *************************************************************/
@@ -1359,7 +1363,7 @@ a.more:hover {
     position: fixed;
     right: 15px;
     width: 40px;
-    z-index: 9999;
+    z-index: 999;
     -webkit-transition: all .4s ease 0s;
     -moz-transition: all .4s ease 0s;
     -ms-transition: all .4s ease 0s;

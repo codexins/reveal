@@ -300,7 +300,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
 
             array(
                 'name'      => esc_html__( 'Link Relation (Optional)', 'reveal' ),
-                'desc'      => esc_html__('Set the link "rel" attribute(ex: nofollow, dofollow, etc.', 'reveal'),
+                'desc'      => esc_html__('Set the link "rel" attribute(ex: nofollow, dofollow, etc.)', 'reveal'),
                 'id'        => $prefix . 'link_rel',
                 'type'      => 'text',
                 'size'  => 95,

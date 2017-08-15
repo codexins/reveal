@@ -10,18 +10,32 @@
 ?>
 
 
+
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
     <div class="blog-post">
-        <?php if(has_post_thumbnail()): ?>
-                <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('single-post-image') ?>" class="img-responsive" alt="Blog Post">
-                    <a href="<?php the_post_thumbnail_url('full') ?>" class="img-pop-up">
-                    <div class="item-img-overlay">
-                        <span></span>
-                    </div>
+        <?php if(has_post_thumbnail()):
+
+            $image      = wp_prepare_attachment_for_js( get_post_thumbnail_id( $post->ID ) );
+            $data_size  = $image['width'] . 'x' . $image['height'];
+            $image_alt  = ( !empty( $image['alt'] ) ) ? 'alt="' . esc_attr( $image['alt'] ) . '"' : 'alt="' .get_the_title() . '"';
+            $image_cap  = $image['caption'];
+
+
+         ?>
+            <div class="image-pop-up item-img-wrap" itemscope itemtype="http://schema.org/ImageGallery">
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <a href="<?php esc_url( the_post_thumbnail_url('full') ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
+                        <img src="<?php esc_url( the_post_thumbnail_url('single-post-image') ); ?>" itemprop="thumbnail" <?php echo $image_alt; ?> class="img-responsive" />
+                        <div class="item-img-overlay">
+                            <span></span>
+                        </div>
                     </a>
-                </div>                       
-         <?php endif; ?>      
+                    <figcaption itemprop="caption description"><?php echo esc_html( $image_cap ); ?></figcaption>
+                </figure>
+            </div><!-- end of image-pop-up -->
+         <?php endif; ?>  
+
         <ul class="list-inline post-detail">
             <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
             <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>

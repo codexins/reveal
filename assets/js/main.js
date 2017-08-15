@@ -123,48 +123,17 @@
 
     
     /*--------------------------------------------------------------
-        Activating Events Page Image Popup
+    Targeting Portfolio a tag for click event
     ---------------------------------------------------------------- */
-    $(window).load(function() {
-        $('.event-image-popup').magnificPopup({
-            type: 'image',
-            mainClass: 'mfp-with-zoom', 
-            fixedContentPos: false,
-            zoom: {
-                enabled: true,
-                duration: 300, 
-                easing: 'ease-in-out',
-            }
-        });
+
+    $(".portfolio-title").click(function (e) {
+        $(this).find("a.clickable").first().click();
     });
 
-    /*--------------------------------------------------------------
-    Activating single blog Magnific Pop Up
-    ---------------------------------------------------------------- */    
-    
-    $('.img-pop-up').magnificPopup({
-        type: 'image',
-        mainClass: 'mfp-fade', 
-        fixedContentPos: false,
-        fixedBgPos: true,
-        overflowY: 'auto',
-        closeBtnInside: true,
-        preloader: false,
-        midClick: true,
-        gallery: {
-            enabled: true
-        },
-        removalDelay: 300,
-        // callbacks: {
-        //     open: function() {
-        //         jQuery('body').addClass('noscroll');
-                
-        //     },
-        //     close: function() {
-        //         jQuery('body').removeClass('noscroll');                
-        //     }
-        // }
+    $(".portfolio-title a.clickable").click(function (e) {
+        e.stopPropagation();
     });
+
 
     /*--------------------------------------------------------------
     commentform validate
@@ -211,8 +180,7 @@
           'prevArrow': '<span class="alignleft"><i class="fa fa-angle-left"></i></span>',
           'nextArrow': '<span class="alignright"><i class="fa fa-angle-right"></i></span>',
     });
-
-       
+      
 
 
 })(jQuery);
