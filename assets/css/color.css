@@ -411,8 +411,7 @@ box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
 }*/
 
 .post-link p,
-.post-link span.icon,
-.post-quote span.icon {
+.post-link span.icon {
     color: #333;
 }
 

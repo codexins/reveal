@@ -269,7 +269,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                 $post_style = reveal_option( 'reveal_post_style' );
                 if( $post_style == 'list' ):
 
-                get_template_part( 'template-parts/page-styles/list/content', get_post_format() );
+                get_template_part( 'template-parts/content', get_post_format() );
 
                 else:
                 $grid_columns = 12/reveal_option('reveal_grid_columns');

@@ -14,7 +14,7 @@
 
 ?><!DOCTYPE html>
 
-<html <?php language_attributes(); ?>>
+<html itemscope itemtype="http://schema.org/WebPage" <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
