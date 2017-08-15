@@ -60,16 +60,16 @@ if ( ! function_exists( 'reveal_posts_link' ) ) {
 
     function reveal_posts_link() {
 
-        $prev_link = get_previous_posts_link(esc_html__('Older Posts &raquo; ', 'reveal'));
-        $next_link = get_next_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
+        $prev_link = get_previous_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
+        $next_link = get_next_posts_link(esc_html__('Older Posts &raquo; ', 'reveal'));
 
         echo '<div class="posts-nav clearfix">';
             if($next_link): 
-            echo '<div class="nav-next alignleft">'. $next_link .'</div>';
+            echo '<div class="nav-next alignright">'. $next_link .'</div>';
             endif; 
             
             if($prev_link): 
-            echo '<div class="nav-previous alignright">'. $prev_link .'</div>';
+            echo '<div class="nav-previous alignleft">'. $prev_link .'</div>';
             endif; 
         echo '</div>';
 
