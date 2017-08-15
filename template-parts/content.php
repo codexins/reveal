@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="blog-post">
         <?php if(has_post_thumbnail()): 
 
@@ -22,12 +22,12 @@
             ?>        
 
             <a href="<?php the_permalink(); ?>">
-                <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('single-post-image') ?>" class="img-responsive" <?php printf( '%s', $image_alt ); ?>>
+                <figure class="item-img-wrap" itemscope itemtype="http://schema.org/ImageObject">
+                    <img src="<?php the_post_thumbnail_url('single-post-image') ?>" class="img-responsive" <?php printf( '%s', $image_alt ); ?> itemprop="image">
                     <div class="item-img-overlay">
                         <span></span>
                     </div>
-                </div>                       
+                </figure>                       
             </a>
 
             <?php else: ?>
@@ -35,7 +35,7 @@
             <div class="image-pop-up item-img-wrap" itemscope itemtype="http://schema.org/ImageGallery">
                 <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                     <a href="<?php esc_url( the_post_thumbnail_url('full') ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
-                        <img src="<?php esc_url( the_post_thumbnail_url('single-post-image') ); ?>" itemprop="thumbnail" <?php printf( '%s', $image_alt ); ?> class="img-responsive" />
+                        <img src="<?php esc_url( the_post_thumbnail_url('single-post-image') ); ?>" itemprop="image" <?php printf( '%s', $image_alt ); ?> class="img-responsive" />
                         <div class="item-img-overlay">
                             <span></span>
                         </div>
@@ -45,71 +45,81 @@
             </div><!-- end of image-pop-up -->
 
             <?php endif; ?>      
-        <?php endif; ?>      
+        <?php endif; ?>
+              
         <ul class="list-inline post-detail">
-            <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
-            <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
-            <li><i class="fa fa-tag"></i> <?php the_category( ', ' )?></li>
+            <li><i class="fa fa-pencil"></i> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author">
+                    <span itemprop="name"><?php echo esc_html( get_the_author() ); ?></span>
+                </a>
+                </span>
+            </li>
+            <li><i class="fa fa-calendar"></i> <time datetime="<?php the_time('c'); ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time></li>
+            <li><i class="fa fa-tag"></i> <span itemprop="genre"><?php the_category( ', ' )?></span></li>
             <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
             <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
         </ul>
 
         <?php if( ! is_single() ): ?>
 
-        <h2 class="post-title">
-            <a href="<?php the_permalink(); ?>">
-            <?php 
-                $length_switch = reveal_option('reveal_blog_excerpt_lenght');
-                if( $length_switch ) :
-                    $reveal_title_len = reveal_option( 'reveal_title_length' );
-                    reveal_title( $reveal_title_len );
-                else:
-                    the_title();
-                endif;
-            ?>
+        <h2 class="post-title" itemprop="headline">
+            <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url">
+                <span itemprop="name">
+                <?php 
+                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                    if( $length_switch ) :
+                        $reveal_title_len = reveal_option( 'reveal_title_length' );
+                        reveal_title( $reveal_title_len );
+                    else:
+                        the_title();
+                    endif;
+                ?>
+                </span>
             </a>
         </h2>
         
         <?php else: ?>
 
-        <h2 class="post-title"><?php the_title(); ?></h2>
+        <h2 class="post-title" itemprop="headline"><span itemprop="name"><?php the_title(); ?></span></h2>
 
         <?php endif; ?>
 
-		<div class="entry-content">
-			<?php 
-				if(is_single()):
-					the_content();
+		
+		<?php 
+			if(is_single()):
+				echo '<div class="entry-content" itemprop="articleBody">';
+                the_content();
 
-                    $args = array(
-                        'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
-                        'after'       => '</div>',
-                        'link_before' => '<span>',
-                        'link_after'  => '</span>',
-                        'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
-                        'separator'   => '<span class="screen-reader-text">, </span>',
-                    );          
-                    wp_link_pages( $args );
+                $args = array(
+                    'before'      => '<div class="page-links"><span class="page-links-title">' . esc_html__( 'Pages:', 'reveal' ) . '</span>',
+                    'after'       => '</div>',
+                    'link_before' => '<span>',
+                    'link_after'  => '</span>',
+                    'pagelink'    => '<span class="screen-reader-text">' . esc_html__( 'Page', 'reveal' ) . ' </span>%',
+                    'separator'   => '<span class="screen-reader-text">, </span>',
+                );          
+                wp_link_pages( $args );
 
-				else:
-                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
-                    if( $length_switch ) :
-                        $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
-					   reveal_excerpt( $reveal_excerpt_len );
-                    else:
-                         the_excerpt();
-                    endif; //End if() reveal_excerpt_length
+			else:
+                echo '<div class="entry-content" itemprop="text">';
+                $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                if( $length_switch ) :
+                    $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
+				    reveal_excerpt( $reveal_excerpt_len );
+                else:
+                    the_excerpt();
+                endif; //End if() reveal_excerpt_length
 
 
-                    $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
-                    if( $reveal_read_more == true ): ?>
+                $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
+                if( $reveal_read_more == true ): ?>
 
-                    <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
 
-                <?php
-                    endif;
-                endif;  
-                ?>
+            <?php
+                endif;
+            endif;  
+            ?>
 
 
 		</div><!-- .entry-content -->

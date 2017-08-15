@@ -90,7 +90,7 @@ class Reveal {
     	// Set content width for custom media information
 		if ( ! isset( $content_width ) ) {
 			$content_width = 800;
-			}
+		}
 
 	}
 
@@ -219,15 +219,15 @@ class Reveal {
 		    return $html;
 		}
 
-	/**
-	 * Apply theme's stylesheet to the visual editor.
-	 *
-	 * @uses add_editor_style() Links a stylesheet to visual editor
-	 * @uses get_stylesheet_uri() Returns URI of theme stylesheet
-	 */
+		/**
+		 * Apply theme's stylesheet to the visual editor.
+		 *
+		 * @uses add_editor_style() Links a stylesheet to visual editor
+		 * @uses get_stylesheet_uri() Returns URI of theme stylesheet
+		 */
 		add_action( 'admin_init', 'reveal_add_editor_styles' );
 		function reveal_add_editor_styles() {
-		 add_editor_style();
+			add_editor_style();
 		}
 
 
@@ -240,6 +240,14 @@ class Reveal {
 			?>
 			<title><?php wp_title( '|', true, 'right' ); ?></title>
 			<?php
+		}
+
+
+		// Adding schema to navigation links
+		add_filter( 'nav_menu_link_attributes', 'add_attribute', 10, 3 );
+		function add_attribute( $atts, $item, $args ) {
+			$atts['itemprop'] = 'url';
+			return $atts;
 		}
 
 	}

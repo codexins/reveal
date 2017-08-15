@@ -20,13 +20,13 @@
 						$title_position = reveal_option( 'page-title-position' );
 
 						if( $title_position == '1' ) :
-							echo '<h1 style="text-align:left;">';
+							echo '<h1 style="text-align:left;" itemprop="headline">';
 						elseif ( $title_position == '2' ) :
-							echo '<h1 style="text-align:center;">';
+							echo '<h1 style="text-align:center;" itemprop="headline">';
 						elseif ( $title_position == '3' ) :
-							echo '<h1 style="text-align:right;">';
+							echo '<h1 style="text-align:right;" itemprop="headline">';
 						else :
-							echo '<h1 style="text-align:left;">';
+							echo '<h1 style="text-align:left;" itemprop="headline">';
 						endif; //end page-title position...
 
 						if( is_home() ):

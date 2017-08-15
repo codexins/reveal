@@ -1,11 +1,11 @@
 				<div class="col-sm-4 col-md-4">
-					<div id="secondary" class="widget-area" role="complementary">
+					<div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
 						<?php get_sidebar() ?>
 					</div><!-- #secondary -->
 				</div> <!-- end of col -->
 
 				<div class="col-sm-8 col-md-7 col-md-offset-1">
-					<div id="primary" class="site-main">
+					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<?php
 							/* Start the Loop */
 							while ( have_posts() ) : the_post();

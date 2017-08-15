@@ -1,5 +1,5 @@
 				<div class="col-sm-12 col-md-12">
-					<div id="primary" class="site-main">
+					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<?php
 							/* Start the Loop */
 							while ( have_posts() ) : the_post();

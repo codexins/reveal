@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
 
 	<?php
 	// You can start editing here -- including this comment!
@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+		<nav id="comment-nav-below" class="navigation comment-navigation">
 			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'reveal' ); ?></h2>
 			<div class="nav-links">
 

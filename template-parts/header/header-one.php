@@ -21,16 +21,15 @@
 					$logo_type = reveal_option('reveal-logo-type');	
 					$text_logo = reveal_option('reveal-text-logo'); 
 					$image_logo = reveal_option('reveal-image-logo')['url']; ?>		
-					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>">
+					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
 						<?php if($logo_type == 2): ?>
-	             <?php if( !empty( $image_logo ) ): ?>
-	              <img src="<?php echo esc_url($image_logo); ?>" alt="Logo">
-	             <?php endif; ?>
+							<?php if( !empty( $image_logo ) ): ?>
+							<img src="<?php echo esc_url($image_logo); ?>" alt="Logo" itemprop="logo">
+							<?php endif; ?>
 
 						<?php elseif($logo_type == 1): 
-								if(!empty($text_logo)): echo esc_html($text_logo); endif; ?>
-					  <?php endif; ?>
-
+							if(!empty($text_logo)): echo esc_html($text_logo); endif; ?>
+						<?php endif; ?>
 					</a>
 					
 					<!--Responsive Navigation-->
@@ -43,7 +42,7 @@
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="hidden-xs">
+				<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<?php get_main_menu(); ?>
 				</div>
 				

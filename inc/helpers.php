@@ -51,6 +51,60 @@ if ( ! function_exists( 'remove_demo' ) ) {
 }
 
 
+
+/**
+*
+* Helper Function to automatically define the schema type 
+*
+**/
+function html_tag_schema() {
+
+    $schema = 'http://schema.org/';
+
+    // Is single post
+    if( is_singular( 'post' ) ) {
+        $type = "Article";
+    }
+
+    // Is author page
+    elseif( is_author() ) {
+        $type = 'ProfilePage';
+    }
+
+    // Is blog home or category
+    elseif( is_home() || is_category() ){
+        $type = "Blog";
+    }
+
+    // Is static front page
+    elseif( is_front_page() ) {
+        $type = "Website";
+    }
+
+    // Is search results page
+    elseif( is_search() ) {
+        $type = 'SearchResultsPage';
+    }
+
+    // Is of event post type
+    elseif( is_post_type_archive( 'events' ) || is_singular( 'events' ) ) {
+        $type = 'Event';
+    }
+
+    // Is of portfolio post type
+    elseif( is_post_type_archive( 'portfolio' ) || is_singular( 'portfolio' ) ) {
+        $type = 'ProfessionalService';
+    }
+
+
+    else {
+        $type = 'WebPage';
+    }
+
+    echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
+}
+
+
 /**
 *
 * Helper Function for getting the next/previous posts link
@@ -441,12 +495,12 @@ function reveal_comment_function($comment, $args, $depth) {
                 </div>
 
                 <div class="comment-single-right comment-info">
-                <?php printf('<span class="fn">%s</span>', get_comment_author_link()) ?>
-                    <div class="comment-text">
+                <?php printf('<span class="fn" itemprop="name">%s</span>', get_comment_author_link()) ?>
+                    <div class="comment-text" itemprop="text">
                     <?php comment_text() ?>
                     </div>
 
-                    <div class="comment-meta"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(esc_html__('%1$s at %2$s', 'reveal'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(esc_html__('(Edit)', 'reveal'),'  ','') ?><span class="comment-reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => ' &nbsp;&nbsp;<i class="fa fa-caret-right"></i> &nbsp;&nbsp;'))) ?></span>
+                    <div class="comment-meta"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><time datetime="<?php the_time('c'); ?>" itemprop="datePublished"><?php printf(esc_html__('%1$s at %2$s', 'reveal'), get_comment_date(),  get_comment_time()) ?></time></a><?php edit_comment_link(esc_html__('(Edit)', 'reveal'),'  ','') ?><span class="comment-reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => ' &nbsp;&nbsp;<i class="fa fa-caret-right"></i> &nbsp;&nbsp;'))) ?></span>
                     </div>
 
                     <?php if ($comment->comment_approved == '0') : ?>

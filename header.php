@@ -14,7 +14,7 @@
 
 ?><!DOCTYPE html>
 
-<html itemscope itemtype="http://schema.org/WebPage" <?php language_attributes(); ?>>
+<html <?php html_tag_schema(); ?> <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -43,7 +43,7 @@
 	<!--  Site Loader finished -->
 
 	<!-- Initializing Mobile Menu -->
-	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left">
+	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<button class="c-menu__close">&larr; <?php esc_html_e( 'Back', 'reveal' ); ?></button>
 		<?php get_mobile_menu() ?>
 	</div><!-- end of Moblie Menu -->
@@ -55,9 +55,9 @@
 	<div id="whole" class="whole-site-wrapper">
 
 	<?php if( is_front_page() && !(is_home()) ): ?>	
-	<header id="header" class="header front-header fill-screen">
+	<header id="header" class="header front-header fill-screen" itemscope itemtype="http://schema.org/WPHeader">
 	<?php else: ?>
-	<header id="header" class="header inner-header">
+	<header id="header" class="header inner-header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="nav-container">
 	<?php endif; ?>	
 		

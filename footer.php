@@ -21,7 +21,7 @@
  	
 
 
-	<footer id="footer" class="footer">
+	<footer id="footer" class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 		<div class="container">
 			<?php 
 			if($reveal_footer == 1): get_template_part('template-parts/footer/footer', 'one');
