@@ -118,4 +118,4 @@ $output .= '</div>';
 
 $output .= '</div>';
 
-echo $output;
+printf( '%s', $output );

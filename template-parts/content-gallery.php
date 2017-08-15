@@ -28,7 +28,7 @@
 
             <figure class="item-img-wrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                 <a href="<?php echo esc_url( $cx_image['full_url'] ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
-                    <img src="<?php echo esc_url( $cx_image['url'] ); ?>" itemprop="thumbnail" <?php echo $img_alt; ?> class="img-responsive" />
+                    <img src="<?php echo esc_url( $cx_image['url'] ); ?>" itemprop="thumbnail" <?php echo esc_html( $img_alt ); ?> class="img-responsive" />
                     <div class="item-img-overlay">
                         <span></span>
                     </div>

@@ -20,10 +20,10 @@
             $link_rel = rwmb_meta( 'reveal_link_rel', 'type=text' ); 
             $link_target = rwmb_meta( 'reveal_link_target', 'type=select' ); 
 
-            $cx_rel = ( !empty( $link_rel ) ) ? 'rel="'. $link_rel .'"' : '';
+            $cx_rel = ( !empty( $link_rel ) ) ? 'rel="'. esc_attr( $link_rel ) .'"' : '';
             ?>
             <div class="post-link">
-                <a href="<?php echo esc_url( $link_url ); ?>" <?php echo $cx_rel; ?> target="<?php if($link_target == '_self'): echo esc_attr('_self'); else: echo esc_attr('_blank'); endif; ?>">
+                <a href="<?php echo esc_url( $link_url ); ?>" <?php printf( '%s', $cx_rel ); ?> target="<?php if($link_target == '_self'): echo esc_attr('_self'); else: echo esc_attr('_blank'); endif; ?>">
                     <div class="post-format-link">
                         <span class="icon"></span>
                         <p><?php echo ( !empty( $link_txt ) ) ? $link_txt : get_the_title(); ?></p>

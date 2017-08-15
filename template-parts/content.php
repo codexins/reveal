@@ -26,7 +26,7 @@
             <div class="image-pop-up item-img-wrap" itemscope itemtype="http://schema.org/ImageGallery">
                 <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                     <a href="<?php esc_url( the_post_thumbnail_url('full') ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
-                        <img src="<?php esc_url( the_post_thumbnail_url('single-post-image') ); ?>" itemprop="thumbnail" <?php echo $image_alt; ?> class="img-responsive" />
+                        <img src="<?php esc_url( the_post_thumbnail_url('single-post-image') ); ?>" itemprop="thumbnail" <?php printf( '%s', $image_alt ); ?> class="img-responsive" />
                         <div class="item-img-overlay">
                             <span></span>
                         </div>
