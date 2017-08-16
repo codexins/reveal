@@ -30,6 +30,11 @@ get_header(); ?>
 						endif; ?>
 
 					</div><!-- #primary -->
+
+				<?php 
+					if( reveal_option( 'reveal_post_comments' ) ):
+						comments_template('', true);
+					endif; ?>
 				</div> <!-- end of col -->
 
 				<div class="col-sm-4 col-md-3 col-md-offset-1">

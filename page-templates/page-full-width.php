@@ -24,6 +24,12 @@ get_header(); ?>
 						endif; ?>
 
 					</div><!-- #primary -->
+
+					<?php 
+					if( reveal_option( 'reveal_post_comments' ) ):
+						comments_template('', true);
+					endif; ?>
+					
 				</div> <!-- end of col -->
 
 			</div> <!-- end of row -->
