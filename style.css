@@ -317,6 +317,22 @@ ul.sub-menu {
     /*display: block !important;*/
 }
 
+ul.sub-menu .sub-menu {
+    background: #222;
+}
+
+ul.sub-menu .sub-menu .sub-menu {
+    background: #333;
+}
+
+ul.sub-menu .sub-menu .sub-menu .sub-menu {
+    background: #444;
+}
+
+ul.sub-menu .sub-menu .sub-menu .sub-menu .sub-menu {
+    background: #4a4a4a;
+}
+
 ul.sub-menu li a {
     padding-top: 5px;
     padding-bottom: 5px;

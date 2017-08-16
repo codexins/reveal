@@ -9,10 +9,22 @@
     $(".sf-menu").superfish({
 
         delay:       0,                            // one second delay on mouseout
-        animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
+        //animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
+        animation: {opacity: 'show', height: 'show'},
+        animationOut: {opacity: 'hide'},
         speed:       'fast',                          // faster animation speed
-        autoArrows:  false  
+        autoArrows:  false,
+        disableHI: true, 
 
+    });
+
+    $('.sub-menu').hover(function() {
+        var menu = $(this);
+        // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
+        var child_menu = $(this).find('ul');
+        if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
+            $(child_menu).css({"left": "inherit", "right": "100%"});
+           }        
     });
 
 
