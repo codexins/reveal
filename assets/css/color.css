@@ -355,6 +355,18 @@ a.explore {
 .blog-info i:last-child {
     color: #555;
 }
+
+#primary .reveal-load-more {
+    border: 1px solid #aaa;
+    color: #333;
+}
+
+#primary .reveal-load-more:hover,
+#primary .posts-nav a:hover,
+.blog-content a.read-more:hover{
+    background: #295970 ;
+    color: #fff ;
+}
 /********************************************** new ******************************************************************/
 .post-detail {
     border-top: 1px solid #ebeaea;

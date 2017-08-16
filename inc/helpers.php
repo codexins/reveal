@@ -345,11 +345,23 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
             if( $reveal_pagination == 'numbered' ) {
             
-            reveal_posts_link_numbered();
+                reveal_posts_link_numbered();
+
+            } elseif( $reveal_pagination == 'button' ) {
+
+                reveal_posts_link();
 
             } else {
 
-            reveal_posts_link();
+                global $wp_query;
+                 
+                $reveal_btn_text = ( !empty( reveal_option( 'reveal-load-more' ) ) ) ? esc_html( reveal_option( 'reveal-load-more' ) ) : esc_html__( 'Load More', 'reveal' );
+
+                // don't display the button if there are not enough posts
+                if (  $wp_query->max_num_pages > 1 ):
+                    echo 
+                        '<div class="reveal-load-more">' . $reveal_btn_text . '</div>';
+                endif;
 
             }
 
@@ -602,3 +614,27 @@ function codexin_post_formats( $hook ) {
 add_action( 'admin_enqueue_scripts', 'codexin_post_formats', 10, 1 );
 
 
+
+function reveal_loadmore_ajax_handler(){
+ 
+    // prepare our arguments for the query
+    $args = unserialize( stripslashes( $_POST['query'] ) );
+    $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+    $args['post_status'] = 'publish';
+ 
+    query_posts( $args );
+ 
+    if( have_posts() ) :
+ 
+        // run the loop
+        while( have_posts() ): the_post();
+ 
+            get_template_part( 'template-parts/content', get_post_format() );
+ 
+        endwhile;
+ 
+    endif;
+    die;
+} 
+add_action('wp_ajax_loadmore', 'reveal_loadmore_ajax_handler');
+add_action('wp_ajax_nopriv_loadmore', 'reveal_loadmore_ajax_handler');

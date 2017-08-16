@@ -92,6 +92,24 @@ function reveal_scripts () {
 		wp_enqueue_script( 'photswipe-main-js', get_template_directory_uri() . '/assets/js/photoswipe-main.js', array ( 'jquery' ), 4.1, true);
 	}
 
+    // Load More Ajax Support
+    if( reveal_option( 'reveal_pagination' ) == 'loadmore' ):
+	    global $wp_query;
+		if ( reveal_option( 'reveal-blog-ajax' ) == 'loadmore-scroll' ):
+		    wp_register_script( 'reveal-loadmore', get_template_directory_uri() . '/assets/js/reveal-loadmore-scroll.js', array('jquery') );
+		else:
+			wp_register_script( 'reveal-loadmore', get_template_directory_uri() . '/assets/js/reveal-loadmore.js', array('jquery') );
+		endif;
+	    wp_localize_script( 'reveal-loadmore', 'reveal_loadmore_params', array(
+	        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	        'posts' => serialize( $wp_query->query_vars ),
+	        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+	        'max_page' => $wp_query->max_num_pages,
+	        'load_more_text' => ( !empty( reveal_option( 'reveal-load-more' ) ) ) ? esc_html( reveal_option( 'reveal-load-more' ) ) : esc_html__( 'Load More', 'reveal' )
+	    ) ); 
+	    wp_enqueue_script( 'reveal-loadmore' );
+	endif;
+
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/main.js', array ( 'jquery' ), 1.1, true);
 
 } 

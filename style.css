@@ -2304,11 +2304,30 @@ img{
     font-size: 30px;
 }
 
-#primary .posts-nav a:hover,
-.blog-content a.read-more:hover{
-    background: #295970 ;
-    color: #fff ;
+#primary .reveal-load-more {
+    padding: 7px 15px 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    letter-spacing: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    width: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 40px;
 }
+
+#primary .reveal-load-more:hover {
+    cursor: pointer;
+}
+
 .portfolio-image .col-md-8.col-sm-8 {
     padding-left: 0;
 }

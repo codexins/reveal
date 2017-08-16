@@ -590,8 +590,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'step'      => '1',
                         'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
-                        'subtitle'  => esc_html__('Control the Title Length for Posts', 'reveal'),
-                        'desc'      => esc_html__("Insert the Number of Words to Show in the Post Title in Blog & Archive Page.", 'reveal'),
+                        'subtitle'  => esc_html__('Control the Title Length for Posts (In Character)', 'reveal'),
+                        'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Blog & Archive Page.", 'reveal'),
                         // 'default'   => 7,
                     ),
 
@@ -603,8 +603,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'step'      => '1',
                         'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
-                        'subtitle'  => esc_html__('Control the Excerpt Length for Posts', 'reveal'),
-                        'desc'      => esc_html__("Insert the Number of Words to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
+                        'subtitle'  => esc_html__('Control the Excerpt Length for Posts (In Character)', 'reveal'),
+                        'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
                         // 'default'   => 20,
                     ),
 
@@ -625,9 +625,44 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
-                            'loadmore'  => esc_html__( 'Load More Ajax', 'reveal' ),
+                            'loadmore'  => esc_html__( 'Ajax Pagination', 'reveal' ),
                         ),
                         'default'   => 'button'
+                    ),
+
+                    array(
+                        'id'        => 'reveal-blog-ajax',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Ajax Pagination Type', 'reveal'),
+                        'subtitle'  => esc_html__('Ajax Load More Type', 'reveal'),
+                        'desc'      => esc_html__('Select the Load More Type.', 'reveal'),
+                        'required'  => array( 'reveal_pagination', '=', 'loadmore' ),
+                        'options'   => array(
+                            'loadmore-button' => esc_html__( 'Load More Button', 'reveal' ),
+                            'loadmore-scroll' => esc_html__( 'Load Posts on Scroll', 'reveal' ),
+                        ),
+                        'default'   => 'loadmore-button'
+                    ),
+
+                    // array(
+                    //     'id'        => 'reveal-num-page',
+                    //     'type'      => 'slider',
+                    //     'min'       => '2',
+                    //     'max'       => '30',
+                    //     'step'      => '1',
+                    //     'title'     => esc_html__('Number of Posts', 'reveal'),
+                    //     'subtitle'  => esc_html__('Control the Number of Posts to Load', 'reveal'),
+                    //     'desc'      => esc_html__('Adjust How Many Posts You Want to Load.', 'reveal'),
+                    //     'required'  => array( 'reveal_pagination', '=', 'loadmore' ),
+                    //     'default'   => 10,
+                    // ),
+
+                    array(
+                        'id'        => 'reveal-load-more',
+                        'type'      => 'text',
+                        'required'  => array( 'reveal-blog-ajax', '=', 'loadmore-button' ),
+                        'title'     => esc_html__('Button Text', 'reveal'),
+                        'subtitle'  => esc_html__('Insert the text you want to show in the button', 'reveal'),
                     ),
                 )
 
@@ -897,58 +932,58 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
             ); //End Footer... 
 
-            //Map Section
-            $this->sections[] = array(
-                    'title'            => esc_html__( 'Map Settings', 'reveal' ),
-                    'customizer_width' => '500px',
-                    'icon'             => 'el el-map-marker',
-                    'id'               => 'reveal-map-parent',
+            // //Map Section
+            // $this->sections[] = array(
+            //         'title'            => esc_html__( 'Map Settings', 'reveal' ),
+            //         'customizer_width' => '500px',
+            //         'icon'             => 'el el-map-marker',
+            //         'id'               => 'reveal-map-parent',
 
-                    'desc'             => sprintf(__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="%s" target="_blank">Here</a>', 'reveal'), esc_url('//latlong.net/')),
-                    'fields'           => array(
+            //         'desc'             => sprintf(__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="%s" target="_blank">Here</a>', 'reveal'), esc_url('//latlong.net/')),
+            //         'fields'           => array(
 
 
-                        array(
-                            'title' => esc_html__('Insert Google Map API Key', 'reveal'),
-                            'desc' => 'Enter Your Google Map API Key',
-                            'id'    => 'reveal-google-map-api-key',                  
-                            'type'  => 'text',
-                            'desc'  => sprintf(__('If you don\'t have the API key yet, then <a href="%s" target="_blank">Click Here</a> to get a API key', 'reveal'), esc_url('//developers.google.com/maps/documentation/javascript/get-api-key')), 
-                            'default' => ''
-                        ),
+            //             array(
+            //                 'title' => esc_html__('Insert Google Map API Key', 'reveal'),
+            //                 'desc' => 'Enter Your Google Map API Key',
+            //                 'id'    => 'reveal-google-map-api-key',                  
+            //                 'type'  => 'text',
+            //                 'desc'  => sprintf(__('If you don\'t have the API key yet, then <a href="%s" target="_blank">Click Here</a> to get a API key', 'reveal'), esc_url('//developers.google.com/maps/documentation/javascript/get-api-key')), 
+            //                 'default' => ''
+            //             ),
 
-                        array(
-                            'title' => esc_html__('Insert Map Latitude', 'reveal'),
-                            'id'    => 'reveal-google-map-latitude',
-                            'type'  => 'text',
-                            'default' => '39.414269'
-                        ),
+            //             array(
+            //                 'title' => esc_html__('Insert Map Latitude', 'reveal'),
+            //                 'id'    => 'reveal-google-map-latitude',
+            //                 'type'  => 'text',
+            //                 'default' => '39.414269'
+            //             ),
 
-                        array(
-                            'title' => esc_html__('Insert Map Longitude', 'reveal'),
-                            'id'    => 'reveal-google-map-longitude',
-                            'type'  => 'text',
-                            'default' => '-77.410541'
-                        ),
+            //             array(
+            //                 'title' => esc_html__('Insert Map Longitude', 'reveal'),
+            //                 'id'    => 'reveal-google-map-longitude',
+            //                 'type'  => 'text',
+            //                 'default' => '-77.410541'
+            //             ),
 
-                        array(
-                            'title' => esc_html__('Map Zoom Level', 'reveal'),
-                            'id'    => 'reveal-google-map-zoom',
-                            'type'  => 'text',
-                            'default' => '15'
-                        ),
+            //             array(
+            //                 'title' => esc_html__('Map Zoom Level', 'reveal'),
+            //                 'id'    => 'reveal-google-map-zoom',
+            //                 'type'  => 'text',
+            //                 'default' => '15'
+            //             ),
 
-                        array(
-                            'id'       => 'reveal-google-map-marker',
-                            'type'     => 'media',
-                            'url'      => true,
-                            'title'    => esc_html__( 'Upload Map Marker', 'reveal' ),
-                            'compiler' => 'true',
-                            'default'  => array( 'url' => get_template_directory_uri() . '/assets/images/admin/map-marker-1.png' ),
-                        ),
+            //             array(
+            //                 'id'       => 'reveal-google-map-marker',
+            //                 'type'     => 'media',
+            //                 'url'      => true,
+            //                 'title'    => esc_html__( 'Upload Map Marker', 'reveal' ),
+            //                 'compiler' => 'true',
+            //                 'default'  => array( 'url' => get_template_directory_uri() . '/assets/images/admin/map-marker-1.png' ),
+            //             ),
 
-                    )
-                );
+            //         )
+            //     );
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Advanced Settings', 'reveal' ),
