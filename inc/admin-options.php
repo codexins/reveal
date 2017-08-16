@@ -644,18 +644,18 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'   => 'loadmore-button'
                     ),
 
-                    // array(
-                    //     'id'        => 'reveal-num-page',
-                    //     'type'      => 'slider',
-                    //     'min'       => '2',
-                    //     'max'       => '30',
-                    //     'step'      => '1',
-                    //     'title'     => esc_html__('Number of Posts', 'reveal'),
-                    //     'subtitle'  => esc_html__('Control the Number of Posts to Load', 'reveal'),
-                    //     'desc'      => esc_html__('Adjust How Many Posts You Want to Load.', 'reveal'),
-                    //     'required'  => array( 'reveal_pagination', '=', 'loadmore' ),
-                    //     'default'   => 10,
-                    // ),
+                    array(
+                        'id'        => 'reveal-num-page',
+                        'type'      => 'slider',
+                        'min'       => '2',
+                        'max'       => '30',
+                        'step'      => '1',
+                        'title'     => esc_html__('Number of Posts', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Number of Posts to Load', 'reveal'),
+                        'desc'      => esc_html__('Adjust How Many Posts You Want to Load.', 'reveal'),
+                        'required'  => array( 'reveal_pagination', '=', 'loadmore' ),
+                        'default'   => 10,
+                    ),
 
                     array(
                         'id'        => 'reveal-load-more',

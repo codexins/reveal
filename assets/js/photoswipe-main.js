@@ -3,6 +3,8 @@
  *   Main Photoswipe trigger
  */
 
+"use strict";
+
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
     // parse slide data (url, title, size ...) from DOM elements 

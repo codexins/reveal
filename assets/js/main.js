@@ -173,26 +173,22 @@
     Activating Slick Carousel in Image Gallery
     ---------------------------------------------------------------- */
 
-     $(".gallery-carousel").slick({
-          infinite: true,
-          speed: 500,
-          fade: true,
-          cssEase: 'linear',
-          'arrows': true,
-          'prevArrow': '<span class="alignleft"><i class="fa fa-angle-left"></i></span>',
-          'nextArrow': '<span class="alignright"><i class="fa fa-angle-right"></i></span>',
+    $(".gallery-carousel").slick({
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear',
+        autoplay: true,
+        autoplaySpeed: 2000,
+        'arrows': true,
+        'prevArrow': '<span class="alignleft"><i class="fa fa-angle-left"></i></span>',
+        'nextArrow': '<span class="alignright"><i class="fa fa-angle-right"></i></span>',
     });
-      
 
 
-})(jQuery);
-
-
-
-
-/*--------------------------------------------------------------
-        For Responsive Navigation
---------------------------------------------------------------*/
+    /*--------------------------------------------------------------
+    For Responsive Navigation
+    --------------------------------------------------------------*/
     var slideLeft = new Menu({
         wrapper: '#o-wrapper',
         type: 'slide-left',
@@ -206,5 +202,11 @@
         e.preventDefault;
         slideLeft.open();
     });
+      
+
+
+})(jQuery);
+
+
 
 

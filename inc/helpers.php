@@ -614,16 +614,25 @@ function codexin_post_formats( $hook ) {
 add_action( 'admin_enqueue_scripts', 'codexin_post_formats', 10, 1 );
 
 
-
+/**
+ * Load More Ajax Handler
+ * 
+ * Shows next page for posts
+ */
 function reveal_loadmore_ajax_handler(){
  
     // prepare our arguments for the query
     $args = unserialize( stripslashes( $_POST['query'] ) );
     $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
     $args['post_status'] = 'publish';
+    // $args['offset'] = $args['posts_per_page'];
+    // $args['posts_per_page'] = reveal_option( 'reveal-num-page' );
 
     $the_query = new WP_Query( $args );
- 
+
+// echo '<pre>';
+// print_r($the_query); 
+
     if( $the_query->have_posts() ) :
  
         // run the loop

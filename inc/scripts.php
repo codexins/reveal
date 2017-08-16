@@ -93,7 +93,7 @@ function reveal_scripts () {
 	}
 
     // Load More Ajax Support
-    if( reveal_option( 'reveal_pagination' ) == 'loadmore' ):
+    if( reveal_option( 'reveal_pagination' ) == 'loadmore' && ! is_single() ):
 	    global $wp_query;
 		if ( reveal_option( 'reveal-blog-ajax' ) == 'loadmore-scroll' ):
 		    wp_register_script( 'reveal-loadmore', get_template_directory_uri() . '/assets/js/reveal-loadmore-scroll.js', array('jquery') );
