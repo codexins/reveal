@@ -512,7 +512,7 @@ function reveal_comment_function($comment, $args, $depth) {
                     <?php comment_text() ?>
                     </div>
 
-                    <div class="comment-meta"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><time datetime="<?php the_time('c'); ?>" itemprop="datePublished"><?php printf(esc_html__('%1$s at %2$s', 'reveal'), get_comment_date(),  get_comment_time()) ?></time></a><?php edit_comment_link(esc_html__('(Edit)', 'reveal'),'  ','') ?><span class="comment-reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => ' &nbsp;&nbsp;<i class="fa fa-caret-right"></i> &nbsp;&nbsp;'))) ?></span>
+                    <div class="comment-meta"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><time datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished"><?php printf(esc_html__('%1$s at %2$s', 'reveal'), get_comment_date(),  get_comment_time()) ?></time></a><?php edit_comment_link(esc_html__('(Edit)', 'reveal'),'  ','') ?><span class="comment-reply"><?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth'], 'before' => ' &nbsp;&nbsp;<i class="fa fa-caret-right"></i> &nbsp;&nbsp;'))) ?></span>
                     </div>
 
                     <?php if ($comment->comment_approved == '0') : ?>
@@ -621,13 +621,13 @@ function reveal_loadmore_ajax_handler(){
     $args = unserialize( stripslashes( $_POST['query'] ) );
     $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
     $args['post_status'] = 'publish';
+
+    $the_query = new WP_Query( $args );
  
-    query_posts( $args );
- 
-    if( have_posts() ) :
+    if( $the_query->have_posts() ) :
  
         // run the loop
-        while( have_posts() ): the_post();
+        while( $the_query->have_posts() ): $the_query->the_post();
  
             get_template_part( 'template-parts/content', get_post_format() );
  

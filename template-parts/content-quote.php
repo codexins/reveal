@@ -46,7 +46,7 @@
                 </a>
                 </span>
             </li>
-            <li><i class="fa fa-calendar"></i> <time datetime="<?php the_time('c'); ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time></li>
+            <li><i class="fa fa-calendar"></i> <time datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time></li>
             <li><i class="fa fa-tag"></i> <span itemprop="genre"><?php the_category( ', ' )?></span></li>
             <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
             <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
