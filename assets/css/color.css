@@ -98,9 +98,7 @@ a.navbar-brand {
 }
 
 .main-menu li a:hover {
-    background: transparent;
     color: #fce38a;
-    border-bottom: 4px solid #fce38a;
 }
 
 .main-menu li.active {

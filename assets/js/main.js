@@ -1,41 +1,26 @@
 (function($) {
     "use strict";
 
-    /*--------------------------------------------------------------
-    Navigation adjust for window width 
-    ---------------------------------------------------------------- */
+    /************************************************************
+        Activating Superfish Menu
+    *************************************************************/
 
+        // activating superfish menu
+    $(".sf-menu").superfish({
 
+        delay:       0,                            // one second delay on mouseout
+        animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation
+        speed:       'fast',                          // faster animation speed
+        autoArrows:  false  
 
-    $('.sub-menu').hover(function() {
-        var menu = $(this);
-        // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
-        var child_menu = $(this).find('ul');
-        if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
-            $(child_menu).css({"left": "inherit", "right": "100%"});
-          } else {
-            $(child_menu).css('left', '100%');
-          }        
     });
 
-    
 
-    $('.sub-menu').hover(
-        function(e) {        
-            var menu = $(this);
-            // var child_menu = $('.site-nav ul.sub-menu .sub-menu');
-            var child_menu = $(this).find('ul');
-            if( $(menu).offset().left + $(menu).width() + $(child_menu).width() > $(window).width() ){
-                
-                $(child_menu).css({"left": "inherit", "right": "100%", "width": "100%"});
-                $('.sub-menu .menu-item-has-children').addClass('icon-direction');    
-                e.preventDefault();
-            }
-        },
-        function(e) {
-            $('.sub-menu .menu-item-has-children').removeClass('icon-direction');
-        }
-    );
+    /************************************************************
+        removing empty paragraph from sidebar widget
+    *************************************************************/
+
+    $('.sidebar-widget p:empty').remove();
 
     /*--------------------------------------------------------------
 	Header full screen background image
