@@ -1,7 +1,8 @@
 jQuery(function($){
     "use strict";
 	$('.reveal-load-more').click(function(){
- 		var delay = 1500;
+		$('article').addClass('no-slideup');
+ 		var delay = 1000;
 		var button = $(this),
 		    data = {
 			'action': 'loadmore',
@@ -25,12 +26,13 @@ jQuery(function($){
 			data : data,
 			type : 'POST',
 			beforeSend : function ( xhr ) {
-				button.text('Loading...'); // change the button text, you can also add a preloader image
+				button.text('Loading...').html('&nbsp;<div class="loader">Loading...</div>'); // change the button text, you can also add a preloader image
 			},
 			success : function( data ){
 				if( data ) {
 					setTimeout(function(){
-						button.text( reveal_loadmore_params.load_more_text ).prev().after(data); // insert new posts
+						button.text( reveal_loadmore_params.load_more_text ).prev().before(data); // insert new posts
+						$('article:not(.no-slideup)').addClass('slideup');
 						reveal_loadmore_params.current_page++;
 						initPhotoSwipeFromDOM('.image-pop-up');
 						$('.gallery-carousel').not('.slick-initialized').slick($opts);

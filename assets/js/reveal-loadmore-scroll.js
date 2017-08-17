@@ -14,8 +14,9 @@ jQuery(function($){
         'prevArrow': '<span class="alignleft"><i class="fa fa-angle-left"></i></span>',
         'nextArrow': '<span class="alignright"><i class="fa fa-angle-right"></i></span>',
 	}
-	var delay = 1500;
+	var delay = 1200;
 	$(window).scroll(function(){
+		$('article').addClass('no-slideup');
 		var data = {
 			'action': 'loadmore',
 			'query': reveal_loadmore_params.posts,
@@ -27,15 +28,14 @@ jQuery(function($){
 				data:data,
 				type:'POST',
 				beforeSend: function( xhr ){
-					// you can also add your own preloader here
-					// you see, the AJAX call is in process, we shouldn't run it again until complete
-					button.text('Loading...');
+					button.text('Loading...').html('&nbsp;<div class="loader">Loading...</div>');
 					canBeLoaded = false; 
 				},
 				success:function(data){
 					if( data ) {
 						setTimeout(function(){
 							$('#primary').find('article:last-of-type').after( data ); // where to insert posts
+							$('article:not(.no-slideup)').addClass('slideup');
 							canBeLoaded = true; // the ajax is completed, now we can run it again
 							reveal_loadmore_params.current_page++;
 							initPhotoSwipeFromDOM('.image-pop-up');
