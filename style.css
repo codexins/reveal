@@ -403,9 +403,16 @@ ul.sub-menu li a {
     transition: all .3s;
 }
 
+.slider-btn:active,
+.slider-btn:focus,
+.slider-btn:visited {
+    color: #fff;
+}
+
 
 .slider-btn:hover {
     text-decoration: none;
+    color: #333;
 }
 
 .slider-btn:active,
