@@ -316,8 +316,25 @@ ul.sub-menu {
     background: #111;
     padding-top: 5px;
     padding-bottom: 5px;
+/*    display: block;
+    top:130%;
+    visibility: hidden;
+    opacity:0;
+    transition: all .3s;*/
 }
 
+
+/*ul.sub-menu:hover,
+a.sf-with-ul:hover + ul.sub-menu {
+    top:100%;
+    visibility: visible;
+    opacity:1;
+}
+
+ul.sub-menu .sub-menu:hover,
+ul.sub-menu a.sf-with-ul:hover + ul.sub-menu {
+    top: -5px;
+}*/
 
 ul.sub-menu .sub-menu {
     background: #222;
