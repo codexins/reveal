@@ -722,6 +722,9 @@ table#wp-calendar thead {
 
 /* comment error  */
 
+#submit_my_comment:hover {
+    background: #002037;
+}
 
 #commentform .error{
     color: red;

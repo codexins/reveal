@@ -120,6 +120,7 @@ input[type="button"]{
     padding: 8px 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: all 0.3s;
 }
 
 input::-webkit-input-placeholder,
@@ -1595,6 +1596,12 @@ h2.widgettitle {
 
 .comment-reply-title {
     text-transform: initial;
+}
+
+#submit_my_comment[disabled] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: .65;
 }
 
 

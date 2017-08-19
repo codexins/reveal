@@ -76,6 +76,15 @@ function reveal_scripts () {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+	// Comments Ajax Support
+	if( reveal_option( 'reveal-ajax-comments' ) ) {
+	    wp_register_script( 'ajax_comment', get_template_directory_uri() . '/assets/js/ajax-comments.js', array('jquery') );
+	    wp_localize_script( 'ajax_comment', 'reveal_ajax_comment_params', array(
+	        'ajaxurl' => admin_url( 'admin-ajax.php' )
+	    ) ); 
+	    wp_enqueue_script( 'ajax_comment' );
+	}
+
 	// Carousel Support
 	if( ! wp_script_is( 'slick-js', 'enqueued' ) ) {
 	    wp_enqueue_script( 'slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array ( 'jquery' ), 1.7, true);

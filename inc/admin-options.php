@@ -154,6 +154,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => true,
                     ),
 
+                    array(
+                        'id'        => 'reveal-ajax-comments',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Ajax Comments', 'reveal'),
+                        'subtitle'  => esc_html__('Choose to Enable / Disable Ajax comments for posts and pages', 'reveal'),
+                        "default"   => false,
+                    ),
+
                   )
             );
 
