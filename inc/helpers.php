@@ -462,8 +462,15 @@ function reveal_page_transition_animation() {
     $codeopt .= '
     <script type="text/javascript">
         (function($) {
+            var ignore_onbeforeunload = false;
+            $("a[href^=mailto], a[href^=tel]").on("click",function(){
+                ignore_onbeforeunload = true;
+            });
             $(window).on("beforeunload", function() { 
-                $("#preloader_1").fadeIn("fast");
+                if (!ignore_onbeforeunload){
+                    $("#preloader_1").fadeIn("fast");
+                }
+                ignore_onbeforeunload = false;
             });
         })(jQuery);
     </script>
