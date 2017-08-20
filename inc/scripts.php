@@ -78,9 +78,12 @@ function reveal_scripts () {
 
 	// Comments Ajax Support
 	if( reveal_option( 'reveal-ajax-comments' ) ) {
+		global $post;
+		$count = wp_count_comments($post->ID);
 	    wp_register_script( 'ajax_comment', get_template_directory_uri() . '/assets/js/ajax-comments.js', array('jquery') );
 	    wp_localize_script( 'ajax_comment', 'reveal_ajax_comment_params', array(
-	        'ajaxurl' => admin_url( 'admin-ajax.php' )
+	        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	        'comment_count' => $count->approved
 	    ) ); 
 	    wp_enqueue_script( 'ajax_comment' );
 	}

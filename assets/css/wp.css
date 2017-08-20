@@ -275,6 +275,7 @@ article > section.kc_row:first-of-type {
     padding:0;
 }
 
+.comment-list li.pingback,
 .comment-list li.comment {
     list-style-type: none;
 }

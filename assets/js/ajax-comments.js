@@ -24,6 +24,7 @@ jQuery.extend(jQuery.fn, {
  
 jQuery(function($){
  
+    var countup = 1;
 	/*
 	 * On comment form submit
 	 */
@@ -33,10 +34,11 @@ jQuery(function($){
 		var button = $('#submit_my_comment'), // submit button
 		    respond = $('#respond'), // comment form container
 		    commentlist = $('.comment-list'), // comment list container
-		    cancelreplylink = $('#cancel-comment-reply-link');
+		    cancelreplylink = $('#cancel-comment-reply-link'),
+		    commentcount = $('#comments h3 span'),
+		    commentcountwp = parseInt(reveal_ajax_comment_params.comment_count)+countup;
 
-		// Disabling button
- 		$('#submit_my_comment').prop('disabled', true);
+	    countup++;
 
 		// if user is logged in, do not validate author and email fields
 		if( $( '#author' ).length )
@@ -59,6 +61,8 @@ jQuery(function($){
 				beforeSend: function(xhr){
 					// what to do just after the form has been submitted
 					button.addClass('loadingform').val('Please Wait');
+					// Disabling button
+					$('#submit_my_comment').prop('disabled', true);
 				},
 				error: function (request, status, error) {
 					if( status == 500 ){
@@ -106,6 +110,7 @@ jQuery(function($){
 					$('#comment').val('');
 					// If success, enabling button again
 					$('#submit_my_comment').prop('disabled', false);
+					$(commentcount).html(commentcountwp);
 				},
 				complete: function(){
 					// what to do after a comment has been added

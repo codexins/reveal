@@ -533,12 +533,13 @@ function reveal_comment_function($comment, $args, $depth) {
 }
 
 
-add_filter( 'wp_generate_attachment_metadata', 'retina_support_attachment_meta', 10, 2 );
+
 /**
  * Retina images
  *
  * This function is attached to the 'wp_generate_attachment_metadata' filter hook.
  */
+add_filter( 'wp_generate_attachment_metadata', 'retina_support_attachment_meta', 10, 2 );
 function retina_support_attachment_meta( $metadata, $attachment_id ) {
     foreach ( $metadata as $key => $value ) {
         if ( is_array( $value ) ) {
@@ -551,6 +552,8 @@ function retina_support_attachment_meta( $metadata, $attachment_id ) {
  
     return $metadata;
 }
+
+
 
 /**
  * Create retina-ready images
@@ -577,6 +580,7 @@ function retina_support_create_images( $file, $width, $height, $crop = false ) {
     }
     return false;
 }
+
 
 
 /**
@@ -665,7 +669,7 @@ function reveal_ajax_comment_handler(){
     if ( is_wp_error( $comment ) ) {
         $error_data = intval( $comment->get_error_data() );
         if ( ! empty( $error_data ) ) {
-            wp_die( '<p>' . $comment->get_error_message() . '</p>', __( 'Comment Submission Failure' ), array( 'response' => $error_data, 'back_link' => true ) );
+            wp_die( '<p>' . $comment->get_error_message() . '</p>', __( 'Comment Submission Failure', 'reveal' ), array( 'response' => $error_data, 'back_link' => true ) );
         } else {
             wp_die( 'Unknown error' );
         }
@@ -723,7 +727,7 @@ function reveal_ajax_comment_handler(){
             </div>            
         </div>
     </li>';
-    echo $comment_html;
+    printf( '%s', $comment_html );
  
     die();
  
