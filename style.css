@@ -139,6 +139,10 @@ input[type="button"]:hover{
     background: #333;
 }
 
+.page-template-page-home .page-entry-content {
+    margin-bottom: 0;
+}
+
 
 .italic {
     font-style: italic;

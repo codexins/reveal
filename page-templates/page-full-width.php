@@ -13,7 +13,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-xs-12">
 
-					<div id="primary" class="site-main">
+					<div id="primary" class="site-main inside-page">
 						<?php
 						if ( have_posts() ) :
 							

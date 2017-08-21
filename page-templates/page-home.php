@@ -8,7 +8,7 @@
  */
 
 get_header(); ?>
-
+	<div class="inside-page">
 
     <?php
     if ( have_posts() ) :
@@ -22,5 +22,7 @@ get_header(); ?>
         endwhile; 
 
     endif; ?>
+
+   </div> 
 
 <?php get_footer(); ?>

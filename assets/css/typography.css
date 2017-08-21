@@ -256,13 +256,13 @@ p.followers span {
     font-weight: bold;
 }
 
-.reveal-widget .media .media-heading {
+.codexin-popular-posts-widget .media .media-heading {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: bold;
 }
 
-.reveal-widget .media p {
+.codexin-popular-posts-widget .media p {
     font-style: italic;
     font-size: 80%;
 }

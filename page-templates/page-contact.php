@@ -15,7 +15,7 @@ get_header(); ?>
 				
 				<div class="col-sm-8 col-md-8">
 
-					<div id="primary" class="site-main contact-page">
+					<div id="primary" class="site-main contact-page inside-page">
 						<?php
 						if ( have_posts() ) :
 							

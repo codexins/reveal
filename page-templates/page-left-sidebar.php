@@ -21,7 +21,7 @@ get_header(); ?>
 				
 				<div class="col-sm-8 col-md-8 col-md-offset-1">
 
-					<div id="primary" class="site-main">
+					<div id="primary" class="site-main inside-page">
 						<?php
 						if ( have_posts() ) :
 							
