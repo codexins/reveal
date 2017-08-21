@@ -256,16 +256,23 @@ p.followers span {
     font-weight: bold;
 }
 
-.codexin-popular-posts-widget .media .media-heading {
+.posts-single-right h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: bold;
 }
 
+
+
 .codexin-popular-posts-widget .media p {
     font-style: italic;
     font-size: 80%;
 }
+
+.codexin-popular-posts-widget .media img {
+    margin-right: 10px;
+}
+
 
 a.more,
 a.more:hover {
