@@ -113,7 +113,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'name'  => esc_html__( 'Project Date', 'reveal' ),
                 'desc'  => esc_html__('Enter project date. Example: 14-Apr-17', 'reveal' ),
                 'id'    => $prefix . 'portfolio_date',
-                'type'  => 'text',
+                'type'  => 'date',
                 'clone' => false,
                 'size'  => 95
             ),

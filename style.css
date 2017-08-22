@@ -1172,22 +1172,6 @@ p.followers {
     margin-top: 20px;
 }
 
-.footer-left .italic {
-    margin-right: 20px;
-}
-
-.footer-left i {
-    margin: 0 5px;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s;
-}
-
 .contact-info a {
     text-decoration: none;
     display: block;
@@ -1230,32 +1214,6 @@ p.followers {
     box-shadow: none;
 }
 
-.widget-title {
-    text-transform: uppercase;
-    margin-top: 15px;
-    margin-bottom: 40px;
-}
-
-.reveal-widget .media {
-    margin-bottom: 30px;
-}
-
-.reveal-widget .media .media-body {
-    padding-top: 10px;
-}
-
-.reveal-widget .media .blog-info {
-    padding-top: 5px;
-}
-
-.instagram-images img {
-    width: 100%;
-}
-
-.media-object {
-    max-width: none;
-}
-
 a.more,
 a.more:hover {
     text-decoration: none;
@@ -1268,35 +1226,6 @@ a.more:hover {
 .copyright {
     margin-bottom: 20px;
     font-size: 12px;
-}
-
-.instagram-images a {
-    position: relative;
-    display: block;
-    float: left;
-    width: 32%;
-    margin-right: 1%;
-    margin-bottom: 1%;
-}
-
-.hoverable {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 0%;
-    left: 0;
-    bottom: 0;
-    opacity: 0;
-    -webkit-transition: all .4s;
-    -moz-transition: all .4s;
-    -ms-transition: all .4s;
-    -o-transition: all .4s;
-    transition: all .4s;
-}
-
-.instagram-images a:hover .hoverable {
-    opacity: 1;
-    height: 100%;
 }
 
 
