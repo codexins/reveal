@@ -36,11 +36,25 @@ $responsive_header = reveal_option('reveal-responsive-version');
 					<!--Responsive Navigation-->
 					<div id="o-wrapper" class="mobile-nav o-wrapper">
 						<div class="primary-nav">
+<<<<<<< HEAD
+							<button id="c-button--slide-left" class="primary-nav-details">Menu 
+
+								<div id="nav-icon2">
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								</div>
+							</button>
+=======
 							<?php if( $responsive_header == 'left' ): ?>
 							<button id="c-button--slide-left" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
 							<?php else: ?>
 							<button id="c-button--slide-right" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
 							<?php endif; ?>
+>>>>>>> 5c47dc2de25d65ab096003032a6eba0ccd942a0f
 						</div>
 					</div><!--End Responsive Navigation-->
 
