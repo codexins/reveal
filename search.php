@@ -17,7 +17,7 @@ get_header(); ?>
 	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-xs-8 col-xs-offset-2">
 
 					<div id="primary" class="site-main">
 						<?php
@@ -33,7 +33,7 @@ get_header(); ?>
 
 							endwhile; ?>
 
-							<?php reveal_posts_link(); ?>
+							<?php reveal_posts_link_numbered(); ?>
 
 						<?php else :
 

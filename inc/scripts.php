@@ -77,7 +77,7 @@ function reveal_scripts () {
 	}
 
 	// Comments Ajax Support
-	if( reveal_option( 'reveal-ajax-comments' ) ) {
+	if( reveal_option( 'reveal-ajax-comments' ) && ! is_search() ) {
 		global $post;
 		$count = wp_count_comments($post->ID);
 	    wp_register_script( 'ajax_comment', get_template_directory_uri() . '/assets/js/ajax-comments.js', array('jquery') );
@@ -105,7 +105,7 @@ function reveal_scripts () {
 	}
 
     // Load More Ajax Support
-    if( reveal_option( 'reveal_pagination' ) == 'loadmore' && ! is_single() ):
+    if( reveal_option( 'reveal_pagination' ) == 'loadmore' && ! is_single() && ! is_search() ):
 	    global $wp_query;
 		if ( reveal_option( 'reveal-blog-ajax' ) == 'loadmore-scroll' ):
 		    wp_register_script( 'reveal-loadmore', get_template_directory_uri() . '/assets/js/reveal-loadmore-scroll.js', array('jquery') );
