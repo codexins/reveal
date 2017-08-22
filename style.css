@@ -367,7 +367,6 @@ ul.sub-menu li a {
 
 /*---- For Navigation--*/
 .c-menu--slide-left,
-.c-menu--slide-right,
 .primary-nav button {
     display: none;
 }
@@ -2541,7 +2540,6 @@ img{
   left: calc(50% - 4px);
   top: 18px;
 }
-
 
 .c-menu__close i.fa.fa-times {
     margin-right: 5px;
