@@ -206,6 +206,10 @@ Mobile Menu
 		text-align: right;
 	}
 
+	.menu-right + .mobile-nav {
+		text-align: left;
+	}
+
 	.primary-nav-details {
 	    border: 0;
 	    outline: none;
@@ -464,7 +468,7 @@ Mobile Menu
 	}
 
 
-	#nav-icon2{
+	#nav-icon2 {
 		position: relative;
 		-webkit-transition: .5s ease-in-out;
 		-moz-transition: .5s ease-in-out;
@@ -475,6 +479,12 @@ Mobile Menu
 		width: 30px;
 		height:  30px;
 		margin-left: 20px;
+	}
+
+	#c-button--slide-right #nav-icon2 {
+		float: left;
+		margin-left: 0;
+		margin-right: 20px;
 	}
 
 	#nav-icon2 span {
@@ -574,6 +584,10 @@ Mobile Menu
 
 	.c-menu__close i.fa.fa-times {
 		margin-right: 5px;
+	}
+
+	.navbar-brand.menu-right {
+		float: right;
 	}
 
 

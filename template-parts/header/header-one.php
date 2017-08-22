@@ -15,8 +15,13 @@ $responsive_header = reveal_option('reveal-responsive-version');
 					<?php 
 					$logo_type = reveal_option('reveal-logo-type');	
 					$text_logo = reveal_option('reveal-text-logo'); 
-					$image_logo = reveal_option('reveal-image-logo')['url']; ?>		
+					$image_logo = reveal_option('reveal-image-logo')['url']; ?>	
+
+					<?php if( $responsive_header == 'right' ): ?>	
+					<a class="navbar-brand menu-right" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
+					<?php else: ?>
 					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
+					<?php endif; ?>
 						<?php if($logo_type == 2): ?>
 							<?php if( !empty( $image_logo ) ): ?>
 							<img src="<?php echo esc_url($image_logo); ?>" alt="Logo" itemprop="logo">
