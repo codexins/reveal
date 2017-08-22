@@ -44,7 +44,7 @@
 
 	<!-- Initializing Mobile Menu -->
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		<button class="c-menu__close">&larr; <?php esc_html_e( 'Back', 'reveal' ); ?></button>
+		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
 		<?php get_mobile_menu() ?>
 	</div><!-- end of Moblie Menu -->
 

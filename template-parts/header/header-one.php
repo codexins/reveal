@@ -35,7 +35,17 @@
 					<!--Responsive Navigation-->
 					<div id="o-wrapper" class="mobile-nav o-wrapper">
 						<div class="primary-nav">
-							<button id="c-button--slide-left" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
+							<button id="c-button--slide-left" class="primary-nav-details">Menu 
+
+								<div id="nav-icon2">
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								</div>
+							</button>
 						</div>
 					</div><!--End Responsive Navigation-->
 
