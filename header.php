@@ -46,12 +46,10 @@
 	<!-- Initializing Mobile Menu -->
 	<?php if( $responsive_header == 'left' ): ?>
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left" itemscope itemtype="http://schema.org/SiteNavigationElement">
-
-		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
-
 	<?php else: ?>
 	<div id="c-menu--slide-right" class="c-menu c-menu--slide-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<?php endif; ?>
+		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
 		<?php get_mobile_menu() ?>
 	</div><!-- end of Moblie Menu -->
 
