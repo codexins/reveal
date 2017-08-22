@@ -367,6 +367,7 @@ ul.sub-menu li a {
 
 /*---- For Navigation--*/
 .c-menu--slide-left,
+.c-menu--slide-right,
 .primary-nav button {
     display: none;
 }
