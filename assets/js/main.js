@@ -106,6 +106,7 @@
     /*--------------------------------------------------------------
     Dropdown select box styling with nice-select
     ---------------------------------------------------------------- */
+
     $('select').niceSelect();
 
 
@@ -113,11 +114,25 @@
 	Activating site loader
     ---------------------------------------------------------------- */
 
-    $(window).on('load', function() { 
-        $('#preloader_1').delay(300).fadeOut('fast');
-        $('body').addClass('overflow-fix');
-    });
+    if (reveal_main_params.trans_loader == true) {
+        var ignore_onbeforeunload = false;
 
+        $("a[href^=mailto], a[href^=tel]").on("click",function(){
+            ignore_onbeforeunload = true;
+        });
+
+        $(window).on("beforeunload", function() { 
+            if (!ignore_onbeforeunload){
+                $("#preloader_1").fadeIn("fast");
+            }
+            ignore_onbeforeunload = false;
+        });
+
+        $(window).on('load', function() { 
+            $('#preloader_1').delay(300).fadeOut('fast');
+            $('body').addClass('overflow-fix');
+        });
+    }
     
     /*--------------------------------------------------------------
     Targeting Portfolio a tag for click event
@@ -189,21 +204,44 @@
     /*--------------------------------------------------------------
     For Responsive Navigation
     --------------------------------------------------------------*/
-    var slideLeft = new Menu({
-        wrapper: '#o-wrapper',
-        type: 'slide-left',
-        menuOpenerClass: '.c-button',
-        maskId: '#c-mask'
-    });
+    var resnav = reveal_main_params.res_nav;
 
-    var slideLeftBtn = document.querySelector('#c-button--slide-left');
+    if (resnav == 'left') {
+        /**
+        * Slide left instantiation and action.
+        */
+        var slideLeft = new Menu({
+            wrapper: '#o-wrapper',
+            type: 'slide-left',
+            menuOpenerClass: '.c-button',
+            maskId: '#c-mask'
+        });
 
-    slideLeftBtn.addEventListener('click', function(e) {
-        e.preventDefault;
-        slideLeft.open();
-    });
+        var slideLeftBtn = document.querySelector('#c-button--slide-left');
+
+        slideLeftBtn.addEventListener('click', function(e) {
+            e.preventDefault;
+            slideLeft.open();
+        });
+    } else if(resnav == 'right') {
+        /**
+        * Slide right instantiation and action.
+        */
+        var slideRight = new Menu({
+            wrapper: '#o-wrapper',
+            type: 'slide-right',
+            menuOpenerClass: '.c-button',
+            maskId: '#c-mask'
+        });
+
+        var slideRightBtn = document.querySelector('#c-button--slide-right');
+
+        slideRightBtn.addEventListener('click', function(e) {
+            e.preventDefault;
+            slideRight.open();
+        });
+    }
       
-
 
 })(jQuery);
 

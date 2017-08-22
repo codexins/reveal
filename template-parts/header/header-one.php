@@ -1,6 +1,7 @@
 <?php 
 
 //$header_top = reveal_option('reveal-header-top'); 
+$responsive_header = reveal_option('reveal-responsive-version');
 
  ?>
 
@@ -35,7 +36,11 @@
 					<!--Responsive Navigation-->
 					<div id="o-wrapper" class="mobile-nav o-wrapper">
 						<div class="primary-nav">
+							<?php if( $responsive_header == 'left' ): ?>
 							<button id="c-button--slide-left" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
+							<?php else: ?>
+							<button id="c-button--slide-right" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
+							<?php endif; ?>
 						</div>
 					</div><!--End Responsive Navigation-->
 

@@ -414,7 +414,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             ),
                         ),
                         'default'  => '1'
-                    ),              )
+                    ),
+
+                    array(
+                        'id'        => 'reveal-responsive-version',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Select Responsive Navigation Type', 'reveal'),
+                        'desc'      => '',
+                        'options'   => array(
+                            'left'  => esc_html__( 'Slide Left Menu', 'reveal' ),
+                            'right' => esc_html__( 'Slide Right Menu', 'reveal' ),
+                        ),
+                        'default'   => 'left'
+                    ),
+                )
             );
 
             //Page Title And BreadCrumbs..

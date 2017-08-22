@@ -34,6 +34,7 @@
 	<?php 
 
 	$page_loader = reveal_option('reveal-page-loader');
+	$responsive_header = reveal_option('reveal-responsive-version');
 
 	?>
 	<!--  Site Loader -->
@@ -43,7 +44,11 @@
 	<!--  Site Loader finished -->
 
 	<!-- Initializing Mobile Menu -->
+	<?php if( $responsive_header == 'left' ): ?>
 	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<?php else: ?>
+	<div id="c-menu--slide-right" class="c-menu c-menu--slide-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<?php endif; ?>
 		<button class="c-menu__close">&larr; <?php esc_html_e( 'Back', 'reveal' ); ?></button>
 		<?php get_mobile_menu() ?>
 	</div><!-- end of Moblie Menu -->
