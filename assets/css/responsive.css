@@ -477,7 +477,7 @@ Mobile Menu
 		cursor: pointer;
 		float: right;
 		width: 30px;
-		height:  30px;
+		height:  20px;
 		margin-left: 20px;
 	}
 
@@ -490,8 +490,9 @@ Mobile Menu
 	#nav-icon2 span {
 		display: block;
 		position: absolute;
-		height: 5px;
+		height: 3px;
 		width: 50%;
+		margin: 5px 0;
 		background: #fff;
 		opacity: 1;
 		-webkit-transform: rotate(0deg);
@@ -519,13 +520,16 @@ Mobile Menu
 	}
 
 	#nav-icon2 span:nth-child(3), #nav-icon2 span:nth-child(4) {
-		top: 10px;
+		top: 6px;
 	}
 
 	#nav-icon2 span:nth-child(5), #nav-icon2 span:nth-child(6) {
-		top: 20px;
+		top: 12px;
 	}
-
+	.has-slide-left #nav-icon2 span,
+	.has-slide-right #nav-icon2 span{
+		margin: 0 ;
+	}
 	.has-slide-right #nav-icon2 span:nth-child(1),
 	.has-slide-right #nav-icon2 span:nth-child(6),
 	.has-slide-left #nav-icon2 span:nth-child(1),
