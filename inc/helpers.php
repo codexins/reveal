@@ -699,3 +699,47 @@ function reveal_ajax_comment_handler(){
 
 add_action( 'wp_ajax_ajaxcomments', 'reveal_ajax_comment_handler' ); // For registered user
 add_action( 'wp_ajax_nopriv_ajaxcomments', 'reveal_ajax_comment_handler' ); // For not registered users
+
+
+/**
+ * Search Ajax Handler
+ * 
+ * Ajaxifies the search query
+ */ 
+function reveal_ajax_search_cb() {
+    
+    $search = sanitize_text_field( $_POST[ 'search' ] );
+
+    $args = array(
+        'post_type'         => array( 'post', 'page', 'portfolio', 'events' ),
+        'posts_per_page'    => 10,
+        'post_status'       => 'publish',
+        's'                 => $search
+        );
+    
+    $q = new WP_Query( $args );
+    
+    $output = '';
+    
+    if( $q->have_posts() ) {
+        
+        while( $q->have_posts() ) : $q->the_post();
+        
+            echo '<a class="search-result" href="' . get_permalink() . '"><span>' . get_the_title() . '</span></a>';
+        
+        endwhile;
+    
+    } else {
+        
+        echo 'error';
+        
+    } // end if have posts
+    
+    /* reset query */
+    wp_reset_query();
+    
+    die();
+    
+}
+add_action( 'wp_ajax_reveal_ajax_search', 'reveal_ajax_search_cb' );
+add_action( 'wp_ajax_nopriv_reveal_ajax_search', 'reveal_ajax_search_cb' );

@@ -1520,6 +1520,62 @@ body.overflow-fix {
     border-left: 0;
 }
 
+form.input-group .loader {
+    z-index: 99;
+    top: 16px;
+    right: 80px;
+    position: absolute;
+    font-size: 12px;
+}
+
+form.input-group .clearable {
+    position: relative;
+    float: right;
+    height: 15px;
+    width: 15px;
+    top: 12px;
+    right: 55px;
+    border-radius: 20px;
+    color: #999;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+    line-height: 15px;
+    font-size: 12px;
+}
+
+.ajax-results .search-result {
+    word-break: break-word;
+    display: block;
+    margin: 10px 0;
+    position: relative;
+}
+
+.ajax-results .search-result span {
+    padding-left: 20px;
+    display: block;
+}
+
+.ajax-results .search-result::before {
+    content: '\f101';
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+form.input-group .ajax-results {
+    display: block;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    z-index: 999;
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 82%;
+    padding: 10px;
+}
+
 .comment-reply-title,
 h2.widgettitle {
     text-transform: uppercase;
