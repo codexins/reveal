@@ -78,7 +78,7 @@ function reveal_scripts () {
 	}
 
 	// Comments Ajax Support
-	if( reveal_option( 'reveal-ajax-comments' ) ) {
+	if( reveal_option( 'reveal-ajax-comments' ) && ! is_search() ) {
 		global $post;
 		$count = wp_count_comments($post->ID);
 	    wp_register_script( 'ajax_comment', get_template_directory_uri() . '/assets/js/ajax-comments.js', array('jquery') );
@@ -105,8 +105,15 @@ function reveal_scripts () {
 		wp_enqueue_script( 'photswipe-main-js', get_template_directory_uri() . '/assets/js/photoswipe-main.js', array ( 'jquery' ), 4.1, true);
 	}
 
+    // Search Ajax Support
+	wp_register_script( 'ajax-search-js', get_template_directory_uri() . '/assets/js/ajax-search.js', array ( 'jquery' ), 1.0, true);
+    wp_localize_script( 'ajax-search-js', 'reveal_search_params', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+    ) ); 
+    wp_enqueue_script( 'ajax-search-js' );
+
     // Load More Ajax Support
-    if( reveal_option( 'reveal_pagination' ) == 'loadmore' && ! is_single() ):
+    if( reveal_option( 'reveal_pagination' ) == 'loadmore' && ! is_single() && ! is_search() ):
 	    global $wp_query;
 		if ( reveal_option( 'reveal-blog-ajax' ) == 'loadmore-scroll' ):
 		    wp_register_script( 'reveal-loadmore', get_template_directory_uri() . '/assets/js/reveal-loadmore-scroll.js', array('jquery') );
@@ -123,7 +130,14 @@ function reveal_scripts () {
 	    wp_enqueue_script( 'reveal-loadmore' );
 	endif;
 
-	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/main.js', array ( 'jquery' ), 1.1, true);
+	$responsive_nav = !empty( reveal_option( 'reveal-responsive-version' ) ) ? reveal_option( 'reveal-responsive-version' ) : 'left';
+	$transition_loader = !empty( reveal_option( 'reveal-page-loader' ) ) ? reveal_option( 'reveal-page-loader' ) : true;
+	wp_register_script( 'main-script', get_template_directory_uri() . '/assets/js/main.js', array ( 'jquery' ), 1.0, true);
+    wp_localize_script( 'main-script', 'reveal_main_params', array(
+        'res_nav' => $responsive_nav,
+        'trans_loader' => $transition_loader
+    ) ); 
+    wp_enqueue_script( 'main-script' );
 
 } 
 

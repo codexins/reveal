@@ -1,6 +1,7 @@
 <?php 
 
 //$header_top = reveal_option('reveal-header-top'); 
+$responsive_header = reveal_option('reveal-responsive-version');
 
  ?>
 
@@ -10,18 +11,17 @@
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#reveal-navbar-collapse-1" aria-expanded="false">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button> -->
 
 					<?php 
 					$logo_type = reveal_option('reveal-logo-type');	
 					$text_logo = reveal_option('reveal-text-logo'); 
-					$image_logo = reveal_option('reveal-image-logo')['url']; ?>		
+					$image_logo = reveal_option('reveal-image-logo')['url']; ?>	
+
+					<?php if( $responsive_header == 'right' ): ?>	
+					<a class="navbar-brand menu-right" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
+					<?php else: ?>
 					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
+					<?php endif; ?>
 						<?php if($logo_type == 2): ?>
 							<?php if( !empty( $image_logo ) ): ?>
 							<img src="<?php echo esc_url($image_logo); ?>" alt="Logo" itemprop="logo">
@@ -30,12 +30,26 @@
 						<?php elseif($logo_type == 1): 
 							if(!empty($text_logo)): echo esc_html($text_logo); endif; ?>
 						<?php endif; ?>
-					</a>
+					</a><!--End navbar-brand-->
 					
 					<!--Responsive Navigation-->
 					<div id="o-wrapper" class="mobile-nav o-wrapper">
 						<div class="primary-nav">
-							<button id="c-button--slide-left" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
+
+							<?php if( $responsive_header == 'left' ): ?>
+							<button id="c-button--slide-left" class="primary-nav-details">Menu
+							<?php else: ?>
+							<button id="c-button--slide-right" class="primary-nav-details">Menu
+							<?php endif; ?>
+								<div id="nav-icon2">
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								  <span></span>
+								</div>
+							</button>
 						</div>
 					</div><!--End Responsive Navigation-->
 

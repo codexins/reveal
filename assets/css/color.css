@@ -773,3 +773,49 @@ table#wp-calendar thead {
 .portfolio .portfolio-image a {
     color: #333;
 }
+
+
+/************************************************************
+            Mobile Menu
+*************************************************************/
+
+@media only screen and (max-width: 767px) {
+
+    .primary-nav button {
+        color: #fff;
+    }
+
+    .primary-nav-details {
+        background: transparent;
+        color: #000;
+    }
+
+    .c-menu {
+      background-color: #015989;
+    }
+
+    .c-menu--slide-left a,
+    .c-menu--slide-right a {
+        color: #fff;
+    }
+
+    .c-menu__items a:hover {
+        background: #006aa2;
+    }
+
+    .c-menu__close {
+        color: #fff;
+        background-color: #009dc8;
+    }
+
+    .c-mask {
+        background-color: #000;
+    }
+
+    .c-button {
+        color: #67b5d1;
+        background: none;
+        border: solid 2px #67b5d1;
+    }
+
+}

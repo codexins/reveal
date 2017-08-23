@@ -451,42 +451,6 @@ if( $disable_port == false ) {
 
 /**
 *
-* Helper Function for loading page transition animation
-*
-**/
-function reveal_page_transition_animation() {
-
-    $transition_anim = reveal_option( 'reveal-page-loader' );
-    if( $transition_anim ):
-    $codeopt = '';
-    $codeopt .= '
-    <script type="text/javascript">
-        (function($) {
-            var ignore_onbeforeunload = false;
-            $("a[href^=mailto], a[href^=tel]").on("click",function(){
-                ignore_onbeforeunload = true;
-            });
-            $(window).on("beforeunload", function() { 
-                if (!ignore_onbeforeunload){
-                    $("#preloader_1").fadeIn("fast");
-                }
-                ignore_onbeforeunload = false;
-            });
-        })(jQuery);
-    </script>
-
-    ';
-
-    printf( '%s', $codeopt );
-    endif;
-
-}
-
-add_action('wp_footer', 'reveal_page_transition_animation');
-
-
-/**
-*
 * Helper Function for Google Analytics
 *
 **/
@@ -735,3 +699,44 @@ function reveal_ajax_comment_handler(){
 
 add_action( 'wp_ajax_ajaxcomments', 'reveal_ajax_comment_handler' ); // For registered user
 add_action( 'wp_ajax_nopriv_ajaxcomments', 'reveal_ajax_comment_handler' ); // For not registered users
+
+
+/**
+ * Search Ajax Handler
+ * 
+ * Ajaxifies the search query
+ */ 
+function reveal_ajax_search_cb() {
+    
+    $search = sanitize_text_field( $_POST[ 'search' ] );
+
+    $args = array(
+        'post_type'         => array( 'post', 'page', 'portfolio', 'events' ),
+        'posts_per_page'    => -1,
+        'post_status'       => 'publish',
+        's'                 => $search
+        );
+    
+    $q = new WP_Query( $args );
+    
+    if( $q->have_posts() ) {
+        
+        while( $q->have_posts() ) : $q->the_post();
+        
+            echo '<a class="search-result" href="' . get_permalink() . '"><span>' . get_the_title() . '</span></a>';
+        
+        endwhile;
+    
+    } else {
+        
+        echo 'error';
+        
+    } // end if have posts
+    
+    wp_reset_query();
+    
+    die();
+    
+}
+add_action( 'wp_ajax_reveal_ajax_search', 'reveal_ajax_search_cb' );
+add_action( 'wp_ajax_nopriv_reveal_ajax_search', 'reveal_ajax_search_cb' );
