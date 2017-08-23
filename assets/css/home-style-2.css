@@ -494,10 +494,11 @@ section#counter_rv2:before {
 
 ***********************************/
 .service-item {
-    width: 33.33%;
+    /*width: 33.33%;*/
     float: left;
     padding-left: 40px;
     padding-right: 40px;
+    background: #f7f7f7;
 }
 .service-icon {
     margin-bottom: 35px;
@@ -506,9 +507,9 @@ section#counter_rv2:before {
     margin-bottom: 20px;
 }
 
-#services .col-sm-12:nth-child(2n+1) .service-item {
+/*#services .col-sm-12:nth-child(2n+1) .service-item {
     background: #f7f7f7;
-}
+}*/
 
 #services .col-sm-12:nth-child(even) .service-item{
     background: #fff ;

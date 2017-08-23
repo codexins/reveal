@@ -38,7 +38,6 @@ function reveal_scripts () {
 	
 	// Load the Main stylesheet
 	wp_enqueue_style( 'main-stylesheet', get_stylesheet_uri() );
-	wp_enqueue_style( 'home2-stylesheet', get_template_directory_uri() . '/assets/css/home-style-2.css',array('main-stylesheet' ),'1.2','all' );
 	wp_enqueue_style( 'responsive-stylesheet', get_template_directory_uri() . '/assets/css/responsive.css' );
 
 
