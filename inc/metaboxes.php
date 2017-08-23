@@ -348,7 +348,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_start_date',
                 'type'  => 'date',
                 'clone' => false,
-                'size'  => 100,
+                'size'  => 95,
                 'js_options' => 'MM d, YY'
             ),
 
@@ -359,7 +359,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_start_time',
                 'type'  => 'time',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -368,7 +368,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_end_date',
                 'type'  => 'date',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -377,7 +377,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_end_time',
                 'type'  => 'time',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -386,7 +386,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_phone',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -395,7 +395,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_email',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -404,7 +404,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_address',
                 'type'  => 'textarea',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -413,7 +413,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_address_latitude',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
             array(
@@ -422,7 +422,7 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'id'    => $prefix . 'event_address_longitude',
                 'type'  => 'text',
                 'clone' => false,
-                'size'  => 100
+                'size'  => 95
             ),
 
 
