@@ -256,12 +256,19 @@ p.followers span {
     font-weight: bold;
 }
 
+.twitter-feed-right h4,
 .posts-single-right h4 {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: bold;
 }
 
+
+.twitter-feed-right p {
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-bottom: 5px;
+}
 
 
 .codexin-popular-posts-widget .media p {
