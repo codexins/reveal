@@ -1549,6 +1549,11 @@ form.input-group .clearable {
     z-index: 999;
     line-height: 15px;
     font-size: 12px;
+    display: none;
+}
+
+form.input-group .ajax-results {
+    display: none;
 }
 
 .ajax-results .search-result {
