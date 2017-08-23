@@ -169,6 +169,11 @@ input[type="button"]:hover{
     word-wrap: break-word;
 }
 
+.reveal-widget {
+    margin-bottom: 30px;
+}
+
+
 
 .slick-slide {
     outline: none;
