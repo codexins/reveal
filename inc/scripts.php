@@ -77,7 +77,7 @@ function reveal_scripts () {
 	}
 
 	// Comments Ajax Support
-	if( reveal_option( 'reveal-ajax-comments' ) && ! is_search() ) {
+	if( reveal_option( 'reveal-ajax-comments' ) && ! is_search() && ! is_404() ) {
 		global $post;
 		$count = wp_count_comments($post->ID);
 	    wp_register_script( 'ajax_comment', get_template_directory_uri() . '/assets/js/ajax-comments.js', array('jquery') );
