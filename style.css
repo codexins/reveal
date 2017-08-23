@@ -1574,6 +1574,8 @@ form.input-group .ajax-results {
     border: 1px solid #ccc;
     width: 82%;
     padding: 10px;
+    max-height: 450px;
+    overflow-y: auto;
 }
 
 .comment-reply-title,

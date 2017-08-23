@@ -712,14 +712,12 @@ function reveal_ajax_search_cb() {
 
     $args = array(
         'post_type'         => array( 'post', 'page', 'portfolio', 'events' ),
-        'posts_per_page'    => 10,
+        'posts_per_page'    => -1,
         'post_status'       => 'publish',
         's'                 => $search
         );
     
     $q = new WP_Query( $args );
-    
-    $output = '';
     
     if( $q->have_posts() ) {
         
@@ -735,7 +733,6 @@ function reveal_ajax_search_cb() {
         
     } // end if have posts
     
-    /* reset query */
     wp_reset_query();
     
     die();
