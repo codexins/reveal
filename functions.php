@@ -156,6 +156,7 @@ class Reveal {
 		add_image_size('info-image', 555, 370, true);
 		add_image_size('testimonial-mini-image', 110, 110, true);
 		add_image_size('gallery-format-image', 800, 450, true);
+		add_image_size('event-v2-image', 570, 310, true);
 
 
 		/*
