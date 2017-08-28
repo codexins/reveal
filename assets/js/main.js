@@ -242,6 +242,37 @@
             slideRight.open();
         });
     }
+
+    if (typeof kc_parallax !== 'function') {
+        var $window = $(window);
+        var windowHeight = $window.height();
+
+        $window.resize(function() {
+            windowHeight = $window.height();
+            kc_front.row_action(true);
+        });
+
+        $.fn.kc_parallax = function() {
+
+            var $this = $(this), el_top;
+            $this.each(function() { el_top = $this.offset().top; });
+            function update() {
+                var pos = $window.scrollTop();
+                $this.each(function() {
+                    var $el = $(this), top = $el.offset().top, height = $el.outerHeight(true);
+                    if (top + height < pos || top > pos + windowHeight || $this.data('kc-parallax') !== true )
+                        return;
+                    $this.css('backgroundPosition', "50% " + Math.round((el_top - pos) * 0.4) + "px");
+                })
+            }
+
+            $window.on('scroll resize', update).trigger('update');
+
+        };
+        $('div.section[data-kc-parallax="true"]').each(function(){
+            $(this).kc_parallax();
+        });
+    }
       
 
 })(jQuery);
