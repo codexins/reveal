@@ -243,6 +243,10 @@
         });
     }
 
+    /*--------------------------------------------------------------
+    For Parallax Support using kc_parallax
+    --------------------------------------------------------------*/
+
     if (typeof kc_parallax !== 'function') {
         var $window = $(window);
         var windowHeight = $window.height();
