@@ -153,7 +153,6 @@ class Reveal {
 		add_image_size('team-mini-image', 262, 325, true);
 		add_image_size('portfolio-mini-image', 380, 309, true);
 		add_image_size('portfolio-single-image', 800, 400, true);
-		add_image_size('testimonial-mini-image', 110, 110, true);
 		add_image_size('gallery-format-image', 800, 450, true);
 
 

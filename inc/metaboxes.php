@@ -87,6 +87,15 @@ function reveal_register_meta_boxes( $meta_boxes ) {
                 'size'  => 95
             ),
 
+            array(
+                'name'  => esc_html__( 'Company', 'reveal' ),
+                'desc'  => esc_html__('Enter Company Name', 'reveal' ),
+                'id'    => $prefix . 'author_company',
+                'type'  => 'text',
+                'clone' => false,
+                'size'  => 95
+            ),
+
         )
 
     );
