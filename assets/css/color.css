@@ -277,26 +277,7 @@ a.explore {
 /***********************************
     010 - Portfolio Section
 ***********************************/
-.portfolio-filter ul li {
-    border: 1px solid #333;
-}
-.portfolio-filter ul li.active {
-    color: #fff;
-    background: #295970;
-    border-color: #295970;
-}
-.portfolio a {
-    color: #fff;
-}
 
-.portfolio .image-mask {
-    background: rgb(41, 89, 112);
-    background: rgba(41, 89, 112, 0.75);
-}
-
-.image-content {
-    color: #fff;
-}
 
 
 

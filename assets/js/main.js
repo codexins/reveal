@@ -134,18 +134,6 @@
             $('body').addClass('overflow-fix');
         });
     }
-    
-    /*--------------------------------------------------------------
-    Targeting Portfolio a tag for click event
-    ---------------------------------------------------------------- */
-
-    $(".portfolio-title").click(function (e) {
-        $(this).find("a.clickable").first().click();
-    });
-
-    $(".portfolio-title a.clickable").click(function (e) {
-        e.stopPropagation();
-    });
 
 
     /*--------------------------------------------------------------
