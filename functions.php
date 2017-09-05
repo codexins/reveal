@@ -55,9 +55,6 @@ class Reveal {
 		//Register widgets and Custom widgets
 		require get_template_directory() . '/inc/widgets.php';
 
-		//Adding metaboxes
-		require get_template_directory() . '/inc/metaboxes.php';
-
 		//Include required plugins
 		require get_template_directory() . '/inc/plugins/required-plugins.php';
 
