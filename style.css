@@ -125,9 +125,9 @@ input[type="button"]{
 }
 
 input::-webkit-input-placeholder,
-input:-moz-placeholder ,
-input:-ms-input-placeholder ,
-input[placeholder]{
+input:-moz-placeholder,
+input:-ms-input-placeholder,
+input[placeholder] {
     color: #ddd ;
 }
 input:focus,
