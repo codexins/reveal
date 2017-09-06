@@ -65,10 +65,19 @@ $responsive_header = reveal_option('reveal-responsive-version');
 			</div><!-- end of container -->
 		</nav> <!-- end of nav -->
 
-		<?php if(is_page_template('page-templates/page-home.php')): ?>
-			<div class="slider-wrapper">
-				<?php if(is_plugin_active('masterslider/masterslider.php')): masterslider ( 1 ); endif; ?>
-			</div>
+		<?php if(is_page_template('page-templates/page-home.php')): 
+						if ( defined('MSWP_AVERTA_VERSION') ):
+						$slider_id = rwmb_meta( 'reveal_page_slider', 'type=select' );
+			?>
+					<div class="slider-wrapper">
+						<?php masterslider ( $slider_id ); ?>
+					</div>
+			<?php else: ?>
+				<div class="no-slider text-center">
+					<h3>Oops! Seems Master Slider Not Activated!</h3>
+					<p>Please install/activate Master Slider and create the slides. Once completed, assign the slider from 'Page Edit' settings<br/>If you don't want to use slider, then use another page template, for example 'Page - Full Width' or any other.</p>
+				</div>
+			<?php endif; ?>
 	  <?php endif; ?>
 
 

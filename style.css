@@ -246,6 +246,21 @@ header {
      display: block;
 }
 
+.no-slider {
+    background: #FF9966;
+    padding: 150px 30px 30px 30px;
+}
+
+.no-slider h3 {
+    color: #592626;
+}
+
+.no-slider p {
+    margin-bottom: 0;
+    font-size: 20px;
+    color: #592626;
+    line-height: 1.5em;
+}
 
 nav.navbar {
     padding-top: 20px;
