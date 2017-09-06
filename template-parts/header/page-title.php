@@ -1,6 +1,6 @@
 	<?php 
 
-	if(!is_front_page() || is_home()): 
+	if(!is_page_template('page-templates/page-home.php')):
 
 	$header_bg = rwmb_meta('reveal_page_background', 'type=image_advanced'); 
 		  foreach ($header_bg as $single_bg) {

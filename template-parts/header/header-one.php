@@ -67,10 +67,15 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 		<?php if(is_page_template('page-templates/page-home.php')): 
 						if ( defined('MSWP_AVERTA_VERSION') ):
-						$slider_id = rwmb_meta( 'reveal_page_slider', 'type=select' );
+						$slider_id = rwmb_meta( 'reveal_page_slider', 'type=select' ); 
 			?>
 					<div class="slider-wrapper">
-						<?php masterslider ( $slider_id ); ?>
+						<?php if(!empty($slider_id)): 
+										masterslider ( $slider_id ); 
+									else:
+										echo '<div class="no-slider text-center"><h3>Please select \'Slider Name\' for \'Page Edit\' section and click on \'Update\'</h3>';
+
+							endif; ?>
 					</div>
 			<?php else: ?>
 				<div class="no-slider text-center">

@@ -59,8 +59,9 @@
 	<!-- Start of whole -->
 	<div id="whole" class="whole-site-wrapper">
 
-	<?php if( is_front_page() && !(is_home()) ): ?>	
-	<header id="header" class="header front-header" itemscope itemtype="http://schema.org/WPHeader">
+	
+	<?php if(is_page_template('page-templates/page-home.php')): ?>
+				<header id="header" class="header front-header" itemscope itemtype="http://schema.org/WPHeader">
 	<?php else: ?>
 	<header id="header" class="header inner-header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="nav-container">
