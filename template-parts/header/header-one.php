@@ -73,7 +73,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 						<?php if(!empty($slider_id)): 
 										masterslider ( $slider_id ); 
 									else:
-										echo '<div class="no-slider text-center"><h3>Please select \'Slider Name\' for \'Page Edit\' section and click on \'Update\'</h3>';
+										echo '<div class="no-slider text-center"><h3>Please select \'Slider Name\' from \'Page Edit\' section and click on \'Update\'</h3>';
 
 							endif; ?>
 					</div>
