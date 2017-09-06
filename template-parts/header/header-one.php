@@ -41,14 +41,14 @@ $responsive_header = reveal_option('reveal-responsive-version');
 							<?php else: ?>
 							<button id="c-button--slide-right" class="primary-nav-details">Menu
 							<?php endif; ?>
-								<div id="nav-icon2">
+								<span id="nav-icon2">
 								  <span></span>
 								  <span></span>
 								  <span></span>
 								  <span></span>
 								  <span></span>
 								  <span></span>
-								</div>
+								</span>
 							</button>
 						</div>
 					</div><!--End Responsive Navigation-->
