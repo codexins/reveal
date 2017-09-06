@@ -503,19 +503,19 @@ function reveal_comment_function($comment, $args, $depth) {
  *
  * This function is attached to the 'wp_generate_attachment_metadata' filter hook.
  */
-add_filter( 'wp_generate_attachment_metadata', 'retina_support_attachment_meta', 10, 2 );
-function retina_support_attachment_meta( $metadata, $attachment_id ) {
-    foreach ( $metadata as $key => $value ) {
-        if ( is_array( $value ) ) {
-            foreach ( $value as $image => $attr ) {
-                if ( is_array( $attr ) )
-                    retina_support_create_images( get_attached_file( $attachment_id ), $attr['width'], $attr['height'], true );
-            }
-        }
-    }
+// add_filter( 'wp_generate_attachment_metadata', 'retina_support_attachment_meta', 10, 2 );
+// function retina_support_attachment_meta( $metadata, $attachment_id ) {
+//     foreach ( $metadata as $key => $value ) {
+//         if ( is_array( $value ) ) {
+//             foreach ( $value as $image => $attr ) {
+//                 if ( is_array( $attr ) )
+//                     retina_support_create_images( get_attached_file( $attachment_id ), $attr['width'], $attr['height'], true );
+//             }
+//         }
+//     }
  
-    return $metadata;
-}
+//     return $metadata;
+// }
 
 
 
