@@ -60,7 +60,7 @@
 	<div id="whole" class="whole-site-wrapper">
 
 	<?php if( is_front_page() && !(is_home()) ): ?>	
-	<header id="header" class="header front-header fill-screen" itemscope itemtype="http://schema.org/WPHeader">
+	<header id="header" class="header front-header" itemscope itemtype="http://schema.org/WPHeader">
 	<?php else: ?>
 	<header id="header" class="header inner-header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="nav-container">

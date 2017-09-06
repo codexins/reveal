@@ -66,15 +66,10 @@ $responsive_header = reveal_option('reveal-responsive-version');
 		</nav> <!-- end of nav -->
 
 		<?php if(is_front_page() && !is_home()): ?>
-		<div class="slider-text text-center">
-			<h4>Creative Coders</h4>
-			<h2>WELCOME<br />TO REVEAL</h2>
-			<div class="small-divider"></div>
-			<a href="#services" class="btn-btn-primary slider-btn">Learn more</a>
-		</div>
-
-		<a href="#about" class="explore"><i class="fa fa-chevron-down"></i></a>
-	<?php endif; ?>
+			<div class="slider-wrapper">
+		<?php masterslider ( 1 ); ?>
+			</div>
+	  <?php endif; ?>
 
 
 

@@ -80,7 +80,7 @@ header.inner-header {
     background: #295970;
 }
 header .navbar.affix {
-    background-color: #295970;
+    background: #295970;
     box-shadow: 0 0 1px rgba(32, 32, 32, 0.35);
 }
 

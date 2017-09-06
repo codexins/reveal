@@ -239,25 +239,43 @@ header {
     z-index: 2;
 }
 
-header.front-header {
-    background: url('assets/images/showcase.jpg') no-repeat scroll;
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+
+.slider-wrapper {
+     position: absolute;
+     top:0;
+     left:0;
+     width:100%;
+     height: auto;
+     display: block;
 }
 
-.front-header::before {
-    content: "";
-    height: 100%;
-    left: 0;
-    opacity: 0.6;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 
 nav.navbar {
     padding-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    z-index: 1;
+    padding-bottom: 20px;
+    background: -webkit-linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.001));
+    background: -moz-linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.001));
+    background: -ms-linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.001));
+    background: -o-linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.001));
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.001));
+    border-bottom: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+}
+
+nav.navbar.affix {
+    position: fixed;
+    padding-bottom: 0;
+    margin-bottom: 20px;
 }
 
 header .navbar {
