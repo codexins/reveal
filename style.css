@@ -1192,6 +1192,30 @@ a.more:hover {
     font-size: 12px;
 }
 
+.footer-left .reveal-widget {
+    margin-bottom: 0;
+}
+
+.footer-left .codexin-mailchimp-wrapper {
+    background: transparent;
+    padding: 0;
+}
+
+.footer-left .mailchimp-email {
+    box-shadow: none;
+    width: 75%;
+    float: left;
+}
+
+.footer-left .mailchimp-submit {
+    width: 25%;
+    float: left;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+
 
 /************************************************************
     015 - Back to top button
