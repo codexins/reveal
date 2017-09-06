@@ -1201,7 +1201,7 @@ a.more:hover {
     padding: 0;
 }
 
-.footer-left .mailchimp-email {
+.footer-left input.mailchimp-email {
     box-shadow: none;
     width: 75%;
     float: left;
