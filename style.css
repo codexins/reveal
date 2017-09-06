@@ -1218,6 +1218,20 @@ a.more:hover {
     margin-bottom: 0;
 }
 
+.footer-left i {
+    margin: 0 5px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
 
 
 
