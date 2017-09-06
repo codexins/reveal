@@ -67,9 +67,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 		<?php if(is_page_template('page-templates/page-home.php')): ?>
 			<div class="slider-wrapper">
-
-		<?php if(is_plugin_active('masterslider/masterslider.php')): masterslider ( 1 ); endif; ?>
-
+				<?php if(is_plugin_active('masterslider/masterslider.php')): masterslider ( 1 ); endif; ?>
 			</div>
 	  <?php endif; ?>
 
