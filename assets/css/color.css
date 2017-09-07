@@ -494,10 +494,6 @@ p.followers span {
     color: #295970;
 }
 
-.footer-left input[type="email"] {
-    border: 1px solid #ddd;
-}
-
 .footer-left input[type="submit"] {
     background: #295970;
     color: #fff;
@@ -505,10 +501,6 @@ p.followers span {
 
 .footer-left input[type="submit"]:hover {
     background: #002037;
-}
-
-.footer-left .form-control:focus {
-    border-color: #95E1D3;
 }
 
 .reveal-widget .media p {
