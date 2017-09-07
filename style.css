@@ -1132,33 +1132,27 @@ nav.number-pagination {
     margin-top: 0;
 }
 
-p.followers {
-    margin-top: 20px;
-}
-
 .contact-info a {
     text-decoration: none;
     display: block;
 }
 
-
-
-.footer-left form {
+.footer form {
     margin-top: 25px;
 }
 
-.footer-left input[type="email"],
-.footer-left input[type="submit"] {
+.footer input[type="email"],
+.footer input[type="submit"] {
     width: 100%;
     border-radius: 0;
     height: 35px;
 }
 
-.footer-left input[type="email"] {
+.footer input[type="email"] {
     box-shadow: none;
 }
 
-.footer-left input[type="submit"] {
+.footer input[type="submit"] {
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     -ms-transition: all .3s;
@@ -1166,15 +1160,7 @@ p.followers {
     transition: all .3s;
 }
 
-.col-xs-9.form-group {
-    padding-right: 0;
-}
-
-.footer-left .form-inline .col-xs-3 {
-    padding-left: 0;
-}
-
-.footer-left .form-control:focus {
+.footer .form-control:focus {
     box-shadow: none;
 }
 
@@ -1196,25 +1182,25 @@ a.more:hover {
     margin-bottom: 0;
 }
 
-.footer-left .codexin-mailchimp-wrapper {
+.footer .codexin-mailchimp-wrapper {
     background: transparent;
     padding: 0;
 }
 
-.footer-left input.mailchimp-email {
+.footer input.mailchimp-email {
     box-shadow: none;
     width: 75%;
     float: left;
 }
 
-.footer-left .mailchimp-submit {
+.footer .mailchimp-submit {
     width: 25%;
     float: left;
     padding-top: 4px;
     padding-bottom: 4px;
 }
 
-.footer-left .codexin-social-widget p {
+.footer .codexin-social-widget p {
     margin-bottom: 0;
 }
 
