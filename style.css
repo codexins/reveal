@@ -1623,6 +1623,26 @@ h2.widgettitle {
     padding-left: 0;
 }
 
+.share.socials i {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 15px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.share.socials .caption span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
 .widget-area {
     margin-top: 40px;
 }
@@ -2090,12 +2110,6 @@ button.mfp-close:hover {
     line-height: 47px;
     text-align: center;
     width: 45px;
-}
-.socials .flaticon-technology:before {
-    width: 30px;
-    height: 30px;
-    margin: 0;
-    margin-right: 5px;
 }
 
 /*comment navigation */

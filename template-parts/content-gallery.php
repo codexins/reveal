@@ -128,7 +128,7 @@
 
             <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
                 <div class="share socials">            
-                    <div class="caption"><span class="flaticon-technology"></span> <?php esc_html_e('Share :', 'reveal'); ?></div>    
+                    <div class="caption"><span class="flaticon-share-1"></span> <?php esc_html_e('Share :', 'reveal'); ?></div>    
                     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink());?>"><i class="fa fa-facebook"></i></a>
                     <a target="_blank" href="https://twitter.com/home?status=<?php esc_url(the_permalink()); ?>"><i class="fa fa-twitter"></i></a>
                     <a target="_blank" href="https://plus.google.com/share?url=<?php esc_url(the_permalink()); ?>"><i class="fa fa-google-plus"></i></a>
