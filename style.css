@@ -537,7 +537,10 @@ a.explore:hover {
 
 
 
-
+.test-class {
+    position: fixed !important;
+    bottom:-40px;
+}
 
 
 /************************************************************
