@@ -182,6 +182,33 @@
 	.alignright {
 	    margin: 5px 0 20px 15px;
 	}
+
+	/* Header */
+
+	.front-header nav.navbar {
+		background-color: transparent;
+		background: transparent;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		-ms-box-shadow: none;
+		-o-box-shadow: none;
+		box-shadow: none;
+    background: -webkit-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.001));
+    background: -moz-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.001));
+    background: -ms-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.001));
+    background: -o-linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.001));
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.001));
+	}
+
+	.front-header nav.navbar.affix {
+		background-color: #295970;
+		background: #295970;
+	}
+
+	.primary-nav-details,
+	.navbar-header {
+		min-height: 50px;
+	}
 /*-------------------------
 Mobile Menu
 --------------------------*/
@@ -213,7 +240,7 @@ Mobile Menu
 	    outline: none;
 	    text-transform: uppercase;
 	    font-size: 16px;
-		margin: 17px 0;
+			margin: 0;
 	}
 
 	.primary-nav-details i {
@@ -599,6 +626,14 @@ Mobile Menu
 	    padding-bottom: 30px;
 	}
 
+	.navbar-brand {
+	    float: left;
+	    height: auto;
+	    padding: 0 15px;
+	    font-size: 18px;
+	    line-height: 50px;
+	}
+
 /*--------------------------------End Mobile Menu------------------------------------------*/
 
 	.front-header {
@@ -746,7 +781,8 @@ Mobile Menu
 	nav.navbar {
 		box-shadow: 0 0 1px rgba(32, 32, 32, 0.35);
 		background-color: #295970;
-		padding-top: 0;
+		padding-top: 15px;
+		padding-bottom: 15px;
 		z-index: 1;
 	}
 
