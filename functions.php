@@ -147,7 +147,6 @@ class Reveal {
 
 		add_image_size('single-post-image', 800, 354, true);
 		add_image_size('blog-widget-image', 80, 80, true);
-		add_image_size('team-mini-image', 262, 325, true);
 		add_image_size('portfolio-single-image', 800, 400, true);
 		add_image_size('gallery-format-image', 800, 450, true);
 
