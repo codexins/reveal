@@ -50,7 +50,16 @@
 	<div id="c-menu--slide-right" class="c-menu c-menu--slide-right" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<?php endif; ?>
 		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
-		<?php get_mobile_menu() ?>
+		<?php if(has_nav_menu( 'main_menu' )): get_mobile_menu(); 
+					else: ?>
+						<div id="mobile-menu" class="c-menu__items">
+							<ul>
+									<li class="menu-notice">
+										<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
+									</li>
+							</ul>
+						</div>
+		<?php endif; ?>
 	</div><!-- end of Moblie Menu -->
 
 	<!-- Mobile Menu Masking -->

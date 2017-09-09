@@ -592,6 +592,12 @@ Mobile Menu
 		float: right;
 	}
 
+.c-menu	#mobile-menu .menu-notice a {
+	    font-size: 30px;
+	    text-align: center;
+	    padding-top: 30px;
+	    padding-bottom: 30px;
+	}
 
 /*--------------------------------End Mobile Menu------------------------------------------*/
 

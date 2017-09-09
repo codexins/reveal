@@ -57,7 +57,16 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
-					<?php get_main_menu(); ?>
+					<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
+								else: ?>
+									<div class="main-menu">
+										<ul id="main_menu" class="sf-menu">
+												<li class="menu-item">
+													<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
+												</li>
+										</ul>
+									</div>
+					<?php endif; ?>
 				</div>
 				
 				<!-- /.navbar-collapse -->
