@@ -2,7 +2,6 @@
 					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
         <section class="portfolio-single">
-            <div class="container">
                 
                 <?php
 						/* Start the Loop */
@@ -64,8 +63,6 @@
 
 
                 </div>
-
-            </div>
         </section>
 
 
