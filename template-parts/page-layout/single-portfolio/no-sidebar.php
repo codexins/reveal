@@ -43,8 +43,8 @@
 						  
 
 								<div class="col-md-3 col-xs-6">
-								    <div class="new-1">
-								        <img src="<?php the_post_thumbnail_url('portfolio-single-image') ?>" alt="">
+								    <div class="recent-portfolio-wrapper">
+								        <img src="<?php the_post_thumbnail_url('rectangle-two') ?>" alt="">
 								        <div class="one-content">
 								            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
 								            <h3><a href="<?php the_permalink()?>"><?php the_title() ?></a></h3>

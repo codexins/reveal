@@ -2254,15 +2254,15 @@ img{
     font-weight: bold;
 }
 
-.new-1 {
+.recent-portfolio-wrapper {
     position: relative;
 }
-.new-1:after{
+.recent-portfolio-wrapper:after{
     content: "";
     z-index: 1;
     background: #295970 ;
 }
-.new-1:after,
+.recent-portfolio-wrapper:after,
 .one-content {
     position: absolute;
     top: 0;
@@ -2275,11 +2275,11 @@ img{
     transition: 0.3s ;
 }
 
-.new-1:hover:after{
+.recent-portfolio-wrapper:hover:after{
     opacity: 0.6 ;
     visibility: visible;
 }
-.new-1:hover .one-content {
+.recent-portfolio-wrapper:hover .one-content {
     visibility: visible;
     opacity: 1 ;
 }
