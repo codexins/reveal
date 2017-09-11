@@ -379,6 +379,104 @@ header .navbar.affix {
     font-size: 12px;
 }
 
+
+/* Header Two */
+
+.header-two .navbar-header {
+    float: none;
+    text-align: center;
+}
+
+#whole .header-two .navbar-brand {
+    float: none;
+    height: auto;
+    padding: 5px 15px;
+    font-size: 42px;
+    line-height: 1.1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.header-two .sf-menu {
+    float: none;
+    text-align: center;
+    margin-top: 1px;
+}
+
+.header-two .sf-menu > li {
+    float: none;
+    margin-left: 3px;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.header-two.affix a.navbar-brand {
+    display: none;
+}
+
+
+nav.navbar.header-two {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav.navbar.header-two.affix {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+
+/* Header Three (centered logo) */
+
+.header-three .sf-menu > li > a {
+    padding: 10px 20px;
+}
+
+.left-menu .sf-menu {
+    float: left;
+}
+
+.header-three .sf-menu li {
+    margin-left: 0;
+}
+
+#whole .header-three .navbar-brand {
+    float: none;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 42px;
+    line-height: 1.1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header-three .navbar-header {
+    float: none;
+    text-align: center;
+}
+
+.left-menu-wrapper {
+    padding-left: 0;
+}
+
+.right-menu-wrapper {
+    padding-right: 0;
+}
+
+nav.navbar.header-three {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+nav.navbar.header-three.affix {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 /************************************************************
     Menu section
 *************************************************************/
