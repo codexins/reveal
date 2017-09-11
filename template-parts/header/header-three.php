@@ -1,113 +1,127 @@
 <?php 
 
-$header_top = reveal_option('reveal-header-top'); 
+//$header_top = reveal_option('reveal-header-top'); 
+$responsive_header = reveal_option('reveal-responsive-version');
 
  ?>
 
+	<?php //if($header_top == 1): ?>
 
- 	<?php if($header_top == 1): ?>
-		<div class="headertop">
+		<nav class="navbar header-three" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
 				<div class="row">
-					<div class="flex-wrapper">
-						<div class="col-sm-6">
-							<div class="email-phone">
-
-								<?php if(!empty(reveal_option('reveal-phone-url'))):
-										$phone_url = reveal_option('reveal-phone-url');
-										endif; ?>
-							
-								<?php if (!empty(reveal_option('reveal-phone')) && !empty($phone_url)):?>
-									<span><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:<?php echo $phone_url; ?>" ><?php echo reveal_option('reveal-phone');  ?></a></span>
-								<?php endif; ?>
-								<?php if (!empty(reveal_option('reveal-email'))):?>
-								<span><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:<?php echo reveal_option('reveal-email'); ?>"><?php echo reveal_option('reveal-email'); ?></a></span>
-
-								<?php endif; ?>
-
-
-							</div>
+					<div class="flex-wrapper equal-align">
+					<div class="left-menu-wrapper">
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="hidden-xs left-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<?php if(has_nav_menu( 'main_menu_left' )): get_main_menu_left(); 
+										else: ?>
+											<div class="main-menu">
+												<ul id="main_menu" class="sf-menu">
+														<li class="menu-item">
+															<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
+														</li>
+												</ul>
+											</div>
+							<?php endif; ?>
 						</div>
-						<div class="col-sm-6">
-							<div class="social-icon">
+						
+						<!-- /.navbar-collapse -->
+					</div> <!-- end of col-sm-5 -->
 
-								<?php if (!empty(reveal_option('reveal-twitter'))):?>
-									<a href="<?php echo reveal_option('reveal-twitter')  ?>"><i class="fa fa-twitter"></i></a>
-								<?php endif; ?>
+					<div class="logo-wrapper">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
 
-								<?php if (!empty(reveal_option('reveal-facebook'))):?>
-									<a href="<?php echo reveal_option('reveal-facebook')  ?>"><i class="fa fa-facebook"></i></a>
-								<?php endif; ?>
+							<?php 
+							$logo_type = reveal_option('reveal-logo-type');	
+							$text_logo = reveal_option('reveal-text-logo'); 
+							$image_logo = reveal_option('reveal-image-logo')['url']; ?>	
 
-								<?php if (!empty(reveal_option('reveal-instagram'))):?>
-									<a href="<?php echo reveal_option('reveal-instagram')  ?>"><i class="fa fa-instagram"></i></a>
-								<?php endif; ?>
-
-								<?php if (!empty(reveal_option('reveal-linkedin'))):?>
-									<a href="<?php echo reveal_option('reveal-linkedin')  ?>"><i class="fa fa-linkedin"></i></a>
-								<?php endif; ?>
-
-								<?php if (!empty(reveal_option('reveal-youtube'))):?>
-									<a href="<?php echo reveal_option('reveal-youtube')  ?>"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-								<?php endif; ?>
-
-								<?php if (!empty(reveal_option('reveal-vimeo'))):?>
-									<a href="<?php echo reveal_option('reveal-vimeo')  ?>"><i class="fa fa-vimeo" aria-hidden="true"></i></a>
-								<?php endif; ?>
-
-								<?php if (!empty(reveal_option('reveal-google-plus'))):?>
-									<a href="<?php echo reveal_option('reveal-google-plus')  ?>"><i class="fa fa-google-plus"></i></a>
-								<?php endif; ?>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	<?php endif; ?>	
-		<div class="header-bottom <?php if(is_front_page()): echo ' home-page'; endif; ?>">
-			<div class="cx-header-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="header-wrapper">
-							<div class="visible-xs">
-								<div id="logo" class="">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-
-									<?php if (!empty(reveal_option('reveal-logo')['url'])):?>
-
-										<img src="<?php echo reveal_option('reveal-logo')['url']?>" alt="Logo">
-									<?php else: echo "INSERT LOGO"; ?>		
+							<?php if( $responsive_header == 'right' ): ?>	
+							<a class="navbar-brand menu-right" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
+							<?php else: ?>
+							<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">
+							<?php endif; ?>
+								<?php if($logo_type == 2): ?>
+									<?php if( !empty( $image_logo ) ): ?>
+									<img src="<?php echo esc_url($image_logo); ?>" alt="Logo" itemprop="logo">
 									<?php endif; ?>
-									</a>
-								</div>
-							</div>
+
+								<?php elseif($logo_type == 1): 
+									if(!empty($text_logo)): printf('%s', $text_logo); endif; ?>
+								<?php endif; ?>
+							</a><!--End navbar-brand-->
+							
+							<!--Responsive Navigation-->
 							<div id="o-wrapper" class="mobile-nav o-wrapper">
-								  <div class="primary-nav">
-								    <button id="c-button--slide-left" class="primary-nav-details">Menu <i class="fa fa-navicon"></i></button>
-								  </div>
-							</div>
-							
-							<div class="col-sm-2 hidden-xs">
-								<div id="logo" class="">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<div class="primary-nav">
 
-									<?php if (!empty(reveal_option('reveal-logo')['url'])):?>
-
-										<img src="<?php echo reveal_option('reveal-logo')['url']?>" alt="Logo">
-									<?php else: echo "INSERT LOGO"; ?>		
+									<?php if( $responsive_header == 'left' ): ?>
+									<button id="c-button--slide-left" class="primary-nav-details">Menu
+									<?php else: ?>
+									<button id="c-button--slide-right" class="primary-nav-details">Menu
 									<?php endif; ?>
-									</a>
+										<span id="nav-icon2">
+										  <span></span>
+										  <span></span>
+										  <span></span>
+										  <span></span>
+										  <span></span>
+										  <span></span>
+										</span>
+									</button>
 								</div>
-							</div>
-							<div class="col-sm-10 hidden-xs">
-                <div class="menu-area alignright">
-									<?php get_main_menu() ?>
-								</div> <!-- end of menu-area -->
-							</div>
+							</div><!--End Responsive Navigation-->
+
 						</div>
-					</div>
+					</div> <!-- end of col-sm-2 -->
+
+					<div class="right-menu-wrapper">
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
+							<?php if(has_nav_menu( 'main_menu_right' )): get_main_menu_right(); 
+										else: ?>
+											<div class="main-menu">
+												<ul id="main_menu_right" class="sf-menu">
+														<li class="menu-item">
+															<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
+														</li>
+												</ul>
+											</div>
+							<?php endif; ?>
+						</div>
+						
+						<!-- /.navbar-collapse -->
+					</div> <!-- end of col-sm-5 -->
 				</div>
-			</div>
-		</div>
+				</div> <!-- end of row -->
+			</div><!-- end of container -->
+		</nav> <!-- end of nav -->
+
+
+		<?php if(is_page_template('page-templates/page-home.php')): 
+						if ( is_plugin_active( 'nextend-smart-slider3-pro/nextend-smart-slider3-pro.php' ) ):
+						$slider_id = rwmb_meta( 'reveal_page_slider', 'type=select' ); 
+			?>
+					<div class="slider-wrapper">
+						<?php if(!empty($slider_id)): 
+										echo do_shortcode('[smartslider3 slider='. $slider_id .']');
+									else:
+										echo '<div class="no-slider text-center"><h3>Please select \'Slider Name\' from \'Page Edit\' section and click on \'Update\'</h3>';
+
+							endif; ?>
+					</div>
+			<?php else: ?>
+				<div class="no-slider text-center">
+					<h3>Oops! Seems Smart Slider Not Activated!</h3>
+					<p>Please install/activate Smart Slider and create the slides. Once completed, assign the slider from 'Page Edit' settings<br/>If you don't want to use slider, then use another page template, for example 'Page - Full Width' or any other.</p>
+				</div>
+			<?php endif; ?>
+	  <?php endif; ?>
+
+
+
+
+
+

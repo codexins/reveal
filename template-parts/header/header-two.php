@@ -5,13 +5,12 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
  ?>
 
-	<?php //if($header_top == 1): ?>
-
-		<nav class="navbar header-four" data-spy="affix" data-offset-top="150"  >
+		<nav class="navbar header-two" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
-				<div class="flex-wrapper equal-align">
-					<div class="logo-wrapper">
-					<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="row">
+				<!-- Brand and toggle get grouped for better mobile display -->
+
+				<div class="col-xs-12">
 					<div class="navbar-header">
 
 						<?php 
@@ -56,37 +55,26 @@ $responsive_header = reveal_option('reveal-responsive-version');
 						</div><!--End Responsive Navigation-->
 
 					</div>
-				</div> <!-- end of col-sm-3 -->
-
-				<div class="menu-wrapper">
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
-									else: ?>
-										<div class="main-menu">
-											<ul id="main_menu" class="sf-menu">
-													<li class="menu-item">
-														<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
-													</li>
-											</ul>
-										</div>
-						<?php endif; ?>
-					</div>
-					
-					</div> <!-- end of col-sm-6 -->
-					<!-- /.navbar-collapse -->
-
-					<div class="social-wrapper">
-							<div class="cx-social-media">
-								<div class="social-content">
-										<a href="http://Facce" target="_blank"><i class="fa fa-facebook"></i></a>
-										<a href="http://Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-										<a href="http://Insra" target="_blank"><i class="fa fa-instagram"></i></a>
-										<a href="http://Pin" target="_blank"><i class="fa fa-pinterest"></i></a>
-								</div>
-							</div>
-					</div>
-				</div> <!-- end of flex-wrapper -->
+				</div> <!-- end of col-xs-12 -->
+				<div class="clearfix"></div>
+				<div class="col-xs-12">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
+								else: ?>
+									<div class="main-menu">
+										<ul id="main_menu" class="sf-menu">
+												<li class="menu-item">
+													<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
+												</li>
+										</ul>
+									</div>
+					<?php endif; ?>
+				</div>
+				
+				<!-- /.navbar-collapse -->
+				</div> <!-- end of col-xs-12 -->
+				</div> <!-- end of row -->
 			</div><!-- end of container -->
 		</nav> <!-- end of nav -->
 

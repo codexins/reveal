@@ -359,7 +359,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'all_styles'  => true,
                         'letter-spacing'=> true,
                         // Enable all Google Font style/weight variations to be added to the page
-                        'output'      => array( '.logo a' ),
+                        'output'      => array( 'a.navbar-brand' ),
                         'units'       => 'px',
                         'subtitle'    => esc_html__( 'Typography option for text logo', 'reveal' ),
                         'default'     => array(
