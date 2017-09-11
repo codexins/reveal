@@ -347,6 +347,38 @@ header .navbar.affix {
     border-bottom: 0;
 }*/
 
+
+/* Header Four */
+
+.header-four .sf-menu {
+    float: none;
+    text-align: center;
+}
+
+.header-four .sf-menu > li {
+    float: none;
+    margin-left: 3px;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.header-four .cx-social-media {
+    display: block;
+    text-align: right;
+    margin-top: 1px;
+}
+
+.header-four .cx-social-media a {
+    color: #fff;
+}
+
+.header-four .cx-social-media i {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+}
+
 /************************************************************
     Menu section
 *************************************************************/

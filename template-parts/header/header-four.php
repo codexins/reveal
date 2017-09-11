@@ -9,6 +9,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 		<nav class="navbar header-four" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
+				<div class="col-sm-2">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 
@@ -54,7 +55,9 @@ $responsive_header = reveal_option('reveal-responsive-version');
 					</div><!--End Responsive Navigation-->
 
 				</div>
+			</div> <!-- end of col-sm-3 -->
 
+			<div class="col-sm-8">
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
 					<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
@@ -69,7 +72,19 @@ $responsive_header = reveal_option('reveal-responsive-version');
 					<?php endif; ?>
 				</div>
 				
+				</div> <!-- end of col-sm-6 -->
 				<!-- /.navbar-collapse -->
+
+				<div class="col-sm-2">
+						<div class="cx-social-media">
+							<div class="social-content">
+									<a href="http://Facce" target="_blank"><i class="fa fa-facebook"></i></a>
+									<a href="http://Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+									<a href="http://Insra" target="_blank"><i class="fa fa-instagram"></i></a>
+									<a href="http://Pin" target="_blank"><i class="fa fa-pinterest"></i></a>
+							</div>
+						</div>
+				</div>
 
 			</div><!-- end of container -->
 		</nav> <!-- end of nav -->
