@@ -7,6 +7,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 		<nav class="navbar header-two" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
+				<div class="row">
 				<!-- Brand and toggle get grouped for better mobile display -->
 
 				<div class="col-xs-12">
@@ -28,7 +29,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 								<?php endif; ?>
 
 							<?php elseif($logo_type == 1): 
-								if(!empty($text_logo)): echo esc_html($text_logo); endif; ?>
+								if(!empty($text_logo)): printf('%s', $text_logo); endif; ?>
 							<?php endif; ?>
 						</a><!--End navbar-brand-->
 						
@@ -73,7 +74,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 				
 				<!-- /.navbar-collapse -->
 				</div> <!-- end of col-xs-12 -->
-
+				</div> <!-- end of row -->
 			</div><!-- end of container -->
 		</nav> <!-- end of nav -->
 

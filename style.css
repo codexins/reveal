@@ -176,6 +176,14 @@ input[type="button"]:hover{
 }
 
 
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.equal-align {
+    justify-content: space-between;
+}
 
 .slick-slide {
     outline: none;
@@ -286,6 +294,18 @@ nav.navbar {
     box-shadow: none;
 }
 
+.navbar-brand {
+    padding: 10px 15px;
+    line-height: 1.1em;
+    height:auto;
+}
+
+.navbar-brand img {
+    width:100%;
+    max-width:280px;
+}
+
+
 nav.navbar.affix {
     position: fixed;
     padding-bottom: 0;
@@ -310,9 +330,9 @@ header .navbar.affix {
 
 
 .inner-header nav.navbar {
-    padding-top: 10px;
+    padding-top: 20px;
     margin-bottom: 0;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 .inner-header nav.navbar.affix {
@@ -394,7 +414,7 @@ header .navbar.affix {
     padding: 5px 15px;
     font-size: 42px;
     line-height: 1.1em;
-    display: block;
+    display: inline-block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -413,15 +433,10 @@ header .navbar.affix {
     margin-right: 3px;
 }
 
-.header-two.affix a.navbar-brand {
+#whole .header-two.affix a.navbar-brand {
     display: none;
 }
 
-
-nav.navbar.header-two {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 
 nav.navbar.header-two.affix {
     padding-top: 0;
@@ -446,7 +461,7 @@ nav.navbar.header-two.affix {
 #whole .header-three .navbar-brand {
     float: none;
     height: auto;
-    padding: 5px 10px;
+    padding: 10px;
     font-size: 42px;
     line-height: 1.1em;
     display: block;
@@ -465,11 +480,6 @@ nav.navbar.header-two.affix {
 
 .right-menu-wrapper {
     padding-right: 0;
-}
-
-nav.navbar.header-three {
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 
