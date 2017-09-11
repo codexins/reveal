@@ -83,14 +83,14 @@
 	if($header_version == 1): 
 	get_template_part('template-parts/header/header', 'one');
 
-	// elseif($header_version == 2): 
-	// get_template_part('template-parts/header/header', 'two');
+	 elseif($header_version == 2): 
+	 get_template_part('template-parts/header/header', 'two');
 
-	// elseif($header_version == 3): 
-	// get_template_part('template-parts/header/header', 'three');
+	elseif($header_version == 3): 
+	get_template_part('template-parts/header/header', 'three');
 
-	// elseif($header_version == 4): 
-	// get_template_part('template-parts/header/header', 'four');
+	elseif($header_version == 4): 
+	get_template_part('template-parts/header/header', 'four');
 
 
 	endif; ?>
