@@ -43,6 +43,7 @@ INDEX:
     018 - Single Events Page
     019 - 404 page
     070 - Sidebar
+    080 - KC Shortcode Styles
 
 
 ******************************/
@@ -2435,4 +2436,37 @@ img{
     left: -13px;
     top: 30px;
     z-index: -1;
+}
+
+
+
+/************************************************************
+    080 - KC Shortcode Styles
+*************************************************************/
+
+/*
+ *  KC Slider Default Styles
+ */
+
+
+.choose-slides.kc-tabs-slider .owl-theme .owl-controls {
+    margin-top: -30px;
+}
+
+.choose-slides.kc-tabs-slider .owl-theme .owl-controls .owl-page span {
+    background: #fff;
+}
+
+.choose-slides.kc-tabs-slider .owl-theme .owl-controls .owl-page.active span,
+.choose-slides.kc-tabs-slider .owl-theme .owl-controls.clickable .owl-page:hover span {
+    opacity: 0.6;
+}
+
+/*
+ *  KC Accordion Default Styles
+ */
+
+.choose-accordion .ui-accordion-header a i {
+    vertical-align: bottom;
+    display: inline-block;
 }
