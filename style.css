@@ -2601,15 +2601,20 @@ img{
     -ms-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
-
-.reveal-style.kc-blog-posts-3 .kc-list-item-3 .entry-thumb-link:hover img {
-    opacity: 1;
     -webkit-filter: grayscale(1);
     -moz-filter: grayscale(1);
     -ms-filter: grayscale(1);
     -o-filter: grayscale(1);
     filter: grayscale(1);
+}
+
+.reveal-style.kc-blog-posts-3 .kc-list-item-3 .entry-thumb-link:hover img {
+    opacity: 1;
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+    -ms-filter: grayscale(0);
+    -o-filter: grayscale(0);
+    filter: grayscale(0);
     -webkit-transform: scale(1.05);
     -moz-transform: scale(1.05);
     -ms-transform: scale(1.05);
