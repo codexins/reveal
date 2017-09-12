@@ -2607,6 +2607,9 @@ img{
 
 .reveal-style.kc-blog-posts-3 .kc-list-item-3 .entry-thumb-link:hover img {
     opacity: 1;
+}
+
+.reveal-style.kc-blog-posts-3 .kc-list-item-3:hover img {
     -webkit-filter: grayscale(0);
     -moz-filter: grayscale(0);
     -ms-filter: grayscale(0);
