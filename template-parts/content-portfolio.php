@@ -12,19 +12,24 @@
 <!-- Single Project area -->
 
     <div class="row">
-        <div class="portfolio-image">
-            <div class="col-md-8 col-sm-8">
-                <div class="image">
-                    <img src=" <?php the_post_thumbnail_url('portfolio-single-image') ?> " alt="">
-                </div>
+        <div class="portfolio-image clearfix">
+            <img src=" <?php the_post_thumbnail_url('reveal-portfolio-single') ?> " alt="">
+        </div> <!-- end of portfolio-image -->
+        <div class="col-md-8">
+            <div class="details">
+                <h2><?php the_title()?></h2>
+                <p><?php the_content()?></p> 
             </div>
-            
-            <div class="col-md-4 col-sm-4">
-                    <?php $cname = rwmb_meta('reveal_portfolio_client', 'type=text'); ?>
-                    <?php $cdate = rwmb_meta('reveal_portfolio_date', 'type=text'); ?>
-                    <?php $cskills = rwmb_meta('reveal_portfolio_skills', 'type=text'); ?>
-                    <?php $csname = rwmb_meta('reveal_portfolio_sname', 'type=text'); ?>
-                    <?php $csurl = rwmb_meta('reveal_portfolio_surl', 'type=text'); ?>
+            <?php reveal_post_link(); ?>
+        </div>  
+
+        <div class="col-md-4">
+            <div class="portfolio-meta">
+                <?php $cname = rwmb_meta('reveal_portfolio_client', 'type=text'); ?>
+                <?php $cdate = rwmb_meta('reveal_portfolio_date', 'type=text'); ?>
+                <?php $cskills = rwmb_meta('reveal_portfolio_skills', 'type=text'); ?>
+                <?php $csname = rwmb_meta('reveal_portfolio_sname', 'type=text'); ?>
+                <?php $csurl = rwmb_meta('reveal_portfolio_surl', 'type=text'); ?>
 
                 <div class="portfolio-information">
                     <h2><?php the_title()?></h2>
@@ -55,9 +60,7 @@
                     <div class="tag-portfolio">
                         <h3>Portfolio Tag</h3>
                         <p>
-
                             <?php
-                            
                             $taxonomy = 'portfolio_tags';
                             $taxonomies = get_terms($taxonomy); 
                                 foreach ( $taxonomies as $tax ) {
@@ -75,27 +78,10 @@
                         </p>
                     </div> <!-- end of portfolio-tag -->
 
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="details">
-                <h2><?php the_title()?></h2>
-                <p>
-                    <?php the_content()?>
-                </p> 
-            </div>
-            <?php reveal_post_link(); ?>
-        </div>  
-    </div>
-
-
+                </div> <!-- end of portfolio-information -->
+            </div> <!-- end of portfolio-meta -->
+        </div> <!-- end of col-md-4 -->
+    </div> <!-- end of row -->
 
 <!-- Single Project area end --> 
-
-
-
-
-
-
 </article><!-- #post-## -->

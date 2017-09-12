@@ -23,7 +23,7 @@
 
             <a href="<?php the_permalink(); ?>">
                 <figure class="item-img-wrap" itemscope itemtype="http://schema.org/ImageObject">
-                    <img src="<?php the_post_thumbnail_url('single-post-image') ?>" class="img-responsive" <?php printf( '%s', $image_alt ); ?> itemprop="image">
+                    <img src="<?php the_post_thumbnail_url('reveal-post-single') ?>" class="img-responsive" <?php printf( '%s', $image_alt ); ?> itemprop="image">
                     <div class="item-img-overlay">
                         <span></span>
                     </div>
@@ -35,7 +35,7 @@
             <div class="image-pop-up item-img-wrap" itemscope itemtype="http://schema.org/ImageGallery">
                 <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
                     <a href="<?php esc_url( the_post_thumbnail_url('full') ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
-                        <img src="<?php esc_url( the_post_thumbnail_url('single-post-image') ); ?>" itemprop="image" <?php printf( '%s', $image_alt ); ?> class="img-responsive" />
+                        <img src="<?php esc_url( the_post_thumbnail_url('reveal-post-single') ); ?>" itemprop="image" <?php printf( '%s', $image_alt ); ?> class="img-responsive" />
                         <div class="item-img-overlay">
                             <span></span>
                         </div>

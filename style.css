@@ -2325,7 +2325,7 @@ img{
 *************************************************************/
 
 .portfolio-image{
-    margin-bottom: 75px;
+    margin-bottom: 60px;
 }
 
 .portfolio-image{
@@ -2341,10 +2341,7 @@ img{
     margin-top: 0;
 }
 
-.portfolio-information {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+
 
 .portfolio-information h2 {
     font-size: 26px;

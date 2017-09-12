@@ -380,9 +380,9 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 * Helper Function for Custom Loop for Portfolio
 *
 **/
-if ( ! function_exists( 'reveal_portfolio_loop' ) ) {
+if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
 
-    function reveal_portfolio_loop() {
+    function reveal_archive_portfolio_loop() {
 
         if ( have_posts() ) :
             $i = 0;
