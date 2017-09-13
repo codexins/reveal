@@ -357,3 +357,39 @@ Creation date: 26/07/2017 06:49
     font-weight: bold;
     letter-spacing: 1px;
 }
+
+/************************************************************
+    Single Portfolio
+*************************************************************/
+
+.portfolio-single .portfolio-details h2 {
+    margin-bottom: 25px;
+    font-family: Montserrat;
+    font-weight: bold;
+}
+
+.portfolio-meta h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.portfolio-meta h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.portfolio-meta p {
+    margin-bottom: 0;
+}
+
+.recent-portfolio h2 {
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: Montserrat;
+    text-transform: uppercase;
+}

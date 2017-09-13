@@ -16,19 +16,18 @@
 				endwhile; ?>
 
 		        <div class="row">
+		        	<div class="recent-portfolio">
 		            <div class="col-sm-12">
-		               <div class="recent-portfolio">
-		                    <h2>RECENT PORTFOLIOS</h2>
-		                </div>
+                    <h2><?php echo esc_html__('Recent Portfolios', 'codexin'); ?></h2>
 		            </div>
-		            
+		           <div style="padding-left: 15px;padding-right: 15px;">
 							<?php 
 								//start new query..
 							 	$args = array(
 							 		'post_type'			=> 'portfolio',
 							 		'posts_per_page' 	=> 4,
 							 		'order'          => 'ASC', 
-					  				'orderby'        => 'date'
+					  			'orderby'        => 'date'
 							 	);
 
 							 	$portfolio = new WP_Query( $args );
@@ -37,29 +36,25 @@
 									//Start loop here...
 							 		while( $portfolio->have_posts() ) : $portfolio->the_post();
 							?>
-				  
-
-						<div class="col-md-3 col-xs-6">
-						    <div class="recent-portfolio-wrapper">
-						        <img src="<?php the_post_thumbnail_url('rectangle-two') ?>" alt="">
-						        <div class="one-content">
-						            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-						            <h3><a href="<?php the_permalink()?>"><?php the_title() ?></a></h3>
-						            <p>it is static content  </p>
-						        </div>
-						    </div>
-						</div>
-
-
-
+				 
+								<div class="" style="width:25%;float: left;">
+								    <div class="recent-portfolio-wrapper">
+								        <img src="<?php the_post_thumbnail_url('rectangle-two') ?>" alt="">
+								        <div class="one-content">
+								            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+								            <h3><a href="<?php the_permalink()?>"><?php the_title() ?></a></h3>
+								            <p>it is static content  </p>
+								        </div>
+								    </div>
+								</div>
 		          <?php 
-					    endwhile;
-					endif; //End check-posts if()....
-					wp_reset_postdata();
-				?>
-
-
-		        </div>
+					    	endwhile;
+								endif; //End check-posts if()....
+								wp_reset_postdata();
+							?>
+</div>
+							</div> <!-- end of recent-portfolio -->
+		        </div> <!-- end of row -->
 		</section>
 
 	</div><!-- #primary -->

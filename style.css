@@ -2324,6 +2324,12 @@ img{
     000 - Page - Single Portfolio
 *************************************************************/
 
+.portfolio-meta {
+    background: #f5f5f5;
+    color: #333;
+    padding: 30px;
+}
+
 .portfolio-image{
     margin-bottom: 60px;
 }
@@ -2339,48 +2345,120 @@ img{
 }
 .portfolio-single article {
     margin-top: 0;
+    margin-bottom: 70px;
 }
 
+.portfolio-single .posts-nav .alignright {
+    float: left;
+}
 
+.portfolio-single .posts-nav .nav-next {
+    margin-right: 10px;
+}
 
-.portfolio-information h2 {
-    font-size: 26px;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 20px;
+.portfolio-meta h2 {
+    text-transform: capitalize;
 }
 
 
 .category-portfolio,
 .client-portfolio {
-    margin-bottom: 20px;
 }
 
 
-
-
-
-.portfolio-single .details h2{
+.portfolio-single .portfolio-details h2{
     position: relative;
-    margin-bottom: 40px;
 } 
 
-.portfolio-single .details p {
-    font-weight: 500;
-    font-size: 16px;
+.portfolio-single .portfolio-details p {
+
 }
-.portfolio-single .details h2:after{
+.portfolio-single .portfolio-details h2:after{
     right: -90px;
     left: inherit;
 }
-.recent-portfolio h2 {
-    margin: 0;
-    margin-bottom: 40px;
-}
+
 .portfolio-pagination {
     overflow: hidden;
     margin-top: 50px;
 }
+
+.tag-portfolio p,
+.category-portfolio p {
+    margin-left: -10px;
+}
+
+
+.tag-portfolio a,
+.category-portfolio a {
+    position: relative;
+    padding-right: 10px;
+    padding-left: 0;
+    display: inline-block;
+    margin-left: 10px;
+    color: #333;
+    text-transform: capitalize;
+}
+
+.tag-portfolio a::after,
+.category-portfolio a::after {
+    content:"";
+    width:1px;
+    height:10px;
+    background: #333;
+    position: absolute;
+    top:0;
+    left:auto;
+    bottom:0;
+    right:0;
+    margin:auto;
+}
+
+.tag-portfolio p a:last-child::after,
+.category-portfolio p a:last-child::after {
+    display: none;
+}
+
+.skills-portfolio,
+.client-portfolio,
+.category-portfolio,
+.tag-portfolio {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.client-portfolio {
+    padding-top: 0;
+}
+
+.tag-portfolio {
+    padding-bottom:0;
+    border-bottom:0;
+}
+
+#whole .pdr-0 {
+    padding-right: 0;
+}
+
+.portfolio-details {
+    margin-bottom: 30px;
+}
+
+/*.tag-portfolio h3 {
+    margin-bottom:15px;
+}
+
+.tag-portfolio a {
+    padding: 8px 15px 6px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: .05em;
+}*/
 
 #primary .posts-nav a,
 .blog-content a.read-more {
@@ -2456,6 +2534,8 @@ img{
 .one-content i {
     font-size: 30px;
 }
+
+
 
 #primary .reveal-load-more {
     padding: 7px 15px 5px;
