@@ -347,6 +347,10 @@ header .navbar.affix {
     padding-bottom: 20px;
 }
 
+.inner-header nav.navbar.affix-top {
+    position: relative;
+}
+
 .inner-header nav.navbar.affix {
     padding-top: 0;
     padding-bottom: 0;
@@ -687,6 +691,15 @@ a.explore:hover {
     font-size: 14px;
     letter-spacing: .5px;
     padding: 8px 0;
+}
+
+.reveal-spacer-30 {
+    height:30px;
+    background: transparent;
+    clear:both;
+    width:100%;
+    float:none;
+    overflow: hidden;
 }
 
 /************************************************************

@@ -99,7 +99,12 @@
         </div> <!-- end nav wrapper -->
     <?php endif; ?>
 	</header><!-- end of header -->
-
-	<?php get_template_part('template-parts/header/page', 'title'); ?>
+	
+	<?php 
+	$disable_title = rwmb_meta('reveal_disable_page_title', 'type=checkbox');
+	if($disable_title == 0):
+		get_template_part('template-parts/header/page', 'title');
+	else: echo '<div class="reveal-spacer-30"></div>';
+	endif; ?>
 
 	<div class="clearfix"></div>
