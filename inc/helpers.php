@@ -138,11 +138,11 @@ if ( ! function_exists( 'reveal_posts_link' ) ) {
 **/
 if ( ! function_exists( 'reveal_post_link' ) ) {
 
-    function reveal_post_link() {
+    function reveal_post_link($prev = 'Previous Post', $next = 'Next Post') {
 
         if( reveal_option( 'reveal_single_pagination' ) == 'button' ):
-        $prev_link = get_previous_post_link('%link', esc_html__('Previous Post &raquo;', 'reveal'));
-        $next_link = get_next_post_link('%link', esc_html__('&laquo; Next Post', 'reveal'));
+        $prev_link = get_previous_post_link('%link', esc_html__( $prev.' &raquo;', 'reveal'));
+        $next_link = get_next_post_link('%link', esc_html__('&laquo; '.$next, 'reveal'));
         elseif( reveal_option( 'reveal_single_pagination' ) == 'title' ):
         $prev_link = get_previous_post_link('%link', esc_html__('%title &raquo;', 'reveal'));
         $next_link = get_next_post_link('%link', esc_html__('&laquo; %title', 'reveal'));

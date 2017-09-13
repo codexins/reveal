@@ -10,7 +10,6 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <!-- Single Project area -->
-
     <div class="row">
         <div class="portfolio-image clearfix">
             <img src=" <?php the_post_thumbnail_url('reveal-portfolio-single') ?> " alt="">
@@ -20,72 +19,51 @@
                 <h2><?php the_title()?></h2>
                 <p><?php the_content()?></p> 
             </div>
-            <?php reveal_post_link(); ?>
+            <?php reveal_post_link(__('Prev', 'reveal'), __('Next', 'reveal')); ?>
         </div>  
 
-        <div class="col-md-4 pdr-0">
+        <div class="col-md-4">
             <div class="portfolio-meta">
                 <?php $cname = rwmb_meta('reveal_portfolio_client', 'type=text'); ?>
-                <?php $cdate = rwmb_meta('reveal_portfolio_date', 'type=text'); ?>
+                <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date'); $date_format = get_option( 'date_format' ); $cdate = date( $date_format, strtotime($cadate) ); ?>
                 <?php $cskills = rwmb_meta('reveal_portfolio_skills', 'type=text'); ?>
                 <?php $csname = rwmb_meta('reveal_portfolio_sname', 'type=text'); ?>
                 <?php $csurl = rwmb_meta('reveal_portfolio_surl', 'type=text'); ?>
 
-                
-
-                <div class="client-portfolio">
+                <?php if(!empty($cname) || !empty($csname) || !empty($cdate)): ?>
+                <div class="client-portfolio meta-single">
                     <h3><?php echo esc_html__('Client Info', 'codexin'); ?></h3>
-                    <p><strong><?php echo esc_html__('Name', 'codexin'); ?>: </strong><?php echo esc_html( $cname ); ?></p>
-                    <p><strong><?php echo esc_html__('Website', 'codexin'); ?>: </strong><?php echo esc_html( $csname ); ?></p>
-                    <p><strong><?php echo esc_html__('Completion Date', 'codexin'); ?>: </strong><?php echo esc_html( $cdate ); ?></p>
+                    <p><strong><?php echo esc_html__('Name', 'codexin'); ?>: </strong><?php echo $cname; ?></p>
+                    <p><strong><?php echo esc_html__('Website', 'codexin'); ?>: </strong><?php echo '<a href="'. $csurl .'" target="_blank">'. $csname .'</a>'; ?></p>
+                    <p><strong><?php echo esc_html__('Completion Date', 'codexin'); ?>: </strong><?php echo $cdate; ?></p>
                 </div> <!-- end of client-portfolio -->
+                <?php endif; ?>
 
-
-                <div class="skills-portfolio">
+                <?php if(!empty($cskills)): ?>
+                <div class="skills-portfolio meta-single">
                     <h3><?php echo esc_html__('Skills', 'codexin') ?></h3>
                     <p><?php echo $cskills; ?></p>
                 </div>
+                <?php endif; ?>
 
-                <div class="category-portfolio">
-                    <h3>Catagory</h3>
-                    <p><?php
-
-                        $terms = get_terms( 'portfolio-category' );
-                        foreach ( $terms as $term ) {
-                            // The $term is an object, so we don't need to specify the $taxonomy.
-                            $term_link = get_term_link( $term); 
-                            // If there was an error, continue to the next term.
-                            if ( is_wp_error( $term_link ) ) {
-                                continue;
-                            }
-                            // We successfully got a link. Print it out.
-                            echo '<a href="' . esc_url( $term_link ) . '">' . $term->name . '</a>';
-                        }
-                    ?></p>
+        
+                <?php $cat_list = get_the_term_list( $post->ID, 'portfolio-category', '', '-', '' );  
+                if(!empty($cat_list)): ?>
+                <div class="category-portfolio meta-single">
+                    <h3><?php echo esc_html__('Catagory', 'codexin'); ?></h3>
+                    <p><?php echo $cat_list; ?></p>
                 </div> <!-- end of category-portfolio -->
-
-
-
-                <div class="tag-portfolio">
-                    <h3>Portfolio Tag</h3>
-                    <p>
-                        <?php
-                        $taxonomy = 'portfolio_tags';
-                        $taxonomies = get_terms($taxonomy); 
-                            foreach ( $taxonomies as $tax ) {
-
-                            $tax_link = get_term_link( $tax);
-                            
-                            // If there was an error, continue to the next term.
-                            if ( is_wp_error( $tax_link ) ) {
-                                continue;
-                            }
-                            echo '<a class="portfolio-tag" href="'. esc_url( $tax_link ) .'" class="cx_filter_btn" >' . $tax->name . '</a>';
-
-                            }
-                        ?>
-                    </p>
+                <?php endif; ?>
+                
+                <?php $tag_list = get_the_term_list( $post->ID, 'portfolio_tags', '', '-', '' );
+                if(!empty($tag_list)):
+                ?>
+                <div class="tag-portfolio meta-single">
+                    <h3><?php echo esc_html__('Portfolio Tag', 'codexin'); ?></h3>
+                    <p><?php echo $tag_list; ?></p>
                 </div> <!-- end of portfolio-tag -->
+                <?php endif; ?>
+
             </div> <!-- end of portfolio-meta -->
         </div> <!-- end of col-md-4 -->
     </div> <!-- end of row -->
