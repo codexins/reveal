@@ -881,6 +881,16 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'      => esc_html__('Choose to Enable / Disable Portfolio Single Page Comments', 'reveal'),
                         "default"   => false,
                     ),
+
+                    // array(
+                    //     'id'        => 'reveal-portfolio-disable-page-title',
+                    //     'type'      => 'switch',
+                    //     'required'  => array( 'reveal_enable_portfolio', '=', '1' ),
+                    //     'title'     => esc_html__('Disable Page Title Area for Single Portfolio Pages?', 'reveal'),
+                    //     'subtitle'  => esc_html__('Select if you need to disable page title section for single portfolio pages ', 'reveal'),
+                    //     'desc'      => esc_html__('Choose to Disable / Enable page title section for single portfolio pages', 'reveal'),
+                    //     "default"   => false,
+                    // ),
                 )    
             );
 

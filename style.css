@@ -1032,7 +1032,7 @@ article.type-post {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(assets/images/icons/plus.png) no-repeat center center rgba(0, 0, 0, 0.7);
+    background: url(assets/images/icons/plus.png) no-repeat center center rgba(0, 0, 0, 0.5);
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     filter: alpha(opacity=0);
     opacity: 0;
@@ -1041,21 +1041,7 @@ article.type-post {
     -webkit-transition: opacity 250ms linear;
     transition: opacity 250ms linear;
 }
-.item-img-overlay span {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(assets/images/icons/plus.png) no-repeat center center rgba(0, 0, 0, 0.7);
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-    opacity: 0;
-    -moz-transition: opacity 250ms linear;
-    -o-transition: opacity 250ms linear;
-    -webkit-transition: opacity 250ms linear;
-    transition: opacity 250ms linear;
-}
+
 .item-img-wrap:hover img {
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
@@ -1955,6 +1941,7 @@ h2.widgettitle {
 .single-event-details {
     border-right: 1px solid #e1e1e1;
     color: #363e40;
+    margin-bottom:30px;
 }
 .single-event-details .event-schedule {
     text-align: left;
@@ -1967,6 +1954,15 @@ h2.widgettitle {
     font-weight: bold;
     font-size: 24px;
 }
+
+.single-event-description {
+    margin-bottom: 30px;
+}
+
+.event-single {
+    margin-bottom: 40px;
+}
+
 .single-event-details .event-organizer, .single-event-details .event-schedule-info {
     padding: 26px 0 25px;
     border-bottom: 1px solid #e1e1e1;
@@ -2025,10 +2021,7 @@ button.mfp-close:hover {
     background: transparent;
 }
 .single-event-description .event-description {
-    font-size: 16px;
-    line-height: 30px;
     margin: 30px 0;
-    text-align: justify;
 }
 
 .single-event-description .event-venue h4 {
@@ -2444,6 +2437,10 @@ img{
 
 .portfolio-details {
     margin-bottom: 30px;
+}
+
+.portfolio-comments p.form-submit {
+    margin-bottom: 0;
 }
 
 .reveal-portfolio-wrapper {

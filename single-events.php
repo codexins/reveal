@@ -40,10 +40,9 @@ get_header(); ?>
 			 	        $e_en_time=date_create($e_end_time);
 			        ?>
                     <!-- Start Event Single Page -->
-                    <div class="event-single">
+                    <div class="event-single clearfix">
                         
-                            <div class="col-md-5 col-sm-6">
-                                <div id="primary" class="site-main">
+                            <div class="col-md-4 col-sm-6">
                 	                <div class="single-event-details"> 
                 		                <div class="event-schedule">
                 			                <div class="event-date"> <?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date, "M d, Y")); endif; ?> </div>
@@ -89,11 +88,10 @@ get_header(); ?>
                 		                </div>
                 		                <!-- End Event Schedule -->
                 	                </div>
-                                </div>
                             </div>
 
-                            <div class="col-md-7 col-sm-6">
-                                <div id="primary" class="site-main">
+                            <div class="col-md-8 col-sm-6">
+                                
                 	                <div class="single-event-description"> 
                 		                <!-- Event Title -->
                 		                <div class="event-title">
@@ -117,7 +115,7 @@ get_header(); ?>
                 		                </div>
                                     </div>
 
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
