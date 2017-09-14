@@ -196,10 +196,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'   => array('.primary-title'),
                         'default'  => array(
                             'color'       => '#333',
-                            'font-size'   => '24px',
-                            'line-height' => '26px',
-                            'font-family' => 'Lobster',
-                            'font-weight' => '400',
+                            'font-size'   => '30px',
+                            'line-height' => '33px',
+                            'font-family' => 'Montserrat',
+                            'font-weight' => '700',
                         ),
                     ),
 
@@ -212,10 +212,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'   => array('.secondary-title'),
                         'default'  => array(
                             'color'       => '#333',
-                            'font-size'   => '30px',
-                            'line-height' => '33px',
-                            'font-family' => 'Montserrat',
-                            'font-weight' => '700'
+                            'font-size'   => '24px',
+                            'line-height' => '26px',
+                            'font-family' => 'Lobster',
+                            'font-weight' => '400'
                         ),
                     ),
 
