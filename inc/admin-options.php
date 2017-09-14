@@ -857,23 +857,19 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'required' => array( 'reveal_enable_portfolio', '=', '1' ),
                         'title'    => esc_html__( 'Portfolio Single Page Layout', 'reveal' ),
                         'subtitle' => esc_html__( 'Select Single Portfolio Page Layout', 'reveal' ),
-                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Left / Right Information Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
                             '1' => array(
-                                'alt' => '1 Column',
-                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
-                            ),
-                            '2' => array(
                                 'alt' => '2 Column Left',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                             ),
-                            '3' => array(
+                            '2' => array(
                                 'alt' => '2 Column Right',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                             )
                         ),
-                        'default'  => '1'
+                        'default'  => '2'
                     ),
 
                     array(

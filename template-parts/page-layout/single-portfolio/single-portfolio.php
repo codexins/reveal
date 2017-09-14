@@ -9,6 +9,7 @@
 					endif;
 					get_template_part( 'template-parts/content', 'portfolio'  );
 					endwhile; ?>
+
 	        <div class="row">
 	        	<div class="recent-portfolio">
 	            <div class="col-sm-12">

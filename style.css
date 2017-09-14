@@ -2433,6 +2433,11 @@ img{
     border-bottom:0;
 }
 
+.portfolio .col-md-push-4 > .posts-nav  {
+    display: inline-block;
+    float:right;
+}
+
 #whole .pdr-0 {
     padding-right: 0;
 }

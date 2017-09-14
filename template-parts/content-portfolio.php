@@ -14,15 +14,23 @@
         <div class="portfolio-image clearfix">
             <img src=" <?php the_post_thumbnail_url('reveal-portfolio-single') ?> " alt="">
         </div> <!-- end of portfolio-image -->
-        <div class="col-md-8">
+
+        <?php $position = reveal_option('reveal-single-portfolio-layout'); ?>
+        <div class="col-md-8 <?php if($position == '1'): echo 'col-md-push-4'; endif; ?>">
             <div class="portfolio-details">
                 <h2><?php the_title()?></h2>
                 <p><?php the_content()?></p> 
             </div>
             <?php reveal_post_link(__('Prev', 'reveal'), __('Next', 'reveal')); ?>
+
+            <?php if( reveal_option( 'reveal_portfolio_comments' ) ): ?>
+                <div class="portfolio-comments">
+                    <?php comments_template('', true);?>
+                </div>
+            <?php endif; ?>
         </div>  
 
-        <div class="col-md-4">
+        <div class="col-md-4 <?php if($position == '1'): echo 'col-md-pull-8'; endif; ?>">
             <div class="portfolio-meta">
                 <?php $cname = rwmb_meta('reveal_portfolio_client', 'type=text'); ?>
                 <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date'); $date_format = get_option( 'date_format' ); $cdate = date( $date_format, strtotime($cadate) ); ?>
