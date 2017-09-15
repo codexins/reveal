@@ -44,27 +44,32 @@ get_header(); ?>
                         
                             <div class="col-md-4 col-sm-6">
                 	                <div class="single-event-details"> 
-                		                <div class="event-schedule">
-                			                <div class="event-date"> <?php if(!empty($e_start_date)): echo esc_html(date_format($e_st_date, "M d, Y")); endif; ?> </div>
-                		                </div>
+                                        <?php if(!empty($e_start_date)): ?>
+                    		                <div class="event-schedule">
+                    			                <div class="event-date"> <?php echo esc_html(date_format($e_st_date, "M d, Y")); ?> </div>
+                    		                </div>
+                                        <?php endif; ?>    
 
                 		                <div class="event-organizer">
                 			                <h3 class="title">Details:</h3>
 
-
                 			                <!-- Start Event Organizer's Name -->
-                			                <p class="info-title">Name</p>
+                			                <p class="info-title"><?php echo esc_html__('Name', 'reveal'); ?></p>
                 			                <p class="info-title-content"><?php the_title(); ?></p>
                 			                <!-- End Event Organizer's Name -->
 
                 			                <!-- Start Event Organizer contact -->
-                			                <p class="info-title">Phone</p>
-                			                <p class="info-title-content"><?php if(!empty($e_phone)): echo esc_html($e_phone); endif; ?></p>
+                                            <?php if(!empty($e_phone)): ?>
+                			                     <p class="info-title"><?php echo esc_html__('Phone', 'reveal'); ?></p>
+                			                     <p class="info-title-content"><?php echo esc_html($e_phone); ?></p>
+                                            <?php endif; ?>
                 			                <!-- End Event Organizer contact -->
 
                 			                <!-- Start Event Organizer's Email -->
-                			                <p class="info-title">Email</p>
-                			                <p class="info-title-content"><a href="mailto:<?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?>"> <?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?> </a></p>
+                                            <?php if(!empty($e_mail)): ?>
+                			                     <p class="info-title"><?php echo esc_html__('Email', 'reveal'); ?></p>
+                			                     <p class="info-title-content"><a href="mailto:<?php echo esc_html($e_mail); ?>"> <?php if(!empty($e_mail)): echo esc_html($e_mail); endif; ?> </a></p>
+                                            <?php endif; ?>     
                 			                <!-- End Event Organizer's Email -->
 
                 		                </div>
@@ -72,21 +77,37 @@ get_header(); ?>
                 		                <!-- Start Event Schedule -->
                 		                <div class="event-schedule-info">       
                 			                <h3 class="title"> Schedule </h3>
+                			                     <?php if(!empty($e_start_date)): ?>    
+                    				                <p class="info-title"> <?php echo esc_html__('Date', 'reveal'); ?>: </p>
+                    				                <p class="info-title-content"> 
+                    				                <?php echo esc_html(date_format($e_st_date,"M d, Y"));  ?> 
+                                                        <?php if(!empty($e_end_date)): ?> 
+                                                            - <?php echo esc_html__('to', 'reveal'); ?> - 
+                                                            <?php echo esc_html(date_format($e_en_date,"M d, Y")); 
+                                                            endif;?>  
+    			                                    </p>
+                                                <?php endif; ?>
                 			                
-                				                <p class="info-title"> Date: </p>
-                				                <p class="info-title-content"> 
-                				                <?php if(!empty($e_start_time)): echo esc_html(date_format($e_st_date,"M d, Y")); endif;  ?> - to - <?php if(!empty($e_end_time)): echo esc_html(date_format($e_en_date,"M d, Y")); endif;  ?>
-			                            		                
-			                                    </p>
-                			                
-                			                
-                				                <p class="info-title">Time:</p>
-                				                <p class="info-title-content">
-                                                <?php if(!empty($e_start_time)): echo esc_html(date_format($e_st_time,"H:i")); endif;  ?> - to - <?php if(!empty($e_end_time)): echo esc_html(date_format($e_en_time,"H:i")); endif;  ?>
-                				                </p>
+                			                     <?php  if(!empty($e_start_time)): ?>
+                				                    <p class="info-title"><?php echo esc_html__('Time', 'reveal'); ?>:</p>
+                    				                <p class="info-title-content">
+                                                    <?php echo esc_html(date_format($e_st_time,"H:i")); ?> 
+                                                        <?php if(!empty($e_end_time)): ?>
+                                                            - <?php echo esc_html__('to', 'reveal'); ?> - 
+                                                            <?php echo esc_html(date_format($e_en_time,"H:i"));
+                                                            endif; ?>
+                    				                </p>
+                                                 <?php endif; ?>   
                 			                
                 		                </div>
                 		                <!-- End Event Schedule -->
+
+                                        <div class="event-venue-details">
+                                            <h3 class="title"><?php echo esc_html__('Venue', 'reveal')?></h3>
+                                            <p class="info-title-content">
+                                                <?php printf('%s', $e_address); ?>
+                                            </p>
+                                        </div>
                 	                </div>
                             </div>
 
@@ -106,12 +127,16 @@ get_header(); ?>
                 		                <div class="event-description"> <?php the_content(); ?> </div>
 
                 		                <div class="event-venue">
-                			                <h4> Venue: </h4>
+                			                <h4><i class="fa fa-map-signs"></i> Venue: </h4>
                 			                <div class="event-venue-info">
-                				                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                				                <span><?php if(!empty($e_address)): echo esc_html($e_address); endif; ?></span>
+                				                <span><?php if(!empty($e_address)): printf('%s', $e_address); endif; ?></span>
                 			                </div>
-                			                <div class="map"></div>
+                                                <div id="map">
+                                                    <div id="gmap-wrap">
+                                                        <div id="gmap">                 
+                                                        </div>              
+                                                    </div>
+                                                </div><!--/#map-->
                 		                </div>
                                     </div>
 

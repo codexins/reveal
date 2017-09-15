@@ -1943,9 +1943,9 @@ h2.widgettitle {
     color: #363e40;
     margin-bottom:30px;
 }
+
 .single-event-details .event-schedule {
-    text-align: left;
-    font-size: 16px;
+    margin-bottom: 26px;
     color: #363e40;
     border-bottom: 1px solid #e1e1e1;
 }
@@ -1963,39 +1963,54 @@ h2.widgettitle {
     margin-bottom: 40px;
 }
 
-.single-event-details .event-organizer, .single-event-details .event-schedule-info {
-    padding: 26px 0 25px;
+.single-event-details .event-organizer, 
+.single-event-details .event-venue-details, 
+.single-event-details .event-schedule-info {
+    padding: 0 30px 10px 0;
     border-bottom: 1px solid #e1e1e1;
 }
-.single-event-details .event-organizer .title, .single-event-details .event-schedule-info .title {
+
+.single-event-details .event-schedule-info,
+.single-event-details .event-organizer {
+    margin-bottom: 26px;
+}
+
+.single-event-details .event-venue-details .title,
+.single-event-details .event-organizer .title, 
+.single-event-details .event-schedule-info .title {
     font-size: 16px;
     margin: 0 0 10px;
     text-transform: uppercase;
 }
 .single-event-details .event-organizer .info-title, .single-event-details .event-schedule-info .info-title {
-    font-size: 14px;
+    font-size: 88%;
     font-weight: 500;
     margin: 0;
     display: block;
 }
 .single-event-details .event-organizer .info-title-content{
     font-size: 16px;
-    color: #ababab;
+    color: #777;
     margin-bottom: 15px;
     display: block;
 }
+
+.single-event-details .info-title-content {
+    color: #777;
+}
+
 .single-event-details .event-organizer .info-title-content a {
-    color: #ababab;
+    color: #777;
 }
 
 .single-event-details .event-schedule-info .info-title-content{
     font-size: 16px;
-    color: #333;
+    color: #777;
     margin-bottom: 15px;
     display: block;
 }
 .single-event-details .event-schedule-info .info-title-content a {
-    color: #333;
+    color: #777;
 }
 
 
@@ -2024,8 +2039,14 @@ button.mfp-close:hover {
     margin: 30px 0;
 }
 
+.single-event-description .event-venu i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
 .single-event-description .event-venue h4 {
     font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .single-event-description .event-venue .event-venue-info i {
@@ -2033,11 +2054,16 @@ button.mfp-close:hover {
     padding-right: 15px;
 }
 
-.single-event-description .event-venue .map {
+.single-event-description .event-venue #map {
     width: 100%;
     height: 300px;
     margin-top: 30px;
     background-color: #ccc;
+    position: relative;
+}
+
+.single-event-description #gmap {
+    height:300px;
 }
 
 /************************************************************
