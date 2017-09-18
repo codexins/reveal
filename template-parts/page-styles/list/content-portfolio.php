@@ -9,17 +9,12 @@
 
 ?>
 
-<?php 
-
-$client_name = rwmb_meta('reveal_portfolio_client', 'type=text');
-
- ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
     <div class="blog-post">
         <?php if(has_post_thumbnail()): ?>
             <a href="<?php the_permalink(); ?>">
                 <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('blog-single-image') ?>" class="img-responsive" alt="Blog Post">
+                    <img src="<?php the_post_thumbnail_url('reveal-post-single') ?>" class="img-responsive" alt="Blog Post">
                     <div class="item-img-overlay">
                         <span></span>
                     </div>
@@ -27,7 +22,6 @@ $client_name = rwmb_meta('reveal_portfolio_client', 'type=text');
             </a><!--work link-->
          <?php endif; ?>      
         <ul class="list-inline post-detail">
-            <li><i class="fa fa-users" aria-hidden="true"></i> <?php echo esc_html( $client_name ); ?></li>
             <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
             <li><i class="fa fa-tag"></i> 
                 <?php
@@ -37,16 +31,16 @@ $client_name = rwmb_meta('reveal_portfolio_client', 'type=text');
                     foreach ( $taxonomies as $tax ) {
                         // echo  $tax->name.', ' ;
                         if($tax == $last_key):
-                            echo "<span>".ucwords($tax->name)."</span>";
+                            echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).'</span></a>';
                         else: 
-                            echo "<span>".ucwords($tax->name).", </span>";
+                            echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).', </span></a>';
                          
                         endif; 
                 }?>
             </li>
 
         </ul>
-        <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 		<div class="entry-content">
 			<?php 
 				if(is_single()):
@@ -56,7 +50,7 @@ $client_name = rwmb_meta('reveal_portfolio_client', 'type=text');
                     the_excerpt();
 				endif; ?>
 
-            <p class="blog-content"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+            <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
 
 		</div><!-- .entry-content -->
         

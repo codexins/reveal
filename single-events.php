@@ -120,9 +120,8 @@ get_header(); ?>
                 		                </div>
 
                 		                <div class="single-event-image">
-                				                <a class="event-image-popup" href="<?php echo the_post_thumbnail_url('full'); ?>"><img src="<?php echo the_post_thumbnail_url('full'); ?>" class="img-responsive" alt=""></a>
+                				            <img src="<?php echo the_post_thumbnail_url('full'); ?>" class="img-responsive" alt="">
                 		                </div>
-
                 		                
                 		                <div class="event-description"> <?php the_content(); ?> </div>
 

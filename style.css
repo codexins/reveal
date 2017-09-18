@@ -2616,6 +2616,11 @@ img{
 .previous-portfolio{
     margin-top: 75px;
 }
+
+.portfolio .blog-more a.cx-btn {
+    margin-top: 0;
+}
+
 .previous-portfolio .nav-previous a {
     padding: 7px 15px 5px;
     text-transform: uppercase;
