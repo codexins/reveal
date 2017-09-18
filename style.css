@@ -866,7 +866,7 @@ a.explore:hover {
     position: relative;
 }
 
-.img-wrapper::before {
+/*.img-wrapper::before {
     content: "";
     position: absolute;
     left: 0;
@@ -921,7 +921,7 @@ a.explore:hover {
 
 .meta p {
     margin: 0;
-}
+}*/
 
 .blog-title {
     text-transform: uppercase;
