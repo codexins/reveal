@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="main-content-wrapper site-content">
+	<div id="content" class="main-content-wrapper site-content cx-team-single">
 		<div class="container">
 			<div class="row">
 
