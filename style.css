@@ -2974,3 +2974,7 @@ img{
 .team-single-content-wrapper li:hover {
     background: #333;
 }
+.cx-team-single .blog-post{
+    border-bottom: 0;
+    padding-bottom: 0 ;
+}
