@@ -26,14 +26,6 @@ get_header(); ?>
 
                                 
                                 get_template_part( 'template-parts/content', 'team' );
-
-                                if( reveal_option( 'reveal_single_button' ) == true ):
-                                    reveal_post_link();
-                                endif;
-
-                                if( reveal_option( 'reveal_post_comments' ) ):
-                                    comments_template('', true);
-                                endif;
                                 
                             endwhile; ?>
 
