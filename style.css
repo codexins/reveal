@@ -2897,7 +2897,65 @@ img{
 /************************************************************
     Team Single Page
 *************************************************************/
+.team-single-content-wrapper .tm-name{
+    margin-bottom: 5px;
+}
 
+.team-single-content-wrapper .desig{
+    text-transform: uppercase;
+}
+.team-single-content-wrapper .company-info {
+    margin-bottom: 5px;
+}
+.team-single-content-wrapper .post-detail{
+    margin-top: 10px;
+    padding: 7px 0;
+    margin-bottom: 10px;
+}
+
+.team-single-content-wrapper  .company-info{
+    position: relative;
+}
+.team-single-content-wrapper .list-inline li:first-of-type,
+.team-single-content-wrapper .list-inline li {
+    background: #000;
+    text-align: center;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+}
+.team-single-content-wrapper .list-inline li + li{
+    margin-left: 10px;
+}
+.team-single-content-wrapper .list-inline li a{
+    color: #fff;
+    display: block;
+}
+.team-single-content-wrapper .list-inline{
+    margin: 0 ;
+}
+.team-single-content-wrapper .list-inline li {
+}
+.team-single-content-wrapper ul li i{
+    margin:initial ! important;
+}
+.team-single-content-wrapper .tm-facebook{
+    background: #3a559f;
+}
+.team-single-content-wrapper .tm-twitter{
+    background: #1DA1F2 ;
+}
+.team-single-content-wrapper .tm-instagram{
+    background: #1DA1F2 ;
+}
+.team-single-content-wrapper .tm-google-plus{
+    background: #1DA1F2 ;
+}
+.team-single-content-wrapper .tm-linkedin{
+    background: #1DA1F2 ;
+}
+
+/*
 .team .post-title {
     margin-top: 0;
     margin-bottom: 25px;
@@ -2947,3 +3005,4 @@ img{
 .team-thumb-wrapper p.desig {
 
 }
+*/
