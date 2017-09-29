@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="portfolio-item-content">
 	    <div class="item-thumbnail">
-	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'reveal-portfolio-single' )); ?>"  alt="">                                          
+	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-one' )); ?>"  alt="">                                          
 	        <ul class="portfolio-action-btn">
 	            <li>
 	                <a class="venobox" href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-gg"></i></a>
