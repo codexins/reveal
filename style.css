@@ -2732,6 +2732,161 @@ img{
     Team Single Page
 *************************************************************/
 
+.team-wrapper ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+.team-wrapper ul > li {
+    float: left;
+    width: 25%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 991px) {
+    .team-wrapper ul > li  {
+        width:33.33%;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .team-wrapper ul > li  {
+        width:50%;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .team-wrapper ul > li  {
+        width:100%;
+    }
+}
+
+.team-wrapper ul li {
+    padding: 0;
+    float: none;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: top;
+}
+
+.team-wrapper ul li a {
+    outline: none;
+}
+
+.team-wrapper ul > li > a {
+    position: relative;
+    display: block;
+    outline: none;
+    color: #111;
+    font-size: 16px;
+}
+
+
+.team-wrapper ul > li > a::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: 20px solid #111;
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: opacity 0.3s;
+    -moz-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+.team-wrapper ul li a figure {
+    position: relative;
+    margin: 0;
+}
+
+.team-info-wrapper {
+    overflow: hidden;
+}
+
+.team-info-wrapper img {
+    max-width: 100%;
+    display: block;
+    position: relative;
+}
+
+.team-single-wrapper figcaption {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    top: 25px;
+    bottom: 25px;
+    padding: 30px;
+    background: rgba(35, 35, 35, 0.8);
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    -moz-transform: scale(0.6);
+    -webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+    -moz-transition: -moz-transform 0.2s, opacity 0.2s;
+    transition: transform 0.2s, opacity 0.2s;
+    font-size: 0;
+}
+
+.team-single-wrapper figcaption::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    width: 1px;
+}
+
+
+.team-wrapper ul li a:hover figcaption {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    opacity: 1;
+}
+
+
+
+.team-info-wrapper {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.team-single-wrapper  img {
+    width:100%;
+}
+
+.team-info-wrapper {
+    display: inline-block;
+    width: calc(100% - 1px);
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+.team-info-wrapper h3 {
+    margin: 0 0 3px;
+    padding: 0;
+    font-weight: 300;
+    font-size: 1.17em;
+    color:#fff;
+}
+
+
+/************************************************************
+    Team Single Page
+*************************************************************/
+
 .team .post-title {
     margin-top: 0;
     margin-bottom: 25px;
