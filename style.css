@@ -2465,6 +2465,16 @@ img{
     margin-bottom: 30px;
 }
 
+
+.portfolio-comments .comment-reply-title {
+    margin-bottom: 0;
+    padding-bottom: 15px;
+}
+
+.portfolio-comments .logged-in-as {
+    margin-top: -10px;
+}
+
 .portfolio-comments p.form-submit {
     margin-bottom: 0;
 }
