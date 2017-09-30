@@ -149,6 +149,7 @@ class Reveal {
 		add_image_size('blog-widget-image', 80, 80, true);
 		add_image_size('reveal-portfolio-single', 1170, 400, true);
 		add_image_size('gallery-format-image', 800, 450, true);
+		add_image_size('reveal-rectangle-one', 600, 375, true);
 
 
 		/*

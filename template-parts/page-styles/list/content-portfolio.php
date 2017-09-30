@@ -9,51 +9,60 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?>>
     <div class="blog-post">
-        <?php if(has_post_thumbnail()): ?>
-            <a href="<?php the_permalink(); ?>">
-                <div class="item-img-wrap">
-                    <img src="<?php the_post_thumbnail_url('reveal-post-single') ?>" class="img-responsive" alt="Blog Post">
-                    <div class="item-img-overlay">
-                        <span></span>
-                    </div>
-                </div>                       
-            </a><!--work link-->
-         <?php endif; ?>      
-        <ul class="list-inline post-detail">
-            <li><i class="fa fa-calendar"></i> <?php the_time('F j, Y') ?></li>
-            <li><i class="fa fa-tag"></i> 
+        <div class="port-list-wrapper">
+            <?php if(has_post_thumbnail()): ?>
+                <div class="thumb-port">
+                    <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('reveal-rectangle-one') ?>" alt=""></a>
+                    <div class="port-date"><p>12 July 2017</p></div>
+                </div>
+            <?php endif; ?>
+
+            <div class="desc-port">
+                <p class="list-tag"><i class="flaticon-bookmark"></i> 
+                    <?php
+                        $taxonomy = 'portfolio-category';
+                        $taxonomies = get_terms($taxonomy); 
+                        $last_key = end($taxonomies);
+                        foreach ( $taxonomies as $tax ) {
+                            // echo  $tax->name.', ' ;
+                            if($tax == $last_key):
+                                echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).'</span></a>';
+                            else: 
+                                echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).', </span></a>';
+                             
+                            endif; 
+                    }?>
+                </p>
+                <h2 class="post-title"><a href="<?php the_permalink(); ?>">
+                    
+                <?php 
+                    $p_length_switch = reveal_option('reveal_portfolio_title_excerpt_length');
+                    if( $p_length_switch ) :
+                        $reveal_p_title_len = reveal_option( 'reveal_portfolio_title_length' );
+                        reveal_title( $reveal_p_title_len );
+                    else:
+                        the_title();
+                    endif;
+                ?>
+
+                </a></h2>
+                <div class="list-content">
                 <?php
-                    $taxonomy = 'portfolio-category';
-                    $taxonomies = get_terms($taxonomy); 
-                    $last_key = end($taxonomies);
-                    foreach ( $taxonomies as $tax ) {
-                        // echo  $tax->name.', ' ;
-                        if($tax == $last_key):
-                            echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).'</span></a>';
-                        else: 
-                            echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).', </span></a>';
-                         
-                        endif; 
-                }?>
-            </li>
-
-        </ul>
-        <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		<div class="entry-content">
-			<?php 
-				if(is_single()):
-					the_content();
-
-				else:
+                $pex_length_switch = reveal_option('reveal_portfolio_title_excerpt_length');
+                if( $pex_length_switch ) :
+                    $reveal_p_excerpt_len = reveal_option( 'reveal_portfolio_excerpt_length' );
+                    reveal_excerpt( $reveal_p_excerpt_len );
+                else:
                     the_excerpt();
-				endif; ?>
+                endif;
+                ?>
+                </div>
 
-            <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
-
-		</div><!-- .entry-content -->
+                <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+            </div>
+        </div>
         
     </div><!--blog post-->
 </article><!-- #post-## -->
-<div class="clearfix"></div>

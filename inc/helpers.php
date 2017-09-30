@@ -385,6 +385,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
     function reveal_archive_portfolio_loop() {
 
         if ( have_posts() ) :
+            echo '<div class="portfolio-archive-wrapper">';
             $i = 0;
             /* Start the Loop */
             while ( have_posts() ) : the_post();
@@ -404,10 +405,13 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                 endif;
                 
                 else:
-                get_template_part( 'template-parts/page-styles/list/content', 'portfolio' );              
+                    
+                get_template_part( 'template-parts/page-styles/list/content', 'portfolio' ); 
+                    
                 endif;
 
             endwhile; 
+            echo '</div>';
             echo '<div class="clearfix"></div>';
 
             // $reveal_pagination = reveal_option( 'reveal_pagination' );
@@ -699,3 +703,21 @@ function reveal_ajax_comment_handler(){
 
 add_action( 'wp_ajax_ajaxcomments', 'reveal_ajax_comment_handler' ); // For registered user
 add_action( 'wp_ajax_nopriv_ajaxcomments', 'reveal_ajax_comment_handler' ); // For not registered users
+
+
+/**
+ * functions to add body class on portfolio list view
+ *
+ */
+
+
+function list_body_class ($classes) {
+    $port_style = reveal_option( 'reveal_portfolio_style' );
+    if(($port_style == 'list') && (is_archive('portfolio'))): 
+        $classes[] = 'portfolio-list-view';
+        return $classes;
+    else:
+        return $classes;
+    endif;
+}
+add_filter('body_class', 'list_body_class');

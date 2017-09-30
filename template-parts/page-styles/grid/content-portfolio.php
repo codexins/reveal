@@ -15,7 +15,7 @@
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-one' )); ?>"  alt="">                                          
 	        <ul class="portfolio-action-btn">
 	            <li>
-	                <a class="venobox" href="<?php esc_url(the_permalink()); ?>"><i class="fa fa-gg"></i></a>
+	                <a class="venobox" href="<?php esc_url(the_permalink()); ?>"><i class="flaticon-link"></i></a>
 	            </li>
 	        </ul>                                            
 	    </div>

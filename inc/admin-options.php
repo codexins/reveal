@@ -594,7 +594,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id'       => 'reveal_blog_excerpt_lenght',
+                        'id'       => 'reveal_blog_title_excerpt_length',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Blog Title and Excerpt Length?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable blog-title & excerpt length', 'reveal' ),
@@ -609,7 +609,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'min'       => '10',
                         'max'       => '150',
                         'step'      => '1',
-                        'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
+                        'required'  => array( 'reveal_blog_title_excerpt_length', '=', '1' ),
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Posts (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Blog & Archive Page.", 'reveal'),
@@ -622,7 +622,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'min'       => '20',
                         'max'       => '500',
                         'step'      => '1',
-                        'required'  => array( 'reveal_blog_excerpt_lenght', '=', '1' ),
+                        'required'  => array( 'reveal_blog_title_excerpt_lenght', '=', '1' ),
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
@@ -831,25 +831,41 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'required' => array('reveal_portfolio_style','equals', array( 'grid' ) ),
                     ),
 
-                    // array(
-                    //     'id'       => 'reveal_portfolio_filter_title',
-                    //     'type'     => 'textarea',
-                    //     'title'    => esc_html__( 'Portfolio Filter Section Title', 'reveal' ),
-                    //     'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Primary Title', 'reveal' ),
-                    //     'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
-                    //     'validate' => 'html',
-                    //     'default'  => 'Primary Title'
-                    // ),
+                    array(
+                        'id'       => 'reveal_portfolio_title_excerpt_length',
+                        'type'     => 'switch',
+                        'title'    => esc_html__( 'Enable Portfolio Title and Excerpt Length?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable portfolio-title & excerpt length', 'reveal' ),
+                        'default'  => 0,
+                        'on'       => 'Enabled',
+                        'off'      => 'Disabled',
+                    ),
 
-                    // array(
-                    //     'id'       => 'reveal_portfolio_filter_subtitle',
-                    //     'type'     => 'textarea',
-                    //     'title'    => esc_html__( 'Portfolio Filter Section Subtitle', 'reveal' ),
-                    //     'desc'     => esc_html__( 'Please Enter Portfolio Filter Section Secondary Title', 'reveal' ),
-                    //     'required' => array( 'reveal_portfolio_style', '=', 'filter' ),
-                    //     'validate' => 'html',
-                    //     'default'  => 'Secondary Title'
-                    // ),
+                    array(
+                        'id'        => 'reveal_portfolio_title_length',
+                        'type'      => 'slider',
+                        'min'       => '10',
+                        'max'       => '150',
+                        'step'      => '1',
+                        'required'  => array( 'reveal_portfolio_title_excerpt_length', '=', '1' ),
+                        'title'     => esc_html__('Title Length for Portfolios', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Title Length for Portfolios (In Character)', 'reveal'),
+                        'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Portfolio Archive Page.", 'reveal'),
+                        // 'default'   => 7,
+                    ),
+
+                    array(
+                        'id'        => 'reveal_portfolio_excerpt_length',
+                        'type'      => 'slider',
+                        'min'       => '20',
+                        'max'       => '500',
+                        'step'      => '1',
+                        'required'  => array( 'reveal_portfolio_title_excerpt_length', '=', '1' ),
+                        'title'     => esc_html__('Excerpt Length for Portfolios', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Excerpt Length for Portfolios (In Character)', 'reveal'),
+                        'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Portfolio Archive Page.", 'reveal'),
+                        // 'default'   => 20,
+                    ),
 
                     array(
                         'id'       => 'reveal-single-portfolio-layout',
