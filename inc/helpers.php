@@ -525,7 +525,7 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
 
 /**
 *
-* Redirecting single testimonial to the archive page, scrolled to current ID 
+* Helper Function for Redirecting single testimonial to the archive page, scrolled to current ID 
 *
 **/
 add_action( 'template_redirect', function() {
@@ -534,6 +534,18 @@ add_action( 'template_redirect', function() {
         $redirectLink = get_post_type_archive_link( 'testimonial' )."#testimonial-".$post->ID;
         wp_redirect( $redirectLink, 302 );
         exit;
+    }
+});
+
+
+/**
+*
+* Helper Function for Turning off pagination for the Testimonial archive page
+*
+**/
+add_action('parse_query', function($query) {
+    if (is_post_type_archive('testimonial')) {
+        $query->set('nopaging', 1);
     }
 });
 

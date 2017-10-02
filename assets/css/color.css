@@ -742,6 +742,30 @@ table#wp-calendar thead {
     border-bottom: 1px dashed #ddd;
 }
 
+
+/************************************************************
+    000 - Page - Testimonial Page
+*************************************************************/
+
+.testimonial-single {
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+}
+
+.thumb-testimonial img {
+    border: 3px solid #295970;
+    background: #fff;
+}
+
+.testimonial-content h3.testimonial-title {
+    color: #295970;
+}
+
+.thumb-testimonial::before {
+    color: #ffffff;
+    background: #295970;
+}
+
 /************************************************************
     000 - Page - Single Portfolio
 *************************************************************/

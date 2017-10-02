@@ -1,9 +1,9 @@
 				
 
-				<div class="col-sm-12 col-md-12">
-					<div id="primary" class="site-main">
+				<div class="col-sm-12 col-md-10 col-md-offset-1">
+					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<div class="testimonial-list-wrapper">
 							<?php reveal_archive_testimonial_loop(); ?>
-						</div> <!-- end of events list wrapper -->
+						</div> <!-- end of testimonial-list-wrapper -->
 					</div><!-- #primary -->
 				</div> <!-- end of col -->
