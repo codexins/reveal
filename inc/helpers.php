@@ -432,6 +432,62 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
 }
 
 
+/**
+*
+* Helper Function for Custom Loop for events
+*
+**/
+if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
+
+    function reveal_archive_events_loop() {
+
+        if ( have_posts() ) :
+            echo '<div class="events-archive-wrapper">';
+            $i = 0;
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+                $i++;
+                $post_style = reveal_option( 'reveal_events_style' );
+                
+                if( $post_style == 'grid' ):
+
+                $grid_port_columns = 12/reveal_option('reveal_events_grid_columns');
+
+                printf('<div class="events-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
+                    get_template_part( 'template-parts/page-styles/grid/content', 'events' );
+                echo '</div><!--events wrap-->';
+
+                if( $i % reveal_option('reveal_events_grid_columns') == 0 ):
+                    echo '<div class="clearfix"></div>';
+                endif;
+                
+                else:
+                    
+                get_template_part( 'template-parts/page-styles/list/content', 'events' ); 
+                    
+                endif;
+
+            endwhile; 
+            echo '</div>';
+            echo '<div class="clearfix"></div>';
+
+            // $reveal_pagination = reveal_option( 'reveal_pagination' );
+
+            // if( $reveal_pagination == 'numbered' ):           
+            // reveal_posts_link_numbered();
+            // else:
+            reveal_posts_link();
+            // endif;
+
+        else:
+        get_template_part( 'template-parts/content', 'none' );
+
+        endif;
+
+    }
+
+}
+
 
 /**
 *
@@ -721,6 +777,17 @@ function list_body_class ($classes) {
     endif;
 }
 add_filter('body_class', 'list_body_class');
+
+function list_events_body_class ($classes) {
+    $events_style = reveal_option( 'reveal_events_style' );
+    if(($events_style == 'list') && (is_archive('events'))): 
+        $classes[] = 'events-list-view';
+        return $classes;
+    else:
+        return $classes;
+    endif;
+}
+add_filter('body_class', 'list_events_body_class');
 
 function list2_body_class ($classes) {
     $disable_header = rwmb_meta('reveal_disable_header', 'type=checkbox');

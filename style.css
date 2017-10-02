@@ -1890,7 +1890,7 @@ h2.widgettitle {
 /************************************************************
     017 - Events Archive Page
 *************************************************************/
-.magin-left-adjust {
+/*.magin-left-adjust {
     margin-left: -15px;
 }
 .archive-events-wrapper {
@@ -1938,7 +1938,7 @@ h2.widgettitle {
     padding: 0;
     line-height: 100%;
 }
-
+*/
 /************************************************************
     018 - Single Events Page
 *************************************************************/
@@ -2644,6 +2644,7 @@ img{
     margin-top: 75px;
 }
 
+.events .blog-more a.cx-btn,
 .portfolio .blog-more a.cx-btn {
     margin-top: 0;
 }
@@ -3007,13 +3008,15 @@ img{
 }
 
 /************************************************************
-	portfolio list
+	portfolio and eventslist
 *************************************************************/
 
-body.portfolio-list-view {
+body.portfolio-list-view,
+body.portfolio-events-view {
 	background: #f2f2f2;
 }
 
+.event-list-wrapper,
 .port-list-wrapper {
 	overflow: hidden;
     display:table;
@@ -3032,6 +3035,7 @@ body.portfolio-list-view {
 	transition: .3s;
 }
 
+.event-list-wrapper:hover,
 .port-list-wrapper:hover {
     -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
     -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
@@ -3041,14 +3045,17 @@ body.portfolio-list-view {
 
 }
 
+.events-archive-wrapper article:first-child,
 .portfolio-archive-wrapper article:first-child {
 	margin-top: 40px;
 }
 
+.events-archive-wrapper article:last-child,
 .portfolio-archive-wrapper article:last-child {
 	margin-bottom: 0;
 }
 
+.thumb-events,
 .thumb-port {
     display: table-cell;
     vertical-align: middle;
@@ -3060,10 +3067,12 @@ body.portfolio-list-view {
     background-attachment: scroll;
 }
 
+.thumb-events img,
 .thumb-port img {
 	
 }
 
+.desc-events,
 .desc-port {
     width:60%;
     display: table-cell;
@@ -3072,6 +3081,9 @@ body.portfolio-list-view {
 }
 
 @media only screen and (max-width: 991px) {
+    .event-list-wrapper,
+    .thumb-events,
+    .desc-events,
     .port-list-wrapper,
     .thumb-port,
     .desc-port {
@@ -3079,44 +3091,64 @@ body.portfolio-list-view {
         width:100%;
     }
 
+    .thumb-events,
     .thumb-port {
         min-height:300px;
     }
 
+    .desc-events,
     .desc-port {
         padding-bottom: 30px;
     }
 }
 
 @media only screen and (max-width:479px) {
+    .thumb-events,
     .thumb-port {
         min-height:250px;
     }
 }
 
+.desc-events h2,
 .desc-port h2 {
 	margin-top: 0;
 }
 
+.desc-events .list-tag,
 .desc-port .list-tag {
 	margin-bottom: 10px;
 }
 
+.desc-events .list-tag i,
 .desc-port .list-tag i {
 	margin-right: 5px;
 }
 
+.desc-events .list-tag  a,
 .desc-port .list-tag  a {
 		color: #555;
 	  font-size: 14px;
     letter-spacing: .05em;
 }
 
+.thumb-port > a,
+.thumb-events > a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.events-list .blog-post,
 .portfolio-list .blog-post {
 	padding-bottom: 0;
 	border-bottom:0;
 }
 
+article.events-list,
 article.portfolio-list {
 	margin-top: 0;
 	margin-bottom: 50px;
@@ -3126,6 +3158,7 @@ article.portfolio-list {
 	margin-bottom: 20px;
 }
 
+.thumb-events .events-date,
 .thumb-port .port-date {
 	position:absolute;
 	top:30px;
@@ -3135,6 +3168,7 @@ article.portfolio-list {
 	padding:3px 15px 1px;
 }
 
+.thumb-events .events-date p,
 .thumb-port .port-date p {
 	margin-bottom: 0;
   font-size: 14px;

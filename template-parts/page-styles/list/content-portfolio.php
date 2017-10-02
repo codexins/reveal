@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying events
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -8,32 +8,24 @@
  */
 
 ?>
-
+<?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date');
+$project_comple_date=date_create($cadate);
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?>>
     <div class="blog-post">
         <div class="port-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-port" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">
                     <a href="<?php the_permalink(); ?>"></a>
-                    <div class="port-date"><p>12 July 2017</p></div>
+                    <div class="port-date"><p><?php echo esc_html(date_format($project_comple_date, "d M Y")); ?></p></div>
                 </div>
             <?php endif; ?>
 
             <div class="desc-port">
                 <p class="list-tag"><i class="flaticon-bookmark"></i> 
-                    <?php
-                        $taxonomy = 'portfolio-category';
-                        $taxonomies = get_terms($taxonomy); 
-                        $last_key = end($taxonomies);
-                        foreach ( $taxonomies as $tax ) {
-                            // echo  $tax->name.', ' ;
-                            if($tax == $last_key):
-                                echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).'</span></a>';
-                            else: 
-                                echo '<a href="'. get_the_permalink() .'"><span>'.ucwords($tax->name).', </span></a>';
-                             
-                            endif; 
-                    }?>
+                <?php $cat_list = get_the_term_list( $post->ID, 'portfolio-category', '', ', ', '' );
+                   if(!empty($cat_list)): echo $cat_list; endif;
+                  ?>
                 </p>
                 <h2 class="post-title"><a href="<?php the_permalink(); ?>">
                     

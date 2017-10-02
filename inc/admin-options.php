@@ -765,7 +765,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             //Custom Post Type Portfolio Settings
             $this->sections[] = array(
                 'title'            => esc_html__( 'Portfolio Settings', 'reveal' ),
-                'icon'             => 'dashicons dashicons-admin-users',
+                'icon'             => 'dashicons dashicons-art',
                 'id'               => 'reveal-portfolio-settings',
                 'customizer_width' => '500px',
                 'fields'           => array(
@@ -834,6 +834,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal_portfolio_title_excerpt_length',
                         'type'     => 'switch',
+                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
                         'title'    => esc_html__( 'Enable Portfolio Title and Excerpt Length?', 'reveal' ),
                         'subtitle' => esc_html__( 'Select to enable/disable portfolio-title & excerpt length', 'reveal' ),
                         'default'  => 0,
@@ -898,15 +899,146 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         "default"   => false,
                     ),
 
+                )    
+            );
+
+            //Custom Post Type Events Settings
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Events Settings', 'reveal' ),
+                'icon'             => 'dashicons dashicons-clipboard',
+                'id'               => 'reveal-events-settings',
+                'customizer_width' => '500px',
+                'fields'           => array(
+
+                    array(
+                        'id'        => 'reveal_enable_events',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Events?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Events', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Events Custom Post', 'reveal'),
+                        "default"   => true,
+                    ),
+
+                    array(
+                        'id'       => 'reveal-events-archive-layout',
+                        'type'     => 'image_select',
+                        'required' => array( 'reveal_enable_events', '=', '1' ),
+                        'title'    => esc_html__( 'Events Archive Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Events Archive Page Layout', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        //Must provide key => value(array:title|img) pairs for radio options
+                        'options'  => array(
+                            '1' => array(
+                                'alt' => '1 Column',
+                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            ),
+                            '2' => array(
+                                'alt' => '2 Column Left',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            ),
+                            '3' => array(
+                                'alt' => '2 Column Right',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            )
+                        ),
+                        'default'  => '1'
+                    ),
+
+                    array(
+                        'id'        => 'reveal_events_style',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Events Archive Posts Style', 'reveal'),
+                        'desc'      => esc_html__('Choose Events Archive Posts Style', 'reveal'),
+                        'required' => array( 'reveal_enable_events', '=', '1' ),
+                        'options'   => array(
+                            'grid'=> esc_html__( 'Grid', 'reveal' ),
+                            'list'  => esc_html__( 'List', 'reveal' ),
+                        ),
+                        'default'   => 'list'
+                    ),
+
+                    array(
+                        'id'        => 'reveal_events_grid_columns',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Columns Number', 'reveal'),
+                        'desc'      => '',
+                        'options'   => array(
+                            '2' => esc_html__( '2 columns', 'reveal' ) ,
+                            '3' => esc_html__( '3 columns', 'reveal' ) ,
+                            '4' => esc_html__( '4 columns', 'reveal' ) ,
+                        ),
+                        'default' => '3',
+                        'required' => array('reveal_events_style','equals', array( 'grid' ) ),
+                    ),
+
+                    array(
+                        'id'       => 'reveal_events_title_excerpt_length',
+                        'type'     => 'switch',
+                        'required' => array( 'reveal_enable_events', '=', '1' ),
+                        'title'    => esc_html__( 'Enable Events Title and Excerpt Length?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to enable/disable Events-title & excerpt length', 'reveal' ),
+                        'default'  => 0,
+                        'on'       => 'Enabled',
+                        'off'      => 'Disabled',
+                    ),
+
+                    array(
+                        'id'        => 'reveal_events_title_length',
+                        'type'      => 'slider',
+                        'min'       => '10',
+                        'max'       => '150',
+                        'step'      => '1',
+                        'required'  => array( 'reveal_events_title_excerpt_length', '=', '1' ),
+                        'title'     => esc_html__('Title Length for Events', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Title Length for Events (In Character)', 'reveal'),
+                        'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Events Archive Page.", 'reveal'),
+                        // 'default'   => 7,
+                    ),
+
+                    array(
+                        'id'        => 'reveal_events_excerpt_length',
+                        'type'      => 'slider',
+                        'min'       => '20',
+                        'max'       => '500',
+                        'step'      => '1',
+                        'required'  => array( 'reveal_events_title_excerpt_length', '=', '1' ),
+                        'title'     => esc_html__('Excerpt Length for Events', 'reveal'),
+                        'subtitle'  => esc_html__('Control the Excerpt Length for Events (In Character)', 'reveal'),
+                        'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Events Archive Page.", 'reveal'),
+                        // 'default'   => 20,
+                    ),
+
                     // array(
-                    //     'id'        => 'reveal-portfolio-disable-page-title',
+                    //     'id'       => 'reveal-single-events-layout',
+                    //     'type'     => 'image_select',
+                    //     'required' => array( 'reveal_enable_events', '=', '1' ),
+                    //     'title'    => esc_html__( 'Events Single Page Layout', 'reveal' ),
+                    //     'subtitle' => esc_html__( 'Select Single Events Page Layout', 'reveal' ),
+                    //     'desc'     => esc_html__( 'Choose From Left / Right Information Sidebar', 'reveal' ),
+                    //     //Must provide key => value(array:title|img) pairs for radio options
+                    //     'options'  => array(
+                    //         '1' => array(
+                    //             'alt' => '2 Column Left',
+                    //             'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                    //         ),
+                    //         '2' => array(
+                    //             'alt' => '2 Column Right',
+                    //             'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                    //         )
+                    //     ),
+                    //     'default'  => '2'
+                    // ),
+
+                    // array(
+                    //     'id'        => 'reveal_events_comments',
                     //     'type'      => 'switch',
-                    //     'required'  => array( 'reveal_enable_portfolio', '=', '1' ),
-                    //     'title'     => esc_html__('Disable Page Title Area for Single Portfolio Pages?', 'reveal'),
-                    //     'subtitle'  => esc_html__('Select if you need to disable page title section for single portfolio pages ', 'reveal'),
-                    //     'desc'      => esc_html__('Choose to Disable / Enable page title section for single portfolio pages', 'reveal'),
+                    //     'required'  => array( 'reveal_enable_events', '=', '1' ),
+                    //     'title'     => esc_html__('Enable Events Comments?', 'reveal'),
+                    //     'subtitle'  => esc_html__('Select if You Need Events Single Page Comments Section', 'reveal'),
+                    //     'desc'      => esc_html__('Choose to Enable / Disable Events Single Page Comments', 'reveal'),
                     //     "default"   => false,
                     // ),
+
                 )    
             );
 
