@@ -67,44 +67,48 @@
 
 	<!-- Start of whole -->
 	<div id="whole" class="whole-site-wrapper">
-
 	
-	<?php if(is_page_template('page-templates/page-home.php')): ?>
-				<header id="header" class="header front-header" itemscope itemtype="http://schema.org/WPHeader">
-	<?php else: ?>
-	<header id="header" class="header inner-header" itemscope itemtype="http://schema.org/WPHeader">
-        <div class="nav-container">
-	<?php endif; ?>	
+	<?php $disable_head = rwmb_meta('reveal_disable_header', 'type=checkbox'); ?>
+
+	<?php if($disable_head == 0): ?>	
+		<?php if(is_page_template('page-templates/page-home.php')): ?>
+					<header id="header" class="header front-header" itemscope itemtype="http://schema.org/WPHeader">
+		<?php else: ?>
+		<header id="header" class="header inner-header" itemscope itemtype="http://schema.org/WPHeader">
+	        <div class="nav-container">
+		<?php endif; ?>	
+			
+		<?php 
 		
-	<?php 
-	
-	$header_version = reveal_option('reveal-header-version');
+		$header_version = reveal_option('reveal-header-version');
 
-	if($header_version == 1): 
-	get_template_part('template-parts/header/header', 'one');
+		if($header_version == 1): 
+		get_template_part('template-parts/header/header', 'one');
 
-	 elseif($header_version == 2): 
-	 get_template_part('template-parts/header/header', 'two');
+		 elseif($header_version == 2): 
+		 get_template_part('template-parts/header/header', 'two');
 
-	elseif($header_version == 3): 
-	get_template_part('template-parts/header/header', 'three');
+		elseif($header_version == 3): 
+		get_template_part('template-parts/header/header', 'three');
 
-	elseif($header_version == 4): 
-	get_template_part('template-parts/header/header', 'four');
+		elseif($header_version == 4): 
+		get_template_part('template-parts/header/header', 'four');
 
 
-	endif; ?>
+		endif; ?>
 
-    <?php if( !is_front_page() ): ?>
-        </div> <!-- end nav wrapper -->
-    <?php endif; ?>
-	</header><!-- end of header -->
+	    <?php if( !is_front_page() ): ?>
+	        </div> <!-- end nav wrapper -->
+	    <?php endif; ?>
+		</header><!-- end of header -->
+	<?php endif; ?>	
 	
 	<?php 
 	$disable_title = rwmb_meta('reveal_disable_page_title', 'type=checkbox');
 	if($disable_title == 0):
 		get_template_part('template-parts/header/page', 'title');
-	else: echo '<div class="reveal-spacer-30"></div>';
+	else: 
+		echo ($disable_head == 0) ? '<div class="reveal-spacer-30"></div>' : '';
 	endif; ?>
 
 	<div class="clearfix"></div>

@@ -721,3 +721,14 @@ function list_body_class ($classes) {
     endif;
 }
 add_filter('body_class', 'list_body_class');
+
+function list2_body_class ($classes) {
+    $disable_header = rwmb_meta('reveal_disable_header', 'type=checkbox');
+    if($disable_header == 1): 
+        $classes[] = 'no-header';
+        return $classes;
+    else:
+        return $classes;
+    endif;
+}
+add_filter('body_class', 'list2_body_class');

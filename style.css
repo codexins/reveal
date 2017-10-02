@@ -252,6 +252,10 @@ input[type="button"]:hover{
     001 - Header Section
 *************************************************************/
 
+.no-header .page-entry-content {
+    margin-top: 0;
+}
+
 header {
     padding-top: 0;
     padding-bottom: 0;

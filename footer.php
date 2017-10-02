@@ -17,33 +17,35 @@
 		<?php 
 			$reveal_footer = reveal_option('reveal-footer-version');
 			$reveal_cpr = reveal_option('reveal_footer_copyright');
+            $disable_footer = rwmb_meta('reveal_disable_footer', 'type=checkbox');
 		 ?>
  	
 
+    <?php if($disable_footer == 0): ?>
+    	<footer id="footer" class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+    		<div class="container">
+    			<?php 
+    			if($reveal_footer == 1): get_template_part('template-parts/footer/footer', 'one');
+    			elseif($reveal_footer == 2): get_template_part('template-parts/footer/footer', 'two');
+    			elseif($reveal_footer == 3): get_template_part('template-parts/footer/footer', 'three');
+    			elseif($reveal_footer == 4): get_template_part('template-parts/footer/footer', 'four');
+    			elseif($reveal_footer == 5): get_template_part('template-parts/footer/footer', 'five');
+    			elseif($reveal_footer == 6): get_template_part('template-parts/footer/footer', 'six');
+    			endif; 
+    			?>
 
-	<footer id="footer" class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-		<div class="container">
-			<?php 
-			if($reveal_footer == 1): get_template_part('template-parts/footer/footer', 'one');
-			elseif($reveal_footer == 2): get_template_part('template-parts/footer/footer', 'two');
-			elseif($reveal_footer == 3): get_template_part('template-parts/footer/footer', 'three');
-			elseif($reveal_footer == 4): get_template_part('template-parts/footer/footer', 'four');
-			elseif($reveal_footer == 5): get_template_part('template-parts/footer/footer', 'five');
-			elseif($reveal_footer == 6): get_template_part('template-parts/footer/footer', 'six');
-			endif; 
-			?>
+    			<?php if($reveal_cpr == true): ?>
+    			<hr class="divider">
+    			<p class="text-center copyright">
+    				<?php  if (!empty(reveal_option('reveal-copyright'))): ?>
+    					<?php echo reveal_option('reveal-copyright'); ?>
+    				<?php endif;?>
+    			</p>	
+    			<?php endif; ?>
 
-			<?php if($reveal_cpr == true): ?>
-			<hr class="divider">
-			<p class="text-center copyright">
-				<?php  if (!empty(reveal_option('reveal-copyright'))): ?>
-					<?php echo reveal_option('reveal-copyright'); ?>
-				<?php endif;?>
-			</p>	
-			<?php endif; ?>
-
-		</div> <!-- end of container -->
-	</footer> <!-- end of footer -->
+    		</div> <!-- end of container -->
+    	</footer> <!-- end of footer -->
+    <?php endif; ?>
 
 	<!-- Go to Top Button at right bottom of the window screen -->
 	<?php if( reveal_option( 'reveal_to_top' ) ): ?>
