@@ -4,7 +4,7 @@
 					</div><!-- #secondary -->
 				</div> <!-- end of col -->
 				
-				<div class="col-sm-8 col-md-7 col-md-offset-1">
+				<div class="col-sm-8 col-md-8 col-md-offset-1">
 					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<?php if( reveal_option( 'reveal_portfolio_style' ) == 'grid' ): ?>
 						<div class="portfolio-grid-wrapper">
