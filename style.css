@@ -261,7 +261,7 @@ header {
     padding-bottom: 0;
     position: relative;
     margin-top: 0;
-    z-index: 2;
+    z-index: 999999999999 ;
 }
 
 
