@@ -508,6 +508,25 @@ if( $disable_port == false ) {
 }
 
 
+/**
+*
+* Helper Function for deregistering Events Custom Posts Type
+*
+**/
+$disable_port = reveal_option( 'reveal_enable_events' );
+$version = '4.5';
+if( $disable_port == false ) {
+    if (version_compare($version, get_bloginfo('version'), '<=' )) {
+        function delete_post_type_events(){
+            unregister_post_type( 'events' );
+        }
+        add_action('init','delete_post_type_events');
+    } else {
+        return false;        
+    }
+}
+
+
 
 /**
 *
