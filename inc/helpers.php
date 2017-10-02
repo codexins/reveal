@@ -491,6 +491,55 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
 
 /**
 *
+* Helper Function for Custom Loop for Testimonial
+*
+**/
+if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
+
+    function reveal_archive_testimonial_loop() {
+
+        if ( have_posts() ) :
+            echo '<div class="testimonial-archive-wrapper">';
+            $i = 0;
+            /* Start the Loop */
+            while ( have_posts() ) : the_post();
+                    
+                get_template_part( 'template-parts/page-styles/list/content', 'testimonial' ); 
+                    
+
+            endwhile; 
+            echo '</div>';
+            echo '<div class="clearfix"></div>';
+
+            reveal_posts_link();
+
+        else:
+            get_template_part( 'template-parts/content', 'none' );
+
+        endif;
+
+    }
+
+}
+
+
+/**
+*
+* Redirecting single testimonial to the archive page, scrolled to current ID 
+*
+**/
+add_action( 'template_redirect', function() {
+    if ( is_singular('testimonial') ) {
+        global $post;
+        $redirectLink = get_post_type_archive_link( 'testimonial' )."#testimonial-".$post->ID;
+        wp_redirect( $redirectLink, 302 );
+        exit;
+    }
+});
+
+
+/**
+*
 * Helper Function for deregistering Portfolio Custom Posts Type
 *
 **/
@@ -513,14 +562,32 @@ if( $disable_port == false ) {
 * Helper Function for deregistering Events Custom Posts Type
 *
 **/
-$disable_port = reveal_option( 'reveal_enable_events' );
+$disable_events = reveal_option( 'reveal_enable_events' );
 $version = '4.5';
-if( $disable_port == false ) {
+if( $disable_events == false ) {
     if (version_compare($version, get_bloginfo('version'), '<=' )) {
         function delete_post_type_events(){
             unregister_post_type( 'events' );
         }
         add_action('init','delete_post_type_events');
+    } else {
+        return false;        
+    }
+}
+
+/**
+*
+* Helper Function for deregistering Testimonial Custom Posts Type
+*
+**/
+$disable_test = reveal_option( 'reveal_enable_testimonial' );
+$version = '4.5';
+if( $disable_test == false ) {
+    if (version_compare($version, get_bloginfo('version'), '<=' )) {
+        function delete_post_type_testimonial(){
+            unregister_post_type( 'testimonial' );
+        }
+        add_action('init','delete_post_type_testimonial');
     } else {
         return false;        
     }
@@ -781,14 +848,12 @@ add_action( 'wp_ajax_nopriv_ajaxcomments', 'reveal_ajax_comment_handler' ); // F
 
 
 /**
- * functions to add body class on portfolio list view
+ * Helper function to add body class on portfolio list view
  *
  */
-
-
 function list_body_class ($classes) {
     $port_style = reveal_option( 'reveal_portfolio_style' );
-    if(($port_style == 'list') && (is_archive('portfolio'))): 
+    if(($port_style == 'list') && (is_post_type_archive('portfolio'))): 
         $classes[] = 'portfolio-list-view';
         return $classes;
     else:
@@ -797,9 +862,14 @@ function list_body_class ($classes) {
 }
 add_filter('body_class', 'list_body_class');
 
+
+/**
+ * Helper function to add body class on events list view
+ *
+ */
 function list_events_body_class ($classes) {
     $events_style = reveal_option( 'reveal_events_style' );
-    if(($events_style == 'list') && (is_archive('events'))): 
+    if(($events_style == 'list') && (is_post_type_archive('events'))): 
         $classes[] = 'events-list-view';
         return $classes;
     else:
@@ -808,6 +878,11 @@ function list_events_body_class ($classes) {
 }
 add_filter('body_class', 'list_events_body_class');
 
+
+/**
+ * Helper function to add body class if no header
+ *
+ */
 function list2_body_class ($classes) {
     $disable_header = rwmb_meta('reveal_disable_header', 'type=checkbox');
     if($disable_header == 1): 

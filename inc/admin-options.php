@@ -1042,6 +1042,115 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 )    
             );
 
+            //Custom Post Type Testimonial Settings
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Testimonial Settings', 'reveal' ),
+                'icon'             => 'dashicons dashicons-welcome-learn-more',
+                'id'               => 'reveal-events-settings',
+                'customizer_width' => '500px',
+                'fields'           => array(
+
+                    array(
+                        'id'        => 'reveal_enable_testimonial',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Testimonials?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Testimonials', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Testimonial Custom Post', 'reveal'),
+                        "default"   => true,
+                    ),
+
+                    array(
+                        'id'       => 'reveal-testimonial-archive-layout',
+                        'type'     => 'image_select',
+                        'required' => array( 'reveal_enable_testimonial', '=', '1' ),
+                        'title'    => esc_html__( 'Testimonials Archive Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Testimonials Archive Page Layout', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        //Must provide key => value(array:title|img) pairs for radio options
+                        'options'  => array(
+                            '1' => array(
+                                'alt' => '1 Column',
+                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            ),
+                            '2' => array(
+                                'alt' => '2 Column Left',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            ),
+                            '3' => array(
+                                'alt' => '2 Column Right',
+                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            )
+                        ),
+                        'default'  => '1'
+                    ),
+
+                    // array(
+                    //     'id'        => 'reveal_events_style',
+                    //     'type'      => 'select',
+                    //     'title'     => esc_html__('Events Archive Posts Style', 'reveal'),
+                    //     'desc'      => esc_html__('Choose Events Archive Posts Style', 'reveal'),
+                    //     'required' => array( 'reveal_enable_events', '=', '1' ),
+                    //     'options'   => array(
+                    //         'grid'=> esc_html__( 'Grid', 'reveal' ),
+                    //         'list'  => esc_html__( 'List', 'reveal' ),
+                    //     ),
+                    //     'default'   => 'list'
+                    // ),
+
+                    // array(
+                    //     'id'        => 'reveal_events_grid_columns',
+                    //     'type'      => 'select',
+                    //     'title'     => esc_html__('Columns Number', 'reveal'),
+                    //     'desc'      => '',
+                    //     'options'   => array(
+                    //         '2' => esc_html__( '2 columns', 'reveal' ) ,
+                    //         '3' => esc_html__( '3 columns', 'reveal' ) ,
+                    //         '4' => esc_html__( '4 columns', 'reveal' ) ,
+                    //     ),
+                    //     'default' => '3',
+                    //     'required' => array('reveal_events_style','equals', array( 'grid' ) ),
+                    // ),
+
+                    // array(
+                    //     'id'       => 'reveal_events_title_excerpt_length',
+                    //     'type'     => 'switch',
+                    //     'required' => array( 'reveal_enable_events', '=', '1' ),
+                    //     'title'    => esc_html__( 'Enable Events Title and Excerpt Length?', 'reveal' ),
+                    //     'subtitle' => esc_html__( 'Select to enable/disable Events-title & excerpt length', 'reveal' ),
+                    //     'default'  => 0,
+                    //     'on'       => 'Enabled',
+                    //     'off'      => 'Disabled',
+                    // ),
+
+                    // array(
+                    //     'id'        => 'reveal_events_title_length',
+                    //     'type'      => 'slider',
+                    //     'min'       => '10',
+                    //     'max'       => '150',
+                    //     'step'      => '1',
+                    //     'required'  => array( 'reveal_events_title_excerpt_length', '=', '1' ),
+                    //     'title'     => esc_html__('Title Length for Events', 'reveal'),
+                    //     'subtitle'  => esc_html__('Control the Title Length for Events (In Character)', 'reveal'),
+                    //     'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Events Archive Page.", 'reveal'),
+                    //     // 'default'   => 7,
+                    // ),
+
+                    // array(
+                    //     'id'        => 'reveal_events_excerpt_length',
+                    //     'type'      => 'slider',
+                    //     'min'       => '20',
+                    //     'max'       => '500',
+                    //     'step'      => '1',
+                    //     'required'  => array( 'reveal_events_title_excerpt_length', '=', '1' ),
+                    //     'title'     => esc_html__('Excerpt Length for Events', 'reveal'),
+                    //     'subtitle'  => esc_html__('Control the Excerpt Length for Events (In Character)', 'reveal'),
+                    //     'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Events Archive Page.", 'reveal'),
+                    //     // 'default'   => 20,
+                    // ),
+
+                )    
+            );
+
 
             // footer section 
             $this->sections[] = array(

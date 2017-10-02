@@ -1,6 +1,6 @@
 <?php
 /**
- * The Portfolio Archive Template
+ * The Events Archive Template
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
