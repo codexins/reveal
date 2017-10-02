@@ -2192,21 +2192,25 @@ button.mfp-close:hover {
 
 /*port folio grid style */
 
+.events .events-item-content,
 .portfolio .portfolio-item-content {
     border-radius: 4px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
     transition: .3s;
 }
+.events .events-item-content:hover,
 .portfolio .portfolio-item-content:hover {
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
+.events  .events-description,
 .portfolio  .portfolio-description {
     background: #fff none repeat scroll 0 0;
     padding: 30px;
     text-align: center;
     width: 100%;
 }
+.events-description h4,
 .portfolio-description h4 {
     font-size: 18px;
     font-weight: 600;
@@ -2214,11 +2218,13 @@ button.mfp-close:hover {
     margin-bottom: 0;
 }
 
+.events-description .events-cat > li,
 .portfolio-description .portfolio-cat > li {
     margin: 0 5px;
     line-height: 22px;
 }
 
+.events-description h4 a,
 .portfolio-description h4 a {
     display: inline-block;
     margin-bottom: 5px;
@@ -2229,10 +2235,12 @@ button.mfp-close:hover {
 
 }
 
+.events-description .events-cat,
 .portfolio-description .portfolio-cat {
 	margin-bottom: 5px;
 }
 
+.events-cat > li,
 .portfolio-cat > li {
     display: inline-block;
     margin-right: 10px;
@@ -2247,17 +2255,21 @@ button.mfp-close:hover {
 }
 
 .item-thumbnail ,
+.events-item-content,
 .portfolio-item-content {
     position: relative;
 }
 
+.events-item:hover .item-thumbnail::before,
 .portfolio-item:hover .item-thumbnail::before {
     border: 1px solid rgba(0, 0, 0, 0);
     opacity: 1;
 }
+.events-cat,
 .portfolio-cat{
     padding: 0 ;
 }
+.events-action-btn,
 .portfolio-action-btn {
     opacity: 0;
     position: absolute;
@@ -2284,21 +2296,26 @@ button.mfp-close:hover {
     border: 1px solid rgba(0, 0, 0, 0);
 
 }
+.events:hover .item-thumbnail::before,
 .portfolio:hover .item-thumbnail::before {
     border: 1px solid rgba(0, 0, 0, 0);
     opacity: 1;
 }
+.events:hover .events-action-btn,
 .portfolio:hover .portfolio-action-btn {
     opacity: 1;
 }
+.events-action-btn > li,
 .portfolio-action-btn > li {
     display: inline-block;
     margin: 0 2px;
 }
+.events .events-action-btn > li a,
 .portfolio .portfolio-action-btn > li a {
     background: rgba(255, 255, 255, 1) none repeat scroll 0 0;
     color: #000;
 }
+.events-action-btn > li a,
 .portfolio-action-btn > li a {
     border-radius: 50%;
     display: inline-block;
