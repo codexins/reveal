@@ -6,7 +6,7 @@
         Activating Superfish Menu
     *************************************************************/
 
-        // activating superfish menu
+    // activating superfish menu
     $(".sf-menu").superfish({
 
         delay:       0,                            // one second delay on mouseout
@@ -35,13 +35,14 @@
 
     $('.sidebar-widget p:empty').remove();
 
+
     /*--------------------------------------------------------------
-	Header full screen background image
+	   Calculating Header height and fixing the window jump issue
     ---------------------------------------------------------------- */
 
-    // $(window).on("load resize", function() {
-    //     $(".fill-screen").css("height", window.innerHeight);
-    // });
+    $(window).load(function(){
+        $('.inner-header .nav-container').css('min-height', $('#header').outerHeight());
+    });
 
 
     /*--------------------------------------------------------------
@@ -265,6 +266,8 @@
             $(this).kc_parallax();
         });
     }
+
+
       
 
 })(jQuery);
