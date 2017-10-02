@@ -13,8 +13,8 @@
     <div class="blog-post">
         <div class="port-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
-                <div class="thumb-port">
-                    <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url('reveal-rectangle-one') ?>" alt=""></a>
+                <div class="thumb-port" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">
+                    <a href="<?php the_permalink(); ?>"></a>
                     <div class="port-date"><p>12 July 2017</p></div>
                 </div>
             <?php endif; ?>
