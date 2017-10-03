@@ -9,26 +9,24 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="portfolio-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-one' )); ?>"  alt="">                                          
 	        <ul class="portfolio-action-btn">
 	            <li>
-	                <a class="venobox" href="<?php esc_url(the_permalink()); ?>"><i class="flaticon-link"></i></a>
+	                <a href="<?php echo esc_url(get_the_permalink()); ?>"><i class="flaticon-link"></i></a>
 	            </li>
 	        </ul>                                            
-	    </div>
+	    </div> <!-- end of item-thumbnail -->
 	    <div class="portfolio-description">
-	        <h4><a href="<?php esc_url(the_permalink()); ?>"><?php esc_html(the_title()); ?></a></h4>
+	        <h4><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html(the_title()); ?></a></h4>
 	        <ul class="portfolio-cat">
 				<?php
                     $taxonomy = 'portfolio-category';
                     $taxonomies = get_terms( $taxonomy); 
                     $last_key = end($taxonomies);
-                    foreach ( $taxonomies as $tax ) {
-                        // echo  $tax->name.', ' ;
-                        
+                    foreach ( $taxonomies as $tax ) {                        
                         if($tax == $last_key):
                             echo "<li>".ucwords($tax->name)."</li>";
                         else: 
@@ -37,6 +35,6 @@
                         endif; 
                 }?>
 	        </ul>
-	    </div>                                    
-	</div>
-</article>
+	    </div> <!-- end of portfolio-description -->
+	</div> <!-- end of portfolio-item-content -->
+</article> <!-- #portfolio-## -->

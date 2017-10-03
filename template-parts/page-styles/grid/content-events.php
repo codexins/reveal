@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="events-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-one' )); ?>"  alt="">                                          
@@ -27,5 +27,5 @@
               ?>
 	        </p>
 	    </div>                                    
-	</div>
-</article>
+	</div> <!-- end of events-item-content -->
+</article> <!-- #event-## -->

@@ -8,7 +8,7 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
 <!-- Single Project area -->
     <div class="row">
         <div class="portfolio-image clearfix">
@@ -77,4 +77,4 @@
     </div> <!-- end of row -->
 
 <!-- Single Project area end --> 
-</article><!-- #post-## -->
+</article><!-- #portfolio-## -->
