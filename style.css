@@ -3105,6 +3105,7 @@ body.events-list-view {
 	margin-top: 40px;
 }
 
+.testimonial-archive-wrapper article:last-child,
 .events-archive-wrapper article:last-child,
 .portfolio-archive-wrapper article:last-child {
 	margin-bottom: 0;

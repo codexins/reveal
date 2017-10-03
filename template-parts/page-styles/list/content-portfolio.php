@@ -11,12 +11,12 @@
 <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date');
 $project_comple_date=date_create($cadate);
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?>>
+<article id="portfolio-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?>>
     <div class="blog-post">
         <div class="port-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-port" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">
-                    <a href="<?php the_permalink(); ?>"></a>
+                    <a href="<?php echo esc_url(get_the_permalink()); ?>"></a>
                     <div class="port-date"><p><?php echo esc_html(date_format($project_comple_date, "d M Y")); ?></p></div>
                 </div>
             <?php endif; ?>
@@ -27,7 +27,7 @@ $project_comple_date=date_create($cadate);
                    if(!empty($cat_list)): echo $cat_list; endif;
                   ?>
                 </p>
-                <h2 class="post-title"><a href="<?php the_permalink(); ?>">
+                <h2 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>">
                     
                 <?php 
                     $p_length_switch = reveal_option('reveal_portfolio_title_excerpt_length');
@@ -52,9 +52,9 @@ $project_comple_date=date_create($cadate);
                 ?>
                 </div>
 
-                <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <p class="blog-more"><a class="cx-btn" href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
             </div>
         </div>
         
     </div><!--blog post-->
-</article><!-- #post-## -->
+</article><!-- #portfolio-## -->

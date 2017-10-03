@@ -33,9 +33,9 @@
 
 	        </a></h4>
 	        <?php $e_start_date = strtotime(rwmb_meta('reveal_event_start_date', 'type=date'));
-	        	  $e_start_time = rwmb_meta('reveal_event_start_time', 'type=time');
-			 	  $e_end_time = rwmb_meta('reveal_event_end_time', 'type=time'); 
-			 	  $e_new_date = date( get_option('date_format'), $e_start_date );
+		        	  $e_start_time = rwmb_meta('reveal_event_start_time', 'type=time');
+						 	  $e_end_time = rwmb_meta('reveal_event_end_time', 'type=time'); 
+						 	  $e_new_date = date( get_option('date_format'), $e_start_date );
 			 	  ?>
 
 	        <div class="event-grid-meta">
@@ -53,7 +53,7 @@
                 $ev_length_switch = reveal_option('reveal_events_title_excerpt_length');
                 if( $ev_length_switch ) :
                     $reveal_events_excerpt_len = reveal_option( 'reveal_events_excerpt_length' );
-				    reveal_excerpt( $reveal_events_excerpt_len );
+				    				reveal_excerpt( $reveal_events_excerpt_len );
                 else:
                     the_excerpt();
                 endif; //End if() reveal_excerpt_length
@@ -66,3 +66,5 @@
         </div>
 	</div>
 </article>
+
+

@@ -16,7 +16,7 @@ jQuery(function($){
 	}
 	var delay = 1200;
 	$(window).scroll(function(){
-		$('article').addClass('no-slideup');
+		$('article.type-post').addClass('no-slideup');
 		var data = {
 			'action': 'loadmore',
 			'query': reveal_loadmore_params.posts,
@@ -34,8 +34,8 @@ jQuery(function($){
 				success:function(data){
 					if( data ) {
 						setTimeout(function(){
-							$('#primary').find('article:last-of-type').after( data ); // where to insert posts
-							$('article:not(.no-slideup)').addClass('slideup');
+							$('#primary').find('article.type-post:last-of-type').after( data ); // where to insert posts
+							$('article.type-post:not(.no-slideup)').addClass('slideup');
 							canBeLoaded = true; // the ajax is completed, now we can run it again
 							reveal_loadmore_params.current_page++;
 							initPhotoSwipeFromDOM('.image-pop-up');

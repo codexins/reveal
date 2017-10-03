@@ -22,7 +22,7 @@ $e_address_longitude = rwmb_meta('reveal_event_address_longitude', 'type=text');
 
 $e_st_date=date_create($e_start_date);
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix events-list')); ?>>
+<article id="event-<?php the_ID(); ?>" <?php post_class(array('clearfix events-list')); ?>>
     <div class="blog-post">
         <div class="event-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
@@ -65,7 +65,7 @@ $e_st_date=date_create($e_start_date);
 
                 <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
             </div>
-        </div>
+        </div> <!-- end of event-list-wrapper -->
         
     </div><!--blog post-->
-</article><!-- #post-## -->
+</article><!-- #event-## -->
