@@ -452,11 +452,14 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
 
     function reveal_archive_events_loop() {
 
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
         $args = array(
             'post_type'  => 'events',
             'orderby'  => 'meta_value',
             'meta_key'   => 'reveal_event_start_date',
             'order'   => 'DESC',
+            'paged'   => $paged,
             );
         $loop = new WP_Query($args);
 

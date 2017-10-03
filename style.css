@@ -3105,11 +3105,11 @@ body.events-list-view {
 	margin-top: 40px;
 }
 
-.testimonial-archive-wrapper article:last-child,
+/*.testimonial-archive-wrapper article:last-child,
 .events-archive-wrapper article:last-child,
 .portfolio-archive-wrapper article:last-child {
 	margin-bottom: 0;
-}
+}*/
 
 .thumb-events,
 .thumb-port {
@@ -3291,6 +3291,10 @@ article.portfolio-list {
     display: inline-block;
 }
 
+.testimonial-archive-wrapper article:last-child {
+    margin-bottom: 0;
+}
+
 
 /* Responsive Fixings for testimonial archive page */
 
@@ -3380,4 +3384,8 @@ article.portfolio-list {
 .events-grid-wrapper .col-md-3 .events .events-description {
 	padding-left: 15px;
 	padding-right: 15px;
+}
+
+.events-archive-wrapper {
+    margin-bottom: 20px;
 }
