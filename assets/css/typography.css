@@ -393,3 +393,41 @@ Creation date: 26/07/2017 06:49
     font-family: Montserrat;
     text-transform: uppercase;
 }
+
+
+/************************************************************
+    000 - Page - Testimonial Archive
+*************************************************************/
+
+
+.thumb-testimonial::before {
+    content: "\201D";
+    font-family: "Times New Roman",Georgia,Serif;
+    font-size: 2.2em;
+    font-weight: 900;
+    line-height: 55px;
+    text-align: center;
+}
+
+.testimonial-content h3.testimonial-title {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.testimonial-content h3.testimonial-title::after {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: FontAwesome;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+}
+
+.testimonial-title .testimonial-meta {
+    text-transform: capitalize;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.testimonial-title .testimonial-meta span:last-child {
+    font-weight: 600;
+}

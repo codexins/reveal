@@ -91,10 +91,21 @@ function html_tag_schema() {
         $type = 'Event';
     }
 
+    // Is of team post type
+    elseif( is_post_type_archive( 'team' ) || is_singular( 'team' ) ) {
+        $type = 'Person';
+    }
+
     // Is of portfolio post type
     elseif( is_post_type_archive( 'portfolio' ) || is_singular( 'portfolio' ) ) {
         $type = 'ProfessionalService';
     }
+
+    // Is of testimonial post type
+    elseif( is_post_type_archive( 'testimonial' ) || is_singular( 'testimonial' ) ) {
+        $type = 'Review';
+    }
+
 
 
     else {

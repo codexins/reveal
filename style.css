@@ -3198,7 +3198,6 @@ article.portfolio-list {
 
 .testimonial-single {
     padding: 35px;
-    line-height: 1.6;
     overflow: hidden;
 }
 
@@ -3226,45 +3225,52 @@ article.portfolio-list {
 }
 
 .thumb-testimonial::before {
-    content: "\201C";
     position: absolute;
     right: -5px;
     top: -10px;
-    font-family: "Times New Roman",Georgia,Serif;
-    font-size: 2.2em;
-    font-weight: 900;
     width: 40px;
     height: 40px;
-    line-height: 55px;
-    text-align: center;
     border-radius: 50%;
 }
 
 .testimonial-content h3.testimonial-title {
     margin: 10px 0 15px;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
 .testimonial-content h3.testimonial-title::after {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: FontAwesome;
     display: block;
-    font-size: 14px;
     margin-top: 10px;
-    letter-spacing: 0.2em;
 }
 
 .testimonial-title .testimonial-meta {
     margin-left: 5px;
-    text-transform: capitalize;
-    font-size: 15px;
     opacity: 0.9;
-    font-style: italic;
-    font-weight: normal;
     display: inline-block;
 }
 
-.testimonial-title .testimonial-meta span:last-child {
-    font-weight: 600;
+
+/* Responsive Fixings for testimonial archive page */
+
+@media only screen and (max-width:767px) {
+
+    .testimonial-list-wrapper {
+        display: block;
+        text-align: center;
+    }
+
+    .thumb-testimonial-wrapper {
+        display: block;
+        margin-bottom: 30px;
+        padding-right: 0;
+    }
+
+    .thumb-testimonial {
+        display: inline-block;
+    }
+
+    .testimonial-content .testimonial-meta {
+        display: block;
+        margin-top: 10px;
+    }
+
 }
