@@ -3212,6 +3212,10 @@ article.portfolio-list {
 }
 
 .thumb-testimonial-wrapper {
+    vertical-align: top;
+}
+
+.thumb-testimonial-wrapper {
     padding-right: 35px;
 }
 
