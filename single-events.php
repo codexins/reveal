@@ -108,6 +108,25 @@ get_header(); ?>
                                                 <?php printf('%s', $e_address); ?>
                                             </p>
                                         </div>
+                                        <?php $event_cat_list = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );   
+                                        if(!empty($event_cat_list)):?>
+                                            <div class="event-cat-details">
+                                                <h3 class="title"><?php echo esc_html__('Category', 'reveal')?></h3>
+                                                <p class="info-title-content">
+                                                    <?php echo $event_cat_list; ?>
+                                                </p>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <?php $event_tag_list = get_the_term_list( $post->ID, 'events_tags', '', ', ', '' ); 
+                                        if(!empty($event_tag_list)):?>
+                                            <div class="event-tag-details">
+                                                <h3 class="title"><?php echo esc_html__('Tags', 'reveal')?></h3>
+                                                <p class="info-title-content">
+                                                    <?php echo $event_tag_list; ?>
+                                                </p>
+                                            </div>
+                                        <?php endif; ?>
                 	                </div>
                             </div>
 

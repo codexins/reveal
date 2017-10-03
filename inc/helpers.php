@@ -452,11 +452,19 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
 
     function reveal_archive_events_loop() {
 
-        if ( have_posts() ) :
+        $args = array(
+            'post_type'  => 'events',
+            'orderby'  => 'meta_value',
+            'meta_key'   => 'reveal_event_start_date',
+            'order'   => 'DESC',
+            );
+        $loop = new WP_Query($args);
+
+        if ( $loop->have_posts() ) :
             echo '<div class="events-archive-wrapper">';
             $i = 0;
             /* Start the Loop */
-            while ( have_posts() ) : the_post();
+            while ( $loop->have_posts() ) : $loop->the_post();
                 $i++;
                 $post_style = reveal_option( 'reveal_events_style' );
                 
@@ -494,6 +502,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
         get_template_part( 'template-parts/content', 'none' );
 
         endif;
+        wp_reset_postdata();
 
     }
 
