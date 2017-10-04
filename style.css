@@ -3418,7 +3418,7 @@ article.portfolio-list {
     position: relative;
 }
 
-.list-blog .img-wrapper::before {
+.list-blog .img-wrapper a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -3435,7 +3435,7 @@ article.portfolio-list {
     transition: all .4s;
 }
 
-.list-blog .img-wrapper::after {
+.list-blog .img-wrapper a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -3452,13 +3452,13 @@ article.portfolio-list {
     transition: all .4s;
 }
 
-.list-blog .img-wrapper:hover::before {
+.list-blog .img-wrapper a:hover::before {
     width: 100%;
     height: 100%;
     opacity: 1;
 }
 
-.list-blog .img-wrapper:hover::after {
+.list-blog .img-wrapper a:hover::after {
     width: 100%;
     height: 100%;
     opacity: 1;
@@ -3540,4 +3540,11 @@ article.portfolio-list {
 
 .list-blog .blog-info span:last-child {
     margin-right: 0;
+}
+
+.list-blog .img-thumb a {
+    display: block;
+    width: 100%;
+    height: 100%;
+
 }

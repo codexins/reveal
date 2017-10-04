@@ -14,7 +14,7 @@
     <div class="blog-wrapper">
 
         <div class="img-thumb">
-            <div class="img-wrapper"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('rectangle-one'); else: echo '//placehold.it/360X227'; endif; ?>" alt="" class="img-responsive"></div>
+            <div class="img-wrapper"><a href="<?php the_permalink(); ?>"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('rectangle-one'); else: echo '//placehold.it/360X227'; endif; ?>" alt="" class="img-responsive"></a></div>
             <div class="meta">
                 <p><?php echo get_the_time( 'd' ); ?></p>
                 <p><?php echo get_the_time( 'M' ); ?></p>
@@ -23,17 +23,17 @@
 
 
         <div class="blog-content">
-            <h3 class="blog-title grid">
+            <h3 class="blog-title grid"><a href="<?php the_permalink();?>">
                 <?php 
-                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                    $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
                         $reveal_title_len = reveal_option( 'reveal_title_length' );
                         reveal_title( $reveal_title_len );
                     else :
                         the_title();    
-                    endif;    
+                    endif;
                 ?>
-            </h3>
+            </a></h3>
 
             <ul class="list-inline post-detail post-meta">
 <!--                 <li><i class="fa fa-pencil"></i> <a href="<?php //echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php //echo esc_html( get_the_author() ); ?></a></li> -->
@@ -58,7 +58,7 @@
                     wp_link_pages( $args );
 
                 else:
-                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                    $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
                         $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
                         reveal_excerpt( $reveal_excerpt_len );
