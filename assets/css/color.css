@@ -10,6 +10,7 @@ a {
 a:hover, a:active, a:focus {
     color: #333;
     text-decoration: none;
+    outline: 0 ;
 }
 
 blockquote {
