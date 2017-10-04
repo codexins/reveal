@@ -123,10 +123,10 @@ function html_tag_schema() {
 **/
 if ( ! function_exists( 'reveal_posts_link' ) ) {
 
-    function reveal_posts_link() {
+    function reveal_posts_link($prev = 'Newer Posts', $next = 'Older Posts') {
 
-        $prev_link = get_previous_posts_link(esc_html__('&laquo; Newer Posts', 'reveal'));
-        $next_link = get_next_posts_link(esc_html__('Older Posts &raquo; ', 'reveal'));
+        $prev_link = get_previous_posts_link(esc_html__('&laquo; '. $prev, 'reveal'));
+        $next_link = get_next_posts_link(esc_html__($next. ' &raquo; ', 'reveal'));
 
         echo '<div class="posts-nav clearfix">';
             if($next_link): 
@@ -152,8 +152,8 @@ if ( ! function_exists( 'reveal_post_link' ) ) {
     function reveal_post_link($prev = 'Previous Post', $next = 'Next Post') {
 
         if( reveal_option( 'reveal_single_pagination' ) == 'button' ):
-        $prev_link = get_previous_post_link('%link', esc_html__( $prev.' &raquo;', 'reveal'));
-        $next_link = get_next_post_link('%link', esc_html__('&laquo; '.$next, 'reveal'));
+        $prev_link = get_previous_post_link('%link', esc_html( $prev.' &raquo;'));
+        $next_link = get_next_post_link('%link', esc_html('&laquo; '.$next, 'reveal'));
         elseif( reveal_option( 'reveal_single_pagination' ) == 'title' ):
         $prev_link = get_previous_post_link('%link', esc_html__('%title &raquo;', 'reveal'));
         $next_link = get_next_post_link('%link', esc_html__('&laquo; %title', 'reveal'));
@@ -396,7 +396,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
     function reveal_archive_portfolio_loop() {
 
         if ( have_posts() ) :
-            echo '<div class="portfolio-archive-wrapper">';
+            echo '<div class="portfolio-archive-wrapper clearfix">';
             $i = 0;
             /* Start the Loop */
             while ( have_posts() ) : the_post();
@@ -416,7 +416,8 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                 endif;
                 
                 else:
-                    
+                
+
                 get_template_part( 'template-parts/page-styles/list/content', 'portfolio' ); 
                     
                 endif;
@@ -425,13 +426,10 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
             echo '</div>';
             echo '<div class="clearfix"></div>';
 
-            // $reveal_pagination = reveal_option( 'reveal_pagination' );
+            echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+                reveal_posts_link('Newer Portfolios', 'Older Portfolios');
+            echo ( $post_style == 'list' ) ? '</div>' : '' ;
 
-            // if( $reveal_pagination == 'numbered' ):           
-            // reveal_posts_link_numbered();
-            // else:
-            reveal_posts_link();
-            // endif;
 
         else:
         get_template_part( 'template-parts/content', 'none' );
@@ -464,7 +462,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
         $loop = new WP_Query($args);
 
         if ( $loop->have_posts() ) :
-            echo '<div class="events-archive-wrapper">';
+            echo '<div class="events-archive-wrapper clearfix">';
             $i = 0;
             /* Start the Loop */
             while ( $loop->have_posts() ) : $loop->the_post();
@@ -498,8 +496,10 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             // if( $reveal_pagination == 'numbered' ):           
             // reveal_posts_link_numbered();
             // else:
-            reveal_posts_link();
-            // endif;
+            echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+                reveal_posts_link('Newer Events', 'Older Events');
+            echo '</div>';
+            echo ( $post_style == 'list' ) ? '</div>' : '' ;
 
         else:
         get_template_part( 'template-parts/content', 'none' );

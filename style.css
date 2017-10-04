@@ -3386,6 +3386,12 @@ article.portfolio-list {
 	padding-right: 15px;
 }
 
+.portfolio-archive-wrapper,
 .events-archive-wrapper {
     margin-bottom: 20px;
+}
+
+.events-list-wrapper .posts-nav,
+.portfolio-list-wrapper .posts-nav {
+    margin-top: -20px;
 }

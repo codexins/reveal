@@ -622,7 +622,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'min'       => '20',
                         'max'       => '500',
                         'step'      => '1',
-                        'required'  => array( 'reveal_blog_title_excerpt_lenght', '=', '1' ),
+                        'required'  => array( 'reveal_blog_title_excerpt_length', '=', '1' ),
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
