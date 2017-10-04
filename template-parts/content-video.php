@@ -39,7 +39,7 @@
             <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url">
                 <span itemprop="name">
                 <?php 
-                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                    $length_switch = reveal_option('reveal_blog_excerpt_length');
                     if( $length_switch ) :
                         $reveal_title_len = reveal_option( 'reveal_title_length' );
                         reveal_title( $reveal_title_len );
@@ -75,7 +75,7 @@
 
             else:
                 echo '<div class="entry-content" itemprop="text">';
-                $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                $length_switch = reveal_option('reveal_blog_excerpt_length');
                 if( $length_switch ) :
                     $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
                     reveal_excerpt( $reveal_excerpt_len );
