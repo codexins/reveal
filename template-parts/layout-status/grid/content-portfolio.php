@@ -23,17 +23,17 @@
 	        <h4><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html(the_title()); ?></a></h4>
 	        <ul class="portfolio-cat">
 				<?php
-                    $taxonomy = 'portfolio-category';
-                    $taxonomies = get_terms( $taxonomy); 
-                    $last_key = end($taxonomies);
-                    foreach ( $taxonomies as $tax ) {                        
-                        if($tax == $last_key):
-                            echo "<li>".ucwords($tax->name)."</li>";
-                        else: 
-                        	echo "<li>".ucwords($tax->name).", </li>";
-                         
-                        endif; 
-                }?>
+          $taxonomy = 'portfolio-category';
+          $taxonomies = get_terms( $taxonomy); 
+          $last_key = end($taxonomies);
+          foreach ( $taxonomies as $tax ) {                        
+              if($tax == $last_key):
+                  echo "<li>".ucwords($tax->name)."</li>";
+              else: 
+              	echo "<li>".ucwords($tax->name).", </li>";
+               
+              endif; 
+          }?>
 	        </ul>
 	    </div> <!-- end of portfolio-description -->
 	</div> <!-- end of portfolio-item-content -->
