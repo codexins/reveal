@@ -22,16 +22,16 @@ get_header(); ?>
             $reveal_blog_layout = $reveal_option['reveal-blog-layout'];
 
             if($reveal_blog_layout == 1):
-                get_template_part('template-parts/page-layout/blog/no', 'sidebar');
+                get_template_part('template-parts/sidebar-status/blog/no', 'sidebar');
 
             elseif($reveal_blog_layout == 2):
-                get_template_part('template-parts/page-layout/blog/left', 'sidebar');
+                get_template_part('template-parts/sidebar-status/blog/left', 'sidebar');
 
             elseif($reveal_blog_layout == 3):
-                get_template_part('template-parts/page-layout/blog/right', 'sidebar');
+                get_template_part('template-parts/sidebar-status/blog/right', 'sidebar');
 
             else:
-                get_template_part('template-parts/page-layout/blog/right', 'sidebar');
+                get_template_part('template-parts/sidebar-status/blog/right', 'sidebar');
 
             endif;
             

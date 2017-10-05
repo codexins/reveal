@@ -17,7 +17,7 @@ get_header(); ?>
     <div id="content" class="main-content-wrapper site-content">
         <div class="container">
             <div class="row">
-                <?php get_template_part('template-parts/page-layout/single-portfolio/single', 'portfolio'); ?>
+                <?php get_template_part('template-parts/sidebar-status/single-portfolio/single', 'portfolio'); ?>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of #content -->

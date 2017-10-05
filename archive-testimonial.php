@@ -18,16 +18,16 @@ get_header(); ?>
 	            $reveal_testimonial_layout = reveal_option('reveal-testimonial-archive-layout');
 
 	            if($reveal_testimonial_layout == 1):
-	                get_template_part('template-parts/page-layout/testimonial/no', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/testimonial/no', 'sidebar');
 
 	            elseif($reveal_testimonial_layout == 2):
-	                get_template_part('template-parts/page-layout/testimonial/left', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/testimonial/left', 'sidebar');
 
 	            elseif($reveal_testimonial_layout == 3):
-	                get_template_part('template-parts/page-layout/testimonial/right', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/testimonial/right', 'sidebar');
 
 	            else:
-	                get_template_part('template-parts/page-layout/testimonial/right', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/testimonial/right', 'sidebar');
 
 	            endif;
 	            
