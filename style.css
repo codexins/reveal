@@ -86,7 +86,7 @@ a:link,
 a:visited,
 a:hover,
 a:active,
-a:focus, {
+a:focus {
     text-decoration: none;
 }
 
