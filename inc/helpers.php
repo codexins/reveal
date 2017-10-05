@@ -334,18 +334,18 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                 $post_style = reveal_option( 'reveal_post_style' );
                 if( $post_style == 'list' ):
 
-                get_template_part( 'template-parts/content', get_post_format() );
+                    get_template_part( 'template-parts/content', get_post_format() );
 
                 else:
-                $grid_columns = 12/reveal_option('reveal_grid_columns');
+                    $grid_columns = 12/reveal_option('reveal_grid_columns');
 
-                printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
-                    get_template_part( 'template-parts/page-styles/grid/content', get_post_format() );
-                echo '</div><!--blog post wrap-->';
+                    printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
+                        get_template_part( 'template-parts/page-styles/grid/content', get_post_format() );
+                    echo '</div><!--blog post wrap-->';
 
-                if( $i % reveal_option('reveal_grid_columns') == 0 ):
-                    echo '<div class="clearfix"></div>';
-                endif;
+                    if( $i % reveal_option('reveal_grid_columns') == 0 ):
+                        echo '<div class="clearfix"></div>';
+                    endif;
                 
                 endif;
 
@@ -360,7 +360,9 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
             } elseif( $reveal_pagination == 'button' ) {
 
-                reveal_posts_link();
+                echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+                    reveal_posts_link();
+                echo '</div>';
 
             } else {
 

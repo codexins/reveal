@@ -4,11 +4,14 @@
 					</div><!-- #secondary -->
 				</div> <!-- end of col -->
 
-				<div class="col-sm-8 col-md-7 col-md-offset-1">
+				<div class="col-sm-8 col-md-9">
 
 					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
-						
-						<?php reveal_loop(); ?>
+							<div class="list-blog">
+								<div class="row">
+									<?php reveal_loop(); ?>
+								</div>
+							</div>	
 
 					</div><!-- #primary -->
 				</div> <!-- end of col -->

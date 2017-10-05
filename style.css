@@ -1079,12 +1079,12 @@ article.type-post {
 .list-inline > li {
     display: inline-block;
     padding-right: 5px;
-    padding-left: 5px;
+    padding-left: 0px;
 }
 
 .post-detail li {
     font-size: 14px;
-        padding-right: 15px;
+    padding-right: 20px;
 }
 
 .post-meta li i,
@@ -3498,9 +3498,10 @@ article.portfolio-list {
 }
 
 .list-blog .blog-content {
-    padding-bottom: 10px; 
+    padding: 5px 20px 10px 20px;
     border-bottom: 0;
     text-align: left;
+    border: 1px solid #ddd;
 }
 
 .list-blog .blog-content a.read-more {
@@ -3547,4 +3548,8 @@ article.portfolio-list {
     width: 100%;
     height: 100%;
 
+}
+
+.list-blog .blog-wrapper {
+    background: #fafafa;
 }
