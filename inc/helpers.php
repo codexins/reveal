@@ -340,7 +340,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                     $grid_columns = 12/reveal_option('reveal_grid_columns');
 
                     printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
-                        get_template_part( 'template-parts/layout-statuss/grid/content', get_post_format() );
+                        get_template_part( 'template-parts/layout-status/grid/content', get_post_format() );
                     echo '</div><!--blog post wrap-->';
 
                     if( $i % reveal_option('reveal_grid_columns') == 0 ):
@@ -410,7 +410,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                 $grid_port_columns = 12/reveal_option('reveal_portfolio_grid_columns');
 
                 printf('<div class="portfolio-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-                    get_template_part( 'template-parts/layout-statuss/grid/content', 'portfolio' );
+                    get_template_part( 'template-parts/layout-status/grid/content', 'portfolio' );
                 echo '</div><!--portfolio wrap-->';
 
                 if( $i % reveal_option('reveal_portfolio_grid_columns') == 0 ):
@@ -420,7 +420,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                 else:
                 
 
-                get_template_part( 'template-parts/layout-statuss/list/content', 'portfolio' ); 
+                get_template_part( 'template-parts/layout-status/list/content', 'portfolio' ); 
                     
                 endif;
 
@@ -476,7 +476,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
                 $grid_port_columns = 12/reveal_option('reveal_events_grid_columns');
 
                 printf('<div class="events-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-                    get_template_part( 'template-parts/layout-statuss/grid/content', 'events' );
+                    get_template_part( 'template-parts/layout-status/grid/content', 'events' );
                 echo '</div><!--events wrap-->';
 
                 if( $i % reveal_option('reveal_events_grid_columns') == 0 ):
@@ -485,7 +485,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
                 
                 else:
                     
-                get_template_part( 'template-parts/layout-statuss/list/content', 'events' ); 
+                get_template_part( 'template-parts/layout-status/list/content', 'events' ); 
                     
                 endif;
 
@@ -529,7 +529,7 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
             /* Start the Loop */
             while ( have_posts() ) : the_post();
                     
-                get_template_part( 'template-parts/layout-statuss/list/content', 'testimonial' ); 
+                get_template_part( 'template-parts/layout-status/list/content', 'testimonial' ); 
                     
 
             endwhile; 
