@@ -4,7 +4,7 @@
 					</div><!-- #secondary -->
 				</div> <!-- end of col -->
 
-				<div class="col-sm-8 col-md-9">
+				<div class="col-sm-8 col-md-8 col-md-offset-1">
 
 					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 							<div class="list-blog">

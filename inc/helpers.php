@@ -332,11 +332,8 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
                 $i++;
                 $post_style = reveal_option( 'reveal_post_style' );
-                if( $post_style == 'list' ):
+                if( $post_style == 'grid' ):
 
-                    get_template_part( 'template-parts/content', get_post_format() );
-
-                else:
                     $grid_columns = 12/reveal_option('reveal_grid_columns');
 
                     printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
@@ -346,7 +343,11 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                     if( $i % reveal_option('reveal_grid_columns') == 0 ):
                         echo '<div class="clearfix"></div>';
                     endif;
-                
+
+                else:
+
+                    get_template_part( 'template-parts/layout-status/list/content', get_post_format() );
+
                 endif;
 
             endwhile; 
@@ -362,7 +363,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
                 echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
                     reveal_posts_link();
-                echo '</div>';
+                echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
             } else {
 
@@ -380,7 +381,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
             else :
 
-            get_template_part( 'template-parts/content', 'none' );
+            get_template_part( 'template-parts/layout-status/list/content', 'none' );
 
         endif;
 
@@ -432,7 +433,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
 
 
         else:
-        get_template_part( 'template-parts/content', 'none' );
+        get_template_part( 'template-parts/layout-status/list/content', 'none' );
 
         endif;
 
@@ -502,7 +503,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
         else:
-        get_template_part( 'template-parts/content', 'none' );
+        get_template_part( 'template-parts/layout-status/list/content', 'none' );
 
         endif;
         wp_reset_postdata();
@@ -537,7 +538,7 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
             reveal_posts_link();
 
         else:
-            get_template_part( 'template-parts/content', 'none' );
+            get_template_part( 'template-parts/layout-status/list/content', 'none' );
 
         endif;
 
@@ -791,7 +792,7 @@ function reveal_loadmore_ajax_handler(){
         // run the loop
         while( $the_query->have_posts() ): $the_query->the_post();
  
-            get_template_part( 'template-parts/content', get_post_format() );
+            get_template_part( 'template-parts/layout-status/list/content', get_post_format() );
  
         endwhile;
  

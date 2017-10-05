@@ -8,7 +8,7 @@
 									codexin_set_post_views(get_the_ID());
 								endif;
 								
-								get_template_part( 'template-parts/content', get_post_format()  );
+								get_template_part( 'template-parts/layout-status/list/content', get_post_format()  );
 
 								if( reveal_option( 'reveal_single_button' ) == true ):
 									reveal_post_link();
