@@ -18,16 +18,16 @@ get_header(); ?>
 	            $reveal_events_layout = reveal_option('reveal-events-archive-layout');
 
 	            if($reveal_events_layout == 1):
-	                get_template_part('template-parts/sidebar-status/events/no', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/events/archive/no', 'sidebar');
 
 	            elseif($reveal_events_layout == 2):
-	                get_template_part('template-parts/sidebar-status/events/left', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/events/archive/left', 'sidebar');
 
 	            elseif($reveal_events_layout == 3):
-	                get_template_part('template-parts/sidebar-status/events/right', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/events/archive/right', 'sidebar');
 
 	            else:
-	                get_template_part('template-parts/sidebar-status/events/right', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/events/archive/right', 'sidebar');
 
 	            endif;
 	            

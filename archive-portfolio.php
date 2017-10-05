@@ -17,16 +17,16 @@ get_header(); ?>
 	            $reveal_portfolio_layout = reveal_option('reveal-portfolio-archive-layout');
 
 	            if($reveal_portfolio_layout == 1):
-	                get_template_part('template-parts/sidebar-status/portfolio/no', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/portfolio/archive/no', 'sidebar');
 
 	            elseif($reveal_portfolio_layout == 2):
-	                get_template_part('template-parts/sidebar-status/portfolio/left', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/portfolio/archive/left', 'sidebar');
 
 	            elseif($reveal_portfolio_layout == 3):
-	                get_template_part('template-parts/sidebar-status/portfolio/right', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/portfolio/archive/right', 'sidebar');
 
 	            else:
-	                get_template_part('template-parts/sidebar-status/portfolio/right', 'sidebar');
+	                get_template_part('template-parts/sidebar-status/portfolio/archive/right', 'sidebar');
 
 	            endif;
 	            

@@ -406,31 +406,29 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                 $post_style = reveal_option( 'reveal_portfolio_style' );
                 
                 if( $post_style == 'grid' ):
-
-                $grid_port_columns = 12/reveal_option('reveal_portfolio_grid_columns');
-
-                printf('<div class="portfolio-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-                    get_template_part( 'template-parts/layout-status/grid/content', 'portfolio' );
-                echo '</div><!--portfolio wrap-->';
-
-                if( $i % reveal_option('reveal_portfolio_grid_columns') == 0 ):
-                    echo '<div class="clearfix"></div>';
-                endif;
-                
-                else:
-                
-
-                get_template_part( 'template-parts/layout-status/list/content', 'portfolio' ); 
                     
+                    $grid_port_columns = 12/reveal_option('reveal_portfolio_grid_columns');
+
+                    printf('<div class="portfolio-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
+                        get_template_part( 'template-parts/layout-status/grid/content', 'portfolio' );
+                    echo '</div><!--portfolio wrap-->';
+
+                    if( $i % reveal_option('reveal_portfolio_grid_columns') == 0 ):
+                        echo '<div class="clearfix"></div>';
+                    endif;
+                    
+                else:
+                    get_template_part( 'template-parts/layout-status/list/content', 'portfolio' ); 
                 endif;
 
             endwhile; 
             echo '</div>';
+
             echo '<div class="clearfix"></div>';
 
             echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
                 reveal_posts_link('Newer Portfolios', 'Older Portfolios');
-            echo ( $post_style == 'list' ) ? '</div>' : '' ;
+            echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
 
         else:
@@ -500,8 +498,8 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             // else:
             echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
                 reveal_posts_link('Newer Events', 'Older Events');
-            echo '</div>';
-            echo ( $post_style == 'list' ) ? '</div>' : '' ;
+            //echo '</div>';
+            echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
         else:
         get_template_part( 'template-parts/content', 'none' );
