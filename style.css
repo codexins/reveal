@@ -3406,7 +3406,7 @@ article.portfolio-list {
 
 
 /************************************************************
-    Blog grid
+    Blog
 *************************************************************/
 
 
@@ -3502,6 +3502,7 @@ article.portfolio-list {
     border-bottom: 0;
     text-align: left;
     border: 1px solid #ddd;
+    border-top:0;
 }
 
 .list-blog .blog-content a.read-more {
@@ -3552,4 +3553,29 @@ article.portfolio-list {
 
 .list-blog .blog-wrapper {
     background: #fafafa;
+}
+
+.list-blog .post-quote {
+    padding:10px;
+
+}
+
+.list-blog .post-quote blockquote {
+    margin-left: 35px;
+}
+
+.list-blog .post-quote .icon::before {
+    font-family: FontAwesome;
+    font-size: 30px;
+    content: "\f10d";
+    position: relative;
+    height: 15px;
+    width: 20px;
+    margin: 17px 0px 0px 10px;
+}
+
+.list-blog .format-audio .embed, 
+.list-blog .format-video .embed {
+    padding-bottom:67%;
+    margin-bottom: 0;
 }

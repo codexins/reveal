@@ -10,23 +10,20 @@
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="blog-wrapper">
-        <?php $post_metas = reveal_option('reveal_blog_post_meta');?>
-        <div class="img-thumb">
-            <div class="img-wrapper"><a href="<?php the_permalink(); ?>"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('rectangle-one'); else: echo '//placehold.it/600X400'; endif; ?>" alt="" class="img-responsive"></a></div>
-
-            <?php if($post_metas[2]): ?>
-                <div class="meta">
-                    <p><?php echo get_the_time( 'd' ); ?></p>
-                    <p><?php echo get_the_time( 'M' ); ?></p>
-                </div>
-            <?php endif; ?>
-        </div>
-
+        <?php 
+        $post_metas = reveal_option('reveal_blog_post_meta');
+        if ( ! post_password_required() ):
+            $cx_embed = rwmb_meta( 'reveal_audio', 'type=oembed' );
+            echo '<div class="embed">';
+                echo sprintf( '%s', $cx_embed );
+            echo '</div>';
+        endif; ?>
 
         <div class="blog-content">
-            <h3 class="blog-title grid"><a href="<?php the_permalink();?>">
+            <h3 class="blog-title grid"  itemprop="headline">
+                <a href="<?php the_permalink();?>" rel="bookmark" itemprop="url">
                 <?php 
                     $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
@@ -36,9 +33,9 @@
                         the_title();    
                     endif;
                 ?>
-            </a></h3>
+                </a>
+            </h3>
 
-            
             <?php if(in_array(true, array_values($post_metas))): ?>
                 <ul class="list-inline post-detail post-meta">
                     <?php if($post_metas[1]): ?>
@@ -57,6 +54,8 @@
                     <?php endif; ?>
                 </ul>
             <?php endif; ?>
+
+        
             <div class="wrapper-content">
             <?php 
                 if(is_single()):
@@ -81,7 +80,7 @@
                         the_excerpt();
                     endif; //End length_switch if()..
                 endif; ?>
-            </div>
+            </div> <!-- end of wrapper-content -->
 
             <?php 
             $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
@@ -90,9 +89,9 @@
             <?php
                 } 
             ?>
-        </div> <!-- end of blog-content -->
 
-    </div> <!-- end of blog-wrapper -->
+        </div><!-- .blog-content -->
+        
+    </div><!--blog post-->
 </article><!-- #post-## -->
-
-
+<div class="clearfix"></div>

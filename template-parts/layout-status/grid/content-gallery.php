@@ -10,23 +10,43 @@
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="blog-wrapper">
-        <?php $post_metas = reveal_option('reveal_blog_post_meta');?>
-        <div class="img-thumb">
-            <div class="img-wrapper"><a href="<?php the_permalink(); ?>"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('rectangle-one'); else: echo '//placehold.it/600X400'; endif; ?>" alt="" class="img-responsive"></a></div>
+    <?php 
+    $post_metas = reveal_option('reveal_blog_post_meta');
+    if ( ! post_password_required() ):
 
-            <?php if($post_metas[2]): ?>
-                <div class="meta">
-                    <p><?php echo get_the_time( 'd' ); ?></p>
-                    <p><?php echo get_the_time( 'M' ); ?></p>
-                </div>
-            <?php endif; ?>
-        </div>
+        $cx_gallery = rwmb_meta( 'reveal_gallery', 'type=image_advanced&size=rectangle-one' );
+        echo '<div class="gallery-carousel image-pop-up">';
+        foreach ($cx_gallery as $cx_image) { 
 
+            $image_data =  wp_get_attachment_metadata( $cx_image['ID'] );
+            $data_size  = $image_data['width'] . 'x' . $image_data['height'];
+            $caption    = $cx_image['caption'];
+            $img_alt    = ( !empty( $cx_image['alt'] ) ) ? 'alt="' .  esc_attr( $cx_image['alt'] ) . '"' : ''; 
+
+            ?>
+
+            <figure class="item-img-wrap" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                <a href="<?php echo esc_url( $cx_image['full_url'] ); ?>" itemprop="contentUrl" data-size="<?php echo esc_attr( $data_size ); ?>">
+                    <img src="<?php echo esc_url( $cx_image['url'] ); ?>" itemprop="image" <?php printf( '%s', $img_alt ); ?> class="img-responsive" />
+                    <div class="item-img-overlay">
+                        <span></span>
+                    </div>
+                </a>
+                <figcaption itemprop="caption description"><?php echo esc_html( $caption ); ?></figcaption>
+            </figure>
+
+    <?php    }
+        echo '</div><!-- end of gallery-carousel -->';
+
+    endif;
+
+     ?>   
 
         <div class="blog-content">
-            <h3 class="blog-title grid"><a href="<?php the_permalink();?>">
+            <h3 class="blog-title grid"  itemprop="headline">
+                <a href="<?php the_permalink();?>" rel="bookmark" itemprop="url">
                 <?php 
                     $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
@@ -36,9 +56,9 @@
                         the_title();    
                     endif;
                 ?>
-            </a></h3>
+                </a>
+            </h3>
 
-            
             <?php if(in_array(true, array_values($post_metas))): ?>
                 <ul class="list-inline post-detail post-meta">
                     <?php if($post_metas[1]): ?>
@@ -57,6 +77,8 @@
                     <?php endif; ?>
                 </ul>
             <?php endif; ?>
+
+        
             <div class="wrapper-content">
             <?php 
                 if(is_single()):
@@ -81,7 +103,7 @@
                         the_excerpt();
                     endif; //End length_switch if()..
                 endif; ?>
-            </div>
+            </div> <!-- end of wrapper-content -->
 
             <?php 
             $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
@@ -90,9 +112,8 @@
             <?php
                 } 
             ?>
-        </div> <!-- end of blog-content -->
 
-    </div> <!-- end of blog-wrapper -->
+        </div><!-- .blog-content -->
+        
+    </div><!--blog post-->
 </article><!-- #post-## -->
-
-
