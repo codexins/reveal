@@ -338,7 +338,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
                     printf('<div class="blog-post-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
                         get_template_part( 'template-parts/layout-status/grid/content', get_post_format() );
-                    echo '</div><!--blog post wrap-->';
+                    echo '</div><!-- end of blog post wrap -->';
 
                     if( $i % reveal_option('reveal_grid_columns') == 0 ):
                         echo '<div class="clearfix"></div>';
