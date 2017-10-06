@@ -742,6 +742,27 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
+                        'id'        => 'reveal_blog_post_single_meta',
+                        'type'      => 'checkbox',
+                        'title'     => esc_html__('Post Meta you want to be displayed in Single Post Page', 'reveal'),
+                        'subtitle'  => esc_html__('You can select multiple checkboxes', 'reveal'),
+                        'options'  => array(
+                            '1' => 'Author',
+                            '2' => 'Publish Date',
+                            '3' => 'Categories',
+                            '4' => 'Comments',
+                            '5' => 'Post Like Button',
+                        ),
+                        'default'  => array(
+                            '1' => '0',
+                            '2' => '0',
+                            '3' => '1',
+                            '4' => '0',
+                            '5' => '0',
+                        )
+                    ),
+
+                    array(
                         'id'        => 'reveal_single_share',
                         'type'      => 'switch',
                         'title'     => esc_html__('Enable Share Links?', 'reveal'),

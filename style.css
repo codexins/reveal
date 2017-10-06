@@ -870,7 +870,8 @@ a.explore:hover {
     position: relative;
 }
 
-div.list-blog {
+div.blog-grid-wrapper,
+div.blog-list-wrapper {
     margin-top: 0;
     margin-bottom: 0;
     word-wrap: break-word;
@@ -993,11 +994,11 @@ article.type-post {
     margin-bottom: 0;
 }
 
-.single-post #primary article.type-post:last-of-type .blog-post ,
-.blog-post {
+.single-post #primary article.type-post:last-of-type .post-wrapper ,
+.post-wrapper {
     padding-bottom: 50px;
 }
-.single-post #primary article.type-post:last-of-type .blog-post {
+.single-post #primary article.type-post:last-of-type .post-wrapper {
     margin-bottom: 18px;
 }
 
@@ -1088,7 +1089,7 @@ article.type-post {
 }
 
 .post-meta li i,
-.blog-post .list-inline li i {
+.post-wrapper .list-inline li i {
     margin-right: 6px;
 }
 
@@ -1122,13 +1123,13 @@ h2.post-title a:hover {
 }
 
 .post-meta li:first-of-type,
-.blog-post ul li:first-of-type {
+.post-wrapper ul li:first-of-type {
     margin-left: 0;
     padding-left: 0 ;
 }
 
 .post-meta li:first-of-type i.fa-pencil,
-.blog-post li:first-of-type i.fa-pencil {
+.post-wrapper li:first-of-type i.fa-pencil {
     margin-left: 0 !important;
 }
 
@@ -2144,7 +2145,7 @@ button.mfp-close:hover {
 *************************************************************/
 
 
-.blog-post .list-inline li i.fa-pencil {
+.post-wrapper .list-inline li i.fa-pencil {
     margin-left: 6px;
 }
 
@@ -2783,7 +2784,7 @@ img{
  *  KC Blog-3 Default Styles
  */
 
-.reveal-style.kc-blog-posts-3 .kc-list-item-3 .entry-thumb-link img {
+.reveal-style.kc-post-wrappers-3 .kc-list-item-3 .entry-thumb-link img {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
     -ms-transition: all 0.3s ease;
@@ -2796,11 +2797,11 @@ img{
     filter: grayscale(1);
 }
 
-.reveal-style.kc-blog-posts-3 .kc-list-item-3 .entry-thumb-link:hover img {
+.reveal-style.kc-post-wrappers-3 .kc-list-item-3 .entry-thumb-link:hover img {
     opacity: 1;
 }
 
-.reveal-style.kc-blog-posts-3 .kc-list-item-3:hover img {
+.reveal-style.kc-post-wrappers-3 .kc-list-item-3:hover img {
     -webkit-filter: grayscale(0);
     -moz-filter: grayscale(0);
     -ms-filter: grayscale(0);
@@ -2813,7 +2814,7 @@ img{
     transform: scale(1.05);
 }
 
-.reveal-style.kc-blog-posts-3 .kc-list-item-3 .entry-thumb-wrapper {
+.reveal-style.kc-post-wrappers-3 .kc-list-item-3 .entry-thumb-wrapper {
     overflow: hidden;
 }
 
@@ -3063,7 +3064,7 @@ img{
 .team-single-content-wrapper li:hover {
     background: #333;
 }
-.cx-team-single .blog-post{
+.cx-team-single .post-wrapper{
     border-bottom: 0;
     padding-bottom: 0 ;
 }
@@ -3204,8 +3205,8 @@ body.events-list-view {
     left: 0;
 }
 
-.events-list .blog-post,
-.portfolio-list .blog-post {
+.events-list .post-wrapper,
+.portfolio-list .post-wrapper {
 	padding-bottom: 0;
 	border-bottom:0;
 }
@@ -3406,19 +3407,19 @@ article.portfolio-list {
 
 
 /************************************************************
-    Blog
+    Blog Grid
 *************************************************************/
 
 
-.list-blog .img-thumb {
+.blog-grid-wrapper .img-thumb {
     position: relative;
 }
 
-.list-blog .img-wrapper {
+.blog-grid-wrapper .img-wrapper {
     position: relative;
 }
 
-.list-blog .img-wrapper a::before {
+.blog-grid-wrapper .img-wrapper a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -3435,7 +3436,7 @@ article.portfolio-list {
     transition: all .4s;
 }
 
-.list-blog .img-wrapper a::after {
+.blog-grid-wrapper .img-wrapper a::after {
     content: "";
     position: absolute;
     right: 0;
@@ -3452,19 +3453,19 @@ article.portfolio-list {
     transition: all .4s;
 }
 
-.list-blog .img-wrapper a:hover::before {
+.blog-grid-wrapper .img-wrapper a:hover::before {
     width: 100%;
     height: 100%;
     opacity: 1;
 }
 
-.list-blog .img-wrapper a:hover::after {
+.blog-grid-wrapper .img-wrapper a:hover::after {
     width: 100%;
     height: 100%;
     opacity: 1;
 }
 
-.list-blog .meta {
+.blog-grid-wrapper .meta {
     position: absolute;
     padding: 15px 10px;
     min-width: 60px;
@@ -3475,29 +3476,29 @@ article.portfolio-list {
     color: #fff;
 }
 
-.list-blog .meta p {
+.blog-grid-wrapper .meta p {
     margin: 0;
     line-height: 1.3em;
 }
 
-.list-blog .meta p:first-child {
+.blog-grid-wrapper .meta p:first-child {
     font-weight: bold;
     font-size: 26px;
 
 }
 
-.list-blog .meta p:last-child {
+.blog-grid-wrapper .meta p:last-child {
     font-style: italic;
 }
 
-.list-blog .blog-title {
+.blog-grid-wrapper .blog-title {
     text-transform: uppercase;
     margin: 15px 0 10px;
     font-weight: bold;
     font-size: 16px;
 }
 
-.list-blog .blog-content {
+.blog-grid-wrapper .blog-content {
     padding: 5px 20px 10px 20px;
     border-bottom: 0;
     text-align: left;
@@ -3505,7 +3506,7 @@ article.portfolio-list {
     border-top:0;
 }
 
-.list-blog .blog-content a.read-more {
+.blog-grid-wrapper .blog-content a.read-more {
     padding: 7px 15px 5px;
     text-transform: uppercase;
     text-decoration: none;
@@ -3525,46 +3526,46 @@ article.portfolio-list {
     transition: all .3s;
 }
 
-.list-blog .blog-content a.read-more:hover {
+.blog-grid-wrapper .blog-content a.read-more:hover {
     text-decoration: none;
     background: #295970;
     color: #fff;
 }
 
-.list-blog .blog-info {
+.blog-grid-wrapper .blog-info {
     padding: 10px 0;
     border-top:1px solid #ddd;
 }
 
-.list-blog .blog-info span {
+.blog-grid-wrapper .blog-info span {
     margin-right: 20px;
 }
 
-.list-blog .blog-info span:last-child {
+.blog-grid-wrapper .blog-info span:last-child {
     margin-right: 0;
 }
 
-.list-blog .img-thumb a {
+.blog-grid-wrapper .img-thumb a {
     display: block;
     width: 100%;
     height: 100%;
 
 }
 
-.list-blog .blog-wrapper {
+.blog-grid-wrapper .blog-wrapper {
     background: #fafafa;
 }
 
-.list-blog .post-quote {
+.blog-grid-wrapper .post-quote {
     padding:10px;
 
 }
 
-.list-blog .post-quote blockquote {
+.blog-grid-wrapper .post-quote blockquote {
     margin-left: 35px;
 }
 
-.list-blog .post-quote .icon::before {
+.blog-grid-wrapper .post-quote .icon::before {
     font-family: FontAwesome;
     font-size: 30px;
     content: "\f10d";
@@ -3574,8 +3575,8 @@ article.portfolio-list {
     margin: 17px 0px 0px 10px;
 }
 
-.list-blog .format-audio .embed, 
-.list-blog .format-video .embed {
+.blog-grid-wrapper .format-audio .embed, 
+.blog-grid-wrapper .format-video .embed {
     padding-bottom:67%;
     margin-bottom: 0;
 }

@@ -12,7 +12,7 @@
 $project_comple_date=date_create($cadate);
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?>>
-    <div class="blog-post">
+    <div class="post-wrapper">
         <div class="port-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-port" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">

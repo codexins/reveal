@@ -23,7 +23,7 @@ $e_address_longitude = rwmb_meta('reveal_event_address_longitude', 'type=text');
 $e_st_date=date_create($e_start_date);
 ?>
 <article id="event-<?php the_ID(); ?>" <?php post_class(array('clearfix events-list')); ?>>
-    <div class="blog-post">
+    <div class="post-wrapper">
         <div class="event-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-events" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">

@@ -11,27 +11,44 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <div class="blog-post">
+    <div class="post-wrapper">
         <?php 
+        $args_meta = is_single() ? 'reveal_blog_post_single_meta' : 'reveal_blog_post_meta';
+        $post_metas = reveal_option($args_meta);
         if ( ! post_password_required() ):
             $cx_embed = rwmb_meta( 'reveal_video', 'type=oembed' );
             echo '<div class="embed">';
                 echo sprintf( '%s', $cx_embed );
             echo '</div>';
         endif; ?>
+        <?php if(in_array(true, array_values($post_metas))): ?>
+            <ul class="list-inline post-detail">
+                <?php if($post_metas[1]): ?>
+                <li><i class="fa fa-pencil"></i> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author">
+                        <span itemprop="name"><?php echo esc_html( get_the_author() ); ?></span>
+                    </a>
+                    </span>
+                </li>
+                <?php endif; ?>
 
-        <ul class="list-inline post-detail">
-            <li><i class="fa fa-pencil"></i> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
-                <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author">
-                    <span itemprop="name"><?php echo esc_html( get_the_author() ); ?></span>
-                </a>
-                </span>
-            </li>
-            <li><i class="fa fa-calendar"></i> <time datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time></li>
-            <li><i class="fa fa-tag"></i> <span itemprop="genre"><?php the_category( ', ' )?></span></li>
-            <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
-            <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
-        </ul>
+                <?php if($post_metas[2]): ?>
+                <li><i class="fa fa-calendar"></i> <time datetime="<?php echo get_the_time('c'); ?>" itemprop="datePublished"><?php the_time('F j, Y') ?></time></li>
+                <?php endif; ?>
+                <?php if($post_metas[3]): ?>
+                <li><i class="fa fa-tag"></i> <span itemprop="genre"><?php the_category( ', ' )?></span></li>
+                <?php endif; ?>
+
+                <?php if($post_metas[4]): ?>
+                <li><i class="fa fa-comment"></i><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></li>
+                <?php endif; ?>
+
+                <?php if($post_metas[5]): ?>
+                <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
+                <?php endif; ?>
+
+            </ul>
+        <?php endif; ?>
 
         <?php if( ! is_single() ): ?>
 
@@ -39,7 +56,7 @@
             <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url">
                 <span itemprop="name">
                 <?php 
-                    $length_switch = reveal_option('reveal_blog_excerpt_length');
+                    $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
                         $reveal_title_len = reveal_option( 'reveal_title_length' );
                         reveal_title( $reveal_title_len );
@@ -75,7 +92,7 @@
 
             else:
                 echo '<div class="entry-content" itemprop="text">';
-                $length_switch = reveal_option('reveal_blog_excerpt_length');
+                $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                 if( $length_switch ) :
                     $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
                     reveal_excerpt( $reveal_excerpt_len );

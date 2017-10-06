@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <div class="blog-post">
+    <div class="post-wrapper">
         <?php if(has_post_thumbnail()): 
 
             $image      = wp_prepare_attachment_for_js( get_post_thumbnail_id( $post->ID ) );

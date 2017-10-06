@@ -173,8 +173,8 @@ select {
 
 }
 
-.sticky .blog-post,
-.category-sticky .blog-post {
+.sticky .post-wrapper,
+.category-sticky .post-wrapper {
   background: #f9f9f9;
   border: 1px solid #ccc;
   padding-left: 15px;
@@ -187,8 +187,8 @@ select {
   box-shadow: 0 0 4px rgba(0,0,0,.15);
 }
 
-.single .sticky .blog-post,
-.single .category-sticky .blog-post {
+.single .sticky .post-wrapper,
+.single .category-sticky .post-wrapper {
     background: transparent;
     border:0;
     padding:0;

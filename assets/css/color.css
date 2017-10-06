@@ -662,7 +662,7 @@ table#wp-calendar thead {
 }
 
 
-.blog-post .list-inline li a {
+.post-wrapper .list-inline li a {
     color: inherit;
 }
 
@@ -738,8 +738,8 @@ table#wp-calendar thead {
 
     color: #333;
 }
-.single-post #primary article.type-post:last-of-type .blog-post ,
-.blog-post {
+.single-post #primary article.type-post:last-of-type .post-wrapper ,
+.post-wrapper {
     border-bottom: 1px dashed #ddd;
 }
 
