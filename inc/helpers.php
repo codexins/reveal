@@ -500,7 +500,8 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
                 reveal_posts_link('Newer Events', 'Older Events');
             //echo '</div>';
-            echo ( $post_style == 'grid' ) ? '</div>' : '' ;
+            echo ( $post_style == 'grid' ) ? '</div>' : '' ;    
+            
 
         else:
         get_template_part( 'template-parts/layout-status/list/content', 'none' );
