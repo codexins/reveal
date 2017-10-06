@@ -743,6 +743,10 @@ table#wp-calendar thead {
     border-bottom: 1px dashed #ddd;
 }
 
+#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
+    border-bottom: 0;
+}
+
 
 /************************************************************
     000 - Page - Testimonial Page

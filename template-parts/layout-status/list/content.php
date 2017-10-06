@@ -24,7 +24,7 @@
             if( ! is_single() ):
             ?>        
 
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php echo esc_url( get_the_permalink() ); ?>">
                 <figure class="item-img-wrap" itemscope itemtype="http://schema.org/ImageObject">
                     <img src="<?php the_post_thumbnail_url('reveal-post-single') ?>" class="img-responsive" <?php printf( '%s', $image_alt ); ?> itemprop="image">
                     <div class="item-img-overlay">
@@ -82,7 +82,7 @@
         <?php if( ! is_single() ): ?>
 
         <h2 class="post-title" itemprop="headline">
-            <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url">
+            <a href="<?php echo esc_url( get_the_permalink() ); ?>" rel="bookmark" itemprop="url">
                 <span itemprop="name">
                 <?php 
                     $length_switch = reveal_option('reveal_blog_title_excerpt_length');
@@ -133,7 +133,7 @@
                 $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
                 if( $reveal_read_more == true ): ?>
 
-                <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <p class="blog-more"><a class="cx-btn" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
 
             <?php
                 endif;
@@ -153,10 +153,10 @@
             <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
                 <div class="share socials">            
                     <div class="caption"><span class="flaticon-share-1"></span> <?php esc_html_e('Share :', 'reveal'); ?></div>    
-                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink());?>"><i class="fa fa-facebook"></i></a>
-                    <a target="_blank" href="https://twitter.com/home?status=<?php esc_url(the_permalink()); ?>"><i class="fa fa-twitter"></i></a>
-                    <a target="_blank" href="https://plus.google.com/share?url=<?php esc_url(the_permalink()); ?>"><i class="fa fa-google-plus"></i></a>
-                    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php esc_url(the_permalink()); ?>"><i class="fa fa-linkedin"></i></a>        
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-facebook"></i></a>
+                    <a target="_blank" href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-twitter"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-google-plus"></i></a>
+                    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-linkedin"></i></a>        
                 </div>
             <?php endif ?>
 

@@ -999,7 +999,11 @@ article.type-post {
     padding-bottom: 50px;
 }
 .single-post #primary article.type-post:last-of-type .post-wrapper {
-    margin-bottom: 18px;
+    margin-bottom: 40px;
+}
+
+#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
+    padding-bottom: 0;
 }
 
 .item-img-wrap {
