@@ -33,7 +33,7 @@ get_header(); ?>
 
 							endwhile; ?>
 
-							<?php reveal_posts_link_numbered(); ?>
+							<?php echo reveal_posts_link_numbered(); ?>
 
 						<?php else :
 

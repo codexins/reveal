@@ -123,10 +123,10 @@ function html_tag_schema() {
 **/
 if ( ! function_exists( 'reveal_posts_link' ) ) {
 
-    function reveal_posts_link($prev = 'Newer Posts', $next = 'Older Posts') {
+    function reveal_posts_link($prev = 'Newer Posts', $next = 'Older Posts', $custom = NULL) {
 
         $prev_link = get_previous_posts_link(esc_html__('&laquo; '. $prev, 'reveal'));
-        $next_link = get_next_posts_link(esc_html__($next. ' &raquo; ', 'reveal'));
+        $next_link = ($custom !== NULL) ? get_next_posts_link(esc_html__($next. ' &raquo; ', 'reveal'), $custom->max_num_pages) : get_next_posts_link(esc_html__($next. ' &raquo; ', 'reveal') );
 
         echo '<div class="posts-nav clearfix">';
             if($next_link): 
@@ -232,84 +232,44 @@ if ( ! function_exists( 'reveal_excerpt' ) ) {
 
 /**
 *
-* Helper Function for numbered pagination
+* Helper Function for numeric pagination for posts
 *
 **/
 if ( ! function_exists( 'reveal_posts_link_numbered' ) ) {
 
-    function reveal_posts_link_numbered () {
-
-        if( is_singular() ) {
-            return;
-        }
+    function reveal_posts_link_numbered($custom = NULL) {
 
         global $wp_query;
-
         /** Stop execution if there's only 1 page */
-        if( $wp_query->max_num_pages <= 1 ) {
+        if( ( ($custom !== NULL) ? $custom->max_num_pages : $wp_query->max_num_pages ) <= 1 ) {
             return;
         }
 
-        $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
-        $max   = intval( $wp_query->max_num_pages );
-
-        /** Add current page to the array */
-        if ( $paged >= 1 ) {
-            $links[] = $paged;
-        }
-
-        /** Add the pages around the current page to the array */
-        if ( $paged >= 3 ) {
-            $links[] = $paged - 1;
-            $links[] = $paged - 2;
-        }
-
-        if ( ( $paged + 2 ) <= $max ) {
-            $links[] = $paged + 2;
-            $links[] = $paged + 1;
-        }
-
-        echo '<nav class="number-pagination" aria-label="Page navigation example"><ul class="pagination">' . "\n";
-
-        /** Previous Post Link */
-        if ( get_previous_posts_link() ) {
-            printf( '<li>%s</li>' . "\n", get_previous_posts_link( '&laquo;' ) );
-        }
-
-        /** Link to first page, plus ellipses if necessary */
-        if ( ! in_array( 1, $links ) ) {
-            $class = 1 == $paged ? ' class="active"' : '';
-
-            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
-
-            if ( ! in_array( 2, $links ) ) {
-                echo '<li>&middot;&middot;&middot;</li>';
-            }
-        }
-
-        /** Link to current page, plus 2 pages in either direction if necessary */
-        sort( $links );
-        foreach ( (array) $links as $link ) {
-            $class = $paged == $link ? ' class="active"' : '';
-            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
-        }
-
-        /** Link to last page, plus ellipses if necessary */
-        if ( ! in_array( $max, $links ) ) {
-            if ( ! in_array( $max - 1, $links ) ) {
-                echo '<li>&middot;&middot;&middot;</li>' . "\n";
-            }
-
-            $class = $paged == $max ? ' class="active"' : '';
-            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
-        }
-
-        /** Next Post Link */
-        if ( get_next_posts_link() ) {
-            printf( '<li>%s</li>' . "\n", get_next_posts_link( '&raquo;' ) );
-        }
-
-        echo '</ul></nav>' . "\n";
+        ob_start();
+        ?>
+            <nav class="number-pagination">
+                <?php
+                $current = max( 1, absint( get_query_var( 'paged' ) ) );
+                $pagination = paginate_links( array(
+                    'base' => str_replace( PHP_INT_MAX, '%#%', esc_url( get_pagenum_link( PHP_INT_MAX ) ) ),
+                    'format' => '?paged=%#%',
+                    'current' => $current,
+                    'total' => ($custom !== NULL) ? $custom->max_num_pages : $wp_query->max_num_pages,
+                    'type' => 'array',
+                    'prev_text' => '&laquo;',
+                    'next_text' => '&raquo;',
+                ) );
+                if ( ! empty( $pagination ) ) : ?>
+                    <ul class="pagination">
+                        <?php foreach ( $pagination as $key => $page_link ) : ?>
+                            <li class="paginated_link<?php if ( strpos( $page_link, 'current' ) !== false ) { echo ' active'; } ?>"><?php echo $page_link ?></li>
+                        <?php endforeach ?>
+                    </ul>
+                <?php endif; ?>
+            </nav> <!-- end of number-pagination -->
+        <?php
+        $links = ob_get_clean();
+        return apply_filters( 'reveal_posts_link_numbered', $links );
 
     }
 
@@ -353,11 +313,13 @@ if ( ! function_exists( 'reveal_loop' ) ) {
             endwhile; 
 
             echo '<div class="clearfix"></div>';
-            $reveal_pagination = reveal_option( 'reveal_pagination' );
+
+            $reveal_pagination = reveal_option( 'reveal_pagination' );            
+            global $wp_query;
 
             if( $reveal_pagination == 'numbered' ) {
-            
-                reveal_posts_link_numbered();
+
+                echo reveal_posts_link_numbered();
 
             } elseif( $reveal_pagination == 'button' ) {
 
