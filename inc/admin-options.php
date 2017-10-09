@@ -613,7 +613,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Title Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Posts (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Blog & Archive Page.", 'reveal'),
-                        // 'default'   => 7,
+                        'default'   => 30,
                     ),
 
                     array(
@@ -626,7 +626,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Excerpt Length for Posts', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Posts (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Blog & Archive Page.", 'reveal'),
-                        // 'default'   => 20,
+                        'default'   => 180,
                     ),
 
                     array(

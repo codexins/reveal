@@ -97,8 +97,8 @@
 
 		endif; ?>
 
-	    <?php if( !is_front_page() ): ?>
-	        </div> <!-- end nav wrapper -->
+	    <?php if( !is_page_template('page-templates/page-home.php') ): ?>
+	        </div> <!-- end nav-container -->
 	    <?php endif; ?>
 		</header><!-- end of header -->
 	<?php endif; ?>	
