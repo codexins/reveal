@@ -97,39 +97,11 @@
     //scrollspy finished
 
 
-
-    /*--------------------------------------------------------------
-	Activating parallex js
-    ---------------------------------------------------------------- */
-
-    $('.concept').parallax({ imageSrc: 'images/concept-bg.jpg' });
-
-
-    /*--------------------------------------------------------------
-    Dropdown select box styling with nice-select
-    ---------------------------------------------------------------- */
-
-    $('select').niceSelect();
-
-
     /*--------------------------------------------------------------
 	Activating site loader
     ---------------------------------------------------------------- */
 
     if (reveal_main_params.trans_loader == true) {
-        var ignore_onbeforeunload = false;
-
-        $("a[href^=mailto], a[href^=tel]").on("click",function(){
-            ignore_onbeforeunload = true;
-        });
-
-        $(window).on("beforeunload", function() { 
-            if (!ignore_onbeforeunload){
-                $("#preloader_1").fadeIn("fast");
-            }
-            ignore_onbeforeunload = false;
-        });
-
         $(window).on('load', function() { 
             $('#preloader_1').delay(300).fadeOut('fast');
             $('body').addClass('overflow-fix');

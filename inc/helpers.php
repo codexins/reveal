@@ -317,31 +317,19 @@ if ( ! function_exists( 'reveal_loop' ) ) {
             $reveal_pagination = reveal_option( 'reveal_pagination' );            
             global $wp_query;
 
-            if( $reveal_pagination == 'numbered' ) {
+            if( $reveal_pagination == 'numbered' ):
 
                 echo reveal_posts_link_numbered();
 
-            } elseif( $reveal_pagination == 'button' ) {
+            else:
 
                 echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
                     reveal_posts_link();
                 echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
-            } else {
+            endif;
 
-                global $wp_query;
-                 
-                $reveal_btn_text = ( !empty( reveal_option( 'reveal-load-more' ) ) ) ? esc_html( reveal_option( 'reveal-load-more' ) ) : esc_html__( 'Load More', 'reveal' );
-
-                // don't display the button if there are not enough posts
-                if (  $wp_query->max_num_pages > 1 ):
-                    echo 
-                        '<div class="reveal-load-more">' . $reveal_btn_text . '</div>';
-                endif;
-
-            }
-
-            else :
+        else :
 
             get_template_part( 'template-parts/layout-status/list/content', 'none' );
 

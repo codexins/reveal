@@ -141,8 +141,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'reveal-page-loader',
                         'type'     => 'switch',
-                        'title'    => esc_html__( 'Enable Page Loader and Transition Animation?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Choose to Enable / Disable Page Loader and Page Transition Animation Throughout the Site', 'reveal' ),
+                        'title'    => esc_html__( 'Enable Page Loader?', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose to Enable / Disable Page Loader Throughout the Site', 'reveal' ),
                         'default'  => true,
                     ),
 
@@ -667,44 +667,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
-                            'loadmore'  => esc_html__( 'Ajax Pagination', 'reveal' ),
                         ),
                         'default'   => 'button'
-                    ),
-
-                    array(
-                        'id'        => 'reveal-blog-ajax',
-                        'type'      => 'select',
-                        'title'     => esc_html__('Ajax Pagination Type', 'reveal'),
-                        'subtitle'  => esc_html__('Ajax Load More Type', 'reveal'),
-                        'desc'      => esc_html__('Select the Load More Type.', 'reveal'),
-                        'required'  => array( 'reveal_pagination', '=', 'loadmore' ),
-                        'options'   => array(
-                            'loadmore-button' => esc_html__( 'Load More Button', 'reveal' ),
-                            'loadmore-scroll' => esc_html__( 'Load Posts on Scroll', 'reveal' ),
-                        ),
-                        'default'   => 'loadmore-button'
-                    ),
-
-                    array(
-                        'id'        => 'reveal-num-page',
-                        'type'      => 'slider',
-                        'min'       => '2',
-                        'max'       => '30',
-                        'step'      => '1',
-                        'title'     => esc_html__('Number of Posts', 'reveal'),
-                        'subtitle'  => esc_html__('Control the Number of Posts to Load', 'reveal'),
-                        'desc'      => esc_html__('Adjust How Many Posts You Want to Load.', 'reveal'),
-                        'required'  => array( 'reveal_pagination', '=', 'loadmore' ),
-                        'default'   => 10,
-                    ),
-
-                    array(
-                        'id'        => 'reveal-load-more',
-                        'type'      => 'text',
-                        'required'  => array( 'reveal-blog-ajax', '=', 'loadmore-button' ),
-                        'title'     => esc_html__('Button Text', 'reveal'),
-                        'subtitle'  => esc_html__('Insert the text you want to show in the button', 'reveal'),
                     ),
                 )
 
