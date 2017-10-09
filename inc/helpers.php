@@ -314,7 +314,8 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
             echo '<div class="clearfix"></div>';
 
-            $reveal_pagination = reveal_option( 'reveal_pagination' );            
+            $reveal_pagination = reveal_option( 'reveal_pagination' );
+
             global $wp_query;
 
             if( $reveal_pagination == 'numbered' ) {
@@ -328,15 +329,12 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                 echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
             } else {
-
-                global $wp_query;
                  
                 $reveal_btn_text = ( !empty( reveal_option( 'reveal-load-more' ) ) ) ? esc_html( reveal_option( 'reveal-load-more' ) ) : esc_html__( 'Load More', 'reveal' );
 
                 // don't display the button if there are not enough posts
                 if (  $wp_query->max_num_pages > 1 ):
-                    echo 
-                        '<div class="reveal-load-more">' . $reveal_btn_text . '</div>';
+                    echo '<div class="reveal-load-more">' . $reveal_btn_text . '</div>';
                 endif;
 
             }
