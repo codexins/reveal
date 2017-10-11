@@ -666,6 +666,8 @@ table#wp-calendar thead {
     color: inherit;
 }
 
+.post-meta .cx-like-wrapper a.liked span.cx-count,
+.post-meta .cx-count,
 .post-meta li,
 .post-meta li a {
     color: #777;

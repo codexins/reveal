@@ -298,7 +298,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
                     printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
                         get_template_part( 'template-parts/layout-status/grid/content', get_post_format() );
-                    echo '</div><!-- end of blog post wrap -->';
+                    echo '</div><!-- end of post-single-wrap -->';
 
                     if( $i % reveal_option('reveal_grid_columns') == 0 ):
                         echo '<div class="clearfix"></div>';
@@ -314,20 +314,18 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
             echo '<div class="clearfix"></div>';
 
-            $reveal_pagination = reveal_option( 'reveal_pagination' );            
+            $reveal_pagination = reveal_option( 'reveal_pagination' );
+                      
             global $wp_query;
+            echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
 
             if( $reveal_pagination == 'numbered' ):
-
                 echo reveal_posts_link_numbered();
-
-            else:
-
-                echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
-                    reveal_posts_link();
-                echo ( $post_style == 'grid' ) ? '</div>' : '' ;
-
+            else:                
+                reveal_posts_link();
             endif;
+
+            echo ( $post_style == 'grid' ) ? '</div>' : '' ;
 
         else :
 
@@ -506,8 +504,8 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
 add_action( 'template_redirect', function() {
     if ( is_singular('testimonial') ) {
         global $post;
-        $redirectLink = get_post_type_archive_link( 'testimonial' )."#testimonial-".$post->ID;
-        wp_redirect( $redirectLink, 302 );
+        $redirect_link = get_post_type_archive_link( 'testimonial' )."#testimonial-".$post->ID;
+        wp_safe_redirect( $redirect_link, 302 );
         exit;
     }
 });

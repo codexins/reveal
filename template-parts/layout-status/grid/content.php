@@ -14,7 +14,7 @@
     <div class="blog-wrapper">
         <?php $post_metas = reveal_option('reveal_blog_post_meta');?>
         <div class="img-thumb">
-            <div class="img-wrapper"><a href="<?php the_permalink(); ?>"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('rectangle-one'); else: echo '//placehold.it/600X400'; endif; ?>" alt="" class="img-responsive"></a></div>
+            <div class="img-wrapper"><a href="<?php echo esc_url( get_the_permalink() ); ?>"><img src="<?php if(has_post_thumbnail()): the_post_thumbnail_url('rectangle-one'); else: echo '//placehold.it/600X400'; endif; ?>" alt="" class="img-responsive"></a></div>
 
             <?php if($post_metas[2]): ?>
                 <div class="meta">
@@ -26,7 +26,7 @@
 
 
         <div class="blog-content">
-            <h3 class="blog-title grid"><a href="<?php the_permalink();?>">
+            <h3 class="blog-title grid" itemprop="headline"><a href="<?php echo esc_url( get_the_permalink() ); ?>" rel="bookmark" itemprop="url">
                 <?php 
                     $length_switch = reveal_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
@@ -45,7 +45,7 @@
                          <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
                     <?php endif; ?>
                     <?php if($post_metas[3]): ?>    
-                        <li><i class="fa fa-tag"></i> <a href="<?php the_permalink(); ?>"><?php the_category( ', ' )?></a></li>
+                        <li><i class="fa fa-tag"></i> <?php the_category( ', ' )?></li>
                     <?php endif; ?>
 
                     <?php if($post_metas[4]): ?>
@@ -55,9 +55,9 @@
                     <?php if($post_metas[5]): ?> 
                         <li><?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 );endif; ?></li>
                     <?php endif; ?>
-                </ul>
+                </ul> <!-- end of post-detail -->
             <?php endif; ?>
-            <div class="wrapper-content">
+            <div class="wrapper-content" itemprop="text">
             <?php 
                 if(is_single()):
                     the_content();
@@ -86,7 +86,7 @@
             <?php 
             $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
             if( $reveal_read_more == true ) { ?>
-            <a href="<?php the_permalink(); ?>" class="read-more"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
+            <a href="<?php echo esc_url( get_the_permalink() ); ?>" class="read-more"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
             <?php
                 } 
             ?>
