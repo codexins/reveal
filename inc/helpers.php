@@ -525,6 +525,18 @@ if( $testimonial_pagination == false ):
     });
 endif;
 
+
+/**
+*
+* Helper Function for Turning off pagination for the Team archive page
+*
+**/
+add_action('parse_query', function($query) {
+    if (is_post_type_archive('team')) {
+        $query->set('nopaging', 1);
+    }
+});
+
 /**
 *
 * Helper Function for deregistering Portfolio Custom Posts Type

@@ -28,29 +28,27 @@ get_header(); ?>
 					$team_desig = rwmb_meta( 'reveal_team_designation','type=text' );
 			     ?>
 					<li id="team-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<a href="<?php the_permalink(); ?>">
+						<a href="<?php echo esc_url(get_the_permalink()); ?>">
 						   <figure>
 						      <div class="team-single-wrapper">
 						         <img src="<?php the_post_thumbnail_url('square-two');  ?>" alt="<?php if(!empty($alt_tag)): echo $alt_tag; else: the_title(); endif; ?>">
 						         <figcaption>
 						            <div class="team-info-wrapper">
-						               <span><?php echo $team_desig; ?></span>
-						               <h3><?php the_title(); ?></h3>
-						            </div>
-						            <!-- .awsm-personal-info -->
+						               <span><?php echo esc_html( $team_desig ); ?></span>
+						               <h3><?php printf( '%s', the_title() ); ?></h3>
+						            </div> <!-- end of team-info-wrapper -->
 						         </figcaption>
-						      </div>
-						      <!-- .awsm-grid-holder -->
+						      </div> <!-- end of team-single-wrapper -->
 						   </figure>
 						</a>
 					</li>
-	
-
 
 			    <?php endwhile; ?>
         		</ul>
-			  <?php else: ?>
-			    <?php _e('Sorry, no posts matched your criteria.'); ?>
+        		<div class="clearfix"></div>
+        		<?php echo reveal_posts_link_numbered(); ?>
+			<?php else: ?>
+			    <?php esc_html__('Sorry, no posts matched your criteria.', 'reveal'); ?>
 			<?php endif; ?>
 				</div>
 		</div> <!-- end of container -->
