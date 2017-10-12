@@ -1090,6 +1090,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => '1'
                     ),
 
+                    array(
+                        'id'        => 'reveal_enable_testimonial_pagination',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Pagination?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Pagination', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Testimonials Pagination', 'reveal'),
+                    ),
+
                     // array(
                     //     'id'        => 'reveal_events_style',
                     //     'type'      => 'select',

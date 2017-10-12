@@ -34,17 +34,17 @@ $t_company = rwmb_meta( 'reveal_author_company', 'type=text' );
                 <h3 class="testimonial-title"><?php echo esc_html( $t_name ); ?>
                     <div class="testimonial-meta">
                         <?php if( !empty( $t_desig ) ): ?>
-                        <span><?php echo esc_html( $t_desig ); ?>, </span>
+                        <span><?php echo esc_html( $t_desig ); ?></span>
                         <?php endif; ?>
                         <?php if( !empty( $t_company ) ): ?>
-                        <span><?php echo esc_html( $t_company ); ?></span>
+                        <span> - <?php echo esc_html( $t_company ); ?></span>
                         <?php endif; ?>
                     </div>
                 </h3>
-                <div class="testimonial-text"> <?php printf('%s', get_the_excerpt() ); ?> </div>
+                <div class="testimonial-text"> <?php printf('%s', get_the_content() ); ?> </div>
 
             </div>
         </div>
         
-    </div><!--testimonial-single-->
+    </div><!-- end of testimonial-single -->
 </article><!-- #testimonial-## -->

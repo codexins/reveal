@@ -473,7 +473,7 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
 
         if ( have_posts() ) :
             echo '<div class="testimonial-archive-wrapper">';
-            $i = 0;
+
             /* Start the Loop */
             while ( have_posts() ) : the_post();
                     
@@ -481,10 +481,10 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
                     
 
             endwhile; 
-            echo '</div>';
+            echo '</div> <!-- end of testimonial-archive-wrapper -->';
             echo '<div class="clearfix"></div>';
 
-            reveal_posts_link();
+            echo reveal_posts_link_numbered();
 
         else:
             get_template_part( 'template-parts/layout-status/list/content', 'none' );
@@ -516,12 +516,14 @@ add_action( 'template_redirect', function() {
 * Helper Function for Turning off pagination for the Testimonial archive page
 *
 **/
-add_action('parse_query', function($query) {
-    if (is_post_type_archive('testimonial')) {
-        $query->set('nopaging', 1);
-    }
-});
-
+$testimonial_pagination = reveal_option('reveal_enable_testimonial_pagination');
+if( $testimonial_pagination == false ):
+    add_action('parse_query', function($query) {
+        if (is_post_type_archive('testimonial')) {
+            $query->set('nopaging', 1);
+        }
+    });
+endif;
 
 /**
 *

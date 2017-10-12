@@ -3305,6 +3305,7 @@ article.portfolio-list {
 
 .testimonial-content h3.testimonial-title {
     margin: 10px 0 15px;
+    margin-top: 0;
 }
 
 .testimonial-content h3.testimonial-title::after {
@@ -3320,6 +3321,13 @@ article.portfolio-list {
 
 .testimonial-archive-wrapper article:last-child {
     margin-bottom: 0;
+}
+
+.col-sm-8.col-md-8 .site-main .thumb-testimonial::before,
+.col-sm-4.col-md-3 + .col-sm-8.col-md-8.col-md-offset-1 .thumb-testimonial::before {
+    width: 30px;
+    height: 30px;
+    line-height: 47px;
 }
 
 
