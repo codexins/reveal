@@ -33,7 +33,10 @@
         <div class="col-md-4 <?php if($position == '1'): echo 'col-md-pull-8'; endif; ?>">
             <div class="portfolio-meta">
                 <?php $cname = rwmb_meta('reveal_portfolio_client', 'type=text'); ?>
-                <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date'); $date_format = get_option( 'date_format' ); $cdate = date( $date_format, strtotime($cadate) ); ?>
+                <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date'); 
+                $date_format = get_option( 'date_format' ); 
+                $cdate = !empty($cadate) ? date( $date_format, strtotime($cadate) ) : ''; 
+                ?>
                 <?php $cskills = rwmb_meta('reveal_portfolio_skills', 'type=text'); ?>
                 <?php $csname = rwmb_meta('reveal_portfolio_sname', 'type=text'); ?>
                 <?php $csurl = rwmb_meta('reveal_portfolio_surl', 'type=text'); ?>
