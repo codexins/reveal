@@ -27,18 +27,20 @@ $e_st_date=date_create($e_start_date);
         <div class="event-list-wrapper">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-events" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">
-                    <a href="<?php the_permalink(); ?>"></a>
+                    <a href="<?php echo esc_url(get_the_permalink()); ?>"></a>
                     <div class="events-date"><p><?php echo esc_html(date_format($e_st_date, "d M Y")); ?></p></div>
                 </div>
             <?php endif; ?>
 
             <div class="desc-events">
-                <p class="list-tag"><i class="flaticon-bookmark"></i> 
-                <?php $event_list = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
-                   if(!empty($event_list)): echo $event_list; endif;
-                  ?>
-                </p>
-                <h2 class="post-title"><a href="<?php the_permalink(); ?>">
+                <?php if(!empty($event_list)): ?>
+                    <p class="list-tag"><i class="flaticon-bookmark"></i> 
+                    <?php $event_list = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
+                       echo $event_list;
+                    ?>
+                    </p>
+                <?php endif; ?>
+                <h2 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>">
                     
                 <?php 
                     $e_length_switch = reveal_option('reveal_events_title_excerpt_length');
@@ -63,9 +65,9 @@ $e_st_date=date_create($e_start_date);
                 ?>
                 </div>
 
-                <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <p class="blog-more"><a class="cx-btn" href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
             </div>
         </div> <!-- end of event-list-wrapper -->
         
-    </div><!--blog post-->
+    </div><!--post-wrapper-->
 </article><!-- #event-## -->

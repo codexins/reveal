@@ -345,8 +345,8 @@ a.explore {
     color: #333;
 }
 
-#primary .reveal-load-more:hover,
-#primary .posts-nav a:hover,
+#whole .reveal-load-more:hover,
+#whole .posts-nav a:hover,
 .blog-content a.read-more:hover{
     background: #295970 ;
     color: #fff ;

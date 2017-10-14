@@ -9,18 +9,18 @@
 
 ?>
 
-<article id="event-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="event-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Event">
 	<div class="events-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-four' )); ?>"  alt="">                                          
 	        <ul class="events-action-btn">
 	            <li>
-	                <a class="venobox" href="<?php esc_url(the_permalink()); ?>"><i class="flaticon-link"></i></a>
+	                <a class="venobox" href="<?php echo esc_url(get_the_permalink()); ?>" itemprop="url"><i class="flaticon-link"></i></a>
 	            </li>
 	        </ul>                                            
 	    </div>
 	    <div class="events-description">
-	        <h4><a href="<?php esc_url(the_permalink()); ?>">
+	        <h4 itemprop="name"><a href="<?php echo esc_url(get_the_permalink()); ?>"  itemprop="url">
 	        <?php 
 
 	           $ev_length_switch = reveal_option('reveal_events_title_excerpt_length');
@@ -39,7 +39,7 @@
 			 	  ?>
 
 	        <div class="event-grid-meta">
-	        	<p class="ev-start-date pull-left"><i class="flaticon-agenda"></i> <?php echo esc_html($e_new_date); ?></p>
+	        	<p class="ev-start-date pull-left" itemprop="startDate" content="<?php echo get_the_time('c'); ?>"><i class="flaticon-agenda"></i> <?php echo esc_html($e_new_date); ?></p>
 	        	<p class="event-grid-time">
 	        		<i class="flaticon-clock-1"></i> 
 	        		<span class=""><?php echo $e_start_time; ?></span>
@@ -62,7 +62,7 @@
 	    </div>  <!-- end of events-description  -->
 
         <div class="events-grid-more">
-        	<a href="<?php echo esc_url(get_the_permalink());?>"><?php echo esc_html__('Read More', 'reveal'); ?></a>
+        	<a href="<?php echo esc_url(get_the_permalink());?>" itemprop="url"><?php echo esc_html__('Read More', 'reveal'); ?></a>
         </div>
 	</div>
 </article>
