@@ -8,12 +8,14 @@
 	<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 		<?php if( reveal_option( 'reveal_events_style' ) == 'grid' ): ?>
 		<div class="events-grid-wrapper">
-			<?php reveal_archive_events_loop(); ?>
-		</div> <!-- end of portfolio wrapper -->
+			<div class="row">
+				<?php reveal_archive_events_loop(); ?>
+			</div>
+		</div> <!-- end of events wrapper -->
 		<?php else: ?>
 		<div class="events-list-wrapper">
 			<?php reveal_archive_events_loop(); ?>
-		</div> <!-- end of portfolio list wrapper -->
+		</div> <!-- end of events list wrapper -->
 		<?php endif; ?>
 	</div><!-- #primary -->
 </div> <!-- end of col -->
