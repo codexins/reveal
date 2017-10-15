@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="event-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Event">
+<article id="event-<?php esc_attr(the_ID()); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Event">
 	<div class="events-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-four' )); ?>"  alt="">                                          
@@ -33,9 +33,9 @@
 
 	        </a></h4>
 	        <?php $e_start_date = strtotime(rwmb_meta('reveal_event_start_date', 'type=date'));
-		        	  $e_start_time = rwmb_meta('reveal_event_start_time', 'type=time');
-						 	  $e_end_time = rwmb_meta('reveal_event_end_time', 'type=time'); 
-						 	  $e_new_date = date( get_option('date_format'), $e_start_date );
+					$e_start_time = rwmb_meta('reveal_event_start_time', 'type=time');
+					$e_end_time = rwmb_meta('reveal_event_end_time', 'type=time'); 
+					$e_new_date = date( get_option('date_format'), $e_start_date );
 			 	  ?>
 
 	        <div class="event-grid-meta">
