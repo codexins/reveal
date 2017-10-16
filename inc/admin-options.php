@@ -1014,6 +1014,18 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         // 'default'   => 20,
                     ),
 
+                    array(
+                        'id'        => 'reveal_events_pagination',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Events Archive Pagination Type', 'reveal'),
+                        'desc'      => esc_html__('Select the Pagination Type.', 'reveal'),
+                        'options'   => array(
+                            'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
+                            'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
+                        ),
+                        'default'   => 'button'
+                    ),
+
                     // array(
                     //     'id'       => 'reveal-single-events-layout',
                     //     'type'     => 'image_select',

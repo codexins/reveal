@@ -2,7 +2,7 @@
 
 				<div class="col-sm-8 col-md-8">
 					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
-						<div class="testimonial-list-wrapper">
+						<div class="testimonial-archive-wrapper">
 							<?php reveal_archive_testimonial_loop(); ?>
 						</div> <!-- end of testimonial-list-wrapper -->
 					</div><!-- #primary -->

@@ -994,17 +994,21 @@ article.type-post {
     margin-bottom: 0;
 }
 
-.single-post #primary article.type-post:last-of-type .post-wrapper ,
+.single-post article.type-post {
+    margin-bottom: 50px;
+}
+
+.single.single-post #primary article.type-post:last-of-type .post-wrapper ,
 .post-wrapper {
     padding-bottom: 50px;
 }
-.single-post #primary article.type-post:last-of-type .post-wrapper {
+/*.single-post #primary article.type-post:last-of-type .post-wrapper {
     margin-bottom: 40px;
-}
+}*/
 
-#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
+/*#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
     padding-bottom: 0;
-}
+}*/
 
 .item-img-wrap {
     position: relative;
@@ -1250,24 +1254,34 @@ nav.number-pagination {
     width: 100%;
     text-align: center;
     padding-top: 5px;
-    border-top: 1px dashed #ddd;
-    margin-top: 50px;
 }
+
+.testimonial-archive-wrapper nav.number-pagination {
+    margin-top: 40px;
+}
+
 .pagination>li {
     display: inline-block;
     margin-top: 15px;
     margin-right: 10px;
 }
+
+.pagination>li:last-child {
+    margin-right: 0;
+}
+
 .pagination>li:first-child>a, .pagination>li:first-child>span, .pagination>li:last-child>a, .pagination>li:last-child>span, .pagination>li>a, .pagination>li>span {
     border: 1px solid #555;
     color: #555;
     border-radius: 0;
 }
+
 .pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover {
     background: #295970;
     border: 1px solid #295970;
     color: #fff;
 }
+
 .number-pagination .pagination>li.active:first-child>a,
 .number-pagination .pagination>li.active:first-child>span, 
 .number-pagination .pagination>.active>a, 
@@ -3323,12 +3337,12 @@ article.portfolio-list {
     margin-bottom: 0;
 }
 
-.col-sm-8.col-md-8 .site-main .thumb-testimonial::before,
+/*.col-sm-8.col-md-8 .site-main .thumb-testimonial::before,
 .col-sm-4.col-md-3 + .col-sm-8.col-md-8.col-md-offset-1 .thumb-testimonial::before {
     width: 30px;
     height: 30px;
     line-height: 47px;
-}
+}*/
 
 
 /* Responsive Fixings for testimonial archive page */
@@ -3431,6 +3445,9 @@ article.portfolio-list {
     margin-top: -20px;
 }
 
+.events-list-wrapper nav.number-pagination {
+    margin-top: -30px;
+}
 
 
 

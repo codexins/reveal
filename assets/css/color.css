@@ -740,14 +740,15 @@ table#wp-calendar thead {
 
     color: #333;
 }
-.single-post #primary article.type-post:last-of-type .post-wrapper ,
+
+.single.single-post #primary article.type-post:last-of-type .post-wrapper ,
 .post-wrapper {
     border-bottom: 1px dashed #ddd;
 }
 
-#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
+/*#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
     border-bottom: 0;
-}
+}*/
 
 
 /************************************************************
@@ -773,9 +774,13 @@ table#wp-calendar thead {
     background: #295970;
 }
 
+.testimonial-archive-wrapper nav.number-pagination {
+    border-top: 1px dashed #ddd;
+}
+
 /************************************************************
     000 - Page - Single Portfolio
-*************************************************************/
+************************************************************
 
 .portfolio .portfolio-image a {
     color: #333;

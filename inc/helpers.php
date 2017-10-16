@@ -440,14 +440,14 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             echo '</div>';
             echo '<div class="clearfix"></div>';
 
-            // $reveal_pagination = reveal_option( 'reveal_pagination' );
+            $reveal_pagination = reveal_option( 'reveal_events_pagination' );
 
-            // if( $reveal_pagination == 'numbered' ):           
-            // reveal_posts_link_numbered();
-            // else:
             echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+            if( $reveal_pagination == 'numbered' ):
+                echo reveal_posts_link_numbered($loop);
+            else:                
                 reveal_posts_link('Newer Events', 'Older Events');
-            //echo '</div>';
+            endif;
             echo ( $post_style == 'grid' ) ? '</div>' : '' ;    
             
 
