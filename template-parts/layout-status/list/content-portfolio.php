@@ -56,5 +56,5 @@ $project_comple_date=date_create($cadate);
             </div>
         </div>
         
-    </div><!--blog post-->
+    </div><!--end of post-wrapper-->
 </article><!-- #portfolio-## -->
