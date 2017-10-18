@@ -11,7 +11,7 @@
 <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date');
 $project_comple_date=date_create($cadate);
 ?>
-<article id="portfolio-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?>>
+<article id="portfolio-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?> itemscope itemtype="http://schema.org/Event">
     <div class="post-wrapper">
         <div class="port-list-wrapper">
             <?php if(has_post_thumbnail()): ?>

@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?> itemscope itemtype="http://schema.org/Event">
 	<div class="portfolio-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-one' )); ?>"  alt="">                                          
@@ -21,20 +21,14 @@
 	    </div> <!-- end of item-thumbnail -->
 	    <div class="portfolio-description">
 	        <h4><a href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html(the_title()); ?></a></h4>
-	        <ul class="portfolio-cat">
-				<?php
-          $taxonomy = 'portfolio-category';
-          $taxonomies = get_terms( $taxonomy); 
-          $last_key = end($taxonomies);
-          foreach ( $taxonomies as $tax ) {                        
-              if($tax == $last_key):
-                  echo "<li>".ucwords($tax->name)."</li>";
-              else: 
-              	echo "<li>".ucwords($tax->name).", </li>";
-               
-              endif; 
-          }?>
-	        </ul>
+	        <?php 
+			$port_list = get_the_term_list( $post->ID, 'portfolio-category', '<li>', ', </li><li>', '</li>' );
+	        if( !empty( $port_list ) ):
+	        ?>
+				<ul class="portfolio-cat">
+					<?php printf( '%s', $port_list ); ?>
+				</ul>
+			<?php endif; ?>
 	    </div> <!-- end of portfolio-description -->
 	</div> <!-- end of portfolio-item-content -->
 </article> <!-- #portfolio-## -->
