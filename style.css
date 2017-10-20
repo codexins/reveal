@@ -943,11 +943,13 @@ div.blog-list-wrapper {
     margin-bottom:0;
 }
 
+.btn-more,
 .blog-more {
     padding-bottom: 0;
     margin-bottom: 0;
 }
 
+.btn-more a,
 .blog-more a {
     padding: 7px 15px 5px;
     text-transform: uppercase;
@@ -962,6 +964,7 @@ div.blog-list-wrapper {
     transition: all .3s;
 }
 
+.btn-more a:hover,
 .blog-more a:hover {
     text-decoration: none;
 }

@@ -310,15 +310,18 @@ a.explore {
     border-bottom: 1px solid #ddd;
 }*/
 
+.btn-more a,
 .blog-more a {
     border: 1px solid #aaa;
     color: #333;
 }
 
+.btn-more a.cx-btn,
 .blog-more a.cx-btn {
     margin-top: 30px;
 }
 
+.btn-more a:hover,
 .blog-more a:hover {
     border-color: #295970;
     color: #fff;
