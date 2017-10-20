@@ -23,16 +23,16 @@ get_header(); ?>
             $reveal_blog_layout = $reveal_option['reveal-single-layout'];
 
             if($reveal_blog_layout == 1):
-                get_template_part('template-parts/sidebar-status/blog/single/no', 'sidebar');
+                get_template_part('template-parts/layouts/blog/single/no', 'sidebar');
 
             elseif($reveal_blog_layout == 2):
-                get_template_part('template-parts/sidebar-status/blog/single/left', 'sidebar');
+                get_template_part('template-parts/layouts/blog/single/left', 'sidebar');
 
             elseif($reveal_blog_layout == 3):
-                get_template_part('template-parts/sidebar-status/blog/single/right', 'sidebar');
+                get_template_part('template-parts/layouts/blog/single/right', 'sidebar');
 
             else:
-                get_template_part('template-parts/sidebar-status/blog/single/right', 'sidebar');
+                get_template_part('template-parts/layouts/blog/single/right', 'sidebar');
 
             endif;
             

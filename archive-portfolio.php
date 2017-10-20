@@ -1,11 +1,15 @@
 <?php
+
 /**
- * The Portfolio Archive Template
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying custom post type 'portfolio' archives pages
  *
  * @package reveal
  */
+
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 get_header(); ?>
 
@@ -16,21 +20,25 @@ get_header(); ?>
 
 	            $reveal_portfolio_layout = reveal_option('reveal-portfolio-archive-layout');
 
-	            if($reveal_portfolio_layout == 1):
-	                get_template_part('template-parts/sidebar-status/portfolio/archive/no', 'sidebar');
+	            if($reveal_portfolio_layout == 1) {
 
-	            elseif($reveal_portfolio_layout == 2):
-	                get_template_part('template-parts/sidebar-status/portfolio/archive/left', 'sidebar');
+	                get_template_part('template-parts/layouts/portfolio/archive/no', 'sidebar');
 
-	            elseif($reveal_portfolio_layout == 3):
-	                get_template_part('template-parts/sidebar-status/portfolio/archive/right', 'sidebar');
+	            } elseif($reveal_portfolio_layout == 2) {
 
-	            else:
-	                get_template_part('template-parts/sidebar-status/portfolio/archive/right', 'sidebar');
+	                get_template_part('template-parts/layouts/portfolio/archive/left', 'sidebar');
 
-	            endif;
+	            } elseif($reveal_portfolio_layout == 3) {
+
+	                get_template_part('template-parts/layouts/portfolio/archive/right', 'sidebar');
+
+	            } else {
+
+	                get_template_part('template-parts/layouts/portfolio/archive/no', 'sidebar');
+
+	            }
 	            
-				 ?>
+				?>
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->
 	</div> <!-- end of #content -->

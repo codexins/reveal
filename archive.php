@@ -1,43 +1,44 @@
 <?php
+
 /**
- * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying archives pages
  *
  * @package reveal
  */
+
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
 
 get_header(); ?>
 
 	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
+				<?php 
 
-					<?php 
+	            $reveal_blog_layout = reveal_option('reveal-blog-layout');
 
-		            $reveal_blog_layout = $reveal_option['reveal-blog-layout'];
+	            if( $reveal_blog_layout == 1 ) {
 
-		            if($reveal_blog_layout == 1):
-		                get_template_part('template-parts/sidebar-status/blog/archive/no', 'sidebar');
+	                get_template_part('template-parts/layouts/blog/archive/no', 'sidebar');
 
-		            elseif($reveal_blog_layout == 2):
-		                get_template_part('template-parts/sidebar-status/blog/archive/left', 'sidebar');
+	            } elseif( $reveal_blog_layout == 2 ) {
 
-		            elseif($reveal_blog_layout == 3):
-		                get_template_part('template-parts/sidebar-status/blog/archive/right', 'sidebar');
+	                get_template_part('template-parts/layouts/blog/archive/left', 'sidebar');
 
-		            else:
-		                get_template_part('template-parts/sidebar-status/blog/archive/right', 'sidebar');
+	            } elseif( $reveal_blog_layout == 3 ) {
 
-		            endif;
-		            
-					 ?>
+	                get_template_part('template-parts/layouts/blog/archive/right', 'sidebar');
 
+	            } else {
+
+	                get_template_part('template-parts/layouts/blog/archive/right', 'sidebar');
+	            
+	            }
+	            
+				?>
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->
 	</div> <!-- end of #content -->

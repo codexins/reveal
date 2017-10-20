@@ -27,7 +27,7 @@ get_header(); ?>
 									if( function_exists( 'codexin_set_post_views' ) ):
 										codexin_set_post_views(get_the_ID());
 									endif;
-									get_template_part( 'template-parts/sidebar-status/portfolio/single/content', 'portfolio'  );
+									get_template_part( 'template-parts/layouts/portfolio/single/content', 'portfolio'  );
 									endwhile; ?>
 
 					        <div class="row">

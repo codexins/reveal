@@ -23,7 +23,7 @@ get_header(); ?>
 	 	        if( have_posts() ) :
 			        //Start loop here...
 	 		        while( have_posts() ) : the_post();
-                        get_template_part( 'template-parts/sidebar-status/events/single/content', 'events' ); 
+                        get_template_part( 'template-parts/layouts/events/single/content', 'events' ); 
                 
                     endwhile;
                     endif; 

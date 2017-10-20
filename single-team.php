@@ -25,7 +25,7 @@ get_header(); ?>
                             while ( have_posts() ) : the_post();
 
                                 
-                                get_template_part( 'template-parts/layout-status/list/content', 'team' );
+                                get_template_part( 'template-parts/views/list/content', 'team' );
                                 
                             endwhile; ?>
 

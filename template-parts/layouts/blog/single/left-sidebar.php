@@ -1,4 +1,10 @@
-				<div class="col-sm-12 col-md-12">
+				<div class="col-sm-4 col-md-4">
+					<div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+						<?php get_sidebar() ?>
+					</div><!-- #secondary -->
+				</div> <!-- end of col -->
+
+				<div class="col-sm-8 col-md-7 col-md-offset-1">
 					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<?php
 							/* Start the Loop */
@@ -8,7 +14,7 @@
 									codexin_set_post_views(get_the_ID());
 								endif;
 								
-								get_template_part( 'template-parts/layout-status/list/content', get_post_format()  );
+								get_template_part( 'template-parts/views/list/content', get_post_format()  );
 
 								if( reveal_option( 'reveal_single_button' ) == true ):
 									reveal_post_link();
@@ -22,3 +28,4 @@
 
 					</div><!-- #primary -->
 				</div> <!-- end of col -->
+

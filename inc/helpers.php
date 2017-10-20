@@ -297,7 +297,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
                     $grid_columns = 12/reveal_option('reveal_grid_columns');
 
                     printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
-                        get_template_part( 'template-parts/layout-status/grid/content', get_post_format() );
+                        get_template_part( 'template-parts/views/grid/content', get_post_format() );
                     echo '</div><!-- end of post-single-wrap -->';
 
                     if( $i % reveal_option('reveal_grid_columns') == 0 ):
@@ -306,7 +306,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
                 else:
 
-                    get_template_part( 'template-parts/layout-status/list/content', get_post_format() );
+                    get_template_part( 'template-parts/views/list/content', get_post_format() );
 
                 endif;
 
@@ -329,7 +329,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
         else :
 
-            get_template_part( 'template-parts/layout-status/list/content', 'none' );
+            get_template_part( 'template-parts/views/list/content', 'none' );
 
         endif;
 
@@ -359,7 +359,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                     $grid_port_columns = 12/reveal_option('reveal_portfolio_grid_columns');
 
                     printf('<div class="portfolio-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-                        get_template_part( 'template-parts/layout-status/grid/content', 'portfolio' );
+                        get_template_part( 'template-parts/views/grid/content', 'portfolio' );
                     echo '</div><!--portfolio wrap-->';
 
                     if( $i % reveal_option('reveal_portfolio_grid_columns') == 0 ):
@@ -367,7 +367,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
                     endif;
                     
                 else:
-                    get_template_part( 'template-parts/layout-status/list/content', 'portfolio' ); 
+                    get_template_part( 'template-parts/views/list/content', 'portfolio' ); 
                 endif;
 
             endwhile; 
@@ -381,7 +381,7 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
 
 
         else:
-        get_template_part( 'template-parts/layout-status/list/content', 'none' );
+        get_template_part( 'template-parts/views/list/content', 'none' );
 
         endif;
 
@@ -423,7 +423,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
                 $grid_port_columns = 12/reveal_option('reveal_events_grid_columns');
 
                 printf('<div class="events-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-                    get_template_part( 'template-parts/layout-status/grid/content', 'events' );
+                    get_template_part( 'template-parts/views/grid/content', 'events' );
                 echo '</div><!--events wrap-->';
 
                 if( $i % reveal_option('reveal_events_grid_columns') == 0 ):
@@ -432,7 +432,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
                 
                 else:
                     
-                get_template_part( 'template-parts/layout-status/list/content', 'events' ); 
+                get_template_part( 'template-parts/views/list/content', 'events' ); 
                     
                 endif;
 
@@ -452,7 +452,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             
 
         else:
-        get_template_part( 'template-parts/layout-status/list/content', 'none' );
+        get_template_part( 'template-parts/views/list/content', 'none' );
 
         endif;
         wp_reset_postdata();
@@ -477,7 +477,7 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
             /* Start the Loop */
             while ( have_posts() ) : the_post();
                     
-                get_template_part( 'template-parts/layout-status/list/content', 'testimonial' ); 
+                get_template_part( 'template-parts/views/list/content', 'testimonial' ); 
                     
 
             endwhile; 
@@ -487,7 +487,7 @@ if ( ! function_exists( 'reveal_archive_testimonial_loop' ) ) {
             echo reveal_posts_link_numbered();
 
         else:
-            get_template_part( 'template-parts/layout-status/list/content', 'none' );
+            get_template_part( 'template-parts/views/list/content', 'none' );
 
         endif;
 
@@ -755,7 +755,7 @@ function reveal_loadmore_ajax_handler(){
         // run the loop
         while( $the_query->have_posts() ): $the_query->the_post();
  
-            get_template_part( 'template-parts/layout-status/list/content', get_post_format() );
+            get_template_part( 'template-parts/views/list/content', get_post_format() );
  
         endwhile;
  
