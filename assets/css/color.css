@@ -1,14 +1,6 @@
-body {
-    color: #333;
-    background: #fff;
-}
 
-a {
-    color: #295970;
-}
 
 a:hover, a:active, a:focus {
-    color: #333;
     text-decoration: none;
     outline: 0 ;
 }
@@ -17,18 +9,9 @@ blockquote {
     border-left: 3px solid #e0e0e0;
 }
 
-tr {
-    border-top:1px solid #ddd;
-    border-bottom:1px solid #ddd;
-}
-
 th,
 tr.even {
     background: #fafafa;
-}
-
-td, th {
-    border: 1px solid #ddd;
 }
 
 #wp-calendar td,
@@ -38,31 +21,21 @@ td, th {
 
 
 .page-links span {
-    border: 1px solid #295970;
-    background: #295970;
     color: #fff;
 }
 
 .page-links a span {
     background: transparent;
-    color: #333;
     border: 1px solid #333;
 }
 
 .page-links a:focus span,
 .page-links a:hover span {
-    background: #295970;
     color: #fff;
-    border: 1px solid #295970;
 }
 
 span.page-links-title {
     background: transparent;
-    color: #333;
-}
-
-hr {
-    border-color: #ddd;
 }
 
 .browserupgrade {
@@ -77,14 +50,7 @@ hr {
     background: #333; none repeat scroll 0 0;
 }
 
-.header.inner-header,
-.header.inner-header nav.navbar {
-    background: #295970;
-}
-
-
 header .navbar.affix {
-    background: #295970;
     box-shadow: 0 0 1px rgba(32, 32, 32, 0.35);
 }
 
@@ -101,38 +67,12 @@ a.navbar-brand {
     background: transparent;
 }
 
-.main-menu li a:hover {
-    color: #fce38a;
-}
-
 .main-menu li.active {
     background: transparent;
 }
 
 .main-menu li.active a {
-    color: #fce38a;
     background: transparent;
-}
-
-.slider-text {
-    color: #fff;
-}
-
-.slider-text h4 {
-    color: inherit;
-}
-
-.slider-text h2 {
-    color: inherit;
-}
-
-.small-divider {
-    background: #fff;
-}
-
-.slider-btn {
-    color: #fff;
-    border: 3px solid #fff;
 }
 
 .page-title-wrapper .breadcrumb,
@@ -145,24 +85,6 @@ a.navbar-brand {
     background: transparent;
 }
 
-.slider-btn:hover {
-    background: #fff;
-    color: #555;
-}
-.slider-btn:active,
-.slider-btn:focus {
-    color: #fff;
-}
-.nav-top {
-    background: #fff;
-}
-.nav-top-inner {
-    background: #295970;
-}
-
-a.explore {
-    color: #fff;
-}
 
 /***********************************
     002 - About Section
@@ -182,23 +104,13 @@ a.explore {
     003 - Project Summary Section
 ***********************************/
 
-#achievement-counters {
-    background: #295970 none repeat scroll 0 0;
-}
-.achievement-counters {
-    color: #fff;
-}
+
 
 /***********************************
     005 - Design Section
 ***********************************/
 
-.concept {
-    min-height: 400px;
-    background: transparent;
-    padding-top: 70px;
-    padding-bottom: 0;
-}
+
 /***********************************
     006 - Events  Section
 ***********************************/
@@ -207,9 +119,7 @@ a.explore {
     background: #eee;
     background-color: #f8f8f8;
 }
-.content-mask h2 {
-    color: #555;
-}
+
 .content-mask h2 {
     background: transparent
 }
@@ -225,45 +135,13 @@ a.explore {
 .events-description .panel-heading.active {
     background: #f8f8f8;
 }
-.events-description .panel-title i {
-    color: #295970;
-}
-.events-description .panel-title a::after {
-    color: #295970;
-}
-.events-description .panel-title a.collapsed::after {
-    color: #295970;
-}
+
 /***********************************
     007 - Quote Section
 ***********************************/
 
-#quote {
-    background: #f8f8f8;
-}
 
-.quote-carousel-control {
-    color: #555;
-}
 
-.quote-carousel-control:hover,
-.quote-carousel-control:focus,
-.quote-carousel-control:active {
-    color: #bbb;
-}
-.quote-author-thumb i {
-    border: 3px solid #295970;
-    color: #295970;
-}
-.quote-text p {
-    color: #444;
-}
-.quote-text p.quote-author-name {
-    color: #333;
-}
-.quote-text p.quote-author-name::before {
-    background: #295970;
-}
 
 /***********************************
     009 - Client Carousel Section
@@ -280,10 +158,6 @@ a.explore {
 /***********************************
     011 - Testominial Section
 ***********************************/
-.testimonials .designation::after {
-    background: #295970; 
-}
-
 
 
 /***********************************
@@ -313,7 +187,6 @@ a.explore {
 .btn-more a,
 .blog-more a {
     border: 1px solid #aaa;
-    color: #333;
 }
 
 .btn-more a.cx-btn,
@@ -323,20 +196,12 @@ a.explore {
 
 .btn-more a:hover,
 .blog-more a:hover {
-    border-color: #295970;
     color: #fff;
-    background: #295970;
 }
 
-.posts-single .blog-info span,
-.posts-single-right .cx-count,
-.blog-info .fa {
-    color: #555;
-}
 
 .posts-single-right .cx-count {
     font-size: 12px;
-    color: #555;
 }
 
 /*.blog-info i:last-child {
@@ -345,22 +210,17 @@ a.explore {
 */
 #primary .reveal-load-more {
     border: 1px solid #aaa;
-    color: #333;
 }
 
 #whole .reveal-load-more:hover,
 #whole .posts-nav a:hover,
-.blog-content a.read-more:hover{
-    background: #295970 ;
+.blog-content a.read-more:hover {
     color: #fff ;
 }
 /********************************************** new ******************************************************************/
 .post-detail {
     border-top: 1px solid #ebeaea;
     border-bottom: 1px solid #ebeaea;
-}
-h2.post-title a {
-    color: #295970;
 }
 
 .post-link .post-format-link {
@@ -390,13 +250,9 @@ box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
     color: #fff;
 }
 
-.post-quote span {
+/*.post-quote span {
     color: #999;
-}
-
-.post-quote a:hover span {
-    color: #333;
-}
+}*/
 
 /*.post-link a:hover span,
 .post-link a:hover p {
@@ -406,11 +262,6 @@ box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
 /*.post-link a:hover p {
     border-left: 2px solid #fafafa;
 }*/
-
-.post-link p,
-.post-link span.icon {
-    color: #333;
-}
 
 .post-link p {
     border-left: 2px solid #333;
@@ -427,16 +278,13 @@ box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
 
 .socials i {
     border: 1px solid #555;
-    color: #555;
 }
 
 .socials a:hover i {
-    background: #295970;
-    border: 1px solid #295970;
     color: #fff;
 }
 
-#location input,
+/*#location input,
 #location textarea {
     border: 1px solid #ddd;
 }
@@ -453,7 +301,7 @@ box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
 
 #location input[type="submit"]:hover {
     background: #333;
-}
+}*/
 
 /***********************************
     014 - Footer Section
@@ -462,55 +310,11 @@ box-shadow: 0px 1px 3px rgba(0,0,0,0.35);
     background: #f8f8f8;
 }
 
-.footer h1 {
-    color: #777;
-}
-
+/*
 p.followers span {
     color: #002037;
-}
+}*/
 
-.footer-left i {
-    color: #333;
-}
-
-.contact-info a {
-    color: #333;
-}
-
-.contact-info a:hover {
-    color: #295970;
-}
-
-.contact-info a i {
-    color: #333;
-}
-
-.footer-left a:hover i {
-    color: #295970;
-}
-
-.footer-left input[type="submit"] {
-    background: #295970;
-    color: #fff;
-}
-
-.footer-left input[type="submit"]:hover {
-    background: #002037;
-}
-
-.reveal-widget .media p {
-    color: #777;
-}
-
-a.more,
-a.more:hover {
-    color: #333;
-}
-
-.copyright a {
-    color: #295970;
-}
 
 .hoverable {
     background: rgba(41, 89, 112, 0.35);
@@ -525,7 +329,6 @@ a.more:hover {
 }
 
 #toTop {
-    background-color: #295970;
     color: #fff;
 }
 
@@ -539,10 +342,6 @@ a.more:hover {
     border-right-color: transparent;
 }
 
-.service i {
-    color: #295970;
-}
-
 /* Colors */
 #primary .cx-like-wrapper a.liked {
     color: #da1b1b;
@@ -550,11 +349,6 @@ a.more:hover {
 
 #primary .cx-like-wrapper a.liked:hover{
     color: #666666;
-}
-
-.cx-like-wrapper a.liked span.cx-count,
-.cx-count {
-    color: #333;
 }
 
 /* Loader */
@@ -569,25 +363,8 @@ a.more:hover {
 Sidebar widget 
 =====================================================*/
 
-.widget_search input[type="submit"] {
-    border: 1px solid #295970 !important;
-}
-.widget_search  input[type="submit"] {
-    background-color: #295970;
-    border: 1px solid #ccc;
-}
 h2.widgettitle {
     border-bottom: 1px solid #ebeaea;
-    color: rgb(51, 51, 51);
-}
-.widgettitle a{
-    color: rgb(51, 51, 51);
-}
-.sidebar-widget ul li a:hover {
-    color: #295970;
-}
-.sidebar-widget ul li a {
-    color: #333;
 }
 
 #thumbnail_nav .nav-box {
@@ -597,35 +374,27 @@ h2.widgettitle {
 
 .tagcloud a {
     border: 1px solid #ccc;
-    color: #333;
 }
 
 .tagcloud a:hover {
-    background: #295970;
     color: #fff;
-    border-color: #295970;
 }
 
 /* calendar */
-#wp-calendar caption{
+#wp-calendar caption {
     color: #fff;
-    background: #295970 ;
 }
-#wp-calendar thead th{
-    color: #333;
-}
-#wp-calendar tbody td{
+
+#wp-calendar tbody td {
     color: #999;
 }
 
-#wp-calendar tbody td a{
-    color: #333;
+#wp-calendar tbody td a {
     display: block;
 
 }
-#wp-calendar tbody td a:hover{
+#wp-calendar tbody td a:hover {
     color: #fff;
-    background: #295970;
 }
 
 table#wp-calendar {
@@ -642,9 +411,8 @@ table#wp-calendar thead {
     border-left: 1px solid #ebeaea;
 }
 #wp-calendar tfoot #next a:hover,
-#wp-calendar tfoot #prev a:hover{
+#wp-calendar tfoot #prev a:hover {
     color: #fff;
-    background: #295970;
 
 }
 #wp-calendar tfoot #next{
@@ -652,7 +420,6 @@ table#wp-calendar thead {
 }
 #wp-calendar tfoot #prev a ,
 #wp-calendar tfoot #next a{
-    color: #333 ;
     display: inline-block;
     line-height: 32px;
     padding: 0 10px ;
@@ -660,20 +427,12 @@ table#wp-calendar thead {
 
 /* blog */
 #entry_footer .share a {
-    color: #555;
     background: transparent;
 }
 
 
 .post-wrapper .list-inline li a {
     color: inherit;
-}
-
-.post-meta .cx-like-wrapper a.liked span.cx-count,
-.post-meta .cx-count,
-.post-meta li,
-.post-meta li a {
-    color: #777;
 }
 
 /*sub menu */
@@ -732,22 +491,13 @@ table#wp-calendar thead {
     color: #fff;
 }
 
-.archive-events-location a {
+/*.archive-events-location a {
     color: #ababab;
 }
 
 .archive-events-time {
     color: #ababab;
-}
-.socials .flaticon-technology:before {
-
-    color: #333;
-}
-
-.single.single-post #primary article.type-post:last-of-type .post-wrapper ,
-.post-wrapper {
-    border-bottom: 1px dashed #ddd;
-}
+}*/
 
 /*#primary article.type-post:last-of-type:not(.sticky) .post-wrapper {
     border-bottom: 0;
@@ -764,21 +514,11 @@ table#wp-calendar thead {
 }
 
 .thumb-testimonial img {
-    border: 3px solid #295970;
     background: #fff;
-}
-
-.testimonial-content h3.testimonial-title {
-    color: #295970;
 }
 
 .thumb-testimonial::before {
     color: #ffffff;
-    background: #295970;
-}
-
-.testimonial-archive-wrapper nav.number-pagination {
-    border-top: 1px dashed #ddd;
 }
 
 /************************************************************
@@ -834,3 +574,228 @@ table#wp-calendar thead {
     }
 
 }
+
+
+
+/***********************************
+        Text Color #333
+***********************************/
+
+body,
+a:hover, a:active, a:focus,
+.page-links a span,
+span.page-links-title,
+.quote-text p.quote-author-name,
+.btn-more a,
+.blog-more a,
+#primary .reveal-load-more,
+.post-quote a:hover span,
+.post-link p,
+.post-link span.icon,
+.footer-left i,
+.contact-info a,
+.contact-info a i,
+a.more,
+a.more:hover,
+.cx-like-wrapper a.liked span.cx-count,
+.cx-count,
+.sidebar-widget ul li a,
+.tagcloud a,
+.socials .flaticon-technology:before,
+#wp-calendar thead th,
+#wp-calendar tbody td a,
+#wp-calendar tfoot #prev a ,
+#wp-calendar tfoot #next a,
+#entry_footer .caption i.fa,
+.comment-navigation .nav-previous a,
+.comment-navigation .nav-next a,
+.tag-portfolio a,
+.category-portfolio a,
+#whole .posts-nav a,
+.blog-content a.read-more,
+.previous-portfolio .nav-previous a,
+.information p a,
+.blog-grid-wrapper .blog-content a.read-more {
+    color: #333;
+}
+
+/***********************************
+        Body Background #fff
+***********************************/
+
+body {
+    background: #fff;
+}
+
+/***********************************
+        Primary Color #295970
+***********************************/
+
+a,
+.events-description .panel-title i,
+.events-description .panel-title a::after,
+.events-description .panel-title a.collapsed::after,
+h2.post-title a,
+.contact-info a:hover,
+.copyright a,
+.service i,
+.sidebar-widget ul li a:hover,
+.testimonial-content h3.testimonial-title,
+.single-event-details .event-tag-details a:hover,
+.single-event-details .event-cat-details a:hover,
+.single-event-description .event-title h2,
+.events-description h4 a,
+.portfolio-description h4 a,
+.events-grid-more:hover a {
+    color: #295970;
+}
+
+.page-links span,
+.page-links a:focus span,
+.page-links a:hover span,
+.header.inner-header,
+.header.inner-header nav.navbar,
+header .navbar.affix,
+.testimonials .designation::after,
+.btn-more a:hover,
+.blog-more a:hover,
+#whole .reveal-load-more:hover,
+#whole .posts-nav a:hover,
+.blog-content a.read-more:hover,
+.socials a:hover i,
+#toTop,
+.tagcloud a:hover,
+#wp-calendar caption,
+#wp-calendar tbody td a:hover,
+#wp-calendar tfoot #next a:hover,
+#wp-calendar tfoot #prev a:hover,
+.thumb-testimonial::before,
+button,
+input[type="submit"],
+input[type="button"],
+.gallery-carousel span.slick-arrow:hover,
+.pagination>li>a:focus, 
+.pagination>li>a:hover, 
+.pagination>li>span:focus, 
+.pagination>li>span:hover,
+.number-pagination .pagination>li.active:first-child>a,
+.number-pagination .pagination>li.active:first-child>span, 
+.number-pagination .pagination>.active>a, 
+.number-pagination .pagination>.active>a:focus, 
+.number-pagination .pagination>.active>a:hover, 
+.number-pagination .pagination>.active>span, 
+.number-pagination .pagination>.active>span:focus, 
+.number-pagination .pagination>.active>span:hover,
+.comment-navigation .nav-previous a:hover,
+.comment-navigation .nav-next  a:hover,
+.recent-portfolio-wrapper:after,
+.previous-portfolio .nav-previous a:hover,
+.blog-grid-wrapper .blog-content a.read-more:hover {
+    background: #295970;
+}
+
+.widget_search input[type="submit"] {
+    background-color: #295970;
+}
+
+.widget_search input[type="submit"],
+.page-links span,
+.page-links a:focus span,
+.page-links a:hover span,
+.socials a:hover i,
+input[type="submit"],
+.pagination>li>a:focus, 
+.pagination>li>a:hover, 
+.pagination>li>span:focus, 
+.pagination>li>span:hover,
+.number-pagination .pagination>li.active:first-child>a,
+.number-pagination .pagination>li.active:first-child>span, 
+.number-pagination .pagination>.active>a, 
+.number-pagination .pagination>.active>a:focus, 
+.number-pagination .pagination>.active>a:hover, 
+.number-pagination .pagination>.active>span, 
+.number-pagination .pagination>.active>span:focus, 
+.number-pagination .pagination>.active>span:hover {
+    border: 1px solid #295970;
+}
+
+.tagcloud a:hover,
+.btn-more a:hover,
+.blog-more a:hover,
+.comment-navigation .nav-previous a:hover,
+.comment-navigation .nav-next  a:hover,
+.events-item-content:hover .events-grid-more a,
+.events-item-content:hover {
+    border-color: #295970;
+}
+
+.thumb-testimonial img {
+    border: 3px solid #295970;
+}
+
+
+/***********************************
+        Secondary Color #fce38a
+***********************************/
+
+
+.main-menu li a:hover,
+.main-menu li.active a {
+    color: #fce38a;
+}
+
+
+/***********************************
+        Border Color #ddd
+***********************************/
+
+tr,
+.events-grid-more a,
+.blog-grid-wrapper .blog-info {
+    border-top: 1px solid #ddd;
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+}
+
+td, 
+th,
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="button"],
+input[type="reset"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+.events-item-content,
+.blog-grid-wrapper .blog-content {
+    border: 1px solid #ddd;
+}
+
+hr {
+    border-color: #ddd;
+}
+
+.single.single-post #primary article.type-post:last-of-type .post-wrapper,
+.post-wrapper {
+    border-bottom: 1px dashed #ddd;
+}
+
+.testimonial-archive-wrapper nav.number-pagination,
+.blog .posts-nav {
+    border-top: 1px dashed #ddd;
+}
+
+
+/***********************************
+    Section Background #fafafa
+***********************************/
+
+
+
+/***********************************
+        White Color #fff
+***********************************/
+

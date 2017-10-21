@@ -51,7 +51,7 @@ get_header(); ?>
 										?>
 												    <div class="recent-portfolio-wrapper">
 												        <img src="<?php the_post_thumbnail_url('rectangle-two') ?>" alt="">
-												        <div class="one-content">
+												        <div class="portfolio-image-content">
 												            <i class="et-focus" aria-hidden="true"></i>
 												            <h3><a href="<?php the_permalink()?>"><?php the_title() ?></a></h3>
 												            <p><a href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More', 'codexin'); ?></a></p>
