@@ -18,17 +18,18 @@ get_header(); ?>
 			<div class="row">
 				<?php 
 
+				// Retieving data from theme options
 	            $reveal_portfolio_layout = reveal_option('reveal-portfolio-archive-layout');
 
-	            if($reveal_portfolio_layout == 1) {
+	            if( $reveal_portfolio_layout == 1 ) {
 
 	                get_template_part('template-parts/layouts/portfolio/archive/no', 'sidebar');
 
-	            } elseif($reveal_portfolio_layout == 2) {
+	            } elseif( $reveal_portfolio_layout == 2 ) {
 
 	                get_template_part('template-parts/layouts/portfolio/archive/left', 'sidebar');
 
-	            } elseif($reveal_portfolio_layout == 3) {
+	            } elseif( $reveal_portfolio_layout == 3 ) {
 
 	                get_template_part('template-parts/layouts/portfolio/archive/right', 'sidebar');
 

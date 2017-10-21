@@ -1,56 +1,66 @@
 <?php
+
 /**
- * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying custom post type 'team' archives pages
  *
  * @package reveal
  */
 
-get_header(); ?>
 
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+
+get_header(); ?>
 
 	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="team-wrapper">
+				<?php if ( have_posts() ) : ?>
+					<ul>
+					    <?php while ( have_posts() ) : the_post();
 
-			<?php if ( have_posts() ) : ?>
+					    	// Retieving the image alt tags
+							if( function_exists('retrieve_alt_tag') ) { 
+								$alt_tag =  retrieve_alt_tag(); 
+							}
 
-				<ul>
-			    <?php while ( have_posts() ) : the_post();
-					if(function_exists('retrieve_alt_tag')): $alt_tag =  retrieve_alt_tag(); endif;
+							// Retieving user data from metabox
+							$team_desig = rwmb_meta( 'reveal_team_designation','type=text' );
 
-					$team_desig = rwmb_meta( 'reveal_team_designation','type=text' );
-			     ?>
-					<li id="team-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<a href="<?php echo esc_url(get_the_permalink()); ?>">
-						   <figure>
-						      <div class="team-single-wrapper">
-						         <img src="<?php the_post_thumbnail_url('square-two');  ?>" alt="<?php if(!empty($alt_tag)): echo $alt_tag; else: the_title(); endif; ?>">
-						         <figcaption>
-						            <div class="team-info-wrapper">
-						               <span><?php echo esc_html( $team_desig ); ?></span>
-						               <h3><?php printf( '%s', the_title() ); ?></h3>
-						            </div> <!-- end of team-info-wrapper -->
-						         </figcaption>
-						      </div> <!-- end of team-single-wrapper -->
-						   </figure>
-						</a>
-					</li>
+					    ?>
+							<li id="team-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<a href="<?php echo esc_url(get_the_permalink()); ?>">
+									<figure>
+										<div class="team-single-wrapper">
+											<img src="<?php esc_url(the_post_thumbnail_url('square-two'));  ?>" alt="<?php echo (!empty($alt_tag)) ? esc_html($alt_tag) : get_the_title(); ?>">
+											<figcaption>
+												<div class="team-info-wrapper">
+													<span><?php echo esc_html( $team_desig ); ?></span>
+													<h3><?php printf( '%s', the_title() ); ?></h3>
+												</div> <!-- end of team-info-wrapper -->
+											</figcaption>
+										</div> <!-- end of team-single-wrapper -->
+									</figure>
+								</a>
+							</li> <!-- end of #team## -->
 
-			    <?php endwhile; ?>
-        		</ul>
-        		<div class="clearfix"></div>
-        		<?php echo reveal_posts_link_numbered(); ?>
-			<?php else: ?>
-			    <?php esc_html__('Sorry, no posts matched your criteria.', 'reveal'); ?>
-			<?php endif; ?>
-				</div>
+					    <?php endwhile; ?>
+	        		</ul>
+	        		<div class="clearfix"></div>
+	        		<?php 
+	        		// Posts pagination
+					if( function_exists('reveal_posts_link_numbered') ) { 
+		        		echo reveal_posts_link_numbered(); 
+		        	}
+		        	?>
+				<?php 
+				else:
+
+					get_template_part( 'template-parts/views/list/content', 'none' );
+
+				endif; ?>
+			</div> <!-- end of team-wrapper -->
 		</div> <!-- end of container -->
 	</div> <!-- end of #content -->
 

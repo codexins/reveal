@@ -18,6 +18,7 @@ get_header(); ?>
 			<div class="row">
 				<?php 
 
+				// Retieving data from theme options
 	            $reveal_events_layout = reveal_option('reveal-events-archive-layout');
 
 	            if( $reveal_events_layout == 1 ) {
