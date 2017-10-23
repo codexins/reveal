@@ -1,12 +1,15 @@
 body {
     font-family: 'Roboto', sans-serif;
+}
+
+body {
     font-size: 16px;
     line-height: 1.65em;
+    font-weight: 400;
 }
 
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6 {
-    font-family: 'Montserrat', sans-serif;
     line-height: 1.1em;
 }
 
@@ -20,6 +23,40 @@ h6 { font-size: 15px; }
 h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl {
     margin-bottom: 25px;
 }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6,
+.primary-title,
+.main-menu li a,
+.single-content p,
+.project .counter,
+.project p,
+.single-service .media-heading,
+a.navbar-brand,
+.testimonials .media-heading,
+.blog-title {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.quote-text p.quote-author-name,
+.secondary-title {
+    font-family: 'Lobster', cursive;
+}
+
+.primary-title {
+    line-height: 33px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+}
+
+
+.secondary-title {
+    line-height: 26px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
+}
+
 
 dd {
     margin-bottom: 15px;
@@ -44,52 +81,25 @@ td, th {
 }
 
 a.navbar-brand {
-    font-family: 'Montserrat', sans-serif;
     font-size: 30px;
 }
 
 .main-menu li a {
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     text-transform: uppercase;
 }
 
-.slider-text h4 {
-    font-family: 'Lobster', cursive;
-    font-size: 48px;
-    line-height: 1.1em;
-}
-
-.slider-text h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 90px;
-    font-weight: bold;
-    line-height: 1em;
-}
-
-
-.slider-btn {
-    font-family: montserrat;
-}
-
-a.explore {
-    font-size: 36px;
-}
 /***********************************
     002 - About Section
 ***********************************/
 
-.secondary-title {
-    font-family: 'Lobster', cursive;
-    font-size: 24px;
-}
+
 
 .single-content {
     font-size: 24px;
 }
 
 .single-content p {
-    font-family: montserrat;
     font-size: 18px;
 }
 
@@ -100,11 +110,9 @@ a.explore {
 .project .counter {
     font-size: 72px;
     font-weight: bold;
-    font-family: Montserrat;
 }
 
 .project p {
-    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight: 400;
     font-size: 14px;
@@ -114,7 +122,6 @@ a.explore {
     004 - Services Section
 ***********************************/
 .single-service .media-heading {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
 
@@ -150,9 +157,7 @@ a.explore {
     font-size: 18px;
     font-style: italic;
 }
-.quote-text p.quote-author-name {
-    font-family: 'Lobster', cursive;
-}
+
 
 
 /***********************************
@@ -164,7 +169,6 @@ a.explore {
     011 - Testominial Section
 ***********************************/
 .testimonials .media-heading {
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: bold;
 }
@@ -189,7 +193,6 @@ a.explore {
 
 .blog-title {
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
 
@@ -210,7 +213,6 @@ a.explore {
 ***********************************/
 .contact-intro h3 {
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 
@@ -224,14 +226,12 @@ a.explore {
     014 - Footer Section
 ***********************************/
 .footer h1 {
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 46px;
 }
 
 p.followers {
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
 }
 
 p.followers span {
@@ -250,7 +250,6 @@ p.followers span {
 
 .twitter-feed-right h4,
 .posts-single-right h4 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     font-weight: bold;
 }
@@ -315,7 +314,7 @@ Flaticon icon font: Flaticon
 Creation date: 26/07/2017 06:49
 */
 
-@font-face {
+/*@font-face {
   font-family: "Flaticon";
   src: url("../fonts/Flaticon.eot");
   src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
@@ -346,88 +345,14 @@ Creation date: 26/07/2017 06:49
 .socials .flaticon-technology:before {
     font-size: 15px;
     font-weight: bold;
-}
-
-/************************************************************
-    000 - Page - Blog Page Grid
-*************************************************************/
-
-.blog-content a.read-more {
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/************************************************************
-    Single Portfolio
-*************************************************************/
-
-.portfolio-single .portfolio-details h2 {
-    margin-bottom: 25px;
-    font-family: Montserrat;
-    font-weight: bold;
-}
-
-.portfolio-meta h2 {
-    font-size: 26px;
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
-.portfolio-meta h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 2px;
-}
-
-.portfolio-meta p {
-    margin-bottom: 0;
-}
-
-.recent-portfolio h2 {
-    margin: 0;
-    margin-bottom: 25px;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-family: Montserrat;
-    text-transform: uppercase;
-}
+}*/
 
 
-/************************************************************
-    000 - Page - Testimonial Archive
-*************************************************************/
 
 
-.thumb-testimonial::before {
-    content: "\201D";
-    font-family: "Times New Roman",Georgia,Serif;
-    font-size: 2.2em;
-    font-weight: 900;
-    line-height: 56px;
-    text-align: center;
-}
 
-.testimonial-content h3.testimonial-title {
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
-.testimonial-content h3.testimonial-title::after {
-    content: "\f005 \f005 \f005 \f005 \f005";
-    font-family: FontAwesome;
-    font-size: 14px;
-    letter-spacing: 0.2em;
-}
 
-.testimonial-title .testimonial-meta {
-    text-transform: capitalize;
-    font-size: 15px;
-    font-style: italic;
-    font-weight: normal;
-}
 
-.testimonial-title .testimonial-meta span:last-child {
-    font-weight: 600;
-}
+
+
