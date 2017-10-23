@@ -225,13 +225,34 @@ iframe, embed, object {
 
 /* theme Base CSS */
 
+dd {
+    margin-bottom: 15px;
+}
+
+blockquote {
+    font-size: 1em;
+    font-style: italic;
+}
+
+address {
+    font-style: italic;
+}
+
+td, th {
+    padding: 10px;
+}
+
+
 .page-entry-content,
 article {
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-
+#wp-calendar td,
+#wp-calendar th {
+    padding:0;
+}
 
 #primary,
 #secondary {
