@@ -1,26 +1,4 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'reveal_google_fonts' );
-function reveal_google_fonts () {
-	
-	$fonts = array(
-		'Lobster:400,700',
-		'Montserrat:400,700',
-		'Roboto:400,700'
-	);
-	
-	$gfonts = '';
-	$count = 1;
-	foreach ( $fonts as $font ) :
-		$gfonts .= $font;
-		if ( $count != count( $fonts ) )
-			$gfonts .= '|';
-		$count++;
-	endforeach;
-	
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=' . $gfonts );
-
-}
-	
 function reveal_scripts () {
 	
 	//Load the stylesheets
