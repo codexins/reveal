@@ -1,17 +1,24 @@
 body {
     font-family: 'Roboto', sans-serif;
-}
-
-body {
     font-size: 16px;
     line-height: 1.65em;
     font-weight: 400;
 }
 
-
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6 {
+    font-family: 'Montserrat', sans-serif;
     margin-top: 0;
     line-height: 1.1em;
+}
+
+.main-menu li a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.primary-title {
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1 { font-size: 32px; }
@@ -25,16 +32,13 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl {
     margin-bottom: 25px;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6,
-.primary-title,
-.main-menu li a,
-.single-content p,
+
+
 .project .counter,
 .project p,
 .single-service .media-heading,
 a.navbar-brand,
-.testimonials .media-heading,
-.blog-title {
+.testimonials .media-heading {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -61,10 +65,7 @@ a.navbar-brand {
     font-size: 30px;
 }
 
-.main-menu li a {
-    font-size: 14px;
-    text-transform: uppercase;
-}
+
 
 /***********************************
     002 - About Section
