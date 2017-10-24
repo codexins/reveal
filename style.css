@@ -242,6 +242,11 @@ input[type="button"]:hover{
     001 - Header Section
 *************************************************************/
 
+a.navbar-brand {
+    font-size: 30px;
+}
+
+
 .no-header .page-entry-content {
     margin-top: 0;
 }
@@ -594,6 +599,12 @@ ul.sub-menu li a {
     004 - Services Section
 *************************************************************/
 
+.single-service .media-heading {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
 
 /************************************************************
     005 - Design Section
@@ -649,12 +660,30 @@ ul.sub-menu li a {
 /************************************************************
     006 - Events  Section
 *************************************************************/
-
+.events-description .panel-title {
+    font-size: 14px;
+}
+.events-description .panel-title i {
+    font-size: 16px;
+}
+.events-description .panel-title a::after {
+    font-family: FontAwesome;
+}
+.events-description .panel-title a.collapsed::after {
+    font-family: FontAwesome;
+}
 
 
 /************************************************************
     007 - Quote Section
 *************************************************************/
+.quote-author-thumb i {
+    font-size: 60px;
+}
+.quote-text p {
+    font-size: 18px;
+    font-style: italic;
+}
 
 
 
@@ -731,10 +760,44 @@ ul.sub-menu li a {
     011 - Testominial Section
 *************************************************************/
 
+.testimonials .media-heading {
+    font-size: 16px;
+    font-weight: bold;
+}
 
 /************************************************************
     012 - Blog Section
 *************************************************************/
+
+.meta {
+    text-align: center;
+}
+
+.meta p:first-child {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.meta p:last-child {
+    font-style: italic;
+}
+
+.blog-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-more a,
+.blog-more a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: bold; 
+}
+
+.blog-info i:last-child {
+    font-size: 12px;
+}
+
 .blog-content a.read-more {
     font-size: 12px;
     font-weight: bold;
@@ -1140,12 +1203,73 @@ nav.number-pagination {
     013 - Location
 *************************************************************/
 
+.contact-intro h3 {
+    font-weight: bold;
+    font-size: 20px;
+}
 
+.socials i {
+    line-height: 30px;
+    text-align: center;
+}
 
 
 /************************************************************
     014 - Footer Section
 *************************************************************/
+
+.footer h1 {
+    font-weight: bold;
+    font-size: 46px;
+}
+
+p.followers {
+    font-weight: bold;
+}
+
+p.followers span {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.footer-left i {
+    text-align: center;
+    line-height: 20px;
+}
+
+.widget-title {
+    font-weight: bold;
+}
+
+.twitter-feed-right h4,
+.posts-single-right h4 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.twitter-feed-right p {
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-bottom: 5px;
+}
+
+
+.codexin-popular-posts-widget .media p {
+    font-style: italic;
+    font-size: 80%;
+}
+
+.codexin-popular-posts-widget .media img {
+    margin-right: 10px;
+}
+
+
+a.more,
+a.more:hover {
+    font-size: 80%;
+}
+
 
 #footer {
     background: #f8f8f8;
@@ -1245,11 +1369,36 @@ a.more:hover {
     right: 15px;
     width: 40px;
     z-index: 999;
+    text-align: center;
+    line-height: 40px;
     -webkit-transition: all .4s ease 0s;
     -moz-transition: all .4s ease 0s;
     -ms-transition: all .4s ease 0s;
     -o-transition: all .4s ease 0s;
     transition: all .4s ease 0s;
+}
+
+
+.cssload-container {
+    text-align: center;
+}
+
+.service i {
+    font-size: 50px;
+    text-align: center;
+}
+
+/* Wrapper */
+.cx-button {
+    font-size: 1em;
+    line-height: 1;
+    font-weight: normal;
+}
+
+/* Count */
+
+.loader {
+  font-size: 1em;
 }
 
 
@@ -2290,8 +2439,6 @@ button.mfp-close:hover {
 /*=====================================================================*/
 /*
 
-font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto', sans-serif;
 
 */
 .alignright {
