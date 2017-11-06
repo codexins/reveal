@@ -178,8 +178,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify the body font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('body'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '16px',
                             'line-height' => '26px',
                             'font-family' => 'Roboto',
@@ -195,8 +195,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'google'   => true,
                         'text-transform' => true,
                         'output'   => array('.main-menu li a'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#fff',
                             'font-size'   => '14px',
                             'line-height' => '33px',
                             'font-family' => 'Montserrat',
@@ -212,8 +212,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify primary title font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('.primary-title'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '30px',
                             'line-height' => '33px',
                             'font-family' => 'Montserrat',
@@ -228,8 +228,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify secondary title font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('.secondary-title'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '24px',
                             'line-height' => '26px',
                             'font-family' => 'Lobster',
@@ -244,8 +244,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify h1 font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('h1'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '32px',
                             'font-family' => 'Montserrat',
                             'font-weight' => '400',
@@ -260,8 +260,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'output'      => array( 'h2' ),
                         'google'      => true,
                         'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
+                        'color'    => false,
                         'default'     => array(
-                            'color'       => '#333',
                             'font-weight'  => 'normal',
                             'font-family' => 'Montserrat',
                             'font-size'   => '28px',
@@ -276,8 +276,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify h3 font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('h3'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '24px',
                             'font-family' => 'Montserrat',
                             'font-weight' => '400',
@@ -291,8 +291,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify h4 font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('h4'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '21px',
                             'font-family' => 'Montserrat',
                             'font-weight' => '400',
@@ -306,8 +306,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify h5 font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('h5'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '18px',
                             'font-family' => 'Montserrat',
                             'font-weight' => '400',
@@ -321,8 +321,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Specify h6 font properties.', 'reveal' ),
                         'google'   => true,
                         'output'   => array('h6'),
+                        'color'    => false,
                         'default'  => array(
-                            'color'       => '#333',
                             'font-size'   => '15px',
                             'font-family' => 'Montserrat',
                             'font-weight' => '400',
@@ -330,10 +330,72 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
                 ));
 
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Colors', 'reveal' ),
+                'icon'             => 'el el-brush',
+                'id'               => 'reveal-color-option',
+                'desc'         => esc_html__( 'Customization of Theme Main Colors', 'reveal' ),
+                'customizer_width' => '500px',
+                'fields'           => array(
+
+                    array(
+                        'id'            => 'reveal-body-bg',
+                        'type'          => 'color',
+                        'title'         => esc_html__( 'Body Background Color:', 'reveal' ),
+                        'desc'          => esc_html__( 'Please Choose the Body Background Color', 'reveal' ),
+                        'default'       => '#fff',
+                        'transparent'   => false,
+                    ),
+
+                    array(
+                        'id'            => 'reveal-text-color',
+                        'type'          => 'color',
+                        'title'         => esc_html__( 'Body Text Color:', 'reveal' ),
+                        'desc'          => esc_html__( 'Please Choose the Body Text Color', 'reveal' ),
+                        'default'       => '#333',
+                        'transparent'   => false,
+                    ),
+
+                    array(
+                        'id'            => 'reveal-primary-color',
+                        'type'          => 'color',
+                        'title'         => esc_html__( 'Primary Color:', 'reveal' ),
+                        'desc'          => esc_html__( 'Please Choose the Primary Color', 'reveal' ),
+                        'default'       => '#295970',
+                        'transparent'   => false,
+                    ),
+
+                    array(
+                        'id'            => 'reveal-secondary-color',
+                        'type'          => 'color',
+                        'title'         => esc_html__( 'Secondary Color:', 'reveal' ),
+                        'desc'          => esc_html__( 'Please Choose the Secondary Color', 'reveal' ),
+                        'default'       => '#fce38a',
+                        'transparent'   => false,
+                    ),
+
+                    array(
+                        'id'            => 'reveal-border-color',
+                        'type'          => 'color',
+                        'title'         => esc_html__( 'Border Color:', 'reveal' ),
+                        'desc'          => esc_html__( 'Please Choose the Border Color', 'reveal' ),
+                        'default'       => '#ccc',
+                        'transparent'   => false,
+                    ),
+
+                    array(
+                        'id'            => 'reveal-secondary-bg',
+                        'type'          => 'color',
+                        'title'         => esc_html__( 'Secondary Background Color:', 'reveal' ),
+                        'desc'          => esc_html__( 'Please Choose the Secondary Background Color', 'reveal' ),
+                        'default'       => '#fafafa',
+                        'transparent'   => false,
+                    ),
+            ));
+
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Header', 'reveal' ),
-                'icon'             => 'dashicons dashicons-admin-settings',
                 'id'               => 'reveal-header-option',
                 'icon'			   => 'el el-website',
                 'customizer_width' => '500px',

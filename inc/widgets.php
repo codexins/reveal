@@ -26,7 +26,7 @@ class Reveal_Sidebar_Widget {
 			'name'				=> esc_html__('Sidebar (General)', 'reveal'),
 			'id'				=> 'reveal-sidebar-general',
 			'description'		=> esc_html__('This sidebar will show everywhere the sidebar is enabled, both Posts and Pages.', 'reveal'),	
-			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget clearfix">',
+			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget reveal-color-0 clearfix">',
 			'after_widget'  	=> '</div>',			
 		) );
 
@@ -34,7 +34,7 @@ class Reveal_Sidebar_Widget {
 			'name'				=> esc_html__('Sidebar (Pages)', 'reveal'),
 			'id'				=> 'reveal-sidebar-page',
 			'description'		=> esc_html__('This sidebar will show on all Pages.', 'reveal'),
-			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget clearfix">',
+			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget reveal-color-0 clearfix">',
 			'after_widget'  	=> '</div>',		
 		) );
 		
@@ -42,7 +42,7 @@ class Reveal_Sidebar_Widget {
 			'name' 				=> esc_html__('Sidebar (Blog)', 'reveal'),
 			'id'				=> 'reveal-sidebar-blog',
 			'description'		=> esc_html__('This sidebar will show on all blog Posts.', 'reveal'), 
-			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget clearfix">',
+			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget reveal-color-0 clearfix">',
 			'after_widget'  	=> '</div>',		
 		) );
 
@@ -50,7 +50,7 @@ class Reveal_Sidebar_Widget {
 			'name' 				=> esc_html__('Sidebar (Portfolio)', 'reveal'),
 			'id'				=> 'reveal-sidebar-portfolio-template',
 			'description'		=> esc_html__('This sidebar will show only on Portfolio Page.', 'reveal'), 
-			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget clearfix">',
+			'before_widget' 	=> '<div id="%1$s" class="%2$s sidebar-widget reveal-color-0 clearfix">',
 			'after_widget'  	=> '</div>',		
 		) );
 

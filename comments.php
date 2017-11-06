@@ -39,7 +39,7 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 			<nav id="comment-nav-below" class="navigation comment-navigation">
 				<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'reveal' ); ?></h2>
-				<div class="nav-links">
+				<div class="nav-links reveal-color-0 reveal-primary-btn">
 					<div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'reveal' ) ); ?></div>
 					<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'reveal' ) ); ?></div>
 				</div><!-- end of nav-links -->

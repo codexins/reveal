@@ -174,8 +174,8 @@ a.navbar-brand {
     font-size: 16px;
 }
 
-.btn-more a,
-.blog-more a {
+.cx-btn a,
+.cx-btn-grid a {
     font-size: 12px;
     letter-spacing: 1px;
     font-weight: bold; 
@@ -192,11 +192,6 @@ a.navbar-brand {
 .contact-intro h3 {
     font-weight: bold;
     font-size: 20px;
-}
-
-.socials i {
-    line-height: 30px;
-    text-align: center;
 }
 
 

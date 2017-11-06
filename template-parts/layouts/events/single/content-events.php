@@ -20,14 +20,14 @@ $e_en_time=date_create($e_end_time);
 <div class="event-single clearfix">
     
     <div class="col-md-4 col-sm-6">
-            <div class="single-event-details"> 
+            <div class="single-event-details reveal-color-0 reveal-border-1"> 
                 <?php if(!empty($e_start_date)): ?>
-	                <div class="event-schedule">
+	                <div class="event-schedule reveal-color-1 reveal-border-1">
 		                <div class="event-date"> <?php echo esc_html(date_format($e_st_date, "M d, Y")); ?> </div>
 	                </div>
                 <?php endif; ?>    
 
-                <div class="event-organizer">
+                <div class="event-organizer reveal-border-1">
 	                <h3 class="title">Details:</h3>
 
 	                <!-- Start Event Organizer's Name -->
@@ -52,7 +52,7 @@ $e_en_time=date_create($e_end_time);
                 </div>
 
                 <!-- Start Event Schedule -->
-                <div class="event-schedule-info">       
+                <div class="event-schedule-info reveal-border-1">       
 	                <h3 class="title"> Schedule </h3>
 	                     <?php if(!empty($e_start_date)): ?>    
 			                <p class="info-title"> <?php echo esc_html__('Date', 'reveal'); ?>: </p>
@@ -79,7 +79,7 @@ $e_en_time=date_create($e_end_time);
                 </div>
                 <!-- End Event Schedule -->
 
-                <div class="event-venue-details">
+                <div class="event-venue-details reveal-border-1">
                     <h3 class="title"><?php echo esc_html__('Venue', 'reveal')?></h3>
                     <p class="info-title-content">
                         <?php printf('%s', $e_address); ?>
@@ -87,7 +87,7 @@ $e_en_time=date_create($e_end_time);
                 </div>
                 <?php $event_cat_list = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );   
                 if(!empty($event_cat_list)):?>
-                    <div class="event-cat-details">
+                    <div class="event-cat-details reveal-border-1">
                         <h3 class="title"><?php echo esc_html__('Category', 'reveal')?></h3>
                         <p class="info-title-content">
                             <?php echo $event_cat_list; ?>
@@ -97,7 +97,7 @@ $e_en_time=date_create($e_end_time);
 
                 <?php $event_tag_list = get_the_term_list( $post->ID, 'events_tags', '', ', ', '' ); 
                 if(!empty($event_tag_list)):?>
-                    <div class="event-tag-details">
+                    <div class="event-tag-details reveal-border-1">
                         <h3 class="title"><?php echo esc_html__('Tags', 'reveal')?></h3>
                         <p class="info-title-content">
                             <?php echo $event_tag_list; ?>
@@ -112,7 +112,7 @@ $e_en_time=date_create($e_end_time);
         <div class="single-event-description"> 
             <!-- Event Title -->
             <div class="event-title">
-                <h2> <?php the_title(); ?> </h2>
+                <h2 class="reveal-color-1"> <?php the_title(); ?> </h2>
             </div>
 
             <div class="single-event-image">
@@ -122,7 +122,7 @@ $e_en_time=date_create($e_end_time);
             <div class="event-description"> <?php the_content(); ?> </div>
 
             <div class="event-venue">
-                <h4><i class="fa fa-map-signs"></i> Venue: </h4>
+                <h4 class="reveal-color-1"><i class="fa fa-map-signs"></i> Venue: </h4>
                 <div class="event-venue-info">
 	                <span><?php if(!empty($e_address)): printf('%s', $e_address); endif; ?></span>
                 </div>

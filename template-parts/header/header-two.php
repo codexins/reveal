@@ -5,7 +5,7 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
  ?>
 
-		<nav class="navbar header-two" data-spy="affix" data-offset-top="150"  >
+		<nav class="navbar header-two reveal-bg-0 reveal-color-2" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
 				<div class="row">
 				<!-- Brand and toggle get grouped for better mobile display -->
@@ -38,9 +38,9 @@ $responsive_header = reveal_option('reveal-responsive-version');
 							<div class="primary-nav">
 
 								<?php if( $responsive_header == 'left' ): ?>
-								<button id="c-button--slide-left" class="primary-nav-details">Menu
+								<button id="c-button--slide-left" class="primary-nav-details reveal-color-2">Menu
 								<?php else: ?>
-								<button id="c-button--slide-right" class="primary-nav-details">Menu
+								<button id="c-button--slide-right" class="primary-nav-details reveal-color-2">Menu
 								<?php endif; ?>
 									<span id="nav-icon2">
 									  <span></span>
@@ -59,17 +59,19 @@ $responsive_header = reveal_option('reveal-responsive-version');
 				<div class="clearfix"></div>
 				<div class="col-xs-12">
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
-					<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
-								else: ?>
-									<div class="main-menu">
-										<ul id="main_menu" class="sf-menu">
-												<li class="menu-item">
-													<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
-												</li>
-										</ul>
-									</div>
-					<?php endif; ?>
+				<div class="menu-wrapper">
+					<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
+									else: ?>
+										<div class="main-menu">
+											<ul id="main_menu" class="sf-menu">
+													<li class="menu-item">
+														<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
+													</li>
+											</ul>
+										</div>
+						<?php endif; ?>
+					</div>
 				</div>
 				
 				<!-- /.navbar-collapse -->

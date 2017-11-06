@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
         	?>         	
 
             <?php if($disable_footer == 0) { ?>
-            	<footer id="footer" class="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+            	<footer id="footer" class="footer reveal-bg-1 reveal-color-0" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
             		<div class="container">
             			<?php 
 

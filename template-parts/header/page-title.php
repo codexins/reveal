@@ -14,7 +14,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<div class="page-title-wrapper">
+					<div class="page-title-wrapper reveal-color-2">
 						<?php 
 						//set page-title position..
 						$title_position = reveal_option( 'page-title-position' );

@@ -23,12 +23,12 @@ $e_address_longitude = rwmb_meta('reveal_event_address_longitude', 'type=text');
 $e_st_date=date( get_option('date_format'), $e_start_date );
 ?>
 <article id="event-<?php esc_attr(the_ID()); ?>" <?php post_class(array('clearfix events-list')); ?>>
-    <div class="post-wrapper">
-        <div class="event-list-wrapper">
+    <div class="post-wrapper reveal-border-1">
+        <div class="event-list-wrapper reveal-bg-2">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-events" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">
                     <a href="<?php echo esc_url(get_the_permalink()); ?>"></a>
-                    <div class="events-date"><p><?php echo esc_html($e_st_date); ?></p></div>
+                    <div class="events-date reveal-bg-2"><p><?php echo esc_html($e_st_date); ?></p></div>
                 </div>
             <?php endif; ?>
 
@@ -36,7 +36,7 @@ $e_st_date=date( get_option('date_format'), $e_start_date );
                 <?php 
                 $event_list = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
                 if(!empty($event_list)): ?>
-                    <p class="list-tag"><i class="flaticon-bookmark"></i> 
+                    <p class="list-tag reveal-color-0"><i class="flaticon-bookmark"></i> 
                     <?php 
                        printf( '%s', $event_list );
                     ?>
@@ -67,7 +67,9 @@ $e_st_date=date( get_option('date_format'), $e_start_date );
                 ?>
                 </div>
 
-                <p class="blog-more"><a class="cx-btn" href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <div class="cx-btn reveal-color-0 reveal-primary-btn">
+                    <a class="cx-btn-text" href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
+                <div>
             </div>
         </div> <!-- end of event-list-wrapper -->
         

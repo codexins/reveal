@@ -7,10 +7,10 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 	<?php //if($header_top == 1): ?>
 
-		<nav class="navbar header-three" data-spy="affix" data-offset-top="150"  >
+		<nav class="navbar header-three reveal-bg-0" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
 				<div class="row">
-					<div class="flex-wrapper equal-align">
+					<div class="flex-wrapper equal-align reveal-color-2">
 					<div class="left-menu-wrapper">
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="hidden-xs left-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -58,9 +58,9 @@ $responsive_header = reveal_option('reveal-responsive-version');
 								<div class="primary-nav">
 
 									<?php if( $responsive_header == 'left' ): ?>
-									<button id="c-button--slide-left" class="primary-nav-details">Menu
+									<button id="c-button--slide-left" class="primary-nav-details reveal-color-2">Menu
 									<?php else: ?>
-									<button id="c-button--slide-right" class="primary-nav-details">Menu
+									<button id="c-button--slide-right" class="primary-nav-details reveal-color-2">Menu
 									<?php endif; ?>
 										<span id="nav-icon2">
 										  <span></span>

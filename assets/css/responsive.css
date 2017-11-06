@@ -249,7 +249,7 @@ Mobile Menu
 
 	.c-menu {
 	  position: fixed;
-	  z-index: 200;
+	  z-index: 1002;
 	  -webkit-transition: -webkit-transform 0.3s;
 	  -moz-transition: -webkit-transform 0.3s;
 	  -ms-transition: -webkit-transform 0.3s;
@@ -426,7 +426,7 @@ Mobile Menu
 
 	.c-mask {
 		position: fixed;
-		z-index: 100;
+		z-index: 1001;
 		top: 0;
 		left: 0;
 		overflow: hidden;
@@ -518,7 +518,6 @@ Mobile Menu
 		height: 3px;
 		width: 50%;
 		margin: 5px 0;
-		background: #fff;
 		opacity: 1;
 		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);

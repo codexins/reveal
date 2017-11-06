@@ -7,9 +7,9 @@ $responsive_header = reveal_option('reveal-responsive-version');
 
 	<?php //if($header_top == 1): ?>
 
-		<nav class="navbar header-four" data-spy="affix" data-offset-top="150"  >
+		<nav class="navbar header-four reveal-bg-0" data-spy="affix" data-offset-top="150"  >
 			<div class="container">
-				<div class="flex-wrapper equal-align">
+				<div class="flex-wrapper equal-align reveal-color-2">
 					<div class="logo-wrapper">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
@@ -39,9 +39,9 @@ $responsive_header = reveal_option('reveal-responsive-version');
 							<div class="primary-nav">
 
 								<?php if( $responsive_header == 'left' ): ?>
-								<button id="c-button--slide-left" class="primary-nav-details">Menu
+								<button id="c-button--slide-left" class="primary-nav-details reveal-color-2">Menu
 								<?php else: ?>
-								<button id="c-button--slide-right" class="primary-nav-details">Menu
+								<button id="c-button--slide-right" class="primary-nav-details reveal-color-2">Menu
 								<?php endif; ?>
 									<span id="nav-icon2">
 									  <span></span>

@@ -35,7 +35,7 @@ get_header(); ?>
 										<div class="team-single-wrapper">
 											<img src="<?php esc_url(the_post_thumbnail_url('square-two'));  ?>" alt="<?php echo (!empty($alt_tag)) ? esc_html($alt_tag) : get_the_title(); ?>">
 											<figcaption>
-												<div class="team-info-wrapper">
+												<div class="team-info-wrapper reveal-color-2">
 													<span><?php echo esc_html( $team_desig ); ?></span>
 													<h3><?php printf( '%s', the_title() ); ?></h3>
 												</div> <!-- end of team-info-wrapper -->

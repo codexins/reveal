@@ -11,7 +11,7 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <div class="blog-wrapper">
+    <div class="blog-wrapper reveal-bg-1">
         <?php 
         $post_metas = reveal_option('reveal_blog_post_meta');
         if ( ! post_password_required() ):
@@ -23,9 +23,9 @@
 
             $cx_rel = ( !empty( $link_rel ) ) ? 'rel="'. esc_attr( $link_rel ) .'"' : '';
             ?>
-            <div class="post-link">
+            <div class="post-link reveal-color-0">
                 <a href="<?php echo esc_url( $link_url ); ?>" <?php printf( '%s', $cx_rel ); ?> target="<?php if($link_target == '_self'): echo esc_attr('_self'); else: echo esc_attr('_blank'); endif; ?>">
-                    <div class="post-format-link">
+                    <div class="post-format-link reveal-border-1">
                         <span class="icon"></span>
                         <p><?php echo ( !empty( $link_txt ) ) ? $link_txt : get_the_title(); ?></p>
                     </div>
@@ -33,8 +33,8 @@
             </div>
 
         <?php endif; ?>
-        <div class="blog-content">
-            <h3 class="blog-title grid"  itemprop="headline">
+        <div class="blog-content reveal-border-1">
+            <h3 class="blog-title grid" itemprop="headline">
                 <a href="<?php the_permalink();?>" rel="bookmark" itemprop="url">
                 <?php 
                     $length_switch = reveal_option('reveal_blog_title_excerpt_length');
@@ -49,7 +49,7 @@
             </h3>
 
             <?php if(in_array(true, array_values($post_metas))): ?>
-                <ul class="list-inline post-detail post-meta">
+                <ul class="list-inline post-detail post-meta reveal-color-0">
                     <?php if($post_metas[1]): ?>
                          <li><i class="fa fa-pencil"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></li>
                     <?php endif; ?>
@@ -97,7 +97,9 @@
             <?php 
             $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
             if( $reveal_read_more == true ) { ?>
-            <a href="<?php the_permalink(); ?>" class="read-more"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
+            <div class="cx-btn-grid reveal-color-0 reveal-primary-btn">
+                <a class="cx-btn-text" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
+            </div>
             <?php
                 } 
             ?>

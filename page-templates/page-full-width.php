@@ -8,21 +8,22 @@
  */
 
 get_header(); ?>
-	<div class="inside-page">
 
-    <?php
-    if ( have_posts() ) :
+	<div id="content" class="main-content-wrapper inside-page">
 
-        /* Start the Loop */
-        while ( have_posts() ) : the_post();
+	    <?php
+	    if ( have_posts() ) :
 
-            get_template_part( 'template-parts/views/list/content', 'page' );
+	        /* Start the Loop */
+	        while ( have_posts() ) : the_post();
+
+	            get_template_part( 'template-parts/views/list/content', 'page' );
 
 
-        endwhile; 
+	        endwhile; 
 
-    endif; ?>
+	    endif; ?>
 
-   </div> 
+   </div> <!-- end of #content -->
 
 <?php get_footer(); ?>

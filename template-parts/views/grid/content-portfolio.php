@@ -13,7 +13,7 @@
 	<div class="portfolio-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-one' )); ?>"  alt="">                                          
-	        <ul class="portfolio-action-btn">
+	        <ul class="portfolio-action-btn reveal-color-0">
 	            <li>
 	                <a href="<?php echo esc_url(get_the_permalink()); ?>"><i class="flaticon-link"></i></a>
 	            </li>
@@ -25,7 +25,7 @@
 			$port_list = get_the_term_list( $post->ID, 'portfolio-category', '<li>', ', </li><li>', '</li>' );
 	        if( !empty( $port_list ) ):
 	        ?>
-				<ul class="portfolio-cat">
+				<ul class="portfolio-cat reveal-color-0">
 					<?php printf( '%s', $port_list ); ?>
 				</ul>
 			<?php endif; ?>

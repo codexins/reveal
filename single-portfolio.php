@@ -33,7 +33,7 @@ get_header(); ?>
 					        <div class="row">
 					        	<div class="recent-portfolio">
 						            <div class="col-sm-12">
-					                  <h2><?php echo esc_html__('Recent Portfolios', 'codexin'); ?></h2>
+					                  <h2><?php echo esc_html__('Recent Portfolios', 'reveal'); ?></h2>
 						            </div>
 						           <div class="reveal-portfolio-wrapper">
 										<?php 
@@ -49,12 +49,12 @@ get_header(); ?>
 												//Start loop here...
 										 		while( $portfolio->have_posts() ) : $portfolio->the_post();
 										?>
-												    <div class="recent-portfolio-wrapper">
+												    <div class="recent-portfolio-wrapper reveal-color-2">
 												        <img src="<?php the_post_thumbnail_url('rectangle-two') ?>" alt="">
 												        <div class="portfolio-image-content">
 												            <i class="et-focus" aria-hidden="true"></i>
 												            <h3><a href="<?php the_permalink()?>"><?php the_title() ?></a></h3>
-												            <p><a href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More', 'codexin'); ?></a></p>
+												            <p><a href="<?php the_permalink(); ?>"><?php echo esc_html__('Read More', 'reveal'); ?></a></p>
 												        </div>
 												    </div>
 					          				<?php endwhile; endif; //End check-posts if()....

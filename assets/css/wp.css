@@ -113,7 +113,7 @@ a img.aligncenter {
     transition: all .3s;
 }
 
-span.page-links-title {
+.page-links span.page-links-title {
     border:0;
     margin-left: 0;
     padding-left: 0;
@@ -251,7 +251,8 @@ article {
 
 #wp-calendar td,
 #wp-calendar th {
-    padding:0;
+    padding: 0;
+    border: 0;
 }
 
 #primary,

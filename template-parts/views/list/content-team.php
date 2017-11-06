@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <div class="post-wrapper">
+    <div class="post-wrapper reveal-border-1">
         <?php if(has_post_thumbnail()): 
 
             $image      = wp_prepare_attachment_for_js( get_post_thumbnail_id( $post->ID ) );
@@ -42,14 +42,14 @@
 
         <div class="col-sm-8 team-single-content-wrapper">
             <?php $team_name = get_the_title(); ?>
-            <h2 class="tm-name"><?php if( !empty( $team_name ) ) : echo esc_html( $team_name ); endif; ?></h2>
+            <h2 class="tm-name reveal-color-1"><?php if( !empty( $team_name ) ) : echo esc_html( $team_name ); endif; ?></h2>
             <p class="desig">
                 <?php 
                     if( !empty( $desig ) ) : echo esc_html( $desig ); endif;
                 ?>
             </p>
             <p> <?php the_content(); ?> </p>
-            <div class="team-card-wrapper">
+            <div class="team-card-wrapper reveal-color-2">
                 <?php if( ! empty( $company ) ): ?>
                     <p class="company-info company-name"><?php echo $company; ?></p>
                 <?php endif; 

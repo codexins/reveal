@@ -11,7 +11,7 @@
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-    <div class="post-wrapper">
+    <div class="post-wrapper reveal-border-1">
     <?php 
     $args_meta = is_single() ? 'reveal_blog_post_single_meta' : 'reveal_blog_post_meta';
     $post_metas = reveal_option($args_meta);
@@ -45,7 +45,7 @@
 
      ?>   
         <?php if(in_array(true, array_values($post_metas))): ?>
-            <ul class="list-inline post-detail">
+            <ul class="list-inline post-detail reveal-color-0 reveal-border-1">
                 <?php if($post_metas[1]): ?>
                 <li><i class="fa fa-pencil"></i> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
                     <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author">
@@ -92,7 +92,7 @@
         
         <?php else: ?>
 
-        <h2 class="post-title" itemprop="headline"><span itemprop="name"><?php the_title(); ?></span></h2>
+        <h2 class="post-title reveal-color-1" itemprop="headline"><span itemprop="name"><?php the_title(); ?></span></h2>
 
         <?php endif; ?>
 
@@ -126,7 +126,9 @@
                 $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
                 if( $reveal_read_more == true ): ?>
 
-                <p class="blog-more"><a class="cx-btn" href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <div class="cx-btn reveal-color-0 reveal-primary-btn">
+                    <a class="cx-btn-text" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
+                </div>
 
             <?php
                 endif;
@@ -144,7 +146,7 @@
             <?php endif; ?>
 
             <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
-                <div class="share socials">            
+                <div class="share socials reveal-color-0 reveal-primary-btn">            
                     <div class="caption"><span class="flaticon-share-1"></span> <?php esc_html_e('Share :', 'reveal'); ?></div>    
                     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink());?>"><i class="fa fa-facebook"></i></a>
                     <a target="_blank" href="https://twitter.com/home?status=<?php esc_url(the_permalink()); ?>"><i class="fa fa-twitter"></i></a>

@@ -12,17 +12,17 @@
 $project_comple_date=date_create($cadate);
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class(array('clearfix portfolio-list')); ?> itemscope itemtype="http://schema.org/Event">
-    <div class="post-wrapper">
-        <div class="port-list-wrapper">
+    <div class="post-wrapper reveal-border-1">
+        <div class="port-list-wrapper reveal-bg-2">
             <?php if(has_post_thumbnail()): ?>
                 <div class="thumb-port" style="background-image:url('<?php the_post_thumbnail_url('reveal-rectangle-one') ?>');">
                     <a href="<?php echo esc_url(get_the_permalink()); ?>"></a>
-                    <div class="port-date"><p><?php echo esc_html(date_format($project_comple_date, "d M Y")); ?></p></div>
+                    <div class="port-date reveal-bg-2"><p><?php echo esc_html(date_format($project_comple_date, "d M Y")); ?></p></div>
                 </div>
             <?php endif; ?>
 
             <div class="desc-port">
-                <p class="list-tag"><i class="flaticon-bookmark"></i> 
+                <p class="list-tag reveal-color-0"><i class="flaticon-bookmark"></i> 
                 <?php $cat_list = get_the_term_list( $post->ID, 'portfolio-category', '', ', ', '' );
                    if(!empty($cat_list)): echo $cat_list; endif;
                   ?>
@@ -52,7 +52,9 @@ $project_comple_date=date_create($cadate);
                 ?>
                 </div>
 
-                <p class="blog-more"><a class="cx-btn" href="<?php echo esc_url(get_the_permalink()); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a></p>
+                <div class="cx-btn reveal-color-0 reveal-primary-btn">
+                    <a class="cx-btn-text" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>
+                </div>
             </div>
         </div>
         

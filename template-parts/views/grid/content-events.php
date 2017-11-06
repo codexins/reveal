@@ -13,7 +13,7 @@
 	<div class="events-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php echo esc_url(the_post_thumbnail_url( 'rectangle-four' )); ?>"  alt="">                                          
-	        <ul class="events-action-btn">
+	        <ul class="events-action-btn reveal-color-0">
 	            <li>
 	                <a class="venobox" href="<?php echo esc_url(get_the_permalink()); ?>" itemprop="url"><i class="flaticon-link"></i></a>
 	            </li>
@@ -61,7 +61,7 @@
 	        </div>
 	    </div>  <!-- end of events-description  -->
 
-        <div class="events-grid-more">
+        <div class="events-cx-btn reveal-color-0">
         	<a href="<?php echo esc_url(get_the_permalink());?>" itemprop="url"><?php echo esc_html__('Read More', 'reveal'); ?></a>
         </div>
 	</div>
