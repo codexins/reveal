@@ -5,8 +5,11 @@ body {
     font-weight: 400;
 }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     margin-top: 0;
     line-height: 1.1em;
 }
@@ -19,6 +22,18 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4. .h5, .h6 {
 
 .primary-title {
     font-family: 'Montserrat', sans-serif;
+    line-height: 33px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+}
+
+.secondary-title {
+    font-family: 'Lobster', cursive;
+    line-height: 26px;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 24px;
 }
 
 h1 { font-size: 32px; }
@@ -31,301 +46,3 @@ h6 { font-size: 15px; }
 h1, h2, h3, h4, h5, h6, p, ul, ol, table, dl {
     margin-bottom: 25px;
 }
-
-
-
-.project .counter,
-.project p,
-.single-service .media-heading,
-a.navbar-brand,
-.testimonials .media-heading {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.quote-text p.quote-author-name,
-.secondary-title {
-    font-family: 'Lobster', cursive;
-}
-
-.primary-title {
-    line-height: 33px;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 30px;
-}
-
-.secondary-title {
-    line-height: 26px;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 24px;
-}
-
-a.navbar-brand {
-    font-size: 30px;
-}
-
-
-
-/***********************************
-    002 - About Section
-***********************************/
-
-
-
-.single-content {
-    font-size: 24px;
-}
-
-.single-content p {
-    font-size: 18px;
-}
-
-/***********************************
-    003 - Project Summary Section
-***********************************/
-
-.project .counter {
-    font-size: 72px;
-    font-weight: bold;
-}
-
-.project p {
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size: 14px;
-}
-
-/***********************************
-    004 - Services Section
-***********************************/
-.single-service .media-heading {
-    font-size: 16px;
-    font-weight: bold;
-
-}
-
-/***********************************
-    006 - Events  Section
-***********************************/
-
-.events-description .panel-title {
-    font-family: montserrat;
-    font-size: 14px;
-}
-.events-description .panel-title i {
-    font-size: 16px;
-}
-.events-description .panel-title a::after {
-    font-family: FontAwesome;
-}
-.events-description .panel-title a.collapsed::after {
-    font-family: FontAwesome;
-}
-
-
-/***********************************
-    007 - Quote Section
-***********************************/
-
-.quote-author-thumb i {
-    font-size: 60px;
-}
-.quote-text p {
-    font-size: 18px;
-    font-style: italic;
-}
-
-
-
-/***********************************
-    010 - Portfolio Section
-***********************************/
-
-
-/***********************************
-    011 - Testominial Section
-***********************************/
-.testimonials .media-heading {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-
-
-/***********************************
-    012 - Blog Section
-***********************************/
-.meta {
-    text-align: center;
-}
-
-.meta p:first-child {
-    font-weight: bold;
-    font-size: 26px;
-}
-
-.meta p:last-child {
-    font-style: italic;
-}
-
-.blog-title {
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.cx-btn a,
-.cx-btn-grid a {
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: bold; 
-}
-
-.blog-info i:last-child {
-    font-size: 12px;
-}
-
-
-/***********************************
-    013 - Location
-***********************************/
-.contact-intro h3 {
-    font-weight: bold;
-    font-size: 20px;
-}
-
-
-/***********************************
-    014 - Footer Section
-***********************************/
-.footer h1 {
-    font-weight: bold;
-    font-size: 46px;
-}
-
-p.followers {
-    font-weight: bold;
-}
-
-p.followers span {
-    font-size: 20px;
-    font-style: italic;
-}
-
-.footer-left i {
-    text-align: center;
-    line-height: 20px;
-}
-
-.widget-title {
-    font-weight: bold;
-}
-
-.twitter-feed-right h4,
-.posts-single-right h4 {
-    font-size: 14px;
-    font-weight: bold;
-}
-
-
-.twitter-feed-right p {
-    font-size: 14px;
-    line-height: 1.5em;
-    margin-bottom: 5px;
-}
-
-
-.codexin-popular-posts-widget .media p {
-    font-style: italic;
-    font-size: 80%;
-}
-
-.codexin-popular-posts-widget .media img {
-    margin-right: 10px;
-}
-
-
-a.more,
-a.more:hover {
-    font-size: 80%;
-}
-
-
-/***********************************
-    015 - Back to top button
-***********************************/
-#toTop {
-    text-align: center;
-    line-height: 40px;
-}
-
-.cssload-container {
-    text-align: center;
-}
-
-.service i {
-    font-size: 50px;
-    text-align: center;
-}
-
-/* Wrapper */
-.cx-button {
-    font-size: 1em;
-    line-height: 1;
-    font-weight: normal;
-}
-
-/* Count */
-
-.loader {
-  font-size: 1em;
-}
-
-
-/*
-Flaticon icon font: Flaticon
-Creation date: 26/07/2017 06:49
-*/
-
-/*@font-face {
-  font-family: "Flaticon";
-  src: url("../fonts/Flaticon.eot");
-  src: url("../fonts/Flaticon.eot?#iefix") format("embedded-opentype"),
-       url("../fonts/Flaticon.woff") format("woff"),
-       url("../fonts/Flaticon.ttf") format("truetype"),
-       url("../fonts/Flaticon.svg#Flaticon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-  @font-face {
-    font-family: "Flaticon";
-    src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
-  }
-}
-
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
-  font-family: Flaticon;
-  font-style: normal;
-}
-
-.flaticon-technology:before { content: "\f100"; }
-
-
-
-.socials .flaticon-technology:before {
-    font-size: 15px;
-    font-weight: bold;
-}*/
-
-
-
-
-
-
-
-
-
-

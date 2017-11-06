@@ -227,8 +227,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Secondary Title Typography', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify secondary title font properties.', 'reveal' ),
                         'google'   => true,
-                        'output'   => array('.secondary-title'),
                         'color'    => false,
+                        'output'   => array('.secondary-title', '.sec-font'),
                         'default'  => array(
                             'font-size'   => '24px',
                             'line-height' => '26px',
@@ -243,8 +243,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Typography h1', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h1 font properties.', 'reveal' ),
                         'google'   => true,
-                        'output'   => array('h1'),
                         'color'    => false,
+                        'output'   => array('h1', '.h1'),
                         'default'  => array(
                             'font-size'   => '32px',
                             'font-family' => 'Montserrat',
@@ -257,7 +257,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'          => 'reveal-typography-h2',
                         'type'        => 'typography',
                         'title'       => esc_html__( 'Typography h2', 'reveal' ),
-                        'output'      => array( 'h2' ),
+                        'output'      => array( 'h2', '.h2' ),
                         'google'      => true,
                         'subtitle'    => esc_html__( 'Typography option with each property can be called individually.', 'reveal' ),
                         'color'    => false,
@@ -275,8 +275,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Typography h3', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h3 font properties.', 'reveal' ),
                         'google'   => true,
-                        'output'   => array('h3'),
                         'color'    => false,
+                        'output'   => array('h3', '.h3'),
                         'default'  => array(
                             'font-size'   => '24px',
                             'font-family' => 'Montserrat',
@@ -305,8 +305,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Typography h5', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h5 font properties.', 'reveal' ),
                         'google'   => true,
-                        'output'   => array('h5'),
                         'color'    => false,
+                        'output'   => array('h5', '.h5'),
                         'default'  => array(
                             'font-size'   => '18px',
                             'font-family' => 'Montserrat',
@@ -320,15 +320,16 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Typography h6', 'reveal' ),
                         'subtitle' => esc_html__( 'Specify h6 font properties.', 'reveal' ),
                         'google'   => true,
-                        'output'   => array('h6'),
                         'color'    => false,
+                        'output'   => array('h6', '.h6'),
                         'default'  => array(
                             'font-size'   => '15px',
                             'font-family' => 'Montserrat',
                             'font-weight' => '400',
                         ),
                     ),
-                ));
+                )
+            );
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Colors', 'reveal' ),
