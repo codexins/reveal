@@ -27,6 +27,10 @@ elseif ( is_home() && is_active_sidebar('reveal-sidebar-blog') ) :
 
 	dynamic_sidebar('reveal-sidebar-blog');
 
+elseif ( is_archive() && is_active_sidebar('reveal-sidebar-blog') ) : 
+
+	dynamic_sidebar('reveal-sidebar-blog');
+
 else: 
 
 	dynamic_sidebar('reveal-sidebar-general');

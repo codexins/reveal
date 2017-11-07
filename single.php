@@ -1,45 +1,83 @@
 <?php
 /**
- * The main template file
+ * The template for displaying all single posts.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package reveal
+ * @subpackage Templates
  */
+
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+
+$reveal_single_layout           = !empty( reveal_option( 'reveal-single-layout' ) ) ? reveal_option( 'reveal-single-layout' ) : 'right';
+$reveal_single_column           = ( $reveal_single_layout == 'left' || $reveal_single_layout == 'right' ) ? '8' : '12';
+$reveal_single_sidebar_class    = ( $reveal_single_layout == 'no' ) ? '' : '4';
+$reveal_single_pull_class       = ( $reveal_single_layout == 'left') ? ' pull-right' : '';
+$reveal_single_offset_class     = ' col-md-offset-1';
 
 get_header(); ?>
 
-	<div id="content" class="main-content-wrapper site-content">
-		<div class="container">
-			<div class="row">
+    <div id="content" class="main-content-wrapper site-content">
+        <div class="container">
+            <div class="row">
 
-			<?php 
+                <?php 
 
-            $reveal_blog_layout = $reveal_option['reveal-single-layout'];
+                    printf(
+                        '<div class="col-sm-%1$s col-md-%1$s%2$s%3$s">',
+                        esc_attr( $reveal_single_column ),
+                        esc_attr( $reveal_single_pull_class ),
+                        ( $reveal_single_layout == 'left' ) ? esc_attr( $reveal_single_offset_class ) : ''
+                    );
 
-            if($reveal_blog_layout == 1):
-                get_template_part('template-parts/layouts/blog/single/no', 'sidebar');
+                    ?>
+                        <div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-            elseif($reveal_blog_layout == 2):
-                get_template_part('template-parts/layouts/blog/single/left', 'sidebar');
+                            <?php
+                                /* Start the Loop */
+                                while ( have_posts() ) : the_post();
 
-            elseif($reveal_blog_layout == 3):
-                get_template_part('template-parts/layouts/blog/single/right', 'sidebar');
+                                    if( function_exists( 'codexin_set_post_views' ) ):
+                                        codexin_set_post_views(get_the_ID());
+                                    endif;
+                                    
+                                    get_template_part( 'template-parts/views/list/content', get_post_format()  );
 
-            else:
-                get_template_part('template-parts/layouts/blog/single/right', 'sidebar');
+                                    if( reveal_option( 'reveal_single_button' ) ):
+                                        reveal_post_link();
+                                    endif;
 
-            endif;
-            
-			 ?>
+                                    if( reveal_option( 'reveal_post_comments' ) ):
+                                        comments_template('', true);
+                                    endif;
+                                    
+                                endwhile; 
+                            ?>
 
-			</div> <!-- end of row -->
-		</div> <!-- end of container -->
-	</div> <!-- end of #content -->
+                        </div><!-- end of #primary -->
+                    </div> <!-- end of col -->
+                
+                <?php if( $reveal_single_layout !== 'no' ) { 
+
+                    printf(
+                        '<div class="col-sm-%1$s col-md-%2$s%3$s">',
+                        esc_attr( $reveal_single_sidebar_class ),
+                        esc_attr( $reveal_single_sidebar_class - 1 ),
+                        ( $reveal_single_layout == 'right' ) ? esc_attr( $reveal_single_offset_class ) : ''
+                    );
+
+                    ?>                    
+                        <div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+                            <?php get_sidebar() ?>
+                        </div><!-- end of #secondary -->
+                    </div> <!-- end of col -->
+
+                <?php } ?>
+
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of #content -->
 
 <?php get_footer(); ?>

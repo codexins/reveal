@@ -633,20 +633,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
-                            '1' => array(
-                                'alt' => '1 Column',
-                                'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+                            'no'        => array(
+                                'alt'   => '1 Column',
+                                'img'   => ReduxFramework::$_url . 'assets/img/1col.png'
                             ),
-                            '2' => array(
-                                'alt' => '2 Column Left',
-                                'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+                            'left'      => array(
+                                'alt'   => '2 Column Left',
+                                'img'   => ReduxFramework::$_url . 'assets/img/2cl.png'
                             ),
-                            '3' => array(
-                                'alt' => '2 Column Right',
-                                'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+                            'right'     => array(
+                                'alt'   => '2 Column Right',
+                                'img'   => ReduxFramework::$_url . 'assets/img/2cr.png'
                             )
                         ),
-                        'default'  => '3'
+                        'default'  => 'right'
                     ),
 
                     array(
@@ -771,20 +771,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle' => esc_html__( 'Select Single post Page Layout', 'reveal' ),
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         'options'  => array(
-                            '1' => array(
+                            'no'    => array(
                                 'alt' => '1 Column',
                                 'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                             ),
-                            '2' => array(
+                            'left'  => array(
                                 'alt' => '2 Column Left',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                             ),
-                            '3' => array(
+                            'right' => array(
                                 'alt' => '2 Column Right',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                             )
                         ),
-                        'default'  => '3'
+                        'default'  => 'right'
                     ),
 
                     array(

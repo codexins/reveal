@@ -5,6 +5,7 @@
  * The template for displaying the 404 page
  *
  * @package reveal
+ * @subpackage Templates
  */
 
 
@@ -23,7 +24,7 @@ get_header(); ?>
 							<p><?php esc_html_e('Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'reveal') ?></p>
 							<?php get_search_form() ?>
 						</article>
-					</div><!-- #primary -->
+					</div><!-- end of #primary -->
 				</div> <!-- end of col -->
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->

@@ -920,6 +920,8 @@ div.blog-list-wrapper {
     -o-transition: all .3s;
     transition: all .3s;
     border: 1px solid;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .cx-btn-grid a {
@@ -2573,6 +2575,8 @@ a.event-image-popup:focus {
     -o-transition: all .3s;
     transition: all .3s;
     border: 1px solid;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 .comment-navigation .nav-previous {
@@ -2586,6 +2590,7 @@ a.event-image-popup:focus {
 .comment-navigation {
     display: block;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 .nav-previous, .nav-next {
