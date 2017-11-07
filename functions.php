@@ -86,7 +86,7 @@ class Reveal {
 
     	// Set content width for custom media information
 		if ( ! isset( $content_width ) ) {
-			$content_width = 800;
+			$content_width = 1140;
 		}
 
 	}
