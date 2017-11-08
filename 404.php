@@ -18,13 +18,13 @@ get_header(); ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12">
-					<div id="primary" class="site-main text-center">
+					<main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<article>
 							<h2 class="reveal-color-1"><?php esc_html_e('The page you are trying to access does not exist.', 'reveal') ?></h2>
 							<p><?php esc_html_e('Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'reveal') ?></p>
 							<?php get_search_form(); ?>
 						</article>
-					</div><!-- end of #primary -->
+					</main><!-- end of #primary -->
 				</div> <!-- end of col -->
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->

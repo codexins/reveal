@@ -34,7 +34,7 @@ get_header(); ?>
                 );
 
                     ?>
-                        <div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+                        <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
                             <?php
 
@@ -43,7 +43,7 @@ get_header(); ?>
 
                             ?>
 
-                        </div><!-- end of #primary -->
+                        </main><!-- end of #primary -->
                     </div> <!-- end of col -->
                 
                 <?php 
@@ -60,14 +60,14 @@ get_header(); ?>
                     );
 
                 ?>                    
-                        <div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+                        <aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
                             <?php 
 
                             // Get active assigned sidebar
                             get_sidebar();
 
                             ?>
-                        </div><!-- end of #secondary -->
+                        </aside><!-- end of #secondary -->
                     </div> <!-- end of col -->
 
                 <?php } //end of sidebar condition ?>

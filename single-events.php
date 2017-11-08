@@ -16,14 +16,16 @@ get_header(); ?>
     <div id="content" class="main-content-wrapper site-content">
         <div class="container">
             <div class="row">
+                <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
                 
-                <?php 
+                    <?php 
 
-                // Go to the events loop template
-				get_template_part( 'template-parts/loops/events', 'loop' );
+                    // Go to the events loop template
+    				get_template_part( 'template-parts/loops/events', 'loop' );
 
-		        ?>
+    		        ?>
                 
+                </main> <!-- end of #primary -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div> <!-- end of #content -->

@@ -876,20 +876,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
-                            '1' => array(
+                            'no'    => array(
                                 'alt' => '1 Column',
                                 'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                             ),
-                            '2' => array(
+                            'left'  => array(
                                 'alt' => '2 Column Left',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                             ),
-                            '3' => array(
+                            'right' => array(
                                 'alt' => '2 Column Right',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                             )
                         ),
-                        'default'  => '1'
+                        'default'  => 'no'
                     ),
 
                     array(
@@ -897,9 +897,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'      => 'select',
                         'title'     => esc_html__('Portfolio Archive Posts Style', 'reveal'),
                         'desc'      => esc_html__('Choose Portfolio Archive Posts Style', 'reveal'),
-                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
+                        'required'  => array( 'reveal_enable_portfolio', '=', '1' ),
                         'options'   => array(
-                            'grid'=> esc_html__( 'Grid', 'reveal' ),
+                            'grid'  => esc_html__( 'Grid', 'reveal' ),
                             'list'  => esc_html__( 'List', 'reveal' ),
                         ),
                         'default'   => 'list'
@@ -954,6 +954,18 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle'  => esc_html__('Control the Excerpt Length for Portfolios (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Portfolio Archive Page.", 'reveal'),
                         // 'default'   => 20,
+                    ),
+
+                    array(
+                        'id'        => 'reveal_portfolio_pagination',
+                        'type'      => 'select',
+                        'title'     => esc_html__('Portfolio Archive Pagination Type', 'reveal'),
+                        'desc'      => esc_html__('Select the Pagination Type.', 'reveal'),
+                        'options'   => array(
+                            'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
+                            'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
+                        ),
+                        'default'   => 'button'
                     ),
 
                     array(

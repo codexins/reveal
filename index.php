@@ -41,7 +41,7 @@ get_header(); ?>
                 );
 
                 ?>
-                    <div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+                    <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
                         <?php 
                             echo ( $post_style == 'grid' ) ? '<div class="blog-grid-wrapper"><div class="row">' : '<div class="blog-list-wrapper">' ;
@@ -52,7 +52,7 @@ get_header(); ?>
                             echo ( $post_style ) == 'grid' ? '</div></div> <!-- end of blog-grid-wrapper -->' : '</div> <!-- end of blog-list-wrapper -->' ;
                         ?>
 
-                    </div><!-- end of #primary -->
+                    </main><!-- end of #primary -->
                 </div> <!-- end of col -->
                 
                 <?php 
@@ -69,14 +69,14 @@ get_header(); ?>
                     );
 
                 ?>                    
-                        <div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+                        <aside id="secondary" class="widget-area" itemscope itemtype="http://schema.org/WPSideBar">
                             <?php 
 
                             // Get active assigned sidebar
                             get_sidebar();
 
                             ?>
-                        </div><!-- end of #secondary -->
+                        </aside><!-- end of #secondary -->
                     </div> <!-- end of col -->
 
                 <?php } //end of sidebar condition ?>
