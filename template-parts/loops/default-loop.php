@@ -1,0 +1,77 @@
+<?php
+
+
+global $wp_query;
+
+$archive_posts          = is_archive();
+$blog_posts 	        = is_home() && ! is_archive();
+$search_posts           = is_search() && ! $blog_posts;
+$single_post            = is_singular() && ! $blog_posts && ! $search_posts ;
+$post_style             = reveal_option( 'reveal_blog_style' );
+$grids                  = reveal_option( 'reveal_grid_columns' );
+$posts_nav		        = reveal_option( 'reveal_pagination' );
+$single_nav		        = reveal_option( 'reveal_single_button' );
+$single_comment	        = reveal_option( 'reveal_post_comments' );
+
+if ( have_posts() ) {
+
+    $i = 0;
+
+    /* Start the Loop */
+    while ( have_posts() ) {
+
+    	the_post();
+
+    	if( $single_post ) {
+            ( function_exists( 'codexin_set_post_views' ) ) ? codexin_set_post_views( get_the_ID() ) : '';
+    	}
+
+        $i++;
+
+        if( ( $post_style == 'grid' ) && $blog_posts && ! $single_post && ! $search_posts ) {
+
+            $grid_columns = 12 / $grids;
+            printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
+
+                get_template_part( 'template-parts/views/grid/content', get_post_format() );
+
+            echo '</div><!-- end of post-single-wrap -->';
+            echo ( $i % $grids == 0 ) ? '<div class="clearfix"></div>' : '';
+
+        } elseif( $search_posts && ! $single_post ) {
+
+            get_template_part( 'template-parts/views/list/content', 'search' );
+
+        } else {
+
+            get_template_part( 'template-parts/views/list/content', get_post_format() );
+
+        }
+
+		if( $single_post ) {
+			( $single_nav ) ? reveal_post_link() : '';
+			( $single_comment ) ? comments_template('', true) : '';
+		}
+
+    }
+
+    if( ! $single_post ) {
+
+	    echo '<div class="clearfix"></div>';	              
+	    echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+
+	    if( $posts_nav == 'numbered' ) {
+	        echo reveal_posts_link_numbered();
+	    } else {
+	        reveal_posts_link();
+	    }
+
+	    echo ( $post_style == 'grid' ) ? '</div>' : '' ;
+
+	}
+
+} else {
+
+    get_template_part( 'template-parts/views/list/content', 'none' );
+
+}

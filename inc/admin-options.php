@@ -650,7 +650,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id'        => 'reveal_post_style',
+                        'id'        => 'reveal_blog_style',
                         'type'      => 'select',
                         'title'     => esc_html__('Blog & Archive Posts Style', 'reveal'),
                         'desc'      => '',
@@ -672,7 +672,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             '4' => esc_html__( '4 columns', 'reveal' ) ,
                         ),
                         'default' => '2',
-                        'required' => array('reveal_post_style','equals', array( 'grid' ) ),
+                        'required' => array('reveal_blog_style','equals', array( 'grid' ) ),
                     ),
 
                     array(
@@ -1016,20 +1016,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
-                            '1' => array(
+                            'no' => array(
                                 'alt' => '1 Column',
                                 'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                             ),
-                            '2' => array(
+                            'left' => array(
                                 'alt' => '2 Column Left',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                             ),
-                            '3' => array(
+                            'right' => array(
                                 'alt' => '2 Column Right',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                             )
                         ),
-                        'default'  => '1'
+                        'default'  => 'no'
                     ),
 
                     array(

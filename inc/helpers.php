@@ -292,7 +292,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
             while ( have_posts() ) : the_post();
 
                 $i++;
-                $post_style = reveal_option( 'reveal_post_style' );
+                $post_style = reveal_option( 'reveal_blog_style' );
                 if( $post_style == 'grid' ):
 
                     $grid_columns = 12/reveal_option('reveal_grid_columns');

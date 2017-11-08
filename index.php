@@ -15,13 +15,14 @@
 
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-$reveal_blog_layout     = !empty( reveal_option('reveal-blog-layout') ) ? reveal_option('reveal-blog-layout') : 'right';
-$reveal_blog_column     = ( $reveal_blog_layout == 'left' || $reveal_blog_layout == 'right' ) ? '8' : '12';
-$reveal_sidebar_class   = ( $reveal_blog_layout == 'no' ) ? '' : '4';
-$reveal_pull_class      = ( $reveal_blog_layout == 'left') ? ' pull-right' : '';
-$reveal_offset_class    = ' col-md-offset-1';
+$layout          = !empty( reveal_option('reveal-blog-layout') ) ? reveal_option('reveal-blog-layout') : 'right';
+$post_style      = !empty( reveal_option( 'reveal_blog_style' ) ) ? reveal_option( 'reveal_blog_style' ) : 'list';
+$column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
+$sidebar_class   = ( $layout == 'no' ) ? '' : '4';
+$pull_class      = ( $layout == 'left') ? ' pull-right' : '';
+$offset_class    = ' col-md-offset-1';
 
 get_header(); ?>
 
@@ -31,38 +32,54 @@ get_header(); ?>
 
                 <?php 
 
-                    printf(
-                        '<div class="col-sm-%1$s col-md-%1$s%2$s%3$s">',
-                        esc_attr( $reveal_blog_column ),
-                        esc_attr( $reveal_pull_class ),
-                        ( $reveal_blog_layout == 'left' ) ? esc_attr( $reveal_offset_class ) : ''
-                    );
+                // Assigning Wrapper Column for primary content
+                printf(
+                    '<div class="col-sm-%1$s col-md-%1$s%2$s%3$s">',
+                    esc_attr( $column ),
+                    esc_attr( $pull_class ),
+                    ( $layout == 'left' ) ? esc_attr( $offset_class ) : ''
+                );
 
-                    ?>
-                        <div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
-                            <?php echo ( ( reveal_option( 'reveal_post_style' ) == 'grid' ) ) ? '<div class="blog-grid-wrapper"><div class="row">' : '<div class="blog-list-wrapper">' ; ?>
-                                <?php reveal_loop(); ?>
-                            <?php echo ( ( reveal_option( 'reveal_post_style' ) == 'grid' ) ) ? '</div></div>' : '</div>' ; ?>                                
+                ?>
+                    <div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-                        </div><!-- end of #primary -->
-                    </div> <!-- end of col -->
+                        <?php 
+                            echo ( $post_style == 'grid' ) ? '<div class="blog-grid-wrapper"><div class="row">' : '<div class="blog-list-wrapper">' ;
+
+                                // Go to the default loop template
+                                get_template_part( 'template-parts/loops/default', 'loop' );
+
+                            echo ( $post_style ) == 'grid' ? '</div></div> <!-- end of blog-grid-wrapper -->' : '</div> <!-- end of blog-list-wrapper -->' ;
+                        ?>
+
+                    </div><!-- end of #primary -->
+                </div> <!-- end of col -->
                 
-                <?php if( $reveal_blog_layout !== 'no' ) { 
+                <?php 
 
+                // Checking the need of sidebar
+                if( $layout !== 'no' ) {
+
+                    // Assinging wrapper column for sidebar
                     printf(
                         '<div class="col-sm-%1$s col-md-%2$s%3$s">',
-                        esc_attr( $reveal_sidebar_class ),
-                        esc_attr( $reveal_sidebar_class - 1 ),
-                        ( $reveal_blog_layout == 'right' ) ? esc_attr( $reveal_offset_class ) : ''
+                        esc_attr( $sidebar_class ),
+                        esc_attr( $sidebar_class - 1 ),
+                        ( $layout == 'right' ) ? esc_attr( $offset_class ) : ''
                     );
 
-                    ?>                    
+                ?>                    
                         <div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
-                            <?php get_sidebar() ?>
+                            <?php 
+
+                            // Get active assigned sidebar
+                            get_sidebar();
+
+                            ?>
                         </div><!-- end of #secondary -->
                     </div> <!-- end of col -->
 
-                <?php } ?>
+                <?php } //end of sidebar condition ?>
 
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->

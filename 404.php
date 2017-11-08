@@ -10,7 +10,7 @@
 
 
 // Do not allow directly accessing this file.
-defined( 'ABSPATH' ) OR die( 'This script cannot be accessed directly.' );
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 get_header(); ?>
 
@@ -22,7 +22,7 @@ get_header(); ?>
 						<article>
 							<h2 class="reveal-color-1"><?php esc_html_e('The page you are trying to access does not exist.', 'reveal') ?></h2>
 							<p><?php esc_html_e('Please use the menu above to locate what you are searching for. Or you can try searching with a keyword below:', 'reveal') ?></p>
-							<?php get_search_form() ?>
+							<?php get_search_form(); ?>
 						</article>
 					</div><!-- end of #primary -->
 				</div> <!-- end of col -->

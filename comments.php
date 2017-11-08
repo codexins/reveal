@@ -13,8 +13,9 @@
 
 
 // Disable direct access to the comments script
-if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) )
+if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
     die ( esc_html__('Please do not load this page directly.', 'reveal')  );
+}
 
 /*
  * If the current post is protected by a password and
@@ -32,10 +33,12 @@ if ( post_password_required() ) {
 
 	<?php
 
+		// Checking if there is any comments
 		if ( have_comments() ) { ?>
 
 			<h3>
 				<?php
+					// Diplaying the comment number
 					comments_number(
 					esc_html__( 'This post has no comments', 'reveal' ), 
 					esc_html__( 'This post has One Comment', 'reveal' ), 
@@ -59,13 +62,14 @@ if ( post_password_required() ) {
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) { ?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'reveal' ); ?></p>
 	<?php
-	}
+	} // Check for comments closed
 
-	// Building Comment Form
+	// Getting parametes for Comment Form
 	$commenter = wp_get_current_commenter();
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
+	// Building Comment Form
 	comment_form(array(
 		'fields' => apply_filters( 'comment_form_default_fields', 
 			array(			
@@ -98,7 +102,6 @@ if ( post_password_required() ) {
 				</div>'
 			)
 		),
-
 		'comment_notes_before' 			=> '',
 		'comment_notes_after' 			=> '',
 		'title_reply' 					=> esc_html__( 'Leave a Comment', 'reveal' ),

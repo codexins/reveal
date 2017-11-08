@@ -19,27 +19,10 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-xs-8 col-xs-offset-2">
 
-					<div id="primary" class="site-main">
+					<div id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 						<?php
-						if ( have_posts() ) : 
-							while ( have_posts() ) : the_post();
-
-								/*
-								 * Include the Post-Format-specific template for the content.
-								 * If you want to override this in a child theme, then include a file
-								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-								 */
-								get_template_part( 'template-parts/views/list/content', 'search' );
-
-							endwhile; ?>
-
-							<?php echo reveal_posts_link_numbered(); ?>
-
-						<?php else :
-
-							get_template_part( 'template-parts/views/list/content', 'none' );
-
-						endif; ?>
+							get_template_part( 'template-parts/loops/default', 'loop' );
+						?>
 
 					</div><!-- #primary -->
 				</div> <!-- end of col -->
