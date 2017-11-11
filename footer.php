@@ -6,7 +6,7 @@
  *
  * Contains the closing of the #whole div and all content after.
  *
- * @package reveal
+ * @package Reveal
  */
 
 

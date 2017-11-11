@@ -4,7 +4,7 @@
  *
  * The template for displaying custom post type 'testimonial' archives pages
  *
- * @package reveal
+ * @package Reveal
  */
 
 

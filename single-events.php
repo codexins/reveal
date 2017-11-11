@@ -3,7 +3,7 @@
  * The template for displaying all single events.
  *
  *
- * @package reveal
+ * @package Reveal
  * @subpackage Templates
  */
 

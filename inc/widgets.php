@@ -2,7 +2,7 @@
 /**
  * reveal Widget class definitions
  *
- * @package reveal
+ * @package Reveal
  */
 
 /*

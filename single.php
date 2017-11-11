@@ -3,7 +3,7 @@
  * The template for displaying all single posts.
  *
  *
- * @package reveal
+ * @package Reveal
  * @subpackage Templates
  */
 

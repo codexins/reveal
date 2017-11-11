@@ -3,7 +3,7 @@
  *
  * The template for displaying search results pages
  *
- * @package reveal
+ * @package Reveal
  * @subpackage Templates
  */
 

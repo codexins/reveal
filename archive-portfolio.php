@@ -4,7 +4,7 @@
  *
  * The template for displaying custom post type 'portfolio' archives pages
  *
- * @package reveal
+ * @package Reveal
  * @subpackage Templates
  */
 

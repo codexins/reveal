@@ -4,7 +4,7 @@
  *
  * The template for displaying archives pages
  *
- * @package reveal
+ * @package Reveal
  * @subpackage Templates
  */
 

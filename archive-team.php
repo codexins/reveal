@@ -4,7 +4,7 @@
  *
  * The template for displaying custom post type 'team' archives pages
  *
- * @package reveal
+ * @package Reveal
  */
 
 
