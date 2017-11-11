@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+<article id="post-<?php the_ID(); ?>" <?php post_class( array('clearfix', 'cx-team-single') ); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="post-wrapper reveal-border-1">
         <?php if(has_post_thumbnail()): 
 

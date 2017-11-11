@@ -1320,3 +1320,17 @@ if ( ! function_exists( 'reveal_comments_navigation' ) ) {
         endif;
     }
 }
+
+
+if (!function_exists('codexin_meta')){
+    /**
+     *  get meta data
+     */
+    function codexin_meta( $key, $args = array(), $post_id = null ){
+        if(function_exists('rwmb_meta')){
+            return rwmb_meta( $key, $args, $post_id );
+        }else{
+            return null;
+        }
+    }
+}
