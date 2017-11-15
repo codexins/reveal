@@ -59,7 +59,7 @@ class Reveal_Sidebar_Widget {
 	// Registering Footer Widget Locations
 	public static function reveal_footer_widgets () {
 
-		$reveal_footer = reveal_option('reveal-footer-version');				
+		$reveal_footer = codexin_get_option('reveal-footer-version');				
 
 		if($reveal_footer == 1):
 

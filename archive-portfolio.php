@@ -12,8 +12,8 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-$layout          = !empty( reveal_option('reveal-portfolio-archive-layout') ) ? reveal_option('reveal-portfolio-archive-layout') : 'right';
-$portfolio_style = !empty( reveal_option( 'reveal_portfolio_style' ) ) ? reveal_option( 'reveal_portfolio_style' ) : 'list';
+$layout          = !empty( codexin_get_option('reveal-portfolio-archive-layout') ) ? codexin_get_option('reveal-portfolio-archive-layout') : 'right';
+$portfolio_style = !empty( codexin_get_option( 'reveal_portfolio_style' ) ) ? codexin_get_option( 'reveal_portfolio_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';
 $pull_class      = ( $layout == 'left') ? ' pull-right' : '';

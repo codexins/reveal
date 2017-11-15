@@ -1,15 +1,11 @@
 <?php
+
 /**
- * The main template file
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying all pages
  *
  * @package Reveal
+ * @subpackage Templates
  */
 
 get_header(); ?>
@@ -17,30 +13,40 @@ get_header(); ?>
 	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-8 col-md-8">
 
-					<div id="primary" class="site-main inside-page">
+				<div class="col-sm-8 col-md-8">
+					<main id="primary" class="site-main inside-page" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+
 						<?php
-						if ( have_posts() ) :
+						if ( have_posts() ) {
 							
-							while ( have_posts() ) : the_post();
+							/* Start the Loop */
+							while ( have_posts() ) {
+								the_post();
+
+								// Load the specific template
 								get_template_part( 'template-parts/views/list/content', 'page' );
 
-							endwhile;
-						endif; ?>
+								if( codexin_get_option( 'reveal_page_comments' ) ) {
+									comments_template('', true);
+								}
+							} // end of loop have_posts()
 
-					</div><!-- #primary -->
-
-				<?php 
-					if( reveal_option( 'reveal_post_comments' ) ):
-						comments_template('', true);
-					endif; ?>
+						} //End check-posts if()
+						?>
+						
+					</main><!-- end of #primary -->
 				</div> <!-- end of col -->
 
 				<div class="col-sm-4 col-md-3 col-md-offset-1">
-					<div id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
-						<?php get_sidebar() ?>
-					</div><!-- #secondary -->
+					<aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+	                    <?php 
+
+	                    // Get active assigned sidebar
+	                    get_sidebar();
+
+	                    ?>
+					</aside><!-- end of #secondary -->
 				</div> <!-- end of col -->
 
 			</div> <!-- end of row -->

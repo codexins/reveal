@@ -12,7 +12,7 @@
 if ( !defined('ABSPATH')) exit;
 
 // Declaring Global Variable for Theme Options
-define( 'CODEXIN_THEME_OPTIONS', 'reveal_option' );
+define( 'CODEXIN_THEME_OPTIONS', 'codexin_get_option' );
 
 
 if( ! class_exists( 'Reveal' ) ) :

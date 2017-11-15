@@ -17,7 +17,7 @@
 					<div class="page-title-wrapper reveal-color-2">
 						<?php 
 						//set page-title position..
-						$title_position = reveal_option( 'page-title-position' );
+						$title_position = codexin_get_option( 'page-title-position' );
 
 						if( $title_position == '1' ) :
 							echo '<h1 style="text-align:left;" itemprop="headline">';
@@ -30,7 +30,7 @@
 						endif; //end page-title position...
 
 						if( is_home() ):
-							echo esc_html__( !empty(reveal_option( 'reveal-blog-title' )) ? reveal_option( 'reveal-blog-title' ) : 'Blog', 'reveal');
+							echo esc_html__( !empty(codexin_get_option( 'reveal-blog-title' )) ? codexin_get_option( 'reveal-blog-title' ) : 'Blog', 'reveal');
 						elseif( is_404() ):
 							echo esc_html__('Nothing Found!', 'reveal');
 						elseif( is_archive() ):
@@ -45,7 +45,7 @@
 
 						<?php 
 							//set breadcrumbs position..
-						$bc_position = reveal_option( 'page-bc-position' );
+						$bc_position = codexin_get_option( 'page-bc-position' );
 
 						if( $bc_position == '1' ) :
 							echo '<div class="breadcrumbs-wrapper" style="text-align:left;">';
@@ -57,9 +57,9 @@
 							echo '<div class="breadcrumbs-wrapper" style="text-align:left;">';
 						endif; //end breadcrumbs position...
 							
-							$reveal_bc = reveal_option('reveal-bcrumbs');
+							$reveal_bc = codexin_get_option('reveal-bcrumbs');
 
-							if( reveal_option('reveal-bcrumbs' ) ): 
+							if( codexin_get_option('reveal-bcrumbs' ) ): 
 								// Initializing breadcrumb
 								if (function_exists('reveal_custom_breadcrumbs')) {
 									echo reveal_custom_breadcrumbs();

@@ -23,9 +23,9 @@
 	        <h4 itemprop="name"><a href="<?php echo esc_url(get_the_permalink()); ?>"  itemprop="url">
 	        <?php 
 
-	           $ev_length_switch = reveal_option('reveal_events_title_excerpt_length');
+	           $ev_length_switch = codexin_get_option('reveal_events_title_excerpt_length');
 	            if( $ev_length_switch ) :
-	                $reveal_events_title_len = reveal_option( 'reveal_events_title_length' );
+	                $reveal_events_title_len = codexin_get_option( 'reveal_events_title_length' );
 	                reveal_title( $reveal_events_title_len );
 	            else:
 	                the_title();
@@ -50,9 +50,9 @@
 
 	        <div class="events-grid-excerpt">
 			<?php 
-                $ev_length_switch = reveal_option('reveal_events_title_excerpt_length');
+                $ev_length_switch = codexin_get_option('reveal_events_title_excerpt_length');
                 if( $ev_length_switch ) :
-                    $reveal_events_excerpt_len = reveal_option( 'reveal_events_excerpt_length' );
+                    $reveal_events_excerpt_len = codexin_get_option( 'reveal_events_excerpt_length' );
 				    				reveal_excerpt( $reveal_events_excerpt_len );
                 else:
                     the_excerpt();

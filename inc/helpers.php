@@ -5,7 +5,7 @@
 * Helper Function for declaring Global Variable for theme options
 *
 **/
-if (!function_exists('reveal_option')){
+if (!function_exists('codexin_get_option')){
     /**
      * Function to get options in front-end
      * @param int $option The option we need from the DB
@@ -13,19 +13,19 @@ if (!function_exists('reveal_option')){
      * @return string
      */
 
-    function reveal_option( $option = false, $default = false ){
+    function codexin_get_option( $option = false, $default = false ){
         if($option === false){
             return false;
         }
-        $reveal_options = wp_cache_get( CODEXIN_THEME_OPTIONS );
-        if( ! $reveal_options ){
-            $reveal_options = get_option( CODEXIN_THEME_OPTIONS );
+        $codexin_get_options = wp_cache_get( CODEXIN_THEME_OPTIONS );
+        if( ! $codexin_get_options ){
+            $codexin_get_options = get_option( CODEXIN_THEME_OPTIONS );
             wp_cache_delete( CODEXIN_THEME_OPTIONS );
-            wp_cache_add( CODEXIN_THEME_OPTIONS, $reveal_options );
+            wp_cache_add( CODEXIN_THEME_OPTIONS, $codexin_get_options );
         }
 
-        if(isset($reveal_options[$option]) && $reveal_options[$option] !== ''){
-            return $reveal_options[$option];
+        if(isset($codexin_get_options[$option]) && $codexin_get_options[$option] !== ''){
+            return $codexin_get_options[$option];
         }else{
             return $default;
         }
@@ -152,10 +152,10 @@ if ( ! function_exists( 'reveal_post_link' ) ) {
 
     function reveal_post_link($prev = 'Previous Post', $next = 'Next Post') {
 
-        if( reveal_option( 'reveal_single_pagination' ) == 'button' ):
+        if( codexin_get_option( 'reveal_single_pagination' ) == 'button' ):
         $prev_link = get_previous_post_link('%link', esc_html( $prev.' &raquo;'));
         $next_link = get_next_post_link('%link', esc_html('&laquo; '.$next, 'reveal'));
-        elseif( reveal_option( 'reveal_single_pagination' ) == 'title' ):
+        elseif( codexin_get_option( 'reveal_single_pagination' ) == 'title' ):
         $prev_link = get_previous_post_link('%link', esc_html__('%title &raquo;', 'reveal'));
         $next_link = get_next_post_link('%link', esc_html__('&laquo; %title', 'reveal'));
         endif;
@@ -292,16 +292,16 @@ if ( ! function_exists( 'reveal_loop' ) ) {
             while ( have_posts() ) : the_post();
 
                 $i++;
-                $post_style = reveal_option( 'reveal_blog_style' );
+                $post_style = codexin_get_option( 'reveal_blog_style' );
                 if( $post_style == 'grid' ):
 
-                    $grid_columns = 12/reveal_option('reveal_grid_columns');
+                    $grid_columns = 12/codexin_get_option('reveal_grid_columns');
 
                     printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
                         get_template_part( 'template-parts/views/grid/content', get_post_format() );
                     echo '</div><!-- end of post-single-wrap -->';
 
-                    if( $i % reveal_option('reveal_grid_columns') == 0 ):
+                    if( $i % codexin_get_option('reveal_grid_columns') == 0 ):
                         echo '<div class="clearfix"></div>';
                     endif;
 
@@ -315,7 +315,7 @@ if ( ! function_exists( 'reveal_loop' ) ) {
 
             echo '<div class="clearfix"></div>';
 
-            $reveal_pagination = reveal_option( 'reveal_pagination' );
+            $reveal_pagination = codexin_get_option( 'reveal_pagination' );
                       
             global $wp_query;
             echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
@@ -353,17 +353,17 @@ if ( ! function_exists( 'reveal_archive_portfolio_loop' ) ) {
             /* Start the Loop */
             while ( have_posts() ) : the_post();
                 $i++;
-                $post_style = reveal_option( 'reveal_portfolio_style' );
+                $post_style = codexin_get_option( 'reveal_portfolio_style' );
                 
                 if( $post_style == 'grid' ):
                     
-                    $grid_port_columns = 12/reveal_option('reveal_portfolio_grid_columns');
+                    $grid_port_columns = 12/codexin_get_option('reveal_portfolio_grid_columns');
 
                     printf('<div class="portfolio-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
                         get_template_part( 'template-parts/views/grid/content', 'portfolio' );
                     echo '</div><!--portfolio wrap-->';
 
-                    if( $i % reveal_option('reveal_portfolio_grid_columns') == 0 ):
+                    if( $i % codexin_get_option('reveal_portfolio_grid_columns') == 0 ):
                         echo '<div class="clearfix"></div>';
                     endif;
                     
@@ -417,17 +417,17 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             /* Start the Loop */
             while ( $loop->have_posts() ) : $loop->the_post();
                 $i++;
-                $post_style = reveal_option( 'reveal_events_style' );
+                $post_style = codexin_get_option( 'reveal_events_style' );
                 
                 if( $post_style == 'grid' ):
 
-                $grid_port_columns = 12/reveal_option('reveal_events_grid_columns');
+                $grid_port_columns = 12/codexin_get_option('reveal_events_grid_columns');
 
                 printf('<div class="events-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
                     get_template_part( 'template-parts/views/grid/content', 'events' );
                 echo '</div><!--events wrap-->';
 
-                if( $i % reveal_option('reveal_events_grid_columns') == 0 ):
+                if( $i % codexin_get_option('reveal_events_grid_columns') == 0 ):
                     echo '<div class="clearfix"></div>';
                 endif;
                 
@@ -441,7 +441,7 @@ if ( ! function_exists( 'reveal_archive_events_loop' ) ) {
             echo '</div>';
             echo '<div class="clearfix"></div>';
 
-            $reveal_pagination = reveal_option( 'reveal_events_pagination' );
+            $reveal_pagination = codexin_get_option( 'reveal_events_pagination' );
 
             echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
             if( $reveal_pagination == 'numbered' ):
@@ -517,7 +517,7 @@ add_action( 'template_redirect', function() {
 * Helper Function for Turning off pagination for the Testimonial archive page
 *
 **/
-$testimonial_pagination = reveal_option('reveal_enable_testimonial_pagination');
+$testimonial_pagination = codexin_get_option('reveal_enable_testimonial_pagination');
 if( $testimonial_pagination == false ):
     add_action('parse_query', function($query) {
         if (is_post_type_archive('testimonial')) {
@@ -543,7 +543,7 @@ add_action('parse_query', function($query) {
 * Helper Function for deregistering Portfolio Custom Posts Type
 *
 **/
-$disable_port = reveal_option( 'reveal_enable_portfolio' );
+$disable_port = codexin_get_option( 'reveal_enable_portfolio' );
 $version = '4.5';
 if( $disable_port == false ) {
     if (version_compare($version, get_bloginfo('version'), '<=' )) {
@@ -562,7 +562,7 @@ if( $disable_port == false ) {
 * Helper Function for deregistering Events Custom Posts Type
 *
 **/
-$disable_events = reveal_option( 'reveal_enable_events' );
+$disable_events = codexin_get_option( 'reveal_enable_events' );
 $version = '4.5';
 if( $disable_events == false ) {
     if (version_compare($version, get_bloginfo('version'), '<=' )) {
@@ -580,7 +580,7 @@ if( $disable_events == false ) {
 * Helper Function for deregistering Testimonial Custom Posts Type
 *
 **/
-$disable_test = reveal_option( 'reveal_enable_testimonial' );
+$disable_test = codexin_get_option( 'reveal_enable_testimonial' );
 $version = '4.5';
 if( $disable_test == false ) {
     if (version_compare($version, get_bloginfo('version'), '<=' )) {
@@ -603,7 +603,7 @@ if( $disable_test == false ) {
 add_action('wp_head', 'reveal_googleanalytics');
 function reveal_googleanalytics() { 
 
-    echo reveal_option( 'reveal-gaq' );
+    echo codexin_get_option( 'reveal-gaq' );
 
 } 
 
@@ -768,7 +768,7 @@ function reveal_loadmore_ajax_handler(){
     $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
     $args['post_status'] = 'publish';
     // $args['offset'] = $args['posts_per_page'];
-    // $args['posts_per_page'] = reveal_option( 'reveal-num-page' );
+    // $args['posts_per_page'] = codexin_get_option( 'reveal-num-page' );
 
     $the_query = new WP_Query( $args );
 
@@ -873,7 +873,7 @@ add_action( 'wp_ajax_nopriv_ajaxcomments', 'reveal_ajax_comment_handler' ); // F
  *
  */
 function list_body_class ($classes) {
-    $port_style = reveal_option( 'reveal_portfolio_style' );
+    $port_style = codexin_get_option( 'reveal_portfolio_style' );
     if(($port_style == 'list') && (is_post_type_archive('portfolio'))): 
         $classes[] = 'portfolio-list-view';
         return $classes;
@@ -889,7 +889,7 @@ add_filter('body_class', 'list_body_class');
  *
  */
 function list_events_body_class ($classes) {
-    $events_style = reveal_option( 'reveal_events_style' );
+    $events_style = codexin_get_option( 'reveal_events_style' );
     if(($events_style == 'list') && (is_post_type_archive('events'))): 
         $classes[] = 'events-list-view';
         return $classes;
@@ -1002,12 +1002,12 @@ function reveal_adjust_color_brightness($hex_color, $percent_adjust = 0) {
 function reveal_theme_colors() {
 
     // Retrieving color variables from theme options
-    $body_bg            = !empty( reveal_option( 'reveal-body-bg' ) ) ? reveal_sanitize_hex_color( reveal_option( 'reveal-body-bg' ) ) : '#fff';
-    $text_color         = !empty( reveal_option( 'reveal-text-color' ) ) ? reveal_sanitize_hex_color( reveal_option( 'reveal-text-color' ) ) : '#333';
-    $primary_color      = !empty( reveal_option( 'reveal-primary-color' ) ) ? reveal_sanitize_hex_color( reveal_option( 'reveal-primary-color' ) ) : '#295970';
-    $secondary_color    = !empty( reveal_option( 'reveal-secondary-color' ) ) ? reveal_sanitize_hex_color( reveal_option( 'reveal-secondary-color' ) ): '#fce38a';
-    $border_color       = !empty( reveal_option( 'reveal-border-color' ) ) ? reveal_sanitize_hex_color( reveal_option( 'reveal-border-color' ) ) : '#ddd';
-    $secondary_bg       = !empty( reveal_option( 'reveal-secondary-bg' ) ) ? reveal_sanitize_hex_color( reveal_option( 'reveal-secondary-bg' ) ) : '#fafafa';
+    $body_bg            = !empty( codexin_get_option( 'reveal-body-bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-body-bg' ) ) : '#fff';
+    $text_color         = !empty( codexin_get_option( 'reveal-text-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-text-color' ) ) : '#333';
+    $primary_color      = !empty( codexin_get_option( 'reveal-primary-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-primary-color' ) ) : '#295970';
+    $secondary_color    = !empty( codexin_get_option( 'reveal-secondary-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-secondary-color' ) ): '#fce38a';
+    $border_color       = !empty( codexin_get_option( 'reveal-border-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-border-color' ) ) : '#ddd';
+    $secondary_bg       = !empty( codexin_get_option( 'reveal-secondary-bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-secondary-bg' ) ) : '#fafafa';
     $white_color        = '#fff';
     $transparent_bg     = 'transparent';
 

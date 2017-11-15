@@ -66,9 +66,9 @@
             <a href="<?php the_permalink(); ?>" rel="bookmark" itemprop="url">
                 <span itemprop="name">
                 <?php 
-                    $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                    $length_switch = codexin_get_option('reveal_blog_excerpt_lenght');
                     if( $length_switch ) :
-                        $reveal_title_len = reveal_option( 'reveal_title_length' );
+                        $reveal_title_len = codexin_get_option( 'reveal_title_length' );
                         reveal_title( $reveal_title_len );
                     else:
                         the_title();
@@ -102,16 +102,16 @@
 
 			else:
                 echo '<div class="entry-content" itemprop="text">';
-                $length_switch = reveal_option('reveal_blog_excerpt_lenght');
+                $length_switch = codexin_get_option('reveal_blog_excerpt_lenght');
                 if( $length_switch ) :
-                    $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
+                    $reveal_excerpt_len = codexin_get_option( 'reveal_excerpt_length' );
 				    reveal_excerpt( $reveal_excerpt_len );
                 else:
                     the_excerpt();
                 endif; //End if() reveal_excerpt_length
 
 
-                $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
+                $reveal_read_more = codexin_get_option( 'reveal-blog-read-more' );
                 if( $reveal_read_more == true ): ?>
 
                 <div class="cx-btn reveal-color-0 reveal-primary-btn">
@@ -133,7 +133,7 @@
                 <div class="tagcloud"><?php the_tags('Tags: &nbsp;',' ',''); ?></div>
             <?php endif; ?>
 
-            <?php if( reveal_option( 'reveal_single_share' ) == true ): ?>
+            <?php if( codexin_get_option( 'reveal_single_share' ) == true ): ?>
                 <div class="share socials reveal-color-0 reveal-primary-btn">            
                     <div class="caption"><span class="flaticon-share-1"></span> <?php esc_html_e('Share :', 'reveal'); ?></div>    
                     <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url(the_permalink());?>"><i class="fa fa-facebook"></i></a>

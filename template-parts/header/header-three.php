@@ -1,7 +1,7 @@
 <?php 
 
-//$header_top = reveal_option('reveal-header-top'); 
-$responsive_header = reveal_option('reveal-responsive-version');
+//$header_top = codexin_get_option('reveal-header-top'); 
+$responsive_header = codexin_get_option('reveal-responsive-version');
 
  ?>
 
@@ -34,9 +34,9 @@ $responsive_header = reveal_option('reveal-responsive-version');
 						<div class="navbar-header">
 
 							<?php 
-							$logo_type = reveal_option('reveal-logo-type');	
-							$text_logo = reveal_option('reveal-text-logo'); 
-							$image_logo = reveal_option('reveal-image-logo')['url']; ?>	
+							$logo_type = codexin_get_option('reveal-logo-type');	
+							$text_logo = codexin_get_option('reveal-text-logo'); 
+							$image_logo = codexin_get_option('reveal-image-logo')['url']; ?>	
 
 							<?php if( $responsive_header == 'right' ): ?>	
 							<a class="navbar-brand menu-right" href="<?php echo esc_url( home_url() ); ?>" itemprop="url">

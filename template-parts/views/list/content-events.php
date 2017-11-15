@@ -45,9 +45,9 @@ $e_st_date=date( get_option('date_format'), $e_start_date );
                 <h2 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>">
                     
                 <?php 
-                    $e_length_switch = reveal_option('reveal_events_title_excerpt_length');
+                    $e_length_switch = codexin_get_option('reveal_events_title_excerpt_length');
                     if( $e_length_switch ) :
-                        $reveal_e_title_len = reveal_option( 'reveal_events_title_length' );
+                        $reveal_e_title_len = codexin_get_option( 'reveal_events_title_length' );
                         reveal_title( $reveal_e_title_len );
                     else:
                         the_title();
@@ -57,9 +57,9 @@ $e_st_date=date( get_option('date_format'), $e_start_date );
                 </a></h2>
                 <div class="list-content">
                 <?php
-                $eex_length_switch = reveal_option('reveal_events_title_excerpt_length');
+                $eex_length_switch = codexin_get_option('reveal_events_title_excerpt_length');
                 if( $eex_length_switch ) :
-                    $reveal_e_excerpt_len = reveal_option( 'reveal_events_excerpt_length' );
+                    $reveal_e_excerpt_len = codexin_get_option( 'reveal_events_excerpt_length' );
                     reveal_excerpt( $reveal_e_excerpt_len );
                 else:
                     the_excerpt();

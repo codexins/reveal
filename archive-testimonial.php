@@ -5,41 +5,90 @@
  * The template for displaying custom post type 'testimonial' archives pages
  *
  * @package Reveal
+ * @subpackage Templates
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+$layout          = !empty( codexin_get_option('reveal-testimonial-archive-layout') ) ? codexin_get_option('reveal-testimonial-archive-layout') : 'no';
+$column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
+$sidebar_class   = ( $layout == 'no' ) ? '' : '4';
+$pull_class      = ( $layout == 'left') ? ' pull-right' : '';
+$offset_class    = ' col-md-offset-1';
+
 get_header(); ?>
 
 	<div id="content" class="main-content-wrapper site-content">
 		<div class="container">
 			<div class="row">
-				<?php 
 
-				// Retieving data from theme options
-	            $reveal_testimonial_layout = reveal_option('reveal-testimonial-archive-layout');
+                <?php 
 
-	            if( $reveal_testimonial_layout == 1 ) {
+                // Assigning Wrapper Column for primary content
+                printf(
+                    '<div class="col-sm-%1$s col-md-%2$s%3$s%4$s">',
+                    esc_attr( $column ),
+                    ($layout !== 'no') ? esc_attr( $column ) : esc_attr( $column - 2 ),
+                    esc_attr( $pull_class ),
+                    ( $layout == 'left' || $layout == 'no' ) ? esc_attr( $offset_class ) : ''
+                );
 
-	                get_template_part('template-parts/layouts/testimonial/archive/no', 'sidebar');
+                ?>
 
-	            } elseif( $reveal_testimonial_layout == 2 ) {
+                    <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-	                get_template_part('template-parts/layouts/testimonial/archive/left', 'sidebar');
+                        <?php
 
-	            } elseif( $reveal_testimonial_layout == 3 ) {
+				        if ( have_posts() ) {
+				            echo '<div class="testimonial-archive-wrapper">';
 
-	                get_template_part('template-parts/layouts/testimonial/archive/right', 'sidebar');
+				            /* Start the Loop */
+				            while ( have_posts() ) {
+				            	the_post();					                    
+				                get_template_part( 'template-parts/views/list/content', 'testimonial' );
+				            }
+				            echo '</div> <!-- end of testimonial-archive-wrapper -->';
+				            echo '<div class="clearfix"></div>';
 
-	            } else {
+				            echo reveal_posts_link_numbered();
 
-	                get_template_part('template-parts/layouts/testimonial/archive/no', 'sidebar');
+				        } else {
+				            get_template_part( 'template-parts/views/list/content', 'none' );
+				        }
 
-	            }
-	            
-				?>
+                        ?>
+
+                    </main><!-- end of #primary -->
+                </div> <!-- end of col -->
+                
+                <?php 
+
+                // Checking the need of sidebar
+                if( $layout !== 'no' ) {
+
+                    // Assinging wrapper column for sidebar
+                    printf(
+                        '<div class="col-sm-%1$s col-md-%2$s%3$s">',
+                        esc_attr( $sidebar_class ),
+                        esc_attr( $sidebar_class - 1 ),
+                        ( $layout == 'right' ) ? esc_attr( $offset_class ) : ''
+                    );
+
+                ?>                    
+                        <aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+                            <?php 
+
+                            // Get active assigned sidebar
+                            get_sidebar();
+
+                            ?>
+                        </aside><!-- end of #secondary -->
+                    </div> <!-- end of col -->
+
+                <?php } //end of sidebar condition ?>
+
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->
 	</div> <!-- end of #content -->

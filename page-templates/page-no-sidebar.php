@@ -26,7 +26,7 @@ get_header(); ?>
 					</div><!-- #primary -->
 
 					<?php 
-					if( reveal_option( 'reveal_post_comments' ) ):
+					if( codexin_get_option( 'reveal_post_comments' ) ):
 						comments_template('', true);
 					endif; ?>
 					

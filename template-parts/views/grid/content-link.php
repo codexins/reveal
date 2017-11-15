@@ -13,7 +13,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(array('clearfix')); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
     <div class="blog-wrapper reveal-bg-1">
         <?php 
-        $post_metas = reveal_option('reveal_blog_post_meta');
+        $post_metas = codexin_get_option('reveal_blog_post_meta');
         if ( ! post_password_required() ):
             
             $link_url = rwmb_meta( 'reveal_link_url', 'type=text' );
@@ -37,9 +37,9 @@
             <h3 class="blog-title grid" itemprop="headline">
                 <a href="<?php the_permalink();?>" rel="bookmark" itemprop="url">
                 <?php 
-                    $length_switch = reveal_option('reveal_blog_title_excerpt_length');
+                    $length_switch = codexin_get_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
-                        $reveal_title_len = reveal_option( 'reveal_title_length' );
+                        $reveal_title_len = codexin_get_option( 'reveal_title_length' );
                         reveal_title( $reveal_title_len );
                     else :
                         the_title();    
@@ -84,9 +84,9 @@
                     wp_link_pages( $args );
 
                 else:
-                    $length_switch = reveal_option('reveal_blog_title_excerpt_length');
+                    $length_switch = codexin_get_option('reveal_blog_title_excerpt_length');
                     if( $length_switch ) :
-                        $reveal_excerpt_len = reveal_option( 'reveal_excerpt_length' );
+                        $reveal_excerpt_len = codexin_get_option( 'reveal_excerpt_length' );
                         reveal_excerpt( $reveal_excerpt_len );
                     else :
                         the_excerpt();
@@ -95,7 +95,7 @@
             </div> <!-- end of wrapper-content -->
 
             <?php 
-            $reveal_read_more = reveal_option( 'reveal-blog-read-more' );
+            $reveal_read_more = codexin_get_option( 'reveal-blog-read-more' );
             if( $reveal_read_more == true ) { ?>
             <div class="cx-btn-grid reveal-color-0 reveal-primary-btn">
                 <a class="cx-btn-text" href="<?php echo esc_url( get_the_permalink() ); ?>"><?php esc_html_e( 'Read More', 'reveal' ) ?></a>

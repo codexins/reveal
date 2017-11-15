@@ -15,7 +15,7 @@
             <img src=" <?php the_post_thumbnail_url('reveal-portfolio-single') ?> " alt="">
         </div> <!-- end of portfolio-image -->
 
-        <?php $position = reveal_option('reveal-single-portfolio-layout'); ?>
+        <?php $position = codexin_get_option('reveal-single-portfolio-layout'); ?>
         <div class="col-md-8 <?php if($position == '1'): echo 'col-md-push-4'; endif; ?>">
             <div class="portfolio-details">
                 <h2 class="reveal-color-1" itemprop="name"><?php the_title()?></h2>
@@ -25,7 +25,7 @@
             </div>
             <?php reveal_post_link(__('Prev', 'reveal'), __('Next', 'reveal')); ?>
 
-            <?php if( reveal_option( 'reveal_portfolio_comments' ) ): ?>
+            <?php if( codexin_get_option( 'reveal_portfolio_comments' ) ): ?>
                 <div class="portfolio-comments">
                     <?php comments_template('', true);?>
                 </div>

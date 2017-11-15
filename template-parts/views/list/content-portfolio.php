@@ -30,9 +30,9 @@ $project_comple_date=date_create($cadate);
                 <h2 class="post-title"><a href="<?php echo esc_url(get_the_permalink()); ?>">
                     
                 <?php 
-                    $p_length_switch = reveal_option('reveal_portfolio_title_excerpt_length');
+                    $p_length_switch = codexin_get_option('reveal_portfolio_title_excerpt_length');
                     if( $p_length_switch ) :
-                        $reveal_p_title_len = reveal_option( 'reveal_portfolio_title_length' );
+                        $reveal_p_title_len = codexin_get_option( 'reveal_portfolio_title_length' );
                         reveal_title( $reveal_p_title_len );
                     else:
                         the_title();
@@ -42,9 +42,9 @@ $project_comple_date=date_create($cadate);
                 </a></h2>
                 <div class="list-content">
                 <?php
-                $pex_length_switch = reveal_option('reveal_portfolio_title_excerpt_length');
+                $pex_length_switch = codexin_get_option('reveal_portfolio_title_excerpt_length');
                 if( $pex_length_switch ) :
-                    $reveal_p_excerpt_len = reveal_option( 'reveal_portfolio_excerpt_length' );
+                    $reveal_p_excerpt_len = codexin_get_option( 'reveal_portfolio_excerpt_length' );
                     reveal_excerpt( $reveal_p_excerpt_len );
                 else:
                     the_excerpt();

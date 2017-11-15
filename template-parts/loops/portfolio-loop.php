@@ -1,13 +1,11 @@
 <?php
 
 
-global $wp_query;
-
 $portfolio_archive_posts  	= is_post_type_archive( 'portfolio' );
 $portfolio_single_post     	= is_singular( 'portfolio' ) && ! $portfolio_archive_posts;
-$portfolio_style           	= reveal_option( 'reveal_portfolio_style' );
-$portfolio_grids           	= reveal_option( 'reveal_portfolio_grid_columns' );
-$portfolio_nav		        = reveal_option( 'reveal_portfolio_pagination' );
+$portfolio_style           	= codexin_get_option( 'reveal_portfolio_style' );
+$portfolio_grids           	= codexin_get_option( 'reveal_portfolio_grid_columns' );
+$portfolio_nav		        = codexin_get_option( 'reveal_portfolio_pagination' );
 
 
 if ( have_posts() ) {
@@ -22,38 +20,28 @@ if ( have_posts() ) {
     while ( have_posts() ) {
 
     	the_post();
-
+        
         if( $portfolio_single_post ) {
             ( function_exists( 'codexin_set_post_views' ) ) ? codexin_set_post_views( get_the_ID() ) : '';
         }
 
         $i++;
         
-        if( ( $portfolio_style == 'grid' ) && ! $portfolio_single_post ) {
-            
+        if( ( $portfolio_style == 'grid' ) && ! $portfolio_single_post ) {            
             $grid_port_columns = 12 / $portfolio_grids;
             printf('<div class="portfolio-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-
                 get_template_part( 'template-parts/views/grid/content', 'portfolio' );
-
             echo '</div><!-- end of portfolio-single-wrap -->';
-
             echo ( $i % $portfolio_grids == 0 ) ? '<div class="clearfix"></div>' : '';
-
         } elseif( ( $portfolio_style == 'list' ) && ! $portfolio_single_post ) {
-
             get_template_part( 'template-parts/views/list/content', 'portfolio' ); 
-
-        } else {
-         
+        } else {         
             get_template_part( 'template-parts/layouts/portfolio/single/content', 'portfolio' );
-
         }
 
-    }
+    } // end of loop have_posts()
 
     if( ! $portfolio_single_post ) {
-
         echo '</div>';
         echo '<div class="clearfix"></div>';
         echo ( $portfolio_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
@@ -65,9 +53,7 @@ if ( have_posts() ) {
         }
         
         echo ( $portfolio_style == 'grid' ) ? '</div>' : '' ;
-
     } else {
-
         echo '<div class="row">';
             echo '<div class="recent-portfolio">';
                 echo '<div class="col-sm-12">';
@@ -92,8 +78,6 @@ if ( have_posts() ) {
 
                             $portfolio->the_post();
 
-                            // echo esc_url( the_post_thumbnail_url('rectangle-two') );
-
                             // Retieving the image alt tags
                             if( function_exists( 'retrieve_alt_tag' ) ) { 
                                 $alt_tag =  retrieve_alt_tag(); 
@@ -109,7 +93,7 @@ if ( have_posts() ) {
                                 echo '</div>';
                             echo '</div>';
 
-                        }
+                        } // end of loop have_posts()
 
                     } //End check-posts if()
 
@@ -118,12 +102,8 @@ if ( have_posts() ) {
                 echo '</div> <!-- end of recent-portfolio-wrapper -->';
             echo '</div> <!-- end of recent-portfolio -->';
         echo '</div> <!-- end of row -->';
-
     }
 
-
 } else {
-
 	get_template_part( 'template-parts/views/list/content', 'none' );
-
-}
+} //End check-posts if()

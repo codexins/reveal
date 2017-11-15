@@ -162,6 +162,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         "default"   => false,
                     ),
 
+                    array(
+                        'id'        => 'reveal_page_comments',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Page Comments', 'reveal'),
+                        'subtitle'  => esc_html__('Choose to Enable / Disable Page comments (After enabling this option, you have to check \'Discussion\' from page edit \'Screen Options\' at the top right corner.)', 'reveal'),
+                        "default"   => false,
+                    ),
+
                   )
             );
 
@@ -1177,23 +1185,23 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'required' => array( 'reveal_enable_testimonial', '=', '1' ),
                         'title'    => esc_html__( 'Testimonials Archive Page Layout', 'reveal' ),
                         'subtitle' => esc_html__( 'Select Testimonials Archive Page Layout', 'reveal' ),
-                        'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
+                        'desc'     => esc_html__( 'Choose From No Sidebar / Left sidebar / Right Sidebar', 'reveal' ),
                         //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
-                            '1' => array(
+                            'no' => array(
                                 'alt' => '1 Column',
                                 'img' => ReduxFramework::$_url . 'assets/img/1col.png'
                             ),
-                            '2' => array(
+                            'left' => array(
                                 'alt' => '2 Column Left',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
                             ),
-                            '3' => array(
+                            'right' => array(
                                 'alt' => '2 Column Right',
                                 'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
                             )
                         ),
-                        'default'  => '1'
+                        'default'  => 'no'
                     ),
 
                     array(

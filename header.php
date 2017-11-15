@@ -33,8 +33,8 @@
 
 	<?php 
 
-	$page_loader = reveal_option('reveal-page-loader');
-	$responsive_header = reveal_option('reveal-responsive-version');
+	$page_loader = codexin_get_option('reveal-page-loader');
+	$responsive_header = codexin_get_option('reveal-responsive-version');
 
 	?>
 	<!--  Site Loader -->
@@ -80,7 +80,7 @@
 			
 		<?php 
 		
-		$header_version = reveal_option('reveal-header-version');
+		$header_version = codexin_get_option('reveal-header-version');
 
 		if($header_version == 1): 
 		get_template_part('template-parts/header/header', 'one');

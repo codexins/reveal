@@ -17,10 +17,10 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	
         	<?php 
             // Retieving data from theme options
-        	$reveal_footer = reveal_option('reveal-footer-version');
-        	$reveal_cpr = reveal_option('reveal_footer_copyright');
+        	$reveal_footer = codexin_get_option('reveal-footer-version');
+        	$reveal_cpr = codexin_get_option('reveal_footer_copyright');
             $disable_footer = rwmb_meta('reveal_disable_footer', 'type=checkbox');
-            $copyright = reveal_option('reveal-copyright');
+            $copyright = codexin_get_option('reveal-copyright');
         	?>         	
 
             <?php if($disable_footer == 0) { ?>
@@ -72,7 +72,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
             <?php } ?>
 
         	<!-- Go to Top Button at right bottom of the window screen -->
-        	<?php if( reveal_option( 'reveal_to_top' ) ) { ?>
+        	<?php if( codexin_get_option( 'reveal_to_top' ) ) { ?>
             	<div id="toTop">
             		<i class="fa fa-chevron-up"></i>
             	</div>

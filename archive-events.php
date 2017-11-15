@@ -12,8 +12,8 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-$layout          = !empty( reveal_option('reveal-events-archive-layout') ) ? reveal_option('reveal-events-archive-layout') : 'right';
-$events_style    = !empty( reveal_option( 'reveal_events_style' ) ) ? reveal_option( 'reveal_events_style' ) : 'list';
+$layout          = !empty( codexin_get_option('reveal-events-archive-layout') ) ? codexin_get_option('reveal-events-archive-layout') : 'right';
+$events_style    = !empty( codexin_get_option( 'reveal_events_style' ) ) ? codexin_get_option( 'reveal_events_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';
 $pull_class      = ( $layout == 'left') ? ' pull-right' : '';
