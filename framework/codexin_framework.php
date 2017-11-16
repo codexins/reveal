@@ -78,7 +78,13 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			require_once CODEXIN_FRAMEWORK_DIR . 'helpers/helpers.php';
 
 			/**
-			 * Adding Admin Options
+			 * Adding Schema Markup for better SEO compatibility
+			 *
+			 */
+			require_once CODEXIN_FRAMEWORK_DIR . 'helpers/schema_markup.php';
+
+			/**
+			 * Adding Theme Options
 			 *
 			 */
 			require CODEXIN_FRAMEWORK_ADMIN_DIR . 'theme_options/admin-options.php';
@@ -132,6 +138,14 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 		 * @since v1.0.0
 		 */
 		public function codexin_actions() {
+
+			/**
+			 * Providing Shortcode Support on text widget
+			 *
+			 * @uses add_filter()
+			 * @since v1.0.0
+			 */
+			add_filter( 'widget_text', 'do_shortcode' );
 
 			/**
 			 * Adding the core functions of the framework

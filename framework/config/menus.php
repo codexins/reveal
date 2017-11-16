@@ -1,10 +1,10 @@
 <?php
 
 register_nav_menus( array(
-	'main_menu' 	=> esc_html__('Primary Menu', 'reveal'),
-	'mobile_menu' 	=> esc_html__('Mobile Menu', 'reveal'),
-	'main_menu_left' 	=> esc_html__('Left Side Menu (For Centered Logo)', 'reveal'),
-	'main_menu_right' 	=> esc_html__('Right Side Menu (For Centered Logo)', 'reveal'),
+	'main_menu' 			=> esc_html__('Primary Menu', 'reveal'),
+	'mobile_menu' 			=> esc_html__('Mobile Menu', 'reveal'),
+	'main_menu_left' 		=> esc_html__('Left Side Menu (For Centered Logo)', 'reveal'),
+	'main_menu_right' 		=> esc_html__('Right Side Menu (For Centered Logo)', 'reveal'),
 ) );
 
 # Use this function to dynamically display different menus if needed. 

@@ -3,15 +3,6 @@
 
 
 /**
- * Providing Shortcode Support on text widget
- *
- * @uses add_filter()
- * @since v1.0.0
- */
-add_filter( 'widget_text', 'do_shortcode' );
-
-
-/**
  * Removing 'Redux Framework' sub menu under Tools 
  *
  * @uses add_action()

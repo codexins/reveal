@@ -1,15 +1,23 @@
 <?php
-function reveal_scripts () {
+
+
+
+/**
+ * Add stylesheets and scripts for frontend
+ *
+ * @since 1.0.0
+ */
+function codexin_framework_scripts() {
 	
 	//Load the stylesheets
-	wp_enqueue_style( 'bootstrap-stylesheet', get_template_directory_uri() . '/assets/css/bootstrap.min.css',false,'3.3.7','all');
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css',false,'all');
-	wp_enqueue_style( 'slick-stylesheet', get_template_directory_uri() . '/assets/css/slick.css',false,'1.1','all');
-	wp_enqueue_style( 'superfish-stylesheet', get_template_directory_uri() . '/assets/css/superfish.css',false,'1.1','all');
-	wp_enqueue_style( 'typography-stylesheet', get_template_directory_uri() . '/assets/css/typography.css',false,'1.1','all');
-	wp_enqueue_style( 'wp-stylesheet', get_template_directory_uri() . '/assets/css/wp.css',false,'1.1','all');
+	wp_enqueue_style( 'bootstrap-stylesheet', CODEXIN_FRAMEWORK_LIBS_URL . 'css/bootstrap.min.css', false, '3.3.7', 'all' );
+	wp_enqueue_style( 'font-awesome-stylesheet', CODEXIN_FRAMEWORK_LIBS_URL . 'css/font-awesome.min.css', false, '4.7.0', 'all' );
+	wp_enqueue_style( 'slick-stylesheet', CODEXIN_FRAMEWORK_LIBS_URL . 'css/slick.css', false, '1.8.1', 'all' );
+	wp_enqueue_style( 'superfish-stylesheet', CODEXIN_FRAMEWORK_LIBS_URL . 'css/superfish.css', false, '1.7.8', 'all' );
+	wp_enqueue_style( 'typography-stylesheet', get_template_directory_uri() . '/assets/css/typography.css',false,'1.1','all' );
+	wp_enqueue_style( 'wp-stylesheet', get_template_directory_uri() . '/assets/css/wp.css',false,'1.1','all' );
 	if( ! wp_style_is( 'photoswipe-stylesheet', 'enqueued' ) ) {
-		wp_enqueue_style( 'photoswipe-stylesheet', get_template_directory_uri() . '/assets/css/photoswipe.css',false,'1.1','all');
+		wp_enqueue_style( 'photoswipe-stylesheet', get_template_directory_uri() . '/assets/css/photoswipe.css',false,'1.1','all' );
 	}
 	
 	// Load the Main stylesheet
@@ -110,5 +118,5 @@ function reveal_scripts () {
 
 } 
 
-add_action( 'wp_enqueue_scripts', 'reveal_scripts');
+add_action( 'wp_enqueue_scripts', 'codexin_framework_scripts');
 ?>

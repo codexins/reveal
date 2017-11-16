@@ -4,6 +4,7 @@
 if ( ! function_exists('codexin_get_option' ) ) {
     /**
      * Helper Function to get theme options
+     *
      * @param  int       $option     The option we need from the DB
      * @param  string    $default    If $option doesn't exist in DB return $default value
      * @return string
@@ -32,6 +33,7 @@ if ( ! function_exists('codexin_get_option' ) ) {
 if ( ! function_exists( 'codexin_meta' ) ) {
     /**
      * Helper Function to get meta data from metabox
+     *
      * @param  string     $key        The meta key name from which we want to get the value
      * @param  array      $args       The arguments of the meta key
      * @param  int        $post_id    The ID of the post
@@ -48,71 +50,32 @@ if ( ! function_exists( 'codexin_meta' ) ) {
 }
 
 
-/**
-*
-* Helper Function to automatically define the schema type 
-*
-**/
-function html_tag_schema() {
-
-    $schema = 'http://schema.org/';
-
-    // Is single post
-    if( is_singular( 'post' ) ) {
-        $type = "Article";
+if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
+    /**
+     * Register Google fonts for theme.
+     *
+     * @return string Google fonts URL for the theme.
+     * @since v1.0.0
+     */
+    function codexin_default_google_fonts() {
+        $fonts_url = '';
+        $fonts     =  apply_filters( 'codexin_default_google_fonts', array( 'Lobster', 'Montserrat:400,700', 'Roboto:400,700') );
+        if ( $fonts ) {
+            $subsets   = apply_filters( 'codexin_default_google_fonts', 'latin' );
+            $fonts_url = add_query_arg( array(
+                'family' => implode( '%7C', $fonts ),
+                'subset' => urlencode( $subsets ),
+            ),  'https://fonts.googleapis.com/css' );
+        }
+        return $fonts_url;
     }
-
-    // Is author page
-    elseif( is_author() ) {
-        $type = 'ProfilePage';
-    }
-
-    // Is blog home or category
-    elseif( is_home() || is_category() ){
-        $type = "Blog";
-    }
-
-    // Is static front page
-    elseif( is_front_page() ) {
-        $type = "Website";
-    }
-
-    // Is search results page
-    elseif( is_search() ) {
-        $type = 'SearchResultsPage';
-    }
-
-    // Is of event post type
-    elseif( is_post_type_archive( 'events' ) || is_singular( 'events' ) ) {
-        $type = 'Event';
-    }
-
-    // Is of team post type
-    elseif( is_post_type_archive( 'team' ) || is_singular( 'team' ) ) {
-        $type = 'Person';
-    }
-
-    // Is of portfolio post type
-    elseif( is_post_type_archive( 'portfolio' ) || is_singular( 'portfolio' ) ) {
-        $type = 'ProfessionalService';
-    }
-
-    // Is of testimonial post type
-    elseif( is_post_type_archive( 'testimonial' ) || is_singular( 'testimonial' ) ) {
-        $type = 'Review';
-    }
-
-    else {
-        $type = 'WebPage';
-    }
-
-    echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
 }
 
 
 if ( ! function_exists( 'codexin_char_limit' ) ) {
     /**
      * Helper Function to limit the character length
+     *
      * @param  int       $limit     The number of character to limit
      * @return string
      * @since v1.0.0
@@ -142,6 +105,7 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
 if ( ! function_exists( 'reveal_title' ) ) {
     /**
      * Helper Function to limit the title length
+     *
      * @param  int       $limit     The number of character to limit
      * @return string
      * @since v1.0.0
@@ -171,6 +135,7 @@ if ( ! function_exists( 'reveal_title' ) ) {
 if ( ! function_exists( 'reveal_excerpt' ) ) {
     /**
      * Helper Function to limit the excerpt length
+     *
      * @param  int       $limit     The number of character to limit
      * @return string
      * @since v1.0.0
@@ -233,6 +198,7 @@ if ( ! function_exists( 'reveal_excerpt' ) ) {
 if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
     /**
      * Helper function to sanitize hex colors
+     *
      * @param  string       $color     The color code
      * @return string
      * @since v1.0.0
@@ -259,6 +225,7 @@ if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
 if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
     /**
      * Helper function to convert hex color to RGBA
+     *
      * @param  string      $hex_color     The color code in hexadecimal
      * @param  float       $opacity       The color opacity we want
      * @return string
@@ -291,6 +258,7 @@ if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
 if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
     /**
      * Helper function to adjust brightness of a color
+     *
      * @param  string      $hex_color        The color code in hexadecimal
      * @param  float       $percent_adjust   The percentage we want to lighten/darken the color
      * @return string
