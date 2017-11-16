@@ -88,7 +88,8 @@
                         $length_switch = codexin_get_option('reveal_blog_title_excerpt_length');
                         if( $length_switch ) :
                             $reveal_title_len = codexin_get_option( 'reveal_title_length' );
-                            reveal_title( $reveal_title_len );
+                            //reveal_title( $reveal_title_len );
+                            codexin_char_limit( $reveal_title_len, 'title' );
                         else:
                             the_title();
                         endif;
@@ -124,7 +125,9 @@
                 $length_switch = codexin_get_option('reveal_blog_title_excerpt_length');
                 if( $length_switch ) :
                     $reveal_excerpt_len = codexin_get_option( 'reveal_excerpt_length' );
-				    reveal_excerpt( $reveal_excerpt_len );
+                    echo '<p>';
+                        codexin_char_limit( $reveal_excerpt_len, 'excerpt' );
+                    echo '</p>';
                 else:
                     the_excerpt();
                 endif; //End if() reveal_excerpt_length

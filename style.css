@@ -3257,8 +3257,7 @@ img{
 	portfolio and eventslist
 *************************************************************/
 
-body.events-list-view,
-body.portfolio-list-view {
+body.codexin-list-view {
     background: #f2f2f2;
 }
 

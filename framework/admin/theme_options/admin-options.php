@@ -969,6 +969,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'      => 'select',
                         'title'     => esc_html__('Portfolio Archive Pagination Type', 'reveal'),
                         'desc'      => esc_html__('Select the Pagination Type.', 'reveal'),
+                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
@@ -1121,6 +1122,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'      => 'select',
                         'title'     => esc_html__('Events Archive Pagination Type', 'reveal'),
                         'desc'      => esc_html__('Select the Pagination Type.', 'reveal'),
+                        'required'  => array( 'reveal_enable_events', '=', '1' ),
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
@@ -1210,6 +1212,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Enable Pagination?', 'reveal'),
                         'subtitle'  => esc_html__('Select if You Need Pagination', 'reveal'),
                         'desc'      => esc_html__('Choose to Enable / Disable Testimonials Pagination', 'reveal'),
+                        'required' => array( 'reveal_enable_testimonial', '=', '1' ),
                     ),
 
                     // array(

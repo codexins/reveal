@@ -2,11 +2,11 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once get_template_directory() . '/inc/plugins/class-tgm-plugin-activation.php';
+require_once CODEXIN_FRAMEWORK_ADMIN_DIR . 'plugins/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'reveal_register_js_composer_plugins' );
+add_action( 'tgmpa_register', 'codexin_register_plugins' );
 
-function reveal_register_js_composer_plugins() {
+function codexin_register_plugins() {
 
     /**
      * Array of plugin arrays. Required keys are name and slug.
@@ -24,9 +24,9 @@ function reveal_register_js_composer_plugins() {
             ),
 
             array(
-                'name' => 'Redux - Options framework',
-                'slug' => 'redux-framework',
-                'required' => true,
+                'name'              => 'Redux - Options framework',
+                'slug'              => 'redux-framework',
+                'required'          => true,
             ),
 
             array(

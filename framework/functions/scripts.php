@@ -58,8 +58,8 @@ function reveal_scripts () {
 	if( codexin_get_option( 'reveal-ajax-comments' ) && ! is_search() && ! is_404() ) {
 		global $post;
 		$count = wp_count_comments($post->ID);
-	    wp_register_script( 'ajax_comment', get_template_directory_uri() . '/assets/js/ajax-comments.js', array('jquery') );
-	    wp_localize_script( 'ajax_comment', 'reveal_ajax_comment_params', array(
+	    wp_register_script( 'ajax_comment', CODEXIN_FRAMEWORK_LIBS_URL . 'js/ajax-comments.js', array('jquery') );
+	    wp_localize_script( 'ajax_comment', 'codexin_ajax_comment_params', array(
 	        'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	        'comment_count' => $count->approved
 	    ) ); 

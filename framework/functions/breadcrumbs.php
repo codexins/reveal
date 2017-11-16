@@ -4,7 +4,7 @@
  * BREADCRUMBS
  *************************************************************/
 
-if( !function_exists( 'reveal_custom_breadcrumbs' ) ) {
+if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
 
     function reveal_custom_breadcrumbs() {
         // Set variables for later use

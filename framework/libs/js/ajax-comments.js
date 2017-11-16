@@ -36,7 +36,7 @@ jQuery(function($){
 		    commentlist = $('.comment-list'), // comment list container
 		    cancelreplylink = $('#cancel-comment-reply-link'),
 		    commentcount = $('#comments h3 span'),
-		    commentcountwp = parseInt(reveal_ajax_comment_params.comment_count)+countup;
+		    commentcountwp = parseInt(codexin_ajax_comment_params.comment_count)+countup;
 
 	    countup++;
 
@@ -56,7 +56,7 @@ jQuery(function($){
 			// ajax request
 			$.ajax({
 				type : 'POST',
-				url : reveal_ajax_comment_params.ajaxurl, // admin-ajax.php URL
+				url : codexin_ajax_comment_params.ajaxurl, // admin-ajax.php URL
 				data: $(this).serialize() + '&action=ajaxcomments', // send form data + action parameter
 				beforeSend: function(xhr){
 					// what to do just after the form has been submitted

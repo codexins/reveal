@@ -48,11 +48,11 @@ if ( post_password_required() ) {
 
 			<ol class="comment-list clearfix">
 				<?php
-					wp_list_comments('type=all&callback=reveal_comment_function');
+					wp_list_comments('type=all&callback=codexin_comment_function');
 				?>
 			</ol><!-- end of comment-list -->
 
-			<?php reveal_comments_navigation(); ?>
+			<?php codexin_comments_nav(); ?>
 
 		<?php
 
