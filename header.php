@@ -50,7 +50,7 @@
 	<div id="c-menu--slide-right" class="c-menu c-menu--slide-right reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
 	<?php endif; ?>
 		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
-		<?php if(has_nav_menu( 'main_menu' )): get_mobile_menu(); 
+		<?php if(has_nav_menu( 'main_menu' )): codexin_menu( 'mobile_menu' ); 
 					else: ?>
 						<div id="mobile-menu" class="c-menu__items">
 							<ul>

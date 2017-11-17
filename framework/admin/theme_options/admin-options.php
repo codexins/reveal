@@ -1,11 +1,15 @@
 <?php
 
-// Exit if accessed directly
-if ( !defined('ABSPATH')) exit;
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 
 if ( ! class_exists( 'Codexin_Admin' ) ) {
-
+    /**
+     * Theme Options Class. Uses Redux Framework.
+     *
+     * @since v1.0.0
+     */
     class Codexin_Admin
     {
         public $args = array();
@@ -423,7 +427,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Select Logo type', 'reveal' ),
                         'subtitle' => esc_html__( 'Please select whether you want a text logo or image logo', 'reveal' ),
                         'desc'     => esc_html__( 'Select text logo or image logo', 'reveal' ),
-                        //Must provide key => value pairs for radio options
                         'options'  => array(
                             '1' => 'Text Logo',
                             '2' => 'Image Logo',
@@ -468,14 +471,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'url'      => true,
                         'title'    => esc_html__( 'Upload Company Logo', 'reveal' ),
                         'compiler' => 'true',
-                        //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
                         'desc'     => esc_html__( 'Please Upload Company Logo', 'reveal' ),
                         'subtitle' => esc_html__( 'Recommended Logo Size 260X100', 'reveal' ),
                         'default'  => array( 'url' => '//placehold.it/260X100' ),
-                        //'hint'      => array(
-                        //    'title'     => 'Hint Title',
-                        //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-                        //)
                     ),
 
 
@@ -484,23 +482,22 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'image_select',
                         'title'    => esc_html__( 'Select Navigation Type', 'reveal' ),
                         'desc'     => esc_html__( 'Choose Header Type', 'reveal' ),
-                        //Must provide key => value pairs for select options
                         'options'  => array(
                             '1' => array(
                                 'alt' => 'Header-1',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/header-1.png'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/header-1.png'
                             ),
                             '2' => array(
                                 'alt' => 'Header-2',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/header-2.png'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/header-2.png'
                             ),
                             '3' => array(
                                 'alt' => 'Header-3',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/header-3.png'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/header-3.png'
                             ),
                             '4' => array(
                                 'alt' => 'Header-4',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/header-4.png'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/header-4.png'
                             ),
                         ),
                         'default'  => '1'
@@ -948,7 +945,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Title Length for Portfolios', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Portfolios (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Portfolio Archive Page.", 'reveal'),
-                        // 'default'   => 7,
+                        'default'   => 30,
                     ),
 
                     array(
@@ -961,7 +958,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Excerpt Length for Portfolios', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Portfolios (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Portfolio Archive Page.", 'reveal'),
-                        // 'default'   => 20,
+                        'default'   => 180,
                     ),
 
                     array(
@@ -984,7 +981,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Portfolio Single Page Layout', 'reveal' ),
                         'subtitle' => esc_html__( 'Select Single Portfolio Page Layout', 'reveal' ),
                         'desc'     => esc_html__( 'Choose From Left / Right Information Sidebar', 'reveal' ),
-                        //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
                             '1' => array(
                                 'alt' => '2 Column Left',
@@ -1035,7 +1031,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Events Archive Page Layout', 'reveal' ),
                         'subtitle' => esc_html__( 'Select Events Archive Page Layout', 'reveal' ),
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
-                        //Must provide key => value(array:title|img) pairs for radio options
                         'options'  => array(
                             'no' => array(
                                 'alt' => '1 Column',
@@ -1129,38 +1124,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         ),
                         'default'   => 'button'
                     ),
-
-                    // array(
-                    //     'id'       => 'reveal-single-events-layout',
-                    //     'type'     => 'image_select',
-                    //     'required' => array( 'reveal_enable_events', '=', '1' ),
-                    //     'title'    => esc_html__( 'Events Single Page Layout', 'reveal' ),
-                    //     'subtitle' => esc_html__( 'Select Single Events Page Layout', 'reveal' ),
-                    //     'desc'     => esc_html__( 'Choose From Left / Right Information Sidebar', 'reveal' ),
-                    //     //Must provide key => value(array:title|img) pairs for radio options
-                    //     'options'  => array(
-                    //         '1' => array(
-                    //             'alt' => '2 Column Left',
-                    //             'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
-                    //         ),
-                    //         '2' => array(
-                    //             'alt' => '2 Column Right',
-                    //             'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
-                    //         )
-                    //     ),
-                    //     'default'  => '2'
-                    // ),
-
-                    // array(
-                    //     'id'        => 'reveal_events_comments',
-                    //     'type'      => 'switch',
-                    //     'required'  => array( 'reveal_enable_events', '=', '1' ),
-                    //     'title'     => esc_html__('Enable Events Comments?', 'reveal'),
-                    //     'subtitle'  => esc_html__('Select if You Need Events Single Page Comments Section', 'reveal'),
-                    //     'desc'      => esc_html__('Choose to Enable / Disable Events Single Page Comments', 'reveal'),
-                    //     "default"   => false,
-                    // ),
-
                 )    
             );
 
@@ -1214,71 +1177,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'desc'      => esc_html__('Choose to Enable / Disable Testimonials Pagination', 'reveal'),
                         'required' => array( 'reveal_enable_testimonial', '=', '1' ),
                     ),
-
-                    // array(
-                    //     'id'        => 'reveal_events_style',
-                    //     'type'      => 'select',
-                    //     'title'     => esc_html__('Events Archive Posts Style', 'reveal'),
-                    //     'desc'      => esc_html__('Choose Events Archive Posts Style', 'reveal'),
-                    //     'required' => array( 'reveal_enable_events', '=', '1' ),
-                    //     'options'   => array(
-                    //         'grid'=> esc_html__( 'Grid', 'reveal' ),
-                    //         'list'  => esc_html__( 'List', 'reveal' ),
-                    //     ),
-                    //     'default'   => 'list'
-                    // ),
-
-                    // array(
-                    //     'id'        => 'reveal_events_grid_columns',
-                    //     'type'      => 'select',
-                    //     'title'     => esc_html__('Columns Number', 'reveal'),
-                    //     'desc'      => '',
-                    //     'options'   => array(
-                    //         '2' => esc_html__( '2 columns', 'reveal' ) ,
-                    //         '3' => esc_html__( '3 columns', 'reveal' ) ,
-                    //         '4' => esc_html__( '4 columns', 'reveal' ) ,
-                    //     ),
-                    //     'default' => '3',
-                    //     'required' => array('reveal_events_style','equals', array( 'grid' ) ),
-                    // ),
-
-                    // array(
-                    //     'id'       => 'reveal_events_title_excerpt_length',
-                    //     'type'     => 'switch',
-                    //     'required' => array( 'reveal_enable_events', '=', '1' ),
-                    //     'title'    => esc_html__( 'Enable Events Title and Excerpt Length?', 'reveal' ),
-                    //     'subtitle' => esc_html__( 'Select to enable/disable Events-title & excerpt length', 'reveal' ),
-                    //     'default'  => 0,
-                    //     'on'       => 'Enabled',
-                    //     'off'      => 'Disabled',
-                    // ),
-
-                    // array(
-                    //     'id'        => 'reveal_events_title_length',
-                    //     'type'      => 'slider',
-                    //     'min'       => '10',
-                    //     'max'       => '150',
-                    //     'step'      => '1',
-                    //     'required'  => array( 'reveal_events_title_excerpt_length', '=', '1' ),
-                    //     'title'     => esc_html__('Title Length for Events', 'reveal'),
-                    //     'subtitle'  => esc_html__('Control the Title Length for Events (In Character)', 'reveal'),
-                    //     'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Events Archive Page.", 'reveal'),
-                    //     // 'default'   => 7,
-                    // ),
-
-                    // array(
-                    //     'id'        => 'reveal_events_excerpt_length',
-                    //     'type'      => 'slider',
-                    //     'min'       => '20',
-                    //     'max'       => '500',
-                    //     'step'      => '1',
-                    //     'required'  => array( 'reveal_events_title_excerpt_length', '=', '1' ),
-                    //     'title'     => esc_html__('Excerpt Length for Events', 'reveal'),
-                    //     'subtitle'  => esc_html__('Control the Excerpt Length for Events (In Character)', 'reveal'),
-                    //     'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Events Archive Page.", 'reveal'),
-                    //     // 'default'   => 20,
-                    // ),
-
                 )    
             );
 
@@ -1299,27 +1197,27 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'options'  => array(
                             '1' => array(
                                 'alt' => 'Footer-1',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/footer-1.jpg'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/footer-1.jpg'
                             ),
                             '2' => array(
                                 'alt' => 'Footer-2',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/footer-2.jpg'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/footer-2.jpg'
                             ),
                             '3' => array(
                                 'alt' => 'Footer-3',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/footer-3.jpg'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/footer-3.jpg'
                             ),
                             '4' => array(
                                 'alt' => 'Footer-4',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/footer-4.jpg'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/footer-4.jpg'
                             ),
                             '5' => array(
                                 'alt' => 'Footer-5',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/footer-5.jpg'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/footer-5.jpg'
                             ),
                             '6' => array(
                                 'alt' => 'Footer-6',
-                                'img' => get_template_directory_uri() . '/assets/images/admin/footer-6.jpg'
+                                'img' => CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/images/footer-6.jpg'
                             ),
                         ),
                         'default'  => '1'
@@ -1341,64 +1239,11 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Footer copyright text  ', 'reveal' ),
                         'desc'     => esc_html__( 'Please add your copyright text  ', 'reveal' ),
                         'validate' => 'html',
-                        'default'  => 'HTML is allowed in here.'
+                        'default'  => __( 'Copyright &copy; 2017. All Right Reserved.', 'reveal' )
                     ),
                 )
 
-            ); //End Footer... 
-
-            // //Map Section
-            // $this->sections[] = array(
-            //         'title'            => esc_html__( 'Map Settings', 'reveal' ),
-            //         'customizer_width' => '500px',
-            //         'icon'             => 'el el-map-marker',
-            //         'id'               => 'reveal-map-parent',
-
-            //         'desc'             => sprintf(__('You can find the <strong>Latitude</strong> and <strong>Longitude</strong> information by placing your address <a href="%s" target="_blank">Here</a>', 'reveal'), esc_url('//latlong.net/')),
-            //         'fields'           => array(
-
-
-            //             array(
-            //                 'title' => esc_html__('Insert Google Map API Key', 'reveal'),
-            //                 'desc' => 'Enter Your Google Map API Key',
-            //                 'id'    => 'reveal-google-map-api-key',                  
-            //                 'type'  => 'text',
-            //                 'desc'  => sprintf(__('If you don\'t have the API key yet, then <a href="%s" target="_blank">Click Here</a> to get a API key', 'reveal'), esc_url('//developers.google.com/maps/documentation/javascript/get-api-key')), 
-            //                 'default' => ''
-            //             ),
-
-            //             array(
-            //                 'title' => esc_html__('Insert Map Latitude', 'reveal'),
-            //                 'id'    => 'reveal-google-map-latitude',
-            //                 'type'  => 'text',
-            //                 'default' => '39.414269'
-            //             ),
-
-            //             array(
-            //                 'title' => esc_html__('Insert Map Longitude', 'reveal'),
-            //                 'id'    => 'reveal-google-map-longitude',
-            //                 'type'  => 'text',
-            //                 'default' => '-77.410541'
-            //             ),
-
-            //             array(
-            //                 'title' => esc_html__('Map Zoom Level', 'reveal'),
-            //                 'id'    => 'reveal-google-map-zoom',
-            //                 'type'  => 'text',
-            //                 'default' => '15'
-            //             ),
-
-            //             array(
-            //                 'id'       => 'reveal-google-map-marker',
-            //                 'type'     => 'media',
-            //                 'url'      => true,
-            //                 'title'    => esc_html__( 'Upload Map Marker', 'reveal' ),
-            //                 'compiler' => 'true',
-            //                 'default'  => array( 'url' => get_template_directory_uri() . '/assets/images/admin/map-marker-1.png' ),
-            //             ),
-
-            //         )
-            //     );
+            ); //End Footer...
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Advanced Settings', 'reveal' ),

@@ -20,7 +20,9 @@ define( 'CODEXIN_FRAMEWORK_ADMIN_URL', trailingslashit( CODEXIN_FRAMEWORK_URL . 
 define( 'CODEXIN_FRAMEWORK_CONFIG_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'config/' ) );
 define( 'CODEXIN_FRAMEWORK_FUNC_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'functions/' ) );
 define( 'CODEXIN_FRAMEWORK_LIBS_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'libs/' ) );
-define( 'CODEXIN_FRAMEWORK_LIBS_URL', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/' ) );
+define( 'CODEXIN_FRAMEWORK_CSS', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/css' ) );
+define( 'CODEXIN_FRAMEWORK_JS', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/js' ) );
+define( 'CODEXIN_FRAMEWORK_IMG', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/images' ) );
 define( 'CODEXIN_TEMPLATE_PARTIALS', 'framework/templates/' );
 
 
@@ -75,13 +77,13 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 * Adding Codexin framework helpers
 			 *
 			 */
-			require_once CODEXIN_FRAMEWORK_DIR . 'helpers/helpers.php';
+			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'helpers.php';
 
 			/**
 			 * Adding Schema Markup for better SEO compatibility
 			 *
 			 */
-			require_once CODEXIN_FRAMEWORK_DIR . 'helpers/schema_markup.php';
+			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'schema_markup.php';
 
 			/**
 			 * Adding Theme Options

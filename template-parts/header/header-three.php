@@ -14,7 +14,7 @@ $responsive_header = codexin_get_option('reveal-responsive-version');
 					<div class="left-menu-wrapper">
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="hidden-xs left-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
-							<?php if(has_nav_menu( 'main_menu_left' )): get_main_menu_left(); 
+							<?php if(has_nav_menu( 'main_menu_left' )): codexin_menu( 'main_menu_left' ); 
 										else: ?>
 											<div class="main-menu">
 												<ul id="main_menu" class="sf-menu">
@@ -80,7 +80,7 @@ $responsive_header = codexin_get_option('reveal-responsive-version');
 					<div class="right-menu-wrapper">
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
-							<?php if(has_nav_menu( 'main_menu_right' )): get_main_menu_right(); 
+							<?php if(has_nav_menu( 'main_menu_right' )): codexin_menu( 'main_menu_right' ); 
 										else: ?>
 											<div class="main-menu">
 												<ul id="main_menu_right" class="sf-menu">

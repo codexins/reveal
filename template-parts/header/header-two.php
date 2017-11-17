@@ -61,7 +61,7 @@ $responsive_header = codexin_get_option('reveal-responsive-version');
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="menu-wrapper">
 					<div class="hidden-xs" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php if(has_nav_menu( 'main_menu' )): get_main_menu(); 
+						<?php if(has_nav_menu( 'main_menu' )): codexin_menu( 'main_menu' ); 
 									else: ?>
 										<div class="main-menu">
 											<ul id="main_menu" class="sf-menu">
