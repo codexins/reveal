@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Main navigation function
+ *
+ * @package Reveal
+ * @subpackage Core
+ */
+
+
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
@@ -7,9 +15,9 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 /**
  * Function to get Menus in the assigned Menu locations
  * 
- * @uses wp_nav_menu()
+ * @uses 	wp_nav_menu()
  * @param  	string    $menu_type    The registered name of the menu
- * @since v1.0.0
+ * @since 	v1.0.0
  */
 function codexin_menu( $menu_type ) {	
 	wp_nav_menu( init_codexin_menu( $menu_type ) );
@@ -20,7 +28,7 @@ function codexin_menu( $menu_type ) {
  * 
  * @param  	string    $menu_type    The registered name of the menu
  * @return  array 	  $args 		Arguments to pass in wp_nav_menu()
- * @since v1.0.0
+ * @since   v1.0.0
  */
 function init_codexin_menu( $menu_type ) {
 	$args = array(

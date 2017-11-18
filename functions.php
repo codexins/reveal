@@ -4,11 +4,11 @@
  *
  * Framework files and functions are hooked here.
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link 		https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Reveal
- * @subpackage Core
- * @since 1.0
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
@@ -27,7 +27,7 @@ define( 'REVEAL_THEME_CSS', REVEAL_THEME_ASSETS . 'css/' );
 define( 'REVEAL_THEME_JS', REVEAL_THEME_ASSETS . 'js/' );
 define( 'REVEAL_THEME_IMG', REVEAL_THEME_ASSETS . 'images/' );
 
-//Include framework
+// Include framework
 require REVEAL_THEME_ROOT_DIR . 'framework/codexin_framework.php';
 
 // Instantiating framework

@@ -1,29 +1,29 @@
 <?php
 
 /**
-* The header for our theme
-*
-* This is the template that displays all of the <head> section and everything up until <div id="content">
-*
-* @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
-*
-* @package Reveal
-*/
+ * The template for displaying the header
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @package 	Reveal
+ * @subpackage 	Templates
+ */
 
 
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 ?><!DOCTYPE html>
 
-<html <?php html_tag_schema(); ?> <?php language_attributes(); ?>>
+<html <?php codexin_html_tag_schema(); ?> <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11"/>
+    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
+	<?php wp_head(); ?>
 </head>
-
-
 
 <body <?php body_class(); ?>>
 
@@ -33,33 +33,41 @@
 
 	<?php 
 
-	$page_loader = codexin_get_option('reveal-page-loader');
-	$responsive_header = codexin_get_option('reveal-responsive-version');
+	// Setting up all the variables for this file
+	$page_loader 			= codexin_get_option( 'reveal-page-loader' );
+	$responsive_header 		= codexin_get_option( 'reveal-responsive-version' );
+	$header_version 		= codexin_get_option( 'reveal-header-version' );
+	$mobile_menu_classname 	= ( $responsive_header == 'left' ) ? 'left' : 'right';
+	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
+	$disable_head 			= codexin_meta( 'reveal_disable_header' );
+	$disable_title 			= codexin_meta( 'reveal_disable_page_title' );
+
+	do_action( 'codexin_body_entry' );
 
 	?>
 	<!--  Site Loader -->
-	<?php if( $page_loader ): ?>
-		<div id="preloader_1"></div>			
-	<?php endif; ?>
+	<?php 
+	if( $page_loader ){
+		echo '<div id="preloader_1"></div>';
+	}
+	?>
 	<!--  Site Loader finished -->
 
 	<!-- Initializing Mobile Menu -->
-	<?php if( $responsive_header == 'left' ): ?>
-	<div id="c-menu--slide-left" class="c-menu c-menu--slide-left reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
-	<?php else: ?>
-	<div id="c-menu--slide-right" class="c-menu c-menu--slide-right reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
-	<?php endif; ?>
+	<div id="c-menu--slide-<?php echo esc_attr( $mobile_menu_classname ); ?>" class="c-menu c-menu--slide-<?php echo esc_attr( $mobile_menu_classname ); ?> reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
-		<?php if(has_nav_menu( 'main_menu' )): codexin_menu( 'mobile_menu' ); 
-					else: ?>
-						<div id="mobile-menu" class="c-menu__items">
-							<ul>
-									<li class="menu-notice">
-										<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html('Add a Menu'); ?></a>
-									</li>
-							</ul>
-						</div>
-		<?php endif; ?>
+		<?php
+		if( has_nav_menu( 'main_menu' ) ) {
+			codexin_menu( 'mobile_menu' ); 
+		} else { ?>
+			<div id="mobile-menu" class="c-menu__items">
+				<ul>
+					<li class="menu-notice">
+						<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html__( 'Add a Menu', 'reveal' ); ?></a>
+					</li>
+				</ul>
+			</div>
+		<?php } ?>
 	</div><!-- end of Moblie Menu -->
 
 	<!-- Mobile Menu Masking -->
@@ -67,48 +75,45 @@
 
 	<!-- Start of whole -->
 	<div id="whole" class="whole-site-wrapper">
-	
-	<?php $disable_head = rwmb_meta('reveal_disable_header', 'type=checkbox'); ?>
+		
+		<?php
 
-	<?php if($disable_head == 0): ?>	
-		<?php if(is_page_template('page-templates/page-home.php')): ?>
-					<header id="header" class="header front-header" itemscope itemtype="http://schema.org/WPHeader">
-		<?php else: ?>
-		<header id="header" class="header inner-header" itemscope itemtype="http://schema.org/WPHeader">
-	        <div class="nav-container">
-		<?php endif; ?>	
-			
+		do_action( 'codexin_before_header' );
+
+		if( $disable_head == 0 ) { ?>	
+			<header id="header" class="header <?php echo esc_attr( $page_identity ); ?>" itemscope itemtype="http://schema.org/WPHeader">
+		        <?php
+		        echo ( $page_identity == 'inner-header' ) ? '<div class="nav-container">' : '';
+				
+					// Go to a specific header template partial depending on user choice
+					if( $header_version == 1 ) {
+						get_template_part( 'template-parts/header/header', 'one' );
+					} elseif ($header_version == 2 ) {
+						get_template_part( 'template-parts/header/header', 'two' );
+					} elseif( $header_version == 3 ) {
+						get_template_part( 'template-parts/header/header', 'three' );
+					} elseif( $header_version == 4 ) {
+						get_template_part( 'template-parts/header/header', 'four' );
+					} else {
+						get_template_part( 'template-parts/header/header', 'one' );
+					}
+
+				echo ( $page_identity == 'inner-header' ) ? '</div> <!-- end of nav-container -->' : ''; ?>
+			</header><!-- end of #header -->
+		<?php } ?>	
+		
 		<?php 
 		
-		$header_version = codexin_get_option('reveal-header-version');
+		do_action( 'codexin_before_page_title' );
 
-		if($header_version == 1): 
-		get_template_part('template-parts/header/header', 'one');
+		if( $disable_title == 0 ) {
+			get_template_part('template-parts/header/page', 'title');
+		} else {
+			echo ( $disable_head == 0 ) ? '<div class="reveal-spacer-30"></div>' : '';
+		}
 
-		 elseif($header_version == 2): 
-		 get_template_part('template-parts/header/header', 'two');
+		do_action( 'codexin_after_page_title' );
+		
+		?>
 
-		elseif($header_version == 3): 
-		get_template_part('template-parts/header/header', 'three');
-
-		elseif($header_version == 4): 
-		get_template_part('template-parts/header/header', 'four');
-
-
-		endif; ?>
-
-	    <?php if( !is_page_template('page-templates/page-home.php') ): ?>
-	        </div> <!-- end nav-container -->
-	    <?php endif; ?>
-		</header><!-- end of header -->
-	<?php endif; ?>	
-	
-	<?php 
-	$disable_title = rwmb_meta('reveal_disable_page_title', 'type=checkbox');
-	if($disable_title == 0):
-		get_template_part('template-parts/header/page', 'title');
-	else: 
-		echo ($disable_head == 0) ? '<div class="reveal-spacer-30"></div>' : '';
-	endif; ?>
-
-	<div class="clearfix"></div>
+		<div class="clearfix"></div>

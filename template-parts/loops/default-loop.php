@@ -39,7 +39,7 @@ if ( have_posts() ) {
         }
 
 		if( $single_post ) {
-			( $single_nav ) ? reveal_post_link() : '';
+			( $single_nav ) ? codexin_post_link() : '';
 			( $single_comment ) ? comments_template('', true) : '';
 		}
 
@@ -50,9 +50,9 @@ if ( have_posts() ) {
 	    echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
 
 	    if( $posts_nav == 'numbered' ) {
-	        echo reveal_posts_link_numbered();
+	        echo codexin_numbered_posts_nav();
 	    } else {
-	        reveal_posts_link();
+	        codexin_posts_link();
 	    }
 
 	    echo ( $post_style == 'grid' ) ? '</div>' : '' ;

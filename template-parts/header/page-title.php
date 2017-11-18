@@ -59,12 +59,10 @@
 							
 							$reveal_bc = codexin_get_option('reveal-bcrumbs');
 
-							if( codexin_get_option('reveal-bcrumbs' ) ): 
+							if( codexin_get_option('reveal-bcrumbs' ) ) {
 								// Initializing breadcrumb
-								if (function_exists('reveal_custom_breadcrumbs')) {
-									echo reveal_custom_breadcrumbs();
-								}
-							endif;
+								echo codexin_breadcrumbs();
+							}
 							?>
 						</div>
 					</div>

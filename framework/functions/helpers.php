@@ -1,14 +1,25 @@
 <?php
 
+/**
+ * Various helper functions definition related to Codexin framework
+ *
+ * @package Reveal
+ * @subpackage Core
+ */
+
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
 
 if ( ! function_exists('codexin_get_option' ) ) {
     /**
      * Helper Function to get theme options
      *
-     * @param  int       $option     The option we need from the DB
-     * @param  string    $default    If $option doesn't exist in DB return $default value
-     * @return string
-     * @since v1.0.0
+     * @param   int       $option     The option we need from the DB
+     * @param   string    $default    If $option doesn't exist in DB return $default value
+     * @return  mixed
+     * @since   v1.0.0
      */
     function codexin_get_option( $option = false, $default = false ){
         if( $option === false ) {
@@ -34,11 +45,11 @@ if ( ! function_exists( 'codexin_meta' ) ) {
     /**
      * Helper Function to get meta data from metabox
      *
-     * @param  string     $key        The meta key name from which we want to get the value
-     * @param  array      $args       The arguments of the meta key
-     * @param  int        $post_id    The ID of the post
-     * @return string
-     * @since v1.0.0
+     * @param   string     $key        The meta key name from which we want to get the value
+     * @param   array      $args       The arguments of the meta key
+     * @param   int        $post_id    The ID of the post
+     * @return  mixed
+     * @since   v1.0.0
      */
     function codexin_meta( $key, $args = array(), $post_id = null ){
         if( function_exists( 'rwmb_meta' ) ) {
@@ -54,8 +65,8 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
     /**
      * Register Google fonts for theme.
      *
-     * @return string Google fonts URL for the theme.
-     * @since v1.0.0
+     * @return    string      Google fonts URL for the theme.
+     * @since     v1.0.0
      */
     function codexin_default_google_fonts() {
         $fonts_url = '';
@@ -76,9 +87,10 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
     /**
      * Helper Function to limit the character length
      *
-     * @param  int       $limit     The number of character to limit
-     * @return string
-     * @since v1.0.0
+     * @param   int       $limit     The number of character to limit
+     * @param   string    $type      The type of content (possible: title/excerpt)
+     * @return  string
+     * @since   v1.0.0
      */
     function codexin_char_limit( $limit, $type ) {
         $content = ( $type == 'title' ) ? get_the_title() : get_the_excerpt();
@@ -106,9 +118,9 @@ if ( ! function_exists( 'reveal_title' ) ) {
     /**
      * Helper Function to limit the title length
      *
-     * @param  int       $limit     The number of character to limit
-     * @return string
-     * @since v1.0.0
+     * @param   int       $limit     The number of character to limit
+     * @return  string
+     * @since   v1.0.0
      */
     function reveal_title( $limit ) {
         $title = get_the_title();
@@ -199,9 +211,9 @@ if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
     /**
      * Helper function to sanitize hex colors
      *
-     * @param  string       $color     The color code
-     * @return string
-     * @since v1.0.0
+     * @param   string  $color  The color code
+     * @return  string
+     * @since   v1.0.0
      */
     function reveal_sanitize_hex_color( $color ) {
         if ( '' === $color ) {
@@ -226,10 +238,10 @@ if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
     /**
      * Helper function to convert hex color to RGBA
      *
-     * @param  string      $hex_color     The color code in hexadecimal
-     * @param  float       $opacity       The color opacity we want
-     * @return string
-     * @since v1.0.0
+     * @param   string      $hex_color     The color code in hexadecimal
+     * @param   float       $opacity       The color opacity we want
+     * @return  string
+     * @since   v1.0.0
      */
     function reveal_hex_to_rgba( $hex_color, $opacity = '' ) {
         $hex_color = str_replace( "#", "", $hex_color );
@@ -259,10 +271,10 @@ if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
     /**
      * Helper function to adjust brightness of a color
      *
-     * @param  string      $hex_color        The color code in hexadecimal
-     * @param  float       $percent_adjust   The percentage we want to lighten/darken the color
-     * @return string
-     * @since v1.0.0
+     * @param   string      $hex_color        The color code in hexadecimal
+     * @param   float       $percent_adjust   The percentage we want to lighten/darken the color
+     * @return  string
+     * @since   v1.0.0
      */
     function reveal_adjust_color_brightness( $hex_color, $percent_adjust = 0 ) {
         $percent_adjust = round( $percent_adjust/100,2 );    
@@ -280,30 +292,5 @@ if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
             .str_pad( dechex( max( 0,min( 255,$b ) ) ),2,"0",STR_PAD_LEFT);
 
         return reveal_sanitize_hex_color( $new_hex );    
-    }
-}
-
-
-
-if ( ! function_exists( 'codexin_comments_nav' ) ) {
-    /**
-     * Helper function to display previous/next comments navigation if needed
-     *
-     * @since v1.0.0
-     */
-    function codexin_comments_nav() {
-
-        // Are there comments to navigate through?
-        if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
-            ?>
-            <nav id="comment-nav-below" class="navigation comment-navigation">
-                <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'reveal' ); ?></h2>
-                <div class="nav-links reveal-color-0 reveal-primary-btn">
-                    <div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'reveal' ) ); ?></div>
-                    <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'reveal' ) ); ?></div>
-                </div><!-- end of nav-links -->
-            </nav><!-- end of #comment-nav-below -->
-        <?php
-        endif;
     }
 }

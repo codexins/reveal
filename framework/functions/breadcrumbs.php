@@ -1,12 +1,26 @@
 <?php
 
-/*************************************************************
- * BREADCRUMBS
- *************************************************************/
+/**
+ * Function definition of breadcrumbs
+ * This file does the breadcrumbs handling for the codexin framework.
+ *
+ * @package Reveal
+ * @subpackage Core
+ */
 
-if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
 
-    function reveal_custom_breadcrumbs() {
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
+
+if( ! function_exists( 'codexin_breadcrumbs' ) ) {
+    /**
+     * Function to handle the breadcrumbs
+     *
+     * @since v1.0.0
+     */
+    function codexin_breadcrumbs() {
+
         // Set variables for later use
         $home_link        = home_url('/');
         $home_text        = esc_html__( 'Home' , 'reveal');
@@ -14,10 +28,10 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
         $link_after       = '</span>';
         $link_attr        = ' rel="v:url" property="v:title"';
         $link             = $link_before . '<a' . $link_attr . ' href="%1$s">%2$s</a>' . $link_after;
-        $delimiter        = ' <i class="fa fa-angle-right"></i> ';              // Delimiter between crumbs
-        $before           = '<span class="current" property="v:title">'; // Tag before the current crumb
-        $after            = '</span>';                // Tag after the current crumb
-        $page_addon       = '';                       // Adds the page number if the query is paged
+        $delimiter        = ' <i class="fa fa-angle-right"></i> ';
+        $before           = '<span class="current" property="v:title">';
+        $after            = '</span>';
+        $page_addon       = '';
         $breadcrumb_trail = '';
         $category_links   = '';
 
@@ -29,8 +43,7 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
         $queried_object = $wp_the_query->get_queried_object();
 
         // Handle single post requests which includes single pages, posts and attatchments
-        if ( is_singular() ) 
-        {
+        if ( is_singular() ) {
             /** 
              * Set our own $post variable. Do not use the global variable version due to 
              * reliability. We will set $post_object variable to $GLOBALS['wp_the_query']
@@ -46,8 +59,7 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
             $parent_string  = '';
             $post_type_link = '';
 
-            if ( 'post' === $post_type ) 
-            {
+            if ( 'post' === $post_type ) {
                 // Get the post categories
                 $categories = get_the_category( $post_id );
                 if ( $categories ) {
@@ -60,8 +72,7 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
                 }
             }
 
-            if ( !in_array( $post_type, ['post', 'page', 'attachment'] ) )
-            {
+            if ( !in_array( $post_type, ['post', 'page', 'attachment'] ) ) {
                 $post_type_object = get_post_type_object( $post_type );
                 $archive_link     = esc_url( get_post_type_archive_link( $post_type ) );
 
@@ -69,8 +80,7 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
             }
 
             // Get post parents if $parent !== 0
-            if ( 0 !== $parent ) 
-            {
+            if ( 0 !== $parent ) {
                 $parent_links = [];
                 while ( $parent ) {
                     $post_parent = get_post( $parent );
@@ -92,20 +102,18 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
                 $breadcrumb_trail = $post_link;
             }
 
-            if ( $post_type_link )
+            if ( $post_type_link ) {
                 $breadcrumb_trail = $post_type_link . $delimiter . $breadcrumb_trail;
+            }
 
-            if ( $category_links )
+            if ( $category_links ) {
                 $breadcrumb_trail = $category_links . $breadcrumb_trail;
+            }
         }
 
         // Handle archives which includes category-, tag-, taxonomy-, date-, custom post type archives and author archives
-        if( is_archive() )
-        {
-            if (    is_category()
-                 || is_tag()
-                 || is_tax()
-            ) {
+        if( is_archive() ) {
+            if ( is_category() || is_tag() || is_tax() ) {
                 // Set the variables for this section
                 $term_object        = get_term( $queried_object );
                 $taxonomy           = $term_object->taxonomy;
@@ -116,8 +124,7 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
                 $current_term_link  = $before . $taxonomy_object->labels->singular_name . ': ' . $term_name . $after;
                 $parent_term_string = '';
 
-                if ( 0 !== $term_parent )
-                {
+                if ( 0 !== $term_parent ) {
                     // Get all the current term ancestors
                     $parent_term_links = [];
                     while ( $term_parent ) {
@@ -216,7 +223,7 @@ if( ! function_exists( 'reveal_custom_breadcrumbs' ) ) {
             $breadcrumb_output_link .= $breadcrumb_trail;
             $breadcrumb_output_link .= $page_addon;
         }
-        $breadcrumb_output_link .= '</div><!-- enf of breadcrumb -->';
+        $breadcrumb_output_link .= '</div> <!-- enf of breadcrumb -->';
 
         return $breadcrumb_output_link;
     }

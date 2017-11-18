@@ -1,15 +1,25 @@
 <?php
 
-
-
 /**
- * Removing 'Redux Framework' sub menu under Tools 
+ * Various core functions definition related to Codexin framework
  *
- * @uses add_action()
- * @since v1.0.0
+ * @package Reveal
+ * @subpackage Core
  */
+
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
+
 add_action( 'admin_menu', 'remove_redux_menu',12 );
 if ( ! function_exists( 'remove_redux_menu' ) ) {
+	/**
+	 * Removing 'Redux Framework' sub menu under Tools 
+	 *
+	 * @uses 	remove_submenu_page()
+	 * @since 	v1.0.0
+	 */
 	function remove_redux_menu() {
 	    remove_submenu_page( 'tools.php','redux-about' );
 	}
@@ -19,20 +29,23 @@ if ( ! function_exists( 'remove_redux_menu' ) ) {
 /**
  * Removing srcset from featured image
  *
- * @uses add_filter()
- * @since v1.0.0
+ * @uses 	add_filter()
+ * @since 	v1.0.0
  */
 add_filter( 'max_srcset_image_width', create_function( '', 'return 1;' ) );
 
 
-/**
- * Removing width & height from featured image
- *
- * @uses add_filter()
- * @since v1.0.0
- */
 add_filter( 'post_thumbnail_html', 'codexin_remove_thumbnail_dimensions', 10, 3 );
 if ( ! function_exists( 'codexin_remove_thumbnail_dimensions' ) ) {
+	/**
+	 * Removing width & height from featured image
+	 *
+	 * @param 	string 		$html
+	 * @param 	integer 	$post_id
+	 * @param 	integer 	$post_image_id
+	 * @return 	mixed
+	 * @since 	v1.0.0
+	 */
 	function codexin_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
 	    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
 	    return $html;
@@ -40,15 +53,14 @@ if ( ! function_exists( 'codexin_remove_thumbnail_dimensions' ) ) {
 }
 
 
-/**
- * Apply theme's stylesheet to the visual editor.
- *
- * @uses add_editor_style() Links a stylesheet to visual editor
- * @uses add_action()
- * @since v1.0.0
- */
 add_action( 'admin_init', 'codexin_editor_styles' );
 if ( ! function_exists( 'codexin_editor_styles' ) ) {
+	/**
+	 * Apply theme's stylesheet to the visual editor.
+	 *
+	 * @uses 	add_editor_style() Links a stylesheet to visual editor
+	 * @since 	v1.0.0
+	 */
 	function codexin_editor_styles() {
 		add_editor_style( 'framework/admin/assets/css/editor-style.css' );
 	}
@@ -58,8 +70,8 @@ if ( ! function_exists( 'codexin_editor_styles' ) ) {
 /**
  * Adding wp_title support
  *
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @since 	v1.0.0
  */
 if ( ! function_exists( '_wp_render_title_tag' ) ) {
 	add_action( 'wp_head', 'codexin_render_title' );
@@ -73,29 +85,14 @@ if ( ! function_exists( 'codexin_render_title' ) ) {
 }
 
 
-/**
- * Adding schema to navigation links
- *
- * @uses add_filter()
- * @since v1.0.0
- */
-add_filter( 'nav_menu_link_attributes', 'codexin_menu_url_attribute', 10, 3 );
-if ( ! function_exists( 'codexin_menu_url_attribute' ) ) {
-	function codexin_menu_url_attribute( $atts, $item, $args ) {
-		$atts['itemprop'] = 'url';
-		return $atts;
-	}
-}
-
-
-/**
- * Removes the demo link and the notice of integrated demo from the redux-framework plugin
- *
- * @uses remove_filter()
- * @uses remove_action()
- * @since v1.0.0
- */
 if ( ! function_exists( 'remove_demo' ) ) {
+	/**
+	 * Removes the demo link and the notice of integrated demo from the redux-framework plugin
+	 *
+	 * @uses 	remove_filter()
+	 * @uses 	remove_action()
+	 * @since 	v1.0.0
+	 */
     function remove_demo() {
         // Used to hide the demo mode link from the plugin page. Only used when Redux is a plugin.
         if ( class_exists( 'ReduxFrameworkPlugin' ) ) {
@@ -114,8 +111,8 @@ if ( ! function_exists( 'remove_demo' ) ) {
 /**
  * Function for Redirecting single testimonial to the archive page, scrolled to current ID 
  * 
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @since 	v1.0.0
  */
 add_action( 'template_redirect', function() {
     if ( is_singular('testimonial') ) {
@@ -130,8 +127,8 @@ add_action( 'template_redirect', function() {
 /**
  * Function for Turning off pagination for the Testimonial archive page
  * 
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @since 	v1.0.0
  */
 $testimonial_pagination = codexin_get_option('reveal_enable_testimonial_pagination');
 if( $testimonial_pagination == false ) {
@@ -146,8 +143,8 @@ if( $testimonial_pagination == false ) {
 /**
  * Function for Turning off pagination for the Team archive page
  * 
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @since 	v1.0.0
  */
 add_action( 'parse_query', function( $query ) {
     if ( is_post_type_archive( 'team' ) ) {
@@ -156,16 +153,15 @@ add_action( 'parse_query', function( $query ) {
 } );
 
 
-/**
- * Custom Callback Function for Comment layout
- *
- * @param $comment
- * @param $args
- * @param $depth
- * @since v1.0.0
- */
-
 if ( ! function_exists( 'codexin_comment_function' ) ) {
+	/**
+	 * Custom Callback Function for Comment layout
+	 *
+	 * @param 	$comment
+	 * @param 	$args
+	 * @param 	$depth
+	 * @since 	v1.0.0
+	 */
 	function codexin_comment_function( $comment, $args, $depth ) {
 
 	    $GLOBALS['comment'] = $comment; ?>
@@ -216,15 +212,15 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
 }
 
 
-/**
- * Hides/Shows metaboxes on demand - depending on your selection inside the post formats meta box
- *
- * @uses add_action()
- * @param $hook
- * @since v1.0.0
- */
 add_action( 'admin_enqueue_scripts', 'codexin_post_formats', 10, 1 );
 if ( ! function_exists( 'codexin_post_formats' ) ) {
+	/**
+	 * Hides/Shows metaboxes on demand - depending on your selection inside the post formats meta box
+	 *
+	 * @uses 	wp_enqueue_script()
+	 * @param 	$hook
+	 * @since 	v1.0.0
+	 */
 	function codexin_post_formats( $hook ) {	 
 	    global $post;	 
 	    if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
@@ -236,17 +232,16 @@ if ( ! function_exists( 'codexin_post_formats' ) ) {
 }
 
 
-/**
- * Function for adding body class on special occasions
- * 
- * @uses add_filter()
- * @param int 	$classes	The class to be returned
- * @return string
- * @since v1.0.0
- *
- */
 add_filter( 'body_class', 'codexin_body_class' );
 if ( ! function_exists( 'codexin_body_class' ) ) {
+	/**
+	 * Function for adding body class on special occasions
+	 * 
+	 * @param 	int 	$classes	The class to be returned
+	 * @return 	string
+	 * @since 	v1.0.0
+	 *
+	 */
 	function codexin_body_class( $classes ) {
 	    $port_style 	= codexin_get_option( 'reveal_portfolio_style' );
 	    $event_style 	= codexin_get_option( 'reveal_events_style' );
@@ -267,8 +262,9 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
 /**
  * Function for deregistering Events Custom Posts Type
  *
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @uses 	unregister_post_type()
+ * @since 	v1.0.0
 **/
 $enable_events = codexin_get_option( 'reveal_enable_events' );
 $version = '4.5';
@@ -287,8 +283,9 @@ if( $enable_events == false ) {
 /**
  * Function for deregistering Testimonial Custom Posts Type
  *
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @uses 	unregister_post_type()
+ * @since 	v1.0.0
 **/
 $enable_testimonial = codexin_get_option( 'reveal_enable_testimonial' );
 $version = '4.5';
@@ -307,8 +304,9 @@ if( $enable_testimonial == false ) {
 /**
  * Function for deregistering Portfolio Custom Posts Type
  *
- * @uses add_action()
- * @since v1.0.0
+ * @uses 	add_action()
+ * @uses 	unregister_post_type()
+ * @since 	v1.0.0
 **/
 $enable_portfolio = codexin_get_option( 'reveal_enable_portfolio' );
 $version = '4.5';

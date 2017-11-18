@@ -52,7 +52,7 @@ get_header(); ?>
 				            echo '</div> <!-- end of testimonial-archive-wrapper -->';
 				            echo '<div class="clearfix"></div>';
 
-				            echo reveal_posts_link_numbered();
+				            echo codexin_numbered_posts_nav();
 
 				        } else {
 				            get_template_part( 'template-parts/views/list/content', 'none' );

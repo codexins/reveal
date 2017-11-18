@@ -51,9 +51,9 @@ if( ! $events_single_post ) {
 	    echo ( $events_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
 	    
 	    if( $events_nav == 'numbered' ) {
-	        echo reveal_posts_link_numbered( $loop );
+	        echo codexin_numbered_posts_nav( $loop );
 	    } else {               
-	        reveal_posts_link( 'Newer Events', 'Older Events' );
+	        codexin_posts_link( 'Newer Events', 'Older Events' );
 	    }
 
 	    echo ( $events_style == 'grid' ) ? '</div>' : '' ;	    

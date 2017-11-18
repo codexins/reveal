@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Various feature support when the theme initializes.
+ *
+ * @package Reveal
+ * @subpackage Core
+ */
+
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );

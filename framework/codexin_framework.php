@@ -1,16 +1,18 @@
 <?php
 
 /**
- * Codexin Themes Framework
+ * Codexin Themes Framework. Definition of main framework core class.
  *
- * Should be included in global context.
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-// Declaling some constants for the framework
+// Declaring some constants for the framework
 define( 'CODEXIN_FRAMEWORK_VERSION', '1.0' );
 
 define( 'CODEXIN_FRAMEWORK_DIR', trailingslashit( REVEAL_THEME_ROOT_DIR . 'framework/' ) );
@@ -22,8 +24,8 @@ define( 'CODEXIN_FRAMEWORK_FUNC_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . '
 define( 'CODEXIN_FRAMEWORK_LIBS_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'libs/' ) );
 define( 'CODEXIN_FRAMEWORK_CSS', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/css' ) );
 define( 'CODEXIN_FRAMEWORK_JS', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/js' ) );
-define( 'CODEXIN_FRAMEWORK_IMG', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/images' ) );
-define( 'CODEXIN_TEMPLATE_PARTIALS', 'framework/templates/' );
+define( 'CODEXIN_FRAMEWORK_IMG', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/images/' ) );
+define( 'CODEXIN_TEMPLATE_PARTIALS', trailingslashit( 'framework/templates/' ) );
 
 
 if( ! class_exists( 'Codexin_Framework' ) ) {
@@ -71,7 +73,7 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 * Register widgets locations
 			 *
 			 */
-			require_once CODEXIN_FRAMEWORK_CONFIG_DIR . 'widgets.php';
+			require_once CODEXIN_FRAMEWORK_CONFIG_DIR . 'widget_locations.php';
 
 			/**
 			 * Adding Codexin framework helpers

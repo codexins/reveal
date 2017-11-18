@@ -47,9 +47,9 @@ if ( have_posts() ) {
         echo ( $portfolio_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
 
         if( $portfolio_nav == 'numbered' ) {
-            echo reveal_posts_link_numbered();
+            echo codexin_numbered_posts_nav();
         } else {               
-            reveal_posts_link('Newer Portfolios', 'Older Portfolios');
+            codexin_posts_link( 'Newer Portfolios', 'Older Portfolios' );
         }
         
         echo ( $portfolio_style == 'grid' ) ? '</div>' : '' ;

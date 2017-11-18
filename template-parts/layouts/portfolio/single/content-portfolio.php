@@ -23,7 +23,7 @@
                     <?php the_content(); ?>
                 </div>
             </div>
-            <?php reveal_post_link(__('Prev', 'reveal'), __('Next', 'reveal')); ?>
+            <?php codexin_post_link( __( 'Prev', 'reveal' ), __( 'Next', 'reveal' ) ); ?>
 
             <?php if( codexin_get_option( 'reveal_portfolio_comments' ) ): ?>
                 <div class="portfolio-comments">

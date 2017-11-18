@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Function definition for the required plugins.
+ *
+ * @package Reveal
+ * @subpackage Core
+ */
+
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );

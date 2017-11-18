@@ -1,8 +1,10 @@
-<?php	
+<?php
+
 /**
- * reveal Widget class definitions
+ * Codexin Widget class definitions. Defines locations for sidebar and footer widgets.
  *
  * @package Reveal
+ * @subpackage Core
  */
 
 
@@ -68,6 +70,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
@@ -84,6 +87,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
@@ -100,6 +104,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
@@ -116,6 +121,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
@@ -132,6 +138,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
@@ -148,6 +155,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
@@ -164,6 +172,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 					register_sidebar( array(
 						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
 						'id'				=> 'codexin-footer-col-'. $i .'',
+						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
 					    'before_title'		=> '<p class="widget-title">',
 					    'after_title'		=> '</p>',
 						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
