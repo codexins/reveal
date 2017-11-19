@@ -85,6 +85,24 @@ if ( ! function_exists( 'codexin_render_title' ) ) {
 }
 
 
+add_action( 'codexin_body_entry', 'codexin_pageloader' );
+if ( ! function_exists( 'codexin_pageloader' ) ) {
+	/**
+	 * Adding page loader
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_pageloader() {
+	    $page_loader = codexin_get_option( 'reveal-page-loader' );
+	    if( $page_loader ){
+	    	echo '<!--  Site Loader -->';
+	        echo '<div id="preloader_1"></div>';
+	        echo '<!--  Site Loader finished -->';
+	    }
+	}
+}
+
+
 if ( ! function_exists( 'remove_demo' ) ) {
 	/**
 	 * Removes the demo link and the notice of integrated demo from the redux-framework plugin

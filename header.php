@@ -34,10 +34,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	<?php 
 
 	// Setting up all the variables for this file
-	$page_loader 			= codexin_get_option( 'reveal-page-loader' );
-	$responsive_header 		= codexin_get_option( 'reveal-responsive-version' );
 	$header_version 		= codexin_get_option( 'reveal-header-version' );
-	$mobile_menu_classname 	= ( $responsive_header == 'left' ) ? 'left' : 'right';
 	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
 	$disable_head 			= codexin_meta( 'reveal_disable_header' );
 	$disable_title 			= codexin_meta( 'reveal_disable_page_title' );
@@ -45,29 +42,26 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	do_action( 'codexin_body_entry' );
 
 	?>
-	<!--  Site Loader -->
-	<?php 
-	if( $page_loader ){
-		echo '<div id="preloader_1"></div>';
-	}
-	?>
-	<!--  Site Loader finished -->
 
 	<!-- Initializing Mobile Menu -->
-	<div id="c-menu--slide-<?php echo esc_attr( $mobile_menu_classname ); ?>" class="c-menu c-menu--slide-<?php echo esc_attr( $mobile_menu_classname ); ?> reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
+	<div id="c-menu--slide-<?php echo esc_attr( codexin_responsive_class() ); ?>" class="c-menu c-menu--slide-<?php echo esc_attr( codexin_responsive_class() ); ?> reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
 		<?php
-		if( has_nav_menu( 'main_menu' ) ) {
+
+		// Check if any menu is assigned
+		if( has_nav_menu( 'mobile_menu' ) ) {
+
+			// Assign the menu
 			codexin_menu( 'mobile_menu' ); 
-		} else { ?>
-			<div id="mobile-menu" class="c-menu__items">
-				<ul>
-					<li class="menu-notice">
-						<a href="<?php echo admin_url( 'nav-menus.php' ); ?>" itemprop="url"><?php echo esc_html__( 'Add a Menu', 'reveal' ); ?></a>
-					</li>
-				</ul>
-			</div>
-		<?php } ?>
+
+		} else {
+
+			// If no menu assigned, give a notice
+			echo codexin_add_menu( 'mobile_menu' );
+
+		} //end of nav menu check
+
+		?>
 	</div><!-- end of Moblie Menu -->
 
 	<!-- Mobile Menu Masking -->
@@ -87,20 +81,20 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 				
 					// Go to a specific header template partial depending on user choice
 					if( $header_version == 1 ) {
-						get_template_part( 'template-parts/header/header', 'one' );
+						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'one' );
 					} elseif ($header_version == 2 ) {
-						get_template_part( 'template-parts/header/header', 'two' );
+						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'two' );
 					} elseif( $header_version == 3 ) {
-						get_template_part( 'template-parts/header/header', 'three' );
+						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'three' );
 					} elseif( $header_version == 4 ) {
-						get_template_part( 'template-parts/header/header', 'four' );
+						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'four' );
 					} else {
-						get_template_part( 'template-parts/header/header', 'one' );
+						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'one' );
 					}
 
 				echo ( $page_identity == 'inner-header' ) ? '</div> <!-- end of nav-container -->' : ''; ?>
 			</header><!-- end of #header -->
-		<?php } ?>	
+		<?php } // end of header enable/disable check ?>	
 		
 		<?php 
 		
@@ -110,7 +104,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 			get_template_part('template-parts/header/page', 'title');
 		} else {
 			echo ( $disable_head == 0 ) ? '<div class="reveal-spacer-30"></div>' : '';
-		}
+		} // end of page title enable/disable check
 
 		do_action( 'codexin_after_page_title' );
 		

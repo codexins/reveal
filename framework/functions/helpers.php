@@ -83,12 +83,158 @@ if ( ! function_exists( 'codexin_default_google_fonts' ) ) {
 }
 
 
+if ( ! function_exists( 'codexin_add_menu' ) ) {
+    /**
+     * Helper Function to give a notice to add menu if no menu is assigned
+     *
+     * @param   string      $type    The type of navigation menu (possible values: desktop_menu/mobile_menu)
+     * @return  mixed
+     * @since   v1.0.0
+     */
+    function codexin_add_menu( $type ) {
+        $result = '';
+        $wrapper = ( $type == 'mobile_menu' ) ? '<div id="mobile-menu" class="c-menu__items">' : '<div class="main-menu">';
+        $ul      = ( $type == 'desktop_menu' ) ? '<ul id="main_menu" class="sf-menu">' : '<ul>';
+        $li      = ( $type == 'desktop_menu' ) ? '<li class="menu-item">' : '<li class="menu-notice">';
+
+        $result .= $wrapper;
+            $result .= $ul;
+                $result .= $li;
+                    $result .= '<a href="' . admin_url( 'nav-menus.php' ) . '" itemprop="url">' . esc_html__( 'Add a Menu', 'reveal' ) . '</a>';
+                $result .= '</li>';
+            $result .= '</ul>';
+        $result .= '</div>';
+
+        return $result;
+    }
+}
+
+
+if ( ! function_exists( 'codexin_responsive_class' ) ) {
+    /**
+     * Helper Function to add the responsive menu class
+     *
+     * @since   v1.0.0
+     */
+    function codexin_responsive_class() {
+        $responsive_header  = codexin_get_option( 'reveal-responsive-version' );
+        $responsive_class   = ( $responsive_header == 'left' ) ? esc_attr( 'left' ) : esc_attr( 'right' );
+
+        return $responsive_class;
+    }
+}
+
+
+if ( ! function_exists( 'codexin_logo' ) ) {
+    /**
+     * Helper Function to get logo from theme options
+     *
+     * @since   v1.0.0
+     */
+    function codexin_logo() {
+        $logo_type          = codexin_get_option( 'reveal-logo-type' );
+        $text_logo          = codexin_get_option( 'reveal-text-logo' ); 
+        $image_logo         = codexin_get_option( 'reveal-image-logo' )['url'];
+        $menu_class         = ( codexin_responsive_class() == 'right' ) ? esc_attr( ' menu-right') : '';
+
+        if( empty( $image_logo ) || empty( $text_logo ) ) {
+            return;
+        }
+
+        $result = '';
+        $result .= '<a class="navbar-brand'. $menu_class . '" href="' . esc_url( home_url() ) . '" itemprop="url">';
+            if( $logo_type == 2 ) {
+                $result .= '<img src="' . esc_url( $image_logo ) . '" alt="Logo" itemprop="logo">';
+            } else {
+                $result .= wp_kses_post( $text_logo );
+            }
+        $result .= '</a> <!--End navbar-brand-->';
+
+        return $result;
+    }
+}
+
+
+if ( ! function_exists( 'codexin_responsive_nav' ) ) {
+    /**
+     * Helper Function to get logo from theme options
+     *
+     * @since   v1.0.0
+     */
+    function codexin_responsive_nav() {
+
+        $result = '';
+
+        ob_start();
+
+        ?>
+            <!--Responsive Navigation-->
+            <div id="o-wrapper" class="mobile-nav o-wrapper">
+                <div class="primary-nav">
+                    <button id="c-button--slide-<?php echo codexin_responsive_class(); ?>" class="primary-nav-details reveal-color-2"><?php esc_html_e( 'Menu', 'reveal' ) ?>
+                        <span id="nav-icon2">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </span>
+                    </button> <!-- end of primary-nav-details -->
+                </div> <!-- end of primary-nav -->
+            </div> <!--End Responsive Navigation-->
+
+        <?php
+
+        $result .= ob_get_clean();
+
+        return $result;
+    }
+}
+
+
+if ( ! function_exists( 'codexin_smart_slider' ) ) {
+    /**
+     * Helper Function to get smart slider
+     *
+     * @since   v1.0.0
+     */
+    function codexin_smart_slider() {
+
+        $result = '';
+        if( is_page_template( 'page-templates/page-home.php' ) ) {
+            if ( is_plugin_active( 'nextend-smart-slider3-pro/nextend-smart-slider3-pro.php' ) ) {
+
+                $slider_id = codexin_meta( 'reveal_page_slider' ); 
+
+                $result .= '<div class="slider-wrapper">';
+                    if( ! empty( $slider_id ) ){
+                        $result .= do_shortcode('[smartslider3 slider='. $slider_id .']');
+                    } else {
+                        $result .= '<div class="no-slider text-center"><h3>Please select a \'Slider Name\' from \'Page Edit\' section and click on \'Update\'</h3></div>';
+                    }
+                $result .= '</div> <!-- end of slider-wrapper -->';
+
+            } else {
+                $result .= '<div class="no-slider text-center">';
+                    $result .= '<h3>' . esc_html__( 'Oops! Seems Smart Slider Not Activated!', 'reveal' ) . '</h3>';
+                    $result .= sprintf( '%1$s<br />%2$s', esc_html__( 'Please install/activate Smart Slider and create the slides. Once completed, assign the slider from \'Page Edit\' settings.', 'reveal' ), esc_html__( 'If you don\'t want to use slider, then use another page template, for example \'Page - Full Width\' or any other.', 'reveal' ) );
+                $result .= '</div>';
+            }
+        }
+
+        return $result;
+    }
+}
+
+
+
 if ( ! function_exists( 'codexin_char_limit' ) ) {
     /**
      * Helper Function to limit the character length
      *
      * @param   int       $limit     The number of character to limit
-     * @param   string    $type      The type of content (possible: title/excerpt)
+     * @param   string    $type      The type of content (possible values: title/excerpt)
      * @return  string
      * @since   v1.0.0
      */
