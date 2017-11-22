@@ -8,6 +8,10 @@
  * @subpackage Templates
  */
 
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
 get_header(); ?>
 
 	<div id="content" class="main-content-wrapper site-content">
@@ -25,7 +29,7 @@ get_header(); ?>
 								the_post();
 
 								// Load the specific template
-								get_template_part( 'template-parts/views/list/content', 'page' );
+								get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'page' );
 
 								if( codexin_get_option( 'reveal_page_comments' ) ) {
 									comments_template('', true);

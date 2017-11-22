@@ -7,119 +7,81 @@
  * Contains the closing of the #whole div and all content after.
  *
  * @package Reveal
+ * @subpackage Templates
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-?>
-	
-        	<?php 
-            // Retieving data from theme options
-        	$reveal_footer = codexin_get_option('reveal-footer-version');
-        	$reveal_cpr = codexin_get_option('reveal_footer_copyright');
-            $disable_footer = rwmb_meta('reveal_disable_footer', 'type=checkbox');
-            $copyright = codexin_get_option('reveal-copyright');
-        	?>         	
+$reveal_footer  = codexin_get_option( 'reveal-footer-version' );
+$reveal_cpr     = codexin_get_option( 'reveal_footer_copyright' );
+$copyright_text = codexin_get_option( 'reveal-copyright' );
+$disable_footer = codexin_meta( 'reveal_disable_footer' );
+       	
 
-            <?php if($disable_footer == 0) { ?>
+            if( $disable_footer == 0 ) { ?>
             	<footer id="footer" class="footer reveal-bg-1 reveal-color-0" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
             		<div class="container">
-            			<?php 
+                        <div class="row">
+                			<?php 
 
-            			if( $reveal_footer == 1 ) { 
+                            // Go to a specific footer template partial depending on user choice
+                			if( $reveal_footer == 1 ) {
+                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'one' );
+                            } elseif( $reveal_footer == 2 ) {
+                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'two' );
+                            } elseif( $reveal_footer == 3 ) {
+                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'three' );
+                            } else {
+                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'general' );
+                            }
 
-                            get_template_part('template-parts/footer/footer', 'one'); 
-
-                        } elseif( $reveal_footer == 2 ) { 
-
-                            get_template_part('template-parts/footer/footer', 'two'); 
-
-                        } elseif( $reveal_footer == 3 ) { 
-
-                            get_template_part('template-parts/footer/footer', 'three'); 
-
-                        } elseif( $reveal_footer == 4 ) { 
-
-                            get_template_part('template-parts/footer/footer', 'four'); 
-
-                        } elseif( $reveal_footer == 5 ) { 
-
-                            get_template_part('template-parts/footer/footer', 'five'); 
-
-                        } elseif( $reveal_footer == 6 ) { 
-
-                            get_template_part('template-parts/footer/footer', 'six'); 
-
-                        }
+                            ?>
+                        </div> <!-- end of row -->
+                    
+                        <?php
             			
-                        ?>
+                        if( $reveal_cpr && ! empty( $copyright_text ) ) { 
 
-            			<?php if( $reveal_cpr == true ) { ?>
-                			<hr class="divider">
-                			<p class="text-center copyright">
-                				<?php
-                                if (!empty( $copyright )) { 
-                                    echo $copyright; 
-                				} 
-                                ?>
-                			</p>	
-            			<?php } ?>
+                            /**
+                             * Footer Copyright area, codexin_footer_copyright_content hook.
+                             *
+                             * @hooked codexin_footer_copyright - 10 (outputs the HTML for the footer copyright)
+                             */
+                            do_action( 'codexin_footer_copyright_content' );
+
+                        } // end of footer copyright conditional check
+
+                        ?>
 
             		</div> <!-- end of container -->
             	</footer> <!-- end of footer -->
-            <?php } ?>
+            <?php
+            } // end of disable footer conditional check
 
-        	<!-- Go to Top Button at right bottom of the window screen -->
-        	<?php if( codexin_get_option( 'reveal_to_top' ) ) { ?>
-            	<div id="toTop">
-            		<i class="fa fa-chevron-up"></i>
-            	</div>
-        	<?php } ?>
-        	<!-- Go to Top Button finished-->
+            /**
+             * Finishing contents before the end of #whole tag, codexin_whole_wrapper_exit hook.
+             *
+             * @hooked codexin_to_top - 10 (outputs the HTML for the to-top button)
+             */
+            do_action( 'codexin_whole_wrapper_exit' );
 
+            ?>
         </div> <!-- end of #whole -->
 
 
-        <!-- Initializing Photoswipe -->
-        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="pswp__bg"></div>
-            <div class="pswp__scroll-wrap">
-                <div class="pswp__container">
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                    <div class="pswp__item"></div>
-                </div>
-                <div class="pswp__ui pswp__ui--hidden">
-                    <div class="pswp__top-bar">
-                        <div class="pswp__counter"></div>
-                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                        <button class="pswp__button pswp__button--share" title="Share"></button>
-                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                        <div class="pswp__preloader">
-                            <div class="pswp__preloader__icn">
-                                <div class="pswp__preloader__cut">
-                                    <div class="pswp__preloader__donut"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                        <div class="pswp__share-tooltip"></div>
-                    </div>
-                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                    </button>
-                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                    </button>
-                    <div class="pswp__caption">
-                        <div class="pswp__caption__center"></div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- end of pswp -->
+        <?php
 
-        <?php wp_footer(); ?>
+        /**
+         * Finishing contents before the end of body tag, codexin_body_exit hook.
+         *
+         * @hooked codexin_photoswipe_init - 10 (outputs the HTML for the initialization of PhotoSwipe)
+         */
+        do_action( 'codexin_body_exit' );
+
+        wp_footer();
+
+        ?>
     </body>
 </html>

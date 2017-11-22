@@ -87,15 +87,15 @@ if ( ! function_exists( 'codexin_add_menu' ) ) {
     /**
      * Helper Function to give a notice to add menu if no menu is assigned
      *
-     * @param   string      $type    The type of navigation menu (possible values: desktop_menu/mobile_menu)
+     * @param   string      $type    The type of navigation menu (possible values: desktop/mobile)
      * @return  mixed
      * @since   v1.0.0
      */
     function codexin_add_menu( $type ) {
         $result = '';
-        $wrapper = ( $type == 'mobile_menu' ) ? '<div id="mobile-menu" class="c-menu__items">' : '<div class="main-menu">';
-        $ul      = ( $type == 'desktop_menu' ) ? '<ul id="main_menu" class="sf-menu">' : '<ul>';
-        $li      = ( $type == 'desktop_menu' ) ? '<li class="menu-item">' : '<li class="menu-notice">';
+        $wrapper = ( $type == 'mobile' ) ? '<div id="mobile-menu" class="c-menu__items">' : '<div class="main-menu">';
+        $ul      = ( $type == 'desktop' ) ? '<ul id="main_menu" class="sf-menu">' : '<ul>';
+        $li      = ( $type == 'desktop' ) ? '<li class="menu-item">' : '<li class="menu-notice">';
 
         $result .= $wrapper;
             $result .= $ul;
@@ -193,13 +193,13 @@ if ( ! function_exists( 'codexin_responsive_nav' ) ) {
 }
 
 
-if ( ! function_exists( 'codexin_smart_slider' ) ) {
+if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
     /**
      * Helper Function to get smart slider
      *
      * @since   v1.0.0
      */
-    function codexin_smart_slider() {
+    function codexin_get_smart_slider() {
 
         $result = '';
         if( is_page_template( 'page-templates/page-home.php' ) ) {
@@ -228,6 +228,74 @@ if ( ! function_exists( 'codexin_smart_slider' ) ) {
 }
 
 
+if ( ! function_exists( 'codexin_title_background' ) ) {
+    /**
+     * Helper function to return page tile background url
+     *
+     * @since   v1.0.0
+     */
+    function codexin_title_background() {
+        $header_bg = codexin_meta('reveal_page_background'); 
+
+        if( empty( $header_bg ) ) {
+            return;
+        }
+        foreach ( $header_bg as $single_bg ) {
+            $single_bg = $single_bg['full_url'];
+            return $single_bg;
+        }
+    }
+}
+
+
+if ( ! function_exists( 'codexin_page_title' ) ) {
+    /**
+     * Helper function to return page specific titles
+     *
+     * @since   v1.0.0
+     */
+    function codexin_page_title() {
+        $blog_title = codexin_get_option( 'reveal-blog-title' );
+
+        $result = '';
+        if( is_home() ) {
+            $result .= esc_html( !empty( $blog_title ) ? $blog_title : __( 'Blog', 'reveal' ) );
+        } elseif( is_404() ) {
+            $result .= esc_html__('Nothing Found!', 'reveal');
+        } elseif( is_archive() ) {
+            $result .=  get_the_archive_title() ;
+        } elseif( is_search() ) {
+            $result .= sprintf( esc_html__( 'Search Results for: %s', 'reveal' ), '<span>' . get_search_query() . '</span>' );
+        } else {
+            $result .= single_post_title( '', false );
+        }
+
+        return $result;
+    }
+}
+
+
+if ( ! function_exists( 'codexin_button' ) ) {
+    /**
+     * Helper function to return the markup for read more button
+     *
+     * @since   v1.0.0
+     */
+    function codexin_button( $args = NULL ) {
+
+        $main_class     = ( $args !== 'events_grid' ) ? 'cx-btn ' : 'events-cx-btn ';
+        $button_class   = ( $args !== 'events_grid' ) ? ' reveal-primary-btn' : '';
+
+        $result = '';
+        $result .= '<div class="'. $main_class .'reveal-color-0'. $button_class .'">';
+            $result .= '<a class="cx-btn-text" href="'. esc_url( get_the_permalink() ) .'">'. esc_html__( 'Read More', 'reveal' ) .'</a>';
+        $result .= '</div> <!-- end of cx-btn -->';
+
+        return $result;
+
+    }
+}
+
 
 if ( ! function_exists( 'codexin_char_limit' ) ) {
     /**
@@ -239,7 +307,7 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
      * @since   v1.0.0
      */
     function codexin_char_limit( $limit, $type ) {
-        $content = ( $type == 'title' ) ? get_the_title() : get_the_excerpt();
+        $content = ( $type == 'title' && $type !== 'excerpt' ) ? get_the_title() : get_the_excerpt();
         $limit++;
 
         if ( mb_strlen( $content ) > $limit ) {
@@ -257,6 +325,28 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
         }
     }
 
+}
+
+
+if ( ! function_exists( 'codexin_attachment_metas' ) ) {
+    /**
+     * Helper Function to get meta data from attachments
+     *
+     * @param   int        $post_id    The ID of the attachment
+     * @return  array
+     * @since   v1.0.0
+     */
+    function codexin_attachment_metas( $attachment_id = null ) {
+
+        $metas = array();
+
+        $attachment         = wp_prepare_attachment_for_js( $attachment_id );
+        $metas['size']      = $attachment['width'] . 'x' . $attachment['height'];
+        $metas['alt']       = ( ! empty( $attachment['alt'] ) ) ? 'alt="' . esc_attr( $attachment['alt'] ) . '"' : 'alt="' .get_the_title() . '"';
+        $metas['caption']   = ( ! empty( $attachment['caption'] ) ) ? $attachment['caption'] : '';
+
+        return $metas;
+    }
 }
 
 

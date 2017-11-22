@@ -1,7 +1,7 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
+ * The template for displaying all single posts and other post-types
+ * that don't have a specific template.
  *
  * @package Reveal
  * @subpackage Templates
@@ -39,7 +39,7 @@ get_header(); ?>
                             <?php
 
                             // Go to the default loop template
-                            get_template_part( 'template-parts/loops/default', 'loop' );
+                            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/default', 'loop' );
 
                             ?>
 

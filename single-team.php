@@ -7,6 +7,10 @@
  * @subpackage Templates
  */
 
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
 get_header(); ?>
 
 	<div id="content" class="main-content-wrapper site-content">
@@ -17,7 +21,7 @@ get_header(); ?>
                         <?php
 
                         // Go to the team loop template
-                        get_template_part( 'template-parts/loops/team', 'loop' );
+                        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/team', 'loop' );
                         
                         ?>
 

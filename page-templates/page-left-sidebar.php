@@ -26,7 +26,7 @@ get_header(); ?>
 						if ( have_posts() ) :
 							
 							while ( have_posts() ) : the_post();
-								get_template_part( 'template-parts/views/list/content', 'page' );
+								get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'page' );
 
 							endwhile;
 						endif; ?>

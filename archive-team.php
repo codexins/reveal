@@ -24,7 +24,7 @@ get_header(); ?>
 	                        <?php 
 
 	                        // Go to the team loop template
-	                        get_template_part( 'template-parts/loops/team', 'loop' );
+	                        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/team', 'loop' );
 
 	                        ?>
 					

@@ -85,7 +85,7 @@ if ( ! function_exists( 'codexin_render_title' ) ) {
 }
 
 
-add_action( 'codexin_body_entry', 'codexin_pageloader' );
+add_action( 'codexin_body_entry', 'codexin_pageloader', 10 );
 if ( ! function_exists( 'codexin_pageloader' ) ) {
 	/**
 	 * Adding page loader
@@ -99,6 +99,166 @@ if ( ! function_exists( 'codexin_pageloader' ) ) {
 	        echo '<div id="preloader_1"></div>';
 	        echo '<!--  Site Loader finished -->';
 	    }
+	}
+}
+
+
+add_action( 'codexin_whole_wrapper_exit', 'codexin_to_top', 10 );
+if ( ! function_exists( 'codexin_to_top' ) ) {
+	/**
+	 * Adding a navigation to top button
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_to_top() {
+	    $to_top = codexin_get_option( 'reveal_to_top' );
+	    if( $to_top ){
+	    	echo '<!-- Go to Top Button at right bottom of the window screen -->';
+	        echo '<div id="toTop">';
+		        echo '<i class="fa fa-chevron-up"></i>';
+		    echo '</div>';
+		    echo '<!-- Go to Top Button finished-->';
+	    }
+	}
+}
+
+
+add_action( 'codexin_footer_copyright_content', 'codexin_footer_copyright', 10 );
+if ( ! function_exists( 'codexin_footer_copyright' ) ) {
+	/**
+	 * Adding the footer copyright texts
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_footer_copyright() {
+		$copyright = codexin_get_option( 'reveal-copyright' );
+
+		$result = '';
+		$result .= '<hr class="divider">';
+		$result .= '<p class="text-center copyright">';
+			$result .= html_entity_decode( $copyright );
+		$result .= '</p>';
+
+		printf( '%s', $result );
+	}
+}
+
+
+add_action( 'codexin_body_exit', 'codexin_photoswipe_init', 10 );
+if ( ! function_exists( 'codexin_photoswipe_init' ) ) {
+	/**
+	 * Initialization of photoswipe
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_photoswipe_init() {
+		$result = '';
+		ob_start();
+		?>
+        <!-- Initializing Photoswipe -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="pswp__bg"></div>
+            <div class="pswp__scroll-wrap">
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                    </button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                    </button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of Photoswipe -->
+		<?php
+		$result .= ob_get_clean();
+		printf( '%s', $result );
+	}
+}
+
+
+add_action( 'codexin_post_wrapper_entry', 'codexin_post_formats', 10 );
+if ( ! function_exists( 'codexin_post_formats' ) ) {
+	/**
+	 * Render the HTML for the post formats
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_post_formats() {
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'post_formats/format', get_post_format() );
+	}
+}
+
+
+add_action( 'codexin_post_wrapper_entry', 'codexin_post_metas', 15 );
+if ( ! function_exists( 'codexin_post_metas' ) ) {
+	/**
+	 * Render the HTML for the post metas
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_post_metas() {
+		$post_style     = codexin_get_option( 'reveal_blog_style' );
+		if( ( $post_style == 'grid') && ! is_single() ) {
+			return;
+		}
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'metas' );
+		
+	}
+}
+
+
+add_action( 'codexin_after_post_title', 'codexin_grid_post_metas', 10 );
+if ( ! function_exists( 'codexin_grid_post_metas' ) ) {
+	/**
+	 * Render the HTML for the post metas
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_grid_post_metas() {
+		$post_style     = codexin_get_option( 'reveal_blog_style' );
+		if( ( $post_style == 'list') || is_single() ) {
+			return;
+		}
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'metas' );
+	}
+}
+
+
+add_action( 'codexin_post_wrapper_exit', 'codexin_post_content_footer', 10 );
+if ( ! function_exists( 'codexin_post_content_footer' ) ) {
+	/**
+	 * Render the HTML for the single post content footer
+	 *
+	 * @since 	v1.0.0
+	 */
+	function codexin_post_content_footer() {
+		if( is_single() ) {
+			get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'footer' );
+		}
 	}
 }
 
@@ -151,7 +311,7 @@ add_action( 'template_redirect', function() {
 $testimonial_pagination = codexin_get_option('reveal_enable_testimonial_pagination');
 if( $testimonial_pagination == false ) {
     add_action( 'parse_query', function( $query ) {
-        if ( is_post_type_archive( 'testimonial' ) ) {
+        if ( is_post_type_archive( 'testimonial' ) && $query->is_main_query() ) {
             $query->set('nopaging', 1);
         }
     } );
@@ -165,7 +325,7 @@ if( $testimonial_pagination == false ) {
  * @since 	v1.0.0
  */
 add_action( 'parse_query', function( $query ) {
-    if ( is_post_type_archive( 'team' ) ) {
+    if ( is_post_type_archive( 'team' ) && $query->is_main_query() ) {
         $query->set('nopaging', 1);
     }
 } );
@@ -230,8 +390,8 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
 }
 
 
-add_action( 'admin_enqueue_scripts', 'codexin_post_formats', 10, 1 );
-if ( ! function_exists( 'codexin_post_formats' ) ) {
+add_action( 'admin_enqueue_scripts', 'codexin_post_formats_script', 10, 1 );
+if ( ! function_exists( 'codexin_post_formats_script' ) ) {
 	/**
 	 * Hides/Shows metaboxes on demand - depending on your selection inside the post formats meta box
 	 *
@@ -239,7 +399,7 @@ if ( ! function_exists( 'codexin_post_formats' ) ) {
 	 * @param 	$hook
 	 * @since 	v1.0.0
 	 */
-	function codexin_post_formats( $hook ) {	 
+	function codexin_post_formats_script( $hook ) {	 
 	    global $post;	 
 	    if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
 	        if ( 'post' === $post->post_type ) {
@@ -278,66 +438,54 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
 
 
 /**
- * Function for deregistering Events Custom Posts Type
+ * Function for deregistering Events/Portfolio/Testimonial/Team Custom Posts Type
  *
  * @uses 	add_action()
  * @uses 	unregister_post_type()
  * @since 	v1.0.0
 **/
-$enable_events = codexin_get_option( 'reveal_enable_events' );
 $version = '4.5';
-if( $enable_events == false ) {
-    if( version_compare( $version, get_bloginfo( 'version' ), '<=' ) ) {
-        function delete_post_type_events() {
-            unregister_post_type( 'events' );
-        }
-        add_action( 'init','delete_post_type_events' );
-    } else {
-        return false;        
+if( version_compare( $version, get_bloginfo( 'version' ), '<=' ) ) {	
+
+    function delete_post_type_events() {
+    	$enable_events 	= codexin_get_option( 'reveal_enable_events' );
+    	if( $enable_events == false ) {
+	        unregister_post_type( 'events' );
+	    }
     }
+
+    function delete_post_type_testimonial() {
+    	$enable_testimonial = codexin_get_option( 'reveal_enable_testimonial' );
+    	if( $enable_testimonial == false ) {
+	        unregister_post_type( 'testimonial' );
+	    }
+    }
+
+    function delete_post_type_portfolio() {
+    	$enable_portfolio 	= codexin_get_option( 'reveal_enable_portfolio' );
+    	if( $enable_portfolio == false ) {
+	        unregister_post_type( 'portfolio' );
+	    }
+    }
+
+    function delete_post_type_team() {
+    	$enable_team 	= codexin_get_option( 'reveal_enable_team' );
+    	if( $enable_team == false ) {
+	        unregister_post_type( 'team' );
+	    }
+    }
+    add_action( 'init','delete_post_type_events' );
+    add_action( 'init','delete_post_type_testimonial' );
+    add_action( 'init','delete_post_type_portfolio' );
+    add_action( 'init','delete_post_type_team' );
+
+} else {
+    return false;        
 }
 
 
-/**
- * Function for deregistering Testimonial Custom Posts Type
- *
- * @uses 	add_action()
- * @uses 	unregister_post_type()
- * @since 	v1.0.0
-**/
-$enable_testimonial = codexin_get_option( 'reveal_enable_testimonial' );
-$version = '4.5';
-if( $enable_testimonial == false ) {
-    if ( version_compare($version, get_bloginfo('version'), '<=' ) ) {
-        function delete_post_type_testimonial() {
-            unregister_post_type( 'testimonial' );
-        }
-        add_action( 'init','delete_post_type_testimonial' );
-    } else {
-        return false;        
-    }
-}
 
 
-/**
- * Function for deregistering Portfolio Custom Posts Type
- *
- * @uses 	add_action()
- * @uses 	unregister_post_type()
- * @since 	v1.0.0
-**/
-$enable_portfolio = codexin_get_option( 'reveal_enable_portfolio' );
-$version = '4.5';
-if( $enable_portfolio == false ) {
-    if ( version_compare($version, get_bloginfo('version'), '<=' ) ) {
-        function delete_post_type_portfolio() {
-            unregister_post_type( 'portfolio' );
-        }
-        add_action( 'init','delete_post_type_portfolio' );
-    } else {
-        return false;        
-    }
-}
 
 
 

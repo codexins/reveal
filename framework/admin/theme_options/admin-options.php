@@ -456,12 +456,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'required' => array('reveal-logo-type', 'equals', '1'),
                         'type'        => 'typography',
                         'title'       => esc_html__( 'Typography For Text Logo', 'reveal' ),
-                        'preview'       => true, // Disable the previewer
+                        'preview'     => true, // Disable the previewer
                         'all_styles'  => true,
                         'letter-spacing'=> true,
                         // Enable all Google Font style/weight variations to be added to the page
                         'output'      => array( 'a.navbar-brand' ),
                         'units'       => 'px',
+                        'color'       => false,
                         'subtitle'    => esc_html__( 'Typography option for text logo', 'reveal' ),
                         'default'     => array(
                             'color'       => '#fff',
@@ -512,6 +513,46 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
+                        'id'        => 'header-four-info',
+                        'type'      => 'info',
+                        'style'     => 'success',
+                        'icon'      => 'el el-info-circle',
+                        'required'  => array( 'reveal-header-version', '=', '4' ),
+                        'title'     => esc_html__( 'Social Media Information ', 'reveal' ),
+                        'desc'      => sprintf( '%1$s<b><a href="%2$s" target="_blank">%3$s</a></b>', esc_html__('In order to set the Social Media Profile Information, please go to ', 'reveal'), esc_url(admin_url().'admin.php?page=codexin-options&action=social'), 'Social Media' ),
+                    ),
+
+                    array(
+                        'id'        => 'reveal_header_socials',
+                        'type'      => 'checkbox',
+                        'title'     => esc_html__('Select Social Profiles', 'reveal'),
+                        'subtitle'  => esc_html__('Which social profiles you want to show?', 'reveal'),
+                        'required'  => array( 'reveal-header-version', '=', '4' ),
+                        'options'   => array(
+                            'facebook'  => 'Facebook',
+                            'twitter'   => 'Twitter',
+                            'instagram' => 'instagram',
+                            'pinterest' => 'Pinterest',
+                            'behance'   => 'Behance',
+                            'gplus'     => 'Google Plus',
+                            'linkedin'  => 'LinkedIn',
+                            'youtube'   => 'Youtube',
+                            'skype'     => 'Skype',
+                        ),
+                        'default'  => array(
+                            'facebook'  => '1',
+                            'twitter'   => '1',
+                            'instagram' => '1',
+                            'pinterest' => '1',
+                            'behance'   => '0',
+                            'gplus'     => '0',
+                            'linkedin'  => '0',
+                            'youtube'   => '0',
+                            'skype'     => '0',
+                        )
+                    ),
+
+                    array(
                         'id'        => 'reveal-responsive-version',
                         'type'      => 'select',
                         'title'     => esc_html__('Select Responsive Navigation Type', 'reveal'),
@@ -539,10 +580,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Title Position :', 'reveal' ),
                         'desc'     => esc_html__( 'Please Select Page Title Position ', 'reveal' ),
                         'options'  => array(
-                                        '1' => esc_html__( 'Left', 'reveal' ),
-                                        '2' => esc_html__( 'Center', 'reveal' ),
-                                        '3' => esc_html__( 'Right', 'reveal' ),
-                                ),
+                            '1' => esc_html__( 'Left', 'reveal' ),
+                            '2' => esc_html__( 'Center', 'reveal' ),
+                            '3' => esc_html__( 'Right', 'reveal' ),
+                        ),
                         'default'  => '1',
                     ),
 
@@ -586,10 +627,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'    => esc_html__( 'Breadcrumbs Position :', 'reveal' ),
                         'desc'     => esc_html__( 'Please Select BreadCrumbs Position ', 'reveal' ),
                         'options'  => array(
-                                        '1' => esc_html__( 'Left', 'reveal' ),
-                                        '2' => esc_html__( 'Center', 'reveal' ),
-                                        '3' => esc_html__( 'Right', 'reveal' ),
-                                ),
+                            '1' => esc_html__( 'Left', 'reveal' ),
+                            '2' => esc_html__( 'Center', 'reveal' ),
+                            '3' => esc_html__( 'Right', 'reveal' ),
+                        ),
                         'default'  => '1',
                     ),
 
@@ -597,23 +638,23 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             );
 
             //Social Media
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Social Media ', 'reveal' ),
-                'customizer_width' => '500px',
-                'id'               => 'reveal-social-media',
-                'icon'             => 'dashicons dashicons-share',
-                'fields'           => array(
-                    array(
-                        'id'    => 'opt-info-success',
-                        'type'  => 'info',
-                        'style' => 'success',
-                        'icon'  => 'el el-info-circle',
-                        'title'    => esc_html__( 'Social Media Information ', 'reveal' ),
-                        'desc'  => sprintf( '%1$s<b>%2$s</b>', esc_html__('In order to set the Social Media, please go to ', 'reveal'), esc_html__('Dashboard->Codexin Core->Social Media', 'reveal') ),
-                    ),
+            // $this->sections[] = array(
+            //     'title'            => esc_html__( 'Social Media ', 'reveal' ),
+            //     'customizer_width' => '500px',
+            //     'id'               => 'reveal-social-media',
+            //     'icon'             => 'dashicons dashicons-share',
+            //     'fields'           => array(
+            //         array(
+            //             'id'    => 'opt-info-success',
+            //             'type'  => 'info',
+            //             'style' => 'success',
+            //             'icon'  => 'el el-info-circle',
+            //             'title'    => esc_html__( 'Social Media Information ', 'reveal' ),
+            //             'desc'  => sprintf( '%1$s<b>%2$s</b>', esc_html__('In order to set the Social Media, please go to ', 'reveal'), esc_html__('Dashboard->Codexin Core->Social Media', 'reveal') ),
+            //         ),
 
-                )
-            );    
+            //     )
+            // );    
 
             $this->sections[] = array(
                 'title'            => esc_html__( 'Blog Settings', 'reveal' ),
@@ -765,6 +806,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         ),
                         'default'   => 'button'
                     ),
+
+                    array(
+                        'id'        => 'reveal_blog_image',
+                        'type'      => 'media',
+                        'title'     => esc_html__('Default Placeholder Image', 'reveal'),
+                        'subtitle'  => 'Upload placeholder image for posts to show (if post has no featured image)',
+                    ),
                 )
 
             ); //End Blog & Archive Page...
@@ -872,6 +920,15 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'fields'           => array(
 
                     array(
+                        'id'        => 'portfolio-info',
+                        'type'      => 'info',
+                        'style'     => 'success',
+                        'icon'      => 'el el-info-circle',
+                        'title'     => esc_html__( 'Portfolio Information ', 'reveal' ),
+                        'desc'      => esc_html__( 'If you disable \'Portfolio Custom Post\' from the below button, after saving changes, you have to refresh the page to see the effect.', 'reveal' ),
+                    ),
+
+                    array(
                         'id'        => 'reveal_enable_portfolio',
                         'type'      => 'switch',
                         'title'     => esc_html__('Enable Portfolio?', 'reveal'),
@@ -974,12 +1031,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'      => 'select',
                         'title'     => esc_html__('Portfolio Archive Pagination Type', 'reveal'),
                         'desc'      => esc_html__('Select the Pagination Type.', 'reveal'),
-                        'required' => array( 'reveal_enable_portfolio', '=', '1' ),
+                        'required'  => array( 'reveal_enable_portfolio', '=', '1' ),
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
                         ),
                         'default'   => 'button'
+                    ),
+
+                    array(
+                        'id'        => 'reveal_portfolio_image',
+                        'type'      => 'media',
+                        'title'     => esc_html__('Default Placeholder Image', 'reveal'),
+                        'subtitle'  => 'Upload placeholder image for portfolios to show (if portfolio has no featured image)',
+                        'required'  => array( 'reveal_enable_portfolio', '=', '1' ),
                     ),
 
                     array(
@@ -1024,11 +1089,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'fields'           => array(
 
                     array(
+                        'id'        => 'events-info',
+                        'type'      => 'info',
+                        'style'     => 'success',
+                        'icon'      => 'el el-info-circle',
+                        'title'     => esc_html__( 'Events Information ', 'reveal' ),
+                        'desc'      => esc_html__( 'If you disable \'Events Custom Post\' from the below button, after saving changes, you have to refresh the page to see the effect.', 'reveal' ),
+                    ),
+
+                    array(
                         'id'        => 'reveal_enable_events',
                         'type'      => 'switch',
                         'title'     => esc_html__('Enable Events?', 'reveal'),
                         'subtitle'  => esc_html__('Select if You Need Events', 'reveal'),
-                        'desc'      => esc_html__('Choose to Enable / Disable Events Custom Post', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Events Custom Post (You have to refresh the page after saving to see the effect)', 'reveal'),
                         "default"   => true,
                     ),
 
@@ -1104,7 +1178,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Title Length for Events', 'reveal'),
                         'subtitle'  => esc_html__('Control the Title Length for Events (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Title in Events Archive Page.", 'reveal'),
-                        // 'default'   => 7,
+                        'default'   => 30,
                     ),
 
                     array(
@@ -1117,7 +1191,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'title'     => esc_html__('Excerpt Length for Events', 'reveal'),
                         'subtitle'  => esc_html__('Control the Excerpt Length for Events (In Character)', 'reveal'),
                         'desc'      => esc_html__("Adjust the Number of Character to Show in the Post Excerpts in Events Archive Page.", 'reveal'),
-                        // 'default'   => 20,
+                        'default'   => 180,
                     ),
 
                     array(
@@ -1132,6 +1206,14 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         ),
                         'default'   => 'button'
                     ),
+
+                    array(
+                        'id'        => 'reveal_event_image',
+                        'type'      => 'media',
+                        'title'     => esc_html__('Default Placeholder Image', 'reveal'),
+                        'subtitle'  => 'Upload placeholder image for events to show (if event has no featured image)',
+                        'required'  => array( 'reveal_enable_events', '=', '1' ),
+                    ),
                 )    
             );
 
@@ -1144,11 +1226,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'fields'           => array(
 
                     array(
+                        'id'        => 'testimonial-info',
+                        'type'      => 'info',
+                        'style'     => 'success',
+                        'icon'      => 'el el-info-circle',
+                        'title'     => esc_html__( 'Testimonial Information ', 'reveal' ),
+                        'desc'      => esc_html__( 'If you disable \'Testimonial Custom Post\' from the below button, after saving changes, you have to refresh the page to see the effect.', 'reveal' ),
+                    ),
+
+                    array(
                         'id'        => 'reveal_enable_testimonial',
                         'type'      => 'switch',
                         'title'     => esc_html__('Enable Testimonials?', 'reveal'),
                         'subtitle'  => esc_html__('Select if You Need Testimonials', 'reveal'),
-                        'desc'      => esc_html__('Choose to Enable / Disable Testimonial Custom Post', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Testimonial Custom Post (You have to refresh the page after saving to see the effect)', 'reveal'),
                         "default"   => true,
                     ),
 
@@ -1184,6 +1275,50 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle'  => esc_html__('Select if You Need Pagination', 'reveal'),
                         'desc'      => esc_html__('Choose to Enable / Disable Testimonials Pagination', 'reveal'),
                         'required' => array( 'reveal_enable_testimonial', '=', '1' ),
+                    ),
+
+                    array(
+                        'id'        => 'reveal_testimonial_image',
+                        'type'      => 'media',
+                        'title'     => esc_html__('Default Placeholder Image', 'reveal'),
+                        'subtitle'  => 'Upload placeholder image for testimonials to show (if testimonial has no featured image)',
+                        'required'  => array( 'reveal_enable_testimonial', '=', '1' ),
+                    ),
+                )    
+            );
+
+            //Custom Post Type Team Settings
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Team Settings', 'reveal' ),
+                'icon'             => 'dashicons dashicons-admin-users',
+                'id'               => 'reveal-events-settings',
+                'customizer_width' => '500px',
+                'fields'           => array(
+
+                    array(
+                        'id'        => 'team-info',
+                        'type'      => 'info',
+                        'style'     => 'success',
+                        'icon'      => 'el el-info-circle',
+                        'title'     => esc_html__( 'Team Information ', 'reveal' ),
+                        'desc'      => esc_html__( 'If you disable \'Team Custom Post\' from the below button, after saving changes, you have to refresh the page to see the effect.', 'reveal' ),
+                    ),
+
+                    array(
+                        'id'        => 'reveal_enable_team',
+                        'type'      => 'switch',
+                        'title'     => esc_html__('Enable Team?', 'reveal'),
+                        'subtitle'  => esc_html__('Select if You Need Team', 'reveal'),
+                        'desc'      => esc_html__('Choose to Enable / Disable Team Custom Post (You have to refresh the page after saving to see the effect)', 'reveal'),
+                        "default"   => true,
+                    ),
+
+                    array(
+                        'id'        => 'reveal_team_image',
+                        'type'      => 'media',
+                        'title'     => esc_html__('Default Placeholder Image', 'reveal'),
+                        'subtitle'  => 'Upload placeholder image for team to show (if team has no featured image)',
+                        'required'  => array( 'reveal_enable_team', '=', '1' ),
                     ),
                 )    
             );

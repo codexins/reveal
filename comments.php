@@ -42,7 +42,8 @@ if ( post_password_required() ) {
 					comments_number(
 					esc_html__( 'This post has no comments', 'reveal' ), 
 					esc_html__( 'This post has One Comment', 'reveal' ), 
-					wp_kses( __( 'This post has <span>%</span> Comments', 'reveal' ), array( 'span' => array() ) ) ); 
+					__( 'This post has <span>%</span> Comments', 'reveal' )
+					); 
 				?>
 			</h3>
 

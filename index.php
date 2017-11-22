@@ -47,7 +47,7 @@ get_header(); ?>
                             echo ( $post_style == 'grid' ) ? '<div class="blog-grid-wrapper"><div class="row">' : '<div class="blog-list-wrapper">' ;
 
                                 // Go to the default loop template
-                                get_template_part( 'template-parts/loops/default', 'loop' );
+                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/default', 'loop' );
 
                             echo ( $post_style ) == 'grid' ? '</div></div> <!-- end of blog-grid-wrapper -->' : '</div> <!-- end of blog-list-wrapper -->' ;
                         ?>

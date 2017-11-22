@@ -60,11 +60,11 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 		// Registering Footer Widget Locations based on the user choice
 		public static function codexin_footer_widgets() {
 
-			$codexin_footer = codexin_get_option('reveal-footer-version');				
+			$codexin_footer = codexin_get_option('reveal-footer-version');			
 
-			if( $codexin_footer == 1 ) {
+			if( ( $codexin_footer == 1 ) || ( $codexin_footer == 5 ) ) {
 
-				$widget_count = 4;
+				$widget_count = 3;
 				for( $i = 1; $i <= $widget_count ; $i++ ) { 
 
 					register_sidebar( array(
@@ -79,9 +79,9 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 
 				}
 
-			} elseif( $codexin_footer == 2 ) {
+			} elseif( ( $codexin_footer == 2 ) || ( $codexin_footer == 6 ) ) {
 
-				$widget_count = 3;
+				$widget_count = 4;
 				for( $i = 1; $i <= $widget_count ; $i++ ) { 
 
 					register_sidebar( array(
@@ -98,7 +98,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 
 			} elseif( $codexin_footer == 3 ) {
 
-				$widget_count = 2;
+				$widget_count = 5;
 				for( $i = 1; $i <= $widget_count ; $i++ ) { 
 
 					register_sidebar( array(
@@ -115,41 +115,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 
 			} elseif( $codexin_footer == 4 ) {
 
-				$widget_count = 3;
-				for( $i = 1; $i <= $widget_count ; $i++ ) { 
-
-					register_sidebar( array(
-						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
-						'id'				=> 'codexin-footer-col-'. $i .'',
-						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
-					    'before_title'		=> '<p class="widget-title">',
-					    'after_title'		=> '</p>',
-						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
-						'after_widget'  	=> '</div>',			
-					) );
-
-				}
-
-			} elseif( $codexin_footer == 5 ) {
-
-				$widget_count = 5;
-				for( $i = 1; $i <= $codexin_footer ; $i++ ) { 
-
-					register_sidebar( array(
-						'name'				=> sprintf( esc_html__( 'Footer (Column-%s)', 'reveal' ), $i ),
-						'id'				=> 'codexin-footer-col-'. $i .'',
-						'description'	 	=> sprintf( esc_html__( 'The widget area for the footer column %s', 'reveal'), $i ),
-					    'before_title'		=> '<p class="widget-title">',
-					    'after_title'		=> '</p>',
-						'before_widget' 	=> '<div  id="%1$s" class="%2$s codexin-widget clearfix">',
-						'after_widget'  	=> '</div>',			
-					) );
-
-				}
-
-			} elseif( $codexin_footer == 6 ) {
-
-				$widget_count = 4;
+				$widget_count = 2;
 				for( $i = 1; $i <= $widget_count ; $i++ ) { 
 
 					register_sidebar( array(

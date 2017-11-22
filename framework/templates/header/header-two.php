@@ -48,7 +48,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 						} else {
 
 							// If no menu assigned, give a notice
-							echo codexin_add_menu( 'desktop_menu' );
+							echo codexin_add_menu( 'desktop' );
 
 						} //end of nav menu check
 
@@ -64,7 +64,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 <?php 
 
 // Get smart slider
-echo codexin_smart_slider();
+echo codexin_get_smart_slider();
 
 ?>
 

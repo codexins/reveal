@@ -33,12 +33,16 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 	<?php 
 
-	// Setting up all the variables for this file
 	$header_version 		= codexin_get_option( 'reveal-header-version' );
 	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
 	$disable_head 			= codexin_meta( 'reveal_disable_header' );
 	$disable_title 			= codexin_meta( 'reveal_disable_page_title' );
 
+    /**
+     * Initial contents after start of body tag, codexin_body_entry hook.
+     *
+     * @hooked codexin_pageloader - 10 (outputs the HTML for the page loader)
+     */
 	do_action( 'codexin_body_entry' );
 
 	?>
@@ -57,7 +61,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 		} else {
 
 			// If no menu assigned, give a notice
-			echo codexin_add_menu( 'mobile_menu' );
+			echo codexin_add_menu( 'mobile' );
 
 		} //end of nav menu check
 
@@ -72,7 +76,11 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 		
 		<?php
 
-		do_action( 'codexin_before_header' );
+	    /**
+	     * Initial contents after start of #whole tag, codexin_whole_wrapper_entry hook.
+	     *
+	     */
+		do_action( 'codexin_whole_wrapper_entry' );
 
 		if( $disable_head == 0 ) { ?>	
 			<header id="header" class="header <?php echo esc_attr( $page_identity ); ?>" itemscope itemtype="http://schema.org/WPHeader">
@@ -97,17 +105,28 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 		<?php } // end of header enable/disable check ?>	
 		
 		<?php 
-		
-		do_action( 'codexin_before_page_title' );
 
 		if( $disable_title == 0 ) {
-			get_template_part('template-parts/header/page', 'title');
+
+		    /**
+		     * Contents before start of #page_title tag, codexin_before_page_title hook.
+		     *
+		     */
+			do_action( 'codexin_before_page_title' );
+
+			if( ! is_page_template( 'page-templates/page-home.php' ) ) {
+				// Go to the page tile template partial
+				get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/page', 'title');
+			}
+
+		    /**
+		     * Contents after end of #page_title tag, codexin_after_page_title hook.
+		     *
+		     */
+			do_action( 'codexin_after_page_title' );
 		} else {
 			echo ( $disable_head == 0 ) ? '<div class="reveal-spacer-30"></div>' : '';
 		} // end of page title enable/disable check
-
-		do_action( 'codexin_after_page_title' );
 		
 		?>
-
 		<div class="clearfix"></div>
