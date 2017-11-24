@@ -3,15 +3,16 @@
 /**
  * Template partial to display the post metas depending upon user choice
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-
+// Fetching and assigning data from theme options
 $post_style = codexin_get_option( 'reveal_blog_style' );
 $args_meta  = is_single() ? 'reveal_blog_post_single_meta' : 'reveal_blog_post_meta';
 $post_metas = codexin_get_option( $args_meta );

@@ -1,85 +1,106 @@
 <?php
+
 /**
- * Template part for displaying posts
+ * Template partial for displaying single portfolio
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package Reveal
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
+
+
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
+// Fetching data from theme options
+$position             = codexin_get_option( 'reveal-single-portfolio-layout' );
+$comments             = codexin_get_option( 'reveal_portfolio_comments' );
+
+// Fetching data from metabox
+$cname                = codexin_meta( 'reveal_portfolio_client', 'type=text' );
+$cadate               = codexin_meta( 'reveal_portfolio_date', 'type=date' );
+$cdate                = ! empty( $cadate ) ? date( get_option( 'date_format' ), strtotime( $cadate ) ) : '';
+$cskills              = codexin_meta( 'reveal_portfolio_skills', 'type=text' );
+$csname               = codexin_meta( 'reveal_portfolio_sname', 'type=text' );
+$csurl                = codexin_meta( 'reveal_portfolio_surl', 'type=text' );
+$cat_list             = get_the_term_list( $post->ID, 'portfolio-category', '', '|', '' );
+$tag_list             = get_the_term_list( $post->ID, 'portfolio_tags', '', '|', '' );
+
+// Fetching the attachment properties
+$thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
+$attachment_id        = $thumbnail_default['id'];
+$image_prop           = codexin_attachment_metas( $attachment_id );
+$default_image        = wp_get_attachment_image_src( $attachment_id, 'reveal-portfolio-single' );
+$portfolio_image      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'reveal-portfolio-single' ) ) : esc_url( $default_image[0] );
+$portfolio_image_sngl = ( ! empty( $portfolio_image ) ) ? $portfolio_image : esc_url( 'placehold.it/1170x400' );
+
 
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
-<!-- Single Project area -->
     <div class="row">
         <div class="portfolio-image clearfix">
-            <img src=" <?php the_post_thumbnail_url('reveal-portfolio-single') ?> " alt="">
+            <img src="<?php printf( '%s', $portfolio_image_sngl ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>>
         </div> <!-- end of portfolio-image -->
 
-        <?php $position = codexin_get_option('reveal-single-portfolio-layout'); ?>
-        <div class="col-md-8 <?php if($position == '1'): echo 'col-md-push-4'; endif; ?>">
+        <div class="col-md-8 <?php echo ( $position == '1' ) ? 'col-md-push-4' : ''; ?>">
             <div class="portfolio-details">
                 <h2 class="reveal-color-1" itemprop="name"><?php the_title()?></h2>
-                <div class="portfolio-content">
+                <div class="portfolio-content" itemprop="description">
                     <?php the_content(); ?>
                 </div>
-            </div>
-            <?php codexin_post_link( __( 'Prev', 'reveal' ), __( 'Next', 'reveal' ) ); ?>
+            </div> <!-- end of portfolio-details -->
 
-            <?php if( codexin_get_option( 'reveal_portfolio_comments' ) ): ?>
+            <?php 
+            codexin_post_link( __( 'Prev', 'reveal' ), __( 'Next', 'reveal' ) );
+
+            if( $comments ) { ?>
+                <div class="clearfix"></div>
                 <div class="portfolio-comments">
                     <?php comments_template('', true);?>
-                </div>
-            <?php endif; ?>
-        </div>  
+                </div> <!-- end of portfolio-comments -->
+            <?php } ?>
+        </div> <!-- end of col -->
 
-        <div class="col-md-4 <?php if($position == '1'): echo 'col-md-pull-8'; endif; ?>">
+        <div class="col-md-4 <?php echo ( $position == '1' ) ? 'col-md-pull-8' : ''; ?>">
             <div class="portfolio-meta reveal-color-0">
-                <?php $cname = rwmb_meta('reveal_portfolio_client', 'type=text'); ?>
-                <?php $cadate = rwmb_meta('reveal_portfolio_date', 'type=date'); 
-                $date_format = get_option( 'date_format' ); 
-                $cdate = !empty($cadate) ? date( $date_format, strtotime($cadate) ) : ''; 
-                ?>
-                <?php $cskills = rwmb_meta('reveal_portfolio_skills', 'type=text'); ?>
-                <?php $csname = rwmb_meta('reveal_portfolio_sname', 'type=text'); ?>
-                <?php $csurl = rwmb_meta('reveal_portfolio_surl', 'type=text'); ?>
+                <?php if( ! empty( $cname ) || ! empty( $csname ) || ! empty( $cdate ) ) { ?>
+                    <div class="client-portfolio meta-single reveal-border-1">
+                        <h3 class="reveal-color-1"><?php echo esc_html__( 'Client Info', 'reveal' ); ?></h3>
+                        <?php 
+                        if( ! empty( $cname ) ) { ?>
+                            <p><strong><?php echo esc_html__( 'Name', 'reveal' ); ?>: </strong><?php echo esc_html( $cname ); ?></p>
+                        <?php }
+                        if( ( ! empty( $csurl ) ) || ( ! empty( $csname ) ) ) { ?>
+                            <p><strong><?php echo esc_html__( 'Website', 'reveal' ); ?>: </strong><?php echo '<a href="'. esc_url( $csurl ) .'" target="_blank">'. esc_html( $csname ) .'</a>'; ?></p>
+                        <?php }
+                        if( ! empty( $cdate ) ) { ?>
+                            <p><strong><?php echo esc_html__( 'Completion Date', 'reveal' ); ?>: </strong><?php echo esc_html( $cdate ); ?></p>
+                        <?php } ?>
+                    </div> <!-- end of client-portfolio -->
+                <?php } ?>
 
-                <?php if(!empty($cname) || !empty($csname) || !empty($cdate)): ?>
-                <div class="client-portfolio meta-single reveal-border-1">
-                    <h3 class="reveal-color-1"><?php echo esc_html__('Client Info', 'reveal'); ?></h3>
-                    <p><strong><?php echo esc_html__('Name', 'reveal'); ?>: </strong><?php echo $cname; ?></p>
-                    <p><strong><?php echo esc_html__('Website', 'reveal'); ?>: </strong><?php echo '<a href="'. $csurl .'" target="_blank">'. $csname .'</a>'; ?></p>
-                    <p><strong><?php echo esc_html__('Completion Date', 'reveal'); ?>: </strong><?php echo $cdate; ?></p>
-                </div> <!-- end of client-portfolio -->
-                <?php endif; ?>
+                <?php if( ! empty( $cskills ) ) { ?>
+                    <div class="skills-portfolio meta-single reveal-border-1">
+                        <h3 class="reveal-color-1"><?php echo esc_html__( 'Skills', 'reveal' ) ?></h3>
+                        <p><?php echo esc_html( $cskills ); ?></p>
+                    </div> <!-- end of skills-portfolio -->
+                <?php } 
 
-                <?php if(!empty($cskills)): ?>
-                <div class="skills-portfolio meta-single reveal-border-1">
-                    <h3 class="reveal-color-1"><?php echo esc_html__('Skills', 'reveal') ?></h3>
-                    <p><?php echo $cskills; ?></p>
-                </div>
-                <?php endif; ?>
-
-        
-                <?php $cat_list = get_the_term_list( $post->ID, 'portfolio-category', '', '-', '' );  
-                if(!empty($cat_list)): ?>
-                <div class="category-portfolio meta-single reveal-border-1">
-                    <h3 class="reveal-color-1"><?php echo esc_html__('Catagory', 'reveal'); ?></h3>
-                    <p><?php echo $cat_list; ?></p>
-                </div> <!-- end of category-portfolio -->
-                <?php endif; ?>
+                if( ! empty( $cat_list ) ) { ?>
+                    <div class="category-portfolio meta-single reveal-border-1">
+                        <h3 class="reveal-color-1"><?php echo esc_html__( 'Catagory', 'reveal' ); ?></h3>
+                        <p><?php echo wp_kses_post( $cat_list ); ?></p>
+                    </div> <!-- end of category-portfolio -->
+                <?php } 
                 
-                <?php $tag_list = get_the_term_list( $post->ID, 'portfolio_tags', '', '-', '' );
-                if(!empty($tag_list)):
-                ?>
-                <div class="tag-portfolio meta-single reveal-border-1">
-                    <h3 class="reveal-color-1"><?php echo esc_html__('Portfolio Tag', 'reveal'); ?></h3>
-                    <p><?php echo $tag_list; ?></p>
-                </div> <!-- end of portfolio-tag -->
-                <?php endif; ?>
+                if( ! empty( $tag_list ) ) { ?>
+                    <div class="tag-portfolio meta-single reveal-border-1">
+                        <h3 class="reveal-color-1"><?php echo esc_html__( 'Portfolio Tag', 'reveal' ); ?></h3>
+                        <p><?php echo wp_kses_post( $tag_list ); ?></p>
+                    </div> <!-- end of portfolio-tag -->
+                <?php } ?>
 
             </div> <!-- end of portfolio-meta -->
-        </div> <!-- end of col-md-4 -->
+        </div> <!-- end of col -->
     </div> <!-- end of row -->
-
-<!-- Single Project area end --> 
-</article><!-- #portfolio-## -->
+</article><!-- end of #portfolio-## -->

@@ -3,8 +3,9 @@
 /**
  * Functions definition to add stylesheets and scripts for frontend
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
@@ -18,7 +19,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 	 *
 	 * @uses 	wp_enqueue_style()
 	 * @uses 	wp_enqueue_script()
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_framework_scripts() {
 		
@@ -106,7 +107,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 			$longi_var 		= codexin_meta( 'reveal_event_address_longitude' );
 			$event_lat 		= ! empty( $lat_var ) ? $lat_var : '';
 			$event_longi 	= ! empty( $longi_var ) ? $longi_var : '';
-			$map_mkr = CODEXIN_FRAMEWORK_IMG . 'map-marker.png';
+			$map_mkr 		= CODEXIN_FRAMEWORK_IMG . 'map-marker.png';
 
 			wp_register_script( 'reveal-main-map-script', CODEXIN_FRAMEWORK_JS . 'main-map.js', array ( 'jquery' ), 1.0, true );
 		    wp_localize_script( 'reveal-main-map-script', 'reveal_map_params', array(

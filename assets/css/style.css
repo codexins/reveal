@@ -55,6 +55,16 @@ section {
     margin-bottom: 40px;
 }
 
+.page-entry-content .kc_clfw + .section,
+.page-entry-content .kc_clfw + section {
+    margin-top: 0;
+}
+
+.page-entry-content .section:last-child,
+.page-entry-content section:last-child {
+    margin-bottom: 0;
+}
+
 a:link,
 a:visited,
 a:hover,
@@ -143,6 +153,7 @@ tr {
     background: #dedede;
 }
 
+.page-template-page-home #primary,
 .page-template-page-home .page-entry-content {
     margin-bottom: 0;
 }
@@ -243,6 +254,8 @@ tr {
     font-weight: bold;
 }
 
+.blog-wrapper figcaption,
+.post-wrapper figcaption,
 .team-wrapper figcaption,
 .image-pop-up figcaption {
     display: none;
@@ -393,10 +406,10 @@ header .navbar.affix {
     margin-top: 1px;
 }
 
-.header-four .cx-social-media i {
-    width: 26px;
-    height: 26px;
-    line-height: 26px;
+.header-four .cx-social-media a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
     font-size: 15px;
 }
 
@@ -2262,6 +2275,11 @@ a.event-image-popup:focus {
     -ms-box-shadow: none;
     -o-box-shadow: none;
     box-shadow: none;
+}
+
+.search.search-results #page_title h1,
+.search.search-results #page_title .breadcrumbs-wrapper {
+    text-align: center !important;
 }
 
 

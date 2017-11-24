@@ -1,10 +1,26 @@
-<?php
+<?php 
+
+/**
+ * The template partial for loop that handles blog, archive, single and search.
+ *
+ *
+ * @package     Reveal
+ * @subpackage  Core
+ * @since       1.0
+ */
 
 
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
+
+// Assinging some conditional variables
 $archive_posts          = is_archive();
 $blog_posts 	        = is_home() && ! is_archive();
 $search_posts           = is_search() && ! $blog_posts;
 $single_post            = is_singular() && ! $blog_posts && ! $search_posts ;
+
+// Fetching and assigning data from theme options
 $post_style             = codexin_get_option( 'reveal_blog_style' );
 $grids                  = codexin_get_option( 'reveal_grid_columns' );
 $posts_nav		        = codexin_get_option( 'reveal_pagination' );
@@ -34,6 +50,7 @@ if ( have_posts() ) {
             echo ( $i % $grids == 0 ) ? '<div class="clearfix"></div>' : '';
         } elseif( $search_posts && ! $single_post ) {
             get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'search' );
+
         } else {
             get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content' );
         }
@@ -46,8 +63,8 @@ if ( have_posts() ) {
     } // end of loop have_posts()
 
     if( ! $single_post ) {
-	    echo '<div class="clearfix"></div>';	              
-	    echo ( $post_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+	    echo '<div class="clearfix"></div>';              
+	    echo ( ( $post_style == 'grid' ) || ! is_search() ) ? '<div class="col-xs-12">' : '' ;
 
 	    if( $posts_nav == 'numbered' ) {
 	        echo codexin_numbered_posts_nav();
@@ -55,7 +72,9 @@ if ( have_posts() ) {
 	        codexin_posts_link();
 	    }
 
-	    echo ( $post_style == 'grid' ) ? '</div>' : '' ;
+	    echo ( ( $post_style == 'grid' ) || ! is_search() ) ? '</div>' : '' ;
+
+        echo '<div class="clearfix"></div>';
 	}
 
 } else {

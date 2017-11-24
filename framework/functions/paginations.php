@@ -3,8 +3,9 @@
 /**
  * Functions definition related to various pagination
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

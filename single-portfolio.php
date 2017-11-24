@@ -3,8 +3,9 @@
  * The template for displaying all single portfolios.
  *
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 

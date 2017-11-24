@@ -3,14 +3,16 @@
 /**
  * Template partial for displaying grid archive events
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options and metabox
 $e_start_date        = strtotime( codexin_meta( 'reveal_event_start_date' ) );
 $event_new_date 	 = date( get_option( 'date_format' ), $e_start_date );
 $event_start_time    = codexin_meta( 'reveal_event_start_time' );

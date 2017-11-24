@@ -20,7 +20,7 @@ if( $reveal_footer == 4 ) {
 	$footer_count = 3;
 } elseif( $reveal_footer == 6 ) {
 	$footer_count = 4;
-}
+} // end of footer version conditional check
 
 $footer_column = 12 / $footer_count;
 

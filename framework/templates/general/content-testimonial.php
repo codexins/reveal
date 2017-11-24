@@ -3,14 +3,16 @@
 /**
  * Template partial for displaying list archive testimonials
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options and metabox
 $thumbnail_default  = codexin_get_option( 'reveal_testimonial_image' );
 $name               = codexin_meta( 'reveal_author_name' ); 
 $designation        = codexin_meta( 'reveal_author_desig' ); 

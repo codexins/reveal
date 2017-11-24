@@ -3,15 +3,16 @@
 /**
  * Post format rendering template for Standard Post
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-
+// Fetching and assigning data from theme options
 $post_style         = codexin_get_option( 'reveal_blog_style' );
 $post_metas         = codexin_get_option('reveal_blog_post_meta');
 $thumbnail_default  = codexin_get_option( 'reveal_blog_image' );
@@ -24,14 +25,14 @@ $default_image_list = wp_get_attachment_image_src( $attachment_id, 'reveal-post-
 $default_image_grid = wp_get_attachment_image_src( $attachment_id, 'rectangle-one' );
 $post_image_full    = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'full' ) ) : esc_url( $default_image_full[0] );
 $post_image_ls      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'reveal-post-single' ) ) : esc_url( $default_image_list[0] );
-$post_image_list    = ( !empty( $post_image_ls ) ) ? $post_image_ls : esc_url( 'placehold.it/800x354' );
+$post_image_list    = ( ! empty( $post_image_ls ) ) ? $post_image_ls : esc_url( 'placehold.it/800x354' );
 $post_image_gr      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'rectangle-one' ) ) : esc_url( $default_image_grid[0] );
-$post_image_grid    = ( !empty( $post_image_gr ) ) ? $post_image_gr : esc_url( 'placehold.it/600x400' );
+$post_image_grid    = ( ! empty( $post_image_gr ) ) ? $post_image_gr : esc_url( 'placehold.it/600x400' );
 
 
 if ( ! post_password_required() ) {
 
-    if( ( $post_style == 'grid' ) && ! is_single() ) {
+    if( ( $post_style == 'grid' ) && ! is_single() && ! is_search() ) {
 
         echo '<div class="img-thumb">';
             echo '<figure class="img-wrapper" itemscope itemtype="http://schema.org/ImageObject">';

@@ -4,8 +4,9 @@
  * Function definition of breadcrumbs
  * This file does the breadcrumbs handling for the codexin framework.
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

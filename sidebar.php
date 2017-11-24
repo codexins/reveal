@@ -2,8 +2,9 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 

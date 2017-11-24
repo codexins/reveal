@@ -3,8 +3,9 @@
 /**
  * Function definition for the required plugins.
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

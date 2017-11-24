@@ -4,14 +4,16 @@
  *
  * The template for displaying custom post type 'testimonial' archives pages
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $layout          = !empty( codexin_get_option('reveal-testimonial-archive-layout') ) ? codexin_get_option('reveal-testimonial-archive-layout') : 'no';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';

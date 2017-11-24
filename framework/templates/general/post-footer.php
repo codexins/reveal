@@ -3,14 +3,16 @@
 /**
  * Template partial to display the single post content footer
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $social_share = codexin_get_option( 'reveal_single_share' );
 
 ?>

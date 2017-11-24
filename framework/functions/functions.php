@@ -3,8 +3,9 @@
 /**
  * Various core functions definition related to Codexin framework
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
@@ -18,7 +19,7 @@ if ( ! function_exists( 'remove_redux_menu' ) ) {
 	 * Removing 'Redux Framework' sub menu under Tools 
 	 *
 	 * @uses 	remove_submenu_page()
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function remove_redux_menu() {
 	    remove_submenu_page( 'tools.php','redux-about' );
@@ -30,7 +31,7 @@ if ( ! function_exists( 'remove_redux_menu' ) ) {
  * Removing srcset from featured image
  *
  * @uses 	add_filter()
- * @since 	v1.0.0
+ * @since 	v1.0
  */
 add_filter( 'max_srcset_image_width', create_function( '', 'return 1;' ) );
 
@@ -44,7 +45,7 @@ if ( ! function_exists( 'codexin_remove_thumbnail_dimensions' ) ) {
 	 * @param 	integer 	$post_id
 	 * @param 	integer 	$post_image_id
 	 * @return 	mixed
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
 	    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
@@ -59,7 +60,7 @@ if ( ! function_exists( 'codexin_editor_styles' ) ) {
 	 * Apply theme's stylesheet to the visual editor.
 	 *
 	 * @uses 	add_editor_style() Links a stylesheet to visual editor
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_editor_styles() {
 		add_editor_style( 'framework/admin/assets/css/editor-style.css' );
@@ -71,7 +72,7 @@ if ( ! function_exists( 'codexin_editor_styles' ) ) {
  * Adding wp_title support
  *
  * @uses 	add_action()
- * @since 	v1.0.0
+ * @since 	v1.0
  */
 if ( ! function_exists( '_wp_render_title_tag' ) ) {
 	add_action( 'wp_head', 'codexin_render_title' );
@@ -90,7 +91,7 @@ if ( ! function_exists( 'codexin_pageloader' ) ) {
 	/**
 	 * Adding page loader
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_pageloader() {
 	    $page_loader = codexin_get_option( 'reveal-page-loader' );
@@ -103,12 +104,112 @@ if ( ! function_exists( 'codexin_pageloader' ) ) {
 }
 
 
+add_action( 'codexin_body_entry', 'codexin_mobile_menu', 15 );
+if ( ! function_exists( 'codexin_mobile_menu' ) ) {
+	/**
+	 * Rendering the Responsive Menu
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_mobile_menu() {
+		// Go to the mobile menu template partial
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'navigation/mobile', 'menu' );
+	}
+}
+
+
+add_action( 'codexin_inside_main_nav', 'codexin_render_main_navigation_left', 10 );
+if ( ! function_exists( 'codexin_render_main_navigation_left' ) ) {
+	/**
+	 * Rendering the left navigation menu
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_render_main_navigation_left() {
+		$header_version = codexin_get_option( 'reveal-header-version' );
+		if( $header_version !== '3' ) {
+			return;
+		}
+
+		$result = '';
+		ob_start();
+
+		?>
+		
+		<div class="left-menu-wrapper">
+			<div class="hidden-xs left-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<?php
+				// Check if any menu is assigned
+				if( has_nav_menu( 'main_menu_left' ) ) {
+					// Assign the menu
+					codexin_menu( 'main_menu_left' ); 
+				} else {
+					// If no menu assigned, give a notice
+					echo codexin_add_menu( 'desktop' );
+				} //end of nav menu check
+				?>
+			</div>
+		</div> <!-- end of left-menu-wrapper -->
+
+		<?php
+		$result .= ob_get_clean();
+		printf( '%s', $result );
+	}
+}
+
+
+add_action( 'codexin_inside_main_nav', 'codexin_render_logo', 15 );
+if ( ! function_exists( 'codexin_render_logo' ) ) {
+	/**
+	 * Rendering the site logo
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_render_logo() {
+		// Go to the logo template partial
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/logo' );
+	}
+}
+
+
+add_action( 'codexin_inside_main_nav', 'codexin_render_main_navigation', 20 );
+if ( ! function_exists( 'codexin_render_main_navigation' ) ) {
+	/**
+	 * Rendering the main navigation menu
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_render_main_navigation() {
+		// Go to the logo template partial
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'navigation/main', 'menu' );
+	}
+}
+
+
+add_action( 'codexin_inside_main_nav', 'codexin_render_social_media', 25 );
+if ( ! function_exists( 'codexin_render_social_media' ) ) {
+	/**
+	 * Rendering the social media information inside header
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_render_social_media() {
+		$header_version = codexin_get_option( 'reveal-header-version' );
+		if( $header_version !== '4' ) {
+			return;
+		}
+		// Go to the social media template partial
+		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/social', 'media' );
+	}
+}
+
+
 add_action( 'codexin_whole_wrapper_exit', 'codexin_to_top', 10 );
 if ( ! function_exists( 'codexin_to_top' ) ) {
 	/**
 	 * Adding a navigation to top button
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_to_top() {
 	    $to_top = codexin_get_option( 'reveal_to_top' );
@@ -128,7 +229,7 @@ if ( ! function_exists( 'codexin_footer_copyright' ) ) {
 	/**
 	 * Adding the footer copyright texts
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_footer_copyright() {
 		$copyright = codexin_get_option( 'reveal-copyright' );
@@ -149,7 +250,7 @@ if ( ! function_exists( 'codexin_photoswipe_init' ) ) {
 	/**
 	 * Initialization of photoswipe
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_photoswipe_init() {
 		$result = '';
@@ -203,11 +304,12 @@ if ( ! function_exists( 'codexin_photoswipe_init' ) ) {
 add_action( 'codexin_post_wrapper_entry', 'codexin_post_formats', 10 );
 if ( ! function_exists( 'codexin_post_formats' ) ) {
 	/**
-	 * Render the HTML for the post formats
+	 * Rendering the HTML for the post formats
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_post_formats() {
+		// Go to the post formats template partial
 		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'post_formats/format', get_post_format() );
 	}
 }
@@ -216,15 +318,17 @@ if ( ! function_exists( 'codexin_post_formats' ) ) {
 add_action( 'codexin_post_wrapper_entry', 'codexin_post_metas', 15 );
 if ( ! function_exists( 'codexin_post_metas' ) ) {
 	/**
-	 * Render the HTML for the post metas
+	 * Rendering the HTML for the post metas
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_post_metas() {
 		$post_style     = codexin_get_option( 'reveal_blog_style' );
-		if( ( $post_style == 'grid') && ! is_single() ) {
+		if( ( $post_style == 'grid') && ! is_single() || is_search() ) {
 			return;
 		}
+
+		// Go to the post metas template partial
 		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'metas' );
 		
 	}
@@ -234,15 +338,17 @@ if ( ! function_exists( 'codexin_post_metas' ) ) {
 add_action( 'codexin_after_post_title', 'codexin_grid_post_metas', 10 );
 if ( ! function_exists( 'codexin_grid_post_metas' ) ) {
 	/**
-	 * Render the HTML for the post metas
+	 * Rendering the HTML for the post metas
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_grid_post_metas() {
 		$post_style     = codexin_get_option( 'reveal_blog_style' );
 		if( ( $post_style == 'list') || is_single() ) {
 			return;
 		}
+
+		// Go to the post metas template partial
 		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'metas' );
 	}
 }
@@ -251,12 +357,14 @@ if ( ! function_exists( 'codexin_grid_post_metas' ) ) {
 add_action( 'codexin_post_wrapper_exit', 'codexin_post_content_footer', 10 );
 if ( ! function_exists( 'codexin_post_content_footer' ) ) {
 	/**
-	 * Render the HTML for the single post content footer
+	 * Rendering the HTML for the single post content footer
 	 *
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_post_content_footer() {
 		if( is_single() ) {
+
+			// Go to the post footer template partial
 			get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'footer' );
 		}
 	}
@@ -269,7 +377,7 @@ if ( ! function_exists( 'remove_demo' ) ) {
 	 *
 	 * @uses 	remove_filter()
 	 * @uses 	remove_action()
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
     function remove_demo() {
         // Used to hide the demo mode link from the plugin page. Only used when Redux is a plugin.
@@ -290,7 +398,7 @@ if ( ! function_exists( 'remove_demo' ) ) {
  * Function for Redirecting single testimonial to the archive page, scrolled to current ID 
  * 
  * @uses 	add_action()
- * @since 	v1.0.0
+ * @since 	v1.0
  */
 add_action( 'template_redirect', function() {
     if ( is_singular('testimonial') ) {
@@ -306,7 +414,7 @@ add_action( 'template_redirect', function() {
  * Function for Turning off pagination for the Testimonial archive page
  * 
  * @uses 	add_action()
- * @since 	v1.0.0
+ * @since 	v1.0
  */
 $testimonial_pagination = codexin_get_option('reveal_enable_testimonial_pagination');
 if( $testimonial_pagination == false ) {
@@ -322,7 +430,7 @@ if( $testimonial_pagination == false ) {
  * Function for Turning off pagination for the Team archive page
  * 
  * @uses 	add_action()
- * @since 	v1.0.0
+ * @since 	v1.0
  */
 add_action( 'parse_query', function( $query ) {
     if ( is_post_type_archive( 'team' ) && $query->is_main_query() ) {
@@ -338,7 +446,7 @@ if ( ! function_exists( 'codexin_comment_function' ) ) {
 	 * @param 	$comment
 	 * @param 	$args
 	 * @param 	$depth
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_comment_function( $comment, $args, $depth ) {
 
@@ -397,7 +505,7 @@ if ( ! function_exists( 'codexin_post_formats_script' ) ) {
 	 *
 	 * @uses 	wp_enqueue_script()
 	 * @param 	$hook
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 */
 	function codexin_post_formats_script( $hook ) {	 
 	    global $post;	 
@@ -417,7 +525,7 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
 	 * 
 	 * @param 	int 	$classes	The class to be returned
 	 * @return 	string
-	 * @since 	v1.0.0
+	 * @since 	v1.0
 	 *
 	 */
 	function codexin_body_class( $classes ) {
@@ -442,7 +550,7 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
  *
  * @uses 	add_action()
  * @uses 	unregister_post_type()
- * @since 	v1.0.0
+ * @since 	v1.0
 **/
 $version = '4.5';
 if( version_compare( $version, get_bloginfo( 'version' ), '<=' ) ) {	
@@ -483,6 +591,18 @@ if( version_compare( $version, get_bloginfo( 'version' ), '<=' ) ) {
     return false;        
 }
 
+
+add_action( 'wp_head', 'codexin_pingback_header' );
+if ( ! function_exists( 'codexin_pingback_header' ) ) {
+	/**
+	 * Add a pingback url auto-discovery header for singularly identifiable articles.
+	 */
+	function codexin_pingback_header() {
+		if ( is_singular() && pings_open() ) {
+			printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+		}
+	}
+}
 
 
 

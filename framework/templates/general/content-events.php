@@ -3,15 +3,16 @@
 /**
  * Template partial for displaying list archive events
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-
+// Fetching and assigning data from theme options and metabox
 $start_date          = strtotime( codexin_meta( 'reveal_event_start_date' ) );
 $event_start_date    = date( get_option( 'date_format' ), $start_date );
 $length_switch       = codexin_get_option( 'reveal_events_title_excerpt_length' );

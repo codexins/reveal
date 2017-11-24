@@ -9,14 +9,16 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $layout          = !empty( codexin_get_option('reveal-blog-layout') ) ? codexin_get_option('reveal-blog-layout') : 'right';
 $post_style      = !empty( codexin_get_option( 'reveal_blog_style' ) ) ? codexin_get_option( 'reveal_blog_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';

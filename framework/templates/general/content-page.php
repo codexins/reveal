@@ -2,8 +2,9 @@
 /**
  * Template partial for displaying page contents
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

@@ -3,15 +3,16 @@
 /**
  * Post format rendering template for Link Post
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-
+// Fetching and assigning data from metabox
 $link_url       = codexin_meta( 'reveal_link_url' );
 $link_txt       = codexin_meta( 'reveal_link_text' );
 $link_rel       = codexin_meta( 'reveal_link_rel' ); 

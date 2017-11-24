@@ -1,12 +1,26 @@
-<?php
+<?php 
+
+/**
+ * The template partial for loop that handles events custom post archive and single.
+ *
+ *
+ * @package     Reveal
+ * @subpackage  Core
+ * @since       1.0
+ */
 
 
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
+// Assinging some conditional variables
 $events_archive_posts   = is_post_type_archive( 'events' );
 $events_single_post     = is_singular( 'events' ) && ! $events_archive_posts;
+
+// Fetching and assigning data from theme options
 $events_style           = codexin_get_option( 'reveal_events_style' );
 $events_grids           = codexin_get_option( 'reveal_events_grid_columns' );
 $events_nav		        = codexin_get_option( 'reveal_events_pagination' );
-
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 

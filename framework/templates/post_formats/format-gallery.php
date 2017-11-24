@@ -3,16 +3,18 @@
 /**
  * Post format rendering template for Gallery Post
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options and metabox
 $post_style = codexin_get_option( 'reveal_blog_style' );
-$image_size = ( ( $post_style == 'list' ) || is_single() ) ? 'size=gallery-format-image' : 'size=rectangle-one';
+$image_size = ( ( $post_style == 'list' ) || is_single() || is_search() ) ? 'size=gallery-format-image' : 'size=rectangle-one';
 $gallery 	= codexin_meta( 'reveal_gallery', $image_size );
 
 if ( ! post_password_required() ) {

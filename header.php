@@ -21,7 +21,6 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11"/>
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>"/>
 	<?php wp_head(); ?>
 </head>
 
@@ -33,6 +32,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 	<?php 
 
+	// Fetching and assigning data from theme options and metabox
 	$header_version 		= codexin_get_option( 'reveal-header-version' );
 	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
 	$disable_head 			= codexin_meta( 'reveal_disable_header' );
@@ -42,34 +42,11 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
      * Initial contents after start of body tag, codexin_body_entry hook.
      *
      * @hooked codexin_pageloader - 10 (outputs the HTML for the page loader)
+     * @hooked codexin_mobile_menu - 15 (outputs the HTML for the mobile menu)
      */
 	do_action( 'codexin_body_entry' );
 
 	?>
-
-	<!-- Initializing Mobile Menu -->
-	<div id="c-menu--slide-<?php echo esc_attr( codexin_responsive_class() ); ?>" class="c-menu c-menu--slide-<?php echo esc_attr( codexin_responsive_class() ); ?> reveal-color-2" itemscope itemtype="http://schema.org/SiteNavigationElement">
-		<button class="c-menu__close"><i class="fa fa-times" aria-hidden="true"></i> <?php esc_html_e( 'Close', 'reveal' ); ?></button>
-		<?php
-
-		// Check if any menu is assigned
-		if( has_nav_menu( 'mobile_menu' ) ) {
-
-			// Assign the menu
-			codexin_menu( 'mobile_menu' ); 
-
-		} else {
-
-			// If no menu assigned, give a notice
-			echo codexin_add_menu( 'mobile' );
-
-		} //end of nav menu check
-
-		?>
-	</div><!-- end of Moblie Menu -->
-
-	<!-- Mobile Menu Masking -->
-	<div id="c-mask" class="c-mask"></div>
 
 	<!-- Start of whole -->
 	<div id="whole" class="whole-site-wrapper">
@@ -86,19 +63,9 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 			<header id="header" class="header <?php echo esc_attr( $page_identity ); ?>" itemscope itemtype="http://schema.org/WPHeader">
 		        <?php
 		        echo ( $page_identity == 'inner-header' ) ? '<div class="nav-container">' : '';
-				
-					// Go to a specific header template partial depending on user choice
-					if( $header_version == 1 ) {
-						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'one' );
-					} elseif ($header_version == 2 ) {
-						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'two' );
-					} elseif( $header_version == 3 ) {
-						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'three' );
-					} elseif( $header_version == 4 ) {
-						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'four' );
-					} else {
-						get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'one' );
-					}
+
+		        	// Go to the header rendering template partial
+			        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'general' );
 
 				echo ( $page_identity == 'inner-header' ) ? '</div> <!-- end of nav-container -->' : ''; ?>
 			</header><!-- end of #header -->
@@ -124,6 +91,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 		     *
 		     */
 			do_action( 'codexin_after_page_title' );
+
 		} else {
 			echo ( $disable_head == 0 ) ? '<div class="reveal-spacer-30"></div>' : '';
 		} // end of page title enable/disable check

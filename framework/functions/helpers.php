@@ -3,8 +3,9 @@
 /**
  * Various helper functions definition related to Codexin framework
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
@@ -157,7 +158,7 @@ if ( ! function_exists( 'codexin_logo' ) ) {
 
 if ( ! function_exists( 'codexin_responsive_nav' ) ) {
     /**
-     * Helper Function to get logo from theme options
+     * Helper Function to render the navigation icon to initialize mobile menu
      *
      * @since   v1.0.0
      */

@@ -3,8 +3,9 @@
 /**
  * Template partial for displaying single post contents
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

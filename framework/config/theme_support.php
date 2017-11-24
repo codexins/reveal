@@ -3,8 +3,9 @@
 /**
  * Various feature support when the theme initializes.
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

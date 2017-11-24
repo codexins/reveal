@@ -41,7 +41,8 @@
     ---------------------------------------------------------------- */
 
     $(window).load(function(){
-        $('.inner-header .nav-container').css('min-height', $('#header').outerHeight());
+        $('.inner-header .nav-container').css('min-height', $('#header').outerHeight() - 1);
+        // $('.inner-header .nav-container').css('min-height', $('#header').outerHeight());
     });
 
 

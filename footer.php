@@ -6,14 +6,16 @@
  *
  * Contains the closing of the #whole div and all content after.
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options and metabox
 $reveal_footer  = codexin_get_option( 'reveal-footer-version' );
 $reveal_cpr     = codexin_get_option( 'reveal_footer_copyright' );
 $copyright_text = codexin_get_option( 'reveal-copyright' );

@@ -3,8 +3,9 @@
 /**
  * Codexin Widget class definitions. Defines locations for sidebar and footer widgets.
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

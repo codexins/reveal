@@ -3,8 +3,9 @@
 /**
  * Main Class definition for theme options
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

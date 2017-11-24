@@ -3,14 +3,16 @@
 /**
  * Template partial for displaying grid archive portfolios
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $portfolio_list       = get_the_term_list( $post->ID, 'portfolio-category', '<li>', ', </li><li>', '</li>' );
 $thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
 

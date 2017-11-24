@@ -3,8 +3,9 @@
 /**
  * Function definition to pass colors in frontend from theme options
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

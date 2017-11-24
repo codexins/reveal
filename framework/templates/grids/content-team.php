@@ -3,14 +3,16 @@
 /**
  * Template partial for displaying grid archive team
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options and metabox
 $designation 		= codexin_meta( 'reveal_team_designation' );
 $thumbnail_default  = codexin_get_option( 'reveal_team_image' );
 
@@ -19,7 +21,7 @@ $attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post->I
 $image_prop         = codexin_attachment_metas( $attachment_id );
 $default_image 		= wp_get_attachment_image_src( $attachment_id, 'square-two' );
 $team_image_grid    = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'square-two' ) ) : esc_url( $default_image[0] );
-$team_image    		= ( !empty( $team_image_grid ) ) ? $team_image_grid : esc_url( 'placehold.it/500x500' );
+$team_image    		= ( ! empty( $team_image_grid ) ) ? $team_image_grid : esc_url( 'placehold.it/500x500' );
 
 ?>
 

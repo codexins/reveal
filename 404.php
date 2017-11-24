@@ -4,8 +4,9 @@
  *
  * The template for displaying the 404 page
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 

@@ -3,8 +3,9 @@
 /**
  * Template partial for displaying a message that posts cannot be found
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

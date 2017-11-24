@@ -3,15 +3,16 @@
 /**
  * Post format rendering template for Quote Post
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-
+// Fetching and assigning data from metabox
 $quote 	= codexin_meta( 'reveal_quote_text' );
 $name 	= codexin_meta( 'reveal_quote_name' );
 $source = codexin_meta( 'reveal_quote_source' );

@@ -1,8 +1,23 @@
-<?php
+<?php 
+
+/**
+ * The template partial for loop that handles portfolio custom post archive and single.
+ *
+ *
+ * @package     Reveal
+ * @subpackage  Core
+ * @since       1.0
+ */
 
 
+// Do not allow directly accessing this file.
+defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
+
+// Assinging some conditional variables
 $portfolio_archive_posts  	= is_post_type_archive( 'portfolio' );
 $portfolio_single_post     	= is_singular( 'portfolio' ) && ! $portfolio_archive_posts;
+
+// Fetching and assigning data from theme options
 $portfolio_style           	= codexin_get_option( 'reveal_portfolio_style' );
 $portfolio_grids           	= codexin_get_option( 'reveal_portfolio_grid_columns' );
 $portfolio_nav		        = codexin_get_option( 'reveal_portfolio_pagination' );
@@ -78,14 +93,16 @@ if ( have_posts() ) {
 
                             $portfolio->the_post();
 
-                            // Retieving the image alt tags
-                            if( function_exists( 'retrieve_alt_tag' ) ) { 
-                                $alt_tag =  retrieve_alt_tag(); 
-                            }
-                            $image_alt  = ( !empty( $alt_tag ) ) ? 'alt="' . esc_attr( $alt_tag ) . '"' : 'alt="' . get_the_title() . '"';
+                            // Fetching the attachment properties
+                            $thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
+                            $attachment_id        = $thumbnail_default['id'];
+                            $image_prop           = codexin_attachment_metas( $attachment_id );
+                            $default_image        = wp_get_attachment_image_src( $attachment_id, 'rectangle-two' );
+                            $portfolio_image      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'rectangle-two' ) ) : esc_url( $default_image[0] );
+                            $portfolio_image_sngl = ( !empty( $portfolio_image ) ) ? $portfolio_image : esc_url( 'placehold.it/570x464' );
 
                             echo '<div class="recent-portfolio-wrapper reveal-color-2">';
-                                echo '<img src="'. esc_url( get_the_post_thumbnail_url( get_the_ID(), 'rectangle-two') ) .'" '. $image_alt .'>';
+                                echo '<img src="'. $portfolio_image_sngl .'" '. $image_prop['alt'] .'>';
                                 echo '<div class="portfolio-image-content">';
                                     echo '<i class="et-focus" aria-hidden="true"></i>';
                                     echo '<h3><a href="'. esc_url( get_the_permalink() ) .'">'. get_the_title() .'</a></h3>';

@@ -3,8 +3,9 @@
 /**
  * Function definition to handle the comments ajax requests
  *
- * @package Reveal
- * @subpackage Core
+ * @package 	Reveal
+ * @subpackage 	Core
+ * @since 		1.0
  */
 
 

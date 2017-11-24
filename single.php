@@ -3,14 +3,16 @@
  * The template for displaying all single posts and other post-types
  * that don't have a specific template.
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $layout          = !empty( codexin_get_option('reveal-single-layout') ) ? codexin_get_option('reveal-single-layout') : 'right';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';

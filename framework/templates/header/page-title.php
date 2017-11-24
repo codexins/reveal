@@ -6,12 +6,14 @@
  *
  * @package 	Reveal
  * @subpackage 	Core
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $page_title_background 	= ( ! empty( codexin_title_background() ) ) ? 'style=background-image:url('. esc_url( codexin_title_background() ) .')' : '';
 $title_position 		= codexin_get_option( 'page-title-position' );
 $enable_breadcrumbs		= codexin_get_option('reveal-bcrumbs');

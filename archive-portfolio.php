@@ -4,14 +4,16 @@
  *
  * The template for displaying custom post type 'portfolio' archives pages
  *
- * @package Reveal
- * @subpackage Templates
+ * @package 	Reveal
+ * @subpackage 	Templates
+ * @since 		1.0
  */
 
 
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
+// Fetching and assigning data from theme options
 $layout          = !empty( codexin_get_option('reveal-portfolio-archive-layout') ) ? codexin_get_option('reveal-portfolio-archive-layout') : 'right';
 $portfolio_style = !empty( codexin_get_option( 'reveal_portfolio_style' ) ) ? codexin_get_option( 'reveal_portfolio_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
