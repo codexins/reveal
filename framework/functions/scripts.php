@@ -83,13 +83,16 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		// Comments Ajax Support
 		if( codexin_get_option( 'reveal-ajax-comments' ) && ! is_search() && ! is_404() ) {
 			global $post;
-			$count = wp_count_comments( $post->ID );
-		    wp_register_script( 'ajax_comment', CODEXIN_FRAMEWORK_JS . 'ajax-comments.js', array('jquery') );
-		    wp_localize_script( 'ajax_comment', 'codexin_ajax_comment_params', array(
-		        'ajaxurl' => admin_url( 'admin-ajax.php' ),
-		        'comment_count' => $count->approved
-		    ) ); 
-		    wp_enqueue_script( 'ajax_comment' );
+			if( have_posts() ) {
+					$count = wp_count_comments( $post->ID );
+
+			    wp_register_script( 'ajax_comment', CODEXIN_FRAMEWORK_JS . 'ajax-comments.js', array('jquery') );
+			    wp_localize_script( 'ajax_comment', 'codexin_ajax_comment_params', array(
+			        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			        'comment_count' => $count->approved
+			    ) ); 
+			    wp_enqueue_script( 'ajax_comment' );
+			}
 		}
 
 		// Carousel Support

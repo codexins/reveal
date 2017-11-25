@@ -33,7 +33,6 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	<?php 
 
 	// Fetching and assigning data from theme options and metabox
-	$header_version 		= codexin_get_option( 'reveal-header-version' );
 	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
 	$disable_head 			= codexin_meta( 'reveal_disable_header' );
 	$disable_title 			= codexin_meta( 'reveal_disable_page_title' );

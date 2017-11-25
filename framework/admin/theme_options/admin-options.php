@@ -1209,7 +1209,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
-                        'id'        => 'reveal_event_image',
+                        'id'        => 'reveal_events_image',
                         'type'      => 'media',
                         'title'     => esc_html__('Default Placeholder Image', 'reveal'),
                         'subtitle'  => 'Upload placeholder image for events to show (if event has no featured image)',

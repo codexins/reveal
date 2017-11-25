@@ -29,7 +29,7 @@ function codexin_menu( $menu_type ) {
  * 
  * @param  	string    $menu_type    The registered name of the menu
  * @return  array 	  $args 		Arguments to pass in wp_nav_menu()
- * @since   v1.0.0
+ * @since   v1.0
  */
 function init_codexin_menu( $menu_type ) {
 	$args = array(

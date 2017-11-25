@@ -20,18 +20,13 @@ $thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
 $portfolio_list       = get_the_term_list( $post->ID, 'portfolio-category', '', ', ', '' );
 
 // Fetching the attachment properties
-$attachment_id        = $thumbnail_default['id'];
-$image_prop           = codexin_attachment_metas( $attachment_id );
-$default_image        = wp_get_attachment_image_src( $attachment_id, 'reveal-rectangle-one' );
-$portfolio_image      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'reveal-rectangle-one' ) ) : esc_url( $default_image[0] );
-$portfolio_image_list = ( !empty( $portfolio_image ) ) ? $portfolio_image : esc_url( 'placehold.it/600x375' );
-
+$image_prop           = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'reveal-rectangle-one' );
 
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class( array( 'clearfix portfolio-list' ) ); ?>>
     <div class="post-wrapper reveal-border-1">
         <div class="port-list-wrapper reveal-bg-2">
-                <div class="thumb-port" style="background-image:url('<?php printf( '%s', $portfolio_image_list ); ?>');">
+                <div class="thumb-port" style="background-image:url('<?php printf( '%s', $image_prop['src'] ); ?>');">
                     <a href="<?php echo esc_url( get_the_permalink() ); ?>" itemprop="url"></a>
                     <div class="port-date reveal-bg-2">
                         <p><?php echo date( get_option('date_format'), strtotime( get_the_time( 'd M, Y' ) ) ); ?></p>

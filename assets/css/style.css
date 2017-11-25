@@ -2196,6 +2196,7 @@ table#wp-calendar thead {
     margin-top: 15px;
     margin-bottom: 30px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .single-event-description .single-event-image, .single-event-description .single-event-image img {
     display: block;

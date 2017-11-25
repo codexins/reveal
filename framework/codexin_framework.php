@@ -158,6 +158,12 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'functions.php';
 
 			/**
+			 * Adding the theme template functions that utilizes framework hooks
+			 *
+			 */
+			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'template_function.php';
+
+			/**
 			 * Adding the function to show breadcrumbs
 			 *
 			 */
@@ -173,7 +179,7 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 * Adding the function to pass colors from theme options
 			 *
 			 */
-			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'color_scheme.php';
+			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'color_patterns.php';
 
 			/**
 			 * Adding the functions for various paginations

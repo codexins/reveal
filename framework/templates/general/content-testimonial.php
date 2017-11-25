@@ -13,17 +13,12 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options and metabox
-$thumbnail_default  = codexin_get_option( 'reveal_testimonial_image' );
 $name               = codexin_meta( 'reveal_author_name' ); 
 $designation        = codexin_meta( 'reveal_author_desig' ); 
 $company            = codexin_meta( 'reveal_author_company' ); 
 
 // Fetching the attachment properties
-$attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post->ID ) : $thumbnail_default['id'];
-$image_prop         = codexin_attachment_metas( $attachment_id );
-$default_image      = wp_get_attachment_image_src( $attachment_id, 'square-one' );
-$testi_image        = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'square-one' ) ) : esc_url( $default_image[0] );
-$testimonial_image  = ( !empty( $testi_image ) ) ? $testi_image : esc_url( 'placehold.it/220x220' );
+$image_prop         = codexin_attachment_metas_extended( $post->ID, 'testimonial', 'square-one' );
 
 ?>
 
@@ -33,7 +28,7 @@ $testimonial_image  = ( !empty( $testi_image ) ) ? $testi_image : esc_url( 'plac
         <div class="testimonial-list-wrapper">
             <div class="thumb-testimonial-wrapper">
                 <div class="thumb-testimonial">
-                    <img src="<?php printf( '%s', $testimonial_image ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>" class="reveal-border-0" itemprop="url">
+                    <img src="<?php printf( '%s', $image_prop['src'] ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>" class="reveal-border-0" itemprop="url">
                 </div>
             </div> <!-- end of thumb-testimonial-wrapper -->
 

@@ -31,11 +31,7 @@ $event_cat_list         = get_the_term_list( $post->ID, 'events-category', '', '
 $event_tag_list         = get_the_term_list( $post->ID, 'events_tags', '', ', ', '' );
 
 // Fetching the attachment properties
-$thumbnail_default      = codexin_get_option( 'reveal_event_image' );
-$attachment_id          = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post->ID ) : $thumbnail_default['id'];
-$image_prop             = codexin_attachment_metas( $attachment_id );
-$default_image          = wp_get_attachment_image_src( $attachment_id, 'full' );
-$event_image            = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'full' ) ) : esc_url( $default_image[0] );
+$image_prop             = codexin_attachment_metas_extended( $post->ID, 'events', 'full' );
 
 ?>
 
@@ -139,9 +135,9 @@ $event_image            = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumb
                 <h2 class="reveal-color-1"> <?php the_title(); ?> </h2>
             </div>
             
-            <?php if( ! empty( $event_image ) ) { ?>
+            <?php if( ! empty( $image_prop['src'] ) ) { ?>
                 <div class="single-event-image">
-    	            <img src="<?php printf( '%s', $event_image ); ?>" class="img-responsive" <?php printf( '%s', $image_prop['alt'] ); ?>>
+    	            <img src="<?php printf( '%s', $image_prop['src'] ); ?>" class="img-responsive" <?php printf( '%s', $image_prop['alt'] ); ?>>
                 </div>
             <?php } ?>
             

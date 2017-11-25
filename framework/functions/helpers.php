@@ -20,7 +20,7 @@ if ( ! function_exists('codexin_get_option' ) ) {
      * @param   int       $option     The option we need from the DB
      * @param   string    $default    If $option doesn't exist in DB return $default value
      * @return  mixed
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_get_option( $option = false, $default = false ){
         if( $option === false ) {
@@ -50,7 +50,7 @@ if ( ! function_exists( 'codexin_meta' ) ) {
      * @param   array      $args       The arguments of the meta key
      * @param   int        $post_id    The ID of the post
      * @return  mixed
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_meta( $key, $args = array(), $post_id = null ){
         if( function_exists( 'rwmb_meta' ) ) {
@@ -90,7 +90,7 @@ if ( ! function_exists( 'codexin_add_menu' ) ) {
      *
      * @param   string      $type    The type of navigation menu (possible values: desktop/mobile)
      * @return  mixed
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_add_menu( $type ) {
         $result = '';
@@ -115,7 +115,7 @@ if ( ! function_exists( 'codexin_responsive_class' ) ) {
     /**
      * Helper Function to add the responsive menu class
      *
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_responsive_class() {
         $responsive_header  = codexin_get_option( 'reveal-responsive-version' );
@@ -126,11 +126,34 @@ if ( ! function_exists( 'codexin_responsive_class' ) ) {
 }
 
 
+if ( ! function_exists( 'codexin_header_version' ) ) {
+    /**
+     * Helper Function to get the header version
+     *
+     * @since   v1.0
+     */
+    function codexin_header_version() {
+        $header_version = NULL;
+
+        $global_header      = codexin_get_option( 'reveal-header-version' );
+        $individual_header  = codexin_meta('reveal_header_layout');
+
+        if( is_page() ) {
+            $header_version     = ( ! empty( $individual_header ) ) || ( $individual_header !== '0' ) ? $individual_header : $global_header;
+        } else {
+            $header_version     = $global_header;
+        }
+
+        return $header_version;
+    }
+}
+
+
 if ( ! function_exists( 'codexin_logo' ) ) {
     /**
      * Helper Function to get logo from theme options
      *
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_logo() {
         $logo_type          = codexin_get_option( 'reveal-logo-type' );
@@ -160,12 +183,11 @@ if ( ! function_exists( 'codexin_responsive_nav' ) ) {
     /**
      * Helper Function to render the navigation icon to initialize mobile menu
      *
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_responsive_nav() {
 
         $result = '';
-
         ob_start();
 
         ?>
@@ -198,7 +220,7 @@ if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
     /**
      * Helper Function to get smart slider
      *
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_get_smart_slider() {
 
@@ -233,10 +255,10 @@ if ( ! function_exists( 'codexin_title_background' ) ) {
     /**
      * Helper function to return page tile background url
      *
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_title_background() {
-        $header_bg = codexin_meta('reveal_page_background'); 
+        $header_bg = codexin_meta( 'reveal_page_background' ); 
 
         if( empty( $header_bg ) ) {
             return;
@@ -253,7 +275,7 @@ if ( ! function_exists( 'codexin_page_title' ) ) {
     /**
      * Helper function to return page specific titles
      *
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_page_title() {
         $blog_title = codexin_get_option( 'reveal-blog-title' );
@@ -280,7 +302,9 @@ if ( ! function_exists( 'codexin_button' ) ) {
     /**
      * Helper function to return the markup for read more button
      *
-     * @since   v1.0.0
+     * @param   string      $args    The type of button to render. Possible value: events_grid
+     * @return  mixed
+     * @since   v1.0
      */
     function codexin_button( $args = NULL ) {
 
@@ -304,8 +328,8 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
      *
      * @param   int       $limit     The number of character to limit
      * @param   string    $type      The type of content (possible values: title/excerpt)
-     * @return  string
-     * @since   v1.0.0
+     * @return  mixed
+     * @since   v1.0
      */
     function codexin_char_limit( $limit, $type ) {
         $content = ( $type == 'title' && $type !== 'excerpt' ) ? get_the_title() : get_the_excerpt();
@@ -331,11 +355,11 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
 
 if ( ! function_exists( 'codexin_attachment_metas' ) ) {
     /**
-     * Helper Function to get meta data from attachments
+     * Helper Function to get some meta data from attachments
      *
      * @param   int        $post_id    The ID of the attachment
      * @return  array
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function codexin_attachment_metas( $attachment_id = null ) {
 
@@ -351,97 +375,97 @@ if ( ! function_exists( 'codexin_attachment_metas' ) ) {
 }
 
 
-if ( ! function_exists( 'reveal_title' ) ) {
+if ( ! function_exists( 'codexin_placeholder_dimensions' ) ) {
     /**
-     * Helper Function to limit the title length
+     * Helper Function to set default placeholder dimensions
      *
-     * @param   int       $limit     The number of character to limit
+     * @param   string     $image_size    The desired image size
      * @return  string
-     * @since   v1.0.0
+     * @since   v1.0
      */
-    function reveal_title( $limit ) {
-        $title = get_the_title();
-        $limit++;
+    function codexin_placeholder_dimensions( $image_size = null ) {
 
-        if ( mb_strlen( $title ) > $limit ) {
-            $subex = mb_substr( $title, 0, $limit);
-            $exwords = explode( ' ', $subex );
-            $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-            if ( $excut < 0 ) {
-                echo mb_substr( $subex, 0, $excut );
-            } else {
-                printf('%s', $subex);
-            }
-            echo '...';
-        } else {
-            printf('%s', $title);
+        $dimensions = '';
+
+        switch ( $image_size ) {
+            case "reveal-post-single":
+                $dimensions .= 'placehold.it/800x354';
+                break;
+            case "reveal-portfolio-single":
+                $dimensions .= 'placehold.it/1170x400';
+                break;
+            case "gallery-format-image":
+                $dimensions .= 'placehold.it/800x450';
+                break;
+            case "gallery-format-image":
+                $dimensions .= 'placehold.it/800x450';
+                break;
+            case "reveal-rectangle-one":
+                $dimensions .= 'placehold.it/600x375';
+                break;
+            case "rectangle-one":
+                $dimensions .= 'placehold.it/600x400';
+                break;
+            case "rectangle-two":
+                $dimensions .= 'placehold.it/570x464';
+                break;
+            case "rectangle-three":
+                $dimensions .= 'placehold.it/480x595';
+                break;
+            case "rectangle-four":
+                $dimensions .= 'placehold.it/600x327';
+                break;
+            case "rectangle-five":
+                $dimensions .= 'placehold.it/740x580';
+                break;
+            case "square-one":
+                $dimensions .= 'placehold.it/220x220';
+                break;
+            case "square-two":
+                $dimensions .= 'placehold.it/500x500';
+                break;
+            default:
+                $dimensions .= 'placehold.it/800x354';
         }
-    }
 
+        return $dimensions;
+    }
 }
 
 
-if ( ! function_exists( 'reveal_excerpt' ) ) {
+if ( ! function_exists( 'codexin_attachment_metas_extended' ) ) {
     /**
-     * Helper Function to limit the excerpt length
+     * Helper Function to get some meta information from attachments using some extra parameters
      *
-     * @param  int       $limit     The number of character to limit
-     * @return string
-     * @since v1.0.0
+     * @param   int        $post_id       The ID of the attachment
+     * @param   int        $post_type     The post type to use the attachment. Possible values: blog/portfolio/events/testimonial/team
+     * @param   int        $image_size    The registered image size to use with the attachment. Refer to theme_support.php and codexin-core plugin init.php
+     * @return  array
+     * @since   v1.0
      */
-    function reveal_excerpt($limit) {
-        $excerpt = get_the_excerpt();
-        $limit++;
+    function codexin_attachment_metas_extended( $post_id = NULL, $post_type = '', $image_size = '' ) {
 
-        if ( mb_strlen( $excerpt ) > $limit ) {
-            $subex = mb_substr( $excerpt, 0, $limit);
-            $exwords = explode( ' ', $subex );
-            $excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
-            if ( $excut < 0 ) {
-                echo mb_substr( $subex, 0, $excut );
-            } else {
-                 printf('%s', $subex);
-            }
-            echo '...';
-        } else {
-             printf('%s', $excerpt);
-        }
+        $metas = array();
+
+        // Defining all the required variables
+        $type_post          = 'reveal_'. $post_type .'_image';
+        $image_default      = codexin_get_option( $type_post );
+        $attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post_id ) : $image_default['id'];
+        $attachment         = wp_prepare_attachment_for_js( $attachment_id );
+        $default_image      = wp_get_attachment_image_src( $attachment_id, $image_size );
+        $post_image         = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post_id, $image_size ) ) : esc_url( $default_image[0] );
+        $image_width        = ! empty ($attachment['width'] ) ? $attachment['width'] : '800';
+        $image_height       = ! empty ($attachment['height'] ) ? $attachment['height'] : '400';
+
+        // Building the output
+        $metas['size']      = $image_width . 'x' . $image_height;
+        $metas['alt']       = ( ! empty( $attachment['alt'] ) ) ? 'alt="' . esc_attr( $attachment['alt'] ) . '"' : 'alt="' .get_the_title() . '"';
+        $metas['caption']   = ( ! empty( $attachment['caption'] ) ) ? $attachment['caption'] : '';
+        $metas['src']       = ( ! empty( $post_image ) ) ? $post_image : esc_url( codexin_placeholder_dimensions( $image_size ) );
+
+        return $metas;
     }
 }
-
-
-
-
-/**
- * Load More Ajax Handler
- * 
- * Shows next page for posts
- */
-// function reveal_loadmore_ajax_handler(){
- 
-//     // prepare our arguments for the query
-//     $args = unserialize( stripslashes( $_POST['query'] ) );
-//     $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
-//     $args['post_status'] = 'publish';
-    // $args['offset'] = $args['posts_per_page'];
-    // $args['posts_per_page'] = codexin_get_option( 'reveal-num-page' );
-
-//     $the_query = new WP_Query( $args );
-
-//     if( $the_query->have_posts() ) :
- 
-//         // run the loop
-//         while( $the_query->have_posts() ): $the_query->the_post();
- 
-//             get_template_part( 'template-parts/views/list/content', get_post_format() );
- 
-//         endwhile;
- 
-//     endif;
-//     die;
-// } 
-// add_action('wp_ajax_loadmore', 'reveal_loadmore_ajax_handler');
-// add_action('wp_ajax_nopriv_loadmore', 'reveal_loadmore_ajax_handler');
 
 
 if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
@@ -450,7 +474,7 @@ if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
      *
      * @param   string  $color  The color code
      * @return  string
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function reveal_sanitize_hex_color( $color ) {
         if ( '' === $color ) {
@@ -478,7 +502,7 @@ if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
      * @param   string      $hex_color     The color code in hexadecimal
      * @param   float       $opacity       The color opacity we want
      * @return  string
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function reveal_hex_to_rgba( $hex_color, $opacity = '' ) {
         $hex_color = str_replace( "#", "", $hex_color );
@@ -511,7 +535,7 @@ if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
      * @param   string      $hex_color        The color code in hexadecimal
      * @param   float       $percent_adjust   The percentage we want to lighten/darken the color
      * @return  string
-     * @since   v1.0.0
+     * @since   v1.0
      */
     function reveal_adjust_color_brightness( $hex_color, $percent_adjust = 0 ) {
         $percent_adjust = round( $percent_adjust/100,2 );    

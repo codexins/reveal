@@ -13,14 +13,10 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-// Fetching and assigning data from theme options
-$header_version 	 = codexin_get_option( 'reveal-header-version' );
+// Fetching and assigning data from theme options and metabox
+$header_version = codexin_header_version();
 
-if( $header_version == 1 || $header_version == 2 || $header_version == 4 ) {
-	$menu_identifier = 'main_menu';
-	$wrapper_class 	 = 'menu-wrapper';
-	$hidden_class 	 = 'hidden-xs';
-} elseif( $header_version == 3 ) {
+if( $header_version == 3 ) {
 	$menu_identifier = 'main_menu_right';
 	$wrapper_class 	 = 'right-menu-wrapper';
 	$hidden_class 	 = 'hidden-xs';

@@ -94,15 +94,10 @@ if ( have_posts() ) {
                             $portfolio->the_post();
 
                             // Fetching the attachment properties
-                            $thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
-                            $attachment_id        = $thumbnail_default['id'];
-                            $image_prop           = codexin_attachment_metas( $attachment_id );
-                            $default_image        = wp_get_attachment_image_src( $attachment_id, 'rectangle-two' );
-                            $portfolio_image      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'rectangle-two' ) ) : esc_url( $default_image[0] );
-                            $portfolio_image_sngl = ( !empty( $portfolio_image ) ) ? $portfolio_image : esc_url( 'placehold.it/570x464' );
+                            $image_prop     = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'rectangle-two' );
 
                             echo '<div class="recent-portfolio-wrapper reveal-color-2">';
-                                echo '<img src="'. $portfolio_image_sngl .'" '. $image_prop['alt'] .'>';
+                                echo '<img src="'. $image_prop['src'] .'" '. $image_prop['alt'] .'>';
                                 echo '<div class="portfolio-image-content">';
                                     echo '<i class="et-focus" aria-hidden="true"></i>';
                                     echo '<h3><a href="'. esc_url( get_the_permalink() ) .'">'. get_the_title() .'</a></h3>';

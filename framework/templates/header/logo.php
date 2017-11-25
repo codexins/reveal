@@ -13,9 +13,9 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-// Fetching and assigning data from theme options
-$header_version 	 = codexin_get_option( 'reveal-header-version' );
-$wrapper_class		 = ( $header_version == 2) ? 'col-xs-12' : 'logo-wrapper';
+// Fetching and assigning data from theme options and metabox
+$header_version = codexin_header_version();
+$wrapper_class	= ( $header_version == 2) ? 'col-xs-12' : 'logo-wrapper';
 
 ?>
 

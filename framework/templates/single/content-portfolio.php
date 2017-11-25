@@ -13,33 +13,27 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching data from theme options
-$position             = codexin_get_option( 'reveal-single-portfolio-layout' );
-$comments             = codexin_get_option( 'reveal_portfolio_comments' );
+$position     = codexin_get_option( 'reveal-single-portfolio-layout' );
+$comments     = codexin_get_option( 'reveal_portfolio_comments' );
 
 // Fetching data from metabox
-$cname                = codexin_meta( 'reveal_portfolio_client', 'type=text' );
-$cadate               = codexin_meta( 'reveal_portfolio_date', 'type=date' );
-$cdate                = ! empty( $cadate ) ? date( get_option( 'date_format' ), strtotime( $cadate ) ) : '';
-$cskills              = codexin_meta( 'reveal_portfolio_skills', 'type=text' );
-$csname               = codexin_meta( 'reveal_portfolio_sname', 'type=text' );
-$csurl                = codexin_meta( 'reveal_portfolio_surl', 'type=text' );
-$cat_list             = get_the_term_list( $post->ID, 'portfolio-category', '', '|', '' );
-$tag_list             = get_the_term_list( $post->ID, 'portfolio_tags', '', '|', '' );
+$cname        = codexin_meta( 'reveal_portfolio_client', 'type=text' );
+$cadate       = codexin_meta( 'reveal_portfolio_date', 'type=date' );
+$cdate        = ! empty( $cadate ) ? date( get_option( 'date_format' ), strtotime( $cadate ) ) : '';
+$cskills      = codexin_meta( 'reveal_portfolio_skills', 'type=text' );
+$csname       = codexin_meta( 'reveal_portfolio_sname', 'type=text' );
+$csurl        = codexin_meta( 'reveal_portfolio_surl', 'type=text' );
+$cat_list     = get_the_term_list( $post->ID, 'portfolio-category', '', '|', '' );
+$tag_list     = get_the_term_list( $post->ID, 'portfolio_tags', '', '|', '' );
 
 // Fetching the attachment properties
-$thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
-$attachment_id        = $thumbnail_default['id'];
-$image_prop           = codexin_attachment_metas( $attachment_id );
-$default_image        = wp_get_attachment_image_src( $attachment_id, 'reveal-portfolio-single' );
-$portfolio_image      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'reveal-portfolio-single' ) ) : esc_url( $default_image[0] );
-$portfolio_image_sngl = ( ! empty( $portfolio_image ) ) ? $portfolio_image : esc_url( 'placehold.it/1170x400' );
-
+$image_prop   = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'reveal-portfolio-single' );
 
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="row">
         <div class="portfolio-image clearfix">
-            <img src="<?php printf( '%s', $portfolio_image_sngl ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>>
+            <img src="<?php printf( '%s', $image_prop['src'] ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>>
         </div> <!-- end of portfolio-image -->
 
         <div class="col-md-8 <?php echo ( $position == '1' ) ? 'col-md-push-4' : ''; ?>">

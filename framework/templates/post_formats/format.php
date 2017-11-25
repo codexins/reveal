@@ -15,19 +15,11 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 // Fetching and assigning data from theme options
 $post_style         = codexin_get_option( 'reveal_blog_style' );
 $post_metas         = codexin_get_option('reveal_blog_post_meta');
-$thumbnail_default  = codexin_get_option( 'reveal_blog_image' );
+// $thumbnail_default  = codexin_get_option( 'reveal_blog_image' );
 
 // Fetching the attachment properties
-$attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post->ID ) : $thumbnail_default['id'];
-$image_prop         = codexin_attachment_metas( $attachment_id );
-$default_image_full = wp_get_attachment_image_src( $attachment_id, 'full' );
-$default_image_list = wp_get_attachment_image_src( $attachment_id, 'reveal-post-single' );
-$default_image_grid = wp_get_attachment_image_src( $attachment_id, 'rectangle-one' );
-$post_image_full    = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'full' ) ) : esc_url( $default_image_full[0] );
-$post_image_ls      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'reveal-post-single' ) ) : esc_url( $default_image_list[0] );
-$post_image_list    = ( ! empty( $post_image_ls ) ) ? $post_image_ls : esc_url( 'placehold.it/800x354' );
-$post_image_gr      = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'rectangle-one' ) ) : esc_url( $default_image_grid[0] );
-$post_image_grid    = ( ! empty( $post_image_gr ) ) ? $post_image_gr : esc_url( 'placehold.it/600x400' );
+$image_prop         = codexin_attachment_metas_extended( $post->ID, 'blog', 'reveal-post-single' );
+$image_prop_full    = codexin_attachment_metas_extended( $post->ID, 'blog', 'full' );
 
 
 if ( ! post_password_required() ) {
@@ -37,7 +29,7 @@ if ( ! post_password_required() ) {
         echo '<div class="img-thumb">';
             echo '<figure class="img-wrapper" itemscope itemtype="http://schema.org/ImageObject">';
                 echo '<a href="'. esc_url( get_the_permalink() ) .'" itemprop="contentUrl">';
-                    echo '<img src="'. $post_image_grid .'" '. $image_prop['alt'] .' class="img-responsive" itemprop="image">';
+                    echo '<img src="'. $image_prop['src'] .'" '. $image_prop['alt'] .' class="img-responsive" itemprop="image">';
                 echo '</a>';
                 echo '<figcaption itemprop="caption description">'. esc_html( $image_prop['caption'] ) .'</figcaption>';
             echo '</figure> <!-- end of img-wrapper -->';
@@ -58,8 +50,8 @@ if ( ! post_password_required() ) {
 
         echo ( is_single() ) ? '<div class="image-pop-up item-img-wrap" itemscope itemtype="http://schema.org/ImageGallery">' : '<a href="'. esc_url( get_the_permalink() ) .'" class="post-thumbnail-wrapper">';
             printf( '<figure %s itemscope itemtype="http://schema.org/ImageObject">', ( is_single() ) ? esc_attr( 'itemprop=associatedMedia' ) : esc_attr( 'class=item-img-wrap' ) );
-                echo ( is_single() ) ? '<a href="'. $post_image_full .'" itemprop="contentUrl" data-size="'. esc_attr( $image_prop['size'] ) .'">' : '';
-                    echo '<img src="'. $post_image_list .'" class="img-responsive" itemprop="image" '. $image_prop['alt'] .'/>';
+                echo ( is_single() ) ? '<a href="'. $image_prop_full['src'] .'" itemprop="contentUrl" data-size="'. esc_attr( $image_prop['size'] ) .'">' : '';
+                    echo '<img src="'. $image_prop['src'] .'" class="img-responsive" itemprop="image" '. $image_prop['alt'] .'/>';
                     echo '<div class="item-img-overlay">';
                         echo '<span></span>';
                     echo '</div>';

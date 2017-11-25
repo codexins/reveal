@@ -12,16 +12,11 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-// Fetching and assigning data from theme options and metabox
+// Fetching and assigning data from metabox
 $designation 		= codexin_meta( 'reveal_team_designation' );
-$thumbnail_default  = codexin_get_option( 'reveal_team_image' );
 
 // Fetching the attachment properties
-$attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post->ID ) : $thumbnail_default['id'];
-$image_prop         = codexin_attachment_metas( $attachment_id );
-$default_image 		= wp_get_attachment_image_src( $attachment_id, 'square-two' );
-$team_image_grid    = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'square-two' ) ) : esc_url( $default_image[0] );
-$team_image    		= ( ! empty( $team_image_grid ) ) ? $team_image_grid : esc_url( 'placehold.it/500x500' );
+$image_prop         = codexin_attachment_metas_extended( $post->ID, 'team', 'square-two' );
 
 ?>
 
@@ -30,7 +25,7 @@ $team_image    		= ( ! empty( $team_image_grid ) ) ? $team_image_grid : esc_url(
 	<a href="<?php echo esc_url( get_the_permalink() ); ?>">
 		<figure>
 			<div class="team-single-wrapper">
-				<img src="<?php printf( '%s', $team_image ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>>
+				<img src="<?php printf( '%s', $image_prop['src'] ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?>>
 				<div class="team-caption">
 					<div class="team-info-wrapper reveal-color-2">
 						<?php if( ! empty( $designation ) ) { ?>

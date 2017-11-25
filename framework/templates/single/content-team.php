@@ -26,12 +26,7 @@ $gplus              = codexin_meta( 'reveal_team_gp' );
 $linkedin           = codexin_meta( 'reveal_team_ld' );
 
 // Fetching the attachment properties
-$thumbnail_default  = codexin_get_option( 'reveal_team_image' );
-$attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post->ID ) : $thumbnail_default['id'];
-$image_prop         = codexin_attachment_metas( $attachment_id );
-$default_image      = wp_get_attachment_image_src( $attachment_id, 'full' );
-$team_image_full    = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'full' ) ) : esc_url( $default_image[0] );
-$team_image         = ( ! empty( $team_image_full ) ) ? $team_image_full : esc_url( 'placehold.it/480x595' );
+$image_prop          = codexin_attachment_metas_extended( $post->ID, 'team', 'full' );
 
 ?>
 
@@ -39,7 +34,7 @@ $team_image         = ( ! empty( $team_image_full ) ) ? $team_image_full : esc_u
     <div class="post-wrapper reveal-border-1">
         <div class="col-sm-4 team-single-thumb-wrapper pad-xy">
             <div class="image-wrapper">
-                <img src="<?php printf( '%s', $team_image ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?> class="img-responsive" />
+                <img src="<?php printf( '%s', $image_prop['src'] ); ?>" <?php printf( '%s', $image_prop['alt'] ); ?> class="img-responsive" />
             </div>
         </div> <!-- end of team-single-thumb-wrapper -->
 

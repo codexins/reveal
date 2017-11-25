@@ -18,22 +18,17 @@ $event_start_date    = date( get_option( 'date_format' ), $start_date );
 $length_switch       = codexin_get_option( 'reveal_events_title_excerpt_length' );
 $title_length        = codexin_get_option( 'reveal_events_title_length' );
 $excerpt_length      = codexin_get_option( 'reveal_events_excerpt_length' );
-$thumbnail_default   = codexin_get_option( 'reveal_event_image' );
 $event_list          = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
 
 // Fetching the attachment properties
-$attachment_id       = $thumbnail_default['id'];
-$image_prop          = codexin_attachment_metas( $attachment_id );
-$default_image       = wp_get_attachment_image_src( $attachment_id, 'reveal-rectangle-one' );
-$event_image         = ( has_post_thumbnail() ) ? esc_url( get_the_post_thumbnail_url( $post->ID, 'reveal-rectangle-one' ) ) : esc_url( $default_image[0] );
-$event_image_list    = ( !empty( $event_image ) ) ? $event_image : esc_url( 'placehold.it/600x375' );
+$image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', 'reveal-rectangle-one' );
 
 ?>
 
 <article id="event-<?php the_ID(); ?>" <?php post_class( array( 'clearfix events-list' ) ); ?>>
     <div class="post-wrapper reveal-border-1">
         <div class="event-list-wrapper reveal-bg-2">
-            <div class="thumb-events" style="background-image:url('<?php printf( '%s', $event_image_list ); ?>');">
+            <div class="thumb-events" style="background-image:url('<?php printf( '%s', $image_prop['src'] ); ?>');">
                 <a href="<?php echo esc_url( get_the_permalink() ); ?>" itemprop="url"></a>
                 <div class="events-date reveal-bg-2">
                     <p><span itemprop="startDate"><?php echo esc_html( $event_start_date ); ?></span></p>
