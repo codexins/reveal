@@ -324,7 +324,7 @@ if ( ! function_exists( 'codexin_button' ) ) {
 
 if ( ! function_exists( 'codexin_char_limit' ) ) {
     /**
-     * Helper Function to limit the character length
+     * Helper Function to limit the character length without breaking any word
      *
      * @param   int       $limit     The number of character to limit
      * @param   string    $type      The type of content (possible values: title/excerpt)
@@ -342,11 +342,11 @@ if ( ! function_exists( 'codexin_char_limit' ) ) {
             if ( $excut < 0 ) {
                 echo mb_substr( $subex, 0, $excut );
             } else {
-                printf('%s', $subex);
+                return $subex;
             }
             echo '...';
         } else {
-            printf('%s', $content);
+            return $content;
         }
     }
 

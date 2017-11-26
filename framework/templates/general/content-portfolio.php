@@ -48,7 +48,7 @@ $image_prop           = codexin_attachment_metas_extended( $post->ID, 'portfolio
 
                         if( $length_switch ) {                            
                             // Limit the title characters
-                            codexin_char_limit( $title_length, 'title' );
+                            echo apply_filters( 'the_title', codexin_char_limit( $title_length, 'title' ) );
                         } else {
                             the_title();
                         } //end of length switcher conditional check
@@ -62,7 +62,7 @@ $image_prop           = codexin_attachment_metas_extended( $post->ID, 'portfolio
                     <?php 
                     if( $length_switch ) {
                         echo '<p>';
-                            codexin_char_limit( $excerpt_length, 'excerpt' );
+                            echo apply_filters( 'the_content', codexin_char_limit( $excerpt_length, 'excerpt' ) );
                         echo '</p>';
                     } else {
                         the_excerpt();

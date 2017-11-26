@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
  * Function to get Menus in the assigned Menu locations
  * 
  * @uses 	wp_nav_menu()
- * @param  	string    		$menu_type    The registered name of the menu
+ * @param  	string    		$menu_type    The registered name of the menu. Possible values: main_menu/mobile_menu
  * @since 	v1.0
  */
 function codexin_menu( $menu_type ) {	

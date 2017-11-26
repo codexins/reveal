@@ -311,6 +311,8 @@ add_action( 'wp_head', 'codexin_pingback_header' );
 if ( ! function_exists( 'codexin_pingback_header' ) ) {
 	/**
 	 * Add a pingback url auto-discovery header for singularly identifiable articles.
+	 *
+	 * @since 	v1.0
 	 */
 	function codexin_pingback_header() {
 		if ( is_singular() && pings_open() ) {
@@ -318,6 +320,26 @@ if ( ! function_exists( 'codexin_pingback_header' ) ) {
 		}
 	}
 }
+
+
+// add_filter('wp_nav_menu_items', 'codexin_nav_search', 10, 2);
+// if ( ! function_exists( 'codexin_nav_search' ) ) {
+// 	/**
+// 	 * Add search box to navigation menu
+// 	 *
+// 	 * @since 	v1.0
+// 	 */
+// 	function codexin_nav_search( $items, $args ) {
+// 	    // If this isn't the primary menu, do nothing
+// 	    if( ! ( $args->theme_location == ( 'main_menu' || 'main_menu_right') ) ) {
+// 		    return $items;
+// 		} else {
+// 		    // Otherwise, add search form
+// 		    return $items . '<li class="menu-item">' . get_search_form(false) . '</li>';
+// 		}
+// 	}
+// }
+
 
 
 

@@ -13,11 +13,21 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-// Fetching and assigning data from theme options
+// Fetching and assigning data from theme options and metabox
 $page_title_background 	= ( ! empty( codexin_title_background() ) ) ? 'style=background-image:url('. esc_url( codexin_title_background() ) .')' : '';
-$title_position 		= codexin_get_option( 'page-title-position' );
-$enable_breadcrumbs		= codexin_get_option('reveal-bcrumbs');
-$breadcrumbs_position 	= codexin_get_option( 'page-bc-position' );
+$title_pos   	 		= codexin_get_option( 'page-title-position' );
+$title_pos_single 		= codexin_meta( 'reveal_page_title_alignment' );
+$enable_breadcrumbs		= codexin_get_option( 'reveal-bcrumbs' );
+$breadcrumbs_pos 		= codexin_get_option( 'page-bc-position' );
+$bread_pos_single 		= codexin_meta( 'reveal_page_breadcrumb_alignment' );
+
+if( is_page() || is_singular( 'portfolio' ) ) {
+	$title_position			= ( ! empty( $title_pos_single ) ) || ( $title_pos_single !== '0' ) ? $title_pos_single : $title_pos;
+	$breadcrumbs_position	= ( ! empty( $bread_pos_single ) ) || ( $bread_pos_single !== '0' ) ? $bread_pos_single : $breadcrumbs_pos;
+} else {
+	$title_position			= $title_pos;
+	$breadcrumbs_position	= $breadcrumbs_pos;
+} // end of page conditional check
 
 // Get the title alignment
 if( $title_position == '1' ) {
