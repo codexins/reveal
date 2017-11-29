@@ -952,13 +952,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'icon'             => 'dashicons dashicons-art',
                 'id'               => 'codexin_portfolio_settings',
                 'customizer_width' => '500px',
-            );
-
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Portfolio Archive Page', 'reveal' ),
-                'id'               => 'codexin_portfolio_archive',
-                'customizer_width' => '500px',
-                'subsection'       => true,
                 'fields'           => array(
 
                     array(
@@ -1087,16 +1080,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'subtitle'  => esc_html__( 'Upload placeholder image for portfolios to show (if portfolio has no featured image)', 'reveal' ),
                         'required'  => array( 'cx_enable_portfolio', '=', '1' ),
                     ),
-
-                )    
-            );
-
-            $this->sections[] = array(
-                'title'            => esc_html__( 'Portfolio Single Page', 'reveal' ),
-                'id'               => 'codexin_portfolio_single',
-                'customizer_width' => '500px',
-                'subsection'       => true,
-                'fields'           => array(
 
                     array(
                         'id'       => 'cx_single_portfolio_layout',
