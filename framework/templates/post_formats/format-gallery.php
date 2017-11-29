@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options and metabox
-$post_style = codexin_get_option( 'reveal_blog_style' );
+$post_style = codexin_get_option( 'cx_blog_style' );
 $image_size = ( ( $post_style == 'list' ) || is_single() || is_search() ) ? 'size=gallery-format-image' : 'size=rectangle-one';
 $gallery 	= codexin_meta( 'reveal_gallery', $image_size );
 

@@ -12,7 +12,7 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-$reveal_footer  = codexin_get_option( 'reveal-footer-version' );
+$reveal_footer  = codexin_get_option( 'cx_footer_version' );
 
 if( $reveal_footer == 4 ) {
 	$footer_count = 2;

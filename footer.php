@@ -16,9 +16,9 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options and metabox
-$reveal_footer  = codexin_get_option( 'reveal-footer-version' );
-$reveal_cpr     = codexin_get_option( 'reveal_footer_copyright' );
-$copyright_text = codexin_get_option( 'reveal-copyright' );
+$reveal_footer  = codexin_get_option( 'cx_footer_version' );
+$reveal_cpr     = codexin_get_option( 'cx_footer_copyright' );
+$copyright_text = codexin_get_option( 'cx_copyright' );
 $disable_footer = codexin_meta( 'reveal_disable_footer' );
        	
 

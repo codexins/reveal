@@ -13,10 +13,9 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$length_switch        = codexin_get_option( 'reveal_portfolio_title_excerpt_length' );
-$title_length         = codexin_get_option( 'reveal_portfolio_title_length' );
-$excerpt_length       = codexin_get_option( 'reveal_portfolio_excerpt_length' );
-$thumbnail_default    = codexin_get_option( 'reveal_portfolio_image' );
+$length_switch        = codexin_get_option( 'cx_portfolio_title_excerpt_length' );
+$title_length         = codexin_get_option( 'cx_portfolio_title_length' );
+$excerpt_length       = codexin_get_option( 'cx_portfolio_excerpt_length' );
 $portfolio_list       = get_the_term_list( $post->ID, 'portfolio-category', '', ', ', '' );
 
 // Fetching the attachment properties

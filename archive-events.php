@@ -14,8 +14,8 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$layout          = !empty( codexin_get_option('reveal-events-archive-layout') ) ? codexin_get_option('reveal-events-archive-layout') : 'right';
-$events_style    = !empty( codexin_get_option( 'reveal_events_style' ) ) ? codexin_get_option( 'reveal_events_style' ) : 'list';
+$layout          = !empty( codexin_get_option( 'cx_events_archive_layout' ) ) ? codexin_get_option( 'cx_events_archive_layout' ) : 'right';
+$events_style    = !empty( codexin_get_option( 'cx_events_style' ) ) ? codexin_get_option( 'cx_events_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';
 $pull_class      = ( $layout == 'left') ? ' pull-right' : '';

@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
             <li><i class="fa fa-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></a></li>
 
-            <li> <?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
+            <li> <?php if( function_exists( 'codexin_likes_button' ) ) { echo codexin_likes_button( get_the_ID(), 0 ); } ?></li>
         </ul>
 
         <h2 class="post-title" itemprop="headline">

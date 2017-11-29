@@ -131,7 +131,7 @@ add_action( 'template_redirect', function() {
  * @uses 	add_action()
  * @since 	v1.0
  */
-$testimonial_pagination = codexin_get_option('reveal_enable_testimonial_pagination');
+$testimonial_pagination = codexin_get_option( 'cx_enable_testimonial_pagination' );
 if( $testimonial_pagination == false ) {
     add_action( 'parse_query', function( $query ) {
         if ( is_post_type_archive( 'testimonial' ) && $query->is_main_query() ) {
@@ -244,8 +244,8 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
 	 *
 	 */
 	function codexin_body_class( $classes ) {
-	    $port_style 	= codexin_get_option( 'reveal_portfolio_style' );
-	    $event_style 	= codexin_get_option( 'reveal_events_style' );
+	    $port_style 	= codexin_get_option( 'cx_portfolio_style' );
+	    $event_style 	= codexin_get_option( 'cx_events_style' );
 	    $disable_header = codexin_meta( 'reveal_disable_header' );
 	    if( ( $port_style == 'list' ) && ( is_post_type_archive( 'portfolio' ) ) || ( $event_style == 'list' ) && ( is_post_type_archive( 'events' ) ) ) { 
 	        $classes[] = 'codexin-list-view';
@@ -271,28 +271,28 @@ $version = '4.5';
 if( version_compare( $version, get_bloginfo( 'version' ), '<=' ) ) {	
 
     function delete_post_type_events() {
-    	$enable_events 	= codexin_get_option( 'reveal_enable_events' );
+    	$enable_events 	= codexin_get_option( 'cx_enable_events' );
     	if( $enable_events == false ) {
 	        unregister_post_type( 'events' );
 	    }
     }
 
     function delete_post_type_testimonial() {
-    	$enable_testimonial = codexin_get_option( 'reveal_enable_testimonial' );
+    	$enable_testimonial = codexin_get_option( 'cx_enable_testimonial' );
     	if( $enable_testimonial == false ) {
 	        unregister_post_type( 'testimonial' );
 	    }
     }
 
     function delete_post_type_portfolio() {
-    	$enable_portfolio 	= codexin_get_option( 'reveal_enable_portfolio' );
+    	$enable_portfolio 	= codexin_get_option( 'cx_enable_portfolio' );
     	if( $enable_portfolio == false ) {
 	        unregister_post_type( 'portfolio' );
 	    }
     }
 
     function delete_post_type_team() {
-    	$enable_team 	= codexin_get_option( 'reveal_enable_team' );
+    	$enable_team 	= codexin_get_option( 'cx_enable_team' );
     	if( $enable_team == false ) {
 	        unregister_post_type( 'team' );
 	    }
@@ -322,32 +322,39 @@ if ( ! function_exists( 'codexin_pingback_header' ) ) {
 }
 
 
-// add_filter('wp_nav_menu_items', 'codexin_nav_search', 10, 2);
-// if ( ! function_exists( 'codexin_nav_search' ) ) {
-// 	/**
-// 	 * Add search box to navigation menu
-// 	 *
-// 	 * @since 	v1.0
-// 	 */
-// 	function codexin_nav_search( $items, $args ) {
-// 	    // If this isn't the primary menu, do nothing
-// 	    if( ! ( $args->theme_location == ( 'main_menu' || 'main_menu_right') ) ) {
-// 		    return $items;
-// 		} else {
-// 		    // Otherwise, add search form
-// 		    return $items . '<li class="menu-item">' . get_search_form(false) . '</li>';
-// 		}
-// 	}
-// }
+if(!function_exists('codexin_footer_script')){
+    /**
+     * Add advanced js to footer
+     *
+     * @uses 	add_action()
+     * @since 	v1.0
+     */
+    function codexin_footer_script() {
+        $advanced_js 			= codexin_get_option( 'cx_advanced_editor_js' );
+
+        if( $advanced_js ) {
+            echo '<div class="footer-custom-js">';
+                printf('<script type="text/javascript">%s</script>', $advanced_js);
+            echo "</div>";
+        }
+    }
+    add_action( 'wp_footer', 'codexin_footer_script', 100 );
+}
 
 
+if(!function_exists('codexin_header_tracking_code')){
+    /**
+     * Add advanced tracking code to header
+     *
+     * @uses 	add_action()
+     * @since 	v1.0
+     */
+    function codexin_header_tracking_code() {
+        $advanced_tracking_code = codexin_get_option( 'cx_advanced_tracking_code' );
 
-
-
-
-
-
-
-
-
-
+        if( $advanced_tracking_code ) {
+            printf( '%s', $advanced_tracking_code );
+        }
+    }
+    add_action( 'wp_head', 'codexin_header_tracking_code', 999 );
+}

@@ -17,9 +17,9 @@ $e_start_date        = strtotime( codexin_meta( 'reveal_event_start_date' ) );
 $event_new_date 	 = date( get_option( 'date_format' ), $e_start_date );
 $event_start_time    = codexin_meta( 'reveal_event_start_time' );
 $event_end_time      = codexin_meta( 'reveal_event_end_time' );
-$length_switch       = codexin_get_option( 'reveal_events_title_excerpt_length' );
-$title_length        = codexin_get_option( 'reveal_events_title_length' );
-$excerpt_length      = codexin_get_option( 'reveal_events_excerpt_length' );
+$length_switch       = codexin_get_option( 'cx_events_title_excerpt_length' );
+$title_length        = codexin_get_option( 'cx_events_title_length' );
+$excerpt_length      = codexin_get_option( 'cx_events_excerpt_length' );
 
 // Fetching the attachment properties
 $image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', 'rectangle-four' );

@@ -18,9 +18,9 @@ $events_archive_posts   = is_post_type_archive( 'events' );
 $events_single_post     = is_singular( 'events' ) && ! $events_archive_posts;
 
 // Fetching and assigning data from theme options
-$events_style           = codexin_get_option( 'reveal_events_style' );
-$events_grids           = codexin_get_option( 'reveal_events_grid_columns' );
-$events_nav		        = codexin_get_option( 'reveal_events_pagination' );
+$events_style           = codexin_get_option( 'cx_events_style' );
+$events_grids           = codexin_get_option( 'cx_events_grid_columns' );
+$events_nav		        = codexin_get_option( 'cx_events_pagination' );
 
 $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 

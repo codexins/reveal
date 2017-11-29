@@ -55,10 +55,10 @@ if ( ! function_exists( 'codexin_post_link' ) ) {
     */
     function codexin_post_link( $prev = 'Previous Post', $next = 'Next Post' ) {
 
-        if( codexin_get_option( 'reveal_single_pagination' ) == 'button' ) {
+        if( codexin_get_option( 'cx_single_pagination' ) == 'button' ) {
             $prev_link = get_previous_post_link( '%link', esc_html( $prev . ' &raquo;' ) );
             $next_link = get_next_post_link( '%link', esc_html( '&laquo; ' . $next, 'reveal' ) );
-        } elseif( codexin_get_option( 'reveal_single_pagination' ) == 'title' ) {
+        } elseif( codexin_get_option( 'cx_single_pagination' ) == 'title' ) {
             $prev_link = get_previous_post_link( '%link', esc_html__( '%title &raquo;', 'reveal' ) );
             $next_link = get_next_post_link( '%link', esc_html__( '&laquo; %title', 'reveal' ) );
         }

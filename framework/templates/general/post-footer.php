@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$social_share = codexin_get_option( 'reveal_single_share' );
+$social_share = codexin_get_option( 'cx_single_share' );
 
 ?>
 

@@ -13,8 +13,8 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching data from theme options
-$position     = codexin_get_option( 'reveal-single-portfolio-layout' );
-$comments     = codexin_get_option( 'reveal_portfolio_comments' );
+$position     = codexin_get_option( 'cx_single_portfolio_layout' );
+$comments     = codexin_get_option( 'cx_portfolio_comments' );
 
 // Fetching data from metabox
 $cname        = codexin_meta( 'reveal_portfolio_client', 'type=text' );

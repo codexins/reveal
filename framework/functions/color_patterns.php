@@ -23,12 +23,12 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
     function codexin_color_settings() {
 
         // Retrieving color variables from theme options
-        $body_bg            = !empty( codexin_get_option( 'reveal-body-bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-body-bg' ) ) : '#fff';
-        $text_color         = !empty( codexin_get_option( 'reveal-text-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-text-color' ) ) : '#333';
-        $primary_color      = !empty( codexin_get_option( 'reveal-primary-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-primary-color' ) ) : '#295970';
-        $secondary_color    = !empty( codexin_get_option( 'reveal-secondary-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-secondary-color' ) ): '#fce38a';
-        $border_color       = !empty( codexin_get_option( 'reveal-border-color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-border-color' ) ) : '#ddd';
-        $secondary_bg       = !empty( codexin_get_option( 'reveal-secondary-bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'reveal-secondary-bg' ) ) : '#fafafa';
+        $body_bg            = !empty( codexin_get_option( 'cx_body_bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_body_bg' ) ) : '#fff';
+        $text_color         = !empty( codexin_get_option( 'cx_text_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_text_color' ) ) : '#333';
+        $primary_color      = !empty( codexin_get_option( 'cx_primary_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_primary_color' ) ) : '#295970';
+        $secondary_color    = !empty( codexin_get_option( 'cx_secondary_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_secondary_color' ) ): '#fce38a';
+        $border_color       = !empty( codexin_get_option( 'cx_border_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_border_color' ) ) : '#ddd';
+        $secondary_bg       = !empty( codexin_get_option( 'cx_secondary_bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_secondary_bg' ) ) : '#fafafa';
         $white_color        = '#fff';
         $transparent_bg     = 'transparent';
 
@@ -311,6 +311,12 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
         $reveal_colors .= implode( $white_color_in_bg_selectors, ',' ).'{background: '.$white_color.';}';
         $reveal_colors .= implode( $white_color_in_border_selectors, ',' ).'{border-color: '.$white_color.';}';
         $reveal_colors .= implode( $transparent_color_in_bg_selectors, ',' ).'{background: '.$transparent_bg.';}';
+
+        // Retrieving custom css from theme options
+        $custom_css = codexin_get_option( 'cx_advanced_editor_css' );
+
+        // Merging the custom css
+        $reveal_colors .= $custom_css;
 
         // Finally adding the css after the Main Stylesheet
         wp_add_inline_style( 'main-stylesheet', $reveal_colors );

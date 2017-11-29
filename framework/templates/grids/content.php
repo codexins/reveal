@@ -13,11 +13,11 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$post_metas      = codexin_get_option('reveal_blog_post_meta');
-$length_switch   = codexin_get_option( 'reveal_blog_title_excerpt_length' );
-$title_length    = codexin_get_option( 'reveal_title_length' );
-$excerpt_length  = codexin_get_option( 'reveal_excerpt_length' );
-$read_more       = codexin_get_option( 'reveal-blog-read-more' );
+$post_metas      = codexin_get_option( 'cx_blog_post_meta' );
+$length_switch   = codexin_get_option( 'cx_blog_title_excerpt_length' );
+$title_length    = codexin_get_option( 'cx_title_length' );
+$excerpt_length  = codexin_get_option( 'cx_excerpt_length' );
+$read_more       = codexin_get_option( 'cx_blog_read_more' );
 
 ?>
 

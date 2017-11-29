@@ -70,7 +70,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		wp_enqueue_script( 'retina-script', REVEAL_THEME_JS . 'retina.min.js', array ( 'jquery' ), 1.0, true);
 		
 		// Smooth Scroll Support
-		$smoothscroll = codexin_get_option('reveal-smooth-scroll');
+		$smoothscroll = codexin_get_option( 'cx_smooth_scroll' );
 		if( $smoothscroll ) {
 			wp_enqueue_script( 'smoothscroll-script', REVEAL_THEME_JS . 'smoothScroll.js', array ( 'jquery' ), 1.0, true);
 		}
@@ -81,7 +81,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		}
 
 		// Comments Ajax Support
-		if( codexin_get_option( 'reveal-ajax-comments' ) && ! is_search() && ! is_404() ) {
+		if( codexin_get_option( 'cx_ajax_comments' ) && ! is_search() && ! is_404() ) {
 			global $post;
 			if( have_posts() ) {
 					$count = wp_count_comments( $post->ID );
@@ -130,8 +130,8 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		}
 
 	    // Main script
-		$responsive_nav 	= !empty( codexin_get_option( 'reveal-responsive-version' ) ) ? codexin_get_option( 'reveal-responsive-version' ) : 'left';
-		$transition_loader 	= !empty( codexin_get_option( 'reveal-page-loader' ) ) ? codexin_get_option( 'reveal-page-loader' ) : true;
+		$responsive_nav 	= !empty( codexin_get_option( 'cx_responsive_version' ) ) ? codexin_get_option( 'cx_responsive_version' ) : 'left';
+		$transition_loader 	= !empty( codexin_get_option( 'cx_page_loader' ) ) ? codexin_get_option( 'cx_page_loader' ) : true;
 		wp_register_script( 'main-script', REVEAL_THEME_JS . 'main.js', array ( 'jquery' ), 1.0, true );
 	    wp_localize_script( 'main-script', 'reveal_main_params', array(
 	        'res_nav' 		=> $responsive_nav,

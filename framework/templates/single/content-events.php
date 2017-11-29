@@ -106,15 +106,15 @@ $image_prop             = codexin_attachment_metas_extended( $post->ID, 'events'
                         <?php printf('%s', $e_address); ?>
                     </p>
                 </div> <!-- end of event-venue-details -->
-                <?php $event_cat_list = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );   
-                if(!empty($event_cat_list)):?>
+                <?php
+                if( ! empty( $event_cat_list ) ) { ?>
                     <div class="event-cat-details reveal-border-1">
                         <h3 class="title"><?php echo esc_html__('Category', 'reveal')?></h3>
                         <p class="info-title-content">
                             <?php echo $event_cat_list; ?>
                         </p>
                     </div>
-                <?php endif; ?>
+                <?php } ?>
 
                 <?php
                 if( ! empty( $event_tag_list ) ) { ?>

@@ -18,9 +18,9 @@ $portfolio_archive_posts  	= is_post_type_archive( 'portfolio' );
 $portfolio_single_post     	= is_singular( 'portfolio' ) && ! $portfolio_archive_posts;
 
 // Fetching and assigning data from theme options
-$portfolio_style           	= codexin_get_option( 'reveal_portfolio_style' );
-$portfolio_grids           	= codexin_get_option( 'reveal_portfolio_grid_columns' );
-$portfolio_nav		        = codexin_get_option( 'reveal_portfolio_pagination' );
+$portfolio_style           	= codexin_get_option( 'cx_portfolio_style' );
+$portfolio_grids           	= codexin_get_option( 'cx_portfolio_grid_columns' );
+$portfolio_nav		        = codexin_get_option( 'cx_portfolio_pagination' );
 
 
 if ( have_posts() ) {

@@ -21,11 +21,11 @@ $search_posts           = is_search() && ! $blog_posts;
 $single_post            = is_singular() && ! $blog_posts && ! $search_posts ;
 
 // Fetching and assigning data from theme options
-$post_style             = codexin_get_option( 'reveal_blog_style' );
-$grids                  = codexin_get_option( 'reveal_grid_columns' );
-$posts_nav		        = codexin_get_option( 'reveal_pagination' );
-$single_nav		        = codexin_get_option( 'reveal_single_button' );
-$single_comment	        = codexin_get_option( 'reveal_post_comments' );
+$post_style             = codexin_get_option( 'cx_blog_style' );
+$grids                  = codexin_get_option( 'cx_grid_columns' );
+$posts_nav		        = codexin_get_option( 'cx_pagination' );
+$single_nav		        = codexin_get_option( 'cx_single_button' );
+$single_comment	        = codexin_get_option( 'cx_post_comments' );
 
 if ( have_posts() ) {
 

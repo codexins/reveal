@@ -61,7 +61,7 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 		// Registering Footer Widget Locations based on the user choice
 		public static function codexin_footer_widgets() {
 
-			$codexin_footer = codexin_get_option('reveal-footer-version');			
+			$codexin_footer = codexin_get_option( 'cx_footer_version' );			
 
 			if( ( $codexin_footer == 1 ) || ( $codexin_footer == 5 ) ) {
 

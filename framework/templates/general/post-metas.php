@@ -13,8 +13,8 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$post_style = codexin_get_option( 'reveal_blog_style' );
-$args_meta  = is_single() ? 'reveal_blog_post_single_meta' : 'reveal_blog_post_meta';
+$post_style = codexin_get_option( 'cx_blog_style' );
+$args_meta  = is_single() ? 'cx_blog_post_single_meta' : 'cx_blog_post_meta';
 $post_metas = codexin_get_option( $args_meta );
 
 if( in_array( true, array_values( $post_metas ) ) ) { ?>
@@ -54,7 +54,7 @@ if( in_array( true, array_values( $post_metas ) ) ) { ?>
 
         if( $post_metas[5] ) {
         ?>
-	        <li> <?php if( function_exists( 'codexin_likes_button' ) ): echo codexin_likes_button( get_the_ID(), 0 ); endif; ?></li>
+	        <li> <?php if( function_exists( 'codexin_likes_button' ) ){ echo codexin_likes_button( get_the_ID(), 0 ); } ?></li>
         <?php
     	}
     	?>

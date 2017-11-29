@@ -25,7 +25,7 @@ $cx_skype 		= get_option( 'codexin_options_social' )['sk_url'];
 $cx_linkedin 	= get_option( 'codexin_options_social' )['li_url'];
 
 // Fetching which profiles are wanted to be shown
-$show_socials 	= codexin_get_option( 'reveal_header_socials' );
+$show_socials 	= codexin_get_option( 'cx_header_socials' );
 $show_facebook	= $show_socials['facebook'];
 $show_twitter 	= $show_socials['twitter'];
 $show_instagram = $show_socials['instagram'];

@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$layout          = !empty( codexin_get_option('reveal-single-layout') ) ? codexin_get_option('reveal-single-layout') : 'right';
+$layout          = !empty( codexin_get_option('cx_single_layout') ) ? codexin_get_option('cx_single_layout') : 'right';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';
 $pull_class      = ( $layout == 'left') ? ' pull-right' : '';

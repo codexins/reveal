@@ -15,9 +15,9 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 // Fetching and assigning data from theme options and metabox
 $start_date          = strtotime( codexin_meta( 'reveal_event_start_date' ) );
 $event_start_date    = date( get_option( 'date_format' ), $start_date );
-$length_switch       = codexin_get_option( 'reveal_events_title_excerpt_length' );
-$title_length        = codexin_get_option( 'reveal_events_title_length' );
-$excerpt_length      = codexin_get_option( 'reveal_events_excerpt_length' );
+$length_switch       = codexin_get_option( 'cx_events_title_excerpt_length' );
+$title_length        = codexin_get_option( 'cx_events_title_length' );
+$excerpt_length      = codexin_get_option( 'cx_events_excerpt_length' );
 $event_list          = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
 
 // Fetching the attachment properties

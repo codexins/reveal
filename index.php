@@ -19,8 +19,8 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$layout          = !empty( codexin_get_option('reveal-blog-layout') ) ? codexin_get_option('reveal-blog-layout') : 'right';
-$post_style      = !empty( codexin_get_option( 'reveal_blog_style' ) ) ? codexin_get_option( 'reveal_blog_style' ) : 'list';
+$layout          = !empty( codexin_get_option( 'cx_blog_layout' ) ) ? codexin_get_option( 'cx_blog_layout' ) : 'right';
+$post_style      = !empty( codexin_get_option( 'cx_blog_style' ) ) ? codexin_get_option( 'cx_blog_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';
 $pull_class      = ( $layout == 'left') ? ' pull-right' : '';

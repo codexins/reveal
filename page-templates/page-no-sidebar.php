@@ -24,7 +24,7 @@ get_header(); ?>
 								// Load the specific template
 								get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'page' );
 
-								if( codexin_get_option( 'reveal_page_comments' ) ) {
+								if( codexin_get_option( 'cx_page_comments' ) ) {
 									comments_template('', true);
 								}
 							} // end of loop have_posts()

@@ -13,9 +13,8 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$post_style         = codexin_get_option( 'reveal_blog_style' );
-$post_metas         = codexin_get_option('reveal_blog_post_meta');
-// $thumbnail_default  = codexin_get_option( 'reveal_blog_image' );
+$post_style         = codexin_get_option( 'cx_blog_style' );
+$post_metas         = codexin_get_option( 'cx_blog_post_meta' );
 
 // Fetching the attachment properties
 $image_prop         = codexin_attachment_metas_extended( $post->ID, 'blog', 'reveal-post-single' );

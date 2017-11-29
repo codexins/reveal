@@ -118,7 +118,7 @@ if ( ! function_exists( 'codexin_responsive_class' ) ) {
      * @since   v1.0
      */
     function codexin_responsive_class() {
-        $responsive_header  = codexin_get_option( 'reveal-responsive-version' );
+        $responsive_header  = codexin_get_option( 'cx_responsive_version' );
         $responsive_class   = ( $responsive_header == 'left' ) ? esc_attr( 'left' ) : esc_attr( 'right' );
 
         return $responsive_class;
@@ -135,7 +135,7 @@ if ( ! function_exists( 'codexin_header_version' ) ) {
     function codexin_header_version() {
         $header_version = NULL;
 
-        $global_header      = codexin_get_option( 'reveal-header-version' );
+        $global_header      = codexin_get_option( 'cx_header_version' );
         $individual_header  = codexin_meta('reveal_header_layout');
 
         if( is_page() ) {
@@ -156,9 +156,9 @@ if ( ! function_exists( 'codexin_logo' ) ) {
      * @since   v1.0
      */
     function codexin_logo() {
-        $logo_type          = codexin_get_option( 'reveal-logo-type' );
-        $text_logo          = codexin_get_option( 'reveal-text-logo' ); 
-        $image_logo         = codexin_get_option( 'reveal-image-logo' )['url'];
+        $logo_type          = codexin_get_option( 'cx_logo_type' );
+        $text_logo          = codexin_get_option( 'cx_text_logo' ); 
+        $image_logo         = codexin_get_option( 'cx_image_logo' )['url'];
         $menu_class         = ( codexin_responsive_class() == 'right' ) ? esc_attr( ' menu-right') : '';
 
         if( empty( $image_logo ) || empty( $text_logo ) ) {
@@ -278,11 +278,11 @@ if ( ! function_exists( 'codexin_page_title' ) ) {
      * @since   v1.0
      */
     function codexin_page_title() {
-        $blog_title = codexin_get_option( 'reveal-blog-title' );
+        $blog_title = codexin_get_option( 'cx_blog_title' );
 
         $result = '';
         if( is_home() ) {
-            $result .= esc_html( !empty( $blog_title ) ? $blog_title : __( 'Blog', 'reveal' ) );
+            $result .= esc_html( ! empty( $blog_title ) ? $blog_title : __( 'Blog', 'reveal' ) );
         } elseif( is_404() ) {
             $result .= esc_html__('Nothing Found!', 'reveal');
         } elseif( is_archive() ) {
@@ -448,7 +448,7 @@ if ( ! function_exists( 'codexin_attachment_metas_extended' ) ) {
         $metas = array();
 
         // Defining all the required variables
-        $type_post          = 'reveal_'. $post_type .'_image';
+        $type_post          = 'cx_'. $post_type .'_image';
         $image_default      = codexin_get_option( $type_post );
         $attachment_id      = ( has_post_thumbnail() ) ? get_post_thumbnail_id( $post_id ) : $image_default['id'];
         $attachment         = wp_prepare_attachment_for_js( $attachment_id );
