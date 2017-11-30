@@ -160,7 +160,7 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
             '.c-menu__items a:focus',
             '.c-menu__items a:visited'
         );
-            $primary_color_in_mobile_menu_selectors_3 = array(
+        $primary_color_in_mobile_menu_selectors_3 = array(
             '.c-menu__close'
         );
         $primary_color_special_selectors_1 = array(
@@ -190,7 +190,9 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
         $secondary_color_selectors = array(
             '.main-menu li a:hover',
             '.main-menu li.active a',
-            '.menu-wrapper + .social-wrapper a:hover'
+            '.menu-wrapper + .social-wrapper a:hover',
+            '.topbar-wrapper li a:hover',
+            '.topbar-wrapper li a:hover i'
         );
         $secondary_color_in_border_selectors = array(
             '.menu-wrapper + .social-wrapper a:hover'
@@ -252,7 +254,10 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
             '.cx-pricing-tables .pricing-button a:hover',
             '.cx-portfolios .portfolio-filter ul li.active',
             '.gallery-carousel span.slick-arrow:hover',
-            '.cx-portfolio .image-mask a:hover'
+            '.cx-portfolio .image-mask a:hover',
+            '.topbar-wrapper li', 
+            '.topbar-wrapper li a', 
+            '.topbar-wrapper li a i'
         );
         $white_color_in_bg_selectors = array(
             '#nav-icon2 span',

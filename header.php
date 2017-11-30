@@ -34,6 +34,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 	// Fetching and assigning data from theme options and metabox
 	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
+	$enable_topbar 			= codexin_get_option( 'cx_enable_topbar' );
 	$disable_head 			= codexin_meta( 'reveal_disable_header' );
 	$disable_title 			= codexin_meta( 'reveal_disable_page_title' );
 
@@ -62,6 +63,11 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 			<header id="header" class="header <?php echo esc_attr( $page_identity ); ?>" itemscope itemtype="http://schema.org/WPHeader">
 		        <?php
 		        echo ( $page_identity == 'inner-header' ) ? '<div class="nav-container">' : '';
+
+		        	if( $enable_topbar ) {
+			        	// Go to the header topbar rendering template partial
+				        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'topbar' );
+		        	}
 
 		        	// Go to the header rendering template partial
 			        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'general' );

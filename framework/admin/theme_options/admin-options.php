@@ -133,6 +133,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
 
         public function setSections() {
 
+            $menus = wp_get_nav_menus();
+
+            $menu_items = array();
+            foreach ( $menus as $menu ) {
+                $menu_items[$menu->term_id] = esc_html( $menu->name );
+            }
+
             $this->sections[] = array(
                 'title'            => esc_html__( 'General Settings', 'reveal' ),
                 'id'               => 'codexin_general_settings',
@@ -479,7 +486,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             );
 
             $this->sections[] = array(
-                'title'            => esc_html__( 'Header Versions', 'reveal' ),
+                'title'            => esc_html__( 'Logo', 'reveal' ),
                 'id'               => 'codexin_header',
                 'customizer_width' => '500px',
                 'subsection'       => true,
@@ -540,12 +547,209 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => array( 'url' => '//placehold.it/260X100' ),
                     ),
 
+                    array(
+                        'id'                => 'cx_logo_padding',
+                        'type'              => 'spacing',
+                        'mode'              => 'padding',
+                        'output'            => array( '#header .navbar-brand' ),
+                        'units'             => array( 'px' ),
+                        'units_extended'    => 'true',
+                        'title'             => esc_html__( 'Logo padding', 'reveal' ),
+                        'subtitle'          => esc_html__( 'Please enter padding value in px', 'reveal' ),
+                        'default'           => array( )
+                    ),
+                )
+            );
+
+            // Top Bar
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Top Bar', 'reveal' ),
+                'customizer_width' => '500px',
+                'id'               => 'codexin_topbar',
+                'subsection'       => true,
+                'fields'           => array(
+
+                    array(
+                        'id' => 'topbar_heading',
+                        'type' => 'raw',
+                        'content' => '<div class="cx-section-heading">' . esc_html__('Topbar settings', 'reveal') . '</div>',
+                        'full_width' => true
+                    ),
+
+                    array(
+                        'id'        => 'cx_enable_topbar',
+                        'type'      => 'switch',
+                        'title'     => esc_html__( 'Enable Topbar?', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select if You Need Topbar', 'reveal' ),
+                        'desc'      => esc_html__( 'Choose to Enable / Disable Topbar', 'reveal' ),
+                        "default"   => true,
+                    ),
+
+                    array(
+                        'id'        => 'cx_topbar_bg',
+                        'type'      => 'background',
+                        'title'     => esc_html__( 'Topbar Background Color', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select Topbar Background Color', 'reveal' ),
+                        'required'  => array( 'cx_enable_topbar', '=', '1' ),
+                        'background-repeat'     => false,
+                        'background-attachment' => false,
+                        'background-position'   => false,
+                        'background-image'      => false,
+                        'background-size'       => false,
+                        'preview'               => false,
+                        'transparent'           => false,
+                        'output'   => array( '#header .topbar' ),
+                        'default'  => array(
+                            'background-color' => '#333',
+                        )
+                    ),
+
+                    array(
+                        'id'       => 'cx_topbar_layout',
+                        'type'     => 'select',
+                        'required' => array( 'cx_enable_topbar', '=', '1' ),
+                        'title'    => esc_html__( 'Top bar Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose the Top Bar layout', 'reveal' ),
+                        'options'  => array(
+                            'sides'    => esc_html__( 'Left and Right Items', 'reveal' ),
+                            'centered' => esc_html__( 'Left, Right and Center Items', 'reveal' ),
+                        ),
+                        'default'  => 'sides'
+                    ),
+
+                    array(
+                        'id'       => 'cx_topbar_left',
+                        'type'     => 'sortable',
+                        'mode'     => 'checkbox',
+                        'required' => array( 'cx_enable_topbar', '=', '1' ),
+                        'title'    => esc_html__( 'Top bar Left Items', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose the Top Bar left items', 'reveal' ),
+                        'desc'     => esc_html__( 'You can Enable/Disable items and drag items to reorder.', 'reveal' ),
+                        'options'  => array(
+                            'socials'       => esc_html__( 'Socials', 'reveal' ),
+                            'email'         => esc_html__( 'Email', 'reveal' ),
+                            'phone'         => esc_html__( 'Phone', 'reveal' ),
+                        ),
+                        'default'  => array(
+                            'socials'    => false,
+                            'email'      => false,
+                            'phone'      => true,
+                        )
+                    ),
+
+                    array(
+                        'id'       => 'cx_topbar_center',
+                        'type'     => 'sortable',
+                        'mode'     => 'checkbox',
+                        'required' => array( 'cx_topbar_layout', '=', 'centered' ),
+                        'title'    => esc_html__( 'Top bar Center Items', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose the Top Bar Center items', 'reveal' ),
+                        'desc'     => esc_html__( 'You can Enable/Disable items and drag items to reorder.', 'reveal' ),
+                        'options'  => array(
+                            'socials'       => esc_html__( 'Socials', 'reveal' ),
+                            'email'         => esc_html__( 'Email', 'reveal' ),
+                            'phone'         => esc_html__( 'Phone', 'reveal' ),
+                        ),
+                        'default'  => array(
+                            'socials'    => false,
+                            'email'      => true,
+                            'phone'      => false,
+                        )
+                    ),
+
+                    array(
+                        'id'       => 'cx_topbar_right',
+                        'type'     => 'sortable',
+                        'mode'     => 'checkbox',
+                        'required' => array( 'cx_enable_topbar', '=', '1' ),
+                        'title'    => esc_html__( 'Top bar Right Items', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose the Top Bar right items', 'reveal' ),
+                        'desc'     => esc_html__( 'You can Enable/Disable items and drag items to reorder.', 'reveal' ),
+                        'options'  => array(
+                            'socials'       => esc_html__( 'Socials', 'reveal' ),
+                            'email'         => esc_html__( 'Email', 'reveal' ),
+                            'phone'         => esc_html__( 'Phone', 'reveal' ),
+                        ),
+                        'default'  => array(
+                            'socials'    => true,
+                            'email'      => false,
+                            'phone'      => false,
+                        )
+                    ),
+
+                    array(
+                        'id'       => 'cx_topbar_phone',
+                        'type'     => 'textarea',
+                        'required' => array( 'cx_enable_topbar', '=', '1' ),
+                        'title'    => esc_html__( 'Top Bar Phone Number', 'reveal' ),
+                        'desc'     => esc_html__( 'Please enter the phone number', 'reveal' ),
+                        'validate' => 'html',
+                    ),
+
+                    array(
+                        'id'       => 'cx_topbar_email',
+                        'type'     => 'textarea',
+                        'required' => array( 'cx_enable_topbar', '=', '1' ),
+                        'title'    => esc_html__( 'Top Bar Email', 'reveal' ),
+                        'desc'     => esc_html__( 'Please enter the email address', 'reveal' ),
+                        'validate' => 'html',
+                    ),
+
+                    array(
+                        'id'        => 'cx_topbar_social_info',
+                        'type'      => 'info',
+                        'style'     => 'success',
+                        'icon'      => 'el el-info-circle',
+                        'required'  => array( 'cx_enable_topbar', '=', '1' ),
+                        'title'     => esc_html__( 'Social Media Information ', 'reveal' ),
+                        'desc'      => sprintf( '%1$s<b><a href="%2$s" target="_blank">%3$s</a></b>', esc_html__('In order to set the Social Media Profile Information, please go to ', 'reveal'), esc_url(admin_url().'admin.php?page=codexin-options&action=social'), 'Social Media' ),
+                    ),
+
+                    array(
+                        'id'        => 'cx_topbar_socials',
+                        'type'      => 'checkbox',
+                        'title'     => esc_html__( 'Select Top Bar Social Profiles', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Which social profiles you want to show in Top Bar?', 'reveal' ),
+                        'required'  => array( 'cx_enable_topbar', '=', '1' ),
+                        'options'   => array(
+                            'facebook'  => 'Facebook',
+                            'twitter'   => 'Twitter',
+                            'instagram' => 'instagram',
+                            'pinterest' => 'Pinterest',
+                            'behance'   => 'Behance',
+                            'gplus'     => 'Google Plus',
+                            'linkedin'  => 'LinkedIn',
+                            'youtube'   => 'Youtube',
+                            'skype'     => 'Skype',
+                        ),
+                        'default'  => array(
+                            'facebook'  => '1',
+                            'twitter'   => '1',
+                            'instagram' => '1',
+                            'pinterest' => '1',
+                            'behance'   => '0',
+                            'gplus'     => '0',
+                            'linkedin'  => '0',
+                            'youtube'   => '0',
+                            'skype'     => '0',
+                        )
+                    ),
+
+                )
+            );
+
+            $this->sections[] = array(
+                'title'            => esc_html__( 'Header Layout', 'reveal' ),
+                'id'               => 'codexin_header_layout',
+                'customizer_width' => '500px',
+                'subsection'       => true,
+                'fields'           => array(
 
                     array(
                         'id'       => 'cx_header_version',
                         'type'     => 'image_select',
-                        'title'    => esc_html__( 'Select Navigation Type', 'reveal' ),
-                        'desc'     => esc_html__( 'Choose Header Type', 'reveal' ),
+                        'title'    => esc_html__( 'Select Header Type', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose Header Layout', 'reveal' ),
                         'options'  => array(
                             '1' => array(
                                 'alt' => 'Header-1',
@@ -610,8 +814,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'cx_responsive_version',
                         'type'      => 'select',
-                        'title'     => esc_html__( 'Select Responsive Navigation Type', 'reveal' ),
-                        'desc'      => '',
+                        'title'     => esc_html__( 'Select Mobile Menu Type', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose Responsive Navigation Type', 'reveal' ),
                         'options'   => array(
                             'left'  => esc_html__( 'Slide Left Menu', 'reveal' ),
                             'right' => esc_html__( 'Slide Right Menu', 'reveal' ),
@@ -1099,6 +1303,15 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                             )
                         ),
                         'default'  => '2'
+                    ),
+
+                    array(
+                        'id'        => 'cx_portfolio_single_button',
+                        'type'      => 'switch',
+                        'title'     => esc_html__( 'Enable Single Portfolio Navigation?', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select if You Need Single Portfolio Navigation', 'reveal' ),
+                        'desc'      => esc_html__( 'Choose to Enable / Disable Previous or Next Portfolio Links', 'reveal' ),
+                        "default"   => true,
                     ),
 
                     array(

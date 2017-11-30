@@ -15,6 +15,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 // Fetching data from theme options
 $position     = codexin_get_option( 'cx_single_portfolio_layout' );
 $comments     = codexin_get_option( 'cx_portfolio_comments' );
+$pagination   = codexin_get_option( 'cx_portfolio_single_button' );
 
 // Fetching data from metabox
 $cname        = codexin_meta( 'reveal_portfolio_client', 'type=text' );
@@ -44,13 +45,15 @@ $image_prop   = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'reve
                 </div>
             </div> <!-- end of portfolio-details -->
 
-            <?php 
-            codexin_post_link( __( 'Prev', 'reveal' ), __( 'Next', 'reveal' ) );
+            <?php
+            if( $pagination ) {
+                codexin_post_link( __( 'Prev', 'reveal' ), __( 'Next', 'reveal' ) );
+            } // end of pagination conditional check
 
             if( $comments ) { ?>
                 <div class="clearfix"></div>
                 <div class="portfolio-comments">
-                    <?php comments_template('', true);?>
+                    <?php comments_template( '', true );?>
                 </div> <!-- end of portfolio-comments -->
             <?php } ?>
         </div> <!-- end of col -->

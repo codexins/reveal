@@ -57,7 +57,7 @@ if ( have_posts() ) {
 
 		if( $single_post ) {
 			( $single_nav ) ? codexin_post_link() : '';
-			( $single_comment ) ? comments_template('', true) : '';
+			( $single_comment ) ? comments_template( '', true ) : '';
 		}
 
     } // end of loop have_posts()

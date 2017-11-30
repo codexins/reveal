@@ -53,9 +53,11 @@ if ( ! function_exists( 'codexin_post_link' ) ) {
     * @return   mixed
     * @since    v1.0.0
     */
-    function codexin_post_link( $prev = 'Previous Post', $next = 'Next Post' ) {
+    function codexin_post_link( $prev = NULL, $next = NULL ) {
+        $prev = ! empty( $prev ) ? $prev : esc_html__( 'Previous Post', 'reveal' );
+        $next = ! empty( $next ) ? $next : esc_html__( 'Next Post', 'reveal' );
 
-        if( codexin_get_option( 'cx_single_pagination' ) == 'button' ) {
+        if( ( codexin_get_option( 'cx_single_pagination' ) == 'button' ) || is_singular( 'portfolio' ) ) {
             $prev_link = get_previous_post_link( '%link', esc_html( $prev . ' &raquo;' ) );
             $next_link = get_next_post_link( '%link', esc_html( '&laquo; ' . $next, 'reveal' ) );
         } elseif( codexin_get_option( 'cx_single_pagination' ) == 'title' ) {
