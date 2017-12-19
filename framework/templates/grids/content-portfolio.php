@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 $portfolio_list  = get_the_term_list( $post->ID, 'portfolio-category', '<li>', ', </li><li>', '</li>' );
 
 // Fetching the attachment properties
-$image_prop      = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'rectangle-one' );
+$image_prop      = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'codexin-core-rectangle-one' );
 
 ?>
 

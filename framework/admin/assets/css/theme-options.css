@@ -1,0 +1,411 @@
+
+
+/************************************************************
+    Redux Styles
+*************************************************************/
+
+.redux-container #redux-header {
+    background: #32373c;
+    border: none;
+    padding: 0;
+}
+
+.redux-container #redux-header .display_header {
+    padding: 10px 48px;
+    background: #464b50;
+    margin: 0;
+}
+
+.redux-container #redux-header .display_header h2 {
+    font-size: 2em;
+}
+
+.redux-container #redux-header .display_header h2 + span {
+    font-size: 1.2em;
+}
+
+.redux-container #redux-header .display_header .redux-dev-mode-notice-container {
+    top: 40px;
+    left: 230px;
+}
+
+#redux-header .rAds {
+    visibility: hidden;
+}
+
+.redux-container #redux-header + .redux-sidebar {
+    margin-top: 44px;
+    border-top: 1px solid #dedede;
+}
+
+.redux-container .redux-main {
+    background: #fff;
+    border-left: 0;
+    box-shadow: none;
+}
+
+.redux-container .form-table>tbody>tr>th {
+    width: 40%;
+}
+
+.redux-container .redux-main input {
+    border-radius: 0;
+    margin-left: 10px;
+    text-shadow: none !important;
+    color: #444 !important;
+    box-shadow: none;
+    transition: all 0.3s;
+}
+
+.redux-container #redux_save {
+    background: #b2d27e !important;
+    border-color: #7c9258 !important;
+    box-shadow: none;
+}
+
+.redux-container #redux_save[disabled] {
+    color: #7c9258 !important;
+}
+
+.redux-container #redux_save:active,
+.redux-container #redux_save:focus,
+.redux-container #redux_save:hover {
+    color: #444 !important;
+    text-shadow: none !important;
+    background: #c7eb8d !important;
+}
+
+.redux-container .redux-group-menu li.active,
+.redux-container .redux-group-menu li.active a {
+    background: #fff;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+    border-left: 2px solid;
+}
+
+.redux-container .redux-group-menu li.active a,
+.redux-container .redux-group-menu li.active a i {
+    color: #7c9258 !important;
+}
+
+.redux-main .redux-group-tab h2 {
+    margin: 0;
+    padding: 20px;
+    font-size: 22px;
+    background: #f3f3f3;
+    border: 1px solid #dfdfdf;
+    color: #555;
+    line-height: 1em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.redux-main .select2-choice {
+    border: 1px solid #c8c8c8;
+    cursor: pointer;
+    box-shadow: none;
+    max-width: 100%;
+    background-image: none;
+    border-radius: 0 !important;
+}
+
+.admin-color-fresh .select2-container-active .select2-choice,
+.admin-color-fresh .select2-drop-active {
+    border-radius: 0;
+    border-color: #7c9258 !important;
+    -webkit-box-shadow: 0 0 2px rgba(124, 146, 88, 0.8);
+    box-shadow: 0 0 2px rgba(124, 146, 88, 0.8);
+}
+
+.redux-main .select2-container .select2-choice .select2-arrow{
+    border-radius: 0;
+    background: transparent;
+    border-left: 0;
+}
+
+.select2-container .select2-choice abbr {
+    top: 7px;
+}
+
+.redux-main .redux-typography-container .input_wrapper input.mini {
+    border: 1px solid #c8c8c8;
+    border-radius: 0;
+    box-shadow: none;
+    margin-right: 5px;
+}
+
+.redux-container .redux-main .input-append .add-on,
+.redux-container .redux-main .input-prepend .add-on {
+    border-radius: 0;
+    background: #b2d27e;
+    border-color: #7c9258;
+    text-shadow: none;
+}
+
+.select2-results .select2-highlighted {
+    background-color: #b2d27e !important;
+    color: inherit !important;
+}
+
+.redux-main input[type="text"]:focus,
+.redux-main textarea:focus,
+.redux-main input[type=checkbox]:focus,
+.redux-main input[type="email"]:focus,
+.redux-main input[type="phone"]:focus,
+.redux-main .wp-picker-container input:focus,
+.select2-search .select2-input:focus,
+.redux-main .redux-typography-container .input_wrapper input.mini:focus {
+    border-color: #7c9258;
+    -webkit-box-shadow: 0 0 2px rgba(124, 146, 88, 0.8);
+    box-shadow: 0 0 2px rgba(124, 146, 88, 0.8);
+}
+
+.redux-main .redux-container-switch .cb-disable.selected,
+.redux-main .redux-container-switch .cb-disable,
+.redux-main .redux-container-switch .cb-enable.selected,
+.redux-main .redux-container-switch .cb-enable {
+    border-radius: 0;
+    color: inherit;
+    text-transform: uppercase;
+    box-shadow: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    font-size: 12px;
+}
+
+.redux-main .redux-container-switch .cb-enable.selected {
+    background-color: #b2d27e !important;
+    border: 1px solid #7c9258 !important;
+}
+
+.redux-container #redux-defaults,
+.redux-main .redux-container-switch .cb-disable.selected {
+    background-color: #b73b27 !important;
+    border: 1px solid #7f291b !important;
+    color: #fff !important;
+}
+
+.redux-container #redux-defaults:hover,
+.redux-container #redux-defaults:focus,
+.redux-container #redux-defaults:active {
+    background-color: #df4931 !important;
+}
+
+.redux-main .button.redux-remove-background,
+.redux-main .button.redux-background-upload,
+.redux-main .button.remove-image,
+.redux-main .button.media_upload_button {
+    border-radius: 0;
+    box-shadow: none;
+    background: #f1f1f1;
+    text-align: center;
+    height: 32px;
+    line-height: 30px;
+    border-color: #ccc;
+    margin: 10px 0;
+    width: 74px;
+}
+
+.redux-main .button.redux-remove-background,
+.redux-main .button.remove-image {
+    margin-left: 15px;
+    background: #b73b27;
+    color: #fff;
+}
+
+.redux-main .button.remove-image:hover {
+    color: #fff;
+}
+
+.admin-color-fresh .redux-container-image_select .redux-image-select-selected img {
+    border-color: #7c9258;
+}
+
+.redux-sidebar .redux-group-menu li a {
+    border: 0;
+    opacity: 1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.redux-sidebar .redux-group-menu li a:hover {
+    color: inherit;
+    opacity: 1;
+}
+
+.redux-main .wp-picker-container input,
+.redux-main .wp-picker-container .wp-color-result {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.redux-main .wp-color-result:after {
+    border-radius: 0;
+}
+
+.admin-color-fresh .redux-sidebar .redux-group-menu li.activeChild.hasSubSections a {
+    background: #464b50 !important;
+    text-shadow: none !important;
+}
+
+.admin-color-fresh .redux-sidebar .redux-group-menu li.activeChild.hasSubSections ul.subsection li.active a {
+    color: #fff !important;
+    background: #32373c !important;
+}
+
+.admin-color-fresh .redux-sidebar .redux-group-menu li.activeChild.hasSubSections ul.subsection li a:hover {
+    color: #fff;
+    background: #32373c !important;
+}
+
+.redux-main input[type="radio"] {
+    display: none;
+}
+
+.redux-main input[type="radio"] + span {
+    display: inline-block;
+    text-align: center;
+    line-height: 20px;
+    padding: 10px 15px 9px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ddd;
+    background-color: #f1f1f1;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    white-space: nowrap;
+    width: 100px;
+}
+
+.redux-main .redux-container-radio .data-full {
+    margin: 0;
+}
+
+.redux-main .redux-container-radio label {
+    float: left;
+}
+
+.redux-main .redux-container-radio input:checked + span {
+    background-color: #b2d27e !important;
+    border: 1px solid #7c9258 !important;
+    z-index: 1;
+    position: relative;
+}
+
+.redux-container .redux-main input.large-text,
+.redux-main .redux-container-background .upload,
+.redux-main textarea,
+.redux-main .redux-container-text input[type="text"],
+.redux-main input[type="email"],
+.redux-main input[type="phone"] {
+    border: 1px solid #c8c8c8;
+    width: 400px;
+    box-shadow: none;
+    max-width: 100%;
+    height: 35px;
+    margin-left: 0;
+    padding-left: 8px;
+}
+
+.redux-main textarea {
+    min-height: 150px;
+}
+
+.redux-main .redux-background-input {
+    margin-left: 0 !important;
+}
+
+.redux-main .redux-container-slider .redux-slider-container {
+    height: 4px;
+    background-color: #b2d27e !important;
+    background-image: none !important;
+}
+
+.redux-main .redux-container-slider input[type="text"] {
+    margin: 0;
+    padding: 0 14px;
+    line-height: 40px;
+    height: 40px;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    background-color: #f1f1f1;
+    font-weight: 500;
+}
+
+.noUi-target, .noUi-target * {
+    box-sizing: content-box;
+}
+
+.redux-main .redux-container-slider .redux-slider-container .noUi-origin.noUi-background {
+    box-shadow: 0 1px 0 rgba(0,0,0,0.08) inset;
+    background-color: #eee;
+    top: -1px;
+}
+
+.admin-color-fresh .noUi-connect, .wp-customizer .noUi-connect {
+
+}
+
+.redux-main .redux-container-slider .redux-slider-container .noUi-handle.noUi-handle-lower {
+    position: absolute;
+    top: -6px;
+    left: -8px;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 1px 4px rgba(0,0,0,0.1);
+    cursor: w-resize;
+}
+
+.redux-main .redux-container-slider .redux-slider-container .noUi-handle.noUi-handle-lower::before,
+.redux-main .redux-container-slider .redux-slider-container .noUi-handle.noUi-handle-lower::after {
+    display: none;
+}
+
+.redux-main .redux-container-sortable .checkbox-container {
+    padding: 10px;
+    border: 1px solid #c8c8c8;
+    margin-bottom: 10px;
+}
+
+.redux-main input[type=checkbox] {
+    border: 1px solid #7c9258;
+}
+
+.redux-main input[type=checkbox]:checked:before {
+    color: #7c9258;
+}
+
+.redux-container .redux-main .redux-container-checkbox .data-full li {
+    width: 33.33%;
+    display: inline-block;
+    margin-bottom: 10px !important;
+}
+
+.redux-main .redux-container-background .wp-picker-container {
+    display: inline-block;
+}
+
+.redux-main .color-transparency-check {
+    display: inline;
+    margin-left: 10px !important;
+}
+
+.redux-container .redux-main .redux-field-container.redux-container-import_export a {
+    border-radius: 0;
+    box-shadow: none;
+    background: #f1f1f1;
+    text-align: center;
+    height: 32px;
+    line-height: 30px;
+    border-color: #ccc;
+    text-shadow: none;
+    color: #555;
+}
+
+#redux-import {
+    margin-top: 10px;
+    margin-left: 0;
+    color: #444 !important;
+    text-shadow: none !important;
+    background: #c7eb8d !important;
+}

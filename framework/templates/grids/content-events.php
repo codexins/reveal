@@ -22,7 +22,7 @@ $title_length        = codexin_get_option( 'cx_events_title_length' );
 $excerpt_length      = codexin_get_option( 'cx_events_excerpt_length' );
 
 // Fetching the attachment properties
-$image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', 'rectangle-four' );
+$image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', 'codexin-core-rectangle-four' );
 
 ?>
 

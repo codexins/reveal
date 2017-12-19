@@ -28,7 +28,7 @@ $cat_list     = get_the_term_list( $post->ID, 'portfolio-category', '', '|', '' 
 $tag_list     = get_the_term_list( $post->ID, 'portfolio_tags', '', '|', '' );
 
 // Fetching the attachment properties
-$image_prop   = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'reveal-portfolio-single' );
+$image_prop   = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'codexin-framework-rectangle-three' );
 
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -53,17 +53,15 @@ $topbar_email = '<li class="topbar-email"><i class="fa fa-envelope" aria-hidden=
 
 // Rendering Socials
 $topbar_socials = '<li class="topbar-socials-wrapper">';
-    // $topbar_socials .= '<ul class="topbar-socials-wrapper">';
-		$topbar_socials .= ( ! empty( $cx_facebook ) && $show_facebook ) ? '<a href="'. esc_url( $cx_facebook ) .'" target="_blank"><i class="fa fa-facebook"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_twitter ) && $show_twitter ) ? '<a href="'. esc_url( $cx_twitter ) .'" target="_blank"><i class="fa fa-twitter"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_instagram ) && $show_instagram ) ? '<a href="'. esc_url( $cx_instagram ) .'" target="_blank"><i class="fa fa-instagram"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_pinterest ) && $show_pinterest ) ? '<a href="'. esc_url( $cx_pinterest ) .'" target="_blank"><i class="fa fa-pinterest"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_behance ) && $show_behance ) ? '<a href="'. esc_url( $cx_behance ) .'" target="_blank"><i class="fa fa-behance"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_gplus ) && $show_gplus ) ? '<a href="'. esc_url( $cx_gplus ) .'" target="_blank"><i class="fa fa-google-plus"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_linkedin ) && $show_linkedin ) ? '<a href="'. esc_url( $cx_linkedin ) .'" target="_blank"><i class="fa fa-linkedin"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_youtube ) && $show_youtube ) ? '<a href="'. esc_url( $cx_youtube ) .'" target="_blank"><i class="fa fa-youtube-play"></i></a>' : '';
-		$topbar_socials .= ( ! empty( $cx_skype ) && $show_skype ) ? '<a href="'. esc_url( $cx_skype ) .'" target="_blank"><i class="fa fa-skype"></i></a>' : '';
-	// $topbar_socials .= '</ul>';
+	$topbar_socials .= ( ! empty( $cx_facebook ) && $show_facebook ) ? '<a href="'. esc_url( $cx_facebook ) .'" target="_blank"><i class="fa fa-facebook"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_twitter ) && $show_twitter ) ? '<a href="'. esc_url( $cx_twitter ) .'" target="_blank"><i class="fa fa-twitter"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_instagram ) && $show_instagram ) ? '<a href="'. esc_url( $cx_instagram ) .'" target="_blank"><i class="fa fa-instagram"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_pinterest ) && $show_pinterest ) ? '<a href="'. esc_url( $cx_pinterest ) .'" target="_blank"><i class="fa fa-pinterest"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_behance ) && $show_behance ) ? '<a href="'. esc_url( $cx_behance ) .'" target="_blank"><i class="fa fa-behance"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_gplus ) && $show_gplus ) ? '<a href="'. esc_url( $cx_gplus ) .'" target="_blank"><i class="fa fa-google-plus"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_linkedin ) && $show_linkedin ) ? '<a href="'. esc_url( $cx_linkedin ) .'" target="_blank"><i class="fa fa-linkedin"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_youtube ) && $show_youtube ) ? '<a href="'. esc_url( $cx_youtube ) .'" target="_blank"><i class="fa fa-youtube-play"></i></a>' : '';
+	$topbar_socials .= ( ! empty( $cx_skype ) && $show_skype ) ? '<a href="'. esc_url( $cx_skype ) .'" target="_blank"><i class="fa fa-skype"></i></a>' : '';
 $topbar_socials .= '</li>';
 
 

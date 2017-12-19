@@ -78,11 +78,10 @@ add_theme_support( 'html5', array(
  *
  */
 if ( function_exists( 'add_image_size' ) ) {
-	add_image_size('reveal-post-single', 800, 354, true);
-	add_image_size('blog-widget-image', 80, 80, true);
-	add_image_size('reveal-portfolio-single', 1170, 400, true);
-	add_image_size('gallery-format-image', 800, 450, true);
-	add_image_size('reveal-rectangle-one', 600, 375, true);
+	add_image_size('codexin-framework-rectangle-one', 600, 375, true);
+	add_image_size('codexin-framework-rectangle-two', 800, 354, true);
+	add_image_size('codexin-framework-rectangle-three', 1170, 400, true);
+	add_image_size('codexin-framework-rectangle-four', 800, 450, true);
 }
 
 

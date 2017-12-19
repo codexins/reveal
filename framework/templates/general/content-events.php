@@ -21,7 +21,7 @@ $excerpt_length      = codexin_get_option( 'cx_events_excerpt_length' );
 $event_list          = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
 
 // Fetching the attachment properties
-$image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', 'reveal-rectangle-one' );
+$image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', 'codexin-framework-rectangle-one' );
 
 ?>
 

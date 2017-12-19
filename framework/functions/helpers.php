@@ -388,40 +388,37 @@ if ( ! function_exists( 'codexin_placeholder_dimensions' ) ) {
         $dimensions = '';
 
         switch ( $image_size ) {
-            case "reveal-post-single":
-                $dimensions .= 'placehold.it/800x354';
-                break;
-            case "reveal-portfolio-single":
-                $dimensions .= 'placehold.it/1170x400';
-                break;
-            case "gallery-format-image":
-                $dimensions .= 'placehold.it/800x450';
-                break;
-            case "gallery-format-image":
-                $dimensions .= 'placehold.it/800x450';
-                break;
-            case "reveal-rectangle-one":
+            case "codexin-framework-rectangle-one":
                 $dimensions .= 'placehold.it/600x375';
                 break;
-            case "rectangle-one":
+            case "codexin-framework-rectangle-two":
+                $dimensions .= 'placehold.it/800x354';
+                break;
+            case "codexin-framework-rectangle-three":
+                $dimensions .= 'placehold.it/1170x400';
+                break;
+            case "codexin-framework-rectangle-four":
+                $dimensions .= 'placehold.it/800x450';
+                break;
+            case "codexin-core-rectangle-one":
                 $dimensions .= 'placehold.it/600x400';
                 break;
-            case "rectangle-two":
+            case "codexin-core-rectangle-two":
                 $dimensions .= 'placehold.it/570x464';
                 break;
-            case "rectangle-three":
+            case "codexin-core-rectangle-three":
                 $dimensions .= 'placehold.it/480x595';
                 break;
-            case "rectangle-four":
+            case "codexin-core-rectangle-four":
                 $dimensions .= 'placehold.it/600x327';
                 break;
-            case "rectangle-five":
+            case "codexin-core-rectangle-five":
                 $dimensions .= 'placehold.it/740x580';
                 break;
-            case "square-one":
+            case "codexin-core-square-one":
                 $dimensions .= 'placehold.it/220x220';
                 break;
-            case "square-two":
+            case "codexin-core-square-two":
                 $dimensions .= 'placehold.it/500x500';
                 break;
             default:

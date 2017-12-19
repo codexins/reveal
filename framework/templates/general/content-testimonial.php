@@ -18,7 +18,7 @@ $designation        = codexin_meta( 'reveal_author_desig' );
 $company            = codexin_meta( 'reveal_author_company' ); 
 
 // Fetching the attachment properties
-$image_prop         = codexin_attachment_metas_extended( $post->ID, 'testimonial', 'square-one' );
+$image_prop         = codexin_attachment_metas_extended( $post->ID, 'testimonial', 'codexin-core-square-one' );
 
 ?>
 

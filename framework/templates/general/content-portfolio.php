@@ -19,7 +19,7 @@ $excerpt_length       = codexin_get_option( 'cx_portfolio_excerpt_length' );
 $portfolio_list       = get_the_term_list( $post->ID, 'portfolio-category', '', ', ', '' );
 
 // Fetching the attachment properties
-$image_prop           = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'reveal-rectangle-one' );
+$image_prop           = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'codexin-framework-rectangle-one' );
 
 ?>
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class( array( 'clearfix portfolio-list' ) ); ?>>

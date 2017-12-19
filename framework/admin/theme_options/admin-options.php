@@ -249,20 +249,20 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
             );
 
             $this->sections[] = array(
-                'title'  => esc_html__( 'Typography', 'reveal' ),
-                'id'     => 'codexin_typography',
-                'desc'   => esc_html__( 'Theme Typography Section ', 'reveal' ),
-                'icon'   => 'el el-fontsize',
-                'fields' => array(
+                'title'             => esc_html__( 'Typography', 'reveal' ),
+                'id'                => 'codexin_typography',
+                'customizer_width'  => '500px',
+                'icon'              => 'el el-fontsize',
+                'fields'            => array(
                     array(
-                        'id'       => 'cx_typography_body',
-                        'type'     => 'typography',
-                        'title'    => esc_html__( 'Body Font', 'reveal' ),
-                        'subtitle' => esc_html__( 'Specify the body font properties.', 'reveal' ),
-                        'google'   => true,
-                        'output'   => array('body'),
-                        'color'    => false,
-                        'default'  => array(
+                        'id'        => 'cx_typography_body',
+                        'type'      => 'typography',
+                        'title'     => esc_html__( 'Body Font', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Specify the body font properties.', 'reveal' ),
+                        'google'    => true,
+                        'output'    => array('body'),
+                        'color'     => false,
+                        'default'   => array(
                             'font-size'   => '16px',
                             'line-height' => '26px',
                             'font-family' => 'Roboto',
@@ -418,7 +418,6 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'title'            => esc_html__( 'Colors', 'reveal' ),
                 'icon'             => 'el el-brush',
                 'id'               => 'codexin_color_option',
-                'desc'             => esc_html__( 'Customization of Theme Main Colors', 'reveal' ),
                 'customizer_width' => '500px',
                 'fields'           => array(
 
@@ -426,7 +425,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'            => 'cx_body_bg',
                         'type'          => 'color',
                         'title'         => esc_html__( 'Body Background Color:', 'reveal' ),
-                        'desc'          => esc_html__( 'Please Choose the Body Background Color', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Please Choose the Body Background Color', 'reveal' ),
                         'default'       => '#fff',
                         'transparent'   => false,
                     ),
@@ -435,7 +434,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'            => 'cx_text_color',
                         'type'          => 'color',
                         'title'         => esc_html__( 'Body Text Color:', 'reveal' ),
-                        'desc'          => esc_html__( 'Please Choose the Body Text Color', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Please Choose the Body Text Color', 'reveal' ),
                         'default'       => '#333',
                         'transparent'   => false,
                     ),
@@ -444,7 +443,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'            => 'cx_primary_color',
                         'type'          => 'color',
                         'title'         => esc_html__( 'Primary Color:', 'reveal' ),
-                        'desc'          => esc_html__( 'Please Choose the Primary Color', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Please Choose the Primary Color', 'reveal' ),
                         'default'       => '#295970',
                         'transparent'   => false,
                     ),
@@ -453,7 +452,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'            => 'cx_secondary_color',
                         'type'          => 'color',
                         'title'         => esc_html__( 'Secondary Color:', 'reveal' ),
-                        'desc'          => esc_html__( 'Please Choose the Secondary Color', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Please Choose the Secondary Color', 'reveal' ),
                         'default'       => '#fce38a',
                         'transparent'   => false,
                     ),
@@ -462,7 +461,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'            => 'cx_border_color',
                         'type'          => 'color',
                         'title'         => esc_html__( 'Border Color:', 'reveal' ),
-                        'desc'          => esc_html__( 'Please Choose the Border Color', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Please Choose the Border Color', 'reveal' ),
                         'default'       => '#ccc',
                         'transparent'   => false,
                     ),
@@ -471,7 +470,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'            => 'cx_secondary_bg',
                         'type'          => 'color',
                         'title'         => esc_html__( 'Secondary Background Color:', 'reveal' ),
-                        'desc'          => esc_html__( 'Please Choose the Secondary Background Color', 'reveal' ),
+                        'subtitle'      => esc_html__( 'Please Choose the Secondary Background Color', 'reveal' ),
                         'default'       => '#fafafa',
                         'transparent'   => false,
                     ),
@@ -508,9 +507,11 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'cx_text_logo',
                         'required' => array('cx_logo_type', 'equals', '1'),
-                        'type'     => 'text',
+                        'type'     => 'textarea',
                         'title'    => esc_html__( 'Write your text logo', 'reveal' ),
-                        'desc'     => esc_html__( 'Please write text logo here', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please write text logo here', 'reveal' ),
+                        'desc'     => esc_html__( 'You can write HTML code here', 'reveal' ),
+                        'validate' => 'html',
                         'default'  => 'ReVeal',
                     ),
 
@@ -540,10 +541,10 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'required' => array('cx_logo_type', 'equals', '2'),
                         'type'     => 'media',
                         'url'      => true,
-                        'title'    => esc_html__( 'Upload Company Logo', 'reveal' ),
+                        'title'    => esc_html__( 'Upload Logo', 'reveal' ),
                         'compiler' => 'true',
-                        'desc'     => esc_html__( 'Please Upload Company Logo', 'reveal' ),
-                        'subtitle' => esc_html__( 'Recommended Logo Size 260X100', 'reveal' ),
+                        'desc'     => esc_html__( 'Please upload your Logo', 'reveal' ),
+                        'subtitle' => esc_html__( 'Recommended Logo Image Size 260X100', 'reveal' ),
                         'default'  => array( 'url' => '//placehold.it/260X100' ),
                     ),
 
@@ -570,19 +571,12 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                 'fields'           => array(
 
                     array(
-                        'id' => 'topbar_heading',
-                        'type' => 'raw',
-                        'content' => '<div class="cx-section-heading">' . esc_html__('Topbar settings', 'reveal') . '</div>',
-                        'full_width' => true
-                    ),
-
-                    array(
                         'id'        => 'cx_enable_topbar',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Topbar?', 'reveal' ),
                         'subtitle'  => esc_html__( 'Select if You Need Topbar', 'reveal' ),
                         'desc'      => esc_html__( 'Choose to Enable / Disable Topbar', 'reveal' ),
-                        "default"   => true,
+                        "default"   => false,
                     ),
 
                     array(
@@ -600,7 +594,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'transparent'           => false,
                         'output'   => array( '#header .topbar' ),
                         'default'  => array(
-                            'background-color' => '#333',
+                            'background-color' => '#1d3b48',
                         )
                     ),
 
@@ -682,7 +676,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'textarea',
                         'required' => array( 'cx_enable_topbar', '=', '1' ),
                         'title'    => esc_html__( 'Top Bar Phone Number', 'reveal' ),
-                        'desc'     => esc_html__( 'Please enter the phone number', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please enter the phone number', 'reveal' ),
+                        'desc'     => esc_html__( 'You can write HTML code here', 'reveal' ),
                         'validate' => 'html',
                     ),
 
@@ -691,7 +686,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'textarea',
                         'required' => array( 'cx_enable_topbar', '=', '1' ),
                         'title'    => esc_html__( 'Top Bar Email', 'reveal' ),
-                        'desc'     => esc_html__( 'Please enter the email address', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please enter the email address', 'reveal' ),
+                        'desc'     => esc_html__( 'You can write HTML code heres', 'reveal' ),
                         'validate' => 'html',
                     ),
 
@@ -702,7 +698,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'icon'      => 'el el-info-circle',
                         'required'  => array( 'cx_enable_topbar', '=', '1' ),
                         'title'     => esc_html__( 'Social Media Information ', 'reveal' ),
-                        'desc'      => sprintf( '%1$s<b><a href="%2$s" target="_blank">%3$s</a></b>', esc_html__('In order to set the Social Media Profile Information, please go to ', 'reveal'), esc_url(admin_url().'admin.php?page=codexin-options&action=social'), 'Social Media' ),
+                        'desc'      => sprintf( '%1$s<b><a href="%2$s" target="_blank">%3$s</a></b>', esc_html__('In order to set the Social Media Profile Information, ', 'reveal'), esc_url(admin_url().'admin.php?page=codexin-options&action=social'), 'please click here.' ),
                     ),
 
                     array(
@@ -778,7 +774,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'icon'      => 'el el-info-circle',
                         'required'  => array( 'cx_header_version', '=', '4' ),
                         'title'     => esc_html__( 'Social Media Information ', 'reveal' ),
-                        'desc'      => sprintf( '%1$s<b><a href="%2$s" target="_blank">%3$s</a></b>', esc_html__('In order to set the Social Media Profile Information, please go to ', 'reveal'), esc_url(admin_url().'admin.php?page=codexin-options&action=social'), 'Social Media' ),
+                        'desc'      => sprintf( '%1$s<b><a href="%2$s" target="_blank">%3$s</a></b>', esc_html__('In order to set the Social Media Profile Information, ', 'reveal'), esc_url(admin_url().'admin.php?page=codexin-options&action=social'), 'please click here.' ),
                     ),
 
                     array(
@@ -837,7 +833,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'cx_page_title_position',
                         'type'     => 'radio',
                         'title'    => esc_html__( 'Title Position :', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Select Page Title Position ', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please Select Page Title Position ', 'reveal' ),
                         'options'  => array(
                             '1' => esc_html__( 'Left', 'reveal' ),
                             '2' => esc_html__( 'Center', 'reveal' ),
@@ -856,6 +852,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'units'             => array( 'px' ),
                         'units_extended'    => 'true',
                         'title'             => esc_html__( 'Page Title padding', 'reveal' ),
+                        'subtitle'          => esc_html__( 'Please Enter Page Title Top/Bottom Padding.', 'reveal' ),
                         'default'           => array( )
                     ),
 
@@ -872,8 +869,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'cx_bcrumbs',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Breadcrumbs?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable Page-Title & Breadcrumbs', 'reveal' ),
-                        'desc'     => esc_html__('Breadcrumbs is a navigational aid that allows visitors to understand their current location in the context of a website.', 'reveal'),
+                        'subtitle' => esc_html__( 'Select to enable/disable Breadcrumbs', 'reveal' ),
                         'default'  => true
                     ), 
 
@@ -884,7 +880,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'radio',
                         'required' => array( 'cx_bcrumbs', '=', '1' ),
                         'title'    => esc_html__( 'Breadcrumbs Position :', 'reveal' ),
-                        'desc'     => esc_html__( 'Please Select BreadCrumbs Position ', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please Select BreadCrumbs Position ', 'reveal' ),
                         'options'  => array(
                             '1' => esc_html__( 'Left', 'reveal' ),
                             '2' => esc_html__( 'Center', 'reveal' ),
@@ -915,7 +911,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_blog_title',
                         'type'      => 'text',
                         'title'     => esc_html__( 'Blog Page Title', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Enter Blog Page Title', 'revea;' ),
+                        'subtitle'  => esc_html__( 'Enter Custom Title for Blog Page', 'revea;' ),
                         'default'   => esc_html__( 'Blog', 'reveal' )
                     ),
 
@@ -946,7 +942,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_blog_style',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Blog & Archive Posts Style', 'reveal' ),
-                        'desc'      => '',
+                        'subtitle' => esc_html__( 'Select Blog & Archive Page Style', 'reveal' ),
                         'options'   => array(
                             'list'  => esc_html__( 'List', 'reveal' ),
                             'grid'  => esc_html__( 'Grid', 'reveal' ),
@@ -958,7 +954,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_grid_columns',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Columns Number', 'reveal' ),
-                        'desc'      => '',
+                        'subtitle'  => esc_html__( 'Specify the Number of columns', 'reveal' ),
                         'options'   => array(
                             '2' => esc_html__( '2 columns', 'reveal' ) ,
                             '3' => esc_html__( '3 columns', 'reveal' ) ,
@@ -972,7 +968,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'cx_blog_title_excerpt_length',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Blog Title and Excerpt Length?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable blog-title & excerpt length', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to Limit Blog Title & Excerpt Length by Character', 'reveal' ),
                         'default'  => 0,
                         'on'       => esc_html__( 'Enabled', 'reveal' ),
                         'off'      => esc_html__( 'Disabled', 'reveal' ),
@@ -1007,8 +1003,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'cx_blog_post_meta',
                         'type'      => 'checkbox',
-                        'title'     => esc_html__( 'Post Meta you want to be displayed in Blog Archive Page', 'reveal' ),
-                        'subtitle'  => esc_html__( 'You can select multiple checkboxes', 'reveal' ),
+                        'title'     => esc_html__( 'Post Meta in Blog & Archive Page', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Specify the Post Metas you want to display', 'reveal' ),
+                        'desc'      => esc_html__( 'You can select multiple checkboxes', 'reveal' ),
                         'options'   => array(
                             '1' => esc_html__( 'Author', 'reveal' ),
                             '2' => esc_html__( 'Publish Date', 'reveal' ),
@@ -1029,8 +1026,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_blog_read_more',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Read More Button?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Enable Read More Button in Posts?', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Read More Button in the Posts Loop', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Enable Read More Button in Blog & Archive Page?', 'reveal' ),
                         'default'   => true,
                     ),   
 
@@ -1038,7 +1034,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_pagination',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Pagination Type', 'reveal' ),
-                        'desc'      => esc_html__( 'Select the Pagination Type.', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select the Pagination Type for Blog & Archive Page', 'reveal' ),
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
@@ -1068,7 +1064,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'cx_single_layout',
                         'type'     => 'image_select',
                         'title'    => esc_html__( 'Select Single Post Page Layout', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select Single post Page Layout', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select Single Post Page Layout', 'reveal' ),
                         'desc'     => esc_html__( 'Choose From Full width / Left sidebar / Right Sidebar', 'reveal' ),
                         'options'  => array(
                             'no'    => array(
@@ -1090,8 +1086,9 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'cx_blog_post_single_meta',
                         'type'      => 'checkbox',
-                        'title'     => esc_html__( 'Post Meta you want to be displayed in Single Post Page', 'reveal' ),
-                        'subtitle'  => esc_html__( 'You can select multiple checkboxes', 'reveal' ),
+                        'title'     => esc_html__( 'Post Meta in Single Post Page', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Specify the Post Metas you want to display', 'reveal' ),
+                        'desc'      => esc_html__( 'You can select multiple checkboxes', 'reveal' ),
                         'options'   => array(
                             '1' => esc_html( 'Author', 'reveal' ),
                             '2' => esc_html( 'Publish Date', 'reveal' ),
@@ -1112,8 +1109,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_single_share',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Share Links?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Share Links', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Share Links in Single Post', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose to Enable / Disable Share Links in Single Post', 'reveal' ),
                         "default"   => true,
                     ),
 
@@ -1121,8 +1117,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_single_button',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Post Navigation?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Post Navigation', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Previous or Next Post Links', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose to Enable / Disable Previous or Next Post Links', 'reveal' ),
                         "default"   => true,
                     ),
 
@@ -1130,7 +1125,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_single_pagination',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Pagination Type', 'reveal' ),
-                        'desc'      => esc_html__( 'Select the Pagination Type for Single Posts.', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select the Pagination Type for Single Posts.', 'reveal' ),
                         'required'  => array( 'cx_single_button', '=', '1' ),
                         'options'   => array(
                             'button'    => esc_html__( 'Next - Previous Button', 'reveal' ),
@@ -1143,8 +1138,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_post_comments',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Show Comments?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need to Show Single Blog Post Comments Section', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable to Show Blog Single Post Comments', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select if You Need to Show Single Blog Post Comments', 'reveal' ),
                         "default"   => true,
                     ),
                 )
@@ -1171,8 +1165,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_enable_portfolio',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Portfolio?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Portfolio', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Portfolio Custom Post', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose to Enable / Disable Portfolio Custom Post', 'reveal' ),
                         "default"   => true,
                     ),
 
@@ -1204,7 +1197,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_portfolio_style',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Portfolio Archive Posts Style', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose Portfolio Archive Posts Style', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose Portfolio Archive Posts Style', 'reveal' ),
                         'required'  => array( 'cx_enable_portfolio', '=', '1' ),
                         'options'   => array(
                             'grid'  => esc_html__( 'Grid', 'reveal' ),
@@ -1217,7 +1210,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_portfolio_grid_columns',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Columns Number', 'reveal' ),
-                        'desc'      => '',
+                        'subtitle'  => esc_html__( 'Specify the Number of columns', 'reveal' ),
                         'options'   => array(
                             '2' => esc_html__( '2 columns', 'reveal' ) ,
                             '3' => esc_html__( '3 columns', 'reveal' ) ,
@@ -1232,7 +1225,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'switch',
                         'required' => array( 'cx_enable_portfolio', '=', '1' ),
                         'title'    => esc_html__( 'Enable Portfolio Title and Excerpt Length?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable portfolio-title & excerpt length', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to Limit Portfolio Title & Excerpt Length by Character', 'reveal' ),
                         'default'  => 0,
                         'on'       => esc_html__( 'Enabled', 'reveal' ),
                         'off'      => esc_html__( 'Disabled', 'reveal' ),
@@ -1268,7 +1261,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_portfolio_pagination',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Portfolio Archive Pagination Type', 'reveal' ),
-                        'desc'      => esc_html__( 'Select the Pagination Type.', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select the Pagination Type.', 'reveal' ),
                         'required'  => array( 'cx_enable_portfolio', '=', '1' ),
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
@@ -1309,8 +1302,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_portfolio_single_button',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Single Portfolio Navigation?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Single Portfolio Navigation', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Previous or Next Portfolio Links', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose to Enable / Disable Previous or Next Portfolio Links', 'reveal' ),
                         "default"   => true,
                     ),
 
@@ -1319,8 +1311,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'      => 'switch',
                         'required'  => array( 'cx_enable_portfolio', '=', '1' ),
                         'title'     => esc_html__( 'Enable Portfolio Comments?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Portfolio Single Page Comments Section', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Portfolio Single Page Comments', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select if You Need Portfolio Single Page Comments', 'reveal' ),
                         "default"   => false,
                     ),
 
@@ -1348,8 +1339,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_enable_events',
                         'type'      => 'switch',
                         'title'     => esc_html__('Enable Events?', 'reveal'),
-                        'subtitle'  => esc_html__('Select if You Need Events', 'reveal'),
-                        'desc'      => esc_html__('Choose to Enable / Disable Events Custom Post (You have to refresh the page after saving to see the effect)', 'reveal'),
+                        'subtitle'  => esc_html__('Choose to Enable / Disable Events Custom Post', 'reveal'),
                         "default"   => true,
                     ),
 
@@ -1381,7 +1371,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_events_style',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Events Archive Posts Style', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose Events Archive Posts Style', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose Events Archive Posts Style', 'reveal' ),
                         'required'  => array( 'cx_enable_events', '=', '1' ),
                         'options'   => array(
                             'grid'  => esc_html__( 'Grid', 'reveal' ),
@@ -1394,7 +1384,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_events_grid_columns',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Columns Number', 'reveal' ),
-                        'desc'      => '',
+                        'subtitle'  => esc_html__( 'Specify the Number of columns', 'reveal' ),
                         'options'   => array(
                             '2' => esc_html__( '2 columns', 'reveal' ) ,
                             '3' => esc_html__( '3 columns', 'reveal' ) ,
@@ -1409,7 +1399,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'type'     => 'switch',
                         'required' => array( 'cx_enable_events', '=', '1' ),
                         'title'    => esc_html__( 'Enable Events Title and Excerpt Length?', 'reveal' ),
-                        'subtitle' => esc_html__( 'Select to enable/disable Events-title & excerpt length', 'reveal' ),
+                        'subtitle' => esc_html__( 'Select to Limit Events Title & Excerpt Length by Character', 'reveal' ),
                         'default'  => 0,
                         'on'       => esc_html__( 'Enabled', 'reveal' ),
                         'off'      => esc_html__( 'Disabled', 'reveal' ),
@@ -1445,7 +1435,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_events_pagination',
                         'type'      => 'select',
                         'title'     => esc_html__( 'Events Archive Pagination Type', 'reveal' ),
-                        'desc'      => esc_html__( 'Select the Pagination Type.', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Select the Pagination Type.', 'reveal' ),
                         'required'  => array( 'cx_enable_events', '=', '1' ),
                         'options'   => array(
                             'numbered'  => esc_html__( 'Numbered pagination', 'reveal' ),
@@ -1485,8 +1475,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_enable_testimonial',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Testimonials?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Testimonials', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Testimonial Custom Post (You have to refresh the page after saving to see th e effect)', 'reveal'),
+                        'subtitle'  => esc_html__( 'Choose to Enable / Disable Testimonial Custom Post', 'reveal' ),
                         "default"   => true,
                     ),
 
@@ -1517,9 +1506,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'        => 'cx_enable_testimonial_pagination',
                         'type'      => 'switch',
-                        'title'     => esc_html__( 'Enable Pagination?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Pagination', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Testimonials Pagination', 'reveal' ),
+                        'title'     => esc_html__( 'Enable Testimonial Pagination?', 'reveal' ),
+                        'subtitle'  => esc_html__( 'Choose if You Need Pagination', 'reveal' ),
                         'required'  => array( 'cx_enable_testimonial', '=', '1' ),
                     ),
 
@@ -1554,8 +1542,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_enable_team',
                         'type'      => 'switch',
                         'title'     => esc_html__( 'Enable Team?', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Select if You Need Team', 'reveal' ),
-                        'desc'      => esc_html__( 'Choose to Enable / Disable Team Custom Post (You have to refresh the page after saving to see the effect)',  'reveal'),
+                        'subtitle'  => esc_html__( 'Choose to Enable / Disable Team Custom Post', 'reveal' ),
                         "default"   => true,
                     ),
 
@@ -1580,8 +1567,8 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     array(
                         'id'       => 'cx_footer_version',
                         'type'     => 'image_select',
-                        'title'    => esc_html__( 'Select Footer Layout Type', 'reveal' ),
-                        'desc'     => esc_html__( 'Choose Footer Layout Type', 'reveal' ),
+                        'title'    => esc_html__( 'Select Footer Type', 'reveal' ),
+                        'subtitle' => esc_html__( 'Choose Footer Layout', 'reveal' ),
                         'options'  => array(
                             '1' => array(
                                 'alt' => 'Footer-1',
@@ -1612,6 +1599,17 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     array(
+                        'id'       => 'cx_footer_background',
+                        'type'     => 'background',
+                        'title'    => esc_html__( 'Background', 'reveal' ),
+                        'subtitle' => esc_html__( 'Footer with image, color, etc.', 'reveal' ),
+                        'output'   => array( '#footer.footer' ),
+                        'default'   => array(
+                            'background-color'      => '#fafafa',
+                        ),
+                    ),
+
+                    array(
                         'id'       => 'cx_footer_copyright',
                         'type'     => 'switch',
                         'title'    => esc_html__( 'Enable Footer Copyright?', 'reveal' ),
@@ -1619,13 +1617,13 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'default'  => true,
                     ),
 
-
                     array(
                         'id'       => 'cx_copyright',
                         'type'     => 'textarea',
                         'required' => array( 'cx_footer_copyright', '=', '1' ),
                         'title'    => esc_html__( 'Footer copyright text  ', 'reveal' ),
-                        'desc'     => esc_html__( 'Please add your copyright text  ', 'reveal' ),
+                        'subtitle' => esc_html__( 'Please Add Your Copyright Text', 'reveal' ),
+                        'desc'     => esc_html__( 'You can write HTML code here', 'reveal' ),
                         'validate' => 'html',
                         'default'  => esc_html__( 'Copyright &copy; 2017. All Right Reserved.', 'reveal' )
                     ),
@@ -1688,7 +1686,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'       => 'cx_advanced_tracking_code',
                         'type'     => 'textarea',
                         'title'    => esc_html__( 'Tracking Code', 'reveal' ),
-                        'desc'     => esc_html__( 'Paste your Google Analytics (or other) tracking code here. This will be added into the head of the theme. Please put code inside script tags.', 'reveal' ),
+                        'subtitle' => esc_html__( 'Paste your Google Analytics (or other) tracking code here. This will be added into the head of the theme. Please put code inside \'Script\' tags.', 'reveal' ),
                     )
                 )
             );

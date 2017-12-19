@@ -23,7 +23,7 @@ $disable_footer = codexin_meta( 'reveal_disable_footer' );
        	
 
             if( $disable_footer == 0 ) { ?>
-            	<footer id="footer" class="footer reveal-bg-1 reveal-color-0" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+            	<footer id="footer" class="footer reveal-bg-1" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
             		<div class="container">
                         <div class="row">
                 			<?php 

@@ -94,7 +94,7 @@ if ( have_posts() ) {
                             $portfolio->the_post();
 
                             // Fetching the attachment properties
-                            $image_prop     = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'rectangle-two' );
+                            $image_prop     = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'codexin-core-rectangle-two' );
 
                             echo '<div class="recent-portfolio-wrapper reveal-color-2">';
                                 echo '<img src="'. $image_prop['src'] .'" '. $image_prop['alt'] .'>';

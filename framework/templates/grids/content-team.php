@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 $designation 		= codexin_meta( 'reveal_team_designation' );
 
 // Fetching the attachment properties
-$image_prop         = codexin_attachment_metas_extended( $post->ID, 'team', 'square-two' );
+$image_prop         = codexin_attachment_metas_extended( $post->ID, 'team', 'codexin-core-square-two' );
 
 ?>
 

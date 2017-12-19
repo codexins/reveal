@@ -53,6 +53,9 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			// Register actions
 			$this -> codexin_actions();
 
+			// Enquequeing admin styles
+			$this -> codexin_admin_enqueque();
+
 		}
 
 		/**
@@ -192,6 +195,24 @@ if( ! class_exists( 'Codexin_Framework' ) ) {
 			 *
 			 */
 			require_once CODEXIN_FRAMEWORK_FUNC_DIR . 'ajax_comments.php';
+
+		}
+
+		/**
+		 * Enqueques theme options styles
+		 * 
+		 * @since v1.0.0
+		 */
+
+		public function codexin_admin_enqueque() {
+
+			add_action( 'admin_enqueue_scripts', array( $this, 'codexin_admin_styles' ), 99 );
+
+		}
+
+		public function codexin_admin_styles() {
+
+			wp_enqueue_style( 'codexin-theme-options-stylesheet', CODEXIN_FRAMEWORK_ADMIN_URL . 'assets/css/theme-options.css', false, '1.0','all');
 
 		}
 
