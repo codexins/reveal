@@ -64,7 +64,7 @@ if ( have_posts() ) {
 
     if( ! $single_post ) {
 	    echo '<div class="clearfix"></div>';              
-	    echo ( ( $post_style == 'grid' ) || ! is_search() ) ? '<div class="col-xs-12">' : '' ;
+	    echo ( ( $post_style == 'grid' ) ) ? '<div class="col-xs-12">' : '' ;
 
 	    if( $posts_nav == 'numbered' ) {
 	        echo codexin_numbered_posts_nav();
@@ -72,7 +72,7 @@ if ( have_posts() ) {
 	        codexin_posts_link();
 	    }
 
-	    echo ( ( $post_style == 'grid' ) || ! is_search() ) ? '</div>' : '' ;
+	    echo ( ( $post_style == 'grid' ) ) ? '</div>' : '' ;
 
         echo '<div class="clearfix"></div>';
 	}

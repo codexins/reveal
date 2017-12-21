@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 
-if ( ! function_exists('codexin_get_option' ) ) {
+if ( ! function_exists( 'codexin_get_option' ) ) {
     /**
      * Helper Function to get theme options
      *
