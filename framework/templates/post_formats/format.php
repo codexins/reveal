@@ -17,7 +17,7 @@ $post_style         = codexin_get_option( 'cx_blog_style' );
 $post_metas         = codexin_get_option( 'cx_blog_post_meta' );
 
 // Fetching the attachment properties
-$image_prop         = codexin_attachment_metas_extended( $post->ID, 'blog', 'codexin-framework-rectangle-two' );
+$image_prop         = codexin_attachment_metas_extended( $post->ID, 'blog', ( $post_style == 'grid' ) ? 'codexin-core-rectangle-one' : 'codexin-framework-rectangle-two' );
 $image_prop_full    = codexin_attachment_metas_extended( $post->ID, 'blog', 'full' );
 
 

@@ -65,7 +65,7 @@ $disable_footer = codexin_meta( 'reveal_disable_footer' );
             /**
              * Finishing contents before the end of #whole tag, codexin_whole_wrapper_exit hook.
              *
-             * @hooked codexin_to_top - 10 (outputs the HTML for the to-top button)
+             * @hooked codexin_to_top - 10 (outputs the HTML for the scroll to-top button)
              */
             do_action( 'codexin_whole_wrapper_exit' );
 
