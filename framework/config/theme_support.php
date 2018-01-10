@@ -106,7 +106,7 @@ $reveal_args = array(
     'width'         => 980,
     'flex-height'   => true,
     'height'        => 200,
-    'default-image' => CODEXIN_FRAMEWORK_IMG . 'default-header.jpg',
+    'default-image' => REVEAL_THEME_IMG . 'default-header.jpg',
 );
 add_theme_support( 'custom-header', $reveal_args );
 

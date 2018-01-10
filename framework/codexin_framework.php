@@ -21,10 +21,6 @@ define( 'CODEXIN_FRAMEWORK_ADMIN_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 
 define( 'CODEXIN_FRAMEWORK_ADMIN_URL', trailingslashit( CODEXIN_FRAMEWORK_URL . 'admin/' ) );
 define( 'CODEXIN_FRAMEWORK_CONFIG_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'config/' ) );
 define( 'CODEXIN_FRAMEWORK_FUNC_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'functions/' ) );
-define( 'CODEXIN_FRAMEWORK_LIBS_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'libs/' ) );
-define( 'CODEXIN_FRAMEWORK_CSS', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/css' ) );
-define( 'CODEXIN_FRAMEWORK_JS', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/js' ) );
-define( 'CODEXIN_FRAMEWORK_IMG', trailingslashit( CODEXIN_FRAMEWORK_URL . 'libs/images/' ) );
 define( 'CODEXIN_TEMPLATE_PARTIALS', trailingslashit( 'framework/templates/' ) );
 
 
