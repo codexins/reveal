@@ -1,0 +1,22 @@
+/**
+ * layout services/ service promo
+ *
+ */
+
+.service-promo {
+	@extend %vpadding;
+	h2 {
+		text-transform: uppercase;
+		font-weight:bold;
+	}
+	.focused-text {
+		font-size: 2em;
+		line-height: 1.2em;
+	}
+
+	.col-sm-8 {
+		p:last-child {
+			@extend %mb0;
+		}
+	}
+}

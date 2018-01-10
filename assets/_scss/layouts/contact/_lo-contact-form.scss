@@ -1,0 +1,24 @@
+/**
+ * Layout contact/ contact form
+ *
+ */
+
+.primary-form {
+	div[class*='col-'] {
+		padding-bottom: 0;
+	}
+}
+
+.full-width-input {
+	textarea,
+	select,
+	input {
+		width: 100%;
+		background: lighten($cx-border-color, 18%);
+	}
+
+}
+
+.full-width {
+	width:100%;
+}

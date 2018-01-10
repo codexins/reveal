@@ -1,0 +1,73 @@
+/**
+ * layout blog/ blog list
+ *
+ */
+
+#primary .post-single:first-child .thumb-wrapper {
+	padding-top: 0;
+	border-top:0;
+}
+
+.post-single {
+	.thumb-wrapper {
+		margin-bottom: .8*$cx-col-spacing;
+		padding-top:15px;
+		border-top: 1px solid $cx-border-color;
+	}
+
+	.post-content-wrapper {
+
+	}
+
+	.post-description {
+		h2.post-title {
+
+		}
+	}
+
+	margin-bottom: $cx-section-spacing;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+
+.post-meta-wrapper {
+	margin-left: -20px;
+	span {
+		color: lighten($cx-text-color, 20%);
+		display: block;
+		float: left;
+		padding-left:20px;
+		padding-right:20px;
+		margin-bottom: 5px;
+		position: relative;
+		font-size: 90%;
+
+		i {
+			display: inline-block;
+			margin-right:5px;
+		}
+
+		&::before {
+			content:"";
+			@include abs-position(0, auto, 0, 0);
+			@include box(1px, 11px);
+			margin:auto;
+			background: lighten($cx-text-color, 20%);
+
+		}
+
+		&:first-child {
+			&::before {
+				display: none;
+			}
+		}
+	}
+
+	@extend %clearfix;
+}
+
+.posts-wrapper + .pagination-wrapper {
+	margin-top: $cx-col-spacing;
+}

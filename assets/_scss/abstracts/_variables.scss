@@ -1,0 +1,60 @@
+// typography 
+$cx-body-font: 							'Open Sans', sans-serif !default;
+$cx-heading-font: 						'PT Sans', sans-serif !default;
+
+
+// Colors
+$cx-text-color: 						#333 !default; // black
+$cx-body-bg-color: 						#fff !default; // white 
+
+$cx-primary-color:  					#1ca5b8 !default; // teal
+$cx-secondary-color: 					#ff646c !default; // light red
+$cx-tertiary-color:						#0b4249 !default; // dark teal
+$cx-fourth-color: 						#f9b808 !default;  // Yellow type
+
+$cx-offset-color:						#f3f3f3 !default; // offwhite
+//$cx-offset-color:						lighten($cx-primary-color,52%); // offwhite
+
+
+$cx-border-color:						#ccc !default; // light gray
+
+$cx-link-color: 						$cx-primary-color !default;
+$cx-link-hover-color: 					$cx-secondary-color !default;
+
+// line height  
+$cx-body-font-size: 					16px !default;
+$cx-body-line-height: 					1.6em !default;
+$cx-body-font-weight : 					400 !default;
+
+$cx-social-icon-size-small: 			26px !default;
+$cx-social-icon-size-large: 			35px !default;
+
+
+// default speacing 
+$cx-heading-margin-bottom : 			25px !default;
+
+
+$cx-section-spacing:	 				90px !default;
+$cx-col-spacing:						0.5*$cx-section-spacing !default; // will be used as bottom margin for the items on tablet and mobile
+
+// default transition 
+$cx-transition: 						all 0.3s ease !default;
+
+//* screen size */
+//* screen min width */
+
+$cx-lg-screen:							1200px !default;
+$cx-md-screen: 							992px !default;
+$cx-sm-screen:							768px !default;
+$cx-vsm-screen:							480px !default;
+
+$cx-breakpoints: (
+    "wide":    							$cx-lg-screen,
+    "notebook":    						$cx-md-screen,
+    "tablet":    						$cx-sm-screen,
+    "small-mobile": 					$cx-vsm-screen, 
+);
+
+
+
+

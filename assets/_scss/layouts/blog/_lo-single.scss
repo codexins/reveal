@@ -1,0 +1,173 @@
+/**
+ * Layout blog/ single
+ *
+ */
+
+.single-post-meta {
+	margin-top: $cx-col-spacing;
+	p {
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 0;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		display: inline;
+		li {
+			list-style-type: none;
+			display: inline-block;
+			margin-right: 10px;
+			a {
+				display: inline;
+				position:relative;
+				text-decoration: underline;
+				&::after {
+					content:",";
+					position:absolute;
+					right:-5px;
+					top:-2px;
+
+				}
+			}
+
+			&:last-child {
+				a {
+					&::after {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.single {
+	.post-single {
+		margin-bottom: $cx-col-spacing;
+	}
+}
+
+
+.comments-area {
+
+	h3 {
+
+	}
+
+	.comment-list {
+		&.nested {
+			overflow: hidden;
+		    width: 100%;
+		    padding-top: 20px;
+		    padding-left: 50px;
+		}
+	}
+
+	ol {
+		margin: 0;
+		padding: 0;
+		li {
+			margin-bottom: 20px;
+			list-style-type: none;
+			.comment-author-thumb {
+				width:110px;
+				img {
+					max-width:100%;
+				}
+				float: left;
+				padding-right:20px;
+				@include respond-to(large-mobile) {
+					width: 100px;
+				}
+
+				@include respond-to(small-mobile) {
+					width: 80px;
+				}
+			}
+
+			.comment-content {
+				width:calc(100% - 120px);
+				padding: 20px;
+				float: right;
+				background: #f6f6f6;
+				position: relative;
+				&::before {
+					@include cx-triangle(#f6f6f6, left, 12px);
+					left:0;
+				}
+				.comment-author-name {
+					font-weight: bold;
+					margin-bottom: 3px;
+					a {
+						color: $cx-text-color;
+						&:hover {
+							color: $cx-link-hover-color;
+						}
+					}
+				}
+
+				@include respond-to(large-mobile) {
+					width: calc(100% - 100px);
+				}
+
+				@include respond-to(small-mobile) {
+					width: calc(100% - 80px);
+				}
+			}
+			@extend %clearfix;
+		}
+	}
+
+	& > ol {
+		margin-bottom: $cx-col-spacing;
+	}
+
+	.comment-author-thumb img {
+		@include border-radius(50%);
+	}
+
+	.comment-meta {
+		a {
+			color: $cx-text-color;
+			&:hover {
+				color: $cx-link-hover-color;
+			}
+		}
+		text-align: right;
+		span {
+			display: inline-block;
+			&.comment-edit {
+				padding-right: 15px;
+			}
+
+			&.comment-reply {
+				position: relative;
+				&::before {
+					content:"\f0da";
+					font-family: FontAwesome;
+					position: relative;
+					left:0;
+					top:0;
+					padding-right:15px;
+
+				}
+			}
+		}
+
+		@include respond-to(mobile) {
+			text-align: left;
+			font-size: 90%;
+		}
+	}
+
+	.comment-form {
+		input,
+		textarea {
+			width:100%;
+		}
+	}
+}

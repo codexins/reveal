@@ -1,0 +1,55 @@
+/**
+ * layout footer/ footer
+ *
+ */
+
+footer{
+	padding-top: $cx-section-spacing;
+	background: $cx-primary-color;
+	color: lighten($cx-text-color, 100%);
+}
+
+.footer-top {
+	padding-bottom:0.5*$cx-section-spacing;
+}
+
+.footer-title{
+	margin-bottom:35px;
+	color: lighten($cx-text-color, 100%);
+	font-size: 20px;
+	text-transform:uppercase;
+}
+
+
+.footer-widget {
+	a {
+		color: lighten($cx-text-color, 100%);
+		&:hover {
+			color: lighten($cx-secondary-color, 10%);
+		}
+	}
+	::-webkit-input-placeholder {
+		color:lighten($cx-text-color, 100%);
+	}
+
+	::-moz-placeholder {
+		color:lighten($cx-text-color, 100%);
+	}
+
+	margin-bottom: $cx-col-spacing;
+}
+
+.copyright-section {
+	position:relative;
+	text-align: center;
+    padding: 30px 15px;
+    background: $cx-tertiary-color;
+    p{
+    	margin: 0;
+    	color: lighten($cx-text-color, 100%);
+    }
+
+    a {
+    	color: lighten($cx-secondary-color, 10%);
+    }
+}

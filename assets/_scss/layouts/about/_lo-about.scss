@@ -1,0 +1,20 @@
+/**
+ * Layout about/about
+ *
+ */
+
+.about{
+	@extend %vpadding;
+	.section-intro {
+		max-width:100%;
+		width:100%;
+		text-align: left;
+		margin-bottom: 0;
+	}
+
+	.default-btn {
+		@include respond-to(mobile) {
+			margin-bottom: $cx-col-spacing;
+		}
+	}
+}

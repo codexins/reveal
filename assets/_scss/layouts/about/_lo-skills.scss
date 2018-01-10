@@ -1,0 +1,15 @@
+/**
+ * layout about/skills
+ *
+ */
+
+.skills{
+	@extend %vpadding;
+	background: $cx-offset-color;
+}
+.skill-element{
+	h3 {
+		@extend .secondary-title;
+		text-transform: capitalize;
+	}
+}

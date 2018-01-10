@@ -1,0 +1,16 @@
+/**
+ * layout contact/ contact promo
+ *
+ */
+
+.contact-page-two {
+	.page-title {
+		@extend %mb0;
+	}
+}
+
+.contact-promo {
+	@extend .service-promo;
+	@extend %mb0;
+	background-color: transparent;
+}

@@ -1,0 +1,56 @@
+/**
+ * Layout header/ Header Top
+ *
+ */
+ 
+.header-top{
+	padding:7px 0;
+	font-size: 85%;
+	background: $cx-tertiary-color;
+	color: lighten($cx-text-color, 100%);
+
+	.social-icon {
+		@include respond-to(mobile){
+			text-align: center;
+			margin-bottom: 10px;
+		} 
+		a {
+			background: transparent;
+			color: lighten($cx-text-color, 100%);
+			@include respond-to(mobile){
+				float: none;
+			}
+			&:hover {
+				color: $cx-secondary-color;
+			}
+		}
+	}
+
+	@include respond-to(mobile) {
+		display: none;
+	}
+}
+
+
+.top-content{
+	line-height: $cx-social-icon-size-small;
+	&.text-right{
+		@include respond-to(mobile){
+			text-align: center;
+		} 
+	}
+	.bar{
+		margin:0 5px;
+	}
+
+	a{
+		color: lighten($cx-text-color, 100%);	
+		font-size: 14px;
+		@extend %cx-transition ;
+		&:hover{
+			color: $cx-secondary-color ;
+		}
+	}
+}
+
+

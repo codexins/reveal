@@ -1,0 +1,15 @@
+/**
+ * layout blog/blog grid
+ *
+ */
+
+.blog-grid-section {
+	.blog-item-grid {
+		margin-bottom: $cx-col-spacing;
+	}
+
+	.pagination {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}

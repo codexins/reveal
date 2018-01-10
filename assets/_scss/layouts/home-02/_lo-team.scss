@@ -1,0 +1,18 @@
+/**
+ * Layout home-02/ team
+ *
+ */
+
+.team-section {
+	&.bgc-offset {
+		background: $cx-offset-color;
+		@extend %mb0;
+		.team-details {
+			background-color: #fff;
+		}
+	}
+
+	.member-wrapper {
+		margin-bottom: $cx-col-spacing;
+	}
+}

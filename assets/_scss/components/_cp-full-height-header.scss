@@ -1,0 +1,142 @@
+/**
+ * Components Full height Header
+ *
+ */
+
+.fill-screen {
+	min-height:500px;
+	height:100Vh;
+	@include cx-overlay(rgba(0,0,0,.6));
+	@include respond-to(notebook) {
+		min-height:450px;
+	}
+
+	@include respond-to(tablet) {
+		min-height:420px;
+	}
+
+	@include respond-to(mobile) {
+		min-height:390px;
+	}
+
+	&.header {
+		background-image: url('../img/slider/home-3/slide-1.jpg');
+		background-size: cover;
+		background-position:center;
+		background-repeat: no-repeat;
+		background-attachment: scroll;
+		margin-bottom: $cx-section-spacing;
+		z-index: 1 !important;
+	}
+
+	&.parallax-window {
+		background-attachment: fixed;
+		@include media-only(wide, max) {
+			background-attachment: scroll;
+		}
+	}
+
+	&#header_bg_slide {
+		background-image: none;
+
+	}
+
+	.header-wrapper {
+		background: transparent;
+	}
+
+	.sf-menu {
+		&>li {
+			&>a {
+				color: lighten($cx-text-color, 100%);
+			}
+		}
+	}
+
+}
+
+.showcase-text {
+	color: lighten($cx-text-color, 100%);
+	text-align: center;
+	@include cx-centered(both);
+	span {
+		color: $cx-secondary-color;
+	}
+	.default-btn {
+		color: lighten($cx-text-color, 100%);
+		border-color: $cx-primary-color;
+		background: $cx-primary-color;
+		&:hover {
+			border-color: $cx-secondary-color;
+		}
+
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: lighten($cx-text-color, 100%);
+		text-transform: uppercase;
+	}
+
+	h2 {
+		font-size: 46px;
+		@include respond-to(large-mobile) {
+			font-size: 40px;
+		}
+		@include respond-to(small-mobile) {
+			font-size: 28px;
+		}
+
+	}
+	@include respond-to(tablet) {
+		width:75%;
+	}
+
+	@include respond-to(mobile) {
+		width:85%;
+	}
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    margin-left: -16px;
+    display: block;
+	width: 32px;
+    height: 32px;
+    border: 2px solid lighten($cx-text-color, 100%);
+    background-size: 14px auto;
+    z-index: 1;
+    @include border-radius(50%);
+    @include cx-transition(all .2s ease-in);
+    @include animation(bounce 2s infinite 2s);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -6px;
+        margin-top: -8px;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border: 2px solid white;
+        border-width: 0px 0 2px 2px;
+        @include transform-rotate(-45deg);
+    }
+    @include keyframes(bounce) {
+        0%,
+        100%,
+        20%,
+        50%,
+        80% {
+            @include transform-translateY(0);
+        }
+        40% {
+            @include transform-translateY(-10px);
+        }
+        60% {
+            @include transform-translateY(-5px);
+        }
+    }
+}

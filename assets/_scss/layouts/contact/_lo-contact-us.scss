@@ -1,0 +1,141 @@
+/**
+ * Layout contact/ contact us
+ *
+ */
+
+.contact-intro {
+	padding-bottom: $cx-section-spacing;
+	p,
+	.section-intro {
+		@extend %mb0;
+	}
+}
+
+.section-intro {
+	.social-icons {
+		margin-bottom: 0;
+	}
+}
+
+.contact-boxes {
+	margin-top: -100px;
+}
+
+.map-location {
+	@extend %mb0;
+}
+
+.contact-fun {
+	background-image: none;
+	@include cx-overlay(rgba($cx-tertiary-color, .9));
+	.counter-icon {
+		display: none;
+	}
+	@extend %mb0;
+}
+
+
+.contact-us {
+	background: lighten($cx-text-color, 100%);
+	.container {
+		margin-top: -135px;
+		.form-wrapper,
+		.contact-info-wrapper {
+			background: lighten($cx-text-color, 100%);
+			padding-top:30px;
+			padding-bottom:30px;
+			overflow: hidden;
+		}
+
+		.form-wrapper {
+			h3 {
+				margin-left: 15px;
+			}
+		}
+
+		@include respond-to(tablet) {
+			margin-top: 0;
+		}
+
+		@include respond-to(mobile) {
+			margin-top: 0;
+		}
+	}
+
+	input[type="submit"] {
+		width:100%;
+	}
+
+	textarea {
+		min-height: 230px;
+		@include respond-to(mobile) {
+			min-height:160px;
+		}
+	}
+
+	.contact-box {
+		padding-left: 0;
+    	padding-right: 0;
+    	padding-top: 0;
+    	margin-bottom: 25px;
+    	.thumb-icon {
+    		width:55px;
+    	}
+
+    	.fa {
+    		display: block;
+    		width: 55px;
+    	}
+
+	}
+
+	.social-icons {
+		// margin-top: $cx-col-spacing;
+		margin-bottom: 0;
+		h6 {
+			margin-bottom: 15px;
+		}
+	}
+
+	@include respond-to(tablet) {
+		padding-top: 15px;
+	}
+
+	@include respond-to(mobile) {
+		padding-top: 15px;
+	}
+
+	&.simple-type {
+		.container {
+			margin-top: 0;
+			.form-wrapper {
+				padding-top: 0;
+				padding-bottom: 0;
+				textarea {
+					min-height: 120px;
+				}
+			}
+
+			.contact-info-wrapper {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+
+.connect {
+	margin-bottom: 0;
+	.social-icons {
+		margin-top: 0;
+		margin-bottom: 0;
+		h6 {
+			font-size: 24px;
+			margin-bottom: 15px;
+		}
+	}
+	padding-top: $cx-col-spacing;
+	padding-bottom:  $cx-col-spacing;
+	background: #f6f6f6;
+}

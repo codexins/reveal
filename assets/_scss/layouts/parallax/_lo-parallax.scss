@@ -1,0 +1,11 @@
+/**
+ * layout parallax / parallax
+ *
+ */
+
+.parallax-window {
+	background-attachment: fixed;
+	@include media-only(wide, max) {
+		background-attachment: scroll;
+	}
+}

@@ -1,0 +1,19 @@
+/**
+ * layout home-02/ Quote Wrapper
+ *
+ */
+
+.get-quote {
+	text-align: center;
+	@extend %vpadding;
+	@include cx-background("../img/background/free-quote.jpg");
+	@include cx-overlay(rgba(0,0,0,.6));
+	.primary-title {
+		color: lighten($cx-text-color, 100%);
+	}
+
+	.section-intro {
+		position:relative;
+		color: lighten($cx-text-color, 100%);
+	}
+}

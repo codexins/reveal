@@ -1,0 +1,102 @@
+/************************************************************
+	c50 - Layout - header
+*************************************************************/
+@import 'header/lo-header';
+@import 'header/lo-header-top';
+@import 'header/lo-main-menu';
+@import 'header/lo-intelligent-header';
+
+
+/************************************************************
+	c51 - Layout - Slider
+*************************************************************/
+@import 'slider/lo-slider';
+
+
+/************************************************************
+	c52 - layout - Page Titile
+*************************************************************/
+@import 'page-title/lo-page-title';
+
+
+/************************************************************
+	c53 - layout - parallax
+*************************************************************/
+@import 'parallax/lo-parallax';
+
+/************************************************************
+	c54 - Layout - Home 01
+*************************************************************/
+@import 'home-01/lo-our-services';
+@import 'home-01/lo-fun-facts';
+@import 'home-01/lo-choose-us';
+@import 'home-01/lo-recent-project';
+@import 'home-01/lo-team';
+@import 'home-01/lo-testimonial';
+@import 'home-01/lo-client-carosel';
+
+/************************************************************
+	c55 - Layout - Home 02
+*************************************************************/
+@import 'home-02/lo-quote-wrapper';
+@import 'home-02/lo-fun-facts';
+@import 'home-02/lo-team';
+
+/************************************************************
+	c56 - Layout - Home 03
+*************************************************************/
+@import 'home-03/lo-counter-section';
+
+/************************************************************
+	c57 - Layout - Home 04
+*************************************************************/
+@import 'home-04/lo-newsletter-section';
+@import 'home-04/_lo-testimonila-simple-section';
+@import 'home-04/_lo-pricing-section';
+
+/************************************************************
+	c58 - layout - Footer
+*************************************************************/
+@import 'footer/lo-footer';
+
+/************************************************************
+	c59 - layout - About Page
+*************************************************************/
+@import 'about/lo-about';
+@import "about/lo-skills";
+@import "about/lo-testimonials"; 
+
+/************************************************************
+	c60 - layout - Contact Page
+*************************************************************/
+@import "contact/lo-contact-promo";
+@import "contact/lo-contact-us";
+@import "contact/lo-contact-form";
+@import 'contact/lo-map';
+
+/************************************************************
+	c61 - layout - Services Page
+*************************************************************/
+@import "services/lo-service-promo";
+@import "services/lo-how-we-work";
+@import "services/lo-client-list";
+
+/************************************************************
+	c62 - layout - Portfolio Page
+*************************************************************/
+@import "portfolio/lo-portfolio";
+@import "portfolio/lo-portfolio-single";
+
+/************************************************************
+	c63 - layout - Blog Page
+*************************************************************/
+@import "blog/lo-blog-list";
+@import "blog/lo-blog-grid";
+@import "blog/lo-single";
+
+/************************************************************
+	c64 - Layout - FAQ page
+*************************************************************/
+@import "faq/lo-faq";
+
+

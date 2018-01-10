@@ -1,0 +1,26 @@
+/**
+ * Components Full screen Video
+ *
+ */
+
+#header_full_screen_video {
+	&.header {
+		background-image: none;
+		background: $cx-offset-color;
+	}
+	&.fill-screen {
+		&::before {
+			background: rgba(0,0,0,.5);
+			z-index:1;
+		}
+	}
+
+	
+	.header-wrapper {
+		z-index:2;
+	}
+
+	.showcase-text {
+		z-index: 1;
+	}
+}

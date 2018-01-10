@@ -1,0 +1,15 @@
+/**
+ * layout home-01/ recent project
+ *
+ */
+
+.recent-project {
+	.portfolio {
+		padding:0;
+	}
+	.col-xs-6{
+		@include media-only(small-mobile, $type: max){
+	    	width:100%;
+		}
+	}
+}

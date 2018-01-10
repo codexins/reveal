@@ -1,0 +1,66 @@
+/**
+ * layout services/ how we work
+ *
+ */
+
+.service-page-one {
+	.page-title {
+		margin-bottom: 0;
+	}
+}
+
+.how-it-works {
+    background: #222534 url(../img/service/pattren.png) repeat center top;
+    color: lighten($cx-text-color, 100%);
+    @extend %vpadding;
+    .processing-columns {
+    	h3 {
+    		color: lighten($cx-text-color, 100%);
+    	}
+    	li::before,
+    	li::after {
+    		border-color: lighten($cx-text-color, 100%);	
+    	}
+    }
+
+    .section-intro {
+    	h2 {
+			color: lighten($cx-text-color, 100%);
+    	}
+    }
+
+    li {
+		
+		.icon-circle {
+		 	color: lighten($cx-text-color, 100%);	
+		}
+
+		.first-step{
+			border:0;
+			background: $cx-primary-color;
+		}
+		.second-step{
+			border:0;
+			background: $cx-secondary-color;
+		}
+		.third-step{
+			border:0;
+			background: $cx-tertiary-color;
+		}
+    }
+ 
+}
+
+.inner-services {
+	@extend %vpadding;
+	@extend %mb0;
+	padding-top:0;
+	.info-item {
+		text-align: left;
+	}
+}
+
+
+
+
+

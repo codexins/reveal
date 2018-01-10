@@ -1,0 +1,351 @@
+// typography 
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) { 
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + '.eot');
+    src: url($file-name + '.eot?#iefix')  format('embedded-opentype'),
+         url($file-name + '.woff') format('woff'),
+         url($file-name + '.ttf')  format('truetype'),
+         url($file-name + '.svg##{$font-name}')  format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+ }
+ //Usage
+ // @include font-face('gotham', '/fonts/gotham');
+
+///* Border radius CSS of an Element */
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+
+
+
+
+///* only time based transition */
+
+@mixin cx-transition($transition) {
+    -webkit-transition:  $transition;
+    -moz-transition:  $transition;
+    -ms-transition:  $transition;
+    -o-transition:  $transition;
+    transition:  $transition;
+}
+
+
+
+
+///* converts font sizes into rem */
+@mixin font-size($fsize) {
+    font-size: $fsize;
+    font-size: calculateRem($fsize);
+}
+
+// Cross browser opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+
+///* CSS Box Sizing */
+@mixin box-sizing($box-model) {
+-webkit-box-sizing: $box-model; // Safari <= 5
+ -moz-box-sizing: $box-model; // Firefox <= 19
+ box-sizing: $box-model;
+}
+
+
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+@mixin abs-position ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  @include pseudo ;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+
+//  for section overlay 
+
+@mixin cx-overlay($color:rgba(0,0,0, 0.55)) {
+    &{
+        position: relative;
+    }
+    &:before{
+        background: $color;
+        @include  abs-position(0,0,0,0);
+    }
+}
+//  for section hover overlay 
+
+
+///* making a circle */
+
+@mixin cx-circle($width, $bg, $color) {
+    width: $width;
+    height: $width;
+    display: inline-block;
+    -webkit-border-radius: $width/2;
+    -moz-border-radius: $width/2;
+    -ms-border-radius: $width/2;
+    -o-border-radius: $width/2;
+    border-radius: $width/2;
+    background: $bg;
+    text-align: center;
+    line-height: $width;
+    color: $color;
+}
+
+
+
+///*  CSS Triangles */
+
+@mixin cx-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+    @include pseudo($pos: $position);
+    width: 0;
+    height: 0;
+    @if $round {
+        border-radius: 3px;
+    }
+    @if $direction == down {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-top: $size solid $color;
+        margin-top: 0 - round( $size / 2.5 );
+    }
+    @else if $direction == up {
+        border-left: $size solid transparent;
+        border-right: $size solid transparent;
+        border-bottom: $size solid $color;
+        margin-bottom: 0 - round( $size / 2.5 );
+        } 
+    @else if $direction == right {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-left: $size solid $color;
+        margin-right: -$size;
+        } 
+    @else if  $direction == left {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+        border-right: $size solid $color;
+        margin-left: -$size;
+    }
+}
+
+
+// box mixin
+
+@mixin box($width, $height) {
+    width: $width;
+    height: $height;
+    text-align: center;
+    line-height: $height;
+    display: inline-block;
+}
+
+//Equal Height Columns
+@mixin eqheight {
+    display: table;
+    width:100%;
+    & > div {
+            float: none;
+            display: table-cell;
+            vertical-align: middle;
+            @include respond-to(mobile) {
+                display: block;
+            }
+    }
+}
+
+// Define vertical, horizontal, or both position
+@mixin cx-centered($position) {
+  position: absolute;
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// button 
+ @mixin button($padding:8px 20px){
+    padding:$padding;
+    display: inline-block;
+    background: transparent;
+    border: 1px solid $cx-text-color;
+    color: $cx-text-color;
+    @extend %cx-transition;
+    &:hover {
+        border-color: $cx-link-hover-color;
+        background: $cx-link-hover-color;
+        color:lighten($cx-text-color, 100%);
+    }
+ }
+
+
+// input placeholder 
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// animation 
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }  
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }  
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};      
+}
+
+// Defining rotate
+@mixin transform-rotate($deg) {
+    -webkit-transform: rotate(#{$deg});
+    -moz-transform: rotate(#{$deg});
+    -ms-transform: rotate(#{$deg});
+    -o-transform: rotate(#{$deg});
+    transform: rotate(#{$deg});
+}
+
+// Defining vertical position
+@mixin transform-translateY($position) {
+    -webkit-transform: translateY(#{$position});
+    -moz-transform: translateY(#{$position});
+    -ms-transform: translateY(#{$position});
+    -o-transform: translateY(#{$position});
+    transform: translateY(#{$position});
+}
+
+
+
+// background greadient 
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+    background: $start-color;
+
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+
+// responsive 
+@mixin respond-to($media) {
+
+    @if $media == small-mobile {
+        @media only screen and (max-width: $cx-vsm-screen - 1) { @content; }
+    }
+
+    @else if $media == mobile {
+        @media only screen and (max-width: $cx-sm-screen - 1) { @content; }
+    }
+
+    @else if $media == large-mobile {
+        @media only screen and (min-width: $cx-vsm-screen) and (max-width: $cx-sm-screen - 1) { @content; }
+    }
+
+    @else if $media == tablet {
+        @media only screen and (min-width: $cx-sm-screen) and (max-width: $cx-md-screen - 1) { @content; }
+    }
+
+    @else if $media == notebook {
+        @media only screen and (min-width: $cx-md-screen) and (max-width: $cx-lg-screen - 1) { @content; }
+    }
+
+    ///* not importent */
+    @else if $media == wide {
+        @media only screen and (min-width: $cx-lg-screen) { @content; }
+    }
+
+}
+
+
+
+// mixin only for max or min width 
+
+@mixin media-only($width, $type: min) {
+    @if map_has_key($cx-breakpoints, $width) {
+        $width: map_get($cx-breakpoints, $width);
+    }
+
+    @if $type == max {
+        $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+        @content;
+    }
+    
+}
+
+
+// border mixins
+
+@mixin cx-border($top, $right, $bottom, $left) {
+    border-top: $top solid $cx-border-color;
+    border-right: $right solid $cx-border-color;
+    border-bottom: $bottom solid $cx-border-color;
+    border-left: $left solid $cx-border-color;
+}
+
+// background image mixin
+
+@mixin cx-background($url) {
+    background-image: url($url);
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

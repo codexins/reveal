@@ -1,0 +1,51 @@
+/**
+ * Layout faq/ faq
+ *
+ */
+
+.faq-wrapper {
+	.panel-group {
+		.panel {
+			@include border-radius(0);
+		}
+	}
+	.panel-default {
+		.panel-heading {
+			padding:0;
+
+			a {
+			    display: block;
+			    padding: 15px 15px 15px 35px;
+			    position: relative;
+			    font-weight: 400;
+			    font-size: 18px;
+				&::before {
+					content:"\f131";
+					font-family: Flaticon;
+					position:absolute;
+				    left: 10px;
+				    font-size: 15px;
+				    top: auto;
+					
+				}
+
+				&.collapsed {
+					&::before {
+						content:"\f130";
+					}
+				}
+			}
+
+
+		}
+
+
+	}
+}
+
+.faq-page {
+	.cta-centered {
+		background: $cx-offset-color;
+		@extend %mb0;
+	}
+}

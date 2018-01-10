@@ -1,0 +1,21 @@
+/**
+ * Components Back to Top
+ *
+ */
+
+ div#toTop {
+    position: fixed;
+    background: $cx-secondary-color;
+    right: 20px;
+    bottom: 25px;
+    margin: auto;
+    cursor: pointer;
+    z-index:99;
+    opacity: 0.7;
+    @extend %cx-transition;
+    @include box(40px, 40px);
+    display: none;
+    &:hover {
+        opacity:1;
+    }
+}

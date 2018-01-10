@@ -1,0 +1,48 @@
+/**
+ * Components Address
+ *
+ */
+
+ul.address-card {
+	padding-left: 0;
+	li {
+		padding-left: 25px;
+		margin-bottom: 2px;
+		list-style-type: none;
+		display: block;
+		position:relative;
+		&::before {
+			content:'';
+			font-family: FontAwesome;
+			position: absolute;
+			width:24px;
+			height:24px;
+			line-height: 24px;
+			display: inline-block;
+			top:0;
+			left:0;
+			right:auto;
+			bottom:0;
+			margin:auto;
+		}
+	}
+
+	li.card-email {
+		&::before {
+			content: '\f003';
+		}
+	}
+
+	li.card-phone {
+		&::before {
+			content: '\f2a0';
+		}
+	}
+
+	li.card-location {
+		&::before {
+			content: '\f278';
+		}
+	}
+	
+}

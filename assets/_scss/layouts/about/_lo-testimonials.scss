@@ -1,0 +1,20 @@
+/**
+ * layout about/testimonials
+ *
+ */
+
+.testimonial-slider {
+	&.flat {
+		@extend %mb0;
+		background-image: none;
+		background-color: lighten($cx-text-color, 100%);
+		@include cx-overlay(transparent);
+		color: $cx-text-color;
+
+		h3 {
+			color: $cx-text-color;			
+		}
+		
+	}
+
+}

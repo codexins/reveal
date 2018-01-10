@@ -1,0 +1,75 @@
+/**
+ * Components Section intro
+ *
+ */
+
+.section-intro{
+	text-align:center;
+	display: block;
+    max-width: 70%;
+    margin: 0px auto 2*$cx-heading-margin-bottom;
+
+    @include respond-to(tablet) {
+    	max-width:85%;
+    }
+    @include respond-to(mobile) {
+    	max-width:95%;
+    }
+
+    h2 {
+    	@extend .primary-title;
+    }
+
+    .subtitle {
+        @extend %mb0;
+    }
+}
+
+
+
+.section-intro-left {
+    @extend .section-intro;
+    max-width:100%;
+    text-align: left;
+    @include respond-to(tablet) {
+        max-width:100%;
+    }
+
+    @include respond-to(mobile) {
+        max-width:100%;
+    }
+}
+
+.title-bar {
+    position:  relative ;
+    &::after{
+        @include  abs-position(auto,0,0,0);
+        background:$cx-secondary-color;
+        margin: auto;
+        width: 45px;
+        height: 2px;
+        transform: translateY(-50%);
+    }
+
+    &.white-skin {
+        &::after {
+            background-color: #fff;
+        }
+    }
+}
+
+
+.title-bar-left {
+    @extend .title-bar;
+    &::after {
+        margin-left: 0;
+    }
+}
+
+
+.title-bar-right {
+    @extend .title-bar;
+    &::after {
+        margin-right: 0;
+    }
+}

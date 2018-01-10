@@ -1,0 +1,11 @@
+/**
+ * Components Image
+ *
+ */
+
+.img-bordered {
+	border: 10px solid lighten($cx-primary-color,52%);
+	@include respond-to(mobile) {
+		width:100%;
+	}
+}

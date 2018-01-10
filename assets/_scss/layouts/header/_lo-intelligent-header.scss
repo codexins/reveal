@@ -1,0 +1,54 @@
+/**
+ * layout header/ Intelligent Header
+ *
+ */
+ 
+.fill-screen {
+	.intelligent-header {
+		border-bottom:0;
+		&.scrolling-up {
+			 background: darken(rgba($cx-text-color, 0.95), 5%);
+		}
+	}
+}
+
+
+.no-rgba .fill-screen .intelligent-header.scrolling-up {
+  background: #000;
+}
+
+
+.header--fixed {
+  position: fixed;
+  z-index: 999;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.headroom {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  will-change: transform;
+}
+
+.headroom--pinned {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.headroom--unpinned {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  transform: translateY(-100%);
+}

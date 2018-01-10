@@ -1,0 +1,239 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	@include box-sizing(border-box);
+}
+
+section {
+	margin-bottom: $cx-section-spacing;
+	display: block;
+	width:100%;
+	float:none;
+	clear:both;
+	@include respond-to(mobile) {
+		margin-bottom: 0.75*$cx-section-spacing;
+	}
+}
+
+
+.lead {
+	font-size: 19px;
+}
+
+.slick-slide {
+	outline: none;
+}
+
+.whole-wrapper {
+	@extend %clearfix;
+}
+
+#primary,
+#sidebar {
+	margin-bottom: $cx-section-spacing;
+}
+
+.pswp button:hover {
+	background-color: inherit;
+}
+
+.pswp__caption__center {
+	text-align: center;
+	i,
+	p {
+		display: none;
+	}
+
+	.primary-title {
+		display: inline-block;
+		text-align: center;
+		text-transform: capitalize;
+		margin: 0;
+		padding: 0;
+	    font-size: 1em;
+	    font-weight: normal;
+
+		a {
+			color: lighten($cx-primary-color, 100%);
+
+		}
+	}
+}
+
+// global notice
+
+.browserupgrade {
+	padding: 50px;
+	background: #dedede;
+	font-size: 22px;
+	text-align: center;
+}
+
+// Border classes
+
+.rb-bordered {
+	@extend %cx-right-bottom-border;
+}
+
+.tr-bordered {
+	@extend %cx-top-right-border;
+}
+
+.bl-bordered {
+	@extend %cx-bottom-left-border;
+}
+
+.lt-bordered {
+	@extend %cx-left-top-border;
+}
+
+.top-bordered {
+	@extend %cx-top-border;
+}
+
+.right-bordered {
+	@extend %cx-right-border;
+}
+
+.bottom-bordered {
+	@extend %cx-bottom-border;
+}
+
+.left-bordered {
+	@extend %cx-left-border;
+}
+
+
+//section zero margin & padding
+
+.vmargin {
+	@extend %vmargin;
+}
+
+.mb0 {
+	@extend %mb0;
+}
+
+.pb0 {
+	@extend %pb0;
+}
+
+.mt0 {
+	@extend %mt0;
+}
+
+.pt0 {
+	@extend %pt0;
+}
+
+.nomargin {
+	@extend %margin-0;
+}
+
+// full margin & padding 
+
+.vpadding {
+	@extend %vpadding;
+}
+
+.nopadding {
+	@extend %padding-0;
+}
+
+.mt-full {
+	@extend %mt-full;
+}
+
+.mb-full {
+	@extend %mb-full;
+}
+
+.pt-full {
+	@extend %pt-full;
+}
+
+.pb-full {
+	@extend %pb-full;
+}
+
+// half padding & margin
+
+.mt-half {
+	@extend %mt-half;
+}
+
+.mb-half {
+	@extend %mb-half;
+}
+
+.pt-half {
+	@extend %pt-half;
+}
+
+.pb-half {
+	@extend %pb-half;
+}
+
+// Background Colors
+
+.bgc-primary {
+	@extend %bgc-primary;
+}
+
+.bgc-secondary {
+	@extend %bgc-secondary;
+}
+
+.bgc-tertiary {
+	@extend %bgc-tertiary;
+}
+
+.bgc-fourth {
+	@extend %bgc-fourth;
+}
+
+.bgc-transparent {
+	@extend %bgc-transparent;
+}
+
+.bgc-offset {
+	@extend %bgc-offset;
+}
+
+.bgc-white {
+	@extend %bgc-white;
+}
+
+
+// color 
+
+
+.color-primary {
+	@extend %color-primary;
+}
+
+.color-secondary {
+	@extend %color-secondary;
+}
+
+.color-tertiary {
+	@extend %color-tertiary;
+}
+
+.color-fourth {
+	@extend %color-fourth;
+}
+
+.color-transparent {
+	@extend %color-transparent;
+}
+
+.color-offset {
+	@extend %color-offset;
+}
+
+.color-white {
+	@extend %color-white;
+}
+

@@ -1,0 +1,73 @@
+/*
+	Template Name: Ionize
+	Author: ThemeItems
+	Description: Responsive Multipurpose HTML Template
+	Version: 1.0
+
+*/
+
+/******************************
+
+INDEX:
+	c00 - Vendor - Font Awesome
+	c01 - Vendor - Bootstrap
+	c03 - Vendor - Slide and Push Menu
+	c04 - Vendor - Slick CSS
+	c05 - Vendor - Flaticon CSS
+	c06 - Vendor - Owl Carousel
+	c07 - Vendor - Photoswipe
+	c08 - Vendor - Superfish
+	c09 - Vendor - Animate
+	c10 - Vendor - jQuery Wallpaper
+	c11 - Vendor - jQuery Colorpanel
+
+	c31 - Base - Global
+	c32 - Base - Typography
+	c33 - Base - Placeholders
+
+	c40 - Components Section
+
+	c50 - Layout - header
+	c51 - Layout - Slider
+	c52 - layout - Page Titile
+	c53 - layout - parallax
+	c54 - Layout - Home 01
+	c55 - Layout - Home 02
+	c56 - Layout - Home 03
+	c57 - Layout - Home 04
+	c58 - layout - Footer
+	c59 - layout - About Page
+	c60 - layout - Contact Page
+	c61 - layout - Services Page
+	c62 - layout - Portfolio Page
+	c63 - layout - Blog Page
+	c64 - Layout - FAQ page
+
+******************************/
+
+/*
+	Deafult Primary Color: 		#1ca5b8; //Teal
+	Default Secondary Color: 	#ff646c; //Redish
+	Default Tertiary Color: 	#0b4249; // Dark Teal
+	Default Offset Color: 		#f3f3f3; //Offwhite
+	Default Border Color: 		#ccc;    // light Grey
+	Default Body Font: 			'Open Sans', sans-serif;
+	Default Heading Font: 		'PT Sans', sans-serif;
+*/
+
+@charset "UTF-8";
+
+//Abstracts
+@import "abstracts/__abstracts-dir";
+
+//Vendor
+@import "vendor/__vendor-dir";
+
+//Base Styles
+@import "base/__base-dir";
+
+//Components
+@import "components/__components-dir";
+
+//Layout
+@import "layouts/__layouts-dir";

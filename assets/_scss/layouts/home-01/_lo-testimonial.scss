@@ -1,0 +1,108 @@
+/**
+ * layout home-01/ testimonial
+ *
+ */
+
+.testimonial-slider {
+	color: lighten($cx-text-color, 100%);
+	h3 {
+		color: lighten($cx-text-color, 100%);
+	}
+	@extend %vpadding;
+	@include cx-background("../img/background/testimonial.jpg");
+	@include cx-overlay( linear-gradient(to left , $cx-primary-color, rgba($cx-text-color,0.8)));
+
+	.testimonial-wrap {
+		text-align: center;
+	}
+	.testimonial-carousel-type-02,
+	.testimonial-carousel {
+		margin-bottom: 20px;
+		.comment-icon {
+			margin-bottom: 35px;
+			i {
+				font-size: 30px;
+			}
+
+		}
+	}
+	
+	.client-meta {
+		margin-top:35px;
+		.client-name{
+			margin:0 ;
+			font-size: 20px;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+	}
+
+}
+
+
+
+.testimonial-nav {
+	max-width:400px;
+	margin: 0 auto ;
+	.slick-list{
+		min-height:80px;
+	}
+	.slick-track {
+	    margin-top: 15px;
+	}
+	
+	.slick-center{
+		img{
+			transform: scale(1.3);
+		}
+	}
+
+	.slick-slide {
+		visibility: hidden;
+		transition: all .3s;
+		opacity:0;
+	}
+
+	.slick-slide.slick-active {
+		visibility: visible;
+		opacity:1;
+	}
+
+	.nav-img {
+		img {
+			width: 54px;
+			height: 54px;
+			margin-left: auto;
+	    	margin-right: auto;
+	    	cursor: pointer;
+	    	@include border-radius(50%);
+	    	@extend %cx-transition ;
+	    	@include respond-to(small-mobile) {
+	    		width: 40px;
+	    		height:40px;
+	    	}
+	    	
+		}
+	}
+	@include respond-to(large-mobile) {
+		max-width:360px;
+	}
+
+	@include respond-to(small-mobile) {
+		max-width:280px;
+	}
+
+	.slick-prev {
+		@include respond-to(small-mobile) {
+			left:0;
+		}
+	}
+
+	.slick-next {
+		@include respond-to(small-mobile) {
+			right:0;
+		}
+	}
+}
+
+

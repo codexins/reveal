@@ -1,0 +1,40 @@
+// typography 
+// $cx-body-font: 							'Open Sans', sans-serif !default;
+// $cx-heading-font: 						'PT Sans', sans-serif !default;
+
+
+// Colors
+$cx-text-color: 						#545454; // black
+$cx-body-bg-color: 						#fff; // white 
+
+$cx-primary-color:  					#798F9D;
+$cx-secondary-color: 					#FF7374;
+$cx-tertiary-color:						#142B43;
+$cx-fourth-color: 						#f9b808;
+
+$cx-offset-color:						lighten($cx-primary-color, 41%);
+
+
+
+$cx-border-color:						#ccc; // light gray
+
+$cx-link-color: 						$cx-primary-color;
+$cx-link-hover-color: 					$cx-secondary-color;
+
+// line height  
+ //$cx-body-font-size: 					14px;
+ //$cx-body-line-height: 					1.6em;
+ //$cx-body-font-weight : 				400;
+
+// $cx-social-icon-size-small: 			26px;
+// $cx-social-icon-size-large: 			35px;
+
+
+// default speacing 
+ //$cx-heading-margin-bottom : 			20px;
+
+
+ //$cx-section-spacing:	 				70px;
+ //$cx-col-spacing:						0.5*$cx-section-spacing; // will be used as bottom margin for the items on tablet and mobile
+
+@import "../styles";

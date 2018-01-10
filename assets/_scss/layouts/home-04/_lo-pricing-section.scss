@@ -1,0 +1,17 @@
+/**
+ * layout home-04/ pricing section
+ *
+ */
+
+.pricing-table-section {
+	@extend %vpadding;
+	@include cx-overlay(rgba(0,0,0,.5));
+	@include cx-background("../img/slider/home-1/slide-1.jpg");
+	.section-intro {
+		@extend %color-white;
+	}
+	.pricing-table-wrapper {
+		@extend %bgc-white;
+		box-shadow: 1px 1px 6px rgba(0,0,0,.35);
+	}
+}

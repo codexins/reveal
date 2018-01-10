@@ -1,0 +1,24 @@
+/**
+ * layout home-01/ Our Services
+ *
+ */
+
+.services {
+	@extend %vpadding;
+	margin-bottom: 0;
+
+	@include media-only(notebook, max) {
+		.info-item {
+			&.rb-bordered,
+			&.bottom-bordered,
+			&.right-bordered,
+			&.left-bordered {
+				border:0;
+			}
+		}
+	}
+
+}
+
+
+

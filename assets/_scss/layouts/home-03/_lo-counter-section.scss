@@ -1,0 +1,12 @@
+/**
+ * Layout home-03/ counter section
+ *
+ */
+
+.achievement-counters {
+	@extend %vpadding;
+	background: $cx-tertiary-color;
+	text-align: center;
+	color: lighten($cx-text-color, 100%);
+
+}

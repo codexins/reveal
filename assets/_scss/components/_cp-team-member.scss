@@ -1,0 +1,266 @@
+/**
+ * Components Team Member
+ *
+ */
+
+.team-member {
+	position:relative;
+	overflow: hidden;
+	.team-image {
+		@include cx-overlay(rgba($cx-secondary-color, 0.9));
+		&::before {
+			@extend %cx-transition ;
+			opacity: 0 ;
+		}
+	}
+	img {
+		width:100%;
+	}
+
+	&:hover {	
+		.team-image {
+			&:before{
+				top: 20px;
+				bottom:20px;
+				left: 20px;
+				right: 20px;
+				opacity: 1 ;
+
+			}
+		}
+		.team-details {
+			opacity: 1 ;
+		}
+
+	}
+
+	@include media-only(notebook, max) {
+		margin-bottom: $cx-col-spacing;
+	}
+
+	&.card-styled {
+		.team-details {
+			position: relative;
+			background: $cx-offset-color;
+			opacity:1;
+			height: 105px;
+		    padding: 20px;
+		    text-align: center;
+			a,p {
+				color: $cx-text-color;
+			}
+			h2 {
+				margin-bottom: 0;
+			}
+		}
+
+		.team-image {
+			&::before {
+				display: none;
+			}
+		}
+
+		.social-icon-large {
+			position: absolute;
+			top:-85px;
+			width:100%;
+			margin-top: 0;
+			padding-top: 25px;
+			padding-bottom: 25px;
+			background: $cx-secondary-color;
+			opacity:0;
+			@extend %cx-transition;
+			@include cx-centered(horizontal);
+			a {
+				float: none;
+				margin-right: 0;
+				color: lighten($cx-text-color, 100%);
+			}
+
+		}
+
+		@include respond-to(mobile) {
+			.social-icon-large {
+				top:-80px;
+			}
+		}
+		&:hover {
+			.social-icon-large {
+				opacity:1;
+			}
+		}
+
+		box-shadow: 0 0 1px rgba(0,0,0,.35);
+	}
+	
+
+	&.flat-styled {
+		@extend .card-styled;
+		.team-details {
+			height:auto;
+			margin-top: -85px;
+			padding:20px 20px 25px;
+		}
+
+		.social-icon-large {
+			opacity:1;
+			position: relative;
+			top:auto;
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-top: 15px;
+			background: transparent;
+			a {
+				@include box(30px, 30px);
+				border:0;
+				background: $cx-primary-color;
+				@include border-radius(50%);
+				&:hover {
+					border:0;
+				}
+
+				&.facebook {
+					background: #2D5F9A;
+					&:hover {
+						background: darken(#2D5F9A, 8%);
+					}
+				}
+				&.twitter {
+					background: #00C3F3;
+					&:hover {
+						background: darken(#00C3F3, 8%);
+					}
+				}
+				&.google-plus {
+					background: #d34836;
+					&:hover {
+						background: darken(#d34836, 8%);
+					}
+				}
+				&.instagram {
+					background: #405de6;
+					&:hover {
+						background: darken(#405de6, 8%);
+					}
+				}
+				&.pinterest {
+					background: #cd2029;
+					&:hover {
+						background: darken(#cd2029, 8%);
+					}
+				}
+				&.linkedin {
+					background: #0d77b7;
+					&:hover {
+						background: darken(#0d77b7, 8%);
+					}
+				}
+				&+a {
+					margin-left: 5px;
+				}
+				i {
+					font-size: 14px;
+					line-height: 32px;
+				}
+			}
+		}
+	}
+}
+
+
+.team-details {
+	@extend %cx-transition ;
+    padding: 35px 40px;
+    position: absolute;
+	top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    height: 220px;
+    margin: auto;
+    opacity: 0 ;
+	h2{
+		margin-bottom: 7px;
+		text-transform: uppercase;
+		@include respond-to(tablet){
+			font-size: 20px;
+		};
+	}
+	a{
+		font-size: 20px;
+		color: lighten($cx-text-color,100%);
+	}
+	p{
+		margin-bottom: 0 ;
+		text-transform: uppercase;
+		font-size: 14px;
+		color:  lighten($cx-text-color,100%)  ;
+
+	}
+
+	@include respond-to(mobile) {
+
+	}
+
+	&.sm-version {
+		padding: 55px 0;
+		a{
+			&:hover{
+				// color: $cx-primary-color ;
+			}
+		}
+		text-align:center;
+		.social-icon-large {
+			margin-top: 8px;
+			a {
+				border: 0;
+				float: none;
+				width: auto;
+				&:hover{
+					background:transparent ;
+					border:0 ;
+				}
+			}
+		}
+	}
+	
+	.social-icon {
+		margin-top: 40px;
+		a{
+			background:transparent ;
+			border: 1px solid lighten($cx-text-color,100%);
+			@include respond-to(mobile){
+				width: 30px;
+		    	height: 30px;
+		    	line-height: 30px;
+		    	margin-right: 6px;
+			}
+			@include respond-to(notebook){
+				
+		    	margin-right: 0px;
+			}
+			+a{
+				margin-left: 10px;
+				@include respond-to(notebook){
+					margin-left: 3px;
+				}
+				@include respond-to(mobile){
+					margin-left: 0px;
+			    }
+			}
+			&:hover{
+				background:$cx-primary-color ;
+				border: 1px solid $cx-primary-color;
+			}
+		}
+	}
+}
+
+.offset-bg {
+	.card-styled {
+		.team-details{
+			background: lighten($cx-text-color, 100%);
+		}
+	}
+}
+
