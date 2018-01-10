@@ -66,11 +66,11 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 		        	if( $enable_topbar ) {
 			        	// Go to the header topbar rendering template partial
-				        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'topbar' );
+				        get_template_part( 'framework/templates/header/header', 'topbar' );
 		        	}
 
 		        	// Go to the header rendering template partial
-			        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/header', 'general' );
+			        get_template_part( 'framework/templates/header/header', 'general' );
 
 				echo ( $page_identity == 'inner-header' ) ? '</div> <!-- end of nav-container -->' : ''; ?>
 			</header><!-- end of #header -->
@@ -88,7 +88,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 			if( ! is_page_template( 'page-templates/page-home.php' ) ) {
 				// Go to the page tile template partial
-				get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/page', 'title');
+				get_template_part( 'framework/templates/header/page', 'title');
 			}
 
 		    /**

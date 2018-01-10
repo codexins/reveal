@@ -29,9 +29,9 @@ if ( have_posts() ) {
     	the_post();
     	
     	if( ! $team_single_post ) {
-	    	get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'grids/content', 'team' );
+	    	get_template_part( 'framework/templates/grids/content', 'team' );
 	    } else {
-	    	get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'single/content', 'team' );
+	    	get_template_part( 'framework/templates/general/content-single', 'team' );
 	    }
 
     } // end of loop have_posts()
@@ -42,5 +42,5 @@ if ( have_posts() ) {
 	}
 
 } else {
-	get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'none' );
+	get_template_part( 'framework/templates/general/content', 'none' );
 } //End check-posts if()

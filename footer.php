@@ -30,13 +30,13 @@ $disable_footer = codexin_meta( 'reveal_disable_footer' );
 
                             // Go to a specific footer template partial depending on user choice
                 			if( $reveal_footer == 1 ) {
-                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'one' );
+                                get_template_part( 'framework/templates/footer/footer', 'one' );
                             } elseif( $reveal_footer == 2 ) {
-                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'two' );
+                                get_template_part( 'framework/templates/footer/footer', 'two' );
                             } elseif( $reveal_footer == 3 ) {
-                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'three' );
+                                get_template_part( 'framework/templates/footer/footer', 'three' );
                             } else {
-                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'footer/footer', 'general' );
+                                get_template_part( 'framework/templates/footer/footer', 'general' );
                             }
 
                             ?>
@@ -83,7 +83,6 @@ $disable_footer = codexin_meta( 'reveal_disable_footer' );
         do_action( 'codexin_body_exit' );
 
         wp_footer();
-
         ?>
     </body>
 </html>

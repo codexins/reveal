@@ -22,7 +22,7 @@ get_header(); ?>
                     <?php 
 
                     // Go to the events loop template
-    				get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/events', 'loop' );
+    				get_template_part( 'framework/templates/loops/events', 'loop' );
 
     		        ?>
                 

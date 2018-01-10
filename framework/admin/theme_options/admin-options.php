@@ -911,7 +911,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'id'        => 'cx_blog_title',
                         'type'      => 'text',
                         'title'     => esc_html__( 'Blog Page Title', 'reveal' ),
-                        'subtitle'  => esc_html__( 'Enter Custom Title for Blog Page', 'revea;' ),
+                        'subtitle'  => esc_html__( 'Enter Custom Title for Blog Page', 'reveal' ),
                         'default'   => esc_html__( 'Blog', 'reveal' )
                     ),
 

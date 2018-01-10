@@ -21,7 +21,6 @@ define( 'CODEXIN_FRAMEWORK_ADMIN_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 
 define( 'CODEXIN_FRAMEWORK_ADMIN_URL', trailingslashit( CODEXIN_FRAMEWORK_URL . 'admin/' ) );
 define( 'CODEXIN_FRAMEWORK_CONFIG_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'config/' ) );
 define( 'CODEXIN_FRAMEWORK_FUNC_DIR', trailingslashit( CODEXIN_FRAMEWORK_DIR . 'functions/' ) );
-define( 'CODEXIN_TEMPLATE_PARTIALS', trailingslashit( 'framework/templates/' ) );
 
 
 if( ! class_exists( 'Codexin_Framework' ) ) {

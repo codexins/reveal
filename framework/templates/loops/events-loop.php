@@ -50,11 +50,11 @@ if( ! $events_single_post ) {
 	        if( $events_style == 'grid' ) {
 		        $grid_events_columns = 12 / $events_grids;
 		        printf( '<div class="events-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_events_columns );
-		            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'grids/content', 'events' );
+		            get_template_part( 'framework/templates/grids/content', 'events' );
 		        echo '</div><!-- end of events-single-wrap -->';
 		        echo ( $i % $events_grids == 0 ) ? '<div class="clearfix"></div>' : '';	        
 	        } else {	            
-	        	get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'events' ); 	            
+	        	get_template_part( 'framework/templates/general/content-archive', 'events' ); 	            
 	        }
 
 	    } // end of loop have_posts()
@@ -73,7 +73,7 @@ if( ! $events_single_post ) {
 	    echo ( $events_style == 'grid' ) ? '</div>' : '' ;	    
 
 	} else {		
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'none' );
+		get_template_part( 'framework/templates/general/content', 'none' );
 	} //End check-posts if()
 
 	wp_reset_postdata();
@@ -84,7 +84,7 @@ if( ! $events_single_post ) {
     while( have_posts() ) {
 
     	the_post();	        
-        get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'single/content', 'events' ); 
+        get_template_part( 'framework/templates/general/content-single', 'events' ); 
         
     }
 

@@ -61,7 +61,7 @@ if ( ! function_exists( 'codexin_mobile_menu' ) ) {
 	 */
 	function codexin_mobile_menu() {
 		// Go to the mobile menu template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'navigation/mobile', 'menu' );
+		get_template_part( 'framework/templates/navigation/mobile', 'menu' );
 	}
 }
 
@@ -115,7 +115,7 @@ if ( ! function_exists( 'codexin_render_logo' ) ) {
 	 */
 	function codexin_render_logo() {
 		// Go to the logo template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/logo' );
+		get_template_part( 'framework/templates/header/logo' );
 	}
 }
 
@@ -129,7 +129,7 @@ if ( ! function_exists( 'codexin_render_main_navigation' ) ) {
 	 */
 	function codexin_render_main_navigation() {
 		// Go to the logo template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'navigation/main', 'menu' );
+		get_template_part( 'framework/templates/navigation/main', 'menu' );
 	}
 }
 
@@ -147,7 +147,7 @@ if ( ! function_exists( 'codexin_render_social_media' ) ) {
 			return;
 		}
 		// Go to the social media template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'header/social', 'media' );
+		get_template_part( 'framework/templates/header/social', 'media' );
 	}
 }
 
@@ -258,7 +258,7 @@ if ( ! function_exists( 'codexin_post_formats' ) ) {
 	 */
 	function codexin_post_formats() {
 		// Go to the post formats template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'post_formats/format', get_post_format() );
+		get_template_part( 'framework/templates/post_formats/format', get_post_format() );
 	}
 }
 
@@ -277,7 +277,7 @@ if ( ! function_exists( 'codexin_post_metas' ) ) {
 		}
 
 		// Go to the post metas template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'metas' );
+		get_template_part( 'framework/templates/general/post', 'metas' );
 		
 	}
 }
@@ -297,7 +297,7 @@ if ( ! function_exists( 'codexin_grid_post_metas' ) ) {
 		}
 
 		// Go to the post metas template partial
-		get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'metas' );
+		get_template_part( 'framework/templates/general/post', 'metas' );
 	}
 }
 
@@ -313,7 +313,7 @@ if ( ! function_exists( 'codexin_post_content_footer' ) ) {
 		if( is_single() ) {
 
 			// Go to the post footer template partial
-			get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'footer' );
+			get_template_part( 'framework/templates/general/post', 'footer' );
 		}
 	}
 }

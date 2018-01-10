@@ -45,7 +45,7 @@ get_header(); ?>
                             echo ( $portfolio_style == 'grid' ) ? '<div class="portfolio-grid-wrapper"><div class="row">' : '<div class="portfolio-list-wrapper">' ;
 
                                 // Go to the portfolio loop template
-                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/portfolio', 'loop' );
+                                get_template_part( 'framework/templates/loops/portfolio', 'loop' );
 
                             echo ( $portfolio_style ) == 'grid' ? '</div></div> <!-- end of portfolio-grid-wrapper -->' : '</div> <!-- end of portfolio-list-wrapper -->' ;
                         ?>

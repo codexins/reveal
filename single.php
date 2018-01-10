@@ -41,7 +41,7 @@ get_header(); ?>
                             <?php
 
                             // Go to the default loop template
-                            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/default', 'loop' );
+                            get_template_part( 'framework/templates/loops/default', 'loop' );
 
                             ?>
 

@@ -45,7 +45,7 @@ get_header(); ?>
                             echo ( $events_style == 'grid' ) ? '<div class="events-grid-wrapper"><div class="row">' : '<div class="events-list-wrapper">' ;
 
                                 // Go to the events loop template
-                                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/events', 'loop' );
+                                get_template_part( 'framework/templates/loops/events', 'loop' );
 
                             echo ( $events_style ) == 'grid' ? '</div></div> <!-- end of events-grid-wrapper -->' : '</div> <!-- end of events-list-wrapper -->' ;
                         ?>

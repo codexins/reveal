@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	<?php 
 
     // Go to the template partial to show to contents
-    get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'content' );
+    get_template_part( 'framework/templates/general/post', 'content' );
 
 	?>
 </div> <!-- end of #page-## -->
