@@ -49,7 +49,7 @@ get_header(); ?>
 				            /* Start the Loop */
 				            while ( have_posts() ) {
 				            	the_post();					                    
-				                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'testimonial' );
+				                get_template_part( 'framework/templates/general/content', 'testimonial' );
 				            }
 				            echo '</div> <!-- end of testimonial-archive-wrapper -->';
 				            echo '<div class="clearfix"></div>';
@@ -57,7 +57,7 @@ get_header(); ?>
 				            echo codexin_numbered_posts_nav();
 
 				        } else {
-				            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'none' );
+				            get_template_part( 'framework/templates/general/content', 'none' );
 				        }
 
                         ?>

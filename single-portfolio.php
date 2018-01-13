@@ -24,7 +24,7 @@ get_header(); ?>
 		                    <?php 
 
 		                    // Go to the portfolio loop template
-		    				get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'loops/portfolio', 'loop' );
+		    				get_template_part( 'framework/templates/loops/portfolio', 'loop' );
 
 		    		        ?>
 		    		        

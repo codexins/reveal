@@ -79,7 +79,7 @@ $read_more       = codexin_get_option( 'cx_blog_read_more' );
     		if( is_single() ) {
 
                 // Go to the template partial to show to contents
-                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/post', 'content' );
+                get_template_part( 'framework/templates/general/post', 'content' );
 
     		} else {
 

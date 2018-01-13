@@ -23,7 +23,7 @@ get_header(); ?>
 		        	the_post();
 
 		        	// Load the specific template
-		            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'page' );
+		            get_template_part( 'framework/templates/general/content', 'page' );
 
 
 		        } // end of loop have_posts()

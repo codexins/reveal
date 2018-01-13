@@ -103,7 +103,7 @@ $image_prop             = codexin_attachment_metas_extended( $post->ID, 'events'
                 <div class="event-venue-details reveal-border-1">
                     <h3 class="title"><?php echo esc_html__('Venue', 'reveal')?></h3>
                     <p class="info-title-content">
-                        <?php printf('%s', $e_address); ?>
+                        <?php printf( '%s', $e_address ); ?>
                     </p>
                 </div> <!-- end of event-venue-details -->
                 <?php
@@ -111,7 +111,7 @@ $image_prop             = codexin_attachment_metas_extended( $post->ID, 'events'
                     <div class="event-cat-details reveal-border-1">
                         <h3 class="title"><?php echo esc_html__('Category', 'reveal')?></h3>
                         <p class="info-title-content">
-                            <?php echo $event_cat_list; ?>
+                            <?php printf( '%s', $event_cat_list ); ?>
                         </p>
                     </div>
                 <?php } ?>

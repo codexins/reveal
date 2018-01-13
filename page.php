@@ -30,7 +30,7 @@ get_header(); ?>
 								the_post();
 
 								// Load the specific template
-								get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'page' );
+								get_template_part( 'framework/templates/general/content', 'page' );
 
 								if( codexin_get_option( 'cx_page_comments' ) ) {
 									comments_template('', true);

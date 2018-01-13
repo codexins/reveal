@@ -45,13 +45,13 @@ if ( have_posts() ) {
         if( ( $portfolio_style == 'grid' ) && ! $portfolio_single_post ) {            
             $grid_port_columns = 12 / $portfolio_grids;
             printf('<div class="portfolio-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_port_columns);
-                get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'grids/content', 'portfolio' );
+                get_template_part( 'framework/templates/grids/content', 'portfolio' );
             echo '</div><!-- end of portfolio-single-wrap -->';
             echo ( $i % $portfolio_grids == 0 ) ? '<div class="clearfix"></div>' : '';
         } elseif( ( $portfolio_style == 'list' ) && ! $portfolio_single_post ) {
-            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'portfolio' ); 
+            get_template_part( 'framework/templates/general/content-archive', 'portfolio' ); 
         } else {         
-            get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'single/content', 'portfolio' );
+            get_template_part( 'framework/templates/general/content-single', 'portfolio' );
         }
 
     } // end of loop have_posts()
@@ -117,5 +117,5 @@ if ( have_posts() ) {
     }
 
 } else {
-	get_template_part( CODEXIN_TEMPLATE_PARTIALS . 'general/content', 'none' );
+	get_template_part( 'framework/templates/general/content', 'none' );
 } //End check-posts if()
