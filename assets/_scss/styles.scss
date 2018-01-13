@@ -1,11 +1,3 @@
-/*
-	Template Name: Ionize
-	Author: ThemeItems
-	Description: Responsive Multipurpose HTML Template
-	Version: 1.0
-
-*/
-
 /******************************
 
 INDEX:
@@ -45,6 +37,7 @@ INDEX:
 
 ******************************/
 
+
 /*
 	Deafult Primary Color: 		#1ca5b8; //Teal
 	Default Secondary Color: 	#ff646c; //Redish
@@ -61,13 +54,13 @@ INDEX:
 @import "abstracts/__abstracts-dir";
 
 //Vendor
-@import "vendor/__vendor-dir";
+//@import "vendor/__vendor-dir";
 
 //Base Styles
 @import "base/__base-dir";
 
 //Components
-@import "components/__components-dir";
+//@import "components/__components-dir";
 
 //Layout
-@import "layouts/__layouts-dir";
+//@import "layouts/__layouts-dir";
