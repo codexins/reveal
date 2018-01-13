@@ -329,4 +329,4 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
     }
 
 }
-add_action( 'wp_enqueue_scripts', 'codexin_color_settings' );
+//add_action( 'wp_enqueue_scripts', 'codexin_color_settings' );

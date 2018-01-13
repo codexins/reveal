@@ -39,7 +39,7 @@
 }
 
 %overlay{
-	@include cx-overlay();
+	@include cx-overlay($cx-overlay-color);
 }
 
 %cx-transition{
@@ -78,6 +78,7 @@
 
 
 // border placeholder
+
 
 %cx-top-border {
 	@include cx-border(1px, 0, 0, 0);
@@ -138,12 +139,24 @@
 	background-color: $cx-offset-color;
 }
 
+%bgc-error {
+	background-color: $cx-error-color;
+}
+
 %bgc-white {
-	background-color: #fff;
+	background-color: #ffffff;
 }
 
 
 // color
+
+%color-text {
+	color: $cx-text-color;
+}
+
+%color-error {
+	color: $cx-error-color;
+}
 
 %color-primary {
 	color: $cx-primary-color;
@@ -170,9 +183,36 @@
 }
 
 %color-white {
-	color: #fff;
+	color: #ffffff;
 }
 
+// border-color
+
+
+
+%bdr-color-primary {
+	border-color: $cx-primary-color;
+}
+
+%bdr-color-secondary {
+	border-color: $cx-secondary-color;
+}
+
+%bdr-color-tertiary {
+	border-color: $cx-tertiary-color;
+}
+
+%bdr-color-fourth {
+	border-color: $cx-fourth-color;
+}
+
+%bdr-color-error {
+	border-color: $cx-error-color;
+}
+
+%bdr-color-border {
+	border-color: $cx-border-color;
+}
 
 // zero margin & padding
 

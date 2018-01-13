@@ -31,11 +31,10 @@ h6 {
     font-size: 1*$cx-body-font-size; 
 }
 
-h1,h2,h3,h4,h5,h6{
+h1, h2 , h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: $cx-heading-font;
     font-weight: 700;
     @extend %default-heading;
-    
 }
 
 
@@ -62,113 +61,6 @@ td, th {
     padding: 10px;
 }
 
-img {
-    max-width:100%;
-    height:auto
-}
-
-a {
-    @extend %cx-transition ;
-    text-decoration:none;
-    color:$cx-link-color;
-}
-
-a:hover ,a:focus {
-  text-decoration: none;
-}
-
-a:active, a:hover {
-  outline: 0 none;
-  text-decoration: none;
-}
-
-a:hover {
-    color: $cx-link-hover-color;
-}
-
-a:focus {
-    outline:0px solid;
-    color: initial  ;
-}
-
-
-
-textarea,
-select,
-input[type="text"],
-input[type="url"],
-input[type="email"],
-input[type="button"],
-input[type="reset"],
-input[type="password"],
-input[type="search"],
-input[type="tel"] {
-    padding:8px 10px;
-    border:1px solid darken($cx-border-color, 10%);
+dd {
     margin-bottom: 15px;
-    min-height: 44px;
-    @include border-radius(0);
-}
-
-textarea {
-    min-height: 160px;
-}
-
-input[type="reset"],
-input[type="button"],
-input[type="submit"] {
-    border:1px solid $cx-primary-color;
-    min-height: 40px;
-    background: $cx-primary-color;
-    color: lighten($cx-text-color, 100%);
-}
-
-
-button,
-input[type="submit"],
-input[type="button"] {
-    font-size: 85%;
-    padding: 8px 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-}
-
-input::-webkit-input-placeholder,
-input:-moz-placeholder,
-input:-ms-input-placeholder,
-input[placeholder] {
-    color: lighten($cx-text-color,100%) ;
-}
-button:focus,
-input:focus,
-textarea:focus {
-    border-color:  $cx-primary-color;
-    outline: 0;
-}
-
-button:hover,
-input[type="submit"]:hover,
-input[type="button"]:hover{
-    border-color: $cx-secondary-color;
-    background-color: $cx-secondary-color;
-}
-
-
-
-
-
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
 }

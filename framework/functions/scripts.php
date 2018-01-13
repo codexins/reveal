@@ -32,15 +32,16 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		}
 
 		wp_enqueue_style( 'superfish-stylesheet', REVEAL_THEME_CSS . 'superfish.css', false, '1.7.8', 'all' );
-		wp_enqueue_style( 'typography-stylesheet', REVEAL_THEME_CSS . 'typography.css', false, '1.0', 'all' );
-		wp_enqueue_style( 'wp-stylesheet', REVEAL_THEME_CSS . 'wp.css', false, '1.0', 'all' );
+		//wp_enqueue_style( 'typography-stylesheet', REVEAL_THEME_CSS . 'typography.css', false, '1.0', 'all' );
+		//wp_enqueue_style( 'wp-stylesheet', REVEAL_THEME_CSS . 'wp.css', false, '1.0', 'all' );
 
 		if( ! wp_style_is( 'photoswipe-stylesheet', 'enqueued' ) ) {
 			wp_enqueue_style( 'photoswipe-stylesheet', REVEAL_THEME_CSS . 'photoswipe.css', false, '4.1.2', 'all' );
 		}
 		
 		// Load the Main stylesheet
-		wp_enqueue_style( 'main-stylesheet', REVEAL_THEME_CSS . 'style.css', false, '1.0', 'all' );
+		wp_enqueue_style( 'main-stylesheet', REVEAL_THEME_CSS . 'main.css', false, '1.0', 'all' );
+		//wp_enqueue_style( 'main-stylesheet', REVEAL_THEME_CSS . 'style.css', false, '1.0', 'all' );
 		wp_enqueue_style( 'responsive-stylesheet', REVEAL_THEME_CSS . 'responsive.css', false, '1.0', 'all' );
 
 		// Load scripts

@@ -24,6 +24,13 @@
 }
 
 
+@mixin cx-box-shadow($x:0, $y:0, $z:4px, $color:rgba(0,0,0,.15)) {
+    -webkit-box-shadow: $x $y $z $color;
+    -moz-box-shadow: $x $y $z $color;
+    -ms-box-shadow: $x $y $z $color;
+    -o-box-shadow: $x $y $z $color;
+    box-shadow: $x $y $z $color;
+}
 
 
 
@@ -80,7 +87,7 @@
 
 //  for section overlay 
 
-@mixin cx-overlay($color:rgba(0,0,0, 0.55)) {
+@mixin cx-overlay($color) {
     &{
         position: relative;
     }
@@ -339,6 +346,11 @@
     border-right: $right solid $cx-border-color;
     border-bottom: $bottom solid $cx-border-color;
     border-left: $left solid $cx-border-color;
+}
+
+@mixin cx-simple-border($width:1px, $style:solid) {
+    border-style: $style;
+    border-width: $width;
 }
 
 // background image mixin
