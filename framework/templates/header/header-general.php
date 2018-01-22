@@ -35,7 +35,7 @@ if( $header_version == 1 ) {
 
 ?>
 
-<nav class="navbar reveal-bg-0<?php echo esc_attr( $main_wrapper_class ); ?>" data-spy="affix" data-offset-top="150">
+<nav class="navbar <?php echo esc_attr( $main_wrapper_class ); ?>" data-spy="affix" data-offset-top="150">
 	<div class="container">
 		<div class="<?php echo esc_attr( $sec_wrapper_class ); ?>">
 

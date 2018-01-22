@@ -1,0 +1,129 @@
+/**
+ * components default-header/ header
+ *
+ */
+
+ @include media-only (notebook, min) {
+    #o-wrapper {
+        display: none;
+    }
+ }
+
+ a.navbar-brand {
+    font-size: 30px;
+}
+
+
+.no-header {
+	.page-entry-content {
+		margin-top: 0;
+	}	
+}
+
+header {
+    position: relative;
+    z-index: 1000;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+}
+
+.slider-wrapper {
+     width:100%;
+     height: auto;
+     display: block;
+}
+
+.no-slider {
+    padding: 150px 30px 100px 30px;
+}
+
+.no-slider p {
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+.no-slider h3,
+.no-slider p {
+    @extend %color-error;
+}
+
+.no-slider {
+    background: lighten($cx-error-color, 25%);
+}
+
+nav {
+	&.navbar {
+	    padding-top: 20px;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    display: block;
+	    z-index: 1;
+	    border: 0;
+	    padding-bottom: 20px;
+	    border-bottom: 0;
+        margin-bottom: 0;
+		@include cx-no-box-shadow;
+        @include border-radius(0);
+        @extend %bgc-primary;
+        &.affix {
+            position: fixed;
+            margin-bottom: $cx-heading-margin-bottom;
+            width:100%;
+            z-index:1;
+            @extend %pb0;
+            @extend %pt0;
+            @include cx-box-shadow(0, 0, 1px, rgba(32, 32, 32, 0.35));
+        }
+	}
+
+	.navbar-brand {
+	    padding: 10px 15px;
+	    line-height: 1.1em;
+	    height:auto;
+        @extend %color-white;
+	    img {
+		    width:100%;
+		    max-width:280px;
+	    }
+	}
+
+}
+
+
+
+.inner-header {
+	nav {
+		&.navbar {
+		    padding-top: 20px;
+		    margin-bottom: 0;
+		    padding-bottom: 20px;
+		    &.affix-top {
+		    	position: relative;
+		    }
+
+		    &.affix {
+			    padding-top: 0;
+			    padding-bottom: 0;
+		    }
+		}	
+	}
+
+	.nav-container {
+		min-height: 72px;
+	}
+}
+
+
+.front-header {
+    nav {
+        &.navbar {
+            &.affix-top {
+                @include background-gradient(rgba(0,0,0,.5), rgba(0,0,0,.001), vertical);
+            }
+        }
+    }
+}

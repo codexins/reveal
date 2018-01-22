@@ -1,0 +1,84 @@
+/**
+ * components header/ menu
+ *
+ */
+
+
+.sf-menu {
+	li {
+		a {
+			@extend %color-white;
+		}
+	}
+
+	& > li {
+		& > a {
+			padding: 10px 15px;
+			&:hover,
+			&:focus {
+				@extend %color-secondary;
+			}
+		}
+	}
+
+
+	ul {
+		&.sub-menu {
+		    text-align: left;
+		    padding-top: 5px;
+		    padding-bottom: 5px;
+		    background: darken($cx-primary-color, 3%);
+		    .sub-menu {
+		    	top:-5px;
+		    	background: darken($cx-primary-color, 5%);
+		    	.sub-menu {
+		    		background: darken($cx-primary-color, 7%);
+			    	.sub-menu {
+			    		background: darken($cx-primary-color, 9%);
+				    	.sub-menu {
+				    		background: darken($cx-primary-color, 11%);
+				    	}
+			    	}
+		    	}
+		    }
+
+		    li {
+		    	a {
+				    padding-top: 5px;
+				    padding-bottom: 5px;
+				    text-transform: initial;
+				    padding-right: 30px;
+		    	}
+		    }
+		}
+	}
+}
+
+
+/* Mobile Menu */
+
+.c-menu {
+    @extend %bgc-primary;
+}
+
+.c-menu__items a:hover,
+.c-menu__items a:focus,
+.c-menu__items a:visited {
+    @extend %bgc-secondary;
+    color: inherit;
+}
+
+.c-menu__close {
+    @extend %bgc-primary;
+}
+
+.c-mask {
+    @extend %bgc-tertiary;
+}
+
+/*---- For Navigation--*/
+.c-menu--slide-left,
+.c-menu--slide-right,
+.primary-nav button {
+    display: none;
+}

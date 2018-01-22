@@ -1,0 +1,48 @@
+/**
+ * components page-title
+ *
+ */
+
+ .page-title {
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    padding-top: 140px;
+    position: relative;
+    @extend %color-white;
+    &::before {
+    	@include abs-position(0,0,0,0);
+	    background: -webkit-linear-gradient(transparent 10%,rgba(0,0,0,.85));
+	    background: -moz-linear-gradient(transparent 10%,rgba(0,0,0,.85));
+	    background: -ms-linear-gradient(transparent 10%,rgba(0,0,0,.85));
+	    background: -o-linear-gradient(transparent 10%,rgba(0,0,0,.85));
+	    background: linear-gradient(transparent 30%,rgba(0,0,0,.85));
+    }
+
+    h1 {
+	    line-height: 1.1em;
+	    margin-bottom: 0;
+    }
+
+    margin-bottom: $cx-section-spacing;
+    @include respond-to(mobile) {
+    	margin-bottom: 0.75*$cx-section-spacing;
+    }
+}
+
+
+
+.breadcrumbs-wrapper {
+	.breadcrumb {
+	    padding-left: 0;
+	    font-size: 14px;
+	    letter-spacing: .5px;
+	    padding: 8px 0;
+	    background-color: transparent;
+	}
+}
+
+.no-breadcrumbs {
+    margin-bottom: 50px;
+}

@@ -594,7 +594,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                         'transparent'           => false,
                         'output'   => array( '#header .topbar' ),
                         'default'  => array(
-                            'background-color' => '#1d3b48',
+                            //'background-color' => '#1d3b48',
                         )
                     ),
 

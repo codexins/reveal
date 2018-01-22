@@ -39,6 +39,22 @@ iframe, embed, object, figure {
 }
 
 
+blockquote {
+    border-left: 3px solid;
+}
+
+td, 
+th {
+    @include cx-simple-border;
+    @extend %bdr-color-border;
+}
+
+tr {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    @extend %bdr-color-border;
+}
+
 a {
     text-decoration:none;
     color:$cx-link-color;
@@ -122,12 +138,12 @@ a img.aligncenter {
     max-width: 100%;
     padding: 0;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: $cx-heading-margin-bottom;
     @extend %bgc-offset;
     @extend %bdr-color-border;
     @include cx-simple-border;
     &.alignnone {
-        margin: 0 0 30px;
+        margin: 0 0 $cx-heading-margin-bottom;
     }
 
     &.alignleft {
@@ -583,7 +599,6 @@ a img.aligncenter {
 		text-transform: capitalize;
 		margin: 0;
 		padding: 0;
-	    font-size: 1em;
 	    font-weight: normal;
 
 		a {
@@ -844,3 +859,34 @@ input[type="button"]:hover{
     @extend %bdr-color-secondary;
     @extend %bgc-secondary;
 }
+
+
+/**
+ * Other Helpfull classes
+ *
+ */
+.site-content {
+    word-wrap: break-word;
+}
+
+.flex-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+}
+
+.equal-align {
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+}
+

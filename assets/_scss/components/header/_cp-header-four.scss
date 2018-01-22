@@ -1,0 +1,27 @@
+/**
+ * components header/ header-four
+ *
+ */
+
+.header-four {
+	.sf-menu {
+	    float: none;
+    	text-align: center;
+    	& > li {
+		    float: none;
+		    margin-left: 3px;
+		    display: inline-block;
+		    margin-right: 3px;
+    	}
+	}
+
+	.cx-social-media {
+	    display: block;
+	    text-align: right;
+	    margin-top: 1px;
+	    a {
+	    	font-size: 14px;
+			@include box(28px, 28px);
+	    }
+	}
+}

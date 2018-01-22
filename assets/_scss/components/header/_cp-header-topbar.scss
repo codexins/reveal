@@ -1,0 +1,61 @@
+/**
+ * components header/ header-topbar
+ *
+ */
+
+ .topbar {
+    background: darken($cx-primary-color, 10%);
+}
+
+.topbar-wrapper {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.topbar-wrapper ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar-wrapper li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.topbar-wrapper li:last-child {
+    margin-right: 0;
+}
+
+.topbar-wrapper li,
+.topbar-wrapper li a,
+.topbar-wrapper li a i {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+
+.topbar-wrapper li i {
+    margin-right: 7px;
+}
+
+.topbar-socials-wrapper a {
+    width: 30px;
+    display: inline-block;
+}
+
+.topbar-socials-wrapper a i {
+    margin: 0;
+}
+
+@media only screen and (max-width: 991px) {
+    .topbar {
+        display: none;
+    }
+}

@@ -1,0 +1,48 @@
+/**
+ * components header/ header-three
+ *
+ */
+
+.header-three {
+	.sf-menu {
+
+		li {
+			margin-left: 0;
+		}
+	}
+
+	.navbar-header {
+	    float: none;
+	    text-align: center;
+	}
+
+	.navbar-brand {
+	    float: none;
+	    height: auto;
+	    padding: 10px;
+	    font-size: 42px;
+	    line-height: 1.1em;
+	    display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+
+	&.affix {
+	    padding-top: 0;
+	    padding-bottom: 0;
+	}
+
+	.left-menu-wrapper {
+		padding-left: 0;
+	}
+
+	.right-menu-wrapper {
+		padding-right: 0;
+	}
+
+	.left-menu {
+		.sf-menu {
+			float: left;
+		}
+	}
+}

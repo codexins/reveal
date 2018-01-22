@@ -114,4 +114,3 @@ $read_more       = codexin_get_option( 'cx_blog_read_more' );
         
     </div> <!-- end of post-wrapper -->
 </article><!-- end of #post-## -->
-<div class="clearfix"></div>

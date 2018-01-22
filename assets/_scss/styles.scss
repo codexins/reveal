@@ -3,19 +3,15 @@
 INDEX:
 	c00 - Vendor - Font Awesome
 	c01 - Vendor - Bootstrap
-	c03 - Vendor - Slide and Push Menu
-	c04 - Vendor - Slick CSS
-	c05 - Vendor - Flaticon CSS
-	c06 - Vendor - Owl Carousel
-	c07 - Vendor - Photoswipe
-	c08 - Vendor - Superfish
-	c09 - Vendor - Animate
-	c10 - Vendor - jQuery Wallpaper
-	c11 - Vendor - jQuery Colorpanel
+	c02 - Vendor - Slide and Push Menu
+	c03 - Vendor - Slick CSS
+	c04 - Vendor - Photoswipe
+	c05 - Vendor - Superfish
 
-	c31 - Base - Global
+
+	c30 - Base - Global
+	c31 - Base - Placeholders
 	c32 - Base - Typography
-	c33 - Base - Placeholders
 
 	c40 - Components Section
 
@@ -54,13 +50,13 @@ INDEX:
 @import "abstracts/__abstracts-dir";
 
 //Vendor
-//@import "vendor/__vendor-dir";
+@import "vendor/__vendor-dir";
 
 //Base Styles
 @import "base/__base-dir";
 
 //Components
-//@import "components/__components-dir";
+@import "components/__components-dir";
 
 //Layout
 //@import "layouts/__layouts-dir";
