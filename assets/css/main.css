@@ -12869,158 +12869,6 @@ a img.aligncenter {
   margin-left: 20px;
 }
 
-#wp-calendar td, #wp-calendar th {
-  padding: 0;
-  border: 0;
-}
-
-/**
- * global wordpress comments
- *
- */
-#comments {
-  margin-top: 60px;
-}
-
-.posts-nav + #comments {
-  margin-top: 40px;
-}
-
-.comment-text > ul, .comment-text > ol {
-  margin-bottom: 25px;
-}
-
-#comments .comment-author.vcard img {
-  min-width: 100%;
-  max-width: 100%;
-  height: auto;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-}
-
-#comments .comment-info {
-  padding: 15px 20px;
-}
-
-#comments .comment-list {
-  padding: 0;
-}
-
-#comments .comment-list li.pingback, #comments .comment-list li.comment {
-  list-style-type: none;
-}
-
-#comments .comment-list .media {
-  margin-bottom: 25px;
-}
-
-.comment-info .fn {
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.comment-meta {
-  font-size: 85%;
-  line-height: 1.65em;
-  text-align: right;
-}
-
-.comment-single-left {
-  display: block;
-  width: 90px;
-  float: left;
-  margin-right: 25px;
-  height: 90px;
-}
-
-.comment-single-right {
-  width: 80%;
-  width: calc(100% - 115px);
-  float: right;
-  display: block;
-  margin-bottom: 40px;
-}
-
-#commentform {
-  position: relative;
-}
-
-#commentform fieldset {
-  clear: both;
-  position: relative;
-}
-
-#commentform textarea {
-  height: 150px;
-  padding: 10px;
-  width: 100%;
-  display: block;
-}
-
-#commentform input[type="text"], #commentform input[type="email"] {
-  width: 100%;
-  padding: 10px;
-}
-
-#commentform p.form-submit {
-  margin-bottom: 25px;
-}
-
-.comment-form-author,
-.comment-form-email,
-.comment-form-url {
-  margin-bottom: 0;
-}
-
-.moderation-notice {
-  text-align: right;
-}
-
-#comment-error,
-#author-error,
-#email-error,
-#url-error {
-  position: relative;
-  top: -10px;
-  margin-bottom: 10px;
-}
-
-/**
- * global wordpress sidebar
- *
- */
-.sidebar-widget .recentcomments a {
-  font-style: italic;
-}
-
-.sidebar-widget .recentcomments .comment-author-link a {
-  font-style: normal;
-}
-
-.widget_rss > li > a {
-  font-weight: bold;
-}
-
-.widget_rss .rss-date {
-  font-size: 85%;
-}
-
-.widget_recent_comments.sidebar-widget li {
-  padding-left: 20px;
-  position: relative;
-}
-
-.widget_recent_comments.sidebar-widget li::before {
-  content: "\f0e6";
-  font-family: FontAwesome;
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 80%;
-}
-
 /**
  * global wordpress gallary column support
  *
@@ -13301,14 +13149,14 @@ input[type="button"] {
   border-left: 0 solid #ccc;
 }
 
-.bottom-bordered, .widgettitle {
+.bottom-bordered, .widgettitle, .widget_calendar tbody tr, .widget_calendar table#wp-calendar thead {
   border-top: 0 solid #ccc;
   border-right: 0 solid #ccc;
   border-bottom: 1px solid #ccc;
   border-left: 0 solid #ccc;
 }
 
-.left-bordered {
+.left-bordered, .widget_calendar tbody td + td, .widget_calendar thead th + th {
   border-top: 0 solid #ccc;
   border-right: 0 solid #ccc;
   border-bottom: 0 solid #ccc;
@@ -13345,7 +13193,7 @@ input[type="button"] {
 
 .bgc-primary, input[type="reset"],
 input[type="button"],
-input[type="submit"], nav.navbar, .c-menu, .c-menu__close {
+input[type="submit"], nav.navbar, .c-menu, .c-menu__close, .widget_calendar tbody td a, .widget_calendar caption {
   background-color: #39468C;
 }
 
@@ -13353,7 +13201,7 @@ input[type="submit"], nav.navbar, .c-menu, .c-menu__close {
 input[type="submit"]:hover,
 input[type="button"]:hover, .c-menu__items a:hover,
 .c-menu__items a:focus,
-.c-menu__items a:visited, .tagcloud a:hover, .tagcloud a:focus {
+.c-menu__items a:visited, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a:hover, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover {
   background-color: #F26C9E;
 }
 
@@ -13370,7 +13218,7 @@ input[type="button"]:hover, .c-menu__items a:hover,
 }
 
 .wp-caption, .screen-reader-text:focus, .sticky .post-wrapper,
-.category-sticky .post-wrapper, #comments .comment-info, .bgc-offset {
+.category-sticky .post-wrapper, .bgc-offset, #comments .comment-info {
   background-color: #f5f5f5;
 }
 
@@ -13378,19 +13226,19 @@ input[type="button"]:hover, .c-menu__items a:hover,
   background-color: #ffffff;
 }
 
-.comment-info .fn a, .comment-meta a, .sidebar-widget li a, .tagcloud a {
+.sidebar-widget li a, .tagcloud a, .widget_calendar tbody td, .comment-info .fn a, .comment-meta a {
   color: #333;
 }
 
-#comment-error,
+.no-slider h3,
+.no-slider p, #comment-error,
 #author-error,
 #email-error,
-#url-error, .no-slider h3,
-.no-slider p {
+#url-error {
   color: #a94442;
 }
 
-.screen-reader-text:focus, .color-primary {
+.screen-reader-text:focus, .color-primary, .widget_calendar tfoot #prev a, .widget_calendar tfoot #next a, .widget_recent_comments .recentcomments > a {
   color: #39468C;
 }
 
@@ -13416,7 +13264,7 @@ input[type="button"]:hover, .c-menu__items a:hover,
 
 .browserupgrade, .pswp__caption__center .primary-title a, .color-white, input[type="reset"],
 input[type="button"],
-input[type="submit"], nav .navbar-brand, .sf-menu li a, .page-title, .tagcloud a:hover, .tagcloud a:focus {
+input[type="submit"], nav .navbar-brand, .sf-menu li a, .page-title, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .widget_calendar caption {
   color: #ffffff;
 }
 
@@ -13449,7 +13297,7 @@ input[type="button"],
 input[type="reset"],
 input[type="password"],
 input[type="search"],
-input[type="tel"], .widgettitle, .tagcloud a {
+input[type="tel"], .widgettitle, .tagcloud a, .widget_calendar tbody tr, .widget_calendar tbody td + td, .widget_calendar thead th + th, .widget_calendar table#wp-calendar, .widget_calendar table#wp-calendar thead {
   border-color: #ccc;
 }
 
@@ -14042,6 +13890,14 @@ nav .navbar-brand img {
   width: 100%;
 }
 
+.widget_rss > li > a {
+  font-weight: bold;
+}
+
+.widget_rss .rss-date {
+  font-size: 85%;
+}
+
 .widgettitle {
   text-transform: uppercase;
   font-size: 20px;
@@ -14092,6 +13948,198 @@ nav .navbar-brand img {
   margin-bottom: 10px;
   border-style: solid;
   border-width: 1px;
+}
+
+/* calender widget */
+.widget_calendar td, .widget_calendar th {
+  padding: 0;
+  border: 0;
+}
+
+.widget_calendar tbody td {
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+}
+
+.widget_calendar tbody td a {
+  display: block;
+}
+
+.widget_calendar thead th {
+  text-align: center;
+  height: 32px;
+  line-height: 32px;
+}
+
+.widget_calendar tfoot #prev a {
+  display: inline-block;
+  line-height: 32px;
+  padding: 0 10px;
+}
+
+.widget_calendar tfoot #next {
+  text-align: right;
+}
+
+.widget_calendar tfoot #next a {
+  display: inline-block;
+  line-height: 32px;
+  padding: 0 10px;
+}
+
+.widget_calendar table#wp-calendar {
+  border-style: solid;
+  border-width: 1px;
+}
+
+.widget_calendar caption {
+  text-align: center;
+}
+
+/* recent comments */
+.widget_recent_comments.sidebar-widget li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.widget_recent_comments.sidebar-widget li::before {
+  content: "\f0e6";
+  font-family: FontAwesome;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 80%;
+}
+
+.widget_recent_comments .recentcomments > a {
+  font-size: 90%;
+}
+
+.widget_recent_comments .recentcomments a {
+  font-style: italic;
+}
+
+.widget_recent_comments .recentcomments .comment-author-link a {
+  font-style: normal;
+}
+
+.widget_recent_comments .comment-author-link a {
+  padding-right: 0;
+}
+
+/**
+ * components comments
+ *
+ */
+#comments {
+  margin-top: 60px;
+}
+
+.posts-nav + #comments {
+  margin-top: 40px;
+}
+
+.comment-text > ul, .comment-text > ol {
+  margin-bottom: 25px;
+}
+
+#comments .comment-author.vcard img {
+  min-width: 100%;
+  max-width: 100%;
+  height: auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+#comments .comment-info {
+  padding: 15px 20px;
+}
+
+#comments .comment-list {
+  padding: 0;
+}
+
+#comments .comment-list li.pingback, #comments .comment-list li.comment {
+  list-style-type: none;
+}
+
+#comments .comment-list .media {
+  margin-bottom: 25px;
+}
+
+.comment-info .fn {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.comment-meta {
+  font-size: 85%;
+  line-height: 1.65em;
+  text-align: right;
+}
+
+.comment-single-left {
+  display: block;
+  width: 90px;
+  float: left;
+  margin-right: 25px;
+  height: 90px;
+}
+
+.comment-single-right {
+  width: 80%;
+  width: calc(100% - 115px);
+  float: right;
+  display: block;
+  margin-bottom: 40px;
+}
+
+#commentform {
+  position: relative;
+}
+
+#commentform fieldset {
+  clear: both;
+  position: relative;
+}
+
+#commentform textarea {
+  height: 150px;
+  padding: 10px;
+  width: 100%;
+  display: block;
+}
+
+#commentform input[type="text"], #commentform input[type="email"] {
+  width: 100%;
+  padding: 10px;
+}
+
+#commentform p.form-submit {
+  margin-bottom: 25px;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  margin-bottom: 0;
+}
+
+.moderation-notice {
+  text-align: right;
+}
+
+#comment-error,
+#author-error,
+#email-error,
+#url-error {
+  position: relative;
+  top: -10px;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=main.css.map */
