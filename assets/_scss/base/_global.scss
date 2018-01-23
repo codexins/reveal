@@ -798,7 +798,7 @@ input[type="search"],
 input[type="tel"] {
     padding:8px 10px;
     margin-bottom: 15px;
-    min-height: 44px;
+    min-height: 40px;
     @include border-radius(0);
     @include cx-simple-border;
     @extend %bdr-color-border;

@@ -1860,6 +1860,102 @@ body.overflow-fix {
     Sidebar widget 
 *************************************************************/
 
+#thumbnail_nav {
+    clear: both; 
+    height: 100px; 
+    margin: 0 0 70px;
+}
+
+#thumbnail_nav .nav-box {
+    padding: 10px;
+}
+
+#thumbnail_nav img {
+    float: left; 
+    margin: 0 10px 0 0;
+    width: 100px;
+}
+
+#thumbnail_nav p {
+    margin: 0 10px; 
+    font-size: 12px; 
+    vertical-align: middle;
+}
+
+#thumbnail_nav .previous {
+    float: left; 
+    vertical-align: middle; 
+    width: 250px; 
+}
+
+#thumbnail_nav .next {
+    float: right; 
+    width: 250px;
+}
+
+.blog #entry_footer,
+.archive #entry_footer {
+    margin-top: 20px;
+}
+
+#entry_footer {
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+#entry_footer  .share {
+    margin-top: 10px;
+}
+
+.share.socials {
+    padding-left: 0;
+}
+
+/*.share.socials i {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 15px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}*/
+
+.share.socials a {
+    text-align: center;
+    margin-right: 10px;
+    margin-top: 15px;
+    border: 1px solid;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.share.socials .caption span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.comment-reply-title {
+    @extend .widgettitle;
+    border:0;
+    text-transform: initial;
+}
+
+
+#submit_my_comment[disabled] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    opacity: .65;
+}
+
+
 
 
 /************************************************************
