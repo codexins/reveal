@@ -44,7 +44,7 @@ if ( have_posts() ) {
 
         if( ( $post_style == 'grid' ) && $blog_posts && ! $single_post && ! $search_posts ) {
             $grid_columns = 12 / $grids;
-            printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
+            printf('<div class="post-single-wrap col-xs-12 col-sm-6 col-lg-%1$s">', $grid_columns);
                 get_template_part( 'framework/templates/grids/content' );
             echo '</div><!-- end of post-single-wrap -->';
             echo ( $i % $grids == 0 ) ? '<div class="clearfix"></div>' : '';
@@ -63,8 +63,8 @@ if ( have_posts() ) {
     } // end of loop have_posts()
 
     if( ! $single_post ) {
-	    echo '<div class="clearfix"></div>';              
-	    echo ( ( $post_style == 'grid' ) ) ? '<div class="col-xs-12">' : '' ;
+        echo ( ( $post_style == 'list' ) ) ? '</div> <!-- end of blog-list-wrapper -->' : '' ;
+	    echo ( ( $post_style == 'grid' ) ) ? '</div><div class="col-xs-12">' : '' ;
 
 	    if( $posts_nav == 'numbered' ) {
 	        echo codexin_numbered_posts_nav();
@@ -73,8 +73,6 @@ if ( have_posts() ) {
 	    }
 
 	    echo ( ( $post_style == 'grid' ) ) ? '</div>' : '' ;
-
-        echo '<div class="clearfix"></div>';
 	}
 
 } else {

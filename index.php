@@ -51,7 +51,7 @@ get_header(); ?>
                                 // Go to the default loop template
                                 get_template_part( 'framework/templates/loops/default', 'loop' );
 
-                            echo ( $post_style ) == 'grid' ? '</div></div> <!-- end of blog-grid-wrapper -->' : '</div> <!-- end of blog-list-wrapper -->' ;
+                            echo ( $post_style ) == 'grid' ? '</div> <!-- end of blog-grid-wrapper -->' : '';
                         ?>
 
                     </main><!-- end of #primary -->
