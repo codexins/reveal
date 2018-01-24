@@ -69,14 +69,18 @@
 
 }
 
-
+/* rss widget */
 
 .widget_rss {
-    &>li {
+    ul {
+       &>li {
+        margin-bottom: 5px;
         &>a {
             font-weight: bold;
         }
+        }
     }
+
 
     .rss-date {
         font-size: 85%;
@@ -300,4 +304,20 @@
             padding-right: 0;
         }
     }
-} 
+}
+
+
+/* default recent comments */
+
+.widget_recent_entries {
+    ul {
+        & > li {
+            a {
+                padding-right: 0;
+                & + span {
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}

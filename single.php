@@ -38,12 +38,14 @@ get_header(); ?>
                     ?>
                         <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-                            <?php
+                            <div class="blog-list-wrapper">
+                                <?php
 
-                            // Go to the default loop template
-                            get_template_part( 'framework/templates/loops/default', 'loop' );
+                                // Go to the default loop template
+                                get_template_part( 'framework/templates/loops/default', 'loop' );
 
-                            ?>
+                                ?>
+                            
 
                         </main><!-- end of #primary -->
                     </div> <!-- end of col -->

@@ -1,0 +1,94 @@
+/**
+ * components pagination
+ *
+ */
+
+ .posts-nav {
+ 	margin-top: $cx-col-spacing;
+ 	.nav-next,
+ 	.nav-previous {
+ 		a {
+ 			@include button;
+ 			@include respond-to(small-mobile) {
+ 				font-size: 84%;
+ 				letter-spacing: normal;
+ 				padding:8px 7px 7px;
+ 			}
+ 		}
+ 		margin-bottom: 0;
+ 	}
+ 	
+ }
+
+ .number-pagination {
+	width: 100%;
+    text-align: center;
+ }
+
+
+ .pagination {
+ 	margin:0;
+ 	.number-pagination & {
+		margin-top: $cx-col-spacing;
+		margin-bottom: $cx-col-spacing;
+ 	}
+
+ 	.page-numbers {
+ 		&.dots {
+ 			border:0;
+ 			background: transparent;
+ 			padding: 0 10px 10px 10px;
+ 			&:hover {
+ 				background: transparent;
+ 			}
+ 		}
+
+ 	}
+
+	@include border-radius(0);
+	& > li {
+			display: inline-block;
+			margin-right: 10px;
+			&:last-child,
+			&:first-child {
+				& > span,
+				& > a {
+					@include border-radius(0)
+				}	
+			}
+
+			a {
+				padding: 8px 14px;
+				@extend %color-text;
+				@extend %bdr-color-border;
+				&:hover,
+				&:focus {
+					@extend %color-text;
+					@extend %bgc-offset;
+				}
+			}
+
+			span {
+				padding: 8px 14px;
+				@extend %color-text;
+				@extend %bdr-color-border;
+				&:hover,
+				&:focus {
+					@extend %color-text;
+					@extend %bgc-offset;
+				}
+			}
+	}
+
+	& > .active {
+		& > span {
+			@include border-radius(0);
+			@extend %bgc-primary;
+			@extend %bdr-color-primary;
+			&:focus,
+			&:hover {
+				@extend %bgc-primary;
+			}
+		}
+	}
+ }

@@ -308,13 +308,13 @@ if ( ! function_exists( 'codexin_button' ) ) {
      */
     function codexin_button( $args = NULL ) {
 
-        $main_class     = ( $args !== 'events_grid' ) ? 'cx-btn ' : 'events-cx-btn ';
-        $button_class   = ( $args !== 'events_grid' ) ? ' reveal-primary-btn' : '';
+        //$main_class     = ( $args !== 'events_grid' ) ? 'cx-btn ' : 'events-cx-btn ';
+        //$button_class   = ( $args !== 'events_grid' ) ? ' reveal-primary-btn' : '';
 
         $result = '';
-        $result .= '<div class="'. $main_class .'reveal-color-0'. $button_class .'">';
-            $result .= '<a class="cx-btn-text" href="'. esc_url( get_the_permalink() ) .'">'. esc_html__( 'Read More', 'reveal' ) .'</a>';
-        $result .= '</div> <!-- end of cx-btn -->';
+        //$result .= '<div class="'. $main_class .'reveal-color-0'. $button_class .'">';
+            $result .= '<a class="cx-primary-btn" href="'. esc_url( get_the_permalink() ) .'">'. esc_html__( 'Read More', 'reveal' ) .'</a>';
+        //$result .= '</div> <!-- end of cx-btn -->';
 
         return $result;
 

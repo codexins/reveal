@@ -56,6 +56,7 @@ if ( have_posts() ) {
         }
 
 		if( $single_post ) {
+            echo '</div><!--  end of blog-list-wrapper -->';
 			( $single_nav ) ? codexin_post_link() : '';
 			( $single_comment ) ? comments_template( '', true ) : '';
 		}

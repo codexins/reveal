@@ -222,6 +222,10 @@
 	border-color: $cx-border-color;
 }
 
+%bdr-color-text {
+	border-color: $cx-text-color;
+}
+
 // zero margin & padding
 
 %margin-0 {

@@ -29,7 +29,7 @@ if ( ! function_exists( 'codexin_posts_link' ) ) {
         $prev_link = get_previous_posts_link( '&laquo; '. $prev );
         $next_link = ( $custom !== NULL ) ? get_next_posts_link( $next. ' &raquo; ', $custom->max_num_pages ) : get_next_posts_link( $next. ' &raquo; ' );
 
-        echo '<div class="posts-nav reveal-color-0 reveal-primary-btn reveal-border-1 clearfix">';
+        echo '<div class="posts-nav clearfix">';
             if( $next_link ) { 
                 echo '<div class="nav-next alignright">'. $next_link .'</div>';
             }
@@ -65,7 +65,7 @@ if ( ! function_exists( 'codexin_post_link' ) ) {
             $next_link = get_next_post_link( '%link', esc_html__( '&laquo; %title', 'reveal' ) );
         }
 
-        echo '<div class="posts-nav reveal-color-0 reveal-primary-btn clearfix">';
+        echo '<div class="posts-nav clearfix">';
             if( $next_link ) { 
                 echo '<div class="nav-next alignleft">'. $next_link .'</div>';
             }
@@ -99,7 +99,7 @@ if ( ! function_exists( 'codexin_numbered_posts_nav' ) ) {
 
         ob_start();
         ?>
-            <nav class="number-pagination reveal-color-0 reveal-primary-btn reveal-border-1">
+            <nav class="number-pagination reveal-color-0 reveal-border-1">
                 <?php
                 $current = max( 1, absint( get_query_var( 'paged' ) ) );
                 $pagination = paginate_links( array(
@@ -141,7 +141,7 @@ if ( ! function_exists( 'codexin_comments_nav' ) ) {
             ?>
             <nav id="comment-nav-below" class="navigation comment-navigation">
                 <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'reveal' ); ?></h2>
-                <div class="nav-links reveal-color-0 reveal-primary-btn">
+                <div class="nav-links reveal-color-0">
                     <div class="nav-previous"><?php previous_comments_link( esc_html__( '&laquo; Older Comments', 'reveal' ) ); ?></div>
                     <div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &raquo;', 'reveal' ) ); ?></div>
                 </div><!-- end of nav-links -->

@@ -24,7 +24,7 @@ $social_share = codexin_get_option( 'cx_single_share' );
 	<?php } ?>
 
 	<?php if( $social_share ) { ?>
-	    <div class="share socials reveal-color-0 reveal-primary-btn">            
+	    <div class="share socials">            
 	        <div class="caption"><span class="flaticon-share-1"></span> <?php esc_html_e('Share: ', 'reveal'); ?></div>    
 	        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-facebook"></i></a>
 	        <a target="_blank" href="https://twitter.com/home?status=<?php echo esc_url( get_the_permalink() ); ?>"><i class="fa fa-twitter"></i></a>

@@ -58,12 +58,11 @@ tr {
 a {
     text-decoration:none;
     color:$cx-link-color;
-    @extend %cx-transition ;
-    &:visited,
+    @extend %cx-transition;
     &:hover,
     &:focus {
         text-decoration: none;
-        color: $cx-link-hover-color;
+        @extend %color-secondary;
         outline: 0 none;
     }
 }
@@ -246,31 +245,7 @@ a img.aligncenter {
     
 }
 
-.post-wrapper {
-    .sticky &,
-    .category-sticky & {
-        padding-left: 15px;
-        padding-right: 15px;
-        padding-top: 15px;
-		@include cx-box-shadow;
-        @extend %bgc-offset;
-        @include cx-simple-border;
-        @extend %bdr-color-border;
-    }
-}
 
-
-
-.post-wrapper {
-    .sticky &, .category-sticky & {
-        .single & {
-            border:0;
-            padding:0;
-            @extend %bgc-transparent;
-			@include cx-box-shadow(0,0,0,#fff);
-        }
-    }
-}
 
 .post-password-form {
     label {

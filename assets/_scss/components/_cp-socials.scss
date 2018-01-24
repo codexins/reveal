@@ -1,0 +1,36 @@
+/**
+ * components socials
+ *
+ */
+
+ .share {
+ 	&.socials {
+ 		padding-left: 0;
+ 		.caption {
+ 			float: left;
+		    margin-right: 15px;
+		    line-height: 30px;
+		    font-size: 18px;
+		    margin-top: 15px;
+		    span {
+		    	font-weight: bold;
+    			margin-right: 5px;
+		    }
+ 		}
+
+ 		a {
+		    text-align: center;
+		    margin-right: 5px;
+		    margin-top: 15px;
+		    @include cx-simple-border;
+			@include box(35px, 35px);
+		    @extend %color-text;
+		    @extend %bdr-color-border;
+		    &:hover {
+		    	@extend %bgc-secondary;
+		    	@extend %color-white;
+		    	@extend %bdr-color-secondary;
+		    }
+ 		}
+ 	}
+ }

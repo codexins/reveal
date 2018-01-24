@@ -212,17 +212,23 @@
 }
 
 // button 
- @mixin button($padding:8px 20px){
+ @mixin button($padding:8px 15px 7px) {
     padding:$padding;
     display: inline-block;
     background: transparent;
-    border: 1px solid $cx-text-color;
-    color: $cx-text-color;
+    font-size: 85%;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 0.08em;
+    @include cx-simple-border;
+    @extend %bdr-color-border;
+    @extend %color-text;
     @extend %cx-transition;
+    &:focus,
     &:hover {
-        border-color: $cx-link-hover-color;
-        background: $cx-link-hover-color;
-        color:lighten($cx-text-color, 100%);
+        @extend %bdr-color-secondary;
+        @extend %bgc-secondary;
+        @extend %color-white;
     }
  }
 

@@ -638,49 +638,6 @@ ul.sub-menu li a {
 }
 
 
-/************************************************************
-    002 - Page Header Section
-*************************************************************/
-
-#page_title.page-title {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    padding-top: 140px;
-    position: relative;
-}
-
-#page_title.page-title::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: -webkit-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(../images/transparent-bg.png) center top repeat;
-    background: -moz-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(../images/transparent-bg.png) center top repeat;
-    background: -ms-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(../images/transparent-bg.png) center top repeat;
-    background: -o-linear-gradient(transparent 10%,rgba(0,0,0,.85)), url(../images/transparent-bg.png) center top repeat;
-    background: linear-gradient(transparent 30%,rgba(0,0,0,.85));
-}
-
-.page-title-wrapper h1 {
-    line-height: 1.1em;
-    margin-bottom: 0;
-}
-
-.breadcrumbs-wrapper .breadcrumb {
-    padding-left: 0;
-    font-size: 14px;
-    letter-spacing: .5px;
-    padding: 8px 0;
-}
-
-.no-breadcrumbs {
-    margin-bottom: 50px;
-}
-
 
 /************************************************************
     004 - Services Section
@@ -1049,24 +1006,24 @@ div.blog-list-wrapper {
     margin-top: 15px;
 }
 
-article.type-post {
+/*article.type-post {
     margin-bottom: 0;
 }
-
+*/
 /*.single-post article.type-post {
     margin-bottom: 40px;
 }*/
 
-.post-wrapper {
+/*.post-wrapper {
     padding-bottom: 40px;
     border-bottom: 1px dashed;
-}
+}*/
 
-.item-img-wrap {
+/*.item-img-wrap {
     position: relative;
     text-align: center;
     overflow: hidden;
-}
+}*/
 
 .img-pop-up {
     display: block;
@@ -1079,7 +1036,7 @@ article.type-post {
     visibility: hidden;
 }
 
-.item-img-wrap:hover > a {
+/*.item-img-wrap:hover > a {
     visibility: visible;
     opacity: 1;
 }
@@ -1099,9 +1056,9 @@ article.type-post {
     height: 100%;
     left: 0;
     top: 0;
-}
+}*/
 
-.blog-wrapper .item-img-overlay span,
+/*.blog-wrapper .item-img-overlay span,
 .post-wrapper .item-img-overlay span {
     width: 100%;
     height: 100%;
@@ -1128,9 +1085,9 @@ article.type-post {
 
 .item-img-wrap:hover .item-img-overlay span {
     opacity: 1;
-}
+}*/
 
-.post-detail {
+/*.post-detail {
     padding: 5px 0;
 }
 
@@ -1144,8 +1101,8 @@ article.type-post {
     font-size: 12px;
     vertical-align: middle;
     text-transform: capitalize;
-}
-
+}*/
+/*
 .list-inline > li {
     display: inline-block;
     padding-right: 5px;
@@ -1160,9 +1117,9 @@ article.type-post {
 .post-meta li i,
 .post-wrapper .list-inline li i {
     margin-right: 6px;
-}
+}*/
 
-h2.post-title {
+/*h2.post-title {
     font-size: 25px;
     margin-bottom: 10px;
     margin-top: 15px;
@@ -1179,12 +1136,12 @@ h2.post-title {
 
 h2.post-title a:hover {
     text-decoration: none;
-}
+}*/
 
-.blog-btn {
+/*.blog-btn {
     overflow: hidden;
     margin-top: 25px;
-}
+}*/
 
 .posts-nav.blog-more {
     padding-bottom: 0;
