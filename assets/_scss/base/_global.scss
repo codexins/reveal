@@ -41,7 +41,10 @@ iframe, embed, object, figure {
 
 blockquote {
     border-left: 3px solid;
+    margin-bottom: $cx-heading-margin-bottom;
     @extend %bdr-color-border;
+    @extend %bgc-offset;
+    padding: 15px 20px;
 }
 
 td, 

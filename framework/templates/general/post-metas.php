@@ -23,7 +23,7 @@ if( in_array( true, array_values( $post_metas ) ) ) { ?>
         <?php
         if( $post_metas[1] ) {
         ?>
-	        <li><i class="fa fa-pencil"></i> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
+	        <li><?php echo ($post_style == 'list') ? '<i class="fa fa-pencil"></i>' : ''; ?> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
 	            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author">
 	                <span itemprop="name"><?php echo esc_html( get_the_author() ); ?></span>
 	            </a>
@@ -42,13 +42,13 @@ if( in_array( true, array_values( $post_metas ) ) ) { ?>
 
 		if( $post_metas[3] ) {
 		?>
-	        <li><i class="fa fa-tag"></i> <span itemprop="genre"><?php the_category( ', ' )?></span></li>
+	        <li><?php echo ($post_style == 'list') ? '<i class="fa fa-tag"></i>' : ''; ?> <span itemprop="genre"><?php the_category( ', ' )?></span></li>
         <?php
         }
 
         if( $post_metas[4] ) {
         ?>
-	        <li><i class="fa fa-comment"></i> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></a></li>
+	        <li><?php echo ($post_style == 'list') ? '<i class="fa fa-comment"></i>' : ''; ?> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></a></li>
         <?php
     	}
 

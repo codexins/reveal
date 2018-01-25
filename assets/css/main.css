@@ -12642,6 +12642,8 @@ iframe, embed, object, figure {
 
 blockquote {
   border-left: 3px solid;
+  margin-bottom: 25px;
+  padding: 15px 20px;
 }
 
 td,
@@ -13107,7 +13109,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 a, .page-links a span, .gallery-item a img, button,
 input[type="submit"],
-input[type="button"], .item-img-wrap img, .cx-primary-btn, .posts-nav .nav-next a,
+input[type="button"], .item-img-wrap img, .blog-grid-wrapper .img-thumb .img-wrapper a::before, .blog-grid-wrapper .img-thumb .img-wrapper a::after, .cx-primary-btn, .posts-nav .nav-next a,
 .posts-nav .nav-previous a, .gallery-carousel span {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -13182,7 +13184,7 @@ input[type="submit"], nav.navbar, .c-menu, .c-menu__close, .widget_calendar tbod
 input[type="submit"]:hover,
 input[type="button"]:hover, .c-menu__items a:hover,
 .c-menu__items a:focus,
-.c-menu__items a:visited, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a:hover, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .cx-primary-btn:focus, .cx-primary-btn:hover, .posts-nav .nav-next a:focus, .posts-nav .nav-next a:hover,
+.c-menu__items a:visited, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a:hover, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .blog-grid-wrapper .meta a, .cx-primary-btn:focus, .cx-primary-btn:hover, .posts-nav .nav-next a:focus, .posts-nav .nav-next a:hover,
 .posts-nav .nav-previous a:focus,
 .posts-nav .nav-previous a:hover, .share.socials a:hover, .gallery-carousel span.slick-arrow:hover {
   background-color: #F26C9E;
@@ -13200,8 +13202,8 @@ input[type="button"]:hover, .c-menu__items a:hover,
   background-color: transparent;
 }
 
-.wp-caption, .screen-reader-text:focus, .bgc-offset, #comments .comment-info, .sticky .post-wrapper,
-.category-sticky .post-wrapper, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span:hover, .pagination > li span:focus, .post-link > a {
+blockquote, .wp-caption, .screen-reader-text:focus, .bgc-offset, #comments .comment-info, .sticky .post-wrapper,
+.category-sticky .post-wrapper, .blog-grid-wrapper .blog-wrapper, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span:hover, .pagination > li span:focus, .post-link > a {
   background-color: #f5f5f5;
 }
 
@@ -13248,7 +13250,7 @@ a:hover, a:focus, .color-secondary, .sf-menu > li > a:hover, .sf-menu > li > a:f
 
 .breadcrumb a, .browserupgrade, .page-links a:focus span, .page-links a:hover span, .page-links span, .pswp__caption__center .primary-title a, .color-white, input[type="reset"],
 input[type="button"],
-input[type="submit"], nav .navbar-brand, .sf-menu li a, .page-title, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .widget_calendar caption, .cx-primary-btn:focus, .cx-primary-btn:hover, .posts-nav .nav-next a:focus, .posts-nav .nav-next a:hover,
+input[type="submit"], nav .navbar-brand, .sf-menu li a, .page-title, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .widget_calendar caption, .blog-grid-wrapper .meta a, .cx-primary-btn:focus, .cx-primary-btn:hover, .posts-nav .nav-next a:focus, .posts-nav .nav-next a:hover,
 .posts-nav .nav-previous a:focus,
 .posts-nav .nav-previous a:hover, .share.socials a:hover, .gallery-carousel span i {
   color: #ffffff;
@@ -13285,7 +13287,7 @@ input[type="reset"],
 input[type="password"],
 input[type="search"],
 input[type="tel"], .widgettitle, .tagcloud a, .widget_calendar tbody tr, .widget_calendar tbody td + td, .widget_calendar thead th + th, .widget_calendar table#wp-calendar, .widget_calendar table#wp-calendar thead, .blog-list-wrapper > article, .sticky .post-wrapper,
-.category-sticky .post-wrapper, .meta-details, .cx-primary-btn, .posts-nav .nav-next a,
+.category-sticky .post-wrapper, .meta-details, .blog-grid-wrapper .blog-content, .cx-primary-btn, .posts-nav .nav-next a,
 .posts-nav .nav-previous a, .pagination > li a, .pagination > li span, .share.socials a, .post-link > a {
   border-color: #ccc;
 }
@@ -14386,6 +14388,127 @@ nav .navbar-brand img {
 }
 
 /**
+ * components blog-grid
+ *
+ */
+.blog-grid-wrapper {
+  margin-top: 0;
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+
+.blog-grid-wrapper .post-single-wrap {
+  margin-bottom: 40px;
+}
+
+.blog-grid-wrapper .img-thumb {
+  position: relative;
+}
+
+.blog-grid-wrapper .img-thumb .img-wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-grid-wrapper .img-thumb .img-wrapper a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  display: block;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.blog-grid-wrapper .img-thumb .img-wrapper a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  display: block;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.blog-grid-wrapper .img-thumb .img-wrapper a:hover::after, .blog-grid-wrapper .img-thumb .img-wrapper a:hover::before {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.blog-grid-wrapper .img-thumb figcaption {
+  display: none;
+}
+
+.blog-grid-wrapper .meta {
+  position: absolute;
+  min-width: 60px;
+  height: auto;
+  bottom: 10px;
+  left: -10px;
+  text-align: center;
+}
+
+.blog-grid-wrapper .meta a {
+  padding: 15px 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-grid-wrapper .meta p {
+  margin: 0;
+  line-height: 1.3em;
+}
+
+.blog-grid-wrapper .meta p:first-child {
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.blog-grid-wrapper .meta p:last-child {
+  font-style: italic;
+}
+
+.blog-grid-wrapper .blog-content {
+  padding: 5px 20px 10px 20px;
+  text-align: left;
+  border-top: 0 solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+.blog-grid-wrapper .blog-title {
+  text-transform: initial;
+  margin: 15px 0 10px;
+  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.blog-grid-wrapper .post-meta {
+  margin-top: 0;
+  border: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  line-height: 1.35em;
+}
+
+.blog-grid-wrapper .post-meta li a {
+  color: #595959;
+}
+
+.blog-grid-wrapper .wrapper-content {
+  margin-bottom: 20px;
+}
+
+/**
  * components buttons
  *
  */
@@ -14610,6 +14733,24 @@ nav .navbar-brand img {
   margin-bottom: 0;
   text-transform: capitalize;
   border-left: 2px solid;
+}
+
+/*  post format video */
+.fluid-wrapper {
+  position: relative;
+  padding: 0px;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+.fluid-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=main.css.map */

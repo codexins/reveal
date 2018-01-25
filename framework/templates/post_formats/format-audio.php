@@ -17,8 +17,8 @@ $audio = codexin_meta( 'reveal_audio' );
 
 if ( ! post_password_required() ) {
     
-    echo '<div class="embed">';
+    echo '<div class="fluid-wrapper">';
         echo sprintf( '%s', $audio );
-    echo '</div> <!-- end of embed -->';
+    echo '</div> <!-- end of fluid-wrapper -->';
 
 } // end of password check condition
