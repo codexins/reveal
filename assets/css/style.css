@@ -188,7 +188,7 @@ tr {
     margin-bottom: 30px;
 }
 
-.flex-wrapper {
+/*.flex-wrapper {
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -259,7 +259,7 @@ tr {
 .team-wrapper figcaption,
 .image-pop-up figcaption {
     display: none;
-}
+}*/
 
 /************************************************************
     001 - Header Section

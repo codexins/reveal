@@ -25,4 +25,8 @@
   > .active {
     color: $breadcrumb-active-color;
   }
+
+  a {
+    @extend %color-white;
+  }
 }

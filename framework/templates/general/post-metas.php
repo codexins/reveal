@@ -19,7 +19,7 @@ $post_metas = codexin_get_option( $args_meta );
 
 if( in_array( true, array_values( $post_metas ) ) ) { ?>
 
-    <ul class="list-inline meta-details reveal-color-0<?php echo ( ( $post_style == 'list' ) || is_single() ) ? ' reveal-border-1' : ' post-meta' ?>">
+    <ul class="list-inline meta-details <?php echo ( ( $post_style == 'list' ) || is_single() ) ? ' reveal-border-1' : ' post-meta' ?>">
         <?php
         if( $post_metas[1] ) {
         ?>

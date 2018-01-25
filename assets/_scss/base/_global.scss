@@ -41,6 +41,7 @@ iframe, embed, object, figure {
 
 blockquote {
     border-left: 3px solid;
+    @extend %bdr-color-border;
 }
 
 td, 
@@ -183,17 +184,40 @@ a img.aligncenter {
     padding-top: 10px;
     padding-bottom: 10px;
 
+    a {
+        span {
+            @extend %bgc-transparent;
+            @extend %bdr-color-border;
+            @extend %color-text;
+            @extend %cx-transition;
+        }
+        &:focus,
+        &:hover {
+            span {
+                @extend %bdr-color-primary;
+                @extend %bgc-primary;
+                @extend %color-white;
+            }
+        }
+    }
+
     span {
         padding: 5px 10px;
         margin: 5px;
         @include cx-simple-border;
         @include border-radius(50%);
-		@extend %bdr-color-border;
+		@extend %bdr-color-primary;
+        @extend %bgc-primary;
+        @extend %color-white;
         &.page-links-title {
             border:0;
             margin-left: 0;
             padding-left: 0;
+            color:inherit;
+            @extend %bgc-transparent;
         }
+
+
     }
 }
 
@@ -256,6 +280,11 @@ a img.aligncenter {
     input[type="password"] {
         margin-left: 20px;
     }
+}
+
+
+.nopassword {
+    margin-top: $cx-col-spacing;
 }
 
 
@@ -601,7 +630,7 @@ button,
 input[type="submit"],
 input[type="button"] {
     font-size: 85%;
-    line-height: 1.65em;
+    line-height: inherit;
     padding: 8px 20px;
     text-transform: uppercase;
     letter-spacing: 1px;

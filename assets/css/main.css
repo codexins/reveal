@@ -12792,6 +12792,7 @@ a img.aligncenter {
   border: 0;
   margin-left: 0;
   padding-left: 0;
+  color: inherit;
 }
 
 .size-auto,
@@ -12842,6 +12843,10 @@ a img.aligncenter {
 
 .post-password-form input[type="password"] {
   margin-left: 20px;
+}
+
+.nopassword {
+  margin-top: 40px;
 }
 
 /**
@@ -12998,7 +13003,7 @@ button,
 input[type="submit"],
 input[type="button"] {
   font-size: 85%;
-  line-height: 1.65em;
+  line-height: inherit;
   padding: 8px 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -13100,10 +13105,10 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 25px;
 }
 
-a, .gallery-item a img, button,
+a, .page-links a span, .gallery-item a img, button,
 input[type="submit"],
 input[type="button"], .item-img-wrap img, .cx-primary-btn, .posts-nav .nav-next a,
-.posts-nav .nav-previous a {
+.posts-nav .nav-previous a, .gallery-carousel span {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -13167,9 +13172,9 @@ input[type="button"], .item-img-wrap img, .cx-primary-btn, .posts-nav .nav-next 
   border-left: 1px solid #ccc;
 }
 
-.bgc-primary, input[type="reset"],
+.page-links a:focus span, .page-links a:hover span, .page-links span, .bgc-primary, input[type="reset"],
 input[type="button"],
-input[type="submit"], nav.navbar, .c-menu, .c-menu__close, .widget_calendar tbody td a, .widget_calendar caption, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+input[type="submit"], nav.navbar, .c-menu, .c-menu__close, .widget_calendar tbody td a, .widget_calendar caption, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover, .gallery-carousel span.slick-arrow {
   background-color: #39468C;
 }
 
@@ -13179,7 +13184,7 @@ input[type="button"]:hover, .c-menu__items a:hover,
 .c-menu__items a:focus,
 .c-menu__items a:visited, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a:hover, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .cx-primary-btn:focus, .cx-primary-btn:hover, .posts-nav .nav-next a:focus, .posts-nav .nav-next a:hover,
 .posts-nav .nav-previous a:focus,
-.posts-nav .nav-previous a:hover, .share.socials a:hover {
+.posts-nav .nav-previous a:hover, .share.socials a:hover, .gallery-carousel span.slick-arrow:hover {
   background-color: #F26C9E;
 }
 
@@ -13191,12 +13196,12 @@ input[type="button"]:hover, .c-menu__items a:hover,
   background-color: #f9b808;
 }
 
-.bgc-transparent, .single .sticky .post-wrapper, .single .category-sticky .post-wrapper {
+.page-links a span, .page-links span.page-links-title, .bgc-transparent, .single .sticky .post-wrapper, .single .category-sticky .post-wrapper {
   background-color: transparent;
 }
 
 .wp-caption, .screen-reader-text:focus, .bgc-offset, #comments .comment-info, .sticky .post-wrapper,
-.category-sticky .post-wrapper, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span:hover, .pagination > li span:focus {
+.category-sticky .post-wrapper, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span:hover, .pagination > li span:focus, .post-link > a {
   background-color: #f5f5f5;
 }
 
@@ -13204,7 +13209,7 @@ input[type="button"]:hover, .c-menu__items a:hover,
   background-color: #ffffff;
 }
 
-.sidebar-widget li a, .tagcloud a, .widget_calendar tbody td, .comment-info .fn a, .comment-meta a, .meta-details a, .cx-like-wrapper a.cx-button:focus, .cx-like-wrapper a.cx-button:hover, .cx-like-wrapper .cx-count, .cx-primary-btn, .posts-nav .nav-next a,
+.page-links a span, .sidebar-widget li a, .tagcloud a, .widget_calendar tbody td, .comment-info .fn a, .comment-meta a, .meta-details a, .cx-like-wrapper a.cx-button:focus, .cx-like-wrapper a.cx-button:hover, .cx-like-wrapper .cx-count, .cx-primary-btn, .posts-nav .nav-next a,
 .posts-nav .nav-previous a, .pagination > li a, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span, .pagination > li span:hover, .pagination > li span:focus, .share.socials a {
   color: #333;
 }
@@ -13241,15 +13246,15 @@ a:hover, a:focus, .color-secondary, .sf-menu > li > a:hover, .sf-menu > li > a:f
   color: #f5f5f5;
 }
 
-.browserupgrade, .pswp__caption__center .primary-title a, .color-white, input[type="reset"],
+.breadcrumb a, .browserupgrade, .page-links a:focus span, .page-links a:hover span, .page-links span, .pswp__caption__center .primary-title a, .color-white, input[type="reset"],
 input[type="button"],
 input[type="submit"], nav .navbar-brand, .sf-menu li a, .page-title, .tagcloud a:hover, .tagcloud a:focus, .widget_calendar tbody td a, .widget_calendar tfoot #prev a:hover, .widget_calendar tfoot #next a:hover, .widget_calendar caption, .cx-primary-btn:focus, .cx-primary-btn:hover, .posts-nav .nav-next a:focus, .posts-nav .nav-next a:hover,
 .posts-nav .nav-previous a:focus,
-.posts-nav .nav-previous a:hover, .share.socials a:hover {
+.posts-nav .nav-previous a:hover, .share.socials a:hover, .gallery-carousel span i {
   color: #ffffff;
 }
 
-input[type="reset"],
+.page-links a:focus span, .page-links a:hover span, .page-links span, input[type="reset"],
 input[type="button"],
 input[type="submit"], input[type="text"]:focus,
 input[type="url"]:focus,
@@ -13269,8 +13274,8 @@ input[type="button"]:hover, .tagcloud a:hover, .tagcloud a:focus, .cx-primary-bt
   border-color: #F26C9E;
 }
 
-td,
-th, tr, .wp-caption, .page-links span, textarea,
+blockquote, td,
+th, tr, .wp-caption, .page-links a span, textarea,
 select,
 input[type="text"],
 input[type="url"],
@@ -13281,7 +13286,7 @@ input[type="password"],
 input[type="search"],
 input[type="tel"], .widgettitle, .tagcloud a, .widget_calendar tbody tr, .widget_calendar tbody td + td, .widget_calendar thead th + th, .widget_calendar table#wp-calendar, .widget_calendar table#wp-calendar thead, .blog-list-wrapper > article, .sticky .post-wrapper,
 .category-sticky .post-wrapper, .meta-details, .cx-primary-btn, .posts-nav .nav-next a,
-.posts-nav .nav-previous a, .pagination > li a, .pagination > li span, .share.socials a {
+.posts-nav .nav-previous a, .pagination > li a, .pagination > li span, .share.socials a, .post-link > a {
   border-color: #ccc;
 }
 
@@ -14385,7 +14390,7 @@ nav .navbar-brand img {
  *
  */
 .cx-primary-btn {
-  padding: 8px 15px 7px;
+  padding: 7px 15px 5px;
   display: inline-block;
   background: transparent;
   font-size: 85%;
@@ -14411,7 +14416,7 @@ nav .navbar-brand img {
 
 .posts-nav .nav-next a,
 .posts-nav .nav-previous a {
-  padding: 8px 15px 7px;
+  padding: 7px 15px 5px;
   display: inline-block;
   background: transparent;
   font-size: 85%;
@@ -14520,6 +14525,91 @@ nav .navbar-brand img {
   text-align: center;
   line-height: 35px;
   display: inline-block;
+}
+
+/**
+ * components post format
+ *
+ */
+/* Gallery */
+.gallery-carousel {
+  position: relative;
+}
+
+.gallery-carousel span {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+  z-index: 1;
+  text-align: center;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  line-height: 36px;
+  display: inline-block;
+}
+
+.gallery-carousel span.alignleft {
+  right: 37px;
+}
+
+.gallery-carousel span.alignright {
+  right: 0;
+}
+
+.gallery-carousel span i {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.gallery-item figcaption {
+  display: none;
+}
+
+/* post format : link */
+.post-link > a {
+  display: block;
+  padding: 30px 15px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.post-link > a:hover {
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  -ms-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.post-link .post-format-link span.icon {
+  text-decoration: none;
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.post-link .post-format-link span.icon::before {
+  content: "\f0c1";
+  font-family: FontAwesome;
+  font-size: 26px;
+  position: relative;
+  height: 15px;
+  width: 25px;
+  display: block;
+  float: left;
+  margin: 2px 10px 0px 10px;
+}
+
+.post-link p {
+  font-size: 24px;
+  padding-left: 20px;
+  margin-left: 55px;
+  margin-bottom: 0;
+  text-transform: capitalize;
+  border-left: 2px solid;
 }
 
 /*# sourceMappingURL=main.css.map */

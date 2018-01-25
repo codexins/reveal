@@ -1,0 +1,106 @@
+/**
+ * components post format
+ *
+ */
+
+/* Gallery */
+
+.gallery-carousel {
+    position: relative;
+    span {
+    	position: absolute;
+	    bottom: 0;
+	    padding: 0;
+	    display: inline-block;
+	    margin: 0;
+	    z-index: 1;
+	    text-align: center;
+	    cursor: pointer;
+	    @include box(36px, 36px);
+		@extend %cx-transition;
+		&.slick-arrow {
+			 @extend %bgc-primary;
+			 &:hover {
+			 	@extend %bgc-secondary;
+			 }
+		}
+
+		&.alignleft {
+			right:37px;
+		}
+
+		&.alignright {
+			right:0;
+		}
+
+		i {
+		    font-size: 20px;
+		    font-weight: bold;
+		    @extend %color-white;
+		}
+
+    }
+}
+
+
+
+.gallery-item figcaption {
+    display: none;
+}
+
+
+/* post format : link */
+
+.post-link {
+	& > a {
+		display: block;
+		padding: 30px 15px;
+		@include cx-simple-border;
+		@extend %bdr-color-border;
+    	@extend %bgc-offset;
+    	&:hover {
+		    -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+		    -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+		    -ms-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+		    -o-box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+		    box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+    	}
+	}
+	.post-format-link {
+    	span {
+    		&.icon {
+			    text-decoration: none;
+			    margin: 10px 0 0 0;
+			    font-size: 14px;
+			    &::before {
+				    content: "\f0c1";
+				    font-family: FontAwesome;
+				    font-size: 26px;
+				    position: relative;
+				    height: 15px;
+				    width: 25px;
+				    display: block;
+				    float: left;
+				    margin: 2px 10px 0px 10px;
+			    }
+    		}
+    	}
+	}
+
+	p {
+	    font-size: 24px;
+	    padding-left: 20px;
+	    margin-left: 55px;
+	    margin-bottom: 0;
+	    text-transform: capitalize;
+	    border-left: 2px solid;
+	}
+}
+
+// .post-quote span.icon {
+//     text-decoration: none;
+//     display: block;
+//     margin: 10px 0 0 0;
+//     font-size: 14px;
+// }
+
