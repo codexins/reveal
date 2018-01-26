@@ -47,9 +47,12 @@ if( in_array( true, array_values( $post_metas ) ) ) { ?>
         }
 
         if( $post_metas[4] ) {
+            if ( $post_style !== 'grid' ) {
         ?>
-	        <li><?php echo ($post_style == 'list') ? '<i class="fa fa-comment"></i>' : ''; ?> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></a></li>
+
+            <li><?php echo ($post_style == 'list') ? '<i class="fa fa-comment"></i>' : ''; ?> <a href="<?php comments_link(); ?>"><?php comments_number( 'No Comments', 'One Comment', '% Comments' )?></a></li>
         <?php
+            }
     	}
 
         if( $post_metas[5] ) {

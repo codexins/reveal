@@ -29,6 +29,10 @@ if ( ! function_exists( 'codexin_posts_link' ) ) {
         $prev_link = get_previous_posts_link( '&laquo; '. $prev );
         $next_link = ( $custom !== NULL ) ? get_next_posts_link( $next. ' &raquo; ', $custom->max_num_pages ) : get_next_posts_link( $next. ' &raquo; ' );
 
+        if(empty($prev_link) && empty($next_link)) {
+            return;
+        }
+
         echo '<div class="posts-nav clearfix">';
             if( $next_link ) { 
                 echo '<div class="nav-next alignright">'. $next_link .'</div>';

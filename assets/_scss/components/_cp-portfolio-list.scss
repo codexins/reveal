@@ -1,0 +1,120 @@
+/**
+ * components portfolio-list
+ *
+ */
+
+ body.codexin-list-view {
+    @extend %bgc-offset;
+}
+
+.portfolio-list-wrapper {
+	article {
+		overflow: hidden;
+	    display:table;
+	    width:100%;
+	    vertical-align: middle;
+	    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    -moz-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    -ms-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    -o-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    	margin-top: 0;
+		margin-bottom: $cx-col-spacing;
+		@extend %bgc-white;
+		@extend %cx-transition;
+	    &:hover {
+		    -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    -ms-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    -o-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+	    }
+
+		.image-thumbnail {
+		    display: table-cell;
+		    vertical-align: middle;
+			width:40%;
+			position:relative;
+		    background-size:cover;
+		    background-position:center;
+		    background-repeat:no-repeat;
+		    background-attachment: scroll;
+		    & > a {
+			    width: 100%;
+			    height: 100%;
+			    display: block;
+			    overflow: hidden;
+			    position: absolute;
+			    top: 0;
+			    left: 0;
+		    }
+
+		    @include respond-to(small-mobile) {
+		    	min-height:250px;
+		    }
+
+			.date-wrapper {
+				position:absolute;
+				top:30px;
+				left:0;
+				opacity: 0.92;
+				padding:3px 15px 1px;
+				@extend %bgc-white;
+				p {
+					margin-bottom: 0;
+				  	font-size: 14px;
+				  	font-weight: bold;
+				}
+		    }
+
+			@include media-only (notebook, max) {
+		        display: block;
+        		width:100%;
+        		min-height:300px;
+			}
+
+		} // end of image-thumbnail
+
+		.description-wrapper {
+		    width:60%;
+		    display: table-cell;
+		    vertical-align: middle;
+		    padding:35px;
+			h2 {
+				margin-top: 0;
+			}
+
+			.list-tag {
+				margin-bottom: 10px;
+				 i {
+				 	margin-right: 5px;
+				 }
+
+				 a {
+				    font-size: 14px;
+				    letter-spacing: .05em;
+				 }
+			}
+
+			.list-wrapper {
+				margin-bottom: $cx-heading-margin-bottom;
+			}
+
+			@include media-only (notebook, max) {
+		        display: block;
+        		width:100%;
+        		padding-bottom: 30px;
+			}
+
+		} // end of description-wrapper
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+
+

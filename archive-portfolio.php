@@ -48,7 +48,14 @@ get_header(); ?>
                                 get_template_part( 'framework/templates/loops/portfolio', 'loop' );
 
                             echo ( $portfolio_style ) == 'grid' ? '</div></div> <!-- end of portfolio-grid-wrapper -->' : '</div> <!-- end of portfolio-list-wrapper -->' ;
-                        ?>
+
+                            /**
+                             * Initial contents before portfolio pagination, codexin_before_portfolio_pagination hook.
+                             *
+                             * @hooked codexin_portfolio_pagination_block - 10 (outputs the HTML for portfolio pagination)
+                             */
+                            do_action( 'codexin_before_portfolio_pagination' ); 
+                            ?>
 
                     </main><!-- end of #primary -->
                 </div> <!-- end of col -->

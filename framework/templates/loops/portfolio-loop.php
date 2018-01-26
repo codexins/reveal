@@ -25,10 +25,6 @@ $portfolio_nav		        = codexin_get_option( 'cx_portfolio_pagination' );
 
 if ( have_posts() ) {
 
-    if( ! $portfolio_single_post ) {
-        echo '<div class="portfolio-archive-wrapper clearfix">';
-    }
-
     $i = 0;
 
     /* Start the Loop */
@@ -56,19 +52,7 @@ if ( have_posts() ) {
 
     } // end of loop have_posts()
 
-    if( ! $portfolio_single_post ) {
-        echo '</div>';
-        echo '<div class="clearfix"></div>';
-        echo ( $portfolio_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
-
-        if( $portfolio_nav == 'numbered' ) {
-            echo codexin_numbered_posts_nav();
-        } else {               
-            codexin_posts_link( 'Newer Portfolios', 'Older Portfolios' );
-        }
-        
-        echo ( $portfolio_style == 'grid' ) ? '</div>' : '' ;
-    } else {
+    if( $portfolio_single_post ) {
         echo '<div class="row">';
             echo '<div class="recent-portfolio">';
                 echo '<div class="col-sm-12">';

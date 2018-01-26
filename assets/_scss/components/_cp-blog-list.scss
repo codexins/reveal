@@ -63,6 +63,10 @@
 	    @extend %cx-transition;
     }
 
+    figcaption {
+        display: none;
+    }
+
     .item-img-overlay {
 	    position: absolute;
 	    width: 100%;
@@ -146,6 +150,7 @@
 
 
 .post-title {
+    font-size: 24px;
     margin-bottom: $cx-heading-margin-bottom;
     margin-top: $cx-heading-margin-bottom;
     font-weight: 600;
@@ -249,7 +254,7 @@
 
 
 
-.cx-like-wrapper {
+#content .cx-like-wrapper {
 	a {
 		&.liked {
 			color:#da1b1b;

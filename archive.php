@@ -4,9 +4,9 @@
  *
  * The template for displaying archives pages
  *
- * @package 	Reveal
- * @subpackage 	Templates
- * @since 		1.0
+ * @package     Reveal
+ * @subpackage  Templates
+ * @since       1.0
  */
 
 
@@ -23,9 +23,9 @@ $offset_class    = ' col-md-offset-1';
 
 get_header(); ?>
 
-	<div id="content" class="main-content-wrapper site-content">
-		<div class="container">
-			<div class="row">
+    <div id="content" class="main-content-wrapper site-content">
+        <div class="container">
+            <div class="row">
 
                 <?php 
 
@@ -37,18 +37,27 @@ get_header(); ?>
                     ( $layout == 'left' ) ? esc_attr( $offset_class ) : ''
                 );
 
-                    ?>
-                        <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+                ?>
+                    <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
 
-                            <?php 
+                        <?php 
+                            echo ( $post_style == 'grid' ) ? '<div class="blog-grid-wrapper"><div class="row">' : '<div class="blog-list-wrapper">' ;
 
-                            // Go to the default loop template
-                            get_template_part( 'framework/templates/loops/default', 'loop' );
+                                // Go to the default loop template
+                                get_template_part( 'framework/templates/loops/default', 'loop' );
+
+                            echo ( $post_style ) == 'grid' ? '</div></div> <!-- end of blog-grid-wrapper -->' : '</div> <!-- end of blog-list-wrapper -->' ;
+                        
+                            /**
+                             * Initial contents before pagination, codexin_before_pagination hook.
+                             *
+                             * @hooked codexin_pagination_block - 10 (outputs the HTML for pagination)
+                             */
+                            do_action( 'codexin_before_pagination' ); 
 
                             ?>
-
-                        </main><!-- end of #primary -->
-                    </div> <!-- end of col -->
+                    </main><!-- end of #primary -->
+                </div> <!-- end of col -->
                 
                 <?php 
 
@@ -64,7 +73,7 @@ get_header(); ?>
                     );
 
                 ?>                    
-                        <aside id="secondary" class="widget-area" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+                        <aside id="secondary" class="widget-area" itemscope itemtype="http://schema.org/WPSideBar">
                             <?php 
 
                             // Get active assigned sidebar
@@ -76,8 +85,9 @@ get_header(); ?>
 
                 <?php } //end of sidebar condition ?>
 
-			</div> <!-- end of row -->
-		</div> <!-- end of container -->
-	</div> <!-- end of #content -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of #content -->
 
 <?php get_footer(); ?>
+

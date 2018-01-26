@@ -317,3 +317,61 @@ if ( ! function_exists( 'codexin_post_content_footer' ) ) {
 		}
 	}
 }
+
+
+add_action( 'codexin_before_pagination', 'codexin_pagination_block', 10 );
+if ( ! function_exists( 'codexin_pagination_block' ) ) {
+	/**
+	 * Rendering the HTML for pagination
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_pagination_block() {
+	    if( is_singular() ) {
+	    	return;
+	    }
+
+	    $post_style             = codexin_get_option( 'cx_blog_style' );
+	    $posts_nav              = codexin_get_option( 'cx_pagination' );
+
+        echo ( ( $post_style == 'grid' ) ) ? '<div class="col-xs-12">' : '' ;
+
+        if( $posts_nav == 'numbered' ) {
+            echo codexin_numbered_posts_nav();
+        } else {
+            codexin_posts_link();
+        }
+
+        echo ( ( $post_style == 'grid' ) ) ? '</div>' : '' ;
+
+	}
+}
+
+
+add_action( 'codexin_before_portfolio_pagination', 'codexin_portfolio_pagination_block', 10 );
+if ( ! function_exists( 'codexin_portfolio_pagination_block' ) ) {
+	/**
+	 * Rendering the HTML for pagination
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_portfolio_pagination_block() {
+	    if( is_singular('portfolio') ) {
+	    	return;
+	    }
+
+		$portfolio_style           	= codexin_get_option( 'cx_portfolio_style' );
+		$portfolio_nav		        = codexin_get_option( 'cx_portfolio_pagination' );
+
+        echo ( $portfolio_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+
+        if( $portfolio_nav == 'numbered' ) {
+            echo codexin_numbered_posts_nav();
+        } else {               
+            codexin_posts_link( 'Newer Portfolios', 'Older Portfolios' );
+        }
+        
+        echo ( $portfolio_style == 'grid' ) ? '</div>' : '' ;
+
+	}
+}

@@ -80,6 +80,14 @@ $read_more       = codexin_get_option( 'cx_blog_read_more' );
                     echo codexin_button();
                 } // end of show button conditional check
 
+
+                if( $post_metas[4] ) {
+                ?>
+
+                    <span class="grid-comments"><i class="fa fa-comments-o"></i> <a href="<?php comments_link(); ?>"><?php comments_number( '0', '1', '%' )?></a></span>
+                <?php
+                
+                }
                 ?>
             </div>
         </div> <!-- end of wrapper-content -->
