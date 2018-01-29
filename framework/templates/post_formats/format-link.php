@@ -13,10 +13,10 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from metabox
-$link_url       = codexin_meta( 'reveal_link_url' );
-$link_txt       = codexin_meta( 'reveal_link_text' );
-$link_rel       = codexin_meta( 'reveal_link_rel' ); 
-$link_target    = codexin_meta( 'reveal_link_target' ); 
+$link_url       = codexin_meta( 'codexin_link_url' );
+$link_txt       = codexin_meta( 'codexin_link_text' );
+$link_rel       = codexin_meta( 'codexin_link_rel' ); 
+$link_target    = codexin_meta( 'codexin_link_target' ); 
 
 $text           = ( !empty( $link_txt ) ) ? esc_html( $link_txt ) : esc_html( get_the_title() );
 $relation       = ( !empty( $link_rel ) ) ? 'rel="'. esc_attr( $link_rel ) .'"' : '';

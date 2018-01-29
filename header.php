@@ -35,8 +35,8 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 	// Fetching and assigning data from theme options and metabox
 	$page_identity			= ( is_page_template( 'page-templates/page-home.php' ) ) ? 'front-header' : 'inner-header';
 	$enable_topbar 			= codexin_get_option( 'cx_enable_topbar' );
-	$disable_head 			= codexin_meta( 'reveal_disable_header' );
-	$disable_title 			= codexin_meta( 'reveal_disable_page_title' );
+	$disable_head 			= codexin_meta( 'codexin_disable_header' );
+	$disable_title 			= codexin_meta( 'codexin_disable_page_title' );
 
     /**
      * Initial contents after start of body tag, codexin_body_entry hook.

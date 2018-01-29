@@ -18,12 +18,12 @@ $comments     = codexin_get_option( 'cx_portfolio_comments' );
 $pagination   = codexin_get_option( 'cx_portfolio_single_button' );
 
 // Fetching data from metabox
-$cname        = codexin_meta( 'reveal_portfolio_client', 'type=text' );
-$cadate       = codexin_meta( 'reveal_portfolio_date', 'type=date' );
+$cname        = codexin_meta( 'codexin_portfolio_client', 'type=text' );
+$cadate       = codexin_meta( 'codexin_portfolio_date', 'type=date' );
 $cdate        = ! empty( $cadate ) ? date( get_option( 'date_format' ), strtotime( $cadate ) ) : '';
-$cskills      = codexin_meta( 'reveal_portfolio_skills', 'type=text' );
-$csname       = codexin_meta( 'reveal_portfolio_sname', 'type=text' );
-$csurl        = codexin_meta( 'reveal_portfolio_surl', 'type=text' );
+$cskills      = codexin_meta( 'codexin_portfolio_skills', 'type=text' );
+$csname       = codexin_meta( 'codexin_portfolio_sname', 'type=text' );
+$csurl        = codexin_meta( 'codexin_portfolio_surl', 'type=text' );
 $cat_list     = get_the_term_list( $post->ID, 'portfolio-category', '', '|', '' );
 $tag_list     = get_the_term_list( $post->ID, 'portfolio_tags', '', '|', '' );
 

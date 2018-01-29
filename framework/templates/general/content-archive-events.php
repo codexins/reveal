@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options and metabox
-$start_date          = strtotime( codexin_meta( 'reveal_event_start_date' ) );
+$start_date          = strtotime( codexin_meta( 'codexin_event_start_date' ) );
 $event_start_date    = date( get_option( 'date_format' ), $start_date );
 $length_switch       = codexin_get_option( 'cx_events_title_excerpt_length' );
 $title_length        = codexin_get_option( 'cx_events_title_length' );

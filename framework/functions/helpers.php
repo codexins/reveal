@@ -136,7 +136,7 @@ if ( ! function_exists( 'codexin_header_version' ) ) {
         $header_version = NULL;
 
         $global_header      = codexin_get_option( 'cx_header_version' );
-        $individual_header  = codexin_meta('reveal_header_layout');
+        $individual_header  = codexin_meta( 'codexin_header_layout_meta' );
 
         if( is_page() ) {
             $header_version     = ( ! empty( $individual_header ) ) || ( $individual_header !== '0' ) ? $individual_header : $global_header;
@@ -228,7 +228,7 @@ if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
         if( is_page_template( 'page-templates/page-home.php' ) ) {
             if ( is_plugin_active( 'nextend-smart-slider3-pro/nextend-smart-slider3-pro.php' ) ) {
 
-                $slider_id = codexin_meta( 'reveal_page_slider' ); 
+                $slider_id = codexin_meta( 'codexin_page_slider' ); 
 
                 $result .= '<div class="slider-wrapper">';
                     if( ! empty( $slider_id ) ){
@@ -258,7 +258,7 @@ if ( ! function_exists( 'codexin_title_background' ) ) {
      * @since   v1.0
      */
     function codexin_title_background() {
-        $header_bg = codexin_meta( 'reveal_page_background' ); 
+        $header_bg = codexin_meta( 'codexin_page_background' ); 
 
         if( empty( $header_bg ) ) {
             return;
@@ -465,7 +465,7 @@ if ( ! function_exists( 'codexin_attachment_metas_extended' ) ) {
 }
 
 
-if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
+if ( ! function_exists( 'codexin_sanitize_hex_color' ) ) {
     /**
      * Helper function to sanitize hex colors
      *
@@ -473,7 +473,7 @@ if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
      * @return  string
      * @since   v1.0
      */
-    function reveal_sanitize_hex_color( $color ) {
+    function codexin_sanitize_hex_color( $color ) {
         if ( '' === $color ) {
             return '';
         }
@@ -492,7 +492,7 @@ if ( ! function_exists( 'reveal_sanitize_hex_color' ) ) {
 
 
 
-if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
+if ( ! function_exists( 'codexin_hex_to_rgba' ) ) {
     /**
      * Helper function to convert hex color to RGBA
      *
@@ -501,7 +501,7 @@ if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
      * @return  string
      * @since   v1.0
      */
-    function reveal_hex_to_rgba( $hex_color, $opacity = '' ) {
+    function codexin_hex_to_rgba( $hex_color, $opacity = '' ) {
         $hex_color = str_replace( "#", "", $hex_color );
         if ( strlen( $hex_color ) == 3 ) {
             $r = hexdec( substr( $hex_color, 0, 1 ) . substr( $hex_color, 0, 1 ) );
@@ -525,7 +525,7 @@ if ( ! function_exists( 'reveal_hex_to_rgba' ) ) {
 }
 
 
-if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
+if ( ! function_exists( 'codexin_adjust_color_brightness' ) ) {
     /**
      * Helper function to adjust brightness of a color
      *
@@ -534,7 +534,7 @@ if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
      * @return  string
      * @since   v1.0
      */
-    function reveal_adjust_color_brightness( $hex_color, $percent_adjust = 0 ) {
+    function codexin_adjust_color_brightness( $hex_color, $percent_adjust = 0 ) {
         $percent_adjust = round( $percent_adjust/100,2 );    
         $hex = str_replace( "#","",$hex_color );
 
@@ -549,6 +549,6 @@ if ( ! function_exists( 'reveal_adjust_color_brightness' ) ) {
             .str_pad( dechex( max( 0,min( 255,$g ) ) ),2,"0",STR_PAD_LEFT)
             .str_pad( dechex( max( 0,min( 255,$b ) ) ),2,"0",STR_PAD_LEFT);
 
-        return reveal_sanitize_hex_color( $new_hex );    
+        return codexin_sanitize_hex_color( $new_hex );    
     }
 }

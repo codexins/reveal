@@ -13,9 +13,9 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options and metabox
-$name               = codexin_meta( 'reveal_author_name' ); 
-$designation        = codexin_meta( 'reveal_author_desig' ); 
-$company            = codexin_meta( 'reveal_author_company' ); 
+$name               = codexin_meta( 'codexin_author_name' ); 
+$designation        = codexin_meta( 'codexin_author_desig' ); 
+$company            = codexin_meta( 'codexin_author_company' ); 
 
 // Fetching the attachment properties
 $image_prop         = codexin_attachment_metas_extended( $post->ID, 'testimonial', 'codexin-core-square-one' );

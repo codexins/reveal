@@ -31,4 +31,4 @@ define( 'REVEAL_THEME_IMG', REVEAL_THEME_ASSETS . 'images/' );
 require REVEAL_THEME_ROOT_DIR . 'framework/codexin_framework.php';
 
 // Instantiating framework
-$reveal_init = new Codexin_Framework;
+$framework_init = new Codexin_Framework;

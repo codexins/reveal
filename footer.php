@@ -16,10 +16,10 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options and metabox
-$reveal_footer  = codexin_get_option( 'cx_footer_version' );
-$reveal_cpr     = codexin_get_option( 'cx_footer_copyright' );
+$codexin_footer = codexin_get_option( 'cx_footer_version' );
+$codexin_cpr    = codexin_get_option( 'cx_footer_copyright' );
 $copyright_text = codexin_get_option( 'cx_copyright' );
-$disable_footer = codexin_meta( 'reveal_disable_footer' );
+$disable_footer = codexin_meta( 'codexin_disable_footer' );
        	
 
             if( $disable_footer == 0 ) { ?>
@@ -29,11 +29,11 @@ $disable_footer = codexin_meta( 'reveal_disable_footer' );
                 			<?php 
 
                             // Go to a specific footer template partial depending on user choice
-                			if( $reveal_footer == 1 ) {
+                			if( $codexin_footer == 1 ) {
                                 get_template_part( 'framework/templates/footer/footer', 'one' );
-                            } elseif( $reveal_footer == 2 ) {
+                            } elseif( $codexin_footer == 2 ) {
                                 get_template_part( 'framework/templates/footer/footer', 'two' );
-                            } elseif( $reveal_footer == 3 ) {
+                            } elseif( $codexin_footer == 3 ) {
                                 get_template_part( 'framework/templates/footer/footer', 'three' );
                             } else {
                                 get_template_part( 'framework/templates/footer/footer', 'general' );
@@ -44,7 +44,7 @@ $disable_footer = codexin_meta( 'reveal_disable_footer' );
                     
                         <?php
             			
-                        if( $reveal_cpr && ! empty( $copyright_text ) ) { 
+                        if( $codexin_cpr && ! empty( $copyright_text ) ) { 
 
                             /**
                              * Footer Copyright area, codexin_footer_copyright_content hook.

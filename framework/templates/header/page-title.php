@@ -16,10 +16,10 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 // Fetching and assigning data from theme options and metabox
 $page_title_background 	= ( ! empty( codexin_title_background() ) ) ? 'style=background-image:url('. esc_url( codexin_title_background() ) .')' : '';
 $title_pos   	 		= codexin_get_option( 'cx_page_title_position' );
-$title_pos_single 		= codexin_meta( 'reveal_page_title_alignment' );
+$title_pos_single 		= codexin_meta( 'codexin_page_title_alignment' );
 $enable_breadcrumbs		= codexin_get_option( 'cx_bcrumbs' );
 $breadcrumbs_pos 		= codexin_get_option( 'cx_bc_position' );
-$bread_pos_single 		= codexin_meta( 'reveal_page_breadcrumb_alignment' );
+$bread_pos_single 		= codexin_meta( 'codexin_page_breadcrumb_alignment' );
 
 if( is_page() || is_singular( 'portfolio' ) ) {
 	$title_position			= ( ! empty( $title_pos_single ) ) || ( $title_pos_single !== '0' ) ? $title_pos_single : $title_pos;

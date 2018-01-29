@@ -13,17 +13,17 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 //Member Information
-$designation        = codexin_meta( 'reveal_team_designation' ); 
-$email              = codexin_meta( 'reveal_team_email' ); 
-$phone              = codexin_meta( 'reveal_team_phone' ); 
-$company            = codexin_meta( 'reveal_team_company' ); 
+$designation        = codexin_meta( 'codexin_team_designation' ); 
+$email              = codexin_meta( 'codexin_team_email' ); 
+$phone              = codexin_meta( 'codexin_team_phone' ); 
+$company            = codexin_meta( 'codexin_team_company' ); 
 
 //social information
-$facebook           = codexin_meta( 'reveal_team_facebook' );
-$twitter            = codexin_meta( 'reveal_team_twitter' );
-$instagram          = codexin_meta( 'reveal_team_ig' );
-$gplus              = codexin_meta( 'reveal_team_gp' );
-$linkedin           = codexin_meta( 'reveal_team_ld' );
+$facebook           = codexin_meta( 'codexin_team_facebook' );
+$twitter            = codexin_meta( 'codexin_team_twitter' );
+$instagram          = codexin_meta( 'codexin_team_ig' );
+$gplus              = codexin_meta( 'codexin_team_gp' );
+$linkedin           = codexin_meta( 'codexin_team_ld' );
 
 // Fetching the attachment properties
 $image_prop          = codexin_attachment_metas_extended( $post->ID, 'team', 'full' );

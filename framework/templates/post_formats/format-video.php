@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from metabox
-$video = codexin_meta( 'reveal_video' );
+$video = codexin_meta( 'codexin_video' );
 
 if ( ! post_password_required() ) {
     

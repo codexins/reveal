@@ -158,9 +158,9 @@ if( ! class_exists( 'Codexin_Sidebar_Widget' ) ) {
 // Hooking and instantiate the class into widgets_init
 add_action( 'widgets_init', function() {
 
-    $reveal_widget = new Codexin_Sidebar_Widget();
-    $reveal_widget -> codexin_sidebar_widgets_init();
-    $reveal_widget -> codexin_footer_widgets();
+    $codexin_widget = new Codexin_Sidebar_Widget();
+    $codexin_widget -> codexin_sidebar_widgets_init();
+    $codexin_widget -> codexin_footer_widgets();
 
 });
 

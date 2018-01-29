@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from metabox
-$designation 		= codexin_meta( 'reveal_team_designation' );
+$designation 		= codexin_meta( 'codexin_team_designation' );
 
 // Fetching the attachment properties
 $image_prop         = codexin_attachment_metas_extended( $post->ID, 'team', 'codexin-core-square-two' );

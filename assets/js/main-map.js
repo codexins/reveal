@@ -5,8 +5,8 @@
 
 	map = new GMaps({
 		el: '#gmap',
-		lat: reveal_map_params.ev_lat,
-		lng: reveal_map_params.ev_long,
+		lat: codexin_map_params.ev_lat,
+		lng: codexin_map_params.ev_long,
 		scrollwheel:false,
 		zoom: 16,
 		zoomControl : true,
@@ -17,10 +17,10 @@
 		clickable: false
 	});
 
-	var image = reveal_map_params.ev_mkr;
+	var image = codexin_map_params.ev_mkr;
 	map.addMarker({
-		lat: reveal_map_params.ev_lat,
-		lng: reveal_map_params.ev_long,
+		lat: codexin_map_params.ev_lat,
+		lng: codexin_map_params.ev_long,
 		icon: image,
 		animation: google.maps.Animation.DROP,
 		verticalAlign: 'bottom',

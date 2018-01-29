@@ -246,7 +246,7 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
 	function codexin_body_class( $classes ) {
 	    $port_style 	= codexin_get_option( 'cx_portfolio_style' );
 	    $event_style 	= codexin_get_option( 'cx_events_style' );
-	    $disable_header = codexin_meta( 'reveal_disable_header' );
+	    $disable_header = codexin_meta( 'codexin_disable_header' );
 	    if( ( $port_style == 'list' ) && ( is_post_type_archive( 'portfolio' ) ) || ( $event_style == 'list' ) && ( is_post_type_archive( 'events' ) ) ) { 
 	        $classes[] = 'codexin-list-view';
 	        return $classes;

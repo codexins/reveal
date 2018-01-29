@@ -12,13 +12,13 @@
 // Do not allow directly accessing this file.
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
-$reveal_footer  = codexin_get_option( 'cx_footer_version' );
+$codexin_footer  = codexin_get_option( 'cx_footer_version' );
 
-if( $reveal_footer == 4 ) {
+if( $codexin_footer == 4 ) {
 	$footer_count = 2;
-} elseif( $reveal_footer == 5 ) {
+} elseif( $codexin_footer == 5 ) {
 	$footer_count = 3;
-} elseif( $reveal_footer == 6 ) {
+} elseif( $codexin_footer == 6 ) {
 	$footer_count = 4;
 } // end of footer version conditional check
 

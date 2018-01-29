@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 // Fetching and assigning data from theme options and metabox
 $post_style = codexin_get_option( 'cx_blog_style' );
 $image_size = ( ( $post_style == 'list' ) || is_single() || is_search() ) ? 'size=codexin-framework-rectangle-four' : 'size=codexin-core-rectangle-one';
-$gallery 	= codexin_meta( 'reveal_gallery', $image_size );
+$gallery 	= codexin_meta( 'codexin_gallery', $image_size );
 
 if ( ! post_password_required() ) {
     

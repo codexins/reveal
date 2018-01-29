@@ -102,7 +102,7 @@
 	Activating site loader
     ---------------------------------------------------------------- */
 
-    if (reveal_main_params.trans_loader == true) {
+    if (codexin_main_params.trans_loader == true) {
         $(window).on('load', function() { 
             $('#preloader_1').delay(300).fadeOut('fast');
             $('body').addClass('overflow-fix');
@@ -167,7 +167,7 @@
     /*--------------------------------------------------------------
     For Responsive Navigation
     --------------------------------------------------------------*/
-    var resnav = reveal_main_params.res_nav;
+    var resnav = codexin_main_params.res_nav;
 
     if (resnav == 'left') {
         /**

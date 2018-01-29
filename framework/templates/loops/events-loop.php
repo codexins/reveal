@@ -27,7 +27,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 $args = array(
     'post_type'  	=> 'events',
     'orderby'  		=> 'meta_value',
-    'meta_key'   	=> 'reveal_event_start_date',
+    'meta_key'   	=> 'codexin_event_start_date',
     'order'   		=> 'DESC',
     'paged'   		=> $paged,
 );

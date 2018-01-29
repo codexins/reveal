@@ -23,16 +23,16 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
     function codexin_color_settings() {
 
         // Retrieving color variables from theme options
-        $body_bg            = !empty( codexin_get_option( 'cx_body_bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_body_bg' ) ) : '#fff';
-        $text_color         = !empty( codexin_get_option( 'cx_text_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_text_color' ) ) : '#333';
-        $primary_color      = !empty( codexin_get_option( 'cx_primary_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_primary_color' ) ) : '#295970';
-        $secondary_color    = !empty( codexin_get_option( 'cx_secondary_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_secondary_color' ) ): '#fce38a';
-        $border_color       = !empty( codexin_get_option( 'cx_border_color' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_border_color' ) ) : '#ddd';
-        $secondary_bg       = !empty( codexin_get_option( 'cx_secondary_bg' ) ) ? reveal_sanitize_hex_color( codexin_get_option( 'cx_secondary_bg' ) ) : '#fafafa';
+        $body_bg            = !empty( codexin_get_option( 'cx_body_bg' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_body_bg' ) ) : '#fff';
+        $text_color         = !empty( codexin_get_option( 'cx_text_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_text_color' ) ) : '#333';
+        $primary_color      = !empty( codexin_get_option( 'cx_primary_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_primary_color' ) ) : '#295970';
+        $secondary_color    = !empty( codexin_get_option( 'cx_secondary_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_secondary_color' ) ): '#fce38a';
+        $border_color       = !empty( codexin_get_option( 'cx_border_color' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_border_color' ) ) : '#ddd';
+        $secondary_bg       = !empty( codexin_get_option( 'cx_secondary_bg' ) ) ? codexin_sanitize_hex_color( codexin_get_option( 'cx_secondary_bg' ) ) : '#fafafa';
         $white_color        = '#fff';
         $transparent_bg     = 'transparent';
 
-        $reveal_colors = '';
+        $theme_opt_colors = '';
 
         // Building up the css selectors
         $body_bg_selectors = array(
@@ -291,40 +291,40 @@ if( ! function_exists( 'codexin_color_settings' ) ) {
         );
 
         // Passing styles to the correct selectors
-        $reveal_colors .= implode( $body_bg_selectors, ',' ).'{background: '.$body_bg.';}';
-        $reveal_colors .= implode( $text_color_selectors, ',' ).'{color: '.$text_color.';}';
-        $reveal_colors .= implode( $text_color_in_bg_selectors, ',' ).'{background-color: '.$text_color.';}';
-        $reveal_colors .= implode( $text_color_in_border_selectors, ',' ).'{border-color: '.$text_color.';}';
-        $reveal_colors .= implode( $primary_color_selectors, ',' ).'{color: '.$primary_color.';}';
-        $reveal_colors .= implode( $primary_color_in_bg_selectors, ',' ).'{background: '.$primary_color.';}';
-        $reveal_colors .= implode( $primary_color_in_bg_color_selectors, ',' ).'{background-color: '.$primary_color.';}';
-        $reveal_colors .= implode( $primary_color_in_border_selectors, ',' ).'{border-color: '.$primary_color.';}';
-        $reveal_colors .= implode( $primary_color_in_mobile_menu_selectors_1, ',' ).'{background-color: '.$primary_color.';}';
-        $reveal_colors .= implode( $primary_color_in_mobile_menu_selectors_2, ',' ).'{background: '.reveal_adjust_color_brightness($primary_color, -20 ).';}';
-        $reveal_colors .= implode( $primary_color_in_mobile_menu_selectors_3, ',' ).'{background-color: '.reveal_adjust_color_brightness($primary_color, -40 ).';}';
-        $reveal_colors .= implode( $primary_color_special_selectors_1, ',' ).'{background: '.$primary_color.' none repeat scroll 0 0;}';
-        $reveal_colors .= implode( $primary_color_special_selectors_2, ',' ).'{-webkit-box-shadow: 5px 5px 5px 0 '.$primary_color.'; -moz-box-shadow: 5px 5px 5px 0 '.$primary_color.'; -ms-box-shadow: 5px 5px 5px 0 '.$primary_color.'; -o-box-shadow: 5px 5px 5px 0 '.$primary_color.'; box-shadow: 5px 5px 5px 0 '.$primary_color.';}';
-        $reveal_colors .= implode( $primary_color_special_selectors_3, ',' ).'{background: linear-gradient(transparent, '.$primary_color.' );}';
-        $reveal_colors .= implode( $primary_color_special_selectors_4, ',' ).'{background: '.$primary_color.'; background: '.reveal_hex_to_rgba($primary_color, 0.75 ).';}';
-        $reveal_colors .= implode( $primary_color_special_selectors_5, ',' ).'{background: '.$primary_color.'; background: '.reveal_hex_to_rgba($primary_color, 0.35 ).';}';
-        $reveal_colors .= implode( $secondary_color_selectors, ',' ).'{color: '.$secondary_color.';}';
-        $reveal_colors .= implode( $secondary_color_in_border_selectors, ',' ).'{border-color: '.$secondary_color.';}';
-        $reveal_colors .= implode( $border_color_selectors, ',' ).'{border-color: '.$border_color.';}';
-        $reveal_colors .= implode( $border_color_in_bg_selectors, ',' ).'{background: '.$border_color.';}';
-        $reveal_colors .= implode( $secondary_bg_selectors, ',' ).'{background: '.$secondary_bg.';}';
-        $reveal_colors .= implode( $white_color_selectors, ',' ).'{color: '.$white_color.';}';
-        $reveal_colors .= implode( $white_color_in_bg_selectors, ',' ).'{background: '.$white_color.';}';
-        $reveal_colors .= implode( $white_color_in_border_selectors, ',' ).'{border-color: '.$white_color.';}';
-        $reveal_colors .= implode( $transparent_color_in_bg_selectors, ',' ).'{background: '.$transparent_bg.';}';
+        $theme_opt_colors .= implode( $body_bg_selectors, ',' ).'{background: '.$body_bg.';}';
+        $theme_opt_colors .= implode( $text_color_selectors, ',' ).'{color: '.$text_color.';}';
+        $theme_opt_colors .= implode( $text_color_in_bg_selectors, ',' ).'{background-color: '.$text_color.';}';
+        $theme_opt_colors .= implode( $text_color_in_border_selectors, ',' ).'{border-color: '.$text_color.';}';
+        $theme_opt_colors .= implode( $primary_color_selectors, ',' ).'{color: '.$primary_color.';}';
+        $theme_opt_colors .= implode( $primary_color_in_bg_selectors, ',' ).'{background: '.$primary_color.';}';
+        $theme_opt_colors .= implode( $primary_color_in_bg_color_selectors, ',' ).'{background-color: '.$primary_color.';}';
+        $theme_opt_colors .= implode( $primary_color_in_border_selectors, ',' ).'{border-color: '.$primary_color.';}';
+        $theme_opt_colors .= implode( $primary_color_in_mobile_menu_selectors_1, ',' ).'{background-color: '.$primary_color.';}';
+        $theme_opt_colors .= implode( $primary_color_in_mobile_menu_selectors_2, ',' ).'{background: '.codexin_adjust_color_brightness( $primary_color, -20 ).';}';
+        $theme_opt_colors .= implode( $primary_color_in_mobile_menu_selectors_3, ',' ).'{background-color: '.codexin_adjust_color_brightness( $primary_color, -40 ).';}';
+        $theme_opt_colors .= implode( $primary_color_special_selectors_1, ',' ).'{background: '.$primary_color.' none repeat scroll 0 0;}';
+        $theme_opt_colors .= implode( $primary_color_special_selectors_2, ',' ).'{-webkit-box-shadow: 5px 5px 5px 0 '.$primary_color.'; -moz-box-shadow: 5px 5px 5px 0 '.$primary_color.'; -ms-box-shadow: 5px 5px 5px 0 '.$primary_color.'; -o-box-shadow: 5px 5px 5px 0 '.$primary_color.'; box-shadow: 5px 5px 5px 0 '.$primary_color.';}';
+        $theme_opt_colors .= implode( $primary_color_special_selectors_3, ',' ).'{background: linear-gradient(transparent, '.$primary_color.' );}';
+        $theme_opt_colors .= implode( $primary_color_special_selectors_4, ',' ).'{background: '.$primary_color.'; background: '.codexin_hex_to_rgba( $primary_color, 0.75 ).';}';
+        $theme_opt_colors .= implode( $primary_color_special_selectors_5, ',' ).'{background: '.$primary_color.'; background: '.codexin_hex_to_rgba( $primary_color, 0.35 ).';}';
+        $theme_opt_colors .= implode( $secondary_color_selectors, ',' ).'{color: '.$secondary_color.';}';
+        $theme_opt_colors .= implode( $secondary_color_in_border_selectors, ',' ).'{border-color: '.$secondary_color.';}';
+        $theme_opt_colors .= implode( $border_color_selectors, ',' ).'{border-color: '.$border_color.';}';
+        $theme_opt_colors .= implode( $border_color_in_bg_selectors, ',' ).'{background: '.$border_color.';}';
+        $theme_opt_colors .= implode( $secondary_bg_selectors, ',' ).'{background: '.$secondary_bg.';}';
+        $theme_opt_colors .= implode( $white_color_selectors, ',' ).'{color: '.$white_color.';}';
+        $theme_opt_colors .= implode( $white_color_in_bg_selectors, ',' ).'{background: '.$white_color.';}';
+        $theme_opt_colors .= implode( $white_color_in_border_selectors, ',' ).'{border-color: '.$white_color.';}';
+        $theme_opt_colors .= implode( $transparent_color_in_bg_selectors, ',' ).'{background: '.$transparent_bg.';}';
 
         // Retrieving custom css from theme options
         $custom_css = codexin_get_option( 'cx_advanced_editor_css' );
 
         // Merging the custom css
-        $reveal_colors .= $custom_css;
+        $theme_opt_colors .= $custom_css;
 
         // Finally adding the css after the Main Stylesheet
-        wp_add_inline_style( 'main-stylesheet', $reveal_colors );
+        wp_add_inline_style( 'main-stylesheet', $theme_opt_colors );
 
     }
 

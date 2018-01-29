@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from metabox
-$audio = codexin_meta( 'reveal_audio' );
+$audio = codexin_meta( 'codexin_audio' );
 
 if ( ! post_password_required() ) {
     

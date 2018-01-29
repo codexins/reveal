@@ -13,9 +13,9 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from metabox
-$quote 	= codexin_meta( 'reveal_quote_text' );
-$name 	= codexin_meta( 'reveal_quote_name' );
-$source = codexin_meta( 'reveal_quote_source' );
+$quote 	= codexin_meta( 'codexin_quote_text' );
+$name 	= codexin_meta( 'codexin_quote_name' );
+$source = codexin_meta( 'codexin_quote_source' );
 
 
 if ( ! post_password_required() ) {

@@ -87,19 +87,19 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		}
 
 		// Google map for single events pages
-		$reveal_gmap_api = get_option('codexin_options_gmap_api')['gmap_api'];
+		$codexin_gmap_api = get_option('codexin_options_gmap_api')['gmap_api'];
 		if( is_singular( 'events' ) ) {
-			wp_enqueue_script( 'reveal-gmap-api-script', 'https://maps.googleapis.com/maps/api/js?key='.$reveal_gmap_api, array ( 'jquery' ), '', true );
+			wp_enqueue_script( 'reveal-gmap-api-script', 'https://maps.googleapis.com/maps/api/js?key='.$codexin_gmap_api, array ( 'jquery' ), '', true );
 			wp_enqueue_script( 'reveal-gmap-script', REVEAL_THEME_JS . 'gmaps.js', array ( 'jquery' ), '0.4', true );
 
-			$lat_var 		= codexin_meta( 'reveal_event_address_latitude' );
-			$longi_var 		= codexin_meta( 'reveal_event_address_longitude' );
+			$lat_var 		= codexin_meta( 'codexin_event_address_latitude' );
+			$longi_var 		= codexin_meta( 'codexin_event_address_longitude' );
 			$event_lat 		= ! empty( $lat_var ) ? $lat_var : '';
 			$event_longi 	= ! empty( $longi_var ) ? $longi_var : '';
 			$map_mkr 		= REVEAL_THEME_IMG . 'map-marker.png';
 
 			wp_register_script( 'reveal-main-map-script', REVEAL_THEME_JS . 'main-map.js', array ( 'jquery' ), 1.0, true );
-		    wp_localize_script( 'reveal-main-map-script', 'reveal_map_params', array(
+		    wp_localize_script( 'reveal-main-map-script', 'codexin_map_params', array(
 		        'ev_lat' 	=> $event_lat,
 		        'ev_long' 	=> $event_longi,
 		        'ev_mkr' 	=> $map_mkr
@@ -119,7 +119,7 @@ if ( ! function_exists( 'codexin_framework_scripts' ) ) {
 		$responsive_nav 	= !empty( codexin_get_option( 'cx_responsive_version' ) ) ? codexin_get_option( 'cx_responsive_version' ) : 'left';
 		$transition_loader 	= !empty( codexin_get_option( 'cx_page_loader' ) ) ? codexin_get_option( 'cx_page_loader' ) : true;
 		wp_register_script( 'main-script', REVEAL_THEME_JS . 'main.js', array ( 'jquery' ), 1.0, true );
-	    wp_localize_script( 'main-script', 'reveal_main_params', array(
+	    wp_localize_script( 'main-script', 'codexin_main_params', array(
 	        'res_nav' 		=> $responsive_nav,
 	        'trans_loader' 	=> $transition_loader
 	    ) ); 

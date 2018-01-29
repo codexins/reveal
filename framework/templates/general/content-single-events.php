@@ -14,19 +14,19 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 
 // Fetching data from metabox
-$e_start_date           = codexin_meta( 'reveal_event_start_date' );
+$e_start_date           = codexin_meta( 'codexin_event_start_date' );
 $e_st_date              = ! empty( $e_start_date ) ? date( get_option( 'date_format' ), strtotime( $e_start_date ) ) : '';
-$e_end_date             = codexin_meta( 'reveal_event_end_date' );
+$e_end_date             = codexin_meta( 'codexin_event_end_date' );
 $e_en_date              = ! empty( $e_end_date ) ? date( get_option( 'date_format' ), strtotime( $e_end_date ) ) : '';
-$e_start_time           = codexin_meta( 'reveal_event_start_time' );
+$e_start_time           = codexin_meta( 'codexin_event_start_time' );
 $e_st_time              = date_create( $e_start_time );
-$e_end_time             = codexin_meta( 'reveal_event_end_time' );
+$e_end_time             = codexin_meta( 'codexin_event_end_time' );
 $e_en_time              = date_create( $e_end_time );
-$e_phone                = codexin_meta( 'reveal_event_phone' );
-$e_mail                 = codexin_meta( 'reveal_event_email' );
-$e_address              = codexin_meta( 'reveal_event_address' );
-$e_address_latitude     = codexin_meta( 'reveal_event_address_latitude' );
-$e_address_longitude    = codexin_meta( 'reveal_event_address_longitude' );
+$e_phone                = codexin_meta( 'codexin_event_phone' );
+$e_mail                 = codexin_meta( 'codexin_event_email' );
+$e_address              = codexin_meta( 'codexin_event_address' );
+$e_address_latitude     = codexin_meta( 'codexin_event_address_latitude' );
+$e_address_longitude    = codexin_meta( 'codexin_event_address_longitude' );
 $event_cat_list         = get_the_term_list( $post->ID, 'events-category', '', ', ', '' );
 $event_tag_list         = get_the_term_list( $post->ID, 'events_tags', '', ', ', '' );
 

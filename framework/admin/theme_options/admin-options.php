@@ -187,7 +187,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     ),
 
                     // array(
-                    //     'id'       => 'reveal_page_loader_type',
+                    //     'id'       => 'codexin_page_loader_type',
                     //     'type'     => 'image_select',
                     //     'title'    => esc_html__( 'Select Blog & Archive Page Layout', 'reveal' ),
                     //     'subtitle' => esc_html__( 'Select Blog & Archive Page Layout', 'reveal' ),
@@ -219,7 +219,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     // ),
 
                     // array(
-                    //     'id'       => 'reveal_page_loader_bg',
+                    //     'id'       => 'codexin_page_loader_bg',
                     //     'type'     => 'background',
                     //     'title'    => esc_html__( 'Page Loader Background Color', 'reveal' ),
                     //     'background-repeat'     => false,
@@ -237,7 +237,7 @@ if ( ! class_exists( 'Codexin_Admin' ) ) {
                     // ),
 
                     // array(
-                    //     'id'       => 'reveal_page_loader_color',
+                    //     'id'       => 'codexin_page_loader_color',
                     //     'type'     => 'color',
                     //     'title'    => esc_html__( 'Page Loader Color', 'reveal' ),
                     //     'default'  => '#000000',
