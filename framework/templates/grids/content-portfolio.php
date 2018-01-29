@@ -21,10 +21,9 @@ $image_prop      = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'c
 ?>
 
 <article id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="portfolio-item-content">
 	    <div class="item-thumbnail">
 	        <img src="<?php printf( '%s', $image_prop['src'] ); ?>"  <?php printf( '%s', $image_prop['alt'] ); ?> itemprop="image">
-	        <ul class="portfolio-action-btn reveal-color-0">
+	        <ul>
 	            <li><a href="<?php echo esc_url(get_the_permalink()); ?>"><i class="flaticon-link"></i></a></li>
 	        </ul>                                            
 	    </div> <!-- end of item-thumbnail -->
@@ -42,5 +41,4 @@ $image_prop      = codexin_attachment_metas_extended( $post->ID, 'portfolio', 'c
 				</ul> <!-- end of portfolio-cat -->
 			<?php } ?>
 	    </div> <!-- end of portfolio-description -->
-	</div> <!-- end of portfolio-item-content -->
 </article> <!-- end of #portfolio-## -->

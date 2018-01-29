@@ -13110,7 +13110,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 a, .page-links a span, .gallery-item a img, button,
 input[type="submit"],
 input[type="button"], .item-img-wrap img, .blog-grid-wrapper .img-thumb .img-wrapper a::before, .blog-grid-wrapper .img-thumb .img-wrapper a::after, .cx-primary-btn, .posts-nav .nav-next a,
-.posts-nav .nav-previous a, .gallery-carousel span, .portfolio-list-wrapper article {
+.posts-nav .nav-previous a, .gallery-carousel span, .events-list-wrapper article,
+.portfolio-list-wrapper article, .portfolio-grid-wrapper .item-thumbnail ul, .portfolio-grid-wrapper .item-thumbnail::before, .portfolio-grid-wrapper article {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -13203,16 +13204,18 @@ input[type="button"]:hover, .c-menu__items a:hover,
 }
 
 blockquote, .wp-caption, .screen-reader-text:focus, .bgc-offset, #comments .comment-info, .sticky .post-wrapper,
-.category-sticky .post-wrapper, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span:hover, .pagination > li span:focus, .post-link > a, body.codexin-list-view {
+.category-sticky .post-wrapper, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span:hover, .pagination > li span:focus, .post-link > a, body.codexin-list-view, body.codexin-grid-view {
   background-color: #f5f5f5;
 }
 
-.bgc-white, .portfolio-list-wrapper article, .portfolio-list-wrapper article .image-thumbnail .date-wrapper {
+.bgc-white, .events-list-wrapper article,
+.portfolio-list-wrapper article, .events-list-wrapper article .image-thumbnail .date-wrapper,
+.portfolio-list-wrapper article .image-thumbnail .date-wrapper, .portfolio-grid-wrapper .item-thumbnail ul > li a, .portfolio-grid-wrapper article .portfolio-description {
   background-color: #ffffff;
 }
 
 .page-links a span, .sidebar-widget li a, .tagcloud a, .widget_calendar tbody td, .comment-info .fn a, .comment-meta a, .meta-details a, #content .cx-like-wrapper a.cx-button:focus, #content .cx-like-wrapper a.cx-button:hover, #content .cx-like-wrapper .cx-count, .cx-primary-btn, .posts-nav .nav-next a,
-.posts-nav .nav-previous a, .pagination > li a, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span, .pagination > li span:hover, .pagination > li span:focus, .share.socials a {
+.posts-nav .nav-previous a, .pagination > li a, .pagination > li a:hover, .pagination > li a:focus, .pagination > li span, .pagination > li span:hover, .pagination > li span:focus, .share.socials a, .portfolio-grid-wrapper article a {
   color: #333;
 }
 
@@ -13228,7 +13231,7 @@ blockquote, .wp-caption, .screen-reader-text:focus, .bgc-offset, #comments .comm
   color: #39468C;
 }
 
-a:hover, a:focus, .color-secondary, .sf-menu > li > a:hover, .sf-menu > li > a:focus, .sidebar-widget li a:hover, .meta-details a:hover, .blog-grid-wrapper .post-meta li a:hover, .blog-grid-wrapper .cx-primary-btn:focus, .blog-grid-wrapper .cx-primary-btn:hover {
+a:hover, a:focus, .color-secondary, .sf-menu > li > a:hover, .sf-menu > li > a:focus, .sidebar-widget li a:hover, .meta-details a:hover, .blog-grid-wrapper .post-meta li a:hover, .blog-grid-wrapper .cx-primary-btn:focus, .blog-grid-wrapper .cx-primary-btn:hover, .portfolio-grid-wrapper article a:hover {
   color: #F26C9E;
 }
 
@@ -14805,6 +14808,7 @@ nav .navbar-brand img {
  * components portfolio-list
  *
  */
+.events-list-wrapper article,
 .portfolio-list-wrapper article {
   overflow: hidden;
   display: table;
@@ -14819,6 +14823,7 @@ nav .navbar-brand img {
   margin-bottom: 40px;
 }
 
+.events-list-wrapper article:hover,
 .portfolio-list-wrapper article:hover {
   -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
@@ -14827,6 +14832,7 @@ nav .navbar-brand img {
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
 }
 
+.events-list-wrapper article .image-thumbnail,
 .portfolio-list-wrapper article .image-thumbnail {
   display: table-cell;
   vertical-align: middle;
@@ -14838,6 +14844,7 @@ nav .navbar-brand img {
   background-attachment: scroll;
 }
 
+.events-list-wrapper article .image-thumbnail > a,
 .portfolio-list-wrapper article .image-thumbnail > a {
   width: 100%;
   height: 100%;
@@ -14849,11 +14856,13 @@ nav .navbar-brand img {
 }
 
 @media only screen and (max-width: 479px) {
+  .events-list-wrapper article .image-thumbnail,
   .portfolio-list-wrapper article .image-thumbnail {
     min-height: 250px;
   }
 }
 
+.events-list-wrapper article .image-thumbnail .date-wrapper,
 .portfolio-list-wrapper article .image-thumbnail .date-wrapper {
   position: absolute;
   top: 30px;
@@ -14862,6 +14871,7 @@ nav .navbar-brand img {
   padding: 3px 15px 1px;
 }
 
+.events-list-wrapper article .image-thumbnail .date-wrapper p,
 .portfolio-list-wrapper article .image-thumbnail .date-wrapper p {
   margin-bottom: 0;
   font-size: 14px;
@@ -14869,6 +14879,7 @@ nav .navbar-brand img {
 }
 
 @media only screen and (max-width: 991px) {
+  .events-list-wrapper article .image-thumbnail,
   .portfolio-list-wrapper article .image-thumbnail {
     display: block;
     width: 100%;
@@ -14876,6 +14887,7 @@ nav .navbar-brand img {
   }
 }
 
+.events-list-wrapper article .description-wrapper,
 .portfolio-list-wrapper article .description-wrapper {
   width: 60%;
   display: table-cell;
@@ -14883,28 +14895,34 @@ nav .navbar-brand img {
   padding: 35px;
 }
 
+.events-list-wrapper article .description-wrapper h2,
 .portfolio-list-wrapper article .description-wrapper h2 {
   margin-top: 0;
 }
 
+.events-list-wrapper article .description-wrapper .list-tag,
 .portfolio-list-wrapper article .description-wrapper .list-tag {
   margin-bottom: 10px;
 }
 
+.events-list-wrapper article .description-wrapper .list-tag i,
 .portfolio-list-wrapper article .description-wrapper .list-tag i {
   margin-right: 5px;
 }
 
+.events-list-wrapper article .description-wrapper .list-tag a,
 .portfolio-list-wrapper article .description-wrapper .list-tag a {
   font-size: 14px;
   letter-spacing: .05em;
 }
 
+.events-list-wrapper article .description-wrapper .list-wrapper,
 .portfolio-list-wrapper article .description-wrapper .list-wrapper {
   margin-bottom: 25px;
 }
 
 @media only screen and (max-width: 991px) {
+  .events-list-wrapper article .description-wrapper,
   .portfolio-list-wrapper article .description-wrapper {
     display: block;
     width: 100%;
@@ -14912,8 +14930,131 @@ nav .navbar-brand img {
   }
 }
 
+.events-list-wrapper article:last-child,
 .portfolio-list-wrapper article:last-child {
   margin-bottom: 0;
+}
+
+/**
+ * components portfolio-grid
+ *
+ */
+body.codexin-grid-view .posts-nav,
+body.codexin-grid-view .pagination {
+  margin-top: 0;
+}
+
+.portfolio-grid-wrapper .item-thumbnail {
+  position: relative;
+}
+
+.portfolio-grid-wrapper .item-thumbnail ul {
+  opacity: 0;
+  padding: 0;
+  margin: auto;
+  height: 50px;
+  text-align: center;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.portfolio-grid-wrapper .item-thumbnail ul > li {
+  display: inline-block;
+}
+
+.portfolio-grid-wrapper .item-thumbnail ul > li a {
+  font-size: 18px;
+  font-weight: bold;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.portfolio-grid-wrapper .item-thumbnail::before {
+  content: "";
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+}
+
+.portfolio-grid-wrapper article {
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  text-align: center;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+
+.portfolio-grid-wrapper article:hover {
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-grid-wrapper article .portfolio-description {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+}
+
+.portfolio-grid-wrapper article .portfolio-description h4 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: initial;
+}
+
+.portfolio-grid-wrapper article .portfolio-description .portfolio-cat {
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.portfolio-grid-wrapper article .portfolio-description .portfolio-cat > li {
+  margin: 0 3px;
+  line-height: 22px;
+  display: inline-block;
+  position: relative;
+  list-style-type: none;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  list-style: none;
+}
+
+.portfolio-grid-wrapper article:hover .item-thumbnail::before {
+  opacity: 1;
+}
+
+.portfolio-grid-wrapper article:hover ul {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=main.css.map */

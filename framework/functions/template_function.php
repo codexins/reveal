@@ -334,15 +334,11 @@ if ( ! function_exists( 'codexin_pagination_block' ) ) {
 	    $post_style             = codexin_get_option( 'cx_blog_style' );
 	    $posts_nav              = codexin_get_option( 'cx_pagination' );
 
-        echo ( ( $post_style == 'grid' ) ) ? '<div class="col-xs-12">' : '' ;
-
         if( $posts_nav == 'numbered' ) {
             echo codexin_numbered_posts_nav();
         } else {
             codexin_posts_link();
-        }
-
-        echo ( ( $post_style == 'grid' ) ) ? '</div>' : '' ;
+        }        
 
 	}
 }
@@ -363,15 +359,41 @@ if ( ! function_exists( 'codexin_portfolio_pagination_block' ) ) {
 		$portfolio_style           	= codexin_get_option( 'cx_portfolio_style' );
 		$portfolio_nav		        = codexin_get_option( 'cx_portfolio_pagination' );
 
-        echo ( $portfolio_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
-
         if( $portfolio_nav == 'numbered' ) {
             echo codexin_numbered_posts_nav();
         } else {               
             codexin_posts_link( 'Newer Portfolios', 'Older Portfolios' );
         }
         
-        echo ( $portfolio_style == 'grid' ) ? '</div>' : '' ;
+	}
+}
+
+
+add_action( 'codexin_before_events_pagination', 'codexin_portfolio_events_block', 10 );
+if ( ! function_exists( 'codexin_portfolio_events_block' ) ) {
+	/**
+	 * Rendering the HTML for events pagination
+	 *
+	 * @since 	v1.0
+	 */
+	function codexin_portfolio_events_block() {
+	    if( is_singular('events') ) {
+	    	return;
+	    }
+
+		$events_style           = codexin_get_option( 'cx_events_style' );
+		$events_nav		        = codexin_get_option( 'cx_events_pagination' );
+
+	    
+	    echo ( $events_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
+	    
+	    if( $events_nav == 'numbered' ) {
+	        echo codexin_numbered_posts_nav();
+	    } else {               
+	        codexin_posts_link( 'Newer Events', 'Older Events' );
+    }
+
+	    echo ( $events_style == 'grid' ) ? '</div>' : '' ;
 
 	}
 }

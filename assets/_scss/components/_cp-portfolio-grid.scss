@@ -1,0 +1,127 @@
+/**
+ * components portfolio-grid
+ *
+ */
+
+
+
+
+
+ //.events .events-item-content,
+
+body {
+	&.codexin-grid-view {
+		@extend %bgc-offset;
+		.posts-nav,
+		.pagination {
+			margin-top: 0;
+		}
+	}
+}
+
+ .portfolio-grid-wrapper {
+	.item-thumbnail {
+		position: relative;
+		ul {
+		    opacity: 0;
+		    padding: 0;
+		    margin: auto;
+		    height: 50px;
+		    text-align: center;
+		    @include abs-position(0,0,0,0);
+		    @extend %cx-transition;
+		    & > li  {
+	    	    display: inline-block;
+				a {
+				    font-size: 18px;
+				    font-weight: bold;
+					@include box(45px, 45px);
+				    @include border-radius(50%);
+				    @extend %bgc-white;
+				}
+		    }
+		}
+		
+		&::before {
+		    content: "";
+			@include abs-position(0,0,0,0);
+			@extend %cx-transition;
+		    opacity: 0;
+		    background: rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+		}
+	}
+
+ 	article {
+	    -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    -moz-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    -ms-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    -o-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+	    margin-bottom: $cx-col-spacing;
+	    text-align: center;
+		@include border-radius(0);
+		@extend %cx-transition;
+		&:hover {
+			-webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    -ms-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    -o-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		a {
+		    @extend %color-text;
+		    &:hover {
+		    	@extend %color-secondary;
+		    }
+		}
+
+
+
+		.portfolio-description {
+			padding-top: $cx-heading-margin-bottom;
+			padding-bottom: $cx-heading-margin-bottom;
+			padding-left:15px;
+			padding-right: 15px;
+		    width: 100%;
+		    @extend %bgc-white;
+		    h4 {
+			    font-size: 1em;
+			    font-weight: 600;
+			    margin-bottom: 5px;
+			    text-transform: initial;
+		    }
+
+		    .portfolio-cat {
+		    	margin-bottom: 5px;
+		    	padding:0;
+		    	& > li {
+		    	    margin: 0 3px;
+    				line-height: 22px;
+				    display: inline-block;
+				    position: relative;
+				    list-style-type: none;
+				    font-size: 13px;
+				    font-weight: 300;
+				    letter-spacing: 1px;
+				    text-transform: capitalize;
+				    list-style: none;
+		    	}
+
+		    }
+		}
+
+		&:hover {
+			.item-thumbnail {
+				&::before {
+					opacity: 1;
+				}
+			}
+
+			ul {
+				opacity:1;
+			}
+		}
+ 	}
+
+ }

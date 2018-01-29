@@ -39,7 +39,7 @@ if( ! $events_single_post ) {
 	if ( $loop->have_posts() ) {
 
 		$i = 0;
-	    echo '<div class="events-archive-wrapper clearfix">';
+	    
 
 	    /* Start the Loop */
 	    while ( $loop->have_posts() ) {
@@ -59,18 +59,7 @@ if( ! $events_single_post ) {
 
 	    } // end of loop have_posts()
 
-	    echo '</div>';
-	    echo '<div class="clearfix"></div>';
-
-	    echo ( $events_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
-	    
-	    if( $events_nav == 'numbered' ) {
-	        echo codexin_numbered_posts_nav( $loop );
-	    } else {               
-	        codexin_posts_link( 'Newer Events', 'Older Events' );
-	    }
-
-	    echo ( $events_style == 'grid' ) ? '</div>' : '' ;	    
+ 
 
 	} else {		
 		get_template_part( 'framework/templates/general/content', 'none' );

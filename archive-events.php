@@ -48,7 +48,13 @@ get_header(); ?>
                                 get_template_part( 'framework/templates/loops/events', 'loop' );
 
                             echo ( $events_style ) == 'grid' ? '</div></div> <!-- end of events-grid-wrapper -->' : '</div> <!-- end of events-list-wrapper -->' ;
-                        ?>
+                            /**
+                             * Initial contents before events pagination, codexin_before_events_pagination hook.
+                             *
+                             * @hooked codexin_events_pagination_block - 10 (outputs the HTML for events pagination)
+                             */
+                            do_action( 'codexin_before_events_pagination' ); 
+                            ?>
 
                     </main><!-- end of #primary -->
                 </div> <!-- end of col -->

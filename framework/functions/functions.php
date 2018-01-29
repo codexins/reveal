@@ -250,6 +250,9 @@ if ( ! function_exists( 'codexin_body_class' ) ) {
 	    if( ( $port_style == 'list' ) && ( is_post_type_archive( 'portfolio' ) ) || ( $event_style == 'list' ) && ( is_post_type_archive( 'events' ) ) ) { 
 	        $classes[] = 'codexin-list-view';
 	        return $classes;
+	    } elseif( ( $port_style == 'grid' ) && ( is_post_type_archive( 'portfolio' ) ) || ( $event_style == 'grid' ) && ( is_post_type_archive( 'events' ) ) ) { 
+	        $classes[] = 'codexin-grid-view';
+	        return $classes;
 	    } elseif( $disable_header == 1 ){
 	        $classes[] = 'no-header';
 	        return $classes;

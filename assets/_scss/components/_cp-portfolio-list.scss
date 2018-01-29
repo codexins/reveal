@@ -3,10 +3,14 @@
  *
  */
 
- body.codexin-list-view {
-    @extend %bgc-offset;
+
+body {
+	&.codexin-list-view {
+		@extend %bgc-offset;
+	}
 }
 
+.events-list-wrapper,
 .portfolio-list-wrapper {
 	article {
 		overflow: hidden;

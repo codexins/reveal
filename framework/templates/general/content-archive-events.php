@@ -25,17 +25,16 @@ $image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', '
 
 ?>
 
-<article id="event-<?php the_ID(); ?>" <?php post_class( array( 'clearfix events-list' ) ); ?>>
-    <div class="post-wrapper reveal-border-1">
-        <div class="event-list-wrapper reveal-bg-2">
-            <div class="thumb-events" style="background-image:url('<?php printf( '%s', $image_prop['src'] ); ?>');">
+<article id="event-<?php the_ID(); ?>" <?php post_class( array( 'clearfix' ) ); ?>>
+        
+            <div class="image-thumbnail" style="background-image:url('<?php printf( '%s', $image_prop['src'] ); ?>');">
                 <a href="<?php echo esc_url( get_the_permalink() ); ?>" itemprop="url"></a>
-                <div class="events-date reveal-bg-2">
+                <div class="date-wrapper">
                     <p><span itemprop="startDate"><?php echo esc_html( $event_start_date ); ?></span></p>
                 </div>
             </div>
 
-            <div class="desc-events">
+            <div class="description-wrapper">
                 <?php
                 if( ! empty( $event_list ) ) { ?>
                     <p class="list-tag reveal-color-0"><i class="flaticon-bookmark"></i> 
@@ -80,6 +79,5 @@ $image_prop          = codexin_attachment_metas_extended( $post->ID, 'events', '
                 ?>
 
             </div> <!-- end of desc-events -->  
-        </div> <!-- end of event-list-wrapper -->        
-    </div> <!--post-wrapper-->
+           
 </article> <!-- end of #event-## -->
