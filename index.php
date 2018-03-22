@@ -19,8 +19,8 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 // Fetching and assigning data from theme options
-$layout          = !empty( codexin_get_option( 'cx_blog_layout' ) ) ? codexin_get_option( 'cx_blog_layout' ) : 'right';
-$post_style      = !empty( codexin_get_option( 'cx_blog_style' ) ) ? codexin_get_option( 'cx_blog_style' ) : 'list';
+$layout          = ! empty( codexin_get_option( 'cx_blog_layout' ) ) ? codexin_get_option( 'cx_blog_layout' ) : 'right';
+$post_style      = ! empty( codexin_get_option( 'cx_blog_style' ) ) ? codexin_get_option( 'cx_blog_style' ) : 'list';
 $column          = ( $layout == 'left' || $layout == 'right' ) ? '8' : '12';
 $sidebar_class   = ( $layout == 'no' ) ? '' : '4';
 $pull_class      = ( $layout == 'left') ? ' pull-right' : '';
@@ -29,6 +29,13 @@ $offset_class    = ' col-md-offset-1';
 get_header(); ?>
 
 	<div id="content" class="main-content-wrapper site-content">
+        <?php 
+        /**
+         *
+         * Initial contents after start of #content div, codexin_content_entry hook.
+         */
+        do_action( 'codexin_content_entry' );
+        ?>
 		<div class="container">
 			<div class="row">
 
@@ -43,7 +50,7 @@ get_header(); ?>
                 );
 
                 ?>
-                    <main id="primary" class="site-main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/WebPageElement">
+                    <main id="primary" class="site-main" itemscope itemtype="https://schema.org/Blog">
 
                         <?php 
                             echo ( $post_style == 'grid' ) ? '<div class="blog-grid-wrapper"><div class="row">' : '<div class="blog-list-wrapper">' ;
@@ -92,6 +99,13 @@ get_header(); ?>
 
 			</div> <!-- end of row -->
 		</div> <!-- end of container -->
+        <?php 
+        /**
+         *
+         * Initial contents before end of #content div, codexin_content_exit hook.
+         */
+        do_action( 'codexin_content_exit' );
+        ?>
 	</div> <!-- end of #content -->
 
 <?php get_footer(); ?>

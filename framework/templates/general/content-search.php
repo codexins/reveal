@@ -64,4 +64,3 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
         </div><!-- end of entry-content -->        
     </div> <!-- end of post-wrapper -->
 </article><!-- end of #post-## -->
-<div class="clearfix"></div>

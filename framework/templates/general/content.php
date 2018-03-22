@@ -20,7 +20,7 @@ $read_more       = codexin_get_option( 'cx_blog_read_more' );
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'clearfix' ) ); ?> itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+<article id="post-<?php the_ID(); ?>" <?php post_class( array( 'clearfix' ) ); ?>>
     <div class="post-wrapper reveal-border-1">
 
         <?php
@@ -72,7 +72,7 @@ $read_more       = codexin_get_option( 'cx_blog_read_more' );
 
         ?>
 
-        <div class="entry-content" <?php echo ( is_single() ) ? esc_attr( 'itemprop=text' ) : esc_attr( 'itemprop=articleBody') ?>>
+        <div class="entry-content">
 
     		<?php
 

@@ -327,19 +327,23 @@ if ( ! function_exists( 'codexin_pagination_block' ) ) {
 	 * @since 	v1.0
 	 */
 	function codexin_pagination_block() {
-	    if( is_singular() ) {
-	    	return;
-	    }
 
 	    $post_style             = codexin_get_option( 'cx_blog_style' );
 	    $posts_nav              = codexin_get_option( 'cx_pagination' );
+		$single_nav             = codexin_get_option( 'cx_single_button' );
+		$single_comment         = codexin_get_option( 'cx_post_comments' );
 
-        if( $posts_nav == 'numbered' ) {
-            echo codexin_numbered_posts_nav();
-        } else {
-            codexin_posts_link();
-        }        
-
+	    if( is_singular() ) {
+            ( $single_nav ) ? codexin_post_link() : '';
+            ( $single_comment ) ? comments_template( '', true ) : '';
+	    } else {
+	        if( $posts_nav == 'numbered' ) {
+	            echo codexin_numbered_posts_nav();
+	        } else {
+	            codexin_posts_link();
+	        }
+	    }
+	
 	}
 }
 
@@ -347,7 +351,7 @@ if ( ! function_exists( 'codexin_pagination_block' ) ) {
 add_action( 'codexin_before_portfolio_pagination', 'codexin_portfolio_pagination_block', 10 );
 if ( ! function_exists( 'codexin_portfolio_pagination_block' ) ) {
 	/**
-	 * Rendering the HTML for pagination
+	 * Rendering the HTML for Portfolio pagination
 	 *
 	 * @since 	v1.0
 	 */
@@ -383,17 +387,12 @@ if ( ! function_exists( 'codexin_portfolio_events_block' ) ) {
 
 		$events_style           = codexin_get_option( 'cx_events_style' );
 		$events_nav		        = codexin_get_option( 'cx_events_pagination' );
-
-	    
-	    echo ( $events_style == 'grid' ) ? '<div class="col-xs-12">' : '' ;
 	    
 	    if( $events_nav == 'numbered' ) {
 	        echo codexin_numbered_posts_nav();
 	    } else {               
 	        codexin_posts_link( 'Newer Events', 'Older Events' );
-    }
-
-	    echo ( $events_style == 'grid' ) ? '</div>' : '' ;
+	    }
 
 	}
 }

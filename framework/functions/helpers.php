@@ -455,6 +455,8 @@ if ( ! function_exists( 'codexin_attachment_metas_extended' ) ) {
         $image_height       = ! empty ($attachment['height'] ) ? $attachment['height'] : '400';
 
         // Building the output
+        $metas['width']     = $image_width;
+        $metas['height']    = $image_height;
         $metas['size']      = $image_width . 'x' . $image_height;
         $metas['alt']       = ( ! empty( $attachment['alt'] ) ) ? 'alt="' . esc_attr( $attachment['alt'] ) . '"' : 'alt="' .get_the_title() . '"';
         $metas['caption']   = ( ! empty( $attachment['caption'] ) ) ? $attachment['caption'] : '';

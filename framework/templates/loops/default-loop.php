@@ -14,18 +14,9 @@
 defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directly.', 'reveal' ) );
 
 
-// Assinging some conditional variables
-$archive_posts          = is_archive();
-$blog_posts             = is_home() && ! is_archive();
-$search_posts           = is_search() && ! $blog_posts;
-$single_post            = is_singular() && ! $blog_posts && ! $search_posts ;
-
 // Fetching and assigning data from theme options
-$post_style             = codexin_get_option( 'cx_blog_style' );
-$grids                  = codexin_get_option( 'cx_grid_columns' );
-$posts_nav              = codexin_get_option( 'cx_pagination' );
-$single_nav             = codexin_get_option( 'cx_single_button' );
-$single_comment         = codexin_get_option( 'cx_post_comments' );
+$post_style     = codexin_get_option( 'cx_blog_style' );
+$grids          = codexin_get_option( 'cx_grid_columns' );
 
 if ( have_posts() ) {
 
@@ -36,28 +27,24 @@ if ( have_posts() ) {
 
         the_post();
         
-        if( $single_post ) {
+        if( is_singular() ) {
             ( function_exists( 'codexin_set_post_views' ) ) ? codexin_set_post_views( get_the_ID() ) : '';
         }
 
         $i++;
 
-        if( ( $post_style == 'grid' ) && $blog_posts && ! $single_post && ! $search_posts ) {
+        if( ( $post_style == 'grid' ) && ! is_singular() && ! is_search() ) {
             $grid_columns = 12 / $grids;
-            printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', $grid_columns);
+            printf('<div class="post-single-wrap col-lg-%1$s col-md-%1$s col-sm-12">', esc_attr( $grid_columns ) );
                 get_template_part( 'framework/templates/grids/content' );
             echo '</div><!-- end of post-single-wrap -->';
             echo ( $i % $grids == 0 ) ? '<div class="clearfix"></div>' : '';
-        } elseif( $search_posts && ! $single_post ) {
+
+        } elseif( is_search() && ! is_singular() ) {
             get_template_part( 'framework/templates/general/content', 'search' );
 
         } else {
             get_template_part( 'framework/templates/general/content' );
-        }
-
-        if( $single_post ) {
-            ( $single_nav ) ? codexin_post_link() : '';
-            ( $single_comment ) ? comments_template( '', true ) : '';
         }
 
     } // end of loop have_posts()

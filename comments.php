@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 
 ?>
 
-<div id="comments" class="comments-area" itemprop="comment" itemscope itemtype="http://schema.org/UserComments">
+<div id="comments" class="comments-area">
 
 	<?php
 

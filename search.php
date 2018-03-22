@@ -25,6 +25,13 @@ get_header(); ?>
 						// Go to the default loop template
 						get_template_part( 'framework/templates/loops/default', 'loop' );
 
+                        /**
+                         * Initial contents before pagination, codexin_before_pagination hook.
+                         *
+                         * @hooked codexin_pagination_block - 10 (outputs the HTML for pagination)
+                         */
+                        do_action( 'codexin_before_pagination' ); 
+
 						?>
 
 					</main><!-- #primary -->

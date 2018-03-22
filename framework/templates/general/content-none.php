@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) OR die( esc_html__( 'This script cannot be accessed directl
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'reveal' ); ?></h1>
+		<h1 class="page-title-not-found"><?php esc_html_e( 'Nothing Found', 'reveal' ); ?></h1>
 	</header><!-- end of page-header -->
 
 	<div class="page-content">

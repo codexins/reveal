@@ -22,56 +22,8 @@ if ( ! function_exists( 'codexin_html_tag_schema' ) ) {
     **/
     function codexin_html_tag_schema() {
 
-        $schema = 'http://schema.org/';
-
-        // Is single post
-        if( is_singular( 'post' ) ) {
-            $type = "Article";
-        }
-
-        // Is author page
-        elseif( is_author() ) {
-            $type = 'ProfilePage';
-        }
-
-        // Is blog home or category
-        elseif( is_home() || is_category() ){
-            $type = "Blog";
-        }
-
-        // Is static front page
-        elseif( is_front_page() ) {
-            $type = "Website";
-        }
-
-        // Is search results page
-        elseif( is_search() ) {
-            $type = 'SearchResultsPage';
-        }
-
-        // Is of event post type
-        elseif( is_post_type_archive( 'events' ) || is_singular( 'events' ) ) {
-            $type = 'Event';
-        }
-
-        // Is of team post type
-        elseif( is_post_type_archive( 'team' ) || is_singular( 'team' ) ) {
-            $type = 'Person';
-        }
-
-        // Is of portfolio post type
-        elseif( is_post_type_archive( 'portfolio' ) || is_singular( 'portfolio' ) ) {
-            $type = 'ProfessionalService';
-        }
-
-        // Is of testimonial post type
-        elseif( is_post_type_archive( 'testimonial' ) || is_singular( 'testimonial' ) ) {
-            $type = 'Review';
-        }
-
-        else {
-            $type = 'WebPage';
-        }
+        $schema = esc_url( 'http://schema.org/' );
+        $type = esc_attr( 'WebSite' );
 
         echo 'itemscope="itemscope" itemtype="' . $schema . $type . '"';
     }
@@ -89,10 +41,58 @@ if ( ! function_exists( 'codexin_menu_url_schema' ) ) {
      * @param     string      $item
      * @param     array       $args
      * @return    mixed
-     * @since     v1.0.0
+     * @since     v1.0
      */
     function codexin_menu_url_schema( $atts, $item, $args ) {
         $atts['itemprop'] = 'url';
         return $atts;
     }
+}
+
+
+if ( ! function_exists( 'codexin_render_schema' ) ) {
+    /**
+     * Schema markup builder
+     *
+     * @param     string       $args
+     * @return    mixed
+     * @since     v1.0
+     */
+    function codexin_render_schema( $args = NULL ) {
+        
+        global $post;
+        $result     ='';
+        $logo       = codexin_get_option( 'cx_image_logo' )['url'];
+        $company    = ! empty( codexin_get_option( 'cx_company_name' ) ) ? esc_html( codexin_get_option( 'cx_company_name' ) ) : esc_html( 'Company' );
+        $image_prop = codexin_attachment_metas_extended( $post->ID, 'blog', 'full' );
+        $url = get_the_permalink();
+        if( is_home() && ! is_front_page() ) {
+            $url = get_permalink( get_option( 'page_for_posts' ) );
+        }
+        if( is_home() && is_front_page() ) {
+            $url = home_url( '/' );
+        }
+
+        if( $args == 'publisher' ) {
+            $result .= '<span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">';
+                $result .= '<span class="hide" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">';
+                    $result .= '<img src="'. esc_url( $logo ) .'" />';
+                    $result .= '<meta itemprop="url" content="'. esc_url( $logo ) .'">';
+                    $result .= '<meta itemprop="width" content="260">';
+                    $result .= '<meta itemprop="height" content="100">';
+                $result .= '</span>';
+                $result .= '<meta itemprop="name" content="'. $company .'">';
+            $result .= '</span>';
+        } elseif( $args == 'image' ) {
+            $result .= '<meta itemprop="url" content="'. $image_prop['src'] .'">';
+            $result .= '<meta itemprop="width" content="'. esc_attr( $image_prop['width'] ) .'">';
+            $result .= '<meta itemprop="height" content="'. esc_attr( $image_prop['height'] ) .'">';
+        } elseif( $args == 'date-modified' ) {
+            $result .= '<meta itemprop="dateModified" content="'. esc_attr( get_the_modified_date() ) .'" />';
+            $result .= '<meta itemprop="mainEntityOfPage" content="'. esc_url( $url ) .'" />';
+        }
+
+        printf( '%s', $result );
+    }
+
 }

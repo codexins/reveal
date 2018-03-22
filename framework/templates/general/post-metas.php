@@ -23,8 +23,8 @@ if( in_array( true, array_values( $post_metas ) ) ) { ?>
         <?php
         if( $post_metas[1] ) {
         ?>
-	        <li><?php echo ($post_style == 'list') ? '<i class="fa fa-pencil"></i>' : ''; ?> <span class="post-author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
-	            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author">
+	        <li><?php echo ($post_style == 'list') ? '<i class="fa fa-pencil"></i>' : ''; ?> <span class="post-author author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
+	            <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" itemprop="url" rel="author" class="fn">
 	                <span itemprop="name"><?php echo esc_html( get_the_author() ); ?></span>
 	            </a>
 	            </span>
