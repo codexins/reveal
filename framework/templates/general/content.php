@@ -55,6 +55,37 @@ $read_more       = codexin_get_option( 'cx_blog_read_more' );
             </h2>
         
         <?php } else { ?>
+            
+<?php
+            $attachment_id  = get_post_thumbnail_id( $post->ID );
+        $image          = wp_prepare_attachment_for_js( $attachment_id );
+        // $alt            = $image['description'];
+        // echo $alt;
+
+        // echo '<pre>';
+        // print_r($image);
+        // echo '</pre>';
+
+        # Ruoan Virk
+        // $attachment = get_post("1537"); // image_id("12")
+        // $description = $attachment->post_content;
+        //echo $description;
+
+        //  $meta = wp_get_attachment_metadata("1537");
+        // echo '<pre>';
+        // print_r($meta);
+        // echo '</pre>';
+
+        // echo $meta['image_meta']['caption'];
+        
+        $thumb_img = get_post( get_post_thumbnail_id() );
+        echo '<pre>';
+        print_r($thumb_img);
+        echo '</pre>';
+
+        echo $thumb_img->post_content; // Display Description
+        ?>
+
 
             <h2 class="post-title reveal-color-1" itemprop="headline">
                 <span itemprop="name"><?php the_title(); ?></span>

@@ -226,7 +226,7 @@ if ( ! function_exists( 'codexin_get_smart_slider' ) ) {
 
         $result = '';
         if( is_page_template( 'page-templates/page-home.php' ) ) {
-            if ( is_plugin_active( 'nextend-smart-slider3-pro/nextend-smart-slider3-pro.php' ) ) {
+            if ( is_plugin_active( 'smart-slider-3/smart-slider-3.php' ) ) {
 
                 $slider_id = codexin_meta( 'reveal_page_slider' ); 
 
